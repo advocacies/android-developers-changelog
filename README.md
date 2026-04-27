@@ -2,10 +2,9 @@
 
 Changelog of [Android Developers documentation](https://developer.android.com) files, updated daily.
 
-## Features
+## Credits
 
-*   **Changelog Blog**: View detailed documentation changes on the [website](https://fornewid.github.io/android-developers-changelog/).
-*   **Release Notifications**: Subscribe to [GitHub Releases](https://github.com/fornewid/android-developers-changelog/releases) to get notified when updates occur.
+This project is forked from [fornewid/android-developers-changelog](https://github.com/fornewid/android-developers-changelog). Thanks to [@fornewid](https://github.com/fornewid) for the original work.
 
 ## License
 
