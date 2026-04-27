@@ -1,0 +1,181 @@
+---
+title: https://developer.android.com/blog/posts/optimizing-performance-for-android-xr-with-unity
+url: https://developer.android.com/blog/posts/optimizing-performance-for-android-xr-with-unity
+source: md.txt
+---
+
+#### [Product News](https://developer.android.com/blog/categories/product-news)
+
+# Optimizing Performance for Android XR with Unity
+
+###### 6-min read
+
+![](https://developer.android.com/static/blog/assets/xr_Week5_985628de53_229QRh.webp) 23 Oct 2025 [![](https://developer.android.com/static/blog/assets/Luke_Hopkins_9c1e15d778_Z2o9b3q.webp)](https://developer.android.com/blog/authors/luke-hopkins) [##### Luke Hopkins](https://developer.android.com/blog/authors/luke-hopkins)
+
+###### Developer Relations Engineer, Android
+
+[*Samsung Galaxy XR is here*](https://android-developers.googleblog.com/2025/10/giving-your-apps-new-home-on-samsung.html)*, powered by Android XR! This blog post is part of our *[*Android XR Spotlight Week*](https://android-developers.googleblog.com/2025/10/welcome-to-android-xr-spotlight-week.html)*, where we provide resources---blog posts, videos, sample code, and more---all designed to help you learn, build, and prepare your apps for Android XR. *
+
+This week, [Samsung launched Galaxy XR](https://blog.google/products/android/samsung-galaxy-xr), built in collaboration with Google and Qualcomm. This is an exciting time for developers, and we wanted to help you get the best performance you can out of your XR app.
+
+While poor performance in games and apps on non-XR devices can be frustrating for the user, in the world of XR performance isn't just optional, it's fundamental to the success of your app. If you miss your frame rate target in XR, it can cause far more serious problems like motion sickness.
+
+In this guide, we'll walk you through the essential performance optimizations you need to understand for Android XR development. You'll learn which features deliver the biggest performance gains, when to use them, and how they work together to help you hit your frame rate targets.
+
+Here's what we're aiming for:
+
+- **Minimum:**72fps (part of our play quality guidelines)
+- **Optional:**90fps with an 11ms budget per frame
+
+For more information on why it's important to maintain such a high frame-rate check out our [performance guidelines](https://developer.android.com/develop/xr/unity/performance).
+
+## XR-Specific Performance Features
+
+We're going to start by covering two XR-specific performance features: Foveated Rendering and Vulkan Subsampling.
+
+### Foveated Rendering
+
+Foveated rendering is an optimization that has two modes. The first is a **static mode** that renders the center of the screen at a higher resolution, and progressively lowers the resolution the further out you look.
+
+The second is the **eye-tracking mode** that specifically renders the area where you're looking in full detail, while reducing the quality displayed in your peripherals. It essentially mimics how human vision works --- where we only see fine detail in the specific area we're focusing on.
+
+Foveated rendering significantly cuts the GPU workload without sacrificing the perceived image quality for the user. The beauty of foveated rendering is that users won't notice the reduced quality in their peripheral vision, but your GPU will certainly notice the improved performance.
+
+Imagine you're building a museum experience with intricate 3D artifacts. Without foveated rendering, you'd struggle to maintain 90fps trying to render everything in 'field of view'. With foveated rendering, you can keep those high-poly details where the user's looking, but the background environment renders at a lower quality. Your users won't notice the difference, but you'll have the headroom to add more detail to your scene.
+
+### Vulkan Subsampling
+
+Vulkan Subsampling is foveated rendering's best friend. While foveated rendering decides what to render at different quality levels, **Vulkan Subsampling handles how to efficiently render the different quality levels** using Fragment Density Maps.
+
+When combined with foveated rendering, Vulkan Subsampling gives you an extra 0.5ms of performance. It also helps smooth out jagged edges in your peripheral vision, making the overall image look cleaner.
+
+For example, in a flight simulator game where users focus on instruments and controls, combining foveated rendering with Vulkan Subsampling means the detailed controls render sharply, but the peripheral cockpit structure uses fewer resources. That extra 0.5ms doesn't sound like much, but it's the difference between having room for an extra interactive element or dropping frames during intense moments.
+
+## GPU Features for Complex Scenes
+
+Besides Foveated Rendering and Vulkan Subsampling, there are some GPU features that reduce unnecessary strain through smart instancing and culling. These are particularly effective for complex scenes with repeated geometry or significant occlusion.
+
+### GPU Resident Drawer
+
+The [GPU Resident Drawer](https://docs.unity3d.com/Packages/com.unity.render-pipelines.high-definition@17.0/manual/gpu-resident-drawer.html) automatically uses GPU instancing to reduce draw calls and free up CPU processing time. So, instead of the CPU telling the GPU about each object individually, the GPU batches similar objects together.
+
+This feature is most effective for large scenes with repeated meshes, like trees in a forest, furniture in an office building, or props scattered throughout an environment.
+
+Picture a forest scene with 200 trees using the same base mesh. Without the GPU Resident Drawer, you've got 200 draw calls eating up the GPU, therefore freeing up the CPU. When you enable this feature, the GPU will intelligently instance those trees, which should reduce it to just 5-10 draw calls. That's a massive GPU savings you can then invest in gameplay logic or physics calculations.
+
+### GPU Occlusion Culling
+
+[GPU Occlusion Culling](https://docs.unity3d.com/Packages/com.unity.render-pipelines.high-definition@17.0/manual/gpu-culling.html) uses the *GPU* instead of the *CPU* to identify and skip rendering hidden objects. It automatically detects what's occluded (hidden) behind other objects, so you're not wasting your GPU on things the user can't see.
+
+This feature is particularly powerful in interior spaces with multiple rooms, dense environments, or architectural scenes where walls, floors, and objects naturally block the view.
+
+As an example, let's say you're building a multi-room house experience. When the user is in the living room, why waste GPU cycles rendering the fully detailed kitchen that's completely hidden behind a wall? GPU Occlusion Culling automatically skips rendering those hidden objects, giving you more performance budget for what's actually visible.
+
+## Monitoring Your Performance
+
+It's not enough to just use these features. You also need to measure your optimizations, so you can quantify their impact and verify your changes are actually working.
+
+### Performance Metrics API
+
+The [Performance Metrics API](https://docs.unity3d.com/Packages/com.unity.xr.androidxr-openxr@0.4/manual/features/performance-metrics.html) provides real-time monitoring of your apps memory usage, CPU performance, and GPU performance. It gives you comprehensive data from compositor and runtime layers, so you can see exactly what's happening in your application.
+
+Establish a baseline before making your changes, apply an optimization, measure the impact, and iterate. This data-driven approach means you *know* you're actually improving performance rather than guessing.
+
+Before enabling foveated rendering, your GPU frame time might be 13ms, which is over your 11ms budget. Enable foveated rendering, measure again, and hopefully you see it drop to 9ms. That's 4ms of headroom you've gained to add more detail to your scene, improve visual quality elsewhere, or simply ensure smoother performance across a wider range of content.
+
+Without these metrics, you're optimizing blind. The Performance Metrics API tells you the truth about what's actually helping your specific use case.
+
+### Frame Debugger
+
+The [Frame Debugger](https://docs.unity3d.com/6000.2/Documentation/Manual/FrameDebugger.html) is Unity's built-in tool for understanding exactly how your scene is being rendered, frame by frame. It shows you the sequence of draw calls and lets you step through them to verify your optimizations are working correctly.
+
+Want to confirm the SRP Batcher is working? Look for 'RenderLoopNewBatcher' entries in the Frame Debugger. Checking if the GPU Resident Drawer is batching properly? Look for 'Hybrid Batch Group' entries. These visual confirmations help you understand whether your optimization settings are actually taking effect.
+
+Step through the first 50 draw calls of your scene. If you see similar objects being drawn individually instead of batched, that's telling you that your instancing or batching isn't working correctly. The Frame Debugger makes these issues immediately visible so you can address them.
+
+## Additional Optimizations
+
+As well as the optimizations we've covered above, our full performance guide also covers a few other additional optimizations. Here's a quick summary:
+
+- **URP Settings:** Disable HDR and Post Processing for mobile XR. These features provide minimal visual impact compared to their performance cost on mobile hardware, so you'll get measurable performance gains with barely perceptible visual differences.
+- **SRP Batcher:** Reduces CPU overhead for scenes with many materials using the same shader variant. By minimizing render-state changes between draw calls, you can significantly reduce CPU time spent on rendering.
+- **Display Refresh Rate:** Dynamically adjust between 72fps and 90fps based on scene complexity. Lower the frame rate during complex sequences to maintain stability, then increase it during simpler moments for ultra-smooth interaction.
+- **Depth/Opaque Textures:** Disable these unless specifically needed for shader effects. They cause unnecessary GPU copying operations that waste performance without providing benefit for most applications.
+- **URP Render Scale:**This setting allows you to render at a reduced resolution for performance benefits or to upscale rendering for enhanced visual quality.
+
+For step-by-step instructions on these and more optimizations, check our complete Unity Performance Guide for Android XR.
+
+## Conclusion
+
+The performance of your XR app isn't just a technical checkbox. It's the difference between a comfortable, engaging experience and one that makes users feel sick or uncomfortable. The optimizations we've covered are your toolkit for hitting those critical framerate targets on the newest XR devices.
+
+Here's your roadmap:
+
+1. Start with Foveated Rendering and Vulkan Subsampling. These XR-specific features deliver immediate and noticeable GPU savings.
+2. Add GPU Resident Drawer and Occlusion Culling if you have complex scenes with repeated geometry or interior spaces.
+3. Monitor everything with the Performance Metrics API to ensure your changes are actually helping
+4. Explore additional URP optimizations for extra performance headroom
+
+It's vital to measure continuously and iterate. Not every optimization will benefit every project equally, so use the Performance Metrics API to get a clear idea of what actually helps your specific use case.
+
+## What's next: expanding your skills
+
+Ready to dive deeper? Check out these resources:
+
+- **Unity Performance Guide for Android XR** - Complete step-by-step implementation instructions for all features covered [here](https://developer.android.com/develop/xr/unity/performance).
+- **Getting Started with Unity and Android XR** - Set up your development environment and[start building](https://developer.android.com/develop/xr/unity).
+- **Android XR Developer Documentation** - Comprehensive guides for all Android XR [features](https://developer.android.com/develop/xr/get-started)
+
+###### Written by:
+
+-
+
+  ## [Luke Hopkins](https://developer.android.com/blog/authors/luke-hopkins)
+
+  ###### Developer Relations Engineer
+
+  [read_more
+  View profile](https://developer.android.com/blog/authors/luke-hopkins) ![](https://developer.android.com/static/blog/assets/Luke_Hopkins_9c1e15d778_Z2o9b3q.webp) ![](https://developer.android.com/static/blog/assets/Luke_Hopkins_9c1e15d778_Z2o9b3q.webp)
+
+## Continue reading
+
+- [![](https://developer.android.com/static/blog/assets/meghan_d663ed9c69_e0a5b5a564_Z21FLk.webp)](https://developer.android.com/blog/authors/meghan-mehta) 22 Apr 2026 22 Apr 2026 ![](https://developer.android.com/static/blog/assets/0420_Compose_1_11_Strapi_9c17b19a5e_1zjMqo.webp)
+
+  #### [Product News](https://developer.android.com/blog/categories/product-news)
+
+  ## [What's new in the Jetpack Compose April '26 release](https://developer.android.com/blog/posts/whats-new-in-the-jetpack-compose-april-26-release)
+
+  [arrow_forward](https://developer.android.com/blog/posts/whats-new-in-the-jetpack-compose-april-26-release) The Jetpack Compose April '26 release is stable. This release contains version 1.11 of core Compose modules (see the full BOM mapping), shared element debug tools, trackpad events, and more.
+
+  ###### [Meghan Mehta](https://developer.android.com/blog/authors/meghan-mehta) •
+  5 min read
+
+- [![](https://developer.android.com/static/blog/assets/matt_dyor_b779fca40e_Z2hl456.webp)](https://developer.android.com/blog/authors/matt-dyor) 21 Apr 2026 21 Apr 2026 ![](https://developer.android.com/static/blog/assets/as_Panda3_385cde5eac_Z1E8IhJ.webp)
+
+  #### [Product News](https://developer.android.com/blog/categories/product-news)
+
+  ## [Level up your development with Planning Mode and Next Edit Prediction in Android Studio Panda 4](https://developer.android.com/blog/posts/level-up-your-development-with-planning-mode-and-next-edit-prediction-in-android-studio-panda-4)
+
+  [arrow_forward](https://developer.android.com/blog/posts/level-up-your-development-with-planning-mode-and-next-edit-prediction-in-android-studio-panda-4) Android Studio Panda 4 is now stable and ready for you to use in production. This release brings Planning Mode, Next Edit Prediction, and more, making it easier than ever to build high-quality Android apps.
+
+  ###### [Matt Dyor](https://developer.android.com/blog/authors/matt-dyor) •
+  5 min read
+
+- [![](https://developer.android.com/static/blog/assets/thomas_ezan_d29c7508d0_l9O72.webp)](https://developer.android.com/blog/authors/thomas-ezan) 17 Apr 2026 17 Apr 2026 ![](https://developer.android.com/static/blog/assets/Hybrid_inference_solution_for_Android_Blog_1_518db36e12_gOJm.webp)
+
+  #### [Product News](https://developer.android.com/blog/categories/product-news)
+
+  ## [Experimental hybrid inference and new Gemini models for Android](https://developer.android.com/blog/posts/experimental-hybrid-inference-and-new-gemini-models-for-android)
+
+  [arrow_forward](https://developer.android.com/blog/posts/experimental-hybrid-inference-and-new-gemini-models-for-android) If you are an Android developer looking to implement innovative AI features into your app, we recently launched powerful new updates.
+
+  ###### [Thomas Ezan](https://developer.android.com/blog/authors/thomas-ezan) •
+  3 min read
+
+# Stay in the loop
+
+
+Get the latest Android development insights delivered to your inbox
+weekly.
+[mail
+Subscribe](https://developer.android.com/subscribe) ![A 3D illustration of the Android mascot, wearing a jetpack that's emitting a large cloud of bubbles](https://developer.android.com/static/blog/assets/rocket-android.CVJQZOf1_1PnraM.webp)

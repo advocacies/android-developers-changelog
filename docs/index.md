@@ -1,0 +1,82 @@
+---
+title: https://developer.android.com/
+url: https://developer.android.com/
+source: md.txt
+---
+
+![](https://developer.android.com/static/images/home/gemma-4-android-lockup.png) ![](https://developer.android.com/static/images/home/gemma-4-lockup.png)
+
+## Brings the next gen of on-device AI to Android
+
+Get code-assistance in Android Studio and build intelligent experiences that run locally using the ML Kit GenAI Prompt API. [Start building with Gemma 4](http://android-developers.googleblog.com/2026/03/gemma-4-new-standard-for-local-agentic-intelligence.html)
+- [![](https://developer.android.com/static/images/logos/android.svg)
+  Download Android Studio](https://developer.android.com/studio)
+- [![](https://developer.android.com/static/images/picto-icons/game-console.svg)
+  Launch Play Console](https://play.google.com/apps/publish)
+- [![](https://developer.android.com/static/images/picto-icons/stars.svg)
+  View Latest Updates](https://developer.android.com/latest-updates)
+[![](http://developer.android.com/static/images/home/promo-ecosystem-blog.png)](https://security.googleblog.com/2026/02/keeping-google-play-android-app-ecosystem-safe-2025.html) Featured
+
+### [Keeping Google Play \& Android app ecosystems safe in 2025](https://security.googleblog.com/2026/02/keeping-google-play-android-app-ecosystem-safe-2025.html)
+
+Safety is at the heart of everything we do. We want developers to thrive and users to feel confident downloading apps. By investing in world-class defenses, we're stopping threats before they reach our digital world and providing stronger protections for your business. [Read more](https://security.googleblog.com/2026/02/keeping-google-play-android-app-ecosystem-safe-2025.html) [![](http://developer.android.com/static/images/bench/hero.png)](http://developer.android.com/bench) Featured
+
+### [Elevating AI assistance with LLM benchmarking](http://developer.android.com/bench)
+
+Check out Android Bench, our official benchmark of LLMs for Android development. [View leaderboard](http://developer.android.com/bench)
+
+## Developer centers
+
+[![](http://developer.android.com/static/images/home/productivity.svg)](http://developer.android.com/productivity) New
+
+### [Productivity apps](http://developer.android.com/productivity)
+
+Level up your productivity app with media, adaptive layouts, and more. [Learn more](http://developer.android.com/productivity) [![](http://developer.android.com/static/images/home/social-messaging-hero.svg)](http://developer.android.com/social-and-messaging) Featured
+
+### [Social \& messaging apps](http://developer.android.com/social-and-messaging)
+
+Use Android's unique capabilities to supercharge your app's social and messaging features. [Learn more](http://developer.android.com/social-and-messaging) [![](http://developer.android.com/static/images/cluster-illustrations/enhance-media-16-9.svg)](http://developer.android.com/media) Featured
+
+### [Camera \& media apps](http://developer.android.com/media)
+
+Learn how to build and extend engaging media experiences to users across Android's multidevice ecosystem. [Learn more](http://developer.android.com/media) [![](http://developer.android.com/static/images/picto-icons/health-premium-experience.svg)](http://developer.android.com/health-and-fitness) Featured
+
+### [Health \& fitness apps](http://developer.android.com/health-and-fitness)
+
+Take your health and fitness app to the next level using Health Services with Health Connect. [Learn more](http://developer.android.com/health-and-fitness) ![](http://developer.android.com/static/images/logos/android.svg)
+
+## Platform updates
+
+Keep up to date with what's going on with the Android platform. [Go to Android Platform](http://developer.android.com/about) ![](http://developer.android.com/static/images/spot-icons/tools-update.svg)
+
+## Tools updates
+
+The latest on tools that help you build the highest quality Android apps for every Android device. [Go to Android Studio](http://developer.android.com/studio)
+
+## Explore more
+
+[![](http://developer.android.com/static/images/cluster-illustrations/developer-guidance.svg)](http://developer.android.com/guide)
+
+### [Developer guides](http://developer.android.com/guide)
+
+Find training classes that describe how to accomplish a specific task with code samples you can re-use in your app. [![](http://developer.android.com/static/images/cluster-illustrations/samples.svg)](http://developer.android.com/samples)
+
+### [Sample code](http://developer.android.com/samples)
+
+Jump-start your development using these sample projects. [![](http://developer.android.com/static/images/cluster-illustrations/quality-guidelines.svg)](http://developer.android.com/quality)
+
+### [Quality guidelines](http://developer.android.com/quality)
+
+Build a high quality app with these design and behavior guidelines. [![](http://developer.android.com/static/images/cluster-illustrations/launch-app.svg)](http://developer.android.com/distribute)
+
+### [Distribute your app](http://developer.android.com/distribute)
+
+Learn how to launch and distribute your apps and games successfully. ![](http://developer.android.com/static/images/picto-icons/lightbulb.svg)
+
+## Latest news
+
+Keep up to date with what's going on in Android. [View all news](http://developer.android.com/news) ![](http://developer.android.com/static/images/picto-icons/eye.svg)
+
+## Latest videos
+
+Get the latest Android news, best practices, live videos, demonstrations, tutorials. [View all videos](https://www.youtube.com/user/androiddevelopers/)
