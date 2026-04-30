@@ -1,5 +1,4 @@
 requests
-google-genai
 python-dotenv
 beautifulsoup4
 markdownify
