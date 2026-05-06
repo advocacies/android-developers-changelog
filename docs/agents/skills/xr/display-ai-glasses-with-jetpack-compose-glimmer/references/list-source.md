@@ -1,19 +1,14 @@
 ---
-title: API source code for Glimmer List component  |  Android Developers
+title: https://developer.android.com/agents/skills/xr/display-ai-glasses-with-jetpack-compose-glimmer/references/list-source
 url: https://developer.android.com/agents/skills/xr/display-ai-glasses-with-jetpack-compose-glimmer/references/list-source
-source: html-scrape
+source: md.txt
 ---
-
-# API source code for Glimmer List component Stay organized with collections Save and categorize content based on your preferences.
-
-
-
-
 
 When creating a Glimmer List component, refer to the following source code in
 `List.kt`:
 
-```
+
+```kotlin
 /*
  * Copyright 2025 The Android Open Source Project
  *
@@ -400,6 +395,6 @@ private fun isScrollEnabled(userScrollEnabled: Boolean, state: ListState): Boole
         return false
     }
 }
-
-List.kt
 ```
+
+<br />
