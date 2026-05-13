@@ -1,20 +1,35 @@
 ---
-title: https://developer.android.com/blog/posts/monzo-boosts-performance-metrics-by-up-to-35-with-a-simple-r8-update
+title: Monzo boosts performance metrics by up to 35% with a simple R8 update  |  Android Developers' Blog
 url: https://developer.android.com/blog/posts/monzo-boosts-performance-metrics-by-up-to-35-with-a-simple-r8-update
-source: md.txt
+source: html-scrape
 ---
 
-#### [Case Studies](https://developer.android.com/blog/categories/case-studies)
+* [Android Developers](https://developer.android.com/)
+* [Android Developers' Blog](https://developer.android.com/)
+* [Blog](https://developer.android.com/blog)
+
+Stay organized with collections
+
+Save and categorize content based on your preferences.
+
+
+
+#### [Case Studies](/blog/categories/case-studies)
 
 # Monzo boosts performance metrics by up to 35% with a simple R8 update
 
 ###### 2-min read
 
-![](https://developer.android.com/static/blog/assets/monzo_boosts_performance_aff3a37917_6VY99.webp) 30 Mar 2026 [![](https://developer.android.com/static/blog/assets/1_1_U4_K_Lr4r_A_Kx_Pq0_Crp_L3vr_Q_a4d1920594_2dcD9g.webp)](https://developer.android.com/blog/authors/ben-weiss)[![](https://developer.android.com/static/blog/assets/Tracy_Agyemang_Headshot_9a0c523435_1hBimO.webp)](https://developer.android.com/blog/authors/tracy-agyemang)
+![](/static/blog/assets/monzo_boosts_performance_aff3a37917_6VY99.webp)
 
-##### [Ben Weiss](https://developer.android.com/blog/authors/ben-weiss)
-\&
-[Tracy Agyemang](https://developer.android.com/blog/authors/tracy-agyemang)
+30
+
+Mar
+2026
+
+[![](/static/blog/assets/1_1_U4_K_Lr4r_A_Kx_Pq0_Crp_L3vr_Q_a4d1920594_2dcD9g.webp)](/blog/authors/ben-weiss)[![](/static/blog/assets/Tracy_Agyemang_Headshot_9a0c523435_1hBimO.webp)](/blog/authors/tracy-agyemang)
+
+##### [Ben Weiss](/blog/authors/ben-weiss) & [Tracy Agyemang](/blog/authors/tracy-agyemang)
 
 Monzo is a UK digital bank with 15 million customers and growing. As the app scaled, the engineering team identified app startup time as a critical area for improvement but worried it would require significant changes to their codebase.
 
@@ -24,12 +39,13 @@ By fully enabling R8 optimizations, Monzo achieved a massive 35% reduction in th
 
 Monzo identified R8 full mode as an easy fix worth trying; and it worked, improving performance across the board:
 
-- **Startup Reliability:** Cold starts improved by 30%, Warm starts by 24%, and Hot starts by 14%.
-- **Launch Speed:** P50 launch times improved by 11% and P90 launch times by 12%.
-- **Efficiency:** Overall app size was reduced by 9%.
-- **Stability:** ANR reduction of 35%.
+* **Startup Reliability:** Cold starts improved by 30%, Warm starts by 24%, and Hot starts by 14%.
+* **Launch Speed:** P50 launch times improved by 11% and P90 launch times by 12%.
+* **Efficiency:** Overall app size was reduced by 9%.
+* **Stability:** ANR reduction of 35%.
 
-![AANDDM_Monzo_Quote-1.png](https://developer.android.com/static/blog/assets/AANDDM_Monzo_Quote_1_f28ffd5e7a_oMNg6.webp) ![large_AANDDM_Monzo_Quote-2.png](https://developer.android.com/static/blog/assets/large_AANDDM_Monzo_Quote_2_94f7583b7d_Z23rrlm.webp)
+![AANDDM_Monzo_Quote-1.png](/static/blog/assets/AANDDM_Monzo_Quote_1_f28ffd5e7a_oMNg6.webp)
+![large_AANDDM_Monzo_Quote-2.png](/static/blog/assets/large_AANDDM_Monzo_Quote_2_94f7583b7d_Z23rrlm.webp)
 
 ## Enabling optimizations with a single change
 
@@ -51,77 +67,121 @@ After making this change, it's worth looking at your Keep configuration files. T
 
 ## Improving scroll performance with Baseline Profiles
 
-To further enhance the user experience, Monzo implemented [Baseline Profiles](https://developer.android.com/topic/performance/baselineprofiles/overview), specifically targeting scroll and rendering performance on their main feed. This strategy ensured that the most common user journeys---opening the app and scrolling the feed---were fully optimized. The impact on rendering was substantial: P90 scroll performance became 71% faster, and P95 scroll performance improved by 87%. Now scrolling the app is smoother than before.  
-
+To further enhance the user experience, Monzo implemented [Baseline Profiles](/topic/performance/baselineprofiles/overview), specifically targeting scroll and rendering performance on their main feed. This strategy ensured that the most common user journeys—opening the app and scrolling the feed—were fully optimized. The impact on rendering was substantial: P90 scroll performance became 71% faster, and P95 scroll performance improved by 87%. Now scrolling the app is smoother than before.  
+  
 Monzo built this into their release process to maintain these improvements over time. "We trigger the baseline profile generation every week day (before running our nightly builds) and commit the latest changes once completed," Neumayer explains.
 
 ## Keeping up with modern Android development
 
 Monzo's experience shows what's possible when you stay up to date with Android build-tooling recommendations. While legacy apps often struggle with complex reflection usage, Monzo found the transition straightforward by documenting their Keep Rules properly. "We always add a comment explaining why Keep Rules are in place, so we know when it's safe to remove the rules," Neumayer notes.  
-
+  
 Neumayer's advice for other teams? Regularly check your practices against current standards: "Take a look at the latest recommendations from Google around app performance and check if you're following all the latest advice."
 
-To get started and learn more about R8, visit [https://d.android.com/r8](https://developer.android.com/r8)
+To get started and learn more about R8, visit [https://d.android.com/r8](/r8)
 
 ###### Written by:
 
--
-
-  ## [Ben Weiss](https://developer.android.com/blog/authors/ben-weiss)
+* ## [Ben Weiss](/blog/authors/ben-weiss)
 
   ###### Developer Relations Engineer
 
-  [read_more
-  View profile](https://developer.android.com/blog/authors/ben-weiss) ![](https://developer.android.com/static/blog/assets/1_1_U4_K_Lr4r_A_Kx_Pq0_Crp_L3vr_Q_a4d1920594_2dcD9g.webp) ![](https://developer.android.com/static/blog/assets/1_1_U4_K_Lr4r_A_Kx_Pq0_Crp_L3vr_Q_a4d1920594_2dcD9g.webp)
--
+  [read\_more
+  View profile](/blog/authors/ben-weiss)
 
-  ## [Tracy Agyemang](https://developer.android.com/blog/authors/tracy-agyemang)
+  ![](/static/blog/assets/1_1_U4_K_Lr4r_A_Kx_Pq0_Crp_L3vr_Q_a4d1920594_2dcD9g.webp)
+
+  ![](/static/blog/assets/1_1_U4_K_Lr4r_A_Kx_Pq0_Crp_L3vr_Q_a4d1920594_2dcD9g.webp)
+* ## [Tracy Agyemang](/blog/authors/tracy-agyemang)
 
   ###### Product Marketing Manager
 
-  [read_more
-  View profile](https://developer.android.com/blog/authors/tracy-agyemang) ![](https://developer.android.com/static/blog/assets/Tracy_Agyemang_Headshot_9a0c523435_1hBimO.webp) ![](https://developer.android.com/static/blog/assets/Tracy_Agyemang_Headshot_9a0c523435_1hBimO.webp)
+  [read\_more
+  View profile](/blog/authors/tracy-agyemang)
+
+  ![](/static/blog/assets/Tracy_Agyemang_Headshot_9a0c523435_1hBimO.webp)
+
+  ![](/static/blog/assets/Tracy_Agyemang_Headshot_9a0c523435_1hBimO.webp)
 
 ## Continue reading
 
-- [![](https://developer.android.com/static/blog/assets/thomas_ezan_d29c7508d0_l9O72.webp)](https://developer.android.com/blog/authors/thomas-ezan)[![](https://developer.android.com/static/blog/assets/Tracy_Agyemang_Headshot_9a0c523435_1hBimO.webp)](https://developer.android.com/blog/authors/tracy-agyemang) 04 May 2026 04 May 2026 ![](https://developer.android.com/static/blog/assets/AANDDM_KARROT_Strapi_eed79b0e1b_cCxXk.webp)
+* [![](/static/blog/assets/thomas_ezan_d29c7508d0_l9O72.webp)](/blog/authors/thomas-ezan)[![](/static/blog/assets/Tracy_Agyemang_Headshot_9a0c523435_1hBimO.webp)](/blog/authors/tracy-agyemang)
 
-  #### [Case Studies](https://developer.android.com/blog/categories/case-studies)
+  04
 
-  ## [Gemini and Firebase AI Logic enabled Karrot to increase sales with a translation feature built in under 2 weeks](https://developer.android.com/blog/posts/gemini-and-firebase-ai-logic-enabled-karrot-to-increase-sales-with-a-translation-feature)
+  May
+  2026
 
-  [arrow_forward](https://developer.android.com/blog/posts/gemini-and-firebase-ai-logic-enabled-karrot-to-increase-sales-with-a-translation-feature) Karrot is a hyperlocal, community-driven peer-to-peer marketplace app that enables users to buy, sell, and trade items with other verified users. Since launching in South Korea in 2015, the platform has expanded into global markets, amassing over 43 million registered users.
+  04
 
-  ###### [Thomas Ezan](https://developer.android.com/blog/authors/thomas-ezan), [Tracy Agyemang](https://developer.android.com/blog/authors/tracy-agyemang) •
-  2 min read
+  May
+  2026
 
-  - [#Android](https://developer.android.com/blog/topics/android)
-- [![](https://developer.android.com/static/blog/assets/Mayuri_Khinvasara_Khabya_92848b1e1b_1xSr0w.webp)](https://developer.android.com/blog/authors/mayuri-khabya)[![](https://developer.android.com/static/blog/assets/Tracy_Agyemang_Headshot_9a0c523435_1hBimO.webp)](https://developer.android.com/blog/authors/tracy-agyemang) 05 Mar 2026 05 Mar 2026 ![](https://developer.android.com/static/blog/assets/meta_Header_2ac893569c_ZLkD4s.webp)
+  ![](/static/blog/assets/AANDDM_KARROT_Strapi_eed79b0e1b_cCxXk.webp)
 
-  #### [Case Studies](https://developer.android.com/blog/categories/case-studies)
+  #### [Case Studies](/blog/categories/case-studies)
 
-  ## [Instagram and Facebook deliver instant playback and boost user engagement with Media3 PreloadManager](https://developer.android.com/blog/posts/instagram-and-facebook-deliver-instant-playback-and-boost-user-engagement-with-media3-preload-manager)
+  ## [Gemini and Firebase AI Logic enabled Karrot to increase sales with a translation feature built in under 2 weeks](/blog/posts/gemini-and-firebase-ai-logic-enabled-karrot-to-increase-sales-with-a-translation-feature)
 
-  [arrow_forward](https://developer.android.com/blog/posts/instagram-and-facebook-deliver-instant-playback-and-boost-user-engagement-with-media3-preload-manager) In the dynamic world of social media, user attention is won or lost quickly. Meta apps (Facebook and Instagram) are among the world's largest social platforms and serve billions of users globally.
+  [arrow\_forward](/blog/posts/gemini-and-firebase-ai-logic-enabled-karrot-to-increase-sales-with-a-translation-feature)
 
-  ###### [Mayuri Khinvasara Khabya](https://developer.android.com/blog/authors/mayuri-khabya), [Tracy Agyemang](https://developer.android.com/blog/authors/tracy-agyemang) •
-  4 min read
+  Karrot is a hyperlocal, community-driven peer-to-peer marketplace app that enables users to buy, sell, and trade items with other verified users. Since launching in South Korea in 2015, the platform has expanded into global markets, amassing over 43 million registered users.
 
-- [![](https://developer.android.com/static/blog/assets/Breana_Tate_24c1d03bf2_Z1NRigS.webp)](https://developer.android.com/blog/authors/breana-tate)[![](https://developer.android.com/static/blog/assets/Tracy_Agyemang_Headshot_9a0c523435_1hBimO.webp)](https://developer.android.com/blog/authors/tracy-agyemang) 04 Mar 2026 04 Mar 2026 ![](https://developer.android.com/static/blog/assets/whoop2_fcb73fdc54_bqwCk.webp)
+  ###### [Thomas Ezan](/blog/authors/thomas-ezan), [Tracy Agyemang](/blog/authors/tracy-agyemang) • 2 min read
 
-  #### [Case Studies](https://developer.android.com/blog/categories/case-studies)
+  + [#Android](/blog/topics/android)
+* [![](/static/blog/assets/Mayuri_Khinvasara_Khabya_92848b1e1b_1xSr0w.webp)](/blog/authors/mayuri-khabya)[![](/static/blog/assets/Tracy_Agyemang_Headshot_9a0c523435_1hBimO.webp)](/blog/authors/tracy-agyemang)
 
-  ## [How WHOOP decreased excessive partial wake lock sessions by over 90%](https://developer.android.com/blog/posts/how-whoop-decreased-excessive-partial-wake-lock-sessions)
+  05
 
-  [arrow_forward](https://developer.android.com/blog/posts/how-whoop-decreased-excessive-partial-wake-lock-sessions) Building an Android app for a wearable means the real work starts when the screen turns off.
+  Mar
+  2026
 
-  ###### [Breana Tate](https://developer.android.com/blog/authors/breana-tate), [Tracy Agyemang](https://developer.android.com/blog/authors/tracy-agyemang) •
-  4 min read
+  05
+
+  Mar
+  2026
+
+  ![](/static/blog/assets/meta_Header_2ac893569c_ZLkD4s.webp)
+
+  #### [Case Studies](/blog/categories/case-studies)
+
+  ## [Instagram and Facebook deliver instant playback and boost user engagement with Media3 PreloadManager](/blog/posts/instagram-and-facebook-deliver-instant-playback-and-boost-user-engagement-with-media3-preload-manager)
+
+  [arrow\_forward](/blog/posts/instagram-and-facebook-deliver-instant-playback-and-boost-user-engagement-with-media3-preload-manager)
+
+  In the dynamic world of social media, user attention is won or lost quickly. Meta apps (Facebook and Instagram) are among the world's largest social platforms and serve billions of users globally.
+
+  ###### [Mayuri Khinvasara Khabya](/blog/authors/mayuri-khabya), [Tracy Agyemang](/blog/authors/tracy-agyemang) • 4 min read
+* [![](/static/blog/assets/Breana_Tate_24c1d03bf2_Z1NRigS.webp)](/blog/authors/breana-tate)[![](/static/blog/assets/Tracy_Agyemang_Headshot_9a0c523435_1hBimO.webp)](/blog/authors/tracy-agyemang)
+
+  04
+
+  Mar
+  2026
+
+  04
+
+  Mar
+  2026
+
+  ![](/static/blog/assets/whoop2_fcb73fdc54_bqwCk.webp)
+
+  #### [Case Studies](/blog/categories/case-studies)
+
+  ## [How WHOOP decreased excessive partial wake lock sessions by over 90%](/blog/posts/how-whoop-decreased-excessive-partial-wake-lock-sessions)
+
+  [arrow\_forward](/blog/posts/how-whoop-decreased-excessive-partial-wake-lock-sessions)
+
+  Building an Android app for a wearable means the real work starts when the screen turns off.
+
+  ###### [Breana Tate](/blog/authors/breana-tate), [Tracy Agyemang](/blog/authors/tracy-agyemang) • 4 min read
 
 # Stay in the loop
 
-
 Get the latest Android development insights delivered to your inbox
 weekly.
+
 [mail
-Subscribe](https://developer.android.com/subscribe) ![A 3D illustration of the Android mascot, wearing a jetpack that's emitting a large cloud of bubbles](https://developer.android.com/static/blog/assets/rocket-android.CVJQZOf1_1PnraM.webp)
+Subscribe](/subscribe)
+
+![A 3D illustration of the Android mascot, wearing a jetpack that's emitting a large cloud of bubbles](/static/blog/assets/rocket-android.CVJQZOf1_1PnraM.webp)
