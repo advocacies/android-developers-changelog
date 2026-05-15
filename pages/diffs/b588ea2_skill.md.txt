@@ -1,0 +1,23 @@
+diff --git a/docs/agents/skills/play/engage-sdk-integration/skill.md b/docs/agents/skills/play/engage-sdk-integration/skill.md
+index fef53d1..de73cdc 100644
+--- a/docs/agents/skills/play/engage-sdk-integration/skill.md
++++ b/docs/agents/skills/play/engage-sdk-integration/skill.md
+@@ -104,4 +104,15 @@ Follow these steps to assist the developer:
+   - [TV Getting Started](https://developer.android.com/guide/playcore/engage/tv/getting-started)
+   - [TV Recommendations](https://developer.android.com/guide/playcore/engage/tv/recommendations)
+   - [TV Continue Watching](https://developer.android.com/guide/playcore/engage/tv/continue-watching)
+-  - [TV Entitlements](https://developer.android.com/guide/playcore/engage/tv/entitlements)
+\ No newline at end of file
++  - [TV Entitlements](https://developer.android.com/guide/playcore/engage/tv/entitlements)
++- **Vertical-Specific Schemas:**
++
++  - [Food Schema](https://developer.android.com/agents/skills/play/engage-sdk-integration/references/schemas/food)
++  - [Watch Schema](https://developer.android.com/agents/skills/play/engage-sdk-integration/references/schemas/watch)
++  - [Listen Schema](https://developer.android.com/agents/skills/play/engage-sdk-integration/references/schemas/listen)
++  - [Read Schema](https://developer.android.com/agents/skills/play/engage-sdk-integration/references/schemas/read)
++  - [Shopping Schema](https://developer.android.com/agents/skills/play/engage-sdk-integration/references/schemas/shopping)
++  - [Social Schema](https://developer.android.com/agents/skills/play/engage-sdk-integration/references/schemas/social)
++  - [Travel Schema](https://developer.android.com/agents/skills/play/engage-sdk-integration/references/schemas/travel)
++  - [TV Schema](https://developer.android.com/agents/skills/play/engage-sdk-integration/references/schemas/tv)
++  - [Other Schema](https://developer.android.com/agents/skills/play/engage-sdk-integration/references/schemas/other)
+\ No newline at end of file
