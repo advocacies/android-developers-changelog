@@ -1,0 +1,73 @@
+diff --git a/docs/design/ui/cars/guides/components/chips/chips.md b/docs/design/ui/cars/guides/components/chips/chips.md
+index 3708da6..babd39c 100644
+--- a/docs/design/ui/cars/guides/components/chips/chips.md
++++ b/docs/design/ui/cars/guides/components/chips/chips.md
+@@ -1,24 +1,13 @@
+ ---
+-title: Chip  |  Cars  |  Android Developers
++title: https://developer.android.com/design/ui/cars/guides/components/chips/chips
+ url: https://developer.android.com/design/ui/cars/guides/components/chips/chips
+-source: html-scrape
++source: md.txt
+ ---
+ 
+-* [Android Developers](https://developer.android.com/)
+-* [Design & Plan](https://developer.android.com/design)
+-* [UI Design](https://developer.android.com/design/ui)
+-* [Cars](https://developer.android.com/design/ui/cars)
+-* [Guides](https://developer.android.com/design/ui/cars/guides/foundations/design-principles)
++> [!NOTE]
++> **Note:** Chips are only supported in Sectioned Item template in Car App Library version 1.9.
+ 
+-# Chip Stay organized with collections Save and categorize content based on your preferences.
+-
+-
+-
+-
+-
+-**Note:** Chips are only supported in Sectioned Item template in Car App Library version 1.9.
+-
+-![hero](/static/design/ui/cars/guides/components/chips/chips-assets/image-161-19879.png)
++![hero](https://developer.android.com/static/design/ui/cars/guides/components/chips/chips-assets/image-161-19879.png)
+ 
+ ## Overview
+ 
+@@ -28,31 +17,26 @@ To maintain visual clarity, layouts should be limited to a maximum of 7 chips pe
+ 
+ **Chips can contain:**
+ 
+-* An icon only
+-* A text label only
+-* Both an icon and a label (in either direction)
++- An icon only
++- A text label only
++- Both an icon and a label (in either direction)
+ 
+----
++*** ** * ** ***
+ 
+ ## Composition
+ 
+-![hero](/static/design/ui/cars/guides/components/chips/chips-assets/image-161-21355.png)
+-
+-
+-*1.* *Leading icon or image*
++![hero](https://developer.android.com/static/design/ui/cars/guides/components/chips/chips-assets/image-161-21355.png) *1.* *Leading icon or image*
+ 
+ *2.* *Label text*
+ 
+-
+-
+----
++*** ** * ** ***
+ 
+ ## UX requirements
+ 
+ To ensure a safe and consistent experience across all apps, follow these design requirements:
+ 
+ | Requirement level | Content |
+-| --- | --- |
++|---|---|
+ | MUST | Include either an icon or a label. |
+ | SHOULD | Use a unique visual style, such as a distinct color or shape, to communicate different chip states. |
+ | SHOULD | Implement consistent styling across all chips throughout your app. |
