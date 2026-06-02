@@ -49,7 +49,7 @@ Android TV OS capabilities.
 ## Tier 3 - TV Ready
 
 | Type | Test | Description |
-|---|---|---|
+|---|---|---|---|
 | Launcher | TV-LM | The app displays a launcher icon in the Android TV Launcher after installation. For more information, see [Declare a TV activity](https://developer.android.com/training/tv/start/start#tv-activity). |
 | Launcher | TV-LB | The app displays both a 320x180 pixel full-size banner and at least a 160x160 pixel (at xhdpi density) app icon as its launcher icons in the Android TV Launcher. For more information, see [Android TV app icon and banner guidelines](https://developer.android.com/design/ui/tv/guides/system/tv-app-icon-guidelines). |
 | Launcher | TV-BN | The app launch banner contains the name of the app. |
@@ -91,10 +91,9 @@ Android TV OS capabilities.
 | Memory | TV-ME | For low RAM devices (where [`ActivityManager.isLowRamDevice()`](https://developer.android.com/reference/android/app/ActivityManager#isLowRamDevice()) returns `true`), the maximum memory usage (Anon+Swap + Graphics + File Memory) of a foreground app must remain within the limits (including specific measurement mechanisms and caveats) defined in [Optimize memory usage.](https://developer.android.com/training/tv/playback/memory) |
 | Google Play | TV-G1 | The use of Android App Bundles is mandatory for all new and existing TV apps in the Google Play Store. |
 | Google Play | TV-G2 | The app must follow the Play Developer Policy Center requirements. |
-| Google Play | TV-G6 | From August 1, 2026, TV apps must support 64-bit architectures. |
-| Google Play | TV-G7 | From August 1, 2026, TV apps must support 16 KB page sizes. |
-| App Details Page | TV-G3 | App functionality works as expected or as described in the app's Google Play Store listing |
-| App Details Page | TV-G4 | App submission has uploaded at least one unaltered, high resolution screenshot that accurately depicts the current version of the TV app experience. |
+| Google Play | TV-G6 | From August 1, 2026, TV apps must support 64-bit architectures and comply with [16 KB page size](https://developer.android.com/guide/practices/page-sizes) requirements. |
+| Google Play | App Details Page | TV-G3 | App functionality works as expected or as described in the app's Google Play Store listing |
+| TV-G4 | App Details Page | App submission has uploaded at least one unaltered, high resolution screenshot that accurately depicts the current version of the TV app experience. |
 | Login Credentials | TV-G5 | For apps requiring users to sign in, you must provide login credentials in the Google Play Console for testing of the full app experience. For more information, see [App Access in Prepare your app for review](https://support.google.com/googleplay/android-developer/answer/9859455). |
 
 ## Tier 2 - TV Optimized
@@ -167,6 +166,12 @@ devices immediately.
 
     In-app search is no longer required as we recommend integrating with
     Engage SDK ([`TV-EC`](https://developer.android.com/develop/adaptive-apps/quality-guidelines/tv-app-quality#TV-EC), [`TV-ER`](https://developer.android.com/develop/adaptive-apps/quality-guidelines/tv-app-quality#TV-ER)).
+- Play Policies
+
+  - Removed criterion `TV-G7` and updated criterion [TV-G6](https://developer.android.com/develop/adaptive-apps/quality-guidelines/tv-app-quality#TV-G6):
+
+    Included
+    [16 KB page sizes](https://developer.android.com/guide/practices/page-sizes) as part of 64-bit requirements.
 
 ### January 2026
 
@@ -176,7 +181,7 @@ devices immediately.
 
     From August 1, 2026, your app must
     [support 64-bit architectures](https://developer.android.com/google/play/requirements/64-bit).
-  - New criterion, [`TV-G7`](https://developer.android.com/develop/adaptive-apps/quality-guidelines/tv-app-quality#TV-G7):
+  - New criterion, `TV-G7`:
 
     From August 1, 2026, your app must
     [support 16 KB page sizes](https://developer.android.com/guide/practices/page-sizes).
