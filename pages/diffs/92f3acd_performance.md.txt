@@ -1,0 +1,72 @@
+diff --git a/docs/blog/topics/performance.md b/docs/blog/topics/performance.md
+index e43493d..3304eeb 100644
+--- a/docs/blog/topics/performance.md
++++ b/docs/blog/topics/performance.md
+@@ -16,6 +16,67 @@ Save and categorize content based on your preferences.
+ 
+ # #Performance
+ 
++* 3
++  Authors
++
++  02
++
++  Jun
++  2026
++
++  02
++
++  Jun
++  2026
++
++  ![](/static/blog/assets/Engineering_Memory_Blog_Strapi_3_bfd74f43e5_Z2i8kF7.webp)
++
++  #### [How-tos](/blog/categories/how-tos)
++
++  ## [Prioritizing Memory Efficiency: Essential Steps for Android 17](/blog/posts/prioritizing-memory-efficiency-essential-steps-for-android-17)
++
++  [arrow\_forward](/blog/posts/prioritizing-memory-efficiency-essential-steps-for-android-17)
++
++  While app performance is often equated with a smooth UI and fast start times, memory serves as the silent foundation upon which these visible metrics are built. It's no secret that we're seeing a shift where device memory is more important than ever.
++
++  ###### [Alice Yuan](/blog/authors/alice-yuan), [Ajesh Pai](/blog/authors/ajesh-pai), [Fung Lam](/blog/authors/fung-lam) • 10 min read
++
++  + [#Memory](/blog/topics/memory)
++  + [#Android](/blog/topics/android)
++  + [#Performance](/blog/topics/performance)
++  + +1
++    ↩
++* [![](/static/blog/assets/Ataul_Munim_cf0796f68c_r1HY2.webp)](/blog/authors/ataul-munim)
++
++  02
++
++  Jun
++  2026
++
++  02
++
++  Jun
++  2026
++
++  ![](/static/blog/assets/MM_Differentiated_Experiences_Strapi_bbe8e7618b_19k3ww.webp)
++
++  #### [Product News](/blog/categories/product-news)
++
++  ## [Building Premium Android Experiences at Google I/O ‘26](/blog/posts/building-premium-android-experiences-at-google-i-o-26)
++
++  [arrow\_forward](/blog/posts/building-premium-android-experiences-at-google-i-o-26)
++
++  At Google I/O ‘26, we showcased how the latest advancements in the Android ecosystem can help you elevate your app's quality while maximizing development efficiency.
++
++  ###### [Ataul Munim](/blog/authors/ataul-munim) • 3 min read
++
++  + [#Performance](/blog/topics/performance)
++  + [#Memory](/blog/topics/memory)
++  + [#R8](/blog/topics/r8)
++  + [#Wear OS](/blog/topics/wear-os)
++  + [#Automotive OS](/blog/topics/automotive-os)
++  + +3
++    ↩
+ * [![](/static/blog/assets/1_1_U4_K_Lr4r_A_Kx_Pq0_Crp_L3vr_Q_a4d1920594_2dcD9g.webp)](/blog/authors/ben-weiss)
+ 
+   17
