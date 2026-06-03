@@ -1,41 +1,24 @@
 ---
-title: GridLayout  |  Jetpack  |  Android Developers
+title: https://developer.android.com/jetpack/androidx/releases/gridlayout
 url: https://developer.android.com/jetpack/androidx/releases/gridlayout
-source: html-scrape
+source: md.txt
 ---
-
-* [Android Developers](https://developer.android.com/)
-* [Get started](https://developer.android.com/get-started/overview)
-* [Jetpack](https://developer.android.com/jetpack)
-* [Libraries](https://developer.android.com/jetpack/androidx/explorer)
-
-Stay organized with collections
-
-Save and categorize content based on your preferences.
-
-
-
-
 
 # GridLayout
 
-[Code Sample](https://github.com/android/views-widgets-samples/blob/master/ConstraintLayoutExamples/CycleEditor/src/com/google/androidstudio/motionlayoutcycles/MainPanel.java)
+[Code Sample](https://github.com/android/views-widgets-samples/blob/master/ConstraintLayoutExamples/CycleEditor/src/com/google/androidstudio/motionlayoutcycles/MainPanel.java) Implement a grid layout.
 
-API Reference  
-[androidx.gridlayout.widget](/reference/kotlin/androidx/gridlayout/widget/package-summary)
-
-Implement a grid layout.
-
-**Caution:** This library is in maintenance mode and will only receive critical fixes; new features are not planned. We recommend using [Jetpack Compose](/jetpack/compose) for building Android UIs. See [Compose-first](/develop/ui/compose/first) for more information.
+> [!CAUTION]
+> **Caution:** This library is in maintenance mode and will only receive critical fixes; new features are not planned. We recommend using [Jetpack Compose](https://developer.android.com/jetpack/compose) for building Android UIs. See [Compose-first](https://developer.android.com/develop/ui/compose/first) for more information.
 
 | Latest Update | Stable Release | Release Candidate | Beta Release | Alpha Release |
-| --- | --- | --- | --- | --- |
-| April 9, 2025 | [1.1.0](/jetpack/androidx/releases/gridlayout#1.1.0) | - | - | - |
+|---|---|---|---|---|
+| April 9, 2025 | [1.1.0](https://developer.android.com/jetpack/androidx/releases/gridlayout#1.1.0) | - | - | - |
 
 ## Declaring dependencies
 
 To add a dependency on GridLayout, you must add the Google Maven repository to your
-project. Read [Google's Maven repository](/studio/build/dependencies#google-maven)
+project. Read [Google's Maven repository](https://developer.android.com/studio/build/dependencies#google-maven)
 for more information.
 
 Add the dependencies for the artifacts you need in the `build.gradle` file for
@@ -43,7 +26,7 @@ your app or module:
 
 ### Groovy
 
-```
+```groovy
 dependencies {
     implementation "androidx.gridlayout:gridlayout:1.1.0"
 }
@@ -51,19 +34,19 @@ dependencies {
 
 ### Kotlin
 
-```
+```kotlin
 dependencies {
     implementation("androidx.gridlayout:gridlayout:1.1.0")
 }
 ```
 
-For more information about dependencies, see [Add build dependencies](/studio/build/dependencies).
+For more information about dependencies, see [Add build dependencies](https://developer.android.com/studio/build/dependencies).
 
 ## Feedback
 
 Your feedback helps make Jetpack better. Let us know if you discover new issues or have
 ideas for improving this library. Please take a look at the
-[existing issues](https://issuetracker.google.com/issues?q=componentid:460990%20status:open)
+[existing issues](https://issuetracker.google.com/issues?q=componentid:460990+status:open)
 in this library before you create a new one. You can add your vote to an existing issue by
 clicking the star button.
 
@@ -84,7 +67,7 @@ April 9, 2025
 
 **Important changes since 1.0.0**
 
-* Removed dependency on `androidx.legacy` library and dropped support for legacy `Space` class in GridLayout. Developers should be using the platform version of `Space` (`android.widget.Space`) class instead of the `androidx.legacy` version.
+- Removed dependency on `androidx.legacy` library and dropped support for legacy `Space` class in GridLayout. Developers should be using the platform version of `Space` (`android.widget.Space`) class instead of the `androidx.legacy` version.
 
 ### Version 1.1.0-rc01
 
@@ -106,4 +89,4 @@ March 22, 2023
 
 **New Features**
 
-* Remove dependency on `androidx.legacy` library and drop support for legacy `Space` class in GridLayout. Developers should be using the platform version of Space class instead of the `androidx.legacy` version.
+- Remove dependency on `androidx.legacy` library and drop support for legacy `Space` class in GridLayout. Developers should be using the platform version of Space class instead of the `androidx.legacy` version.
