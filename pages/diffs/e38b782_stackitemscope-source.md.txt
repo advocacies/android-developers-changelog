@@ -1,0 +1,39 @@
+diff --git a/docs/agents/skills/xr/display-glasses-with-jetpack-compose-glimmer/references/stackitemscope-source.md b/docs/agents/skills/xr/display-glasses-with-jetpack-compose-glimmer/references/stackitemscope-source.md
+index 4a1cb6e..bcbe90f 100644
+--- a/docs/agents/skills/xr/display-glasses-with-jetpack-compose-glimmer/references/stackitemscope-source.md
++++ b/docs/agents/skills/xr/display-glasses-with-jetpack-compose-glimmer/references/stackitemscope-source.md
+@@ -1,14 +1,19 @@
+ ---
+-title: https://developer.android.com/agents/skills/xr/display-glasses-with-jetpack-compose-glimmer/references/stackitemscope-source
++title: API source code for Stack Item Scope for Glimmer Stack component  |  Android Developers
+ url: https://developer.android.com/agents/skills/xr/display-glasses-with-jetpack-compose-glimmer/references/stackitemscope-source
+-source: md.txt
++source: html-scrape
+ ---
+ 
++# API source code for Stack Item Scope for Glimmer Stack component Stay organized with collections Save and categorize content based on your preferences.
++
++
++
++
++
+ When creating a Glimmer Stack component, refer to the following source code in
+ `StackItemScope.kt` for setting the stack item scope:
+ 
+-
+-```kotlin
++```
+ /*
+  * Copyright 2025 The Android Open Source Project
+  *
+@@ -441,6 +446,6 @@ private val SurfaceLow = Color(0xFF4F4F4F)
+ private const val MaxItemScrimAlpha = 0.5f
+ private const val MinWidestPointSearchResolution = 20
+ private const val MaxWidestPointSearchResolution = 200
+-```
+ 
+-<br />
+\ No newline at end of file
++StackItemScope.kt
++```
+\ No newline at end of file
