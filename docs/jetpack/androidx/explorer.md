@@ -85,7 +85,7 @@ Select a category:
 | [interpolator](https://developer.android.com/jetpack/androidx/releases/interpolator) | Use animation interpolators on older platforms. |
 | [javascriptengine](https://developer.android.com/jetpack/androidx/releases/javascriptengine) | Enable your Android app to evaluate JavaScript. |
 | [jetifier](https://developer.android.com/jetpack/androidx/releases/jetifier) | A standalone tool that migrates a library's dependencies on the deprecated support library to equivalent AndroidX dependencies. |
-| [leanback](https://developer.android.com/jetpack/androidx/releases/leanback) | Use Compose for TV instead of this artifact. |
+| [leanback](https://developer.android.com/jetpack/androidx/releases/leanback) | A standalone tool that migrates a library's dependencies on the deprecated support library to equivalent AndroidX dependencies. |
 | [legacy](https://developer.android.com/jetpack/androidx/releases/legacy) | This artifact and its classes are deprecated. Starting with Android 8, background check restrictions make this class no longer useful. |
 | [lifecycle \*](https://developer.android.com/jetpack/androidx/releases/lifecycle) | Build lifecycle-aware components that can adjust behavior based on the current lifecycle state of an activity or fragment. |
 | [lint](https://developer.android.com/jetpack/androidx/releases/lint) | Lint checks to verify usage of Gradle APIs |

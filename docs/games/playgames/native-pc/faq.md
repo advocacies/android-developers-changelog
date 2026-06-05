@@ -4,23 +4,20 @@ url: https://developer.android.com/games/playgames/native-pc/faq
 source: md.txt
 ---
 
-This document answers common questions about SDKs and publishing for
-Google Play Games on PC.
+This document answers common questions about SDKs and publishing for Google Play Games on PC.
 
 ## Monetization
 
 1. Can I use the purchase flow without a backend server?
 
-   From a security perspective, processing without a backend server is
-   not recommended.
+   From a security perspective, Google recommends using a backend server.
 
    For more information, see [Process without a backend server](https://developer.android.com/games/playgames/native-pc/billing#process-no-backend).
 
    > [!NOTE]
    > **Note:** To process purchases without a backend server, you need special permissions. If your game requires these permissions, contact your Google partner.
 
-2. Are existing API-based payment systems allowed after integrating the
-   Google Play Games on PC SDK?
+2. Are existing API-based payment systems allowed after integrating the Google Play Games on PC SDK?
 
    All payments must be handled by Google Play Games on PC SDK using the
    Google Play Billing. You cannot use your existing API-based payment method
@@ -78,8 +75,8 @@ Google Play Games on PC.
    To ensure metadata is associated in the case of purchase flow interruptions,
    store the metadata on your backend server prior to launching the purchase
    dialog and associate it with your user's account ID, the SKU being
-   purchased, and the current timestamp. For more information, see [Associate a
-   purchase with internal data](https://developer.android.com/google/play/billing/developer-payload#associate).
+   purchased, and the current timestamp. For more information, see
+   [Associate a purchase with internal data](https://developer.android.com/google/play/billing/developer-payload#associate).
 10. Is a timeout error intended if a user closes the browser without paying
     during a purchase flow?
 
@@ -95,8 +92,7 @@ Google Play Games on PC.
     billing APIs. Switching from the REST billing APIs (with OAuth2 sign-in) to
     the SDK flow can be a feature-flagged operation, so both can coexist for a
     period of time while the game switches over.
-12. Is the Launch Purchase Flow API call processed through a web
-    browser?
+12. Is the Launch Purchase Flow API call processed through a web browser?
 
     Yes, for now it is processed through a browser. Google plans to complete the
     entire flow without leaving the game achievable through the SDK.
@@ -118,8 +114,8 @@ Google Play Games on PC.
 
 ## Windows App Bundle
 
-1. When submitting a WAB using a 3P launcher, is the game
-   package required for review?
+1. When submitting a WAB using a 3P launcher, is the game package required for
+   review?
 
    You can just submit your installer and don't need to submit your entire game
    package, the reviewer will be able to download your game package using the
@@ -137,8 +133,8 @@ Google Play Games on PC.
    time WAB"), the system may automatically place it into a Managed Publishing
    holding state. This happens because there is no existing baseline to update.
    To fully release the WAB and make the game available for installation, you
-   must navigate to the Google Play Console and manually execute the [required
-   publish action](https://developer.android.com/games/playgames/native-pc/publish/developer-installed#send-review) (for example, click "Publish changes").
+   must navigate to the Google Play Console and manually execute the
+   [required publish action](https://developer.android.com/games/playgames/native-pc/publish/developer-installed#send-review) (for example, click "Publish changes").
 4. How do I upload the WAB for internal testing?
 
    Share the allowlist accounts with Google so Google can enable them for
@@ -154,17 +150,16 @@ Google Play Games on PC.
 ## PC SDK
 
 1. What are the differences between the Legacy API and Google Play Games on PC
-   SDK?
 
+   SDK?
    - Our Legacy API only offers Billing functionality.
    - The PC SDK supports Google Desktop Service (GDS) and full PC features.
    - No browser-based Google Sign-in needed is required with the PC SDK.
 2. Is there an alternative way to initialize the SDK by launching the game
-   directly using the game launcher, without going through
-   Google Play Games on PC?
+   directly using the game launcher, without going through Google Play Games on PC?
 
-   Your game must be launched through the Google Play Games on PC client.
-   For more details, refer to this [developer document](https://developer.android.com/games/playgames/native-pc/setup#step-4).
+   Your game must be launched through the Google Play Games on PC client. For
+   more details, refer to this [developer document](https://developer.android.com/games/playgames/native-pc/setup#step-4).
 3. Does the native PC SDK support multibyte characters in the PEM certification
    file?
 
@@ -178,9 +173,8 @@ Google Play Games on PC.
    account B and relaunch both can run at the same time.
 5. Does the Play Install Referrer integration work with the PC SDK?
 
-   The PC SDK (25.5.409.0 and higher) supports the Play
-   Install Referrer API. For more information, see [Play Install Referrer
-   API](https://developer.android.com/games/playgames/native-pc/install_referrer).
+   The PC SDK (25.5.409.0 and higher) supports the Play Install Referrer API.
+   For more information, see [Play Install Referrer API](https://developer.android.com/games/playgames/native-pc/install_referrer).
 
 ## Launcher
 
@@ -201,8 +195,8 @@ Google Play Games on PC.
    game executable). If initialization fails (for example, by returning
    `kActionRequiredShutdownClientProcess`), all processes including the
    launcher must be terminated so Google Play Games can attempt to recover and
-   relaunch the game automatically. For more details, see [Step 5 in the setup
-   guide](https://developer.android.com/games/playgames/native-pc/setup#step-5).
+   relaunch the game automatically. For more details, see
+   [Step 5 in the setup guide](https://developer.android.com/games/playgames/native-pc/setup#step-5).
 3. How can I handle updates and maintenance to my game and launcher after it is
    in production?
 
@@ -210,6 +204,15 @@ Google Play Games on PC.
    launcher. The Google Play Games client does not support update functions, so
    the launcher must be capable of updating both the game and the launcher
    itself.
+4. How does the installer receive the GPG session token for Auto-Play?
+
+   GPG passes the session token using the `--g_session_token=<token>`
+   command-line argument to the installer. To enable this, you must set
+   `acceptsCommandLineArguments="true"` in your `play_publishing_config.xml`.
+
+   The installer is responsible for extracting this token and using it to
+   launch the game. If the token generation fails, GPG launches the installer
+   without the token (fallback).
 
 ## Initialization
 
@@ -236,7 +239,8 @@ Google Play Games on PC.
    opened. If the client is not open, the Google Play Games client opens before
    the game or launcher runs. You need to manage the game or launcher to
    prevent multiple instances from running.
-4. Is there any way to verify the Google Play Games on PC installation without using the SDK?
+4. Is there any way to verify the Google Play Games on PC installation without
+   using the SDK?
 
    You can verify the installation status of Google Play Games on PC without
    integrating the SDK by checking for the presence of the following Windows
@@ -245,10 +249,10 @@ Google Play Games on PC.
    `HKEY_LOCAL_MACHINE\SOFTWARE\Google\Play Games Services`
 
    The presence of this key indicates that the Google Play Games services
-   (required to run games on PC) are installed on the machine.
-   If the key is missing, you should direct the user to the
-   [Google Play Games on PC installation page](https://play.google.com/googleplaygames) to download and
-   install the client.
+   (required to run games on PC) are installed on the machine. If the key is
+   missing, you should direct the user to the
+   [Google Play Games on PC installation page](https://play.google.com/googleplaygames) to download and install the
+   client.
 
 ## Testing
 
@@ -268,9 +272,8 @@ Google Play Games on PC.
 
 1. Can I use a VPN?
 
-   For developers requiring to test their game in [regions](https://support.google.com/googleplay/answer/11358071#zippy=%2Ccountryregion-availability) where
-   Google Play Games on PC is not supported, we recommend that you use a VPN
-   to acquire an IP address from a [supported region](https://support.google.com/googleplay/answer/11358071).
+   For developers requiring to test their game in [regions](https://support.google.com/googleplay/answer/11358071#zippy=%2Ccountryregion-availability) where Google Play Games on PC is not supported, we recommend that you use a VPN to
+   acquire an IP address from a [supported region](https://support.google.com/googleplay/answer/11358071).
 
    Ensure that you enable [TUN mode](https://proprivacy.com/guides/tun-tap) on VPN. Guidance on enabling TUN mode
    and configuring the firewall can be found in the VPN provider's operating
