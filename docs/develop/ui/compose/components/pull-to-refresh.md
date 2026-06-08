@@ -192,9 +192,7 @@ fun MyCustomIndicator(
                         }
                 )
             }
-        }
-    }
-}
+       reshBox.kt
 ```
 
 <br />
