@@ -1,0 +1,15 @@
+diff --git a/docs/develop/ui/compose/components/pull-to-refresh.md b/docs/develop/ui/compose/components/pull-to-refresh.md
+index fe30571..058c19f 100644
+--- a/docs/develop/ui/compose/components/pull-to-refresh.md
++++ b/docs/develop/ui/compose/components/pull-to-refresh.md
+@@ -192,7 +192,9 @@ fun MyCustomIndicator(
+                         }
+                 )
+             }
+-       reshBox.kt
++        }
++    }
++}
+ ```
+ 
+ <br />
