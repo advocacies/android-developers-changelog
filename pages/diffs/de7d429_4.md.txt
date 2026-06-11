@@ -1,0 +1,214 @@
+diff --git a/docs/blog/categories/product-news/4.md b/docs/blog/categories/product-news/4.md
+index 86526a6..f4f77db 100644
+--- a/docs/blog/categories/product-news/4.md
++++ b/docs/blog/categories/product-news/4.md
+@@ -1,168 +1,81 @@
+ ---
+-title: Product News  |  Android Developers' Blog
++title: https://developer.android.com/blog/categories/product-news/4
+ url: https://developer.android.com/blog/categories/product-news/4
+-source: html-scrape
++source: md.txt
+ ---
+ 
+-* [Android Developers](https://developer.android.com/)
+-* [Android Developers' Blog](https://developer.android.com/)
+-* [Blog](https://developer.android.com/blog)
+-
+-Stay organized with collections
+-
+-Save and categorize content based on your preferences.
+-
+-
+-
+-![](/static/blog/assets/product_news_droid_599a11ad69_d4ee764ece_1mQM4e.webp)
++![](https://developer.android.com/static/blog/assets/product_news_droid_599a11ad69_d4ee764ece_1mQM4e.webp)
+ 
+ # Product News
+ 
+-Stay in the loop with the latest updates, feature releases, and behind-the-scenes looks at how we’re evolving.
+-
+-* [![](/static/blog/assets/Vijaya_Kaza_38a0089092_1sYB49.webp)](/blog/authors/vijaya-kaza)
+-
+-  07
+-
+-  May
+-  2026
+-
+-  07
+-
+-  May
+-  2026
+-
+-  ![](/static/blog/assets/260429_A_look_ahead_to_2026_Banner_Strapi_2000_x_1000_px_b302a5104a_1L2cA4.webp)
+-
+-  ## [A look ahead: Making it easier and faster to publish safer apps](/blog/posts/a-look-ahead-making-it-easier-and-faster-to-publish-safer-apps)
+-
+-  [arrow\_forward](/blog/posts/a-look-ahead-making-it-easier-and-faster-to-publish-safer-apps)
+-
+-  The mobile ecosystem is always evolving, bringing both new opportunities and new threats. Through these changes, Android and Google Play remain committed to ensuring that billions of users can continue to enjoy their apps with confidence and developer innovation can thrive.
+-
+-  ###### [Vijaya Kaza](/blog/authors/vijaya-kaza) • 3 min read
+-
+-  + [#Android](/blog/topics/android)
+-* [![](/static/blog/assets/meghan_d663ed9c69_e0a5b5a564_Z21FLk.webp)](/blog/authors/meghan-mehta)
+-
+-  22
+-
+-  Apr
+-  2026
+-
+-  22
+-
+-  Apr
+-  2026
+-
+-  ![](/static/blog/assets/0420_Compose_1_11_Strapi_9c17b19a5e_1zjMqo.webp)
++Stay in the loop with the latest updates, feature releases, and behind-the-scenes looks at how we're evolving.
++- [![](https://developer.android.com/static/blog/assets/Vijaya_Kaza_38a0089092_1sYB49.webp)](https://developer.android.com/blog/authors/vijaya-kaza) 07 May 2026 07 May 2026 ![](https://developer.android.com/static/blog/assets/260429_A_look_ahead_to_2026_Banner_Strapi_2000_x_1000_px_b302a5104a_1L2cA4.webp)
+ 
+-  ## [What's new in the Jetpack Compose April '26 release](/blog/posts/whats-new-in-the-jetpack-compose-april-26-release)
++  ## [A look ahead: Making it easier and faster to publish safer apps](https://developer.android.com/blog/posts/a-look-ahead-making-it-easier-and-faster-to-publish-safer-apps)
+ 
+-  [arrow\_forward](/blog/posts/whats-new-in-the-jetpack-compose-april-26-release)
++  [arrow_forward](https://developer.android.com/blog/posts/a-look-ahead-making-it-easier-and-faster-to-publish-safer-apps) The mobile ecosystem is always evolving, bringing both new opportunities and new threats. Through these changes, Android and Google Play remain committed to ensuring that billions of users can continue to enjoy their apps with confidence and developer innovation can thrive.
+ 
+-  The Jetpack Compose April ‘26 release is stable. This release contains version 1.11 of core Compose modules (see the full BOM mapping), shared element debug tools, trackpad events, and more.
++  ###### [Vijaya Kaza](https://developer.android.com/blog/authors/vijaya-kaza) •
++  3 min read
+ 
+-  ###### [Meghan Mehta](/blog/authors/meghan-mehta) • 5 min read
+-* [![](/static/blog/assets/matt_dyor_b779fca40e_Z2hl456.webp)](/blog/authors/matt-dyor)
++  - [#Android](https://developer.android.com/blog/topics/android)
++- [![](https://developer.android.com/static/blog/assets/meghan_d663ed9c69_e0a5b5a564_Z21FLk.webp)](https://developer.android.com/blog/authors/meghan-mehta) 22 Apr 2026 22 Apr 2026 ![](https://developer.android.com/static/blog/assets/0420_Compose_1_11_Strapi_9c17b19a5e_1zjMqo.webp)
+ 
+-  21
++  ## [What's new in the Jetpack Compose April '26 release](https://developer.android.com/blog/posts/whats-new-in-the-jetpack-compose-april-26-release)
+ 
+-  Apr
+-  2026
++  [arrow_forward](https://developer.android.com/blog/posts/whats-new-in-the-jetpack-compose-april-26-release) The Jetpack Compose April '26 release is stable. This release contains version 1.11 of core Compose modules (see the full BOM mapping), shared element debug tools, trackpad events, and more.
+ 
+-  21
++  ###### [Meghan Mehta](https://developer.android.com/blog/authors/meghan-mehta) •
++  5 min read
+ 
+-  Apr
+-  2026
++- [![](https://developer.android.com/static/blog/assets/matt_dyor_b779fca40e_Z2hl456.webp)](https://developer.android.com/blog/authors/matt-dyor) 21 Apr 2026 21 Apr 2026 ![](https://developer.android.com/static/blog/assets/as_Panda3_385cde5eac_Z1E8IhJ.webp)
+ 
+-  ![](/static/blog/assets/as_Panda3_385cde5eac_Z1E8IhJ.webp)
++  ## [Level up your development with Planning Mode and Next Edit Prediction in Android Studio Panda 4](https://developer.android.com/blog/posts/level-up-your-development-with-planning-mode-and-next-edit-prediction-in-android-studio-panda-4)
+ 
+-  ## [Level up your development with Planning Mode and Next Edit Prediction in Android Studio Panda 4](/blog/posts/level-up-your-development-with-planning-mode-and-next-edit-prediction-in-android-studio-panda-4)
++  [arrow_forward](https://developer.android.com/blog/posts/level-up-your-development-with-planning-mode-and-next-edit-prediction-in-android-studio-panda-4) Android Studio Panda 4 is now stable and ready for you to use in production. This release brings Planning Mode, Next Edit Prediction, and more, making it easier than ever to build high-quality Android apps.
+ 
+-  [arrow\_forward](/blog/posts/level-up-your-development-with-planning-mode-and-next-edit-prediction-in-android-studio-panda-4)
++  ###### [Matt Dyor](https://developer.android.com/blog/authors/matt-dyor) •
++  5 min read
+ 
+-  Android Studio Panda 4 is now stable and ready for you to use in production. This release brings Planning Mode, Next Edit Prediction, and more, making it easier than ever to build high-quality Android apps.
++- [![](https://developer.android.com/static/blog/assets/thomas_ezan_d29c7508d0_l9O72.webp)](https://developer.android.com/blog/authors/thomas-ezan) 17 Apr 2026 17 Apr 2026 ![](https://developer.android.com/static/blog/assets/Hybrid_inference_solution_for_Android_Blog_1_518db36e12_gOJm.webp)
+ 
+-  ###### [Matt Dyor](/blog/authors/matt-dyor) • 5 min read
+-* [![](/static/blog/assets/thomas_ezan_d29c7508d0_l9O72.webp)](/blog/authors/thomas-ezan)
++  ## [Experimental hybrid inference and new Gemini models for Android](https://developer.android.com/blog/posts/experimental-hybrid-inference-and-new-gemini-models-for-android)
+ 
+-  17
++  [arrow_forward](https://developer.android.com/blog/posts/experimental-hybrid-inference-and-new-gemini-models-for-android) If you are an Android developer looking to implement innovative AI features into your app, we recently launched powerful new updates.
+ 
+-  Apr
+-  2026
++  ###### [Thomas Ezan](https://developer.android.com/blog/authors/thomas-ezan) •
++  3 min read
+ 
+-  17
++- [![](https://developer.android.com/static/blog/assets/dgalpin_30033d2d42_Z1EXpfD.webp)](https://developer.android.com/blog/authors/daniel-galpin) 16 Apr 2026 16 Apr 2026 ![](https://developer.android.com/static/blog/assets/android17banner_359909419a_Z1HMAIH.webp)
+ 
+-  Apr
+-  2026
++  ## [The Fourth Beta of Android 17](https://developer.android.com/blog/posts/the-fourth-beta-of-android-17)
+ 
+-  ![](/static/blog/assets/Hybrid_inference_solution_for_Android_Blog_1_518db36e12_gOJm.webp)
++  [arrow_forward](https://developer.android.com/blog/posts/the-fourth-beta-of-android-17) Android 17 has reached beta 4, the last scheduled beta of this release cycle, a critical milestone for app compatibility and platform stability.
+ 
+-  ## [Experimental hybrid inference and new Gemini models for Android](/blog/posts/experimental-hybrid-inference-and-new-gemini-models-for-android)
++  ###### [Daniel Galpin](https://developer.android.com/blog/authors/daniel-galpin) •
++  4 min read
+ 
+-  [arrow\_forward](/blog/posts/experimental-hybrid-inference-and-new-gemini-models-for-android)
++- [![](https://developer.android.com/static/blog/assets/Bennet_Manuel_4be9960838_MydbH.webp)](https://developer.android.com/blog/authors/bennet-manuel) 15 Apr 2026 15 Apr 2026 ![](https://developer.android.com/static/blog/assets/260409_Uyo_policy_bundle_Header_dae9a057fb_2u7Yfb.webp)
+ 
+-  If you are an Android developer looking to implement innovative AI features into your app, we recently launched powerful new updates.
++  ## [Boosting user privacy and business protection with updated Play policies](https://developer.android.com/blog/posts/boosting-user-privacy-and-business-protection-with-updated-play-policies)
+ 
+-  ###### [Thomas Ezan](/blog/authors/thomas-ezan) • 3 min read
+-* [![](/static/blog/assets/dgalpin_30033d2d42_Z1EXpfD.webp)](/blog/authors/daniel-galpin)
++  [arrow_forward](https://developer.android.com/blog/posts/boosting-user-privacy-and-business-protection-with-updated-play-policies) Making Google Play the safest and most trusted experience possible. Today, we're announcing a new set of policy updates and an account transfer feature to boost user privacy and protect your business from fraud.
+ 
+-  16
++  ###### [Bennet Manuel](https://developer.android.com/blog/authors/bennet-manuel) •
++  3 min read
+ 
+-  Apr
+-  2026
+-
+-  16
+-
+-  Apr
+-  2026
+-
+-  ![](/static/blog/assets/android17banner_359909419a_Z1HMAIH.webp)
+-
+-  ## [The Fourth Beta of Android 17](/blog/posts/the-fourth-beta-of-android-17)
+-
+-  [arrow\_forward](/blog/posts/the-fourth-beta-of-android-17)
+-
+-  Android 17 has reached beta 4, the last scheduled beta of this release cycle, a critical milestone for app compatibility and platform stability.
+-
+-  ###### [Daniel Galpin](/blog/authors/daniel-galpin) • 4 min read
+-* [![](/static/blog/assets/Bennet_Manuel_4be9960838_MydbH.webp)](/blog/authors/bennet-manuel)
+-
+-  15
+-
+-  Apr
+-  2026
+-
+-  15
+-
+-  Apr
+-  2026
+-
+-  ![](/static/blog/assets/260409_Uyo_policy_bundle_Header_dae9a057fb_2u7Yfb.webp)
+-
+-  ## [Boosting user privacy and business protection with updated Play policies](/blog/posts/boosting-user-privacy-and-business-protection-with-updated-play-policies)
+-
+-  [arrow\_forward](/blog/posts/boosting-user-privacy-and-business-protection-with-updated-play-policies)
+-
+-  Making Google Play the safest and most trusted experience possible. Today, we’re announcing a new set of policy updates and an account transfer feature to boost user privacy and protect your business from fraud.
+-
+-  ###### [Bennet Manuel](/blog/authors/bennet-manuel) • 3 min read
+-
+-[arrow\_back](/blog/categories/product-news/3)
++[arrow_back](https://developer.android.com/blog/categories/product-news/3)
+ 
+ #### Page 4
+ 
+ ###### of 16
+ 
+-[arrow\_forward](/blog/categories/product-news/5)
++[arrow_forward](https://developer.android.com/blog/categories/product-news/5)
+ 
+ # Stay in the loop
+ 
++
+ Get the latest Android development insights delivered to your inbox
+ weekly.
+-
+ [mail
+-Subscribe](/subscribe)
+-
+-![A 3D illustration of the Android mascot, wearing a jetpack that's emitting a large cloud of bubbles](/static/blog/assets/rocket-android.CVJQZOf1_1PnraM.webp)
+\ No newline at end of file
++Subscribe](https://developer.android.com/subscribe) ![A 3D illustration of the Android mascot, wearing a jetpack that's emitting a large cloud of bubbles](https://developer.android.com/static/blog/assets/rocket-android.CVJQZOf1_1PnraM.webp)
+\ No newline at end of file
