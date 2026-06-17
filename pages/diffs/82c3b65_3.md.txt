@@ -1,0 +1,55 @@
+diff --git a/docs/blog/latest/3.md b/docs/blog/latest/3.md
+index 01770db..ed7b505 100644
+--- a/docs/blog/latest/3.md
++++ b/docs/blog/latest/3.md
+@@ -7,6 +7,17 @@ source: md.txt
+ # The Latest
+ 
+ Stay up to date with the latest announcements, feature rollouts, and updates across Android tools, libraries, and platforms.
++- [![](https://developer.android.com/static/blog/assets/default-avatar.DvQ_6oi6_pd2P1.svg)](https://developer.android.com/blog/authors/michael-stillwell)[![](https://developer.android.com/static/blog/assets/dimitris_kosmidis_08bb21b8a2_Lifx.webp)](https://developer.android.com/blog/authors/dimitris-kosmidis) 01 Apr 2026 01 Apr 2026 ![](https://developer.android.com/static/blog/assets/wear_os_64_1de6378905_ZOTQoW.webp)
++
++  #### [Product News](https://developer.android.com/blog/categories/product-news)
++
++  ## [Get your Wear OS apps ready for the 64-bit requirement](https://developer.android.com/blog/posts/get-your-wear-os-apps-ready-for-the-64-bit-requirement)
++
++  [arrow_forward](https://developer.android.com/blog/posts/get-your-wear-os-apps-ready-for-the-64-bit-requirement) 64-bit architectures provide performance improvements and a foundation for future innovation, delivering faster and richer experiences for your users. We've supported 64-bit CPUs since Android 5.
++
++  ###### [Michael Stillwell](https://developer.android.com/blog/authors/michael-stillwell), [Dimitris Kosmidis](https://developer.android.com/blog/authors/dimitris-kosmidis) •
++  2 min read
++
+ - [![](https://developer.android.com/static/blog/assets/1_1_U4_K_Lr4r_A_Kx_Pq0_Crp_L3vr_Q_a4d1920594_2dcD9g.webp)](https://developer.android.com/blog/authors/ben-weiss)[![](https://developer.android.com/static/blog/assets/Tracy_Agyemang_Headshot_9a0c523435_1hBimO.webp)](https://developer.android.com/blog/authors/tracy-agyemang) 30 Mar 2026 30 Mar 2026 ![](https://developer.android.com/static/blog/assets/monzo_boosts_performance_aff3a37917_6VY99.webp)
+ 
+   #### [Case Studies](https://developer.android.com/blog/categories/case-studies)
+@@ -221,17 +232,6 @@ Stay up to date with the latest announcements, feature rollouts, and updates acr
+   ###### [Sameer Samat](https://developer.android.com/blog/authors/sameer-samat) •
+   3 min read
+ 
+-- [![](https://developer.android.com/static/blog/assets/matt_dyor_b779fca40e_Z2hl456.webp)](https://developer.android.com/blog/authors/matt-dyor) 03 Mar 2026 03 Mar 2026 ![](https://developer.android.com/static/blog/assets/as_Panda3_385cde5eac_Z1E8IhJ.webp)
+-
+-  #### [Product News](https://developer.android.com/blog/categories/product-news)
+-
+-  ## [Go from prompt to working prototype with Android Studio Panda 2](https://developer.android.com/blog/posts/go-from-prompt-to-working-prototype-with-android-studio-panda-2)
+-
+-  [arrow_forward](https://developer.android.com/blog/posts/go-from-prompt-to-working-prototype-with-android-studio-panda-2) Android Studio Panda 2 is now stable and ready for you to use in production.
+-
+-  ###### [Matt Dyor](https://developer.android.com/blog/authors/matt-dyor) •
+-  3 min read
+-
+ [arrow_back](https://developer.android.com/blog/latest/2)
+ 
+ #### Page 3
+@@ -248,13 +248,13 @@ Stay up to date with the latest announcements, feature rollouts, and updates acr
+ - [#Compose](https://developer.android.com/blog/topics/compose)
+ - [#Performance](https://developer.android.com/blog/topics/performance)
+ - [#Android XR](https://developer.android.com/blog/topics/android-xr)
++- [#Android 17](https://developer.android.com/blog/topics/android-17)
+ - [#Wear OS](https://developer.android.com/blog/topics/wear-os)
+ - [#Jetpack Navigation](https://developer.android.com/blog/topics/jetpack-navigation)
+ - [#R8](https://developer.android.com/blog/topics/r8)
+ - [#Mobile App Development](https://developer.android.com/blog/topics/mobile-app-development)
+ - [#Adaptive apps](https://developer.android.com/blog/topics/adaptive-apps)
+ - [#Automotive OS](https://developer.android.com/blog/topics/automotive-os)
+-- [#Android 17](https://developer.android.com/blog/topics/android-17)
+ - [#Adaptive \& Differentiated](https://developer.android.com/blog/topics/adaptive-and-differentiated)
+ - [#AppFunctions](https://developer.android.com/blog/topics/app-functions)
+ - [#Memory](https://developer.android.com/blog/topics/memory)
