@@ -13508,8 +13508,8 @@
     },
     "build/jdks.md": {
       "original_url": "https://developer.android.com/build/jdks",
-      "hash": "608db5dccf2ef7d2059faec61256032d0075b33b23fd30037cddfdbfb40740c3",
-      "last_updated": "2026-04-10T15:18:39.157888",
+      "hash": "4a5b30b80340b7a38327225aaae5d8852120fa16efcde2af11955456976e024e",
+      "last_updated": "2026-06-23T17:13:07.107814",
       "fetch_method": "md.txt"
     },
     "develop/ui/compose/modifiers-list.md": {
@@ -13880,8 +13880,8 @@
     },
     "studio/nightly.md": {
       "original_url": "https://developer.android.com/studio/nightly",
-      "hash": "94301be8b26ee832f900eba47f56bbe273d2a474cb365e3830c742908ee05165",
-      "last_updated": "2026-06-22T18:43:57.800386",
+      "hash": "5aefadc9ece65c264ea6bf7fac8624e4117cea2d76534451bf27f4df7cb6e518",
+      "last_updated": "2026-06-23T17:13:14.875068",
       "fetch_method": "md.txt"
     },
     "develop/xr/jetpack-xr-sdk/arcore/hands.md": {
@@ -14126,8 +14126,8 @@
     },
     "jetpack/androidx/releases/wear.md": {
       "original_url": "https://developer.android.com/jetpack/androidx/releases/wear",
-      "hash": "10de0bea505501af06cd39fbc3e6ce7d5cd5226fb29efa13c70ddec6b2f5dda7",
-      "last_updated": "2026-06-04T19:52:12.436508",
+      "hash": "fab03188ca70f158f49cc792af6c41a1910bdc2d19e06b68a33994a9fb3dad8b",
+      "last_updated": "2026-06-23T17:14:39.036807",
       "fetch_method": "md.txt"
     },
     "identity/digital-credentials/credential-holder.md": {
@@ -15224,8 +15224,8 @@
     },
     "jetpack/androidx/releases/annotation.md": {
       "original_url": "https://developer.android.com/jetpack/androidx/releases/annotation",
-      "hash": "5f5f56236ad334f317a1dfedc7a5c012f9324847f9660eda1bd1201f65043230",
-      "last_updated": "2026-04-08T15:36:08.327505",
+      "hash": "948dbb562b448d8ea8025a56a303f70cd35293f247b146deb0635ef52c7f5b41",
+      "last_updated": "2026-06-23T17:12:17.605528",
       "fetch_method": "md.txt"
     },
     "build/releases/agp-7-1-0-release-notes.md": {
@@ -19640,8 +19640,8 @@
     },
     "training/cars/media/automotive-os.md": {
       "original_url": "https://developer.android.com/training/cars/media/automotive-os",
-      "hash": "27db1f716dfd604c89526f1d0722f5e3d094b95ebc4b167225b73dec11a74499",
-      "last_updated": "2026-06-19T17:17:20.461358",
+      "hash": "b16328217bcd4a995aa3bfe26d4990b6c1a9a1a7c1a63a57581d01925fa897a3",
+      "last_updated": "2026-06-23T17:16:36.692706",
       "fetch_method": "md.txt"
     },
     "jetpack/androidx/releases/constraintlayout.md": {
@@ -20492,8 +20492,8 @@
     },
     "training/wearables/always-on.md": {
       "original_url": "https://developer.android.com/training/wearables/always-on",
-      "hash": "ca8715dce57d113bef38f199c481df6d17110ec1882cf4f0dd65c72749ff4b12",
-      "last_updated": "2026-04-10T15:20:12.575362",
+      "hash": "bbef535a4ff648e31e6612b547e5c24273e9f875cc557590f285c8599f5ae29a",
+      "last_updated": "2026-06-23T17:17:23.841901",
       "fetch_method": "md.txt"
     },
     "design/ui/mobile/guides/layout-and-content/immersive-content.md": {
@@ -23270,8 +23270,8 @@
     },
     "develop/xr/jetpack-xr-sdk/add-environments.md": {
       "original_url": "https://developer.android.com/develop/xr/jetpack-xr-sdk/add-environments",
-      "hash": "b8f1e4f534f5137ca1e9c461994c7cd56434315851d37ffe1c8225a77dae8616",
-      "last_updated": "2026-06-20T16:14:40.334283",
+      "hash": "dde40c16555c21ef74e302fde079848e1fc712aed31728ec4526fce5734ce4c4",
+      "last_updated": "2026-06-23T17:13:07.292383",
       "fetch_method": "md.txt"
     },
     "google/play/billing/backend.md": {
@@ -29768,8 +29768,8 @@
     },
     "develop/xr/catalyst.md": {
       "original_url": "https://developer.android.com/develop/xr/catalyst",
-      "hash": "01390b6ff934b8c79a5d37343d792f692109215299cec1879fa85ccf550dbdba",
-      "last_updated": "2026-06-01T19:55:14.528307",
+      "hash": "4dc6a7a68981148701a36cc456bfbfb5e1e28c246d3d3c88553616ac4916b506",
+      "last_updated": "2026-06-23T17:13:47.753526",
       "fetch_method": "md.txt"
     },
     "design/ui/cars/guides/components/section-header/section-header.md": {
@@ -30929,7 +30929,19 @@
       "hash": "82fff2e28c073b81259d6249030c743318330d596ebbaf45654cd49ccd8f97ef",
       "last_updated": "2026-06-22T18:47:20.800489",
       "fetch_method": "md.txt"
+    },
+    "training/wearables/get-started/debug-wifi.md": {
+      "original_url": "https://developer.android.com/training/wearables/get-started/debug-wifi",
+      "hash": "09aa259be6e98dba48bf17906a32023751f1546e873a201b224a707fb4795951",
+      "last_updated": "2026-06-23T17:11:39.034618",
+      "fetch_method": "html-scrape"
+    },
+    "agents/skills/security/android-intent-security/SKILL.md": {
+      "original_url": "https://developer.android.com/agents/skills/security/android-intent-security/SKILL",
+      "hash": "892c22936d147124ff6a1ca24342d8382a03aa2d3f9d44dbacbb4f6d65cf905c",
+      "last_updated": "2026-06-23T17:16:40.625892",
+      "fetch_method": "md.txt"
     }
   },
-  "last_updated": "2026-06-22T18:47:37.114635"
+  "last_updated": "2026-06-23T17:17:28.249807"
 }
