@@ -1,20 +1,8 @@
 ---
-title: AEP guideline: Quality - Jetpack Compose  |  Apps Experience Program  |  Android Developers
+title: https://developer.android.com/distribute/aep/aep-req-jetpack-compose
 url: https://developer.android.com/distribute/aep/aep-req-jetpack-compose
-source: html-scrape
+source: md.txt
 ---
-
-You are currently viewing the Apps Experience Program (AEP) documentation.
-
-* [Android Developers](https://developer.android.com/)
-* [Google Play](https://developer.android.com/distribute)
-* [Apps Experience Program](https://developer.android.com/distribute/aep)
-
-# AEP guideline: Quality - Jetpack Compose Stay organized with collections Save and categorize content based on your preferences.
-
-
-
-
 
 Use Jetpack Compose to build the UI. Jetpack Compose is the preferred UI toolkit
 for Android development. It provides the most direct route to fulfill the
@@ -52,29 +40,21 @@ considered alongside the accepted alternative toolkits. To qualify, the toolkit
 must meet these benchmarks:
 
 1. **Performance**
-   1. Achieve [time to initial display](/topic/performance/vitals/launch-time#time-initial) under 400 ms using pre-compilation
-      or equivalent optimizations.
+   1. Achieve [time to initial display](https://developer.android.com/topic/performance/vitals/launch-time#time-initial) under 400 ms using pre-compilation or equivalent optimizations.
    2. Render UI at the device's native refresh rate without frame drops.
 2. **Standard Android UI paradigms**
-   1. Provide [touch-feedback animations](/develop/ui/compose/touch-input/user-interactions/handling-interactions) for all element interactions.
-   2. Support edge-to-edge design by drawing behind system bars and handling
-      window insets.
-   3. Support [overscroll](/reference/kotlin/androidx/compose/foundation/OverscrollEffect) stretch effects at scroll boundaries.
-   4. Respond automatically to system light and dark theme toggles without app
-      restarts.
-   5. Apply device-level palette APIs to adjust UI tokens dynamically using
-      Material Design support.
+   1. Provide [touch-feedback animations](https://developer.android.com/develop/ui/compose/touch-input/user-interactions/handling-interactions) for all element interactions.
+   2. Support edge-to-edge design by drawing behind system bars and handling window insets.
+   3. Support [overscroll](https://developer.android.com/reference/kotlin/androidx/compose/foundation/OverscrollEffect) stretch effects at scroll boundaries.
+   4. Respond automatically to system light and dark theme toggles without app restarts.
+   5. Apply device-level palette APIs to adjust UI tokens dynamically using Material Design support.
 3. **Supports assistive features**
-   1. Integrate with the Android Accessibility Framework, including screen
-      reader and TalkBack support.
+   1. Integrate with the Android Accessibility Framework, including screen reader and TalkBack support.
    2. Support the Android Autofill framework for streamlined user data entry.
-   3. Integrate with system intelligence services for real-time app activity
-      capture.
+   3. Integrate with system intelligence services for real-time app activity capture.
 4. **Multi-Window, folding, and adaptability**
-   1. Scale UI boundaries mid-session across window size classes without
-      container restarts.
-   2. Preserve active session states, such as video playback or form input,
-      during mid-session folding or resizing.
+   1. Scale UI boundaries mid-session across window size classes without container restarts.
+   2. Preserve active session states, such as video playback or form input, during mid-session folding or resizing.
 
 ## Feature documentation and resources
 
@@ -82,6 +62,6 @@ The following resources provide implementation guidance and technical details on
 the **Jetpack Compose** feature. These resources are for your reference only and
 don't contain additional program requirements.
 
-* [Jetpack Compose for Android Developers](/courses/jetpack-compose/course)
-* [Jetpack Compose Tutorial](/develop/ui/compose/tutorial)
-* [Jetpack Compose documentation](/develop/ui/compose/documentation)
+- [Jetpack Compose for Android Developers](https://developer.android.com/courses/jetpack-compose/course)
+- [Jetpack Compose Tutorial](https://developer.android.com/develop/ui/compose/tutorial)
+- [Jetpack Compose documentation](https://developer.android.com/develop/ui/compose/documentation)

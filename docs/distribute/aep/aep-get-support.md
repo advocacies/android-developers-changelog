@@ -1,20 +1,8 @@
 ---
-title: Get support  |  Apps Experience Program  |  Android Developers
+title: https://developer.android.com/distribute/aep/aep-get-support
 url: https://developer.android.com/distribute/aep/aep-get-support
-source: html-scrape
+source: md.txt
 ---
-
-You are currently viewing the Apps Experience Program (AEP) documentation.
-
-* [Android Developers](https://developer.android.com/)
-* [Google Play](https://developer.android.com/distribute)
-* [Apps Experience Program](https://developer.android.com/distribute/aep)
-
-# Get support Stay organized with collections Save and categorize content based on your preferences.
-
-
-
-
 
 If you need assistance or have questions regarding the Apps Experience Program
 (AEP) guidelines, application review status, or service fee configurations, you
@@ -38,6 +26,6 @@ If you don't have a Google Play Console developer account,
 Please include the following information in your support request submission to
 help us process your inquiry efficiently:
 
-* Your organization name and contact details
-* The package names of any apps you plan to enroll (if applicable)
-* A brief description of your platform or technical integration questions
+- Your organization name and contact details
+- The package names of any apps you plan to enroll (if applicable)
+- A brief description of your platform or technical integration questions
