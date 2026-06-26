@@ -1,14 +1,19 @@
 ---
-title: https://developer.android.com/agents/skills/xr/display-glasses-with-jetpack-compose-glimmer/references/titlechip-samples-source
+title: Implementation samples for Glimmer Title Chip component  |  Android Developers
 url: https://developer.android.com/agents/skills/xr/display-glasses-with-jetpack-compose-glimmer/references/titlechip-samples-source
-source: md.txt
+source: html-scrape
 ---
+
+# Implementation samples for Glimmer Title Chip component Stay organized with collections Save and categorize content based on your preferences.
+
+
+
+
 
 When creating a Glimmer Title Chip component, refer to the following
 implementation samples in `TitleChipSamples.kt`:
 
-
-```kotlin
+```
 /*
  * Copyright 2025 The Android Open Source Project
  *
@@ -102,6 +107,6 @@ private fun TitleChipWithLeadingIconPreview() {
 private fun TitleChipWithCardPreview() {
     GlimmerTheme { TitleChipWithCardSample() }
 }
-```
 
-<br />
+TitleChipSamples.kt
+```
