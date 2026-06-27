@@ -1,0 +1,39 @@
+diff --git a/docs/agents/skills/xr/display-glasses-with-jetpack-compose-glimmer/references/titlechip-samples-source.md b/docs/agents/skills/xr/display-glasses-with-jetpack-compose-glimmer/references/titlechip-samples-source.md
+index 91594cb..b6ffa91 100644
+--- a/docs/agents/skills/xr/display-glasses-with-jetpack-compose-glimmer/references/titlechip-samples-source.md
++++ b/docs/agents/skills/xr/display-glasses-with-jetpack-compose-glimmer/references/titlechip-samples-source.md
+@@ -1,19 +1,14 @@
+ ---
+-title: Implementation samples for Glimmer Title Chip component  |  Android Developers
++title: https://developer.android.com/agents/skills/xr/display-glasses-with-jetpack-compose-glimmer/references/titlechip-samples-source
+ url: https://developer.android.com/agents/skills/xr/display-glasses-with-jetpack-compose-glimmer/references/titlechip-samples-source
+-source: html-scrape
++source: md.txt
+ ---
+ 
+-# Implementation samples for Glimmer Title Chip component Stay organized with collections Save and categorize content based on your preferences.
+-
+-
+-
+-
+-
+ When creating a Glimmer Title Chip component, refer to the following
+ implementation samples in `TitleChipSamples.kt`:
+ 
+-```
++
++```kotlin
+ /*
+  * Copyright 2025 The Android Open Source Project
+  *
+@@ -107,6 +102,6 @@ private fun TitleChipWithLeadingIconPreview() {
+ private fun TitleChipWithCardPreview() {
+     GlimmerTheme { TitleChipWithCardSample() }
+ }
++```
+ 
+-TitleChipSamples.kt
+-```
+\ No newline at end of file
++<br />
+\ No newline at end of file
