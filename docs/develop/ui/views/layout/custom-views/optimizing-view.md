@@ -1,20 +1,8 @@
 ---
-title: Optimize a custom view  |  Views  |  Android Developers
+title: https://developer.android.com/develop/ui/views/layout/custom-views/optimizing-view
 url: https://developer.android.com/develop/ui/views/layout/custom-views/optimizing-view
-source: html-scrape
+source: md.txt
 ---
-
-* [Android Developers](https://developer.android.com/)
-* [Develop](https://developer.android.com/develop)
-* [Core areas](https://developer.android.com/develop/core-areas)
-* [UI](https://developer.android.com/develop/ui)
-* [Views](https://developer.android.com/develop/ui/views/layout/declaring-layout)
-
-# Optimize a custom view Stay organized with collections Save and categorize content based on your preferences.
-
-
-
-
 
 When you have a well-designed view that responds to gestures and transitions between states, make
 sure the view runs fast. To avoid a UI that feels sluggish or stutters during playback, make sure
@@ -24,7 +12,7 @@ animations consistently run at 60 frames per second.
 
 To speed up your view, eliminate unnecessary code from routines that are called frequently. Start
 with
-`onDraw()`,
+`https://developer.android.com/reference/android/view/View#onDraw(android.graphics.Canvas)`,
 which gives you the biggest payback. In particular, eliminate allocations in `onDraw()`,
 because allocations might lead to a garbage collection that causes a stutter. Allocate objects
 during initialization or between animations. Never make an allocation while an animation is
@@ -32,15 +20,15 @@ running.
 
 In addition to making `onDraw()` leaner, make sure it's called as infrequently as
 possible. Most calls to `onDraw()` are the result of a call to
-`invalidate()`, so eliminate
+`https://developer.android.com/reference/android/view/View#invalidate()`, so eliminate
 unnecessary calls to `invalidate()`.
 
 Another very expensive operation is traversing layouts. When a view calls
-`requestLayout()`, the
+`https://developer.android.com/reference/android/view/View#requestLayout()`, the
 Android UI system traverses the entire view hierarchy to find how big each view needs to be. If it
 finds conflicting measurements, it might traverse the hierarchy multiple times. UI designers
 sometimes create deep hierarchies of nested
-`ViewGroup` objects. These deep view
+`https://developer.android.com/reference/android/view/ViewGroup` objects. These deep view
 hierarchies cause performance problems, so make your view hierarchies as shallow as possible.
 
 If you have a complex UI, consider writing a custom `ViewGroup` to perform its layout.

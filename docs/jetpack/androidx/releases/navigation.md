@@ -13,7 +13,7 @@ source: md.txt
 
 | Latest Update | Stable Release | Release Candidate | Beta Release | Alpha Release |
 |---|---|---|---|---|
-| May 19, 2026 | [2.9.8](https://developer.android.com/jetpack/androidx/releases/navigation#2.9.8) | - | - | [2.10.0-alpha05](https://developer.android.com/jetpack/androidx/releases/navigation#2.10.0-alpha05) |
+| July 01, 2026 | [2.9.8](https://developer.android.com/jetpack/androidx/releases/navigation#2.9.8) | - | - | [2.10.0-alpha06](https://developer.android.com/jetpack/androidx/releases/navigation#2.10.0-alpha06) |
 
 ## Declaring dependencies
 
@@ -176,6 +176,19 @@ See the [Issue Tracker documentation](https://developers.google.com/issue-tracke
 for more information.
 
 ## Navigation Version 2.10
+
+### Version 2.10.0-alpha06
+
+July 01, 2026
+
+`androidx.navigation:navigation-*:2.10.0-alpha06` is released. Version 2.10.0-alpha06 contains [these commits](https://android.googlesource.com/platform/frameworks/support/+log/ed0627453f51baab21d30d8ca8f74a50ff1cfa7a..ba3014c143b9c9782fe30bc766c5dced55e13453/navigation).
+
+**Bug Fixes**
+
+- Modified `handleDeepLink` to ensure only recognized deep links are handled ([Id4fe3](https://android-review.googlesource.com/#/q/Id4fe399e00c3afc5e85d60778be5b020a058be95), [b/509640056](https://issuetracker.google.com/issues/509640056))
+- Changed `ComposableFragment` to use the fully qualified name from the destination instead of a fragment argument to inflate composable functions. ([I65ded](https://android-review.googlesource.com/#/q/I65dedd09ce677da6d1b30139f2488890e6db5033), [b/509640586](https://issuetracker.google.com/issues/509640586))
+- Fixed a crash in `FragmentNavigator` that caused legitimate Fragments to throw an `IllegalArgumentException` when operations are optimized out. ([I093b0](https://android-review.googlesource.com/#/q/I093b09ab6503e93938c7ce5d94275dccd7de4534), [b/340202276](https://issuetracker.google.com/issues/340202276))
+- Fixed an error in Navigation with Fragments where setting the graph programmatically would fail to be restored properly. ([I41251](https://android-review.googlesource.com/#/q/I412513f82942ba143ded2555bb5d576cb7d3178e), [b/321147435](https://issuetracker.google.com/issues/321147435))
 
 ### Version 2.10.0-alpha05
 
