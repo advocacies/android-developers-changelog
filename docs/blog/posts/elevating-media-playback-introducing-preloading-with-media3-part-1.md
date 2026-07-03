@@ -1,28 +1,53 @@
 ---
-title: https://developer.android.com/blog/posts/elevating-media-playback-introducing-preloading-with-media3-part-1
+title: Elevating media playback: Introducing preloading with Media3 - Part 1  |  Android Developers' Blog
 url: https://developer.android.com/blog/posts/elevating-media-playback-introducing-preloading-with-media3-part-1
-source: md.txt
+source: html-scrape
 ---
 
-[Product News](https://developer.android.com/blog/categories/product-news)
+* [Android Developers](https://developer.android.com/)
+* [Android Developers' Blog](https://developer.android.com/)
+* [Blog](https://developer.android.com/blog)
+
+Stay organized with collections
+
+Save and categorize content based on your preferences.
+
+
+
+[Product News](/blog/categories/product-news)
 
 # Elevating media playback: Introducing preloading with Media3 - Part 1
 
-8-min read ![](https://developer.android.com/static/blog/assets/elevating_Media_Playback_16bfc9b0d6_25Uc6u.webp) 05 Sep 2025 [![View Mayuri Khinvasara Khabya's profile](https://developer.android.com/static/blog/assets/Mayuri_Khinvasara_Khabya_92848b1e1b_1xSr0w.webp)](https://developer.android.com/blog/authors/mayuri-khabya) [Mayuri Khinvasara Khabya](https://developer.android.com/blog/authors/mayuri-khabya) Developer Relations Engineer In today's media-centric apps, delivering a smooth, uninterrupted playback experience is key to a delightful user experience. Users expect their videos to start instantly and play seamlessly without pauses.
+8-min read
 
-The core challenge is latency. Traditionally, a video player only starts its work---connecting, downloading, parsing, buffering---after the user has chosen an item for playback. This reactive approach is slow for today's short form video context. The solution is to be proactive. We need to anticipate what the user will watch next and get the content ready ahead of time. This is the essence of preloading.
+![](/static/blog/assets/elevating_Media_Playback_16bfc9b0d6_25Uc6u.webp)
+
+05
+
+Sep
+2025
+
+[![View Mayuri Khinvasara Khabya's profile](/static/blog/assets/Mayuri_Khinvasara_Khabya_92848b1e1b_1xSr0w.webp)](/blog/authors/mayuri-khabya)
+
+[Mayuri Khinvasara Khabya](/blog/authors/mayuri-khabya)
+
+Developer Relations Engineer
+
+In today's media-centric apps, delivering a smooth, uninterrupted playback experience is key to a delightful user experience. Users expect their videos to start instantly and play seamlessly without pauses.
+
+The core challenge is latency. Traditionally, a video player only starts its work—connecting, downloading, parsing, buffering—after the user has chosen an item for playback. This reactive approach is slow for today's short form video context. The solution is to be proactive. We need to anticipate what the user will watch next and get the content ready ahead of time. This is the essence of preloading.
 
 The key benefits of preloading include:
 
-- **🚀 Faster Playback Start:** Videos are already ready to go, leading to quicker transitions between items and a more immediate start.
-- **📉 Reduced Buffering:** By proactively loading data, playback is far less likely to stall, for example due to network hiccups.
-- **✨ Resulting smoother User Experience:** The combination of faster starts and less buffering creates a more fluid, seamless interaction for users to enjoy.
+* **🚀 Faster Playback Start:** Videos are already ready to go, leading to quicker transitions between items and a more immediate start.
+* **📉 Reduced Buffering:** By proactively loading data, playback is far less likely to stall, for example due to network hiccups.
+* **✨ Resulting smoother User Experience:** The combination of faster starts and less buffering creates a more fluid, seamless interaction for users to enjoy.
 
-In this three-part series, we'll introduce and deep dive into Media3's powerful utilities for (pre)loading components.
+In this three-part series, we'll introduce and deep dive into Media3’s powerful utilities for (pre)loading components.
 
-- In Part 1, we'll cover the foundations: understanding the different preloading strategies available in Media3, enabling PreloadConfiguration and setting up the DefaultPreloadManager, enabling your app to preload items. By the end of this blog, you should be able to preload and play media items with your configured ranking and duration.
-- In [Part 2](https://android-developers.googleblog.com/2025/09/a-deep-dive-into-media3-preloadmanager.html), we'll get into more advanced topics of DefaultPreloadManager: using listeners for analytics, exploring production-ready best practices like the sliding window pattern and custom shared components of DefaultPreloadManager and ExoPlayer.
-- In Part 3, we'll dive deep into disk caching with DefaultPreloadManager.
+* In Part 1, we'll cover the foundations: understanding the different preloading strategies available in Media3, enabling PreloadConfiguration and setting up the DefaultPreloadManager, enabling your app to preload items. By the end of this blog, you should be able to preload and play media items with your configured ranking and duration.
+* In [Part 2](https://android-developers.googleblog.com/2025/09/a-deep-dive-into-media3-preloadmanager.html), we'll get into more advanced topics of DefaultPreloadManager: using listeners for analytics, exploring production-ready best practices like the sliding window pattern and custom shared components of DefaultPreloadManager and ExoPlayer.
+* In Part 3, we'll dive deep into disk caching with DefaultPreloadManager.
 
 ## Preloading to the rescue! 🦸‍♀️
 
@@ -36,18 +61,18 @@ In Media3 there are two primary APIs for preloading, each suited for different u
 
 ### 1. Preloading playlist items with PreloadConfiguration
 
-This is the simple approach, useful for linear, sequential media like playlists where the playback order is predictable (like a series of episodes). You give the player the full list of media items using ExoPlayer's [playlist](https://developer.android.com/media/media3/exoplayer/playlists) APIs and set the [PreloadConfiguration](https://developers.google.com/admob/android/reference/com/google/android/gms/ads/preload/PreloadConfiguration) for the player, then it automatically preloads the next items in the sequence as configured. This API attempts to optimize the join latency when a user skips to the next item before the playback buffer already overlaps into the next item.
+This is the simple approach, useful for linear, sequential media like playlists where the playback order is predictable (like a series of episodes). You give the player the full list of media items using ExoPlayer's [playlist](/media/media3/exoplayer/playlists) APIs and set the [PreloadConfiguration](https://developers.google.com/admob/android/reference/com/google/android/gms/ads/preload/PreloadConfiguration) for the player, then it automatically preloads the next items in the sequence as configured. This API attempts to optimize the join latency when a user skips to the next item before the playback buffer already overlaps into the next item.
 
 Preloading is only started when no media is being loaded for the ongoing playback, which prevents it from competing for bandwidth with the primary playback.
 
-If you're still not sure whether you need preloading, this API is a great low-lift option to try it out!
+If you’re still not sure whether you need preloading, this API is a great low-lift option to try it out!
 
 ```
 player.preloadConfiguration =
     PreloadConfiguration(/* targetPreloadDurationUs= */ 5_000_000L)
 ```
 
-With the [PreloadConfiguration](https://developer.android.com/reference/kotlin/androidx/media3/exoplayer/ExoPlayer.PreloadConfiguration) above, the player tries to preload five seconds of media for the next item in the playlist.
+With the [PreloadConfiguration](/reference/kotlin/androidx/media3/exoplayer/ExoPlayer.PreloadConfiguration) above, the player tries to preload five seconds of media for the next item in the playlist.
 
 Once opted-in, playlist preloading can be turned off again by using `PreloadConfiguration.DEFAULT` to disable playlist preloading:
 
@@ -61,9 +86,9 @@ For dynamic UIs like vertical feeds or carousels, where the "next" item is deter
 
 #### Setting Up Your PreloadManager
 
-The [DefaultPreloadManager](https://developer.android.com/reference/androidx/media3/exoplayer/source/preload/DefaultPreloadManager) is the canonical implementation for PreloadManager.
+The [DefaultPreloadManager](/reference/androidx/media3/exoplayer/source/preload/DefaultPreloadManager) is the canonical implementation for PreloadManager.
 
-The builder of `DefaultPreloadManager` can build both the DefaultPreloadManager and any [ExoPlayer](https://developer.android.com/media/media3/exoplayer) instances that will play its preloaded content. To create a DefaultPreloadManager, you will need to pass a TargetPreloadStatusControl, which the preload manager can query to find out how much to load for an item. We will explain and define an example of TargetPreloadStatusControl in the section below.
+The builder of `DefaultPreloadManager` can build both the DefaultPreloadManager and any [ExoPlayer](/media/media3/exoplayer) instances that will play its preloaded content. To create a DefaultPreloadManager, you will need to pass a TargetPreloadStatusControl, which the preload manager can query to find out how much to load for an item. We will explain and define an example of TargetPreloadStatusControl in the section below.
 
 ```
 val preloadManagerBuilder =
@@ -74,11 +99,11 @@ val preloadManager = val preloadManagerBuilder.build()
 val player = preloadManagerBuilder.buildExoPlayer()
 ```
 
-Using the same [builder](https://developer.android.com/reference/androidx/media3/exoplayer/source/preload/DefaultPreloadManager.Builder#build()) for both the ExoPlayer and `DefaultPreloadManager` is necessary, which ensures that the components under the hood of them are correctly shared.
+Using the same [builder](/reference/androidx/media3/exoplayer/source/preload/DefaultPreloadManager.Builder#build()) for both the ExoPlayer and `DefaultPreloadManager` is necessary, which ensures that the components under the hood of them are correctly shared.
 
 And that's it! You now have a manager ready to receive instructions.
 
-#### Configuring Duration and Ranking with [TargetPreloadStatusControl](https://developer.android.com/reference/androidx/media3/exoplayer/source/preload/TargetPreloadStatusControl)
+#### Configuring Duration and Ranking with [TargetPreloadStatusControl](/reference/androidx/media3/exoplayer/source/preload/TargetPreloadStatusControl)
 
 What if you want to preload, say, 10 seconds of video ? You can provide the position of your media items in the carousel, and the DefaultPreloadManager prioritizes loading the items based on how close it is to the item the user is currently playing.
 
@@ -86,11 +111,11 @@ If you want to control how much duration of the item to preload, you can tell th
 
 For example,
 
-- Item 'A' is the highest priority, load 5 seconds of video.
-- Item 'B' is medium priority but when you get to it, load 3 seconds of video.
-- Item 'C' is less priority, load only tracks.
-- Item 'D' is even less of a priority, just prepare.
-- Any other items are far away, Don't preload anything.
+* Item ‘A’ is the highest priority, load 5 seconds of video.
+* Item ‘B’ is medium priority but when you get to it, load 3 seconds of video.
+* Item ‘C’ is less priority, load only tracks.
+* Item ‘D’ is even less of a priority, just prepare.
+* Any other items are far away, Don’t preload anything.
 
 This granular control can help you optimize your resource utilization which is recommended for a seamless playback.
 
@@ -146,7 +171,7 @@ With your manager created, you can start telling it what to work on. As your use
 
 **1. Add Media Items**
 
-As you populate your feed, you must inform the [manager](https://developer.android.com/reference/androidx/media3/exoplayer/source/preload/DefaultPreloadManager) of the media it needs to track. If you are starting, you could add the entire list you want to preload. Subsequently you can keep adding a single item to the list as and when required. You have full control over what items are in the preloading list which means you also have to manage what is added and removed from the manager.
+As you populate your feed, you must inform the [manager](/reference/androidx/media3/exoplayer/source/preload/DefaultPreloadManager) of the media it needs to track. If you are starting, you could add the entire list you want to preload. Subsequently you can keep adding a single item to the list as and when required. You have full control over what items are in the preloading list which means you also have to manage what is added and removed from the manager.
 
 ```
 val initialMediaItems = pullMediaItemsFromService(/* count= */ 20)
@@ -211,7 +236,7 @@ If you need to clear all items at once, you can call `preloadManager.reset()`.
 
 **5. Release the Manager**
 
-When you no longer need the PreloadManager (e.g., when your UI is destroyed), you must release it to free up its resources. A good place to do this is where you're already releasing your Player's resources. It's recommended to release the manager before the player as the player can continue to play if you don't need any more preloading.
+When you no longer need the PreloadManager (e.g., when your UI is destroyed), you must release it to free up its resources. A good place to do this is where you’re already releasing your Player’s resources. It’s recommended to release the manager before the player as the player can continue to play if you don't need any more preloading.
 
 ```
 // In your Activity's onDestroy() or Composable's onDispose
@@ -223,7 +248,8 @@ preloadManager.release()
 #### Check it live in action 👍
 
 In the demo below , we see the impact of PreloadManager on the right side which has faster load times, whereas the left side shows the existing experience. You can also view the code [sample](https://github.com/android/socialite/tree/ui_polishes_short_videos) for the demo. (Bonus: It also displays startup latency for every video)
-![Demo-PreloadManager_2.webp](https://developer.android.com/static/blog/assets/Demo_Preload_Manager_2_cbbd20233c_Z2qBPHI.webp)
+
+![Demo-PreloadManager_2.webp](/static/blog/assets/Demo_Preload_Manager_2_cbbd20233c_Z2qBPHI.webp)
 
 ## What's Next?
 
@@ -234,39 +260,104 @@ In [**Part 2**](https://android-developers.googleblog.com/2025/09/a-deep-dive-in
 Do you have any feedback to [share](https://github.com/androidx/media/issues)? We are eager to hear from you.
 
 Stay tuned, and go make your app faster! 🚀
+
 Written by:
 
--
-
-  ## [Mayuri Khinvasara Khabya](https://developer.android.com/blog/authors/mayuri-khabya)
+* ## [Mayuri Khinvasara Khabya](/blog/authors/mayuri-khabya)
 
   ###### Developer Relations Engineer
 
-  [read_more
-  View profile](https://developer.android.com/blog/authors/mayuri-khabya) ![View Mayuri Khinvasara Khabya's profile](https://developer.android.com/static/blog/assets/Mayuri_Khinvasara_Khabya_92848b1e1b_1xSr0w.webp) ![View Mayuri Khinvasara Khabya's profile](https://developer.android.com/static/blog/assets/Mayuri_Khinvasara_Khabya_92848b1e1b_1xSr0w.webp)
+  [read\_more
+  View profile](/blog/authors/mayuri-khabya)
+
+  ![View Mayuri Khinvasara Khabya's profile](/static/blog/assets/Mayuri_Khinvasara_Khabya_92848b1e1b_1xSr0w.webp)
+
+  ![View Mayuri Khinvasara Khabya's profile](/static/blog/assets/Mayuri_Khinvasara_Khabya_92848b1e1b_1xSr0w.webp)
+
 Continue reading
-- [![View Mayuri Khinvasara Khabya's profile](https://developer.android.com/static/blog/assets/Mayuri_Khinvasara_Khabya_92848b1e1b_1xSr0w.webp)](https://developer.android.com/blog/authors/mayuri-khabya) 22 Sep 2025 22 Sep 2025 ![](https://developer.android.com/static/blog/assets/elevating_Media2_20563cb635_1XxrMX.webp) [Product News](https://developer.android.com/blog/categories/product-news)
 
-  ## [Elevating media playback: A deep dive into Media3's PreloadManager - Part 2](https://developer.android.com/blog/posts/elevating-media-playback-a-deep-dive-into-media3-s-preload-manager-part-2)
+* [![View Mayuri Khinvasara Khabya's profile](/static/blog/assets/Mayuri_Khinvasara_Khabya_92848b1e1b_1xSr0w.webp)](/blog/authors/mayuri-khabya)
 
-  [arrow_forward](https://developer.android.com/blog/posts/elevating-media-playback-a-deep-dive-into-media3-s-preload-manager-part-2) Welcome to the second installment of our three-part series on media preloading with Media3. This series is designed to guide you through the process of building highly responsive, low-latency media experiences in your Android apps.
-  [Mayuri Khinvasara Khabya](https://developer.android.com/blog/authors/mayuri-khabya) • 9 min read
-- [![View Paul Feng's profile](https://developer.android.com/static/blog/assets/paul_feng_759ac95845_spvRU.webp)](https://developer.android.com/blog/authors/paul-feng) 24 Jun 2026 24 Jun 2026 ![](https://developer.android.com/static/blog/assets/Apps_Experience_Play_Blog_Header_2000x1000_8c3a95404a_lYfpd.webp) [Product News](https://developer.android.com/blog/categories/product-news)
+  22
 
-  ## [Expanded billing choice and lower fees on Google Play](https://developer.android.com/blog/posts/expanded-billing-choice-and-lower-fees-on-google-play)
+  Sep
+  2025
 
-  [arrow_forward](https://developer.android.com/blog/posts/expanded-billing-choice-and-lower-fees-on-google-play) At Google Play, we are committed to delivering the best possible experience to users, while ensuring developers have the tools and adaptability to succeed.
-  [Paul Feng](https://developer.android.com/blog/authors/paul-feng) • 3 min read
-- [![View Matthew Forsythe's profile](https://developer.android.com/static/blog/assets/matthew_9c798f0c1d_Z1m5WWD.webp)](https://developer.android.com/blog/authors/matthew-forsythe) 18 Jun 2026 18 Jun 2026 ![](https://developer.android.com/static/blog/assets/Strapi_2x_325a484212_1BGPPB.webp) [Product News](https://developer.android.com/blog/categories/product-news)
+  22
 
-  ## [Android developer verification: Building a safer ecosystem together](https://developer.android.com/blog/posts/android-developer-verification-building-a-safer-ecosystem-together)
+  Sep
+  2025
 
-  [arrow_forward](https://developer.android.com/blog/posts/android-developer-verification-building-a-safer-ecosystem-together) Last year, we introduced Android developer verification to strengthen ecosystem security and stop malicious actors from hiding behind anonymity to release harmful apps.
-  [Matthew Forsythe](https://developer.android.com/blog/authors/matthew-forsythe) • 2 min read
+  ![](/static/blog/assets/elevating_Media2_20563cb635_1XxrMX.webp)
+
+  [Product News](/blog/categories/product-news)
+
+  ## [Elevating media playback: A deep dive into Media3’s PreloadManager - Part 2](/blog/posts/elevating-media-playback-a-deep-dive-into-media3-s-preload-manager-part-2)
+
+  [arrow\_forward](/blog/posts/elevating-media-playback-a-deep-dive-into-media3-s-preload-manager-part-2)
+
+  Welcome to the second installment of our three-part series on media preloading with Media3. This series is designed to guide you through the process of building highly responsive, low-latency media experiences in your Android apps.
+
+  [Mayuri Khinvasara Khabya](/blog/authors/mayuri-khabya)
+  •
+  9 min read
+* [![View Paul Feng's profile](/static/blog/assets/paul_feng_759ac95845_spvRU.webp)](/blog/authors/paul-feng)
+
+  24
+
+  Jun
+  2026
+
+  24
+
+  Jun
+  2026
+
+  ![](/static/blog/assets/Apps_Experience_Play_Blog_Header_2000x1000_8c3a95404a_lYfpd.webp)
+
+  [Product News](/blog/categories/product-news)
+
+  ## [Expanded billing choice and lower fees on Google Play](/blog/posts/expanded-billing-choice-and-lower-fees-on-google-play)
+
+  [arrow\_forward](/blog/posts/expanded-billing-choice-and-lower-fees-on-google-play)
+
+  At Google Play, we are committed to delivering the best possible experience to users, while ensuring developers have the tools and adaptability to succeed.
+
+  [Paul Feng](/blog/authors/paul-feng)
+  •
+  3 min read
+* [![View Matthew Forsythe's profile](/static/blog/assets/matthew_9c798f0c1d_Z1m5WWD.webp)](/blog/authors/matthew-forsythe)
+
+  18
+
+  Jun
+  2026
+
+  18
+
+  Jun
+  2026
+
+  ![](/static/blog/assets/Strapi_2x_325a484212_1BGPPB.webp)
+
+  [Product News](/blog/categories/product-news)
+
+  ## [Android developer verification: Building a safer ecosystem together](/blog/posts/android-developer-verification-building-a-safer-ecosystem-together)
+
+  [arrow\_forward](/blog/posts/android-developer-verification-building-a-safer-ecosystem-together)
+
+  Last year, we introduced Android developer verification to strengthen ecosystem security and stop malicious actors from hiding behind anonymity to release harmful apps.
+
+  [Matthew Forsythe](/blog/authors/matthew-forsythe)
+  •
+  2 min read
+
 Stay in the loop
-
 
 Get the latest Android development insights delivered to your inbox
 weekly.
+
 [mail
-Subscribe](https://developer.android.com/subscribe) ![A 3D illustration of the Android mascot, wearing a jetpack that's emitting a large cloud of bubbles](https://developer.android.com/static/blog/assets/rocket-android.CVJQZOf1_1PnraM.webp)
+Subscribe](/subscribe)
+
+![A 3D illustration of the Android mascot, wearing a jetpack that's emitting a large cloud of bubbles](/static/blog/assets/rocket-android.CVJQZOf1_1PnraM.webp)
