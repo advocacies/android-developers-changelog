@@ -1,8 +1,21 @@
 ---
-title: https://developer.android.com/games/support
+title: Get support  |  Android game development  |  Android Developers
 url: https://developer.android.com/games/support
-source: md.txt
+source: html-scrape
 ---
+
+* [Android Developers](https://developer.android.com/)
+* [Google Play](https://developer.android.com/distribute)
+* [Games dev center](https://developer.android.com/games)
+* [Guides](https://developer.android.com/games/guides)
+
+Send feedback
+
+# Get support Stay organized with collections Save and categorize content based on your preferences.
+
+
+
+
 
 If you need assistance or have questions regarding the Google Play Games Level Up
 guidelines, exemptions, compliance, or service fees you
@@ -27,9 +40,9 @@ help us process your inquiry efficiently:
 2. Select **Play Programs** and **Google Play Games Level Up**.
 3. Select the package names of the game.
 4. Select Request type:
-   - General program, eligibility, or billing question
-   - I need help meeting a guideline
-   - I want to request an exemption from a guideline
+   * General program, eligibility, or billing question
+   * I need help meeting a guideline
+   * I want to request an exemption from a guideline
 5. Your organization name and contact details.
 6. A brief description of your platform or technical integration questions.
 7. Click **Submit**.
@@ -38,3 +51,10 @@ help us process your inquiry efficiently:
 
 If you don't have a Google Play Console developer account,
 [submit a request using the support form](https://support.google.com/googleplay/android-developer/answer/10357403).
+
+
+
+
+
+
+Send feedback
