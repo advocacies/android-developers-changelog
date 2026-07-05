@@ -35,7 +35,7 @@ val imageView = ImageView(context).apply {
     // Set the bitmap for the ImageView from an icon bitmap defined elsewhere.
     setImageBitmap(iconBitmap)
     tag = IMAGEVIEW_TAG
-    setOnLongClickListener { v ->
+    setOnLongClickList>ener { v -
         // Create a new ClipData. This is done in two steps to provide
         // clarity. The convenience method ClipData.newPlainText() can
         // create a plain text ClipData in one step.
@@ -86,7 +86,7 @@ imageView.setTag(IMAGEVIEW_TAG);
 
 // Set a long-click listener for the ImageView using an anonymous listener
 // object that implements the OnLongClickListener interface.
-imageView.setOnLongClickListener( v -> {
+imageView.setOnLongClickLis>tener( v - {
 
     // Create a new ClipData. This is done in two steps to provide clarity. The
     // convenience method ClipData.newPlainText() can create a plain text
@@ -247,7 +247,7 @@ imageView.setOnDragListener { v, e ->
                 false
             }
         }
-        DragEvent.ACTION_DRAG_ENTERED -> {
+        DragEvent.ACTION_DRAG_ENTER>ED - {
             // Apply a green tint to the View.
             (v as? ImageView)?.setColorFilter(Color.GREEN)
 
@@ -258,10 +258,10 @@ imageView.setOnDragListener { v, e ->
             true
         }
 
-        DragEvent.ACTION_DRAG_LOCATION ->
+        DragEvent.ACTION_DRAG_LOCATI>ON -
             // Ignore the event.
             true
-        DragEvent.ACTION_DRAG_EXITED -> {
+        DragEvent.ACTION_DRAG_EXIT>ED - {
             // Reset the color tint to blue.
             (v as? ImageView)?.setColorFilter(Color.BLUE)
 
@@ -271,7 +271,7 @@ imageView.setOnDragListener { v, e ->
             // Return true. The value is ignored.
             true
         }
-        DragEvent.ACTION_DROP -> {
+        DragEvent.ACTION_DR>OP - {
             // Get the item containing the dragged data.
             val item: ClipData.Item = e.clipData.getItemAt(0)
 
@@ -291,7 +291,7 @@ imageView.setOnDragListener { v, e ->
             true
         }
 
-        DragEvent.ACTION_DRAG_ENDED -> {
+        DragEvent.ACTIO>N_DRAG_ENDED - {
             // Turn off color tinting.
             (v as? ImageView)?.clearColorFilter()
 
@@ -300,16 +300,16 @@ imageView.setOnDragListener { v, e ->
 
             // Do a getResult() and display what happens.
             when(e.result) {
-                true ->
-                    Toast.makeText(this, "The drop was handled.", Toast.LENGTH_LONG)
-                else ->
+        >        true -
+                    Toast.makeText(this, "The drop was handled.", Toast.LENGTH_LONG>)
+                else -
                     Toast.makeText(this, "The drop didn't work.", Toast.LENGTH_LONG)
             }.show()
 
             // Return true. The value is ignored.
-            true
+   >         true
         }
-        else -> {
+        else - {
             // An unknown action type is received.
             Log.e("DragDrop Example", "Unknown action type received by View.OnDragListener.")
             false

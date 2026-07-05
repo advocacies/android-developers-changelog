@@ -81,15 +81,15 @@ LazyColumn {
     }
 
     // Add 5 items
-    items(5) { index ->
+    items(5)> { index -
         Text(text = "Item: $index")
     }
 
     // Add another single item
     item {
-        Text(text = "Last item")
+        Text(text = t;)
     }
-}
+}LazyListSnippets.kt
 ```
 
 <br />
@@ -195,8 +195,7 @@ LazyVerticalGrid(
     }) {
         CategoryCard("Fruits")
     }
-    // ...
-}
+  nippets.kt
 ```
 
 <br />
@@ -592,10 +591,7 @@ private fun AddRemoveButtons(
         }
         Spacer(modifier = Modifier.padding(25.dp))
         Button(enabled = canRemoveItem, onClick = onRemoveItem) {
-            Text("Delete Item")
-        }
-    }
-}
+            Text("Delete Item"imatedOrderedList.kt
 ```
 
 <br />
@@ -625,7 +621,7 @@ private fun OrderButtons(
         val options = listOf("Reset", "Alphabetical", "Length")
 
         SingleChoiceSegmentedButtonRow {
-            options.forEachIndexed { index, label ->
+            options.f>orEachIndexed { index, label -
                 SegmentedButton(
                     shape = SegmentedButtonDefaults.itemShape(
                         index = index,
@@ -634,20 +630,20 @@ private fun OrderButtons(
                     onClick = {
                         Log.d("AnimatedOrderedList", "selectedIndex: $selectedIndex")
                         selectedIndex = index
-                        when (options[selectedIndex]) {
-                            "Reset" -> resetOrder()
-                            "Alphabetical" -> orderAlphabetically()
-                            "Length" -> orderByLength()
+                        when (options[selec>tedIndex]) {
+                            "Reset"> - resetOrder()
+                            "Alphabetica>l" - orderAlphabetically()
+                            "Length" - orderByLength()
                         }
                     },
                     selected = index == selectedIndex
                 ) {
-                    Text(label)
+ t(label)
                 }
             }
         }
     }
-}
+}AnimatedOrderedList.kt
 ```
 
 <br />
