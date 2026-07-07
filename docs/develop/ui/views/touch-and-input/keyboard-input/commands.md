@@ -1,36 +1,54 @@
 ---
-title: https://developer.android.com/develop/ui/views/touch-and-input/keyboard-input/commands
+title: Handle keyboard actions  |  Views  |  Android Developers
 url: https://developer.android.com/develop/ui/views/touch-and-input/keyboard-input/commands
-source: md.txt
+source: html-scrape
 ---
 
-Try the Compose way Jetpack Compose is the recommended UI toolkit for Android. Learn how to handle keyboard actions in Compose. [Handle keyboard actions in Compose →](https://developer.android.com/develop/ui/compose/touch-input/keyboard-input/commands#key_events) ![](https://developer.android.com/static/images/android-compose-ui-logo.png)
+* [Android Developers](https://developer.android.com/)
+* [Develop](https://developer.android.com/develop)
+* [Core areas](https://developer.android.com/develop/core-areas)
+* [UI](https://developer.android.com/develop/ui)
+* [Views](https://developer.android.com/develop/ui/views/layout/declaring-layout)
+
+# Handle keyboard actions Stay organized with collections Save and categorize content based on your preferences.
+
+
+
+
+
+Try the Compose way
+
+Jetpack Compose is the recommended UI toolkit for Android. Learn how to handle keyboard actions in Compose.
+
+[Handle keyboard actions in Compose →](https://developer.android.com/develop/ui/compose/touch-input/keyboard-input/commands#key_events)
+
+![](/static/images/android-compose-ui-logo.png)
 
 When the user gives focus to an editable text view, such as an
-`https://developer.android.com/reference/android/widget/EditText`
+`EditText`
 element, and the user has a hardware keyboard attached, all
 input is handled by the system. However, if you want to intercept
 or directly handle the keyboard input yourself, you can do so by implementing callback methods
-from the `https://developer.android.com/reference/android/view/KeyEvent.Callback`
-interface, such as `https://developer.android.com/reference/android/view/KeyEvent.Callback#onKeyDown(int, android.view.KeyEvent)`
-and `https://developer.android.com/reference/android/view/KeyEvent.Callback#onKeyMultiple(int, int, android.view.KeyEvent)`.
+from the `KeyEvent.Callback`
+interface, such as `onKeyDown()`
+and `onKeyMultiple()`.
 
-Both the `https://developer.android.com/reference/android/app/Activity`
-and `https://developer.android.com/reference/android/view/View` classes implement the
+Both the `Activity`
+and `View` classes implement the
 `KeyEvent.Callback` interface, so you
 generally override the callback methods in your extension of these classes, as
 appropriate.
 
 **Note:** When handling keyboard events with the
-`https://developer.android.com/reference/android/view/KeyEvent` class and related APIs,
+`KeyEvent` class and related APIs,
 expect that the keyboard events are coming only from a hardware keyboard. Never rely on receiving key
 events for any key on a soft input method (an on-screen keyboard).
 
 ## Handle single key events
 
 To handle an individual key press, implement
-`https://developer.android.com/reference/android/app/Activity#onKeyDown(int, android.view.KeyEvent)`
-or `https://developer.android.com/reference/android/app/Activity#onKeyUp(int, android.view.KeyEvent)`,
+`onKeyDown()`
+or `onKeyUp()`,
 as appropriate. Usually, you use
 `onKeyUp()`
 if you want to ensure that you receive only one event. If the user presses and holds a key,
@@ -40,7 +58,7 @@ For example, this implementation responds to some keyboard keys to control a gam
 
 ### Kotlin
 
-```kotlin
+```
 override fun onKeyUp(keyCode: Int, event: KeyEvent): Boolean {
     return when (keyCode) {
         KeyEvent.KEYCODE_D -> {
@@ -66,7 +84,7 @@ override fun onKeyUp(keyCode: Int, event: KeyEvent): Boolean {
 
 ### Java
 
-```java
+```
 @Override
 public boolean onKeyUp(int keyCode, KeyEvent event) {
     switch (keyCode) {
@@ -90,24 +108,24 @@ public boolean onKeyUp(int keyCode, KeyEvent event) {
 
 ## Handle modifier keys
 
-To respond to modifier key events, such as when a key is combined with <kbd>Shift</kbd>
-or <kbd>Control</kbd>, you can
+To respond to modifier key events, such as when a key is combined with `Shift`
+or `Control`, you can
 query the `KeyEvent`
 that is passed to the callback method. Several methods
 provide information about modifier keys, such as
-`https://developer.android.com/reference/android/view/KeyEvent#getModifiers()`
-and `https://developer.android.com/reference/android/view/KeyEvent#getMetaState()`.
+`getModifiers()`
+and `getMetaState()`.
 However, the simplest solution is to check whether
 the exact modifier key you care about is being pressed with methods such as
-`https://developer.android.com/reference/android/view/KeyEvent#isShiftPressed()`
-and `https://developer.android.com/reference/android/view/KeyEvent#isCtrlPressed()`.
+`isShiftPressed()`
+and `isCtrlPressed()`.
 
 For example, here's the `onKeyUp()` implementation
-again, with extra handling for when the <kbd>Shift</kbd> key is held down with one of the keys:
+again, with extra handling for when the `Shift` key is held down with one of the keys:
 
 ### Kotlin
 
-```kotlin
+```
 override fun onKeyUp(keyCode: Int, event: KeyEvent): Boolean {
     return when (keyCode) {
         ...
@@ -134,7 +152,7 @@ override fun onKeyUp(keyCode: Int, event: KeyEvent): Boolean {
 
 ### Java
 
-```java
+```
 @Override
 public boolean onKeyUp(int keyCode, KeyEvent event) {
     switch (keyCode) {
@@ -161,4 +179,4 @@ public boolean onKeyUp(int keyCode, KeyEvent event) {
 
 ## Additional resources
 
-- [Keyboard Shortcuts Helper](https://developer.android.com/develop/ui/compose/touch-input/keyboard-input/keyboard-shortcuts-helper): System screen that enables users to search the keyboard shortcuts your app offers.
+* [Keyboard Shortcuts Helper](/develop/ui/compose/touch-input/keyboard-input/keyboard-shortcuts-helper): System screen that enables users to search the keyboard shortcuts your app offers.

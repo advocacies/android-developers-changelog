@@ -1,8 +1,14 @@
 ---
-title: https://developer.android.com/agents/skills/camera/camerax/references/immutability
+title: Immutable API patterns in Android camera  |  Android Developers
 url: https://developer.android.com/agents/skills/camera/camerax/references/immutability
-source: md.txt
+source: html-scrape
 ---
+
+# Immutable API patterns in Android camera Stay organized with collections Save and categorize content based on your preferences.
+
+
+
+
 
 Many Android APIs are designed with immutability in mind to prevent race
 conditions in async environments. However, this often trips up developers used
@@ -14,7 +20,7 @@ The following classes use fluent APIs that **return a new instance**. You must
 reassign the variable.
 
 | Class | Methods that return a new instance | Result if not reassigned |
-|---|---|---|
+| --- | --- | --- |
 | `PendingRecording` | `withAudioEnabled`, `asPersistentRecording` | Audio isn't recorded. |
 | `ImageCapture.Builder` | `setTargetRotation`, `setTargetResolution` | The output has the wrong orientation. |
 | `Recorder.Builder` | `setQualitySelector`, `setExecutor` | The recording uses the default quality. |
@@ -26,8 +32,7 @@ reassign the variable.
 
 To set up video recording, use the following code:
 
-
-```kotlin
+```
 // WRONG
 run {
   val pending = recorder.prepareRecording(context, opts)
@@ -48,19 +53,18 @@ run {
   pending = pending.withAudioEnabled() // Reassignment
   val active = pending.start(exec, listener)
 }
-```
 
-<br />
+CameraSkillSnippets.kt
+```
 
 ### Viewport construction
 
 To set up the viewport, use the following code:
 
-
-```kotlin
+```
 val viewport = ViewPort.Builder(Rational(width, height), displayRotation)
     .setScaleType(ViewPort.FILL_CENTER)
     .build()
-```
 
-<br />
+CameraSkillSnippets.kt
+```
