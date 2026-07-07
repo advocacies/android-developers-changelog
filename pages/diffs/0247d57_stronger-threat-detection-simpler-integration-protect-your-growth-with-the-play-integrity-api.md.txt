@@ -1,0 +1,274 @@
+diff --git a/docs/blog/posts/stronger-threat-detection-simpler-integration-protect-your-growth-with-the-play-integrity-api.md b/docs/blog/posts/stronger-threat-detection-simpler-integration-protect-your-growth-with-the-play-integrity-api.md
+index 28c80ba..17f5d5f 100644
+--- a/docs/blog/posts/stronger-threat-detection-simpler-integration-protect-your-growth-with-the-play-integrity-api.md
++++ b/docs/blog/posts/stronger-threat-detection-simpler-integration-protect-your-growth-with-the-play-integrity-api.md
+@@ -1,37 +1,62 @@
+ ---
+-title: https://developer.android.com/blog/posts/stronger-threat-detection-simpler-integration-protect-your-growth-with-the-play-integrity-api
++title: Stronger threat detection, simpler integration: Protect your growth with the Play Integrity API  |  Android Developers' Blog
+ url: https://developer.android.com/blog/posts/stronger-threat-detection-simpler-integration-protect-your-growth-with-the-play-integrity-api
+-source: md.txt
++source: html-scrape
+ ---
+ 
+-[Product News](https://developer.android.com/blog/categories/product-news)
++* [Android Developers](https://developer.android.com/)
++* [Android Developers' Blog](https://developer.android.com/)
++* [Blog](https://developer.android.com/blog)
++
++Stay organized with collections
++
++Save and categorize content based on your preferences.
++
++
++
++[Product News](/blog/categories/product-news)
+ 
+ # Stronger threat detection, simpler integration: Protect your growth with the Play Integrity API
+ 
+-5-min read ![](https://developer.android.com/static/blog/assets/SS_Alt_Playbrand_Integrity_API_21cd2391d2_Z1L3CHW.webp) 19 Nov 2025 [![View Dom Elliott's profile](https://developer.android.com/static/blog/assets/dom_elliot_d78b0628db_flDQk.webp)](https://developer.android.com/blog/authors/dom-elliott)[![View Eric Lynch's profile](https://developer.android.com/static/blog/assets/Eric_Lynch_bb0a252f52_Z1St4R.webp)](https://developer.android.com/blog/authors/eric-lynch) [Dom Elliott](https://developer.android.com/blog/authors/dom-elliott) \& [Eric Lynch](https://developer.android.com/blog/authors/eric-lynch) In the mobile ecosystem, abuse can threaten your revenue, growth, and user trust. To help developers thrive, Google Play offers a resilient threat detection service, [**Play Integrity API**](https://developer.android.com/google/play/integrity/overview). Play Integrity API helps you verify that interactions and server requests are genuine---coming from your unmodified app on a certified Android device, installed by Google Play.
++5-min read
++
++![](/static/blog/assets/SS_Alt_Playbrand_Integrity_API_21cd2391d2_Z1L3CHW.webp)
+ 
+-The impact is significant: apps using Play integrity features see **80% lower unauthorized usage** on average compared to other apps. Today, leaders across diverse categories---including Uber, TikTok, Stripe, Kabam, Wooga, Radar.com, Zimperium, Paytm, and Remini---use it to help safeguard their businesses.
++19
+ 
+-We're continuing to improve the Play Integrity API, making it easier to integrate, more resilient against sophisticated attacks, and better at recovering users who don't meet integrity standards or encounter errors with new Play in-app remediation prompts.
++Nov
++2025
++
++[![View Dom Elliott's profile](/static/blog/assets/dom_elliot_d78b0628db_flDQk.webp)](/blog/authors/dom-elliott)[![View Eric Lynch's profile](/static/blog/assets/Eric_Lynch_bb0a252f52_Z1St4R.webp)](/blog/authors/eric-lynch)
++
++[Dom Elliott](/blog/authors/dom-elliott)
++&
++[Eric Lynch](/blog/authors/eric-lynch)
++
++In the mobile ecosystem, abuse can threaten your revenue, growth, and user trust. To help developers thrive, Google Play offers a resilient threat detection service, [**Play Integrity API**](/google/play/integrity/overview). Play Integrity API helps you verify that interactions and server requests are genuine—coming from your unmodified app on a certified Android device, installed by Google Play.
++
++The impact is significant: apps using Play integrity features see **80% lower unauthorized usage** on average compared to other apps. Today, leaders across diverse categories—including Uber, TikTok, Stripe, Kabam, Wooga, Radar.com, Zimperium, Paytm, and Remini—use it to help safeguard their businesses.
++
++We’re continuing to improve the Play Integrity API, making it easier to integrate, more resilient against sophisticated attacks, and better at recovering users who don’t meet integrity standards or encounter errors with new Play in-app remediation prompts.
+ 
+ ### Detect threats to your business
+ 
+ The Play Integrity API offers verdicts designed to detect specific threats that impact your bottom line during critical interactions.
+ 
+-- **Unauthorized access** : The `accountDetails` verdict helps you determine whether the user installed or paid for your app or game on Google Play.
+-- **Code tampering** : The `appIntegrity` verdict helps you determine whether you're interacting with your unmodified binary that Google Play recognizes.
+-- **Risky devices and emulated environments** : The `deviceIntegrity` verdict helps you determine whether your app is running on a genuine Play Protect certified Android device or a genuine instance of Google Play Games for PC.
+-- **Unpatched devices** : For devices running Android 13 and higher, `MEETS_STRONG_INTEGRITY` response in the `deviceIntegrity` verdict helps you determine if a device has applied recent security updates. You can also opt in to `deviceAttributes` to include the attested Android SDK version in the response.
+-- **Risky access by other apps:** The `appAccessRiskVerdict` helps you determine whether apps are running that could be used to capture the screen, display overlays, or control the device (for example, by misusing the accessibility permission). This verdict automatically excludes apps that serve genuine accessibility purposes.
+-- **Known malware:** The `playProtectVerdict` helps you determine whether Google Play Protect is turned on and whether it has found risky or dangerous apps installed on the device.
+-- **Hyperactivity:** The recentDeviceActivity level helps you determine whether a device has made an anomalously high volume of integrity token requests recently, which could indicate automated traffic and could be a sign of attack.
+-- **Repeat abuse and reused devices:** `deviceRecall` (beta) helps you determine whether you're interacting with a device that you've previously flagged, even if your app was reinstalled or the device was reset. With device recall, you can customize the repeat actions you want to track.
++* **Unauthorized access**: The `accountDetails` verdict helps you determine whether the user installed or paid for your app or game on Google Play.
++* **Code tampering**: The `appIntegrity` verdict helps you determine whether you're interacting with your unmodified binary that Google Play recognizes.
++* **Risky devices and emulated environments**: The `deviceIntegrity` verdict helps you determine whether your app is running on a genuine Play Protect certified Android device or a genuine instance of Google Play Games for PC.
++* **Unpatched devices**: For devices running Android 13 and higher, `MEETS_STRONG_INTEGRITY` response in the `deviceIntegrity` verdict helps you determine if a device has applied recent security updates. You can also opt in to `deviceAttributes` to include the attested Android SDK version in the response.
++* **Risky access by other apps:** The `appAccessRiskVerdict` helps you determine whether apps are running that could be used to capture the screen, display overlays, or control the device (for example, by misusing the accessibility permission). This verdict automatically excludes apps that serve genuine accessibility purposes.
++* **Known malware:** The `playProtectVerdict` helps you determine whether Google Play Protect is turned on and whether it has found risky or dangerous apps installed on the device.
++* **Hyperactivity:** The recentDeviceActivity level helps you determine whether a device has made an anomalously high volume of integrity token requests recently, which could indicate automated traffic and could be a sign of attack.
++* **Repeat abuse and reused devices:** `deviceRecall` (beta) helps you determine whether you're interacting with a device that you've previously flagged, even if your app was reinstalled or the device was reset. With device recall, you can customize the repeat actions you want to track.
+ 
+ The API can be used across Android form factors including phones, tablets, foldables, Android Auto, Android TV, Android XR, ChromeOS, Wear OS, and on Google Play Games for PC.
+ 
+ ### Make the most of Play Integrity API
+ 
+-Apps and games have found success with the Play Integrity API by following the [security considerations](https://developer.android.com/google/play/integrity/overview#security-considerations) and taking a phased approach to their anti-abuse strategy.
++Apps and games have found success with the Play Integrity API by following the [security considerations](/google/play/integrity/overview#security-considerations) and taking a phased approach to their anti-abuse strategy.
+ 
+ **Step 1: Decide what you want to protect**: Decide what actions and server requests in your apps and games are important to verify and protect. For example, you could perform integrity checks when a user is launching the app, signing in, joining a multiplayer game, generating AI content, or transferring money.
+ 
+@@ -43,80 +68,149 @@ Apps and games have found success with the Play Integrity API by following the [
+ 
+ ### NEW: Let Play recover users with issues automatically
+ 
+-Deciding how to respond to different integrity signals can be complex, you need to handle various integrity responses and API error codes (like network issues or outdated Play services). We're simplifying this with new [**Play in-app remediation prompts**](https://developer.android.com/google/play/integrity/remediation). You can show a Google Play prompt to your users to automatically fix a wide range of issues directly within your app. This reduces integration complexity, ensures a consistent user interface, and helps get more users back to a good state.
+-![get_integrity.gif](https://developer.android.com/static/blog/assets/get_integrity_7d2e165184_1gShAt.webp)
++Deciding how to respond to different integrity signals can be complex, you need to handle various integrity responses and API error codes (like network issues or outdated Play services). We’re simplifying this with new [**Play in-app remediation prompts**](/google/play/integrity/remediation). You can show a Google Play prompt to your users to automatically fix a wide range of issues directly within your app. This reduces integration complexity, ensures a consistent user interface, and helps get more users back to a good state.
++
++![get_integrity.gif](/static/blog/assets/get_integrity_7d2e165184_1gShAt.webp)
+ 
+-*GET_INTEGRITY automatically detects the issue (in this example, a network error) and resolves it.*
++*GET\_INTEGRITY automatically detects the issue (in this example, a network error) and resolves it.*
+ 
+-You can trigger the[GET_INTEGRITY](https://developer.android.com/google/play/integrity/remediation#get-integrity-dialog) dialog, available in Play Integrity API library version 1.5.0+, after a range of issues to automatically guide the user through the necessary fixes including:
++You can trigger the[GET\_INTEGRITY](/google/play/integrity/remediation#get-integrity-dialog) dialog, available in Play Integrity API library version 1.5.0+, after a range of issues to automatically guide the user through the necessary fixes including:
+ 
+-- **Unauthorized access:**GET_INTEGRITY guides the user back to a Play licensed response in accountDetails.
+-- **Code tampering:** GET_INTEGRITY guides the user back to a Play recognized response in appIntegrity.
+-- **Device integrity issues:** GET_INTEGRITY guides the user on how to get back to the MEETS_DEVICE_INTEGRITY state in `deviceIntegrity`.
+-- **Remediable error codes:** GET_INTEGRITY resolves remediable API errors, such as prompting the user to fix network connectivity or update Google Play Services.
++* **Unauthorized access:**GET\_INTEGRITY guides the user back to a Play licensed response in accountDetails.
++* **Code tampering:** GET\_INTEGRITY guides the user back to a Play recognized response in appIntegrity.
++* **Device integrity issues:** GET\_INTEGRITY guides the user on how to get back to the MEETS\_DEVICE\_INTEGRITY state in `deviceIntegrity`.
++* **Remediable error codes:** GET\_INTEGRITY resolves remediable API errors, such as prompting the user to fix network connectivity or update Google Play Services.
+ 
+-We also offer specialized dialogs including[GET_STRONG_INTEGRITY](https://developer.android.com/google/play/integrity/remediation#get-strong-integrity-dialog) (which works like GET_INTEGRITY while also getting the user back to the MEETS_STRONG_INTEGRITY state with no known malware issues in the `playProtectVerdict`), [GET_LICENSED](https://developer.android.com/google/play/integrity/remediation#get-licensed-dialog) (which gets the user back to a Play licensed and Play recognized state), and [CLOSE_UNKNOWN_ACCESS_RISK](https://developer.android.com/google/play/integrity/remediation#close-unknown-access-risk-dialog) and [CLOSE_ALL_ACCESS_RISK](https://developer.android.com/google/play/integrity/remediation#close-all-access-risk-dialog) (which prompt the user to close potentially risky apps).
++We also offer specialized dialogs including[GET\_STRONG\_INTEGRITY](/google/play/integrity/remediation#get-strong-integrity-dialog) (which works like GET\_INTEGRITY while also getting the user back to the MEETS\_STRONG\_INTEGRITY state with no known malware issues in the `playProtectVerdict`), [GET\_LICENSED](/google/play/integrity/remediation#get-licensed-dialog) (which gets the user back to a Play licensed and Play recognized state), and [CLOSE\_UNKNOWN\_ACCESS\_RISK](/google/play/integrity/remediation#close-unknown-access-risk-dialog) and [CLOSE\_ALL\_ACCESS\_RISK](/google/play/integrity/remediation#close-all-access-risk-dialog) (which prompt the user to close potentially risky apps).
+ 
+ ### Choose modern integrity solutions
+ 
+-In addition to Play Integrity API, Google offers several other features to consider as part of your overall anti-abuse strategy. Both Play Integrity API and Play's automatic protection offer user experience and developer benefits for safeguarding app distribution. We encourage existing apps to migrate to these modern integrity solutions instead of using the [legacy Play licensing library](https://developer.android.com/google/play/licensing).
++In addition to Play Integrity API, Google offers several other features to consider as part of your overall anti-abuse strategy. Both Play Integrity API and Play’s automatic protection offer user experience and developer benefits for safeguarding app distribution. We encourage existing apps to migrate to these modern integrity solutions instead of using the [legacy Play licensing library](/google/play/licensing).
+ 
+-**Automatic protection:** Prevent unauthorized access with Google Play's [automatic protection](https://support.google.com/googleplay/android-developer/answer/10183279) and ensure users continue getting your official app updates. Turn it on and Google Play will automatically add an installer check to your app's code, with no developer integration work required. If your protected app is redistributed or shared through another channel, then the user will be prompted to get your app from Google Play. Eligible Play developers also have access to Play's advanced anti-tamper protection, which uses obfuscation and runtime checks to make it harder and costlier for attackers to modify and redistribute protected apps.
++**Automatic protection:**Prevent unauthorized access with Google Play’s [automatic protection](https://support.google.com/googleplay/android-developer/answer/10183279) and ensure users continue getting your official app updates. Turn it on and Google Play will automatically add an installer check to your app’s code, with no developer integration work required. If your protected app is redistributed or shared through another channel, then the user will be prompted to get your app from Google Play. Eligible Play developers also have access to Play’s advanced anti-tamper protection, which uses obfuscation and runtime checks to make it harder and costlier for attackers to modify and redistribute protected apps.
+ 
+-**Android platform key attestation:** Play Integrity API is the recommended way to benefit from hardware-backed [Android platform key attestation](https://developer.android.com/privacy-and-security/security-key-attestation). Play Integrity API takes care of the underlying implementation across the device ecosystem, Play automatically mitigates key-related issues and outages, and you can use the API to detect other threats. Developers who directly implement key attestation instead of relying on Play Integrity API should prepare for the upcoming Android Platform [root certificate rotation](https://developer.android.com/privacy-and-security/security-key-attestation#root_certificate_rotation) in February 2026 to avoid disruption (developers using Play Integrity API do not need to take any action).
++**Android platform key attestation:**Play Integrity API is the recommended way to benefit from hardware-backed [Android platform key attestation](/privacy-and-security/security-key-attestation). Play Integrity API takes care of the underlying implementation across the device ecosystem, Play automatically mitigates key-related issues and outages, and you can use the API to detect other threats. Developers who directly implement key attestation instead of relying on Play Integrity API should prepare for the upcoming Android Platform [root certificate rotation](/privacy-and-security/security-key-attestation#root_certificate_rotation) in February 2026 to avoid disruption (developers using Play Integrity API do not need to take any action).
+ 
+-**Firebase App Check** : Developers using Firebase can use [Firebase App Check](https://firebase.google.com/docs/app-check) to receive an app and device integrity verdict powered by Play Integrity API on certified Android devices, along with responses from other platform attestation providers. To detect all other threats and use other Play features, integrate Play Integrity API directly.
++**Firebase App Check**: Developers using Firebase can use [Firebase App Check](https://firebase.google.com/docs/app-check) to receive an app and device integrity verdict powered by Play Integrity API on certified Android devices, along with responses from other platform attestation providers. To detect all other threats and use other Play features, integrate Play Integrity API directly.
+ 
+-**reCAPTCHA Enterprise** : Enterprise customers looking for a complete fraud and bot management solution can purchase [reCAPTCHA Enterprise](https://cloud.google.com/recaptcha-enterprise) for mobile. reCAPTCHA Enterprise uses some of Play Integrity API's anti-abuse signals, and combines them with reCAPTCHA signals out of the box.
++**reCAPTCHA Enterprise**: Enterprise customers looking for a complete fraud and bot management solution can purchase [reCAPTCHA Enterprise](https://cloud.google.com/recaptcha-enterprise) for mobile. reCAPTCHA Enterprise uses some of Play Integrity API’s anti-abuse signals, and combines them with reCAPTCHA signals out of the box.
+ 
+ ### Safeguard your business today
+ 
+ With a strong foundation in hardware-backed security and new automated remediation dialogs simplifying integration, the Play Integrity API is an essential tool for protecting your growth.
+ 
+-[Get started with the Play Integrity API documentation](https://developer.android.com/google/play/integrity/overview).
+-Written by:
++[Get started with the Play Integrity API documentation](/google/play/integrity/overview).
+ 
+--
++Written by:
+ 
+-  ## [Dom Elliott](https://developer.android.com/blog/authors/dom-elliott)
++* ## [Dom Elliott](/blog/authors/dom-elliott)
+ 
+   ###### Principal Product Manager
+ 
+-  [read_more
+-  View profile](https://developer.android.com/blog/authors/dom-elliott) ![View Dom Elliott's profile](https://developer.android.com/static/blog/assets/dom_elliot_d78b0628db_flDQk.webp) ![View Dom Elliott's profile](https://developer.android.com/static/blog/assets/dom_elliot_d78b0628db_flDQk.webp)
+--
++  [read\_more
++  View profile](/blog/authors/dom-elliott)
++
++  ![View Dom Elliott's profile](/static/blog/assets/dom_elliot_d78b0628db_flDQk.webp)
+ 
+-  ## [Eric Lynch](https://developer.android.com/blog/authors/eric-lynch)
++  ![View Dom Elliott's profile](/static/blog/assets/dom_elliot_d78b0628db_flDQk.webp)
++* ## [Eric Lynch](/blog/authors/eric-lynch)
+ 
+   ###### Product Manager
+ 
+-  [read_more
+-  View profile](https://developer.android.com/blog/authors/eric-lynch) ![View Eric Lynch's profile](https://developer.android.com/static/blog/assets/Eric_Lynch_bb0a252f52_Z1St4R.webp) ![View Eric Lynch's profile](https://developer.android.com/static/blog/assets/Eric_Lynch_bb0a252f52_Z1St4R.webp)
++  [read\_more
++  View profile](/blog/authors/eric-lynch)
++
++  ![View Eric Lynch's profile](/static/blog/assets/Eric_Lynch_bb0a252f52_Z1St4R.webp)
++
++  ![View Eric Lynch's profile](/static/blog/assets/Eric_Lynch_bb0a252f52_Z1St4R.webp)
++
+ Continue reading
+-- [![View Paul Feng's profile](https://developer.android.com/static/blog/assets/paul_feng_759ac95845_spvRU.webp)](https://developer.android.com/blog/authors/paul-feng) 24 Jun 2026 24 Jun 2026 ![](https://developer.android.com/static/blog/assets/Apps_Experience_Play_Blog_Header_2000x1000_8c3a95404a_lYfpd.webp) [Product News](https://developer.android.com/blog/categories/product-news)
+ 
+-  ## [Expanded billing choice and lower fees on Google Play](https://developer.android.com/blog/posts/expanded-billing-choice-and-lower-fees-on-google-play)
++* [![View Paul Feng's profile](/static/blog/assets/paul_feng_759ac95845_spvRU.webp)](/blog/authors/paul-feng)
+ 
+-  [arrow_forward](https://developer.android.com/blog/posts/expanded-billing-choice-and-lower-fees-on-google-play) At Google Play, we are committed to delivering the best possible experience to users, while ensuring developers have the tools and adaptability to succeed.
+-  [Paul Feng](https://developer.android.com/blog/authors/paul-feng) • 3 min read
+-- [![View Matthew Forsythe's profile](https://developer.android.com/static/blog/assets/matthew_9c798f0c1d_Z1m5WWD.webp)](https://developer.android.com/blog/authors/matthew-forsythe) 18 Jun 2026 18 Jun 2026 ![](https://developer.android.com/static/blog/assets/Strapi_2x_325a484212_1BGPPB.webp) [Product News](https://developer.android.com/blog/categories/product-news)
++  24
+ 
+-  ## [Android developer verification: Building a safer ecosystem together](https://developer.android.com/blog/posts/android-developer-verification-building-a-safer-ecosystem-together)
++  Jun
++  2026
+ 
+-  [arrow_forward](https://developer.android.com/blog/posts/android-developer-verification-building-a-safer-ecosystem-together) Last year, we introduced Android developer verification to strengthen ecosystem security and stop malicious actors from hiding behind anonymity to release harmful apps.
+-  [Matthew Forsythe](https://developer.android.com/blog/authors/matthew-forsythe) • 2 min read
+-- [![View Stevan Silva's profile](https://developer.android.com/static/blog/assets/Stevan_Silva_7661118077_V4WGm.webp)](https://developer.android.com/blog/authors/stevan-silva)[![View Vinny DaSilva's profile](https://developer.android.com/static/blog/assets/unnamed_5_cdab7ecfba_2kh65s.webp)](https://developer.android.com/blog/authors/vinny-da-silva) 15 Jun 2026 15 Jun 2026 ![](https://developer.android.com/static/blog/assets/MM_Android_XR_Meta_a489e757ed_Z1R62M0.webp) [Product News](https://developer.android.com/blog/categories/product-news)
++  24
+ 
+-  ## [What's New in Android XR: Tooling, Engine Support, and Ecosystem Updates](https://developer.android.com/blog/posts/what-s-new-in-android-xr-tooling-engine-support-and-ecosystem-updates)
++  Jun
++  2026
+ 
+-  [arrow_forward](https://developer.android.com/blog/posts/what-s-new-in-android-xr-tooling-engine-support-and-ecosystem-updates) From augmented overlays to fully immersive environments, the Android XR ecosystem is expanding rapidly, with the Samsung Galaxy XR already available today.
+-  [Stevan Silva](https://developer.android.com/blog/authors/stevan-silva), [Vinny DaSilva](https://developer.android.com/blog/authors/vinny-da-silva) • 3 min read
+-  - [#Android XR](https://developer.android.com/blog/topics/android-xr)
+-  - [#Developer Preview 4](https://developer.android.com/blog/topics/developer-preview-4)
+-Stay in the loop
++  ![](/static/blog/assets/Apps_Experience_Play_Blog_Header_2000x1000_8c3a95404a_lYfpd.webp)
++
++  [Product News](/blog/categories/product-news)
++
++  ## [Expanded billing choice and lower fees on Google Play](/blog/posts/expanded-billing-choice-and-lower-fees-on-google-play)
++
++  [arrow\_forward](/blog/posts/expanded-billing-choice-and-lower-fees-on-google-play)
++
++  At Google Play, we are committed to delivering the best possible experience to users, while ensuring developers have the tools and adaptability to succeed.
++
++  [Paul Feng](/blog/authors/paul-feng)
++  •
++  3 min read
++* [![View Matthew Forsythe's profile](/static/blog/assets/matthew_9c798f0c1d_Z1m5WWD.webp)](/blog/authors/matthew-forsythe)
+ 
++  18
++
++  Jun
++  2026
++
++  18
++
++  Jun
++  2026
++
++  ![](/static/blog/assets/Strapi_2x_325a484212_1BGPPB.webp)
++
++  [Product News](/blog/categories/product-news)
++
++  ## [Android developer verification: Building a safer ecosystem together](/blog/posts/android-developer-verification-building-a-safer-ecosystem-together)
++
++  [arrow\_forward](/blog/posts/android-developer-verification-building-a-safer-ecosystem-together)
++
++  Last year, we introduced Android developer verification to strengthen ecosystem security and stop malicious actors from hiding behind anonymity to release harmful apps.
++
++  [Matthew Forsythe](/blog/authors/matthew-forsythe)
++  •
++  2 min read
++* [![View Stevan Silva's profile](/static/blog/assets/Stevan_Silva_7661118077_V4WGm.webp)](/blog/authors/stevan-silva)[![View Vinny DaSilva's profile](/static/blog/assets/unnamed_5_cdab7ecfba_2kh65s.webp)](/blog/authors/vinny-da-silva)
++
++  15
++
++  Jun
++  2026
++
++  15
++
++  Jun
++  2026
++
++  ![](/static/blog/assets/MM_Android_XR_Meta_a489e757ed_Z1R62M0.webp)
++
++  [Product News](/blog/categories/product-news)
++
++  ## [What’s New in Android XR: Tooling, Engine Support, and Ecosystem Updates](/blog/posts/what-s-new-in-android-xr-tooling-engine-support-and-ecosystem-updates)
++
++  [arrow\_forward](/blog/posts/what-s-new-in-android-xr-tooling-engine-support-and-ecosystem-updates)
++
++  From augmented overlays to fully immersive environments, the Android XR ecosystem is expanding rapidly, with the Samsung Galaxy XR already available today.
++
++  [Stevan Silva](/blog/authors/stevan-silva),
++  [Vinny DaSilva](/blog/authors/vinny-da-silva)
++  •
++  3 min read
++  + [#Android XR](/blog/topics/android-xr)
++  + [#Developer Preview 4](/blog/topics/developer-preview-4)
++
++Stay in the loop
+ 
+ Get the latest Android development insights delivered to your inbox
+ weekly.
++
+ [mail
+-Subscribe](https://developer.android.com/subscribe) ![A 3D illustration of the Android mascot, wearing a jetpack that's emitting a large cloud of bubbles](https://developer.android.com/static/blog/assets/rocket-android.CVJQZOf1_1PnraM.webp)
+\ No newline at end of file
++Subscribe](/subscribe)
++
++![A 3D illustration of the Android mascot, wearing a jetpack that's emitting a large cloud of bubbles](/static/blog/assets/rocket-android.CVJQZOf1_1PnraM.webp)
+\ No newline at end of file
