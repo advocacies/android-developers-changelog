@@ -1,0 +1,31 @@
+diff --git a/docs/develop/ui/compose/quick-guides/content/create-range-slider.md b/docs/develop/ui/compose/quick-guides/content/create-range-slider.md
+index 6f39722..9708546 100644
+--- a/docs/develop/ui/compose/quick-guides/content/create-range-slider.md
++++ b/docs/develop/ui/compose/quick-guides/content/create-range-slider.md
+@@ -39,7 +39,7 @@ higher.
+ The following example is a straightforward slider. That allows the user to
+ select a value from `0.0` to `1.0`. Because the user can select any value in
+ that range, the slider is *continuous*.
+-<iframe src="https://android.devsite.google/frame/develop/ui/compose/quick-guides/content/create-range-slider_1772b3fe377066e6dd2e14035fc2aac23d31a6eef3adf860359eee15809dc26f.frame" class="framebox inherit-locale " allow="clipboard-write https://android.devsite.google" allowfullscreen is-upgraded></iframe>
++<iframe src="https://android.devsite.google/frame/develop/ui/compose/quick-guides/content/create-range-slider_ae404c69f9b76fedde6609229d2d3a850077b05c964672368ee7cb8df9de1066.frame" class="framebox inherit-locale " allow="clipboard-write https://android.devsite.google" allowfullscreen is-upgraded></iframe>
+ 
+ ### Results
+ 
+@@ -50,7 +50,7 @@ that range, the slider is *continuous*.
+ The following snippet implements a slider that has three steps, with a range
+ from `0.0` to `50.0`. Because the thumb snaps to each step, this slider is
+ *discrete*.
+-<iframe src="https://android.devsite.google/frame/develop/ui/compose/quick-guides/content/create-range-slider_b898d98f658d28f063408cee75e60546b375a0381cf73edd350e4bf7620738ab.frame" class="framebox inherit-locale " allow="clipboard-write https://android.devsite.google" allowfullscreen is-upgraded></iframe>
++<iframe src="https://android.devsite.google/frame/develop/ui/compose/quick-guides/content/create-range-slider_c13328341743217532b6b68c9fd74b07fe98241867ca326fe4c1e6da3b8c2792.frame" class="framebox inherit-locale " allow="clipboard-write https://android.devsite.google" allowfullscreen is-upgraded></iframe>
+ 
+ ### Results
+ 
+@@ -67,7 +67,7 @@ select a minimum and maximum price.
+ 
+ The following example is a relatively straightforward example of a continuous
+ range slider:
+-<iframe src="https://android.devsite.google/frame/develop/ui/compose/quick-guides/content/create-range-slider_eb7d75056b4b9ce7a75c779955740656e09c36eacf07ed462e38c2779568c202.frame" class="framebox inherit-locale " allow="clipboard-write https://android.devsite.google" allowfullscreen is-upgraded></iframe>
++<iframe src="https://android.devsite.google/frame/develop/ui/compose/quick-guides/content/create-range-slider_57f805ddfce57a907c6ba7e8d6c0cf6a66e34e69179793562de248343acc6f42.frame" class="framebox inherit-locale " allow="clipboard-write https://android.devsite.google" allowfullscreen is-upgraded></iframe>
+ 
+ ### Results
+ 

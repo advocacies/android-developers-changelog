@@ -1,0 +1,15 @@
+diff --git a/docs/jetpack/androidx/versions/all-channel.md b/docs/jetpack/androidx/versions/all-channel.md
+index d36c1f3..e3c0f10 100644
+--- a/docs/jetpack/androidx/versions/all-channel.md
++++ b/docs/jetpack/androidx/versions/all-channel.md
+@@ -31,6 +31,10 @@ To get the latest product updates delivered to you in an RSS feed, add the URL o
+ 
+ These Jetpack libraries have been recently updated.
+ 
++### July 07, 2026
++
++- [Media3 Version 1.11.0-beta01](https://developer.android.com/jetpack/androidx/releases/media3#1.11.0-beta01)
++
+ ## July 01, 2026
+ 
+ - [Appfunctions Version 1.0.0-alpha10](https://developer.android.com/jetpack/androidx/releases/appfunctions#1.0.0-alpha10)

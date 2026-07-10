@@ -1,0 +1,18 @@
+diff --git a/docs/agents/skills/camera/camerax/skill.md b/docs/agents/skills/camera/camerax/skill.md
+index aa48f0a..8e8c20e 100644
+--- a/docs/agents/skills/camera/camerax/skill.md
++++ b/docs/agents/skills/camera/camerax/skill.md
+@@ -46,6 +46,13 @@ run {
+ 
+ See [immutability](https://developer.android.com/agents/skills/camera/camerax/references/immutability) for a list of affected classes.
+ 
++### Migrating to CameraX
++
++When migrating legacy camera codebases to the CameraX Jetpack library:
++
++- **Camera1 to CameraX** : For migrating legacy `android.hardware.Camera` implementations, surface handling, and manual lifecycles, see the [Camera1 migration guide](https://developer.android.com/agents/skills/camera/camerax/references/camera1-to-camerax).
++- **Camera2 to CameraX** : For migrating more recent but verbose `android.hardware.camera2` implementations, session state callbacks, and interop patterns, see the [Camera2 migration guide](https://developer.android.com/agents/skills/camera/camerax/references/camera2-to-camerax).
++
+ ### Comprehensive feature blueprinting
+ 
+ For multi-step features that involve multiple files and hardware-level wiring,
