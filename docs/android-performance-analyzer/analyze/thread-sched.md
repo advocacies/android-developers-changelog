@@ -1,19 +1,8 @@
 ---
-title: Analyze thread scheduling  |  Android Performance Analyzer  |  Android Developers
+title: https://developer.android.com/android-performance-analyzer/analyze/thread-sched
 url: https://developer.android.com/android-performance-analyzer/analyze/thread-sched
-source: html-scrape
+source: md.txt
 ---
-
-* [Home](https://developer.android.com/)
-* [Android Performance Analyzer](https://developer.android.com/apa-home)
-* [Google Play](https://developer.android.com/distribute)
-* [Guides](https://developer.android.com/games/guides)
-
-# Analyze thread scheduling Stay organized with collections Save and categorize content based on your preferences.
-
-
-
-
 
 You can optimize the performance of your app or game by making sure that your
 threads are appropriately utilized and scheduled. This guide demonstrates how
@@ -32,12 +21,7 @@ multithreading. In the example scenario, the game and render threads run
 partially or fully concurrently on different cores. This isn't always possible
 due to factors like shared data dependencies; however, when it's possible it can
 result in lower CPU times and therefore potentially higher frame rates.
-
-![](/static/android-performance-analyzer/images/parallel-threads.png)
-
-
-**Figure 1**: A screenshot of a trace with threads doing
-parallel work.
+![](https://developer.android.com/static/android-performance-analyzer/images/parallel-threads.png) **Figure 1**: A screenshot of a trace with threads doing parallel work.
 
 ## Investigate CPU core affinity
 
@@ -45,46 +29,32 @@ One factor that significantly affects the performance of your CPU workloads is
 how they're scheduled on the device's cores. There are two considerations to
 keep in mind:
 
-* Whether your threads are running on the most suitable core for their
-  workload.
-* Whether your threads switch between cores frequently.
+- Whether your threads are running on the most suitable core for their workload.
+- Whether your threads switch between cores frequently.
 
 Modern devices often use an architecture called [hetereogeneous
 computing](https://en.wikipedia.org/wiki/Heterogeneous_computing), where the cores have different levels of performance.
 
-* One or a few cores offer high peak performance, but consume more power. These
-  are sometimes called *big* cores.
-* Other cores have lower peak performance, but are more power-efficient. These
-  are sometimes called *little* cores.
-* Optionally, or or more cores might offer a balance between performance and
-  power. These are sometimes called *mid* cores.
+- One or a few cores offer high peak performance, but consume more power. These are sometimes called *big* cores.
+- Other cores have lower peak performance, but are more power-efficient. These are sometimes called *little* cores.
+- Optionally, or or more cores might offer a balance between performance and power. These are sometimes called *mid* cores.
 
-If you enabled the **CPU** option when [configuring your trace](/android-performance-analyzer/run#configure), you
+If you enabled the **CPU** option when [configuring your trace](https://developer.android.com/android-performance-analyzer/run#configure), you
 can view the individual processes running on your device's CPU cores under the
 **CPU Utilization** section in the trace view.
 
 You might see that certain threads are being scheduled on CPUs that don't meet
 their needs for performance or power.
-
-![](/static/android-performance-analyzer/images/thread-cores.png)
-
-
-**Figure 2**: A screenshot of the **CPU Scheduling**
-tracks.
+![](https://developer.android.com/static/android-performance-analyzer/images/thread-cores.png) **Figure 2** : A screenshot of the **CPU Scheduling** tracks.
 
 Alternatively, you might observe threads switching between cores. Core switches
 incur overhead from the context switch, cache line invalidation, and TLB
 flushes.
-
-![](/static/android-performance-analyzer/images/thread-switch.png)
-
-
-**Figure 3**: A screenshot showing a highlighted thread that
-switches between cores.
+![](https://developer.android.com/static/android-performance-analyzer/images/thread-switch.png) **Figure 3**: A screenshot showing a highlighted thread that switches between cores.
 
 In either case, rather than setting CPU core affinity manually, use the
 [Performance Hint API](https://source.android.com/docs/core/perf/performance-hint-api) from Android Dynamic Performance Framework
 (ADPF) to send performance hints to Android for CPU clock speed and core type.
 
-Most popular game engines come with [built-in ADPF integration](/games/optimize/adpf/game-engine-support)
+Most popular game engines come with [built-in ADPF integration](https://developer.android.com/games/optimize/adpf/game-engine-support)
 which you can use to control your CPU clock speed and core type.

@@ -688,6 +688,7 @@ August 13, 2025
 - A new runtime-annotation library has been created. This contains annotation definitions without a dependency on Compose runtime, so it can be used from non-Compose modules.
   - `@Stable`, `@Immutable`, and `@StableMarker` have been moved to runtime-annotation, to allow annotating non-Compose modules
   - `@FrequentlyChangingValue` and `@RememberInComposition` have been added to runtime-annotation. `@FrequentlyChangingValue` marks declarations that can cause frequent recompositions, and `@RememberInComposition` marks declarations that should be remembered in composition. Corresponding lint checks warn for incorrect usage.
+- `androidx.compose.runtime:runtime` will now support additional platforms. Support for desktop, iOS and native targets has been upstreamed from JetBrains' Compose Multiplatform project, and will be released through Google Maven moving forward. No other Compose artifacts are affected.
 
 ### Version 1.9.0-rc01
 

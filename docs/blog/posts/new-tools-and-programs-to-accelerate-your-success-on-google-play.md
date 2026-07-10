@@ -1,211 +1,125 @@
 ---
-title: New tools and programs to accelerate your success on Google Play  |  Android Developers' Blog
+title: https://developer.android.com/blog/posts/new-tools-and-programs-to-accelerate-your-success-on-google-play
 url: https://developer.android.com/blog/posts/new-tools-and-programs-to-accelerate-your-success-on-google-play
-source: html-scrape
+source: md.txt
 ---
 
-* [Android Developers](https://developer.android.com/)
-* [Android Developers' Blog](https://developer.android.com/)
-* [Blog](https://developer.android.com/blog)
-
-Stay organized with collections
-
-Save and categorize content based on your preferences.
-
-
-
-[How-tos](/blog/categories/how-tos)
+[How-tos](https://developer.android.com/blog/categories/how-tos)
 
 # New tools and programs to accelerate your success on Google Play
 
-4-min read
+4-min read ![](https://developer.android.com/static/blog/assets/platime_53a39a9cc7_ZmGlDX.webp) 30 Oct 2025 [![View Paul Feng's profile](https://developer.android.com/static/blog/assets/paul_feng_759ac95845_spvRU.webp)](https://developer.android.com/blog/authors/paul-feng) [Paul Feng](https://developer.android.com/blog/authors/paul-feng) VP, Google Play Eng, Product, UX Last month, we shared new updates showcasing [our evolving vision for Google Play](https://blog.google/products/google-play/curation-update-september-2025/): a place where people can discover the content and experiences they love and where you can build and grow sustainable businesses. Our commitment to your success is at the heart of our continued investments.  
 
-![](/static/blog/assets/platime_53a39a9cc7_ZmGlDX.webp)
-
-30
-
-Oct
-2025
-
-[![View Paul Feng's profile](/static/blog/assets/paul_feng_759ac95845_spvRU.webp)](/blog/authors/paul-feng)
-
-[Paul Feng](/blog/authors/paul-feng)
-
-VP, Google Play Eng, Product, UX
-
-Last month, we shared new updates showcasing [our evolving vision for Google Play](https://blog.google/products/google-play/curation-update-september-2025/): a place where people can discover the content and experiences they love and where you can build and grow sustainable businesses. Our commitment to your success is at the heart of our continued investments.  
-  
 Today, we're excited to introduce a new bundle of tools and programs designed to enhance your productivity and accelerate your growth. From simplifying technical integration and localization, to offering deeper insights and creating powerful new ways to engage your audience these features will help streamline your development lifecycle.
 
-Watch our latest updates in The Android Show segment below or continue reading. You can also catch up on our [latest Android developments](https://android-developers.googleblog.com/2025/10/new-agentic-experiences-for-android.html) by watching the [full show](https://goo.gle/tas-Q4-playlist).
+<br />
 
-**Streamline your development and operations with new tools**  
+Watch our latest updates in The Android Show segment below or continue reading. You can also catch up on our [latest Android developments](https://android-developers.googleblog.com/2025/10/new-agentic-experiences-for-android.html) by watching the [full show](https://goo.gle/tas-Q4-playlist).
+
+[Video](https://www.youtube.com/watch?v=LlQW5j0JcCM)
+
+**Streamline your development and operations with new tools**   
 We're launching new tools to remove friction from your tedious development tasks by helping you validate deep links and scale to new markets with Gemini-powered AI.
 
-**Simplify deep link validation with a built-in emulator**  
-Troubleshooting deep links can be complex and time-consuming so we’re excited to launch a new, streamlined experience that allows you to instantly [validate your deep links directly within Play Console](https://support.google.com/googleplay/android-developer/answer/12463044). This means you can use a built-in emulator to test a deep link and immediately see the expected user experience on the spot, just as if someone clicked the URL on a real device.
+<br />
 
-![Built in emulator 2.jpg](/static/blog/assets/Built_in_emulator_2_b70f1ab3a8_QN2y9.webp)
+**Simplify deep link validation with a built-in emulator**   
+Troubleshooting deep links can be complex and time-consuming so we're excited to launch a new, streamlined experience that allows you to instantly [validate your deep links directly within Play Console](https://support.google.com/googleplay/android-developer/answer/12463044). This means you can use a built-in emulator to test a deep link and immediately see the expected user experience on the spot, just as if someone clicked the URL on a real device.
+![Built in emulator 2.jpg](https://developer.android.com/static/blog/assets/Built_in_emulator_2_b70f1ab3a8_QN2y9.webp)
 
-*Instantly validate your deep links using the new built-in emulator*
+*Instantly validate your deep links using the new built-in emulator*  
 
-**Reach a global audience with Gemini-powered localization**  
-We’re making it easier to bring your app or game to a global audience by simplifying localization. With our latest translation service, we've integrated the power of Gemini into Play Console to offer high-quality translations for your app strings, at no cost. This service automatically translates new app bundles into your selected languages, accelerating your title to new markets. Most importantly, you always remain in full control with the ability to preview the translated app with a built-in emulator and easily edit or disable translations.
+**Reach a global audience with Gemini-powered localization**   
+We're making it easier to bring your app or game to a global audience by simplifying localization. With our latest translation service, we've integrated the power of Gemini into Play Console to offer high-quality translations for your app strings, at no cost. This service automatically translates new app bundles into your selected languages, accelerating your title to new markets. Most importantly, you always remain in full control with the ability to preview the translated app with a built-in emulator and easily edit or disable translations.
 
-**Drive growth and engagement with AI-powered insights and You tab**  
+<br />
+
+**Drive growth and engagement with AI-powered insights and You tab**   
 We're launching new ways to help you reach and retain users, Including AI-powered insights and the new You tab for re-engagement.
 
-**Get faster insights with automated chart summaries**  
-To help you spend less time interpreting data and more time acting on key insights, a new Gemini-powered feature on the Statistics page automatically generates descriptions of your charts. These summaries help you quickly understand key trends and events that might be affecting your metrics. For developers who use a screen reader, this feature also provides access to reporting in a way you haven't had before.
+<br />
 
-![Automated chart summaries.gif](/static/blog/assets/Automated_chart_summaries_8a5e9366b3_Z2cE06j.webp)
+**Get faster insights with automated chart summaries**   
+To help you spend less time interpreting data and more time acting on key insights, a new Gemini-powered feature on the Statistics page automatically generates descriptions of your charts. These summaries help you quickly understand key trends and events that might be affecting your metrics. For developers who use a screen reader, this feature also provides access to reporting in a way you haven't had before.
+![Automated chart summaries.gif](https://developer.android.com/static/blog/assets/Automated_chart_summaries_8a5e9366b3_Z2cE06j.webp)
 
 *Get faster insights with new Gemini-powered chart summaries*
 
-**Access objective-related metrics and actionable advice for audience growth**  
-Earlier this year, we launched [objective-based overview pages](https://android-developers.googleblog.com/2025/04/play-console-insights.html) in Play Console to consolidate your key metrics, app performance, and actionable steps across essential workflows. With dedicated pages for Test & Release, Monitor & Improve, and Monetize with Play already live, we're excited to announce the full completion of this toolkit. The new Grow users overview page is now available, giving you a comprehensive, tailored view to help you acquire new users and expand your reach.
-
-![growusers.png](/static/blog/assets/growusers_138db0c4ba_2tDonq.webp)
+**Access objective-related metrics and actionable advice for audience growth**   
+Earlier this year, we launched [objective-based overview pages](https://android-developers.googleblog.com/2025/04/play-console-insights.html) in Play Console to consolidate your key metrics, app performance, and actionable steps across essential workflows. With dedicated pages for Test \& Release, Monitor \& Improve, and Monetize with Play already live, we're excited to announce the full completion of this toolkit. The new Grow users overview page is now available, giving you a comprehensive, tailored view to help you acquire new users and expand your reach.
+![growusers.png](https://developer.android.com/static/blog/assets/growusers_138db0c4ba_2tDonq.webp)
 
 *Track your key audience growth metrics on the new "Grow users" overview page*
 
 **Boost re-engagement with the You tab**
 
 Last month, we launched You tab, a brand new, personalized destination on the Play Store. This is where users can discover and re-engage with content from their favorite apps and games with curated rewards, subscriptions, recommendations, and updates all in one place.  
-  
-App developers can take advantage of this personalized destination by [integrating with Engage SDK](https://play.google.com/console/about/programs/EngageSDK/). This integration allows you to help people pick up right where they left off—like resuming a movie or playlist— or get personalized recommendations, all while seamlessly guiding them back into your app.  
-  
+
+App developers can take advantage of this personalized destination by [integrating with Engage SDK](https://play.google.com/console/about/programs/EngageSDK/). This integration allows you to help people pick up right where they left off---like resuming a movie or playlist--- or get personalized recommendations, all while seamlessly guiding them back into your app.  
+
 Game developers can use this surface to showcase timely in-game events, content updates, and special offers, making it easy for players to jump right back into the action. Promotional content, YouTube video listings, and Play Points coupons are now open to all game developers for creating a rich presence on the You tab. The availability of these powerful re-engagement tools is part of our broader commitment to game quality through the new Google Play Games Level Up program. Learn more about the program's guidelines [here](https://play.google.com/console/about/levelup/).
 
 *Showcase in-game events and offers on the new You tab*
 
-**Optimize your monetization strategy and track performance**  
+**Optimize your monetization strategy and track performance**   
 We're launching powerful new ways to configure your one-time products and track the full impact of your Play Points promotions with a new, consolidated reporting page.
 
-**Simplify catalog management for one-time products**  
-Earlier this year, we introduced [more flexible ways to configure one-time purchases](https://android-developers.googleblog.com/2025/07/new-tools-to-help-drive-success-for-one-time-products.html). You can now offer your in-app products as limited-time rentals, and [sign up for our early access program](https://docs.google.com/forms/d/e/1FAIpQLSfBsxfQg4a8uC7Ct9O4ssn121KE6l8TC4qh3ZvA5tJpFLycqw/viewform) to get started with pre-orders. We've also launched a new taxonomy, building on our existing subscription model, to help you manage your catalog more efficiently. This new model unlocks significant flexibility to help you reach a wider audience and cater to different user preferences by letting you offer the same item in multiple ways. For example, you can sell an item in one country and rent it in another—helping Play better surface relevant offerings to users. Explore these new capabilities today [in Play Console](https://support.google.com/googleplay/android-developer/answer/16430488).
+<br />
 
-![editonetime.png](/static/blog/assets/editonetime_25208f343c_Z1gqOwN.webp)
+**Simplify catalog management for one-time products**   
+Earlier this year, we introduced [more flexible ways to configure one-time purchases](https://android-developers.googleblog.com/2025/07/new-tools-to-help-drive-success-for-one-time-products.html). You can now offer your in-app products as limited-time rentals, and [sign up for our early access program](https://docs.google.com/forms/d/e/1FAIpQLSfBsxfQg4a8uC7Ct9O4ssn121KE6l8TC4qh3ZvA5tJpFLycqw/viewform) to get started with pre-orders. We've also launched a new taxonomy, building on our existing subscription model, to help you manage your catalog more efficiently. This new model unlocks significant flexibility to help you reach a wider audience and cater to different user preferences by letting you offer the same item in multiple ways. For example, you can sell an item in one country and rent it in another---helping Play better surface relevant offerings to users. Explore these new capabilities today [in Play Console](https://support.google.com/googleplay/android-developer/answer/16430488).
+![editonetime.png](https://developer.android.com/static/blog/assets/editonetime_25208f343c_Z1gqOwN.webp)
 
 *Manage your catalog more efficiently with new ways to configure one-time products*
 
-**Understand the impact and performance of Play Points promotions**  
-With Play Points recently opened to all eligible titles, you can now better understand the impact of your promotions. The new Play Points page in Play Console lets you see the total revenue, buyers and acquisitions that all Play Points promotions have generated. This reporting covers both your developer-created offers, as well as new reporting for Google-funded Play Points promotions, which includes direct and post-promotion performance metrics.
+<br />
 
-![playpoints.png](/static/blog/assets/playpoints_2ebcfe930a_R80kW.webp)
-![playpoints2.png](/static/blog/assets/playpoints2_91e8d52d78_Z1i1TR6.webp)
+**Understand the impact and performance of Play Points promotions**   
+With Play Points recently opened to all eligible titles, you can now better understand the impact of your promotions. The new Play Points page in Play Console lets you see the total revenue, buyers and acquisitions that all Play Points promotions have generated. This reporting covers both your developer-created offers, as well as new reporting for Google-funded Play Points promotions, which includes direct and post-promotion performance metrics.
+![playpoints.png](https://developer.android.com/static/blog/assets/playpoints_2ebcfe930a_R80kW.webp)
+
+![playpoints2.png](https://developer.android.com/static/blog/assets/playpoints2_91e8d52d78_Z1i1TR6.webp)
 
 *New reporting for Play Points promotions*
 
 The features announced today are more than just updates; they are the building blocks of a powerful growth engine for your business. We hope you start exploring these new capabilities today and continue sharing feedback so we can build the tools you need to build a thriving, sustainable business on Google Play.
-
 Written by:
 
-* ## [Paul Feng](/blog/authors/paul-feng)
+-
+
+  ## [Paul Feng](https://developer.android.com/blog/authors/paul-feng)
 
   ###### VP, Google Play Eng, Product, UX
 
-  [read\_more
-  View profile](/blog/authors/paul-feng)
-
-  ![View Paul Feng's profile](/static/blog/assets/paul_feng_759ac95845_spvRU.webp)
-
-  ![View Paul Feng's profile](/static/blog/assets/paul_feng_759ac95845_spvRU.webp)
-
+  [read_more
+  View profile](https://developer.android.com/blog/authors/paul-feng) ![View Paul Feng's profile](https://developer.android.com/static/blog/assets/paul_feng_759ac95845_spvRU.webp) ![View Paul Feng's profile](https://developer.android.com/static/blog/assets/paul_feng_759ac95845_spvRU.webp)
 Continue reading
+- 3 Authors 02 Jun 2026 02 Jun 2026 ![](https://developer.android.com/static/blog/assets/Engineering_Memory_Blog_Strapi_3_bfd74f43e5_Z2i8kF7.webp) [How-tos](https://developer.android.com/blog/categories/how-tos)
 
-* 3
-  Authors
+  ## [Prioritizing Memory Efficiency: Essential Steps for Android 17](https://developer.android.com/blog/posts/prioritizing-memory-efficiency-essential-steps-for-android-17)
 
-  02
+  [arrow_forward](https://developer.android.com/blog/posts/prioritizing-memory-efficiency-essential-steps-for-android-17) While app performance is often equated with a smooth UI and fast start times, memory serves as the silent foundation upon which these visible metrics are built. It's no secret that we're seeing a shift where device memory is more important than ever.
+  [Alice Yuan](https://developer.android.com/blog/authors/alice-yuan), [Ajesh Pai](https://developer.android.com/blog/authors/ajesh-pai), [Fung Lam](https://developer.android.com/blog/authors/fung-lam) • 10 min read
+  - [#Memory](https://developer.android.com/blog/topics/memory)
+  - [#Android](https://developer.android.com/blog/topics/android)
+  - [#Performance](https://developer.android.com/blog/topics/performance)
+  - +1 ↩
+- [![View Niharika Arora's profile](https://developer.android.com/static/blog/assets/niharika_2910f6d612_C99s1.webp)](https://developer.android.com/blog/authors/niharika-arora)[![View Jean-Pierre Pralle's profile](https://developer.android.com/static/blog/assets/Jean_Pierre_Pralle_2bf889a65a_2buQLX.webp)](https://developer.android.com/blog/authors/jean-pierre-pralle) 22 Apr 2026 22 Apr 2026 ![](https://developer.android.com/static/blog/assets/Streamline_user_animation_V02_Strapi_abd12985d7_SvAX9.webp) [How-tos](https://developer.android.com/blog/categories/how-tos)
 
-  Jun
-  2026
+  ## [Streamline User Journeys with Verified Email via Credential Manager](https://developer.android.com/blog/posts/streamline-user-journeys-with-verified-email-via-credential-manager)
 
-  02
+  [arrow_forward](https://developer.android.com/blog/posts/streamline-user-journeys-with-verified-email-via-credential-manager) Today, we're excited to announce a new verified email credential issued by Google, which developers can now retrieve directly from Android's Credential Manager Digital Credential API.
+  [Niharika Arora](https://developer.android.com/blog/authors/niharika-arora), [Jean-Pierre Pralle](https://developer.android.com/blog/authors/jean-pierre-pralle) • 3 min read
+- [![View Adarsh Fernando's profile](https://developer.android.com/static/blog/assets/Adarsh_profile_picture_8e88f2831a_1Ut9s6.webp)](https://developer.android.com/blog/authors/adarsh-fernando)[![View Esteban de la Canal's profile](https://developer.android.com/static/blog/assets/estebandlc_profile_800x800_1d536f02a7_Z2cAv7x.webp)](https://developer.android.com/blog/authors/esteban-de-la-canal) 16 Apr 2026 16 Apr 2026 ![](https://developer.android.com/static/blog/assets/hours_CLI_Dark_Strapi_2x_427f20cc78_Z1oqB1M.webp) [How-tos](https://developer.android.com/blog/categories/how-tos)
 
-  Jun
-  2026
+  ## [Android CLI and skills: Build Android apps 3x faster using any agent](https://developer.android.com/blog/posts/android-cli-build-android-apps-3x-faster-using-any-agent)
 
-  ![](/static/blog/assets/Engineering_Memory_Blog_Strapi_3_bfd74f43e5_Z2i8kF7.webp)
-
-  [How-tos](/blog/categories/how-tos)
-
-  ## [Prioritizing Memory Efficiency: Essential Steps for Android 17](/blog/posts/prioritizing-memory-efficiency-essential-steps-for-android-17)
-
-  [arrow\_forward](/blog/posts/prioritizing-memory-efficiency-essential-steps-for-android-17)
-
-  While app performance is often equated with a smooth UI and fast start times, memory serves as the silent foundation upon which these visible metrics are built. It's no secret that we're seeing a shift where device memory is more important than ever.
-
-  [Alice Yuan](/blog/authors/alice-yuan),
-  [Ajesh Pai](/blog/authors/ajesh-pai),
-  [Fung Lam](/blog/authors/fung-lam)
-  •
-  10 min read
-  + [#Memory](/blog/topics/memory)
-  + [#Android](/blog/topics/android)
-  + [#Performance](/blog/topics/performance)
-  + +1
-    ↩
-* [![View Niharika Arora's profile](/static/blog/assets/niharika_2910f6d612_C99s1.webp)](/blog/authors/niharika-arora)[![View Jean-Pierre Pralle's profile](/static/blog/assets/Jean_Pierre_Pralle_2bf889a65a_2buQLX.webp)](/blog/authors/jean-pierre-pralle)
-
-  22
-
-  Apr
-  2026
-
-  22
-
-  Apr
-  2026
-
-  ![](/static/blog/assets/Streamline_user_animation_V02_Strapi_abd12985d7_SvAX9.webp)
-
-  [How-tos](/blog/categories/how-tos)
-
-  ## [Streamline User Journeys with Verified Email via Credential Manager](/blog/posts/streamline-user-journeys-with-verified-email-via-credential-manager)
-
-  [arrow\_forward](/blog/posts/streamline-user-journeys-with-verified-email-via-credential-manager)
-
-  Today, we're excited to announce a new verified email credential issued by Google, which developers can now retrieve directly from Android’s Credential Manager Digital Credential API.
-
-  [Niharika Arora](/blog/authors/niharika-arora),
-  [Jean-Pierre Pralle](/blog/authors/jean-pierre-pralle)
-  •
-  3 min read
-* [![View Adarsh Fernando's profile](/static/blog/assets/Adarsh_profile_picture_8e88f2831a_1Ut9s6.webp)](/blog/authors/adarsh-fernando)[![View Esteban de la Canal's profile](/static/blog/assets/estebandlc_profile_800x800_1d536f02a7_Z2cAv7x.webp)](/blog/authors/esteban-de-la-canal)
-
-  16
-
-  Apr
-  2026
-
-  16
-
-  Apr
-  2026
-
-  ![](/static/blog/assets/hours_CLI_Dark_Strapi_2x_427f20cc78_Z1oqB1M.webp)
-
-  [How-tos](/blog/categories/how-tos)
-
-  ## [Android CLI and skills: Build Android apps 3x faster using any agent](/blog/posts/android-cli-build-android-apps-3x-faster-using-any-agent)
-
-  [arrow\_forward](/blog/posts/android-cli-build-android-apps-3x-faster-using-any-agent)
-
-  Whether you are using Gemini in Android Studio, Gemini CLI, Antigravity, or third-party agents like Claude Code or Codex, our mission is to ensure that high-quality Android development is possible everywhere.
-
-  [Adarsh Fernando](/blog/authors/adarsh-fernando),
-  [Esteban de la Canal](/blog/authors/esteban-de-la-canal)
-  •
-  4 min read
-
+  [arrow_forward](https://developer.android.com/blog/posts/android-cli-build-android-apps-3x-faster-using-any-agent) Whether you are using Gemini in Android Studio, Gemini CLI, Antigravity, or third-party agents like Claude Code or Codex, our mission is to ensure that high-quality Android development is possible everywhere.
+  [Adarsh Fernando](https://developer.android.com/blog/authors/adarsh-fernando), [Esteban de la Canal](https://developer.android.com/blog/authors/esteban-de-la-canal) • 4 min read
 Stay in the loop
+
 
 Get the latest Android development insights delivered to your inbox
 weekly.
-
 [mail
-Subscribe](/subscribe)
-
-![A 3D illustration of the Android mascot, wearing a jetpack that's emitting a large cloud of bubbles](/static/blog/assets/rocket-android.CVJQZOf1_1PnraM.webp)
+Subscribe](https://developer.android.com/subscribe) ![A 3D illustration of the Android mascot, wearing a jetpack that's emitting a large cloud of bubbles](https://developer.android.com/static/blog/assets/rocket-android.CVJQZOf1_1PnraM.webp)

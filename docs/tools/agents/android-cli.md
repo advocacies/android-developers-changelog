@@ -1,19 +1,8 @@
 ---
-title: Overview of Android CLI  |  Android Studio  |  Android Developers
+title: https://developer.android.com/tools/agents/android-cli
 url: https://developer.android.com/tools/agents/android-cli
-source: html-scrape
+source: md.txt
 ---
-
-* [Android Developers](https://developer.android.com/)
-* [Develop](https://developer.android.com/develop)
-* [Android Studio](https://developer.android.com/studio)
-* [Agent tools and resources](https://developer.android.com/tools/agents)
-
-# Overview of Android CLI Stay organized with collections Save and categorize content based on your preferences.
-
-
-
-
 
 Android CLI is a command-line interface that enables you to more easily and
 efficiently build for Android using any tool of your choice. It standardizes
@@ -25,28 +14,28 @@ automation for the increasingly distributed nature of Android development.
 For example, an agent or script can use the CLI to do tasks such as the
 following:
 
-* Automate environment setup
-* Scaffold new projects from templates
-* Manage virtual devices directly from your terminal
-* Test your app with [Journeys](/tools/agents/android-cli/journeys)
+- Automate environment setup
+- Scaffold new projects from templates
+- Manage virtual devices directly from your terminal
+- Test your app with [Journeys](https://developer.android.com/tools/agents/android-cli/journeys)
 
-Android CLI also gives your agents access to [Android skills](/tools/agents/android-skills)
-and the specialized [Android Knowledge Base](/studio/gemini/access-helpful-resources) to help ensure that your
+Android CLI also gives your agents access to [Android skills](https://developer.android.com/tools/agents/android-skills)
+and the specialized [Android Knowledge Base](https://developer.android.com/studio/gemini/access-helpful-resources) to help ensure that your
 projects apply Android-recommended patterns and best practices.
 
 ## Install Android CLI
 
 To install Android CLI, follow these steps:
 
-1. [Download Android CLI](/tools/agents).
+1. [Download Android CLI](https://developer.android.com/tools/agents).
+
 2. To make sure you're using the latest version, update
    Android CLI:
 
-   ```
-   android update
-   ```
+       android update
 
-   **Tip:** Run [`android update`](#update) regularly to keep up with the latest features.
+   > [!TIP]
+   > **Tip:** Run [`android update`](https://developer.android.com/tools/agents/android-cli#update) regularly to keep up with the latest features.
 
 To check if Android CLI is already installed on your machine, run
 `which android` or `command -v android`: if it returns a path, then it's
@@ -57,35 +46,22 @@ installed.
 To help agents understand and use Android CLI, run `init` to install the
 `android-cli` skill:
 
-```
-android init
-```
+    android init
 
 ## Data collected
 
 Android CLI collects data on basic usage of the tool. Here's the data that we
 collect:
 
-* Invocations of the `android` command and sub-commands, for example
-  `android run` and `android create`.
-* Names of non-positional arguments or options used, for example `--sdk` or
-  `--version`.
-* Positional arguments and flag values that map to a fixed, predefined set of
-  system options managed by Android CLI. For example, we collect emulator template
-  names such as `medium_phone` and `large_desktop`, and agent names such as
-  `GEMINI`, `CLAUDE`, or `CODEX`.
-* Stack traces and exception messages, where identifying information is
-  anonymized before collection to help ensure privacy.
+- Invocations of the `android` command and sub-commands, for example `android run` and `android create`.
+- Names of non-positional arguments or options used, for example `--sdk` or `--version`.
+- Positional arguments and flag values that map to a fixed, predefined set of system options managed by Android CLI. For example, we collect emulator template names such as `medium_phone` and `large_desktop`, and agent names such as `GEMINI`, `CLAUDE`, or `CODEX`.
+- Stack traces and exception messages, where identifying information is anonymized before collection to help ensure privacy.
 
 Here are some examples of data that we *don't* collect:
 
-* We don't collect responses of the CLI when a command is run.
-* We don't collect user-created inputs or external identifiers passed
-  to the CLI, such as specific Maven coordinates, local file paths, or
-  custom project names. For example, if the command
-  `android create --name=com.company.internal.app` is executed, we record
-  that `android create` was executed using the `--name` argument but we don't
-  store the value `com.company.internal.app`.
+- We don't collect responses of the CLI when a command is run.
+- We don't collect user-created inputs or external identifiers passed to the CLI, such as specific Maven coordinates, local file paths, or custom project names. For example, if the command `android create --name=com.company.internal.app` is executed, we record that `android create` was executed using the `--name` argument but we don't store the value `com.company.internal.app`.
 
 ## Feedback and issues
 
@@ -94,8 +70,8 @@ If you encounter any issues or want to provide feedback,
 
 ## Known issues
 
-* The `android emulator` command for Windows is currently disabled.
-* Downloading Android CLI from Windows PowerShell isn't currently supported.
+- The `android emulator` command for Windows is currently disabled.
+- Downloading Android CLI from Windows PowerShell isn't currently supported.
 
 ## Configure Android CLI
 
@@ -103,17 +79,15 @@ Create a `.androidrc` file to automatically apply flags and options
 every time you invoke Android CLI. Save the file in the following
 location, depending on your operating system:
 
-* **macOS and Linux**: `~/.androidrc`
-* **Windows**: `%USERPROFILE%\.androidrc`
+- **macOS and Linux** : `~/.androidrc`
+- **Windows** : `%USERPROFILE%\.androidrc`
 
 Add the flags you want to apply automatically to the file, one per line.
 
 For example, to make Android CLI use a specific Android SDK by default
-every time, add the [`--sdk`](#sdk) flag to your file:
+every time, add the [`--sdk`](https://developer.android.com/tools/agents/android-cli#sdk) flag to your file:
 
-```
---sdk=<path-to-sdk>
-```
+    --sdk=<path-to-sdk>
 
 ## Global options
 
@@ -128,8 +102,8 @@ question.
 
 **Examples:**
 
-* `android -h`
-* `android create -h`
+- `android -h`
+- `android create -h`
 
 ### `--sdk`
 
@@ -138,9 +112,9 @@ question.
 **Description:** The path to the Android SDK that you want to use for the
 command that follows. You can use the `--sdk` setting to temporarily override
 the default Android SDK instead of changing your
-[global environment variables](/tools/variables#envar) every time you want to
+[global environment variables](https://developer.android.com/tools/variables#envar) every time you want to
 switch. To check which Android SDK you're using by default, run
-[`android info`](#info).
+[`android info`](https://developer.android.com/tools/agents/android-cli#info).
 
 **Example:** `android --sdk=<path/to/sdk> sdk list`
 
@@ -160,19 +134,14 @@ options, run `android create -h`.
 
 **Arguments (mandatory):**
 
-* `-o, --output` - The destination project directory path.
+- `-o, --output` - The destination project directory path.
 
 **Options:**
 
-* `--dry-run` - Simulates the entire project creation process without actually
-  saving any files. For example, you can do a dry run to see what the different
-  templates do before committing to one.
-* `--verbose` - Enables verbose output, including information such as which
-  files are being copied from the template.
-* `--name=<application-name>` - The name of the project directory. If
-  omitted, the output directory is used.
-* `<template-name>` - The name of the template to create a new project from.
-  If omitted, `empty-activity-agp-9` is used.
+- `--dry-run` - Simulates the entire project creation process without actually saving any files. For example, you can do a dry run to see what the different templates do before committing to one.
+- `--verbose` - Enables verbose output, including information such as which files are being copied from the template.
+- `--name=<application-name>` - The name of the project directory. If omitted, the output directory is used.
+- `<template-name>` - The name of the template to create a new project from. If omitted, `empty-activity-agp-9` is used.
 
 **Example:** `android create --dry-run --verbose empty-activity-agp-9`
 
@@ -194,8 +163,7 @@ other tools and commands to locate build artifacts efficiently.
 
 **Options:**
 
-* `--project_dir` - The project directory to describe. If omitted, the current
-  directory is used.
+- `--project_dir` - The project directory to describe. If omitted, the current directory is used.
 
 **Example:** `android describe --project_dir=/path/to/your/project`
 
@@ -203,11 +171,11 @@ other tools and commands to locate build artifacts efficiently.
 
 **Usage:**
 
-* `android docs search <query>`
-* `android docs fetch <kb-url>`
+- `android docs search <query>`
+- `android docs fetch <kb-url>`
 
 **Description:** The `android docs` command is a two-step process for
-accessing the [Android Knowledge Base](/studio/gemini/access-helpful-resources) directly from the CLI.
+accessing the [Android Knowledge Base](https://developer.android.com/studio/gemini/access-helpful-resources) directly from the CLI.
 First, search for documentation related to your query using the `search`
 command. The search results will include special URLs starting with `kb://`,
 which you can then use with the `fetch` command to output the documentation
@@ -215,8 +183,8 @@ commands to the terminal.
 
 **Examples:**
 
-* `android docs search 'How do I improve my app performance?'`
-* `android docs fetch kb://android/topic/performance/overview`
+- `android docs search 'How do I improve my app performance?'`
+- `android docs fetch kb://android/topic/performance/overview`
 
 ### `emulator create`
 
@@ -226,10 +194,8 @@ commands to the terminal.
 
 **Options:**
 
-* `--list-profiles` - List the device profiles that can be used to create a
-  device.
-* `--profile=<profile-name>` - Create a device with the specified profile. If
-  this is omitted, the `medium_phone` profile will be created.
+- `--list-profiles` - List the device profiles that can be used to create a device.
+- `--profile=<profile-name>` - Create a device with the specified profile. If this is omitted, the `medium_phone` profile will be created.
 
 ### `emulator list`
 
@@ -245,8 +211,7 @@ commands to the terminal.
 
 **Arguments (mandatory):**
 
-* `<device-name>` - The device name to start (for example, `medium_phone`).
-  Use `android emulator list` to see the available devices.
+- `<device-name>` - The device name to start (for example, `medium_phone`). Use `android emulator list` to see the available devices.
 
 **Example:** `android emulator start medium_phone`
 
@@ -258,7 +223,7 @@ commands to the terminal.
 
 **Arguments (mandatory):**
 
-* `<device-serial-number>` - The device serial number to stop.
+- `<device-serial-number>` - The device serial number to stop.
 
 **Example:** `android emulator stop emulator-5554`
 
@@ -267,7 +232,7 @@ commands to the terminal.
 **Usage:** `android info`
 
 **Description:** Display the path to the default Android SDK used. To change
-the Android SDK used, use [`--sdk`](#sdk).
+the Android SDK used, use [`--sdk`](https://developer.android.com/tools/agents/android-cli#sdk).
 
 ### `init`
 
@@ -285,15 +250,11 @@ through a physical device or emulator) in JSON format.
 
 **Options:**
 
-* `-p, --pretty` - Formats the JSON output with indentation and line breaks
-  for human readability.
-* `-o, --output` - Specifies a file location to save the layout tree. If
-  omitted, the JSON is printed directly to stdout.
-* `-d, --diff` - Returns a list of only the layout elements that have
-  changed since the last internal snapshot was taken (the last time layout
-  was run), instead of the full layout tree.
+- `-p, --pretty` - Formats the JSON output with indentation and line breaks for human readability.
+- `-o, --output` - Specifies a file location to save the layout tree. If omitted, the JSON is printed directly to stdout.
+- `-d, --diff` - Returns a list of only the layout elements that have changed since the last internal snapshot was taken (the last time layout was run), instead of the full layout tree.
 
-**Example:**: `android layout --output=./hierarchy.json`
+**Example:** : `android layout --output=./hierarchy.json`
 
 ### `run`
 
@@ -305,38 +266,26 @@ files that you want to install.
 
 **Arguments (mandatory):**
 
-* `--apks` - A comma-separated list of path(s) to the APK files that you
-  want to install. The path is relative to where you currently are in the
-  file system.
+- `--apks` - A comma-separated list of path(s) to the APK files that you want to install. The path is relative to where you currently are in the file system.
 
 **Options:**
 
-* `--activity` - The name of the [activity](/guide/components/activities/intro-activities) to launch once
-  the APK is installed. If there are multiple activities, you must specify
-  one activity to launch initially.
-* `--debug` - Deploys the app in [debug mode](/studio/debug). After running the
-  app in debug mode, you must [connect your debugger](/studio/debug#attach-debugger) from
-  an IDE, such as Android Studio, or a command-line tool to start debugging.
-* `--device` - The serial number of the target device or emulator. Only
-  needed if multiple devices are connected. To find the device serial
-  numbers, run `adb devices`.
-* `--type` - The [component type](/guide/topics/manifest/manifest-intro#components) to start. Use this if
-  you'd like to start a background service directly instead of a UI activity.
-  Types supported:
-  + `ACTIVITY`
-  + `WATCH_FACE`
-  + `TILE`
-  + `COMPLICATION`
-  + `DECLARATIVE_WATCH_FACE`
+- `--activity` - The name of the [activity](https://developer.android.com/guide/components/activities/intro-activities) to launch once the APK is installed. If there are multiple activities, you must specify one activity to launch initially.
+- `--debug` - Deploys the app in [debug mode](https://developer.android.com/studio/debug). After running the app in debug mode, you must [connect your debugger](https://developer.android.com/studio/debug#attach-debugger) from an IDE, such as Android Studio, or a command-line tool to start debugging.
+- `--device` - The serial number of the target device or emulator. Only needed if multiple devices are connected. To find the device serial numbers, run `adb devices`.
+- `--type` - The [component type](https://developer.android.com/guide/topics/manifest/manifest-intro#components) to start. Use this if you'd like to start a background service directly instead of a UI activity. Types supported:
+  - `ACTIVITY`
+  - `WATCH_FACE`
+  - `TILE`
+  - `COMPLICATION`
+  - `DECLARATIVE_WATCH_FACE`
 
 **Examples:**
 
-* `android run --apks=app/build/outputs/apk/debug/app-debug.apk` - Deploys a
-  single APK to the default device.
-* `android run --apks=base.apk,density-hdpi.apk,lang-en.apk` - Deploys multiple
-  APKs to the default device.
-* `android run --apks=app-debug.apk --type=SERVICE --activity=.sync.DataSyncService` - Test a service without an activity.
-* `android run --apks=app-debug.apk --device=emulator-5554` - Deploys the APK to a specific device.
+- `android run --apks=app/build/outputs/apk/debug/app-debug.apk` - Deploys a single APK to the default device.
+- `android run --apks=base.apk,density-hdpi.apk,lang-en.apk` - Deploys multiple APKs to the default device.
+- `android run --apks=app-debug.apk --type=SERVICE --activity=.sync.DataSyncService` - Test a service without an activity.
+- `android run --apks=app-debug.apk --device=emulator-5554` - Deploys the APK to a specific device.
 
 ### `screen capture`
 
@@ -346,10 +295,8 @@ files that you want to install.
 
 **Options:**
 
-* `-o, --output` - Specifies a file location to save the screenshot. If
-  omitted, the raw PNG data will be printed directly to stdout.
-* `-a, --annotate` - Draws labeled bounding boxes around all the UI elements
-  detected on the image, to use with the `resolve` command.
+- `-o, --output` - Specifies a file location to save the screenshot. If omitted, the raw PNG data will be printed directly to stdout.
+- `-a, --annotate` - Draws labeled bounding boxes around all the UI elements detected on the image, to use with the `resolve` command.
 
 **Example:** `android screen capture --output=ui.png`
 
@@ -364,24 +311,18 @@ their positions.
 
 **Flags:**
 
-* `--screenshot` - The path to the annotated screenshot.
-* `--string` - A string that includes at least one placeholder corresponding
-  to a UI element label in the format `#<number>`. The `#<number>` part will
-  be replaced by the screen coordinates.
+- `--screenshot` - The path to the annotated screenshot.
+- `--string` - A string that includes at least one placeholder corresponding to a UI element label in the format `#<number>`. The `#<number>` part will be replaced by the screen coordinates.
 
 **Example:**
 
 If the label 5 is at coordinates (500, 1000), then the command
 
-```
-android screen resolve --screenshot=ui.png --string="input tap #5"
-```
+    android screen resolve --screenshot=ui.png --string="input tap #5"
 
 returns the output
 
-```
-input tap 500 1000
-```
+    input tap 500 1000
 
 ### `sdk install`
 
@@ -391,28 +332,20 @@ input tap 500 1000
 
 **Arguments (mandatory):**
 
-* `package[@version]` - A space-separated list of packages to install. If a
-  version isn't specified, the latest version of the package in the channel
-  (by default the stable channel) is installed.
+- `package[@version]` - A space-separated list of packages to install. If a version isn't specified, the latest version of the package in the channel (by default the stable channel) is installed.
 
 **Options:**
 
-* `--beta` - Include beta packages.
-* `--canary` - Include canary packages.
-* `--force` - Force downgrading to an older version.
+- `--beta` - Include beta packages.
+- `--canary` - Include canary packages.
+- `--force` - Force downgrading to an older version.
 
 **Examples:**
 
-* `android sdk install platforms/android-34 build-tools/34.0.0` - Install the
-  latest versions of the Android SDK Platform 34 and SDK Built Tools 34.0.0
-  packages from the stable channel.
-* `android sdk install platforms/android-34@2` - Install version 2 of the
-  Android SDK Platform 34 package.
-* `android sdk install --canary system-images/android-35/google_apis/x86_6` -
-  Install the latest version of the Android 35 system image from the canary
-  channel.
-* `android sdk install --force platforms/android-33@1` - Revert to version 1
-  of the Android SDK Platform 33 package from the stable channel.
+- `android sdk install platforms/android-34 build-tools/34.0.0` - Install the latest versions of the Android SDK Platform 34 and SDK Built Tools 34.0.0 packages from the stable channel.
+- `android sdk install platforms/android-34@2` - Install version 2 of the Android SDK Platform 34 package.
+- `android sdk install --canary system-images/android-35/google_apis/x86_6` - Install the latest version of the Android 35 system image from the canary channel.
+- `android sdk install --force platforms/android-33@1` - Revert to version 1 of the Android SDK Platform 33 package from the stable channel.
 
 ### `sdk list`
 
@@ -422,15 +355,14 @@ input tap 500 1000
 
 **Arguments (mandatory):**
 
-* `<package-pattern>` - Filter packages by pattern. Supports regular
-  expressions.
+- `<package-pattern>` - Filter packages by pattern. Supports regular expressions.
 
 **Options:**
 
-* `--all` - Show all installed and available packages.
-* `--all-versions` - Show all versions for each package.
-* `--beta` - Include beta packages.
-* `--canary` - Include canary packages.
+- `--all` - Show all installed and available packages.
+- `--all-versions` - Show all versions for each package.
+- `--beta` - Include beta packages.
+- `--canary` - Include canary packages.
 
 ### `sdk remove`
 
@@ -440,7 +372,7 @@ input tap 500 1000
 
 **Arguments (mandatory):**
 
-* `<package-name>` - The name of the package to remove.
+- `<package-name>` - The name of the package to remove.
 
 **Example:** `android sdk remove build-tools/36.1.0`
 
@@ -454,26 +386,23 @@ packages will be updated.
 
 **Options:**
 
-* `<package-name>` - The name of the package to update.
-* `--beta` - Include beta packages.
-* `--canary` - Include canary packages.
-* `--force` - Force downgrading to an older version.
+- `<package-name>` - The name of the package to update.
+- `--beta` - Include beta packages.
+- `--canary` - Include canary packages.
+- `--force` - Force downgrading to an older version.
 
 **Examples:**
 
-* `android sdk update` - Check for and install updates for everything in your
-  SDK.
-* `android sdk update build-tools/34.0.0` - Update the Android SDK Build
-  Tools 34.0.0 package to the latest version in the stable channel.
-* `android sdk update --canary platforms/android-35` - Update the Android
-  SDK Platforms 35 package to the latest version in the canary channel.
+- `android sdk update` - Check for and install updates for everything in your SDK.
+- `android sdk update build-tools/34.0.0` - Update the Android SDK Build Tools 34.0.0 package to the latest version in the stable channel.
+- `android sdk update --canary platforms/android-35` - Update the Android SDK Platforms 35 package to the latest version in the canary channel.
 
 ### `skills add`
 
 Android skills are special instructions designed to help agents better
 understand and execute specific patterns that follow best practices and
 guidance on Android development. To learn more, see
-[Intro to Android skills](/tools/agents/android-skills).
+[Intro to Android skills](https://developer.android.com/tools/agents/android-skills).
 
 **Usage:** `android skills add [--all] [--agent=<agent-name>] [--skill=<skill-name>]`
 
@@ -483,17 +412,14 @@ specify particular agents, the skills will be installed for Gemini and
 Antigravity at `~/.gemini/antigravity/skills`. If you already have Android
 skills installed, `skills add` updates the skills to the latest version.
 
-**Note:** If you customize a skill, you should rename it, or it will get
-overwritten when you update it using `skills add`.
+> [!NOTE]
+> **Note:** If you customize a skill, you should rename it, or it will get overwritten when you update it using `skills add`.
 
 **Options:**
 
-* `--all` - Install or update all the Android skills at once. If omitted (and `--skill`
-  isn't specified), only the `android-cli` skill will be installed.
-* `--agent` - A comma-separated list of agents to install or update the skill for. If
-  omitted, the skill will be installed for all detected agents.
-* `--skill` - The skill name that you want to install or update. If omitted (and
-  `--all` isn't specified), only the `android-cli` skill will be installed or updated.
+- `--all` - Install or update all the Android skills at once. If omitted (and `--skill` isn't specified), only the `android-cli` skill will be installed.
+- `--agent` - A comma-separated list of agents to install or update the skill for. If omitted, the skill will be installed for all detected agents.
+- `--skill` - The skill name that you want to install or update. If omitted (and `--all` isn't specified), only the `android-cli` skill will be installed or updated.
 
 **Example:** `android skills add --agent='gemini' edge-to-edge`
 
@@ -505,7 +431,7 @@ overwritten when you update it using `skills add`.
 
 **Arguments (mandatory):**
 
-* `string` - String that matches a skill description.
+- `string` - String that matches a skill description.
 
 **Example:** `android skills find 'performance'`
 
@@ -517,8 +443,7 @@ overwritten when you update it using `skills add`.
 
 **Options:**
 
-* `--long` - Output additional information for each skill, including the
-  description of the skill and which agents it's already installed for.
+- `--long` - Output additional information for each skill, including the description of the skill and which agents it's already installed for.
 
 ### `skills remove`
 
@@ -529,20 +454,18 @@ skill will be removed for all agents.
 
 **Arguments (mandatory):**
 
-* `--skill` - The name of the skill to remove.
+- `--skill` - The name of the skill to remove.
 
 **Options:**
 
-* `--agent` - A comma-separated list of agents to remove the skill from. If
-  omitted, the skill will be removed for all agents.
+- `--agent` - A comma-separated list of agents to remove the skill from. If omitted, the skill will be removed for all agents.
 
 **Example:** `android skills remove --agent='gemini' --skill=edge-to-edge`
 
 ### `studio check`
 
-**Preview:** To use the `studio` commands, you must have your project
-open in Android Studio Quail 2 Canary 1 or higher, and have Gemini in Android
-Studio enabled and signed in.
+> [!WARNING]
+> **Preview:** To use the `studio` commands, you must have your project open in Android Studio Quail 2 Canary 1 or higher, and have Gemini in Android Studio enabled and signed in.
 
 The `studio` commands enable you or your AI agent to interact with
 active instances of Android Studio. By connecting to a running instance, you
@@ -561,12 +484,10 @@ are multiple.
 If connected, the output lists the PID of the running Android Studio instance,
 the version, and the status of open projects:
 
-```
-pid: 32942
-version: Android Studio Quail
-Projects:
-    READY     MyApplication /Users/username/AndroidStudioProjects/MyApplication
-```
+    pid: 32942
+    version: Android Studio Quail
+    Projects:
+        READY     MyApplication /Users/username/AndroidStudioProjects/MyApplication
 
 ### `studio analyze-file`
 
@@ -577,23 +498,18 @@ using the IDE's built-in inspection engine.
 
 **Arguments (mandatory):**
 
-* `<path>` - The path of the Kotlin or Java file to analyze.
+- `<path>` - The path of the Kotlin or Java file to analyze.
 
 **Options:**
 
-* `--pid=<pid>` - The PID of the specific Android Studio instance to connect
-  to, if there are multiple.
-* `--project=<project>` - The name of the project open in Android Studio to
-  query, if there are multiple. If you run the `analyze-file` command from
-  within a project directory, that project is used by default.
+- `--pid=<pid>` - The PID of the specific Android Studio instance to connect to, if there are multiple.
+- `--project=<project>` - The name of the project open in Android Studio to query, if there are multiple. If you run the `analyze-file` command from within a project directory, that project is used by default.
 
 **Example:**
 
-```
-android studio analyze-file \
-  --project=MyApplication \
-  /Users/username/AndroidStudioProjects/MyApplication/app/src/main/java/com/example/myapp/MainActivity.kt
-```
+    android studio analyze-file \
+      --project=MyApplication \
+      /Users/username/AndroidStudioProjects/MyApplication/app/src/main/java/com/example/myapp/MainActivity.kt
 
 ### `studio find-declaration`
 
@@ -605,26 +521,18 @@ resolution.
 
 **Arguments (mandatory):**
 
-* `<symbol>` - The name of the code symbol to find the declaration for.
+- `<symbol>` - The name of the code symbol to find the declaration for.
 
 **Options:**
 
-* `--context-file=<path>` - Optional path to a file containing a reference to
-  the symbol. Providing a context file helps resolve ambiguous or overloaded
-  symbols by providing imports and scope.
-* `--short` - Simplifies the output to only display the file location and line
-  match.
-* `--pid=<pid>` - The PID of the specific Android Studio instance to connect
-  to, if there are multiple.
-* `--project=<project>` - The name of the project open in Android Studio to
-  query, if there are multiple. If you run the `find-declaration` command from
-  within a project directory, that project is used by default.
+- `--context-file=<path>` - Optional path to a file containing a reference to the symbol. Providing a context file helps resolve ambiguous or overloaded symbols by providing imports and scope.
+- `--short` - Simplifies the output to only display the file location and line match.
+- `--pid=<pid>` - The PID of the specific Android Studio instance to connect to, if there are multiple.
+- `--project=<project>` - The name of the project open in Android Studio to query, if there are multiple. If you run the `find-declaration` command from within a project directory, that project is used by default.
 
 **Example:**
 
-```
-android studio find-declaration --short HotelDetailScreen
-```
+    android studio find-declaration --short HotelDetailScreen
 
 ### `studio find-usages`
 
@@ -635,22 +543,17 @@ project using semantic analysis.
 
 **Arguments (mandatory):**
 
-* `<symbol>` - The name of the symbol to find usages for.
+- `<symbol>` - The name of the symbol to find usages for.
 
 **Options:**
 
-* `--short` - Simplifies the output to only display the matched file locations.
-* `--pid=<pid>` - The PID of the specific Android Studio instance to connect
-  to, if there are multiple.
-* `--project=<project>` - The name of the project open in Android Studio to
-  query, if there are multiple. If you run this command from within a
-  project directory, that project is used by default.
+- `--short` - Simplifies the output to only display the matched file locations.
+- `--pid=<pid>` - The PID of the specific Android Studio instance to connect to, if there are multiple.
+- `--project=<project>` - The name of the project open in Android Studio to query, if there are multiple. If you run this command from within a project directory, that project is used by default.
 
 **Example:**
 
-```
-android studio find-usages --short HotelDetailScreen
-```
+    android studio find-usages --short HotelDetailScreen
 
 ### `studio open-file`
 
@@ -661,22 +564,16 @@ Studio.
 
 **Arguments (mandatory):**
 
-* `<path>` - The path of the file to open. Can be specified relative to the
-  project root directory, or as an absolute path.
+- `<path>` - The path of the file to open. Can be specified relative to the project root directory, or as an absolute path.
 
 **Options:**
 
-* `--pid=<pid>` - The PID of the specific Android Studio instance to connect
-  to, if there are multiple.
-* `--project=<project>` - The name of the project open in Android Studio to
-  query, if there are multiple. If you run the `open-file` command from within
-  a project directory, that project is used by default.
+- `--pid=<pid>` - The PID of the specific Android Studio instance to connect to, if there are multiple.
+- `--project=<project>` - The name of the project open in Android Studio to query, if there are multiple. If you run the `open-file` command from within a project directory, that project is used by default.
 
 **Example:**
 
-```
-android studio open-file app/src/main/java/com/example/myapp/ui/DetailScreen.kt
-```
+    android studio open-file app/src/main/java/com/example/myapp/ui/DetailScreen.kt
 
 ### `studio render-compose-preview`
 
@@ -688,32 +585,23 @@ agents to work with the UI layout.
 
 **Arguments (mandatory):**
 
-* `<path>` - The path to the Kotlin file containing the Compose preview.
-* `<composable>` - The name of the composable preview function (marked with
-  `@Preview`).
+- `<path>` - The path to the Kotlin file containing the Compose preview.
+- `<composable>` - The name of the composable preview function (marked with `@Preview`).
 
 **Options:**
 
-* `--output-image-file=<filename>` - Specifies the filename to write the
-  resulting rendered PNG image to. If omitted, a temporary file is created.
-* `--print-semantics` - If true, prints out the rendered Compose preview's
-  accessibility semantics tree in JSON format. This enables agents to parse
-  the structure and interactive elements of the UI.
-* `--pid=<pid>` - The PID of the specific Android Studio instance to connect
-  to, if there are multiple.
-* `--project=<project>` - The name of the project open in Android Studio to
-  query, if there are multiple. If you run the `render-compose-preview`
-  command from within a project directory, that project is used by default.
+- `--output-image-file=<filename>` - Specifies the filename to write the resulting rendered PNG image to. If omitted, a temporary file is created.
+- `--print-semantics` - If true, prints out the rendered Compose preview's accessibility semantics tree in JSON format. This enables agents to parse the structure and interactive elements of the UI.
+- `--pid=<pid>` - The PID of the specific Android Studio instance to connect to, if there are multiple.
+- `--project=<project>` - The name of the project open in Android Studio to query, if there are multiple. If you run the `render-compose-preview` command from within a project directory, that project is used by default.
 
 **Example:**
 
-```
-android studio render-compose-preview \
-  --output-image-file=preview_hotel.png \
-  --print-semantics \
-  app/src/main/java/com/example/myapp/ui/DetailScreen.kt \
-  HotelDetailScreenPreview
-```
+    android studio render-compose-preview \
+      --output-image-file=preview_hotel.png \
+      --print-semantics \
+      app/src/main/java/com/example/myapp/ui/DetailScreen.kt \
+      HotelDetailScreenPreview
 
 ### `studio version-lookup`
 
@@ -725,13 +613,10 @@ provides a programmatic alternative to manual dependency version checking.
 
 **Arguments (mandatory):**
 
-* `<artifacts...>` - A space-separated list of identifiers. You can query
-  multiple artifacts in a single command. Supported identifiers include:
-  + Maven libraries: The `groupId:artifactId` notation (for example,
-    `androidx.window:window`).
-  + Gradle plugins: The plugin ID (for example,
-    `com.android.application`).
-  + Keywords:
+- `<artifacts...>` - A space-separated list of identifiers. You can query multiple artifacts in a single command. Supported identifiers include:
+  - Maven libraries: The `groupId:artifactId` notation (for example, `androidx.window:window`).
+  - Gradle plugins: The plugin ID (for example, `com.android.application`).
+  - Keywords:
     - `gradle` (Gradle build tool)
     - `studio` (Android Studio)
     - `agp` (Android Gradle plugin)
@@ -748,21 +633,16 @@ provides a programmatic alternative to manual dependency version checking.
 
 **Options:**
 
-* `--pid=<pid>` - The PID of the specific Android Studio instance to connect
-  to, if there are multiple.
-* `--project=<project>` - The name of the project open in Android Studio to
-  query, if there are multiple. If you run the `version-lookup` command from
-  within a project directory, that project is used by default.
+- `--pid=<pid>` - The PID of the specific Android Studio instance to connect to, if there are multiple.
+- `--project=<project>` - The name of the project open in Android Studio to query, if there are multiple. If you run the `version-lookup` command from within a project directory, that project is used by default.
 
 **Example:**
 
-```
-android studio version-lookup \
-  androidx.compose.ui:ui \
-  com.android.application \
-  agp \
-  kotlin
-```
+    android studio version-lookup \
+      androidx.compose.ui:ui \
+      com.android.application \
+      agp \
+      kotlin
 
 ### `update`
 
