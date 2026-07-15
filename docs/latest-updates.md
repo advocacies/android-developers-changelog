@@ -158,7 +158,7 @@ July 14, 2026 Stable
 
 July 14, 2026 Stable
 
-### [Android Gradle Plugin 9.2.0](https://developer.android.com/build/releases/gradle-plugin)
+### [Android Gradle Plugin 9.3.0](https://developer.android.com/build/releases/gradle-plugin)
 
 July 14, 2026
 

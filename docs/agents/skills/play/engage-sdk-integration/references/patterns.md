@@ -437,8 +437,8 @@ or Kotlin DSL `build.gradle.kts` implementation lines) as required by the
 project.
 
     [versions]
-    engage-core = "1.5.12"
-    engage-tv = "1.0.6"
+    engage-core = "1.6.0"
+    engage-tv = "1.1.0"
     playServicesOssLicenses = "17.5.1"
     workManager = "2.11.2"
     coroutines = "1.10.2"
