@@ -1,0 +1,14 @@
+diff --git a/docs/bench.md b/docs/bench.md
+index e227be2..d30869d 100644
+--- a/docs/bench.md
++++ b/docs/bench.md
+@@ -38,8 +38,7 @@ AI-assisted software engineering has seen the emergence of several benchmarks to
+ | ![](https://developer.android.com/static/images/bench/icons/google.png) Gemma 4 31B IT | **36.3** | 29.3 --- 43.2 | 38.9 | $10.6 |
+ | ![](https://developer.android.com/static/images/bench/icons/google.png) Gemma 4 26B A4B IT | **25.1** | 18.6 --- 31.8 | 21.4 | $3.3 |
+ 
+-**Latest results as of
+-July 8th.**   
++**Latest results as of July 8th.**   
+ View [**archived leaderboards**](https://developer.android.com/bench/archive) and check back periodically for updates.
+ 
+ ### [Latest Updates](http://developer.android.com/bench/changelog)
