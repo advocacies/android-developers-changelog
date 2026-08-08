@@ -22,13 +22,13 @@ Built-in Kotlin requires some changes to your project, so after you have built-i
 
 After you upgrade your project from an older AGP version to AGP 9.0 or after you manually [enable built-in Kotlin](https://developer.android.com/build/migrate-to-built-in-kotlin#enable-built-in-kotlin), you might see the following error message:
 
-    Failed to apply plugin 'org.jetbrains.kotlin.androi>d'.
-     Cannot add extension with name 'kotlin', as there is an extension already registered with that name.
+    Failed to apply plugin 'org.jetbrains.kotlin.android'.
+    > Cannot add extension with name 'kotlin', as there is an extension already registered with that name.
 
 ...or
 
-    Failed to apply plugin 'com.jetbrains.kotlin.andro>id'
-     The 'org.jetbrains.kotlin.android' plugin is no longer required for Kotlin support since AGP 9.0.
+    Failed to apply plugin 'com.jetbrains.kotlin.android'
+    > The 'org.jetbrains.kotlin.android' plugin is no longer required for Kotlin support since AGP 9.0.
 
 This error occurs because built-in Kotlin requires some changes to your project. To resolve this error, follow these steps:
 
@@ -113,7 +113,7 @@ plugins {
 ```kotlin
 // Top-level build file
 plugins {
-    id("org.jetbrains.kotlin.android") version ";KOTLIN_VERSION" apply false
+    id("org.jetbrains.kotlin.android") version "KOTLIN_VERSION" apply false
 }
 ```
 
@@ -122,7 +122,7 @@ plugins {
 ```groovy
 // Top-level build file
 plugins {
-    id 'org.jetbrains.kotlin.android' version 'KOTLIN_VERSION&#39; apply false
+    id 'org.jetbrains.kotlin.android' version 'KOTLIN_VERSION' apply false
 }
 ```
 
@@ -130,7 +130,7 @@ If you use version catalogs, also remove the plugin definition from the version 
 
 ```toml
 [plugins]
-kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = ";KOTLIN_VERSION" }
+kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "KOTLIN_VERSION" }
 ```
 
 ### 2. Migrate the `kotlin-kapt` plugin if necessary
@@ -143,13 +143,13 @@ For example, with version catalogs, update your version catalog TOML file as fol
 
 ```toml
 [plugins]
-android-application = { id = "com.android.application", version.ref = &quot;AGP_VERSION" }
+android-application = { id = "com.android.application", version.ref = "AGP_VERSION" }
 
 # Add the following plugin definition
-legacy-kapt = { id = "com.android.legacy-kapt&quot;, version.ref = "AGP_VERSION" }
+legacy-kapt = { id = "com.android.legacy-kapt", version.ref = "AGP_VERSION" }
 
-#Remove the following plugin definition
-kotlin-kapt = { id = &quot;org.jetbrains.kotlin.kapt", version.ref = "KOTLIN_VERSION" }
+# Remove the following plugin definition
+kotlin-kapt = { id = "org.jetbrains.kotlin.kapt", version.ref = "KOTLIN_VERSION" }
 ```
 
 Then, update your build files:

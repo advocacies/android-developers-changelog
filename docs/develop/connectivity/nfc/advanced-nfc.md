@@ -82,7 +82,7 @@ class MifareUltralightTagTester {
     fun writeTag(tag: Tag, tagText: String) {
         MifareUltralight.get(tag)?.use { ultralight ->
             ultralight.connect()
-            Charset.forName("US-ASCII").also {> usAscii -
+            Charset.forName("US-ASCII").also { usAscii ->
                 ultralight.writePage(4, "abcd".toByteArray(usAscii))
                 ultralight.writePage(5, "efgh".toByteArray(usAscii))
                 ultralight.writePage(6, "ijkl".toByteArray(usAscii))
@@ -92,7 +92,7 @@ class MifareUltralightTagTester {
     }
 
     fun readTag(tag: Tag): String? {
-      >  return MifareUltralight.get(tag)?.use { mifare -
+        return MifareUltralight.get(tag)?.use { mifare ->
             mifare.connect()
             val payload = mifare.readPages(4)
             String(payload, Charset.forName("US-ASCII"))
