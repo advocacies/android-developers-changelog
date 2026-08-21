@@ -46,7 +46,7 @@ AI
 
 Leverage the power of Gemini in Android Studio to generate and update code, answer questions, and boost your productivity with intelligent AI assistance integrated directly into the editor.
 
-To unlock additional enterprise-grade privacy, security, and other features, you can upgrade by purchasing a Gemini Code Assist license.
+To unlock additional enterprise-grade privacy, security, and other features, you can upgrade by purchasing a Gemini Enterprise license.
 [Learn about Gemini](https://developer.android.com/gemini-in-android) ![AI features in ASfP](https://developer.android.com/static/studio/platform/images/asfp-agent-example.png) Configure
 
 ### Simplified project configuration
