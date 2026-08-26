@@ -253,7 +253,6 @@ apps, you might use an alternative build system like [Bazel](https://bazel.build
 you're using Bazel, you can integrate R8 into your build pipeline to shrink,
 obfuscate, and optimize your app.
 
-For information about building an Android app using Bazel, see the [Android
-Bazel tutorial](https://bazel.build/start/android-app) and the official [rules_android
-repository](https://github.com/bazelbuild/rules_android). Note that Bazel isn't [officially supported](https://developer.android.com/build#other-build-systems)
-for Android app development.
+For information about optimizing an Android app using Bazel, see Bazel's
+[`rules_android` documentation](https://github.com/bazelbuild/rules_android/tree/main/docs/r8-optimization.md). Note that Bazel isn't
+[officially supported](https://developer.android.com/build#other-build-systems) for Android app development.

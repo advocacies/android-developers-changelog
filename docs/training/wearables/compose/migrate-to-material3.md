@@ -419,7 +419,7 @@ Scaffold in M3 is different from M2.5. In M3, `AppScaffold` and the new
 the `ScrollIndicator` and `TimeText` components.
 
 `AppScaffold` allows static screen elements such as `TimeText` to remain visible
-during in-app transitions such as swipe-to-dismiss. ​​It provides a slot for the
+during in-app transitions such as swipe-to-dismiss. It provides a slot for the
 main application content, which will usually be supplied by a navigation
 component such as `SwipeDismissableNavHost`
 
