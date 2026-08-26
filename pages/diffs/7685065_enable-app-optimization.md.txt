@@ -1,0 +1,17 @@
+diff --git a/docs/topic/performance/app-optimization/enable-app-optimization.md b/docs/topic/performance/app-optimization/enable-app-optimization.md
+index 6de23a9..fe1fcf0 100644
+--- a/docs/topic/performance/app-optimization/enable-app-optimization.md
++++ b/docs/topic/performance/app-optimization/enable-app-optimization.md
+@@ -253,7 +253,6 @@ apps, you might use an alternative build system like [Bazel](https://bazel.build
+ you're using Bazel, you can integrate R8 into your build pipeline to shrink,
+ obfuscate, and optimize your app.
+ 
+-For information about building an Android app using Bazel, see the [Android
+-Bazel tutorial](https://bazel.build/start/android-app) and the official [rules_android
+-repository](https://github.com/bazelbuild/rules_android). Note that Bazel isn't [officially supported](https://developer.android.com/build#other-build-systems)
+-for Android app development.
+\ No newline at end of file
++For information about optimizing an Android app using Bazel, see Bazel's
++[`rules_android` documentation](https://github.com/bazelbuild/rules_android/tree/main/docs/r8-optimization.md). Note that Bazel isn't
++[officially supported](https://developer.android.com/build#other-build-systems) for Android app development.
+\ No newline at end of file
