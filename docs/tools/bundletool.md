@@ -8,11 +8,8 @@ source: md.txt
 plugin, and Google Play use to build an Android App Bundle. `bundletool`
 can convert an app bundle into the various APKs that are deployed to devices.
 
-Android SDK Bundles (ASBs) and their APKs are built with `bundletool`. It is
-also available as a command-line tool, so you can build app bundles and
-SDK bundles yourself and re-create Google Play's server-side build of your app's
-APKs or your
-[runtime-enabled SDK's](https://developer.android.com/design-for-safety/privacy-sandbox/sdk-runtime) APKs.
+It is also available as a command-line tool, so you can build app bundles
+yourself and re-create Google Play's server-side build of your app's APKs.
 
 ## Download `bundletool`
 

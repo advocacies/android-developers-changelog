@@ -1,20 +1,8 @@
 ---
-title: Speculative loading in WebView  |  Views  |  Android Developers
+title: https://developer.android.com/develop/ui/views/layout/webapps/speculative-loading
 url: https://developer.android.com/develop/ui/views/layout/webapps/speculative-loading
-source: html-scrape
+source: md.txt
 ---
-
-* [Android Developers](https://developer.android.com/)
-* [Develop](https://developer.android.com/develop)
-* [Core areas](https://developer.android.com/develop/core-areas)
-* [UI](https://developer.android.com/develop/ui)
-* [Views](https://developer.android.com/develop/ui/views/layout/declaring-layout)
-
-# Speculative loading in WebView Stay organized with collections Save and categorize content based on your preferences.
-
-
-
-
 
 Navigation latency is a critical metric for user experience. To help developers
 reduce this latency, WebView provides APIs for speculative loading, allowing
@@ -25,12 +13,9 @@ Prefetch, and Prerender.
 
 By implementing a speculative loading strategy, you can achieve the following:
 
-* **Significant reduction in web content loading latency:** Move the network
-  start time to earlier in the app lifecycle.
-* **Higher navigation success rates:** By pre-warming the network and cache,
-  navigations are less likely to fail due to transient network issues.
-* **Better perceived responsiveness:** Prerendering, in particular, enables
-  instant transitions that make the app feel significantly faster.
+- **Significant reduction in web content loading latency:** Move the network start time to earlier in the app lifecycle.
+- **Higher navigation success rates:** By pre-warming the network and cache, navigations are less likely to fail due to transient network issues.
+- **Better perceived responsiveness:** Prerendering, in particular, enables instant transitions that make the app feel significantly faster.
 
 ## Choose a speculative loading strategy
 
@@ -47,7 +32,7 @@ The following table compares these three strategies to help you choose the right
 one for your use case:
 
 | Feature | Preconnect | Prefetch | Prerender |
-| --- | --- | --- | --- |
+|---|---|---|---|
 | **Primary goal** | Warm up the connection | Cache HTML only (without JavaScript or CSS) | Prerender the entire page |
 | **Scope** | Profile level (shared across WebViews) | Profile level (shared across WebViews) | WebView level (bound to a specific WebView) |
 | **Jetpack WebKit API** | `androidx.webkit.Profile` | `androidx.webkit.Profile` | `androidx.webkit.WebViewCompat` |
@@ -85,67 +70,58 @@ can be connected to by calling this API multiple times.
 
 ### Kotlin
 
-```
-// Must be called on the @UiThread
-if (WebViewFeature.isFeatureSupported(WebViewFeature.PRECONNECT)) {
-    profile.preconnect("https://www.example.com/index.html")
-    // This initiates a connection to the origin https://www.example.com
-}
-```
+    // Must be called on the @UiThread
+    if (WebViewFeature.isFeatureSupported(WebViewFeature.PRECONNECT)) {
+        profile.preconnect("https://www.example.com/index.html")
+        // This initiates a connection to the origin https://www.example.com
+    }
 
 ### Java
 
-```
-// Must be called on the @UiThread
-if (WebViewFeature.isFeatureSupported(WebViewFeature.PRECONNECT)) {
-    profile.preconnect("https://www.example.com/index.html");
-    // This initiates a connection to the origin https://www.example.com
-}
-```
+    // Must be called on the @UiThread
+    if (WebViewFeature.isFeatureSupported(WebViewFeature.PRECONNECT)) {
+        profile.preconnect("https://www.example.com/index.html");
+        // This initiates a connection to the origin https://www.example.com
+    }
 
-**Tip:** Use this API when the user is likely to need resources from the
-target origin. It is most effective when prioritized for the critical domains
-required for your next navigation.
+> [!TIP]
+> **Tip:** Use this API when the user is likely to need resources from the target origin. It is most effective when prioritized for the critical domains required for your next navigation.
 
 ## Common configuration: `PrefetchParameters` and `PrerenderParameters`
 
 Both Prefetch and Prerender use `PrefetchParameters` or
 `PrerenderParameters` to customize the request. These classes let you provide
 additional headers and hints for URL matching, such as [No-Vary-Search
-configurations](#url-matching-nvs).
+configurations](https://developer.android.com/develop/ui/views/layout/webapps/speculative-loading#url-matching-nvs).
 
 ### Kotlin
 
-```
-// Isolated configuration specifically for Cache-Level Prefetching
-val prefetchParams = PrefetchParameters.Builder()
-    .addAdditionalHeader("X-Custom-Client", "Android-App-V2")
-    .setExpectedNoVarySearchHeader(
-        NoVarySearchHeader.varyExcept(true, listOf("session_id", "click_ref"))
-    )
-    .build()
-```
+    // Isolated configuration specifically for Cache-Level Prefetching
+    val prefetchParams = PrefetchParameters.Builder()
+        .addAdditionalHeader("X-Custom-Client", "Android-App-V2")
+        .setExpectedNoVarySearchHeader(
+            NoVarySearchHeader.varyExcept(true, listOf("session_id", "click_ref"))
+        )
+        .build()
 
 ### Java
 
-```
-PrefetchParameters prefetchParams = new PrefetchParameters.Builder()
-    .addAdditionalHeader("X-Custom-Header", "value")
-    /**
-     * Hint to ignore specific query parameters during cache matching.
-     * This allows the cache to match even if the tracking_id differs.
-     */
-    .setExpectedNoVarySearchHeader(
-        NoVarySearchHeader.varyExcept(true, Arrays.asList("tracking_id"))
-    )
-    /**
-     * Determines if Client Hints are sent.
-     * NOTE: This is ignored for Prerendering API requests, which default to
-     * the WebView's WebSettings.getJavaScriptEnabled() value.
-     */
-    .setJavaScriptEnabled(true)
-    .build();
-```
+    PrefetchParameters prefetchParams = new PrefetchParameters.Builder()
+        .addAdditionalHeader("X-Custom-Header", "value")
+        /**
+         * Hint to ignore specific query parameters during cache matching.
+         * This allows the cache to match even if the tracking_id differs.
+         */
+        .setExpectedNoVarySearchHeader(
+            NoVarySearchHeader.varyExcept(true, Arrays.asList("tracking_id"))
+        )
+        /**
+         * Determines if Client Hints are sent.
+         * NOTE: This is ignored for Prerendering API requests, which default to
+         * the WebView's WebSettings.getJavaScriptEnabled() value.
+         */
+        .setJavaScriptEnabled(true)
+        .build();
 
 ## Prefetching content
 
@@ -155,9 +131,8 @@ data, including cookies, HTTP cache, and service workers. Because prefetch is a
 profile-level operation, any `WebView` associated with that profile can leverage
 the cached response.
 
-**Note:** Prefetch implementations only load HTML without fetching heavier assets
-such as JavaScript or CSS. To execute scripts and preload subresources in the
-background, use the Prerender API instead.
+> [!NOTE]
+> **Note:** Prefetch implementations only load HTML without fetching heavier assets such as JavaScript or CSS. To execute scripts and preload subresources in the background, use the Prerender API instead.
 
 ### Implementation
 
@@ -166,68 +141,64 @@ operation only supports the HTTPS scheme.
 
 ### Kotlin
 
-```
-profile.prefetchUrlAsync(
-    url,
-    prefetchParams,
-    cancellationSignal,
-    executor,
-    object : WebViewOutcomeReceiver<PrefetchResult, PrefetchException> {
-        override fun onResult(result: PrefetchResult) {
-            if (result.wasDuplicate()) {
-                // URL and No-Vary-Search permutations already exist in the cache layer
-            } else {
-                // The HTML payload has been successfully secured in the HTTP cache
+    profile.prefetchUrlAsync(
+        url,
+        prefetchParams,
+        cancellationSignal,
+        executor,
+        object : WebViewOutcomeReceiver<PrefetchResult, PrefetchException> {
+            override fun onResult(result: PrefetchResult) {
+                if (result.wasDuplicate()) {
+                    // URL and No-Vary-Search permutations already exist in the cache layer
+                } else {
+                    // The HTML payload has been successfully secured in the HTTP cache
+                }
+            }
+
+            override fun onError(error: PrefetchException) {
+                when (error) {
+                    is PrefetchNetworkException -> {
+                        // Isolates network layer or server-side HTTP anomalies
+                        val code = error.httpStatusCode
+                        // Facilitates rapid diagnosis of 4xx or 5xx server responses
+                    }
+                    else -> {
+                        // Catches generalized execution failures and system constraints
+                    }
+                }
             }
         }
+    )
 
-        override fun onError(error: PrefetchException) {
-            when (error) {
-                is PrefetchNetworkException -> {
-                    // Isolates network layer or server-side HTTP anomalies
-                    val code = error.httpStatusCode
-                    // Facilitates rapid diagnosis of 4xx or 5xx server responses
+### Java
+
+    profile.prefetchUrlAsync(
+        url,
+        prefetchParams,
+        cancellationSignal,
+        executor,
+        new WebViewOutcomeReceiver<PrefetchResult, PrefetchException>() {
+            @Override
+            public void onResult(PrefetchResult result) {
+                if (result.wasDuplicate()) {
+                    // URL and No-Vary-Search permutations already exist in the cache layer
+                } else {
+                    // The HTML payload has been successfully secured in the HTTP cache
                 }
-                else -> {
+            }
+
+            @Override
+            public void onError(PrefetchException error) {
+                if (error instanceof PrefetchNetworkException) {
+                    // Isolates network layer or server-side HTTP anomalies
+                    int code = ((PrefetchNetworkException) error).httpStatusCode;
+                    // Facilitates rapid diagnosis of 4xx or 5xx server responses
+                } else {
                     // Catches generalized execution failures and system constraints
                 }
             }
         }
-    }
-)
-```
-
-### Java
-
-```
-profile.prefetchUrlAsync(
-    url,
-    prefetchParams,
-    cancellationSignal,
-    executor,
-    new WebViewOutcomeReceiver<PrefetchResult, PrefetchException>() {
-        @Override
-        public void onResult(PrefetchResult result) {
-            if (result.wasDuplicate()) {
-                // URL and No-Vary-Search permutations already exist in the cache layer
-            } else {
-                // The HTML payload has been successfully secured in the HTTP cache
-            }
-        }
-
-        @Override
-        public void onError(PrefetchException error) {
-            if (error instanceof PrefetchNetworkException) {
-                // Isolates network layer or server-side HTTP anomalies
-                int code = ((PrefetchNetworkException) error).httpStatusCode;
-                // Facilitates rapid diagnosis of 4xx or 5xx server responses
-            } else {
-                // Catches generalized execution failures and system constraints
-            }
-        }
-    }
-);
-```
+    );
 
 ### Interception lifecycle
 
@@ -235,13 +206,8 @@ The WebView prefetch request alters when and how the `shouldInterceptRequest()`
 callback is triggered. Because this has a direct impact on whether your
 prefetched content is successfully used, it is critical to understand the
 two-step lifecycle:
-
 ![Diagram showing the two-step WebView prefetch interception lifecycle
-  during the speculative and navigation phases.](/static/develop/ui/views/layout/webapps/images/speculative-loading-lifecycle.png)
-
-
-**Figure 1.** The two-step interception lifecycle for WebView prefetch
-requests and navigations.
+during the speculative and navigation phases.](https://developer.android.com/static/develop/ui/views/layout/webapps/images/speculative-loading-lifecycle.png) **Figure 1.** The two-step interception lifecycle for WebView prefetch requests and navigations.
 
 **1. The speculative phase (Prefetch request)**
 
@@ -253,16 +219,17 @@ resource.
 
 **2. The navigation phase (user activation)**
 
-When the app explicitly navigates to the URL (for example, using
-[`WebViewCompat.navigate`](/develop/ui/views/layout/webapps/navigate) or `loadUrl`) or the user clicks a matching
-link, WebView determines if it can use the prefetched cache:
+When the app explicitly navigates to the URL (for example, using `loadUrl()`) or
+the user clicks a matching link, WebView determines if it can use the prefetched
+cache:
 
-* **Main HTML evaluation:** WebView will trigger `shouldInterceptRequest()` for
+- **Main HTML evaluation:** WebView will trigger `shouldInterceptRequest()` for
   the main HTML at this moment. To successfully serve the page from the prefetch
   cache, your interceptor must return `null`. If you return a custom
   `WebResourceResponse`, WebView respects your interceptor and entirely bypasses
   the prefetch cache.
-* **Sub-resource evaluation:** After the prefetched HTML is cleared for use,
+
+- **Sub-resource evaluation:** After the prefetched HTML is cleared for use,
   `shouldInterceptRequest()` triggers normally for all subsequent sub-resources
   (such as, images, scripts, and CSS) required to finish rendering the page.
 
@@ -271,23 +238,13 @@ link, WebView determines if it can use the prefetched cache:
 The following operational characteristics and eligibility checks govern how
 WebView initiates and manages prefetch requests:
 
-* **Thread safety:** Requests can be initiated from any thread.
-* **Eligibility:** Before initiating a fetch, WebView ensures the request is
-  safe and contextually appropriate by checking the following:
-  + **Existing cookies:** To protect user privacy and prevent CSRF-like side
-    effects, WebView might skip prefetching if the request requires specific
-    authenticated cookies that could trigger a state change on the server.
-  + **Service worker presence:** If a Service Worker is already controlling
-    the scope of the URL, WebView can defer to the Service Worker's fetch
-    handler rather than initiating a standard network prefetch.
-  + **Proxy availability:** WebView verifies that the current network path
-    (including any configured proxies) is stable to avoid failing
-    speculative requests under complex network configurations.
-* If a prefetch fails to start (even with valid parameters), it is often
-  because WebView has determined that a background request could interfere
-  with the user's current session or security state.
-* **Cancellation:** Use the `CancellationSignal` to terminate an in-flight
-  request and prevent it from being cached.
+- **Thread safety:** Requests can be initiated from any thread.
+- **Eligibility:** Before initiating a fetch, WebView ensures the request is safe and contextually appropriate by checking the following:
+  - **Existing cookies:** To protect user privacy and prevent CSRF-like side effects, WebView might skip prefetching if the request requires specific authenticated cookies that could trigger a state change on the server.
+  - **Service worker presence:** If a Service Worker is already controlling the scope of the URL, WebView can defer to the Service Worker's fetch handler rather than initiating a standard network prefetch.
+  - **Proxy availability:** WebView verifies that the current network path (including any configured proxies) is stable to avoid failing speculative requests under complex network configurations.
+- If a prefetch fails to start (even with valid parameters), it is often because WebView has determined that a background request could interfere with the user's current session or security state.
+- **Cancellation:** Use the `CancellationSignal` to terminate an in-flight request and prevent it from being cached.
 
 ## Prerendering pages
 
@@ -304,41 +261,37 @@ using `WebViewCompat` from the UI thread.
 
 ### Kotlin
 
-```
-WebViewCompat.prerenderUrlAsync(
-    webView,
-    url,
-    cancellationSignal,
-    executor,
-    params,
-    object : PrerenderOperationCallback {
-        override fun onPrerenderActivated() {
-            // Called when the user navigates to the URL and the hidden page is swapped in
-        }
+    WebViewCompat.prerenderUrlAsync(
+        webView,
+        url,
+        cancellationSignal,
+        executor,
+        params,
+        object : PrerenderOperationCallback {
+            override fun onPrerenderActivated() {
+                // Called when the user navigates to the URL and the hidden page is swapped in
+            }
 
-        override fun onError(exception: Throwable) {
-            // exception is an instance of PrerenderException
-            // Handle prerender failure (for example, memory pressure or disallowed JavaScript APIs)
+            override fun onError(exception: Throwable) {
+                // exception is an instance of PrerenderException
+                // Handle prerender failure (for example, memory pressure or disallowed JavaScript APIs)
+            }
         }
-    }
-)
-```
+    )
 
 ### Java
 
-```
-WebViewCompat.prerenderUrlAsync(webView, url, cancellationSignal, executor, params, new PrerenderOperationCallback() {
-    @Override
-    public void onPrerenderActivated() {
-        // Called when the user navigates to the URL and the hidden page is swapped in.
-    }
+    WebViewCompat.prerenderUrlAsync(webView, url, cancellationSignal, executor, params, new PrerenderOperationCallback() {
+        @Override
+        public void onPrerenderActivated() {
+            // Called when the user navigates to the URL and the hidden page is swapped in.
+        }
 
-    @Override
-    public void onError(@NonNull Throwable exception) {
-        // Handle prerender failure (for example, resource constraints or disallowed APIs).
-    }
-});
-```
+        @Override
+        public void onError(@NonNull Throwable exception) {
+            // Handle prerender failure (for example, resource constraints or disallowed APIs).
+        }
+    });
 
 Both prefetch and prerender are fully asynchronous. `prefetchUrlAsync()` can be
 called from any thread, while `prerenderUrlAsync()` must be initiated from the
@@ -349,13 +302,9 @@ UI thread.
 To balance instant navigation with system health, WebView enforces the following
 runtime constraints:
 
-* **Memory pressure:** WebView cancels pre-rendered URLs if the device is low
-  on RAM.
-* **Disallowed APIs:** Any attempts by JavaScript to access certain APIs (for
-  example, audio playback, alerts) in a background context will immediately
-  terminate the prerender.
-* **Instance limit:** There is a limit to the number of active prerendered
-  URLs allowed per WebView.
+- **Memory pressure:** WebView cancels pre-rendered URLs if the device is low on RAM.
+- **Disallowed APIs:** Any attempts by JavaScript to access certain APIs (for example, audio playback, alerts) in a background context will immediately terminate the prerender.
+- **Instance limit:** There is a limit to the number of active prerendered URLs allowed per WebView.
 
 ## URL matching and No-Vary-Search (NVS)
 
@@ -368,20 +317,13 @@ By default, prefetch and prerender require an exact URL match. If the navigated
 URL is identical to the preloaded URL, it is served from cache immediately. If
 query parameters differ, WebView uses the following No-Vary-Search (NVS) rules:
 
-* **The hint:** Developers provide a `setExpectedNoVarySearchHeader()` hint
-  during initiation. If the navigated URL matches the request URL minus the
-  hinted parameters, WebView blocks briefly to wait for the server's actual
-  headers.
-* **Server header:** The NVS response header from the server is the ultimate
-  authority. If the server confirms query differences should be ignored, the
-  match is served from the cache. If not, WebView falls back to a cold network
-  load.
+- **The hint:** Developers provide a `setExpectedNoVarySearchHeader()` hint during initiation. If the navigated URL matches the request URL minus the hinted parameters, WebView blocks briefly to wait for the server's actual headers.
+- **Server header:** The NVS response header from the server is the ultimate authority. If the server confirms query differences should be ignored, the match is served from the cache. If not, WebView falls back to a cold network load.
 
 No-Vary-Search (NVS) is for advanced usage, and most developers might not need
-it because they pass the exact same URL to both prefetch and navigation
-([`WebViewCompat.navigate`](/develop/ui/views/layout/webapps/navigate) or `loadUrl`). This guidance is only
-necessary if there are differences in query parameters between the prefetch URL
-and the navigated URL.
+it because they pass the exact same URL to both prefetch and `loadUrl()`. This
+guidance is only necessary if there are differences in query parameters between
+the prefetch URL and the `loadUrl()` URL.
 
 ## Global configuration
 
@@ -391,32 +333,28 @@ prefetch limits back to system defaults:
 
 ### Kotlin
 
-```
-// Configure prefetch cache limits
-profile.prefetchCache.setMaxPrefetches(10)
-profile.prefetchCache.setPrefetchTtlSeconds(60)
+    // Configure prefetch cache limits
+    profile.prefetchCache.setMaxPrefetches(10)
+    profile.prefetchCache.setPrefetchTtlSeconds(60)
 
-// Reset to system defaults when needed
-profile.prefetchCache.clearMaxPrefetches()
+    // Reset to system defaults when needed
+    profile.prefetchCache.clearMaxPrefetches()
 
-// Configure maximum active prerenders
-profile.setMaxPrerenders(2)
-```
+    // Configure maximum active prerenders
+    profile.setMaxPrerenders(2)
 
 ### Java
 
-```
-// Configure prefetch cache limits
-PrefetchCache prefetchCache = profile.getPrefetchCache();
-prefetchCache.setMaxPrefetches(10);
-prefetchCache.setPrefetchTtlSeconds(60);
+    // Configure prefetch cache limits
+    PrefetchCache prefetchCache = profile.getPrefetchCache();
+    prefetchCache.setMaxPrefetches(10);
+    prefetchCache.setPrefetchTtlSeconds(60);
 
-// Reset to system defaults when needed
-prefetchCache.clearMaxPrefetches();
+    // Reset to system defaults when needed
+    prefetchCache.clearMaxPrefetches();
 
-// Configure maximum active prerenders
-profile.setMaxPrerenders(2);
-```
+    // Configure maximum active prerenders
+    profile.setMaxPrerenders(2);
 
 ## Error handling and exceptions
 
@@ -429,37 +367,25 @@ When a speculative loading operation fails, your error handler reports one of
 the following primary exception types to help you diagnose specific failure
 scenarios:
 
-* **`PrefetchException`:** The base class for all asynchronous prefetch
-  errors.
-* **`PrefetchNetworkException`:** Indicates a network or server level failure.
-  It can include an `httpStatusCode` field (such as, 404 or 503) to help
-  diagnose server-side issues.
-* **`PrerenderException`:** The superclass for all prerender-related errors,
-  such as failures due to memory pressure or the use of disallowed APIs (like
-  audio playback) in the background.
+- **`PrefetchException`:** The base class for all asynchronous prefetch errors.
+- **`PrefetchNetworkException`:** Indicates a network or server level failure. It can include an `httpStatusCode` field (such as, 404 or 503) to help diagnose server-side issues.
+- **`PrerenderException`:** The superclass for all prerender-related errors, such as failures due to memory pressure or the use of disallowed APIs (like audio playback) in the background.
 
 ## Optimization strategies
 
 Follow these recommendations to maximize the benefits of speculative loading
 while conserving system resources:
 
-* **Initiate early:** Start prefetching during app startup or as soon as a
-  navigation destination is likely.
-* **Integrated strategy:** If you prerender a URL already in the prefetch
-  cache, the prerender navigation is served from that cache, avoiding
-  redundant network requests.
-* **Monitor quotas:** Prerendering is resource-heavy. Prefer prefetching for
-  several likely candidates and reserve prerendering for the single most
-  probable navigation.
-* **Scheme support:** Ensure all URLs use the mandatory HTTPS scheme. Invalid
-  schemes or null inputs trigger a synchronous `IllegalArgumentException`.
+- **Initiate early:** Start prefetching during app startup or as soon as a navigation destination is likely.
+- **Integrated strategy:** If you prerender a URL already in the prefetch cache, the prerender navigation is served from that cache, avoiding redundant network requests.
+- **Monitor quotas:** Prerendering is resource-heavy. Prefer prefetching for several likely candidates and reserve prerendering for the single most probable navigation.
+- **Scheme support:** Ensure all URLs use the mandatory HTTPS scheme. Invalid schemes or null inputs trigger a synchronous `IllegalArgumentException`.
 
 ## Additional resources
 
 To learn more about debugging web apps, optimizing WebView startup performance,
 and handling renderer process termination, see the following resources:
 
-* [Enhanced page navigation with the `WebViewCompat.navigate` method](/develop/ui/views/layout/webapps/navigate)
-* [Debug web apps](/develop/ui/views/layout/webapps/debugging)
-* [Optimize WebView startup](/develop/ui/views/layout/webapps/optimize-webview-startup)
-* [Handle WebView renderer process termination](/develop/ui/views/layout/webapps/handle-termination)
+- [Debug web apps](https://developer.android.com/develop/ui/views/layout/webapps/debugging)
+- [Optimize WebView startup](https://developer.android.com/develop/ui/views/layout/webapps/optimize-webview-startup)
+- [Handle WebView renderer process termination](https://developer.android.com/develop/ui/views/layout/webapps/handle-termination)

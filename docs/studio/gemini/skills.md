@@ -1,28 +1,17 @@
 ---
-title: Extend Agent Mode with skills  |  Android Studio  |  Android Developers
+title: https://developer.android.com/studio/gemini/skills
 url: https://developer.android.com/studio/gemini/skills
-source: html-scrape
+source: md.txt
 ---
-
-* [Android Developers](https://developer.android.com/)
-* [Develop](https://developer.android.com/develop)
-* [Android Studio](https://developer.android.com/studio)
-* [Android Studio AI agent](https://developer.android.com/ai-in-android)
-
-# Extend Agent Mode with skills Stay organized with collections Save and categorize content based on your preferences.
-
-
-
-
 
 Skills let you enhance Agent Mode's capabilities with specialized expertise
 and custom workflows. They are based on the [Agent Skills](https://agentskills.io/)
 open standard.
 
-Unlike [`AGENTS.md`](/studio/gemini/agent-files) files, skills represent on-demand expertise. This
+Unlike [`AGENTS.md`](https://developer.android.com/studio/gemini/agent-files) files, skills represent on-demand expertise. This
 structure allows Agent Mode to maintain a large number of specialized
-capabilities—such as migrating between specific library versions or making a
-composable adapt to different screen sizes—without cluttering the model's
+capabilities---such as migrating between specific library versions or making a
+composable adapt to different screen sizes---without cluttering the model's
 immediate context window.
 
 The model autonomously decides when to employ a skill based on your request and
@@ -40,8 +29,8 @@ To import an Android skill into Android Studio, download the skill from the
 directory.
 
 Note that Android Studio, before Quail, used to load skills from non-standard
-directories — `.skills` and `agent/skills`. If you have skills in those
+directories --- `.skills` and `agent/skills`. If you have skills in those
 locations, move them to `.agents/skills` or `.android-studio/skills` when
 upgrading Android Studio to Quail 1 or later versions.
 
-To learn more about Android skills, see [Intro to Android skills](/tools/agents/android-skills).
+To learn more about Android skills, see [Intro to Android skills](https://developer.android.com/tools/agents/android-skills).

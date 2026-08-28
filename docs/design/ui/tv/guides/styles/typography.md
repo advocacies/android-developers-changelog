@@ -1,20 +1,8 @@
 ---
-title: Typography  |  TV  |  Android Developers
+title: https://developer.android.com/design/ui/tv/guides/styles/typography
 url: https://developer.android.com/design/ui/tv/guides/styles/typography
-source: html-scrape
+source: md.txt
 ---
-
-* [Android Developers](https://developer.android.com/)
-* [Design & Plan](https://developer.android.com/design)
-* [UI Design](https://developer.android.com/design/ui)
-* [TV](https://developer.android.com/design/ui/tv)
-* [Guides](https://developer.android.com/design/ui/tv/guides/foundations/design-for-tv)
-
-# Typography Stay organized with collections Save and categorize content based on your preferences.
-
-
-
-
 
 As television screens are typically viewed from a distance, interfaces that use
 larger typography are more legible and comfortable for users. TV Design's
@@ -23,15 +11,12 @@ support a wide range of use cases.
 
 ## Highlights
 
-* Prioritize using larger typography for a more comfortable
-  viewing experience on TV screens.
-* The default Android TV typeface is Roboto.
-* Choose distinct, legible fonts which best reflect your brand style.
-* Ensure fonts are readable at a glance, with appropriate width and
-  optical sizing.
-* Pair complimentary fonts; for instance, use sans-serif for body
-  text and labels.
-* Maximize legibility by avoiding decorative fonts.
+- Prioritize using larger typography for a more comfortable viewing experience on TV screens.
+- The default Android TV typeface is Roboto.
+- Choose distinct, legible fonts which best reflect your brand style.
+- Ensure fonts are readable at a glance, with appropriate width and optical sizing.
+- Pair complimentary fonts; for instance, use sans-serif for body text and labels.
+- Maximize legibility by avoiding decorative fonts.
 
 ## Fonts
 
@@ -41,29 +26,23 @@ Android TV has its own system typeface, Roboto, which is optimized for
 legibility and clarity. Use Roboto for a utilitarian, non-branded UI
 element that's best served using the native platform experience.
 
-![Roboto](/static/design/ui/tv/guides/styles/images/typography/roboto.webp)
+![Roboto](https://developer.android.com/static/design/ui/tv/guides/styles/images/typography/roboto.webp)
 
 ### Distinct typefaces
 
 Where relevant, use a distinctive font that reflects your brand style.
 Here are the main things to think about when choosing a font:
 
-* [Legibility](https://fonts.google.com/knowledge/glossary/legibility) - For
-  better readability from a distance, use typefaces with large counters
-  and apt optical sizing. Ensure letters are distinguishable from one other.
-* [Readable at a glance](https://www.nngroup.com/articles/glanceable-fonts/)-
-  Any text on TV needs to have a legible font width, as thinner lines are
-  not instantly recognisable.
-* [Pair complimentary fonts](https://fonts.google.com/knowledge/choosing_type/pairing_typefaces) - If you want to use multiple fonts, use a
-  sans-serif typeface for body text and labels.
+- [Legibility](https://fonts.google.com/knowledge/glossary/legibility) - For better readability from a distance, use typefaces with large counters and apt optical sizing. Ensure letters are distinguishable from one other.
+- [Readable at a glance](https://www.nngroup.com/articles/glanceable-fonts/)- Any text on TV needs to have a legible font width, as thinner lines are not instantly recognisable.
+- [Pair complimentary fonts](https://fonts.google.com/knowledge/choosing_type/pairing_typefaces) - If you want to use multiple fonts, use a sans-serif typeface for body text and labels.
 
-**Note:** More personable fonts are best suited to bigger size text.
+> [!NOTE]
+> **Note:** More personable fonts are best suited to bigger size text.
 
-* If you can, avoid [decorative fonts](https://fonts.google.com/?category=Handwriting). While the font sizes on TV are
-  bigger than other display sizes, UI text legibility is the priority.
-  Steer clear of fonts that can't function as body text.
+- If you can, avoid [decorative fonts](https://fonts.google.com/?category=Handwriting). While the font sizes on TV are bigger than other display sizes, UI text legibility is the priority. Steer clear of fonts that can't function as body text.
 
-![Selecting typefaces](/static/design/ui/tv/guides/styles/images/typography/selecting-typeface.webp)
+![Selecting typefaces](https://developer.android.com/static/design/ui/tv/guides/styles/images/typography/selecting-typeface.webp)
 
 ### Type scale
 
@@ -76,7 +55,7 @@ categories based on scale (large or small). TV Design's default
 type scale uses Roboto for all titles, labels, and body text to
 create a unified typography experience.
 
-![Type Scale](/static/design/ui/tv/guides/styles/images/typography/type-scale.webp)
+![Type Scale](https://developer.android.com/static/design/ui/tv/guides/styles/images/typography/type-scale.webp)
 
 To learn about typography tokens and typeface customization,
 visit [Material Design 3](https://m3.material.io/styles/typography/type-scale-tokens).
@@ -91,10 +70,10 @@ reserved for short, important text passages, or numerals. They can be
 used for the main heading of the screen. Don't use large display
 styles for section or cluster headings.
 
-**Tip:** For display type, consider choosing a more expressive font.
-If available, set the appropriate optical size to your usage.
+> [!TIP]
+> **Tip:** For display type, consider choosing a more expressive font. If available, set the appropriate optical size to your usage.
 
-![Type Display](/static/design/ui/tv/guides/styles/images/typography/type-display.webp)
+![Type Display](https://developer.android.com/static/design/ui/tv/guides/styles/images/typography/type-display.webp)
 
 ### Headline
 
@@ -105,7 +84,7 @@ carousels and immersive clusters. Headlines can also make use of
 expressive typefaces, provided appropriate line height and letter spacing
 helps maintain readability.
 
-![Type headline](/static/design/ui/tv/guides/styles/images/typography/type-headline.webp)
+![Type headline](https://developer.android.com/static/design/ui/tv/guides/styles/images/typography/type-headline.webp)
 
 ### Title
 
@@ -116,7 +95,7 @@ passages of text or secondary regions of content.
 Use titles for UI elements like cards or lists. Title sizes are compact
 while providing a useful level of prominence and legibility.
 
-![Type title](/static/design/ui/tv/guides/styles/images/typography/type-title.webp)
+![Type title](https://developer.android.com/static/design/ui/tv/guides/styles/images/typography/type-title.webp)
 
 ### Body
 
@@ -125,7 +104,7 @@ that are readable at smaller sizes and can be comfortably read in longer
 passages. Avoid decorative fonts for body text since these can be hard
 to read from far away.
 
-![Type body](/static/design/ui/tv/guides/styles/images/typography/type-body.webp)
+![Type body](https://developer.android.com/static/design/ui/tv/guides/styles/images/typography/type-body.webp)
 
 ### Label
 
@@ -133,16 +112,4 @@ Label styles are smaller, utilitarian styles, used for things like the text
 inside components or for very small text in the content body, such as captions.
 Buttons, for example, use the label large style.
 
-![Type label](/static/design/ui/tv/guides/styles/images/typography/type-label.webp)
-
-[Previous
-
-arrow\_back
-
-Color](/design/ui/tv/guides/styles/color-system)
-
-[Next
-
-Focus system
-
-arrow\_forward](/design/ui/tv/guides/styles/focus-system)
+![Type label](https://developer.android.com/static/design/ui/tv/guides/styles/images/typography/type-label.webp)

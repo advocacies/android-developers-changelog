@@ -1,52 +1,21 @@
 ---
-title: Test your app with ARCore test rules  |  Android XR for Jetpack XR SDK  |  Android Developers
+title: https://developer.android.com/develop/xr/jetpack-xr-sdk/arcore/testing
 url: https://developer.android.com/develop/xr/jetpack-xr-sdk/arcore/testing
-source: html-scrape
+source: md.txt
 ---
 
-The Android XR SDK has  [reached Developer Preview 4](https://android-developers.googleblog.com/2026/05/android-xr-sdk-developer-preview-4-updates.html), and we want your feedback! Try things out, and visit our [support page](/develop/xr/support) to reach out.
-
-* [Android Developers](https://developer.android.com/)
-* [Develop](https://developer.android.com/develop)
-* [Devices](https://developer.android.com/develop/devices)
-* [Android XR](https://developer.android.com/develop/xr)
-* [Jetpack XR SDK](https://developer.android.com/develop/xr/jetpack-xr-sdk)
-* [Guides](https://developer.android.com/develop/xr/get-started)
-
-# Test your app with ARCore test rules Stay organized with collections Save and categorize content based on your preferences.
+<br />
 
 
+Applicable XR devices This guidance helps you build experiences for these types of XR devices. [Learn about XR device types →](https://developer.android.com/develop/xr/devices) ![](https://developer.android.com/static/images/develop/xr/xr-headsets-icon.svg) XR Headsets [](https://developer.android.com/develop/xr/devices#xr-headsets) ![](https://developer.android.com/static/images/develop/xr/xr-glasses-icon.svg) Wired XR Glasses [](https://developer.android.com/develop/xr/devices#xr-glasses) ![](https://developer.android.com/static/images/develop/xr/ai-glasses-icon.svg) Audio \&  
+Display Glasses [](https://developer.android.com/develop/xr/devices#audio-display) [Learn about XR device types →](https://developer.android.com/develop/xr/devices)
 
-
-
-Applicable XR devices
-
-This guidance helps you build experiences for these types of XR devices.
-
-[Learn about XR device types →](/develop/xr/devices)
-
-![](/static/images/develop/xr/xr-headsets-icon.svg)
-
-
-XR Headsets
-
-![](/static/images/develop/xr/xr-glasses-icon.svg)
-
-
-Wired XR Glasses
-
-![](/static/images/develop/xr/ai-glasses-icon.svg)
-
-
-Audio &  
-Display Glasses
-
-[Learn about XR device types →](/develop/xr/devices)
+<br />
 
 Augmented reality apps often depend on specific real-world situations to
 function. For example, your app might require a detected surface, like a table,
 in order to place a virtual game board. To test your app against different
-scenarios, use the [ARCore test rule](/reference/kotlin/androidx/xr/arcore/testing/ArCoreTestRule) APIs to write tests in a
+scenarios, use the [ARCore test rule](https://developer.android.com/reference/kotlin/androidx/xr/arcore/testing/ArCoreTestRule) APIs to write tests in a
 controlled ARCore test environment. The APIs handle session setup and state, so
 you can focus on testing your app's core logic.
 
@@ -57,7 +26,7 @@ file:
 
 ### Kotlin
 
-```
+```kotlin
 dependencies {
     testImplementation("androidx.xr.arcore:arcore-testing:1.0.0-beta02")
 }
@@ -65,18 +34,18 @@ dependencies {
 
 ### Groovy
 
-```
+```groovy
 dependencies {
     testImplementation "androidx.xr.arcore:arcore-testing:1.0.0-beta02"
 }
 ```
 
-If your app depends on [XR SceneCore](/jetpack/androidx/releases/xr-scenecore), also include the
-[XR SceneCore testing](/jetpack/androidx/releases/xr-scenecore#declaring_dependencies) dependency:
+If your app depends on [XR SceneCore](https://developer.android.com/jetpack/androidx/releases/xr-scenecore), also include the
+[XR SceneCore testing](https://developer.android.com/jetpack/androidx/releases/xr-scenecore#declaring_dependencies) dependency:
 
 ### Kotlin
 
-```
+```kotlin
 dependencies {
     testImplementation("androidx.xr.scenecore:scenecore-testing:1.0.0-beta02")
 }
@@ -84,7 +53,7 @@ dependencies {
 
 ### Groovy
 
-```
+```groovy
 dependencies {
     testImplementation "androidx.xr.scenecore:scenecore-testing:1.0.0-beta02"
 }
@@ -92,10 +61,11 @@ dependencies {
 
 ## Set up the test rule
 
-In your [JUnit test](/training/testing/local-tests), use a
-[`AndroidJUnit4` test runner](/training/testing/local-tests/robolectric) to set up a test:
+In your [JUnit test](https://developer.android.com/training/testing/local-tests), use a
+[`AndroidJUnit4` test runner](https://developer.android.com/training/testing/local-tests/robolectric) to set up a test:
 
-```
+
+```kotlin
 @Rule @JvmField val arCoreTestRule = ArCoreTestRule()
 private lateinit var activityController: ActivityController<ComponentActivity>
 private lateinit var activity: ComponentActivity
@@ -123,20 +93,21 @@ fun setUp() {
     // Configure the session.
     session.configure(Config.Builder(session.config).setHandTracking(HandTrackingMode.BOTH).build())
 }
-
-ArCoreTestRule.kt
 ```
+
+<br />
 
 In the `@Before` step, set up your testing environment, including required
 permissions and session configuration.
 
 ## Create test cases
 
-[Create a test case](/training/testing/local-tests/robolectric#ui-testing) in order to test a certain scenario. In
-this example, we test whether a [hand tracking](/develop/xr/jetpack-xr-sdk/arcore/hands) gesture detector
+[Create a test case](https://developer.android.com/training/testing/local-tests/robolectric#ui-testing) in order to test a certain scenario. In
+this example, we test whether a [hand tracking](https://developer.android.com/develop/xr/jetpack-xr-sdk/arcore/hands) gesture detector
 works with our test data:
 
-```
+
+```kotlin
 @Test
 fun test_thumbsUp() = runTest(testDispatcher) {
     arCoreTestRule.rightHandTester.isVisible = true
@@ -147,25 +118,19 @@ fun test_thumbsUp() = runTest(testDispatcher) {
     val isThumbsUp = detectThumbsUp(handState)
     assertThat(isThumbsUp).isTrue()
 }
-
-ArCoreTestRule.kt
 ```
+
+<br />
 
 A unit test often contains the following steps:
 
-1. To set up the test, use the [`ArCoreTestRule`](/reference/kotlin/androidx/xr/arcore/testing/ArCoreTestRule) to inject
-   test data. This object contains the environment data that your app reads from
-   the session. Use [`TestScope.advanceUntilIdle`](https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-test/kotlinx.coroutines.test/advance-until-idle.html) to ensure
-   the system is ready to perform the test. In this example, the right hand is
-   enabled, and pose data is used to populate the hand joint data.
-2. Then, perform the test. Your app doesn't need special behavior to use the
-   injected data: the `Session` uses data that was injected into the
-   `ArCoreTestRule`.
+1. To set up the test, use the [`ArCoreTestRule`](https://developer.android.com/reference/kotlin/androidx/xr/arcore/testing/ArCoreTestRule) to inject test data. This object contains the environment data that your app reads from the session. Use [`TestScope.advanceUntilIdle`](https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-test/kotlinx.coroutines.test/advance-until-idle.html) to ensure the system is ready to perform the test. In this example, the right hand is enabled, and pose data is used to populate the hand joint data.
+2. Then, perform the test. Your app doesn't need special behavior to use the injected data: the `Session` uses data that was injected into the `ArCoreTestRule`.
 3. Finally, check the results.
 
 ## Additional resources
 
 For more information about testing on Android, consult the following resources:
 
-* [Test apps on Android](/training/testing)
-* [Fundamentals of testing Android apps](/training/testing/fundamentals)
+- [Test apps on Android](https://developer.android.com/training/testing)
+- [Fundamentals of testing Android apps](https://developer.android.com/training/testing/fundamentals)

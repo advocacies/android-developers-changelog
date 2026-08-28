@@ -1,28 +1,16 @@
 ---
-title: Button Group  |  AI Glasses  |  Android Developers
+title: https://developer.android.com/design/ui/ai-glasses/guides/components/button-group
 url: https://developer.android.com/design/ui/ai-glasses/guides/components/button-group
-source: html-scrape
+source: md.txt
 ---
-
-* [Android Developers](https://developer.android.com/)
-* [Design & Plan](https://developer.android.com/design)
-* [UI Design](https://developer.android.com/design/ui)
-* [AI Glasses](https://developer.android.com/design/ui/ai-glasses)
-* [Guides](https://developer.android.com/design/ui/ai-glasses/guides/foundations/design-principles)
-
-# Button Group Stay organized with collections Save and categorize content based on your preferences.
-
-
-
-
 
 A button group provides a navigable container of buttons.
 
-**Note:** This component is not yet available in Jetpack Compose Glimmer library,
-but the design guidance and Figma component is available to explore.
+> [!NOTE]
+> **Note:** This component is not yet available in Jetpack Compose Glimmer library, but the design guidance and Figma component is available to explore.
 
 ![Design elements should be anchored to the bottom of the
-frame.](/static/images/design/ui/glasses/guides/glasses_components_button-group.png)
+frame.](https://developer.android.com/static/images/design/ui/glasses/guides/glasses_components_button-group.png)
 
 ### Principles
 
@@ -32,28 +20,20 @@ frame.](/static/images/design/ui/glasses/guides/glasses_components_button-group.
 
 **Flexible**: Can consist of multiple button types.
 
-## Usage & Placement
+## Usage \& Placement
 
 Use a button group to display more than one button. When presenting multiple
 buttons, use a button group component rather than laying each out independently.
 
-![button group
-](/static/images/design/ui/glasses/guides/glasses_components_button-group_display.png)
+![button group](https://developer.android.com/static/images/design/ui/glasses/guides/glasses_components_button-group_display.png)
 
 A button group can consist of any combination of button types of the same
 button height.
-
-![](/static/images/design/ui/glasses/guides/glasses_components_button-group_height_do.png)
-
-check\_circle
+![](https://developer.android.com/static/images/design/ui/glasses/guides/glasses_components_button-group_height_do.png)
 
 ### Do
 
-Keep button heights consistent in a button group.
-
-![](/static/images/design/ui/glasses/guides/glasses_components_button-group_height_dont.png)
-
-cancel
+Keep button heights consistent in a button group. ![](https://developer.android.com/static/images/design/ui/glasses/guides/glasses_components_button-group_height_dont.png)
 
 ### Don't
 
@@ -61,18 +41,11 @@ Group buttons of different heights together.
 
 Button groups can be paired with other elements, like cards or stacks, to act as
 related actions.
-
-![](/static/images/design/ui/glasses/guides/glasses_components_button-group_layout_do.png)
-
-check\_circle
+![](https://developer.android.com/static/images/design/ui/glasses/guides/glasses_components_button-group_layout_do.png)
 
 ### Do
 
-Keep to one button group per layout.
-
-![](/static/images/design/ui/glasses/guides/glasses_components_button-group_layout_dont.png)
-
-cancel
+Keep to one button group per layout. ![](https://developer.android.com/static/images/design/ui/glasses/guides/glasses_components_button-group_layout_dont.png)
 
 ### Don't
 
@@ -80,26 +53,18 @@ Stack multiple button groups.
 
 A button group layout can be contained or overflow, with 1 to 10 buttons.
 
-![button group
-](/static/images/design/ui/glasses/guides/glasses_components_button-group_layouts.png)
+![button group](https://developer.android.com/static/images/design/ui/glasses/guides/glasses_components_button-group_layouts.png)
 
 **A.** Contained: The button group fits within the container's width without
 any elements cut off.
 
 **B.** Overflow: The button group's width is wider than the space available in
 the container.
-
-![](/static/images/design/ui/glasses/guides/glasses_components_button-group_amount_do.png)
-
-check\_circle
+![](https://developer.android.com/static/images/design/ui/glasses/guides/glasses_components_button-group_amount_do.png)
 
 ### Do
 
-Keep your buttons under 10 and essential only to minimize swipes.
-
-![](/static/images/design/ui/glasses/guides/glasses_components_button-group_amount_dont.png)
-
-cancel
+Keep your buttons under 10 and essential only to minimize swipes. ![](https://developer.android.com/static/images/design/ui/glasses/guides/glasses_components_button-group_amount_dont.png)
 
 ### Don't
 
@@ -109,32 +74,23 @@ Grow the button group past 10 buttons.
 
 Initial focus defaults to the left most button, but can be configured to be
 centered for symmetrical button groups.
-
-![](/static/images/design/ui/glasses/guides/glasses_components_button-group_focus_do.png)
-
-check\_circle
+![](https://developer.android.com/static/images/design/ui/glasses/guides/glasses_components_button-group_focus_do.png)
 
 ### Do
 
-Configure focus to highlight most access or higher importance features.
-
-![](/static/images/design/ui/glasses/guides/glasses_components_button-group_focus_dont.png)
-
-cancel
+Configure focus to highlight most access or higher importance features. ![](https://developer.android.com/static/images/design/ui/glasses/guides/glasses_components_button-group_focus_dont.png)
 
 ### Don't
 
 Override default initial focus if all items are of similar use case importance.
 
-![centered layout
-](/static/images/design/ui/glasses/guides/glasses_components_button-group_anatomy-contained.png)
+![centered layout](https://developer.android.com/static/images/design/ui/glasses/guides/glasses_components_button-group_anatomy-contained.png)
 
 A center aligned button group based on the initial focus element, that slides
 focus over per swipe. Avoid using an overflow layout, as all buttons should be
 visable and contained in a centered layout.
 
-![left aligned layout
-](/static/images/design/ui/glasses/guides/glasses_components_button-group_anatomy-overflow.png)
+![left aligned layout](https://developer.android.com/static/images/design/ui/glasses/guides/glasses_components_button-group_anatomy-overflow.png)
 
 Left aligned button group layout include start and end margins of 44dp from
 edges. Buttons smoothly scroll over to the center over 3 steps on swipe and
@@ -142,29 +98,20 @@ ramp up as they slide.
 
 ## Anatomy
 
-![left aligned layout
-](/static/images/design/ui/glasses/guides/glasses_components_button-group_anatomy.png)
+![left aligned layout](https://developer.android.com/static/images/design/ui/glasses/guides/glasses_components_button-group_anatomy.png)
 
 The button group is a container component, grouping 1 to 10 buttons of any type
-and consistent height. For more on buttons, read the [button](/design/ui/ai-glasses/guides/components/buttons) guidance.
+and consistent height. For more on buttons, read the [button](https://developer.android.com/design/ui/ai-glasses/guides/components/buttons) guidance.
 
 ## Customization
 
 A button group set can consist of any combination of button types of the
 same button height.
 
+<br />
+
 | Properties | Customization | Defaults |
-| --- | --- | --- |
+|---|---|---|
 | Initial focus | Yes | 0 |
 
-[Previous
-
-arrow\_back
-
-Buttons](/design/ui/ai-glasses/guides/components/buttons)
-
-[Next
-
-Title chips
-
-arrow\_forward](/design/ui/ai-glasses/guides/components/title-chip)
+<br />

@@ -4,6 +4,15 @@ url: https://developer.android.com/about/versions/17/qpr2/release-notes
 source: md.txt
 ---
 
+### Beta 4
+
+|---|---|
+| **Release date** | August 28, 2026 |
+| **Builds** | CP41.260814.003.A2 CP41.260814.003.B1 |
+| **Emulator support** | x86 (64-bit), ARM (v8-A) |
+| **Security patch level** | 2026-08-05 |
+| **Google Play services** | 26.28.33 |
+
 ### Beta 3
 
 |---|---|
@@ -51,12 +60,15 @@ You can the current SDK changes in the
 
 #### Hardening against call forwarding fraud
 
-Android 17 QPR2 Beta 3 introduces new security restrictions on programmatic call forwarding to protect users from fraud. The system now parses and selectively restricts call-forwarding USSD codes (such as `*21*`) executed via the [`TelephonyManager.sendUssdRequest()` API](https://developer.android.com/reference/android/telephony/TelephonyManager#sendUssdRequest(java.lang.String,%20android.telephony.TelephonyManager.UssdResponseCallback,%20android.os.Handler)).
+Android 17 QPR2 Beta 3 introduces new security restrictions on programmatic call
+forwarding to protect users from fraud. The system now parses and selectively
+restricts call-forwarding USSD codes (such as `*21#`) executed using the
+[`TelephonyManager.sendUssdRequest()` API](https://developer.android.com/reference/android/telephony/TelephonyManager#sendUssdRequest(java.lang.String,%20android.telephony.TelephonyManager.UssdResponseCallback,%20android.os.Handler)).
 
 - **API Restriction:** The `sendUssdRequest()` API is no longer accessible for call-forwarding codes using only the `CALL_PHONE` permission. Standard apps attempting to execute these codes in the background will be blocked and receive a `USSD_ERROR_NOT_ALLOWED` callback.
 - **System Confirmation:** To combat social engineering scams, users manually dialing call-forwarding codes in the system dialer will now see a new OS-level confirmation dialog before the command is executed.
 - **Non-Call Forwarding USSD:** Non-call forwarding enabling USSD requests (such as mobile money transfers and account checks) are unaffected by this change.
-- **Mitigation:** If your app is affected, verify that it handles the `USSD_ERROR_NOT_ALLOWED` failure callback gracefully. For apps requiring call-forwarding setup that do not qualify for an exempted role, migrate your flow to use the `ACTION_DIAL` intent to pre-fill the dialer, allowing the user to manually confirm the action.
+- **Mitigation:** If your app is affected, verify that it handles the `USSD_ERROR_NOT_ALLOWED` failure callback gracefully. For apps requiring call-forwarding setup that don't qualify for an exempted role, migrate your flow to use the `ACTION_DIAL` intent to pre-fill the dialer, allowing the user to manually confirm the action.
 
 ### Top Issues fixed in Beta 3 (August 2026)
 

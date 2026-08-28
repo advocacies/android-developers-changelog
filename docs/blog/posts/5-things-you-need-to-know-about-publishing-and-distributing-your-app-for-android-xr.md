@@ -1,39 +1,14 @@
 ---
-title: 5 things you need to know about publishing and distributing your app for Android XR  |  Android Developers' Blog
+title: https://developer.android.com/blog/posts/5-things-you-need-to-know-about-publishing-and-distributing-your-app-for-android-xr
 url: https://developer.android.com/blog/posts/5-things-you-need-to-know-about-publishing-and-distributing-your-app-for-android-xr
-source: html-scrape
+source: md.txt
 ---
 
-* [Android Developers](https://developer.android.com/)
-* [Android Developers' Blog](https://developer.android.com/)
-* [Blog](https://developer.android.com/blog)
-
-Stay organized with collections
-
-Save and categorize content based on your preferences.
-
-
-
-[How-tos](/blog/categories/how-tos)
+[How-tos](https://developer.android.com/blog/categories/how-tos)
 
 # 5 things you need to know about publishing and distributing your app for Android XR
 
-4 min read
-
-![](/static/blog/assets/xr_Week3_12c745cd96_23Hnge.webp)
-
-24
-
-Oct
-2025
-
-[![View Jan Kleinert's profile](/static/blog/assets/Jan_Kleinert_044ab3d483_1Ce4cO.webp)](/blog/authors/jan-kleinert)
-
-[Jan Kleinert](/blog/authors/jan-kleinert)
-
-Developer Relations Engineer
-
-[*Samsung Galaxy XR is here*](https://android-developers.googleblog.com/2025/10/giving-your-apps-new-home-on-samsung.html)*, powered by Android XR! This blog post is part of our*[*Android XR Spotlight Week*](https://android-developers.googleblog.com/2025/10/welcome-to-android-xr-spotlight-week.html)*, where we provide resources—blog posts, videos, sample code, and more—all designed to help you learn, build, and prepare your apps for Android XR.*
+4 min read ![](https://developer.android.com/static/blog/assets/xr_Week3_12c745cd96_23Hnge.webp) 24 Oct 2025 [![View Jan Kleinert's profile](https://developer.android.com/static/blog/assets/Jan_Kleinert_044ab3d483_1Ce4cO.webp)](https://developer.android.com/blog/authors/jan-kleinert) [Jan Kleinert](https://developer.android.com/blog/authors/jan-kleinert) Developer Relations Engineer [*Samsung Galaxy XR is here*](https://android-developers.googleblog.com/2025/10/giving-your-apps-new-home-on-samsung.html)*, powered by Android XR! This blog post is part of our *[*Android XR Spotlight Week*](https://android-developers.googleblog.com/2025/10/welcome-to-android-xr-spotlight-week.html)*, where we provide resources---blog posts, videos, sample code, and more---all designed to help you learn, build, and prepare your apps for Android XR. *
 
 Today, we're focusing on one of the last steps in your development journey, ensuring these experiences successfully reach your users. Publishing correctly ensures your app is packaged efficiently, discovered by the right devices, and presented in the best possible light.
 
@@ -43,31 +18,30 @@ Here are 5 things you need to know about publishing and distributing your app fo
 
 One of the most important steps before publishing is ensuring your app delivers a safe, comfortable, and performant user experience.
 
-Following the [Android XR App Quality Guidelines](/docs/quality-guidelines/android-xr) helps ensure that your app provides users with a great experience on devices like the Galaxy XR.
+Following the[Android XR App Quality Guidelines](https://developer.android.com/docs/quality-guidelines/android-xr) helps ensure that your app provides users with a great experience on devices like the Galaxy XR.
 
 ## Why quality matters
 
-These guidelines build upon the [large screen app quality guidelines](/docs/quality-guidelines/large-screen-app-quality), and focus on critical XR-specific criteria including:
+These guidelines build upon the [large screen app quality guidelines](https://developer.android.com/docs/quality-guidelines/large-screen-app-quality), and focus on critical XR-specific criteria including:
 
-* **Safety and comfort:** This is paramount. These guidelines help you avoid causing motion sickness by setting standards for camera movement and frame rates, and by limiting visual elements like strobing.
-* **Performance:** Your app must hit performance metrics, such as target frame rates, to prevent lag and ensure a fluid, comfortable experience.
-* **Interaction:** The guidelines specify recommended minimum sizes for interactive targets (e.g., 48dp minimum, 56dp recommended) to work well with eye-tracking and hand-tracking inputs.
+- **Safety and comfort:** This is paramount. These guidelines help you avoid causing motion sickness by setting standards for camera movement and frame rates, and by limiting visual elements like strobing.
+- **Performance:** Your app must hit performance metrics, such as target frame rates, to prevent lag and ensure a fluid, comfortable experience.
+- **Interaction:** The guidelines specify recommended minimum sizes for interactive targets (e.g., 48dp minimum, 56dp recommended) to work well with eye-tracking and hand-tracking inputs.
 
----
+*** ** * ** ***
 
 ## 2. Configure your app manifest correctly
 
-The [AndroidManifest.xml file](/guide/topics/manifest/manifest-intro) describes important information about your app. The Android build tools, Android system, and Google Play use this information to know what kind of experience you've built and which hardware features it requires. Proper configuration is vital for correct device targeting and app launch.
+The [AndroidManifest.xml file](https://developer.android.com/guide/topics/manifest/manifest-intro) describes important information about your app. The Android build tools, Android system, and Google Play use this information to know what kind of experience you've built and which hardware features it requires. Proper configuration is vital for correct device targeting and app launch.
 
 ## Specify which Android XR SDK your app uses
 
 In your app manifest, include `android.software.xr.api.spatial` or `android.software.xr.api.openxr` to indicate whether you're building with the Jetpack XR SDK or building with OpenXR or Unity.
 
-|  |  |
-| --- | --- |
+|---|---|
 | **SDK used** | **Manifest declaration** |
-| Jetpack XR SDK | [`android.software.xr.api.spatial`](/develop/xr/get-started#android.software.xr.api.spatial) |
-| OpenXR or Unity | [`android.software.xr.api.openxr`](/develop/xr/get-started#android.software.xr.api.openxr) |
+| Jetpack XR SDK | [`android.software.xr.api.spatial`](https://developer.android.com/develop/xr/get-started#android.software.xr.api.spatial) |
+| OpenXR or Unity | [`android.software.xr.api.openxr`](https://developer.android.com/develop/xr/get-started#android.software.xr.api.openxr) |
 
 If your app is built using OpenXR or Unity, you must set the `android:required` attribute to `true`**.** For apps built with the Jetpack XR SDK, set `android:required` attribute to `true` if your app is published to the Android XR dedicated release track and set `android:required` attribute to `false`if your app is published to the mobile release track.
 
@@ -75,8 +49,7 @@ If your app is built using OpenXR or Unity, you must set the `android:required` 
 
 Use the `android.window.PROPERTY_XR_ACTIVITY_START_MODE` property on your main activity to define the default user environment:
 
-|  |  |  |
-| --- | --- | --- |
+|---|---|---|
 | **Start mode** | **Purpose** | **SDK** |
 | `XR_ACTIVITY_START_MODE_HOME_SPACE` | Launches your app in Home Space, the shared multitasking environment. | Jetpack XR SDK |
 | `XR_ACTIVITY_START_MODE_FULL_SPACE_MANAGED` | Launches in Full Space, a full-immersion, single-app environment. | Jetpack XR SDK |
@@ -88,39 +61,39 @@ Avoid setting optional XR features (like hand tracking or controllers) to `andro
 
 Instead, check for advanced features dynamically at runtime using the `PackageManager` class with `hasSystemFeature()`:
 
-```
+```kotlin
 Kotlin
 
 val hasHandTracking = packageManager.hasSystemFeature("android.hardware.xr.input.hand_tracking")
 
 if (hasHandTracking) {
 
-    // Enable high-fidelity hand tracking features
+    // Enable high-fidelity hand tracking features
 
 } else {
 
-    // Provide a fallback experience
+    // Provide a fallback experience
 
 }
 ```
 
 This ensures your app is broadly compatible and leverages advanced features when they're available.
 
----
+*** ** * ** ***
 
 ## 3. Use Play Asset Delivery (PAD) to deliver large assets
 
-Immersive apps and games often contain large assets that might exceed the standard [size limits](https://support.google.com/googleplay/android-developer/answer/9859372#size_limits). Use [Play Asset Delivery](/guide/playcore/asset-delivery) (PAD) to manage large, high-fidelity assets. PAD offers flexible delivery modes: install-time, fast follow, and on demand for progressive download of content. Apps that are built for Android XR are allowed to deliver additional asset packs: instead of a cumulative total of 4 GB for asset packs delivered on demand or fast follow, these apps are afforded a higher cumulative total of 30 GB.
+Immersive apps and games often contain large assets that might exceed the standard [size limits](https://support.google.com/googleplay/android-developer/answer/9859372#size_limits). Use[Play Asset Delivery](https://developer.android.com/guide/playcore/asset-delivery) (PAD) to manage large, high-fidelity assets. PAD offers flexible delivery modes: install-time, fast follow, and on demand for progressive download of content. Apps that are built for Android XR are allowed to deliver additional asset packs: instead of a cumulative total of 4 GB for asset packs delivered on demand or fast follow, these apps are afforded a higher cumulative total of 30 GB.
 
-For developers building with Unity, use [Unity Addressables](/guide/playcore/asset-delivery/integrate-unity) along with Play Asset Delivery to manage asset packs.
+For developers building with Unity, use [Unity Addressables](https://developer.android.com/guide/playcore/asset-delivery/integrate-unity) along with Play Asset Delivery to manage asset packs.
 
----
+*** ** * ** ***
 
 ## 4. Showcase your app with spatial video previews
 
 To capture the attention of users browsing the Play Store on their XR headsets, you can provide an immersive preview of your app using a [spatial video asset](https://support.google.com/googleplay/android-developer/answer/9866151#zippy=%2Cpreview-video). This must be a 180°, 360°, or stereoscopic video. On Android XR devices, the Play Store will automatically display this as an immersive 3D preview, allowing users to experience the depth and scale of your content before they install the app.
 
----
+*** ** * ** ***
 
 ## 5. Choose your Google Play release track
 
@@ -130,120 +103,54 @@ Google Play provides two pathways for publishing your Android XR app, both using
 
 If you are adding spatial XR features to an existing mobile app, you can often bundle the XR features or content into your existing Android App Bundle (AAB).
 
-This approach is ideal if your app maintains most of its core functionality across both mobile and XR devices, and you can continue publishing the same AAB to the mobile track. Review [this guidance](/develop/xr/package-and-distribute#mobile-track) to be sure you are properly configuring your app's manifest file to support this use case.
+This approach is ideal if your app maintains most of its core functionality across both mobile and XR devices, and you can continue publishing the same AAB to the mobile track. Review [this guidance](https://developer.android.com/develop/xr/package-and-distribute#mobile-track) to be sure you are properly configuring your app's manifest file to support this use case.
 
 ## Option B: Publish to the dedicated Android XR release track
 
-If you are building a brand-new app for XR or if the XR version is functionally too different for a single AAB, you should [publish to the Android XR dedicated release track](/develop/xr/package-and-distribute#xr-track).
+If you are building a brand-new app for XR or if the XR version is functionally too different for a single AAB, you should [publish to the Android XR dedicated release track](https://developer.android.com/develop/xr/package-and-distribute#xr-track).
 
-Apps published to the Android XR dedicated release track are only visible to Android XR devices that support the [`android.software.xr.api.spatial`](/develop/xr/get-started#android.software.xr.api.spatial) feature or the [`android.software.xr.api.openxr`](/develop/xr/get-started#android.software.xr.api.openxr) feature, giving you control over distribution.
+Apps published to the Android XR dedicated release track are only visible to Android XR devices that support the [`android.software.xr.api.spatial`](https://developer.android.com/develop/xr/get-started#android.software.xr.api.spatial) feature or the [`android.software.xr.api.openxr`](https://developer.android.com/develop/xr/get-started#android.software.xr.api.openxr) feature, giving you control over distribution.
 
 By following this guidance, you can help ensure your innovative Android XR apps provide a quality user experience, are packaged efficiently, are delivered smoothly using PAD, and are targeted to the devices that can run them. Happy publishing!
-
 Written by:
 
-* ## [Jan Kleinert](/blog/authors/jan-kleinert)
+-
+
+  ## [Jan Kleinert](https://developer.android.com/blog/authors/jan-kleinert)
 
   ###### Developer Relations Engineer
 
-  [read\_more
-  View profile](/blog/authors/jan-kleinert)
-
-  ![View Jan Kleinert's profile](/static/blog/assets/Jan_Kleinert_044ab3d483_1Ce4cO.webp)
-
-  ![View Jan Kleinert's profile](/static/blog/assets/Jan_Kleinert_044ab3d483_1Ce4cO.webp)
-
+  [read_more
+  View profile](https://developer.android.com/blog/authors/jan-kleinert) ![View Jan Kleinert's profile](https://developer.android.com/static/blog/assets/Jan_Kleinert_044ab3d483_1Ce4cO.webp) ![View Jan Kleinert's profile](https://developer.android.com/static/blog/assets/Jan_Kleinert_044ab3d483_1Ce4cO.webp)
 Continue reading
+- [![View Toni Heidenreich's profile](https://developer.android.com/static/blog/assets/profile_picture_6cdbf09ec9_1RLN0R.webp)](https://developer.android.com/blog/authors/toni-heidenreich) 11 Aug 2026 11 Aug 2026 ![](https://developer.android.com/static/blog/assets/AFD_ABL_101_Media3_1_11_is_out_Strapi_bebd1c9efc_Z1LP4Os.webp) [How-tos](https://developer.android.com/blog/categories/how-tos)
 
-* [![View Toni Heidenreich's profile](/static/blog/assets/profile_picture_6cdbf09ec9_1RLN0R.webp)](/blog/authors/toni-heidenreich)
+  ## [Media3 1.11 - What's new?](https://developer.android.com/blog/posts/media3-1-11-whats-new)
 
-  11
+  [arrow_forward](https://developer.android.com/blog/posts/media3-1-11-whats-new) Media3 1.11 is out. Powering the vast majority of top Android media apps, this release brings new features, bug fixes, and improvements across playback, editing, and UI components.
+  [Toni Heidenreich](https://developer.android.com/blog/authors/toni-heidenreich) • 3 min read
+  - [#Media3](https://developer.android.com/blog/topics/media3)
+  - [#Jetpack](https://developer.android.com/blog/topics/jetpack)
+  - [#ExoPlayer](https://developer.android.com/blog/topics/exo-player)
+  - +1 ↩
+- [![View Caren Chang's profile](https://developer.android.com/static/blog/assets/Caren_Chang_e58d793559_1i40VV.webp)](https://developer.android.com/blog/authors/caren-chang) 21 Jul 2026 21 Jul 2026 ![](https://developer.android.com/static/blog/assets/0625_Building_Jet_Packer_with_Intelligent_On_Device_features_Strapi_v02_3f5a8b17b0_1UrFxh.webp) [How-tos](https://developer.android.com/blog/categories/how-tos)
 
-  Aug
-  2026
+  ## [Build intelligent Android apps: On-device inference](https://developer.android.com/blog/posts/build-intelligent-android-apps-on-device-inference)
 
-  11
+  [arrow_forward](https://developer.android.com/blog/posts/build-intelligent-android-apps-on-device-inference) Welcome back to the blog post series "Build intelligent Android apps" where we take a basic Android app and transform it into a personalized, intelligent, and agentic experience. In our previous post we introduced Jetpacker, the demo app we'll use throughout this series.
+  [Caren Chang](https://developer.android.com/blog/authors/caren-chang) • 6 min read
+  - [#Intelligent Apps](https://developer.android.com/blog/topics/intelligent-apps)
+- [![View Jolanda Verhoef's profile](https://developer.android.com/static/blog/assets/jolanda_b0e2beee3e_Z1KU2ms.webp)](https://developer.android.com/blog/authors/jolanda-verhoef) 21 Jul 2026 21 Jul 2026 ![](https://developer.android.com/static/blog/assets/0713_Jetpacker_Strapi_d07d6f2d4b_Z1tB3HE.webp) [How-tos](https://developer.android.com/blog/categories/how-tos)
 
-  Aug
-  2026
+  ## [Build intelligent Android apps: Introduction to Jetpacker](https://developer.android.com/blog/posts/build-intelligent-android-apps-introduction-to-jetpacker)
 
-  ![](/static/blog/assets/AFD_ABL_101_Media3_1_11_is_out_Strapi_bebd1c9efc_Z1LP4Os.webp)
-
-  [How-tos](/blog/categories/how-tos)
-
-  ## [Media3 1.11 - What's new?](/blog/posts/media3-1-11-whats-new)
-
-  [arrow\_forward](/blog/posts/media3-1-11-whats-new)
-
-  Media3 1.11 is out. Powering the vast majority of top Android media apps, this release brings new features, bug fixes, and improvements across playback, editing, and UI components.
-
-  [Toni Heidenreich](/blog/authors/toni-heidenreich)
-  •
-  3 min read
-  + [#Media3](/blog/topics/media3)
-  + [#Jetpack](/blog/topics/jetpack)
-  + [#ExoPlayer](/blog/topics/exo-player)
-  + +1
-    ↩
-* [![View Caren Chang's profile](/static/blog/assets/Caren_Chang_e58d793559_1i40VV.webp)](/blog/authors/caren-chang)
-
-  21
-
-  Jul
-  2026
-
-  21
-
-  Jul
-  2026
-
-  ![](/static/blog/assets/0625_Building_Jet_Packer_with_Intelligent_On_Device_features_Strapi_v02_3f5a8b17b0_1UrFxh.webp)
-
-  [How-tos](/blog/categories/how-tos)
-
-  ## [Build intelligent Android apps: On-device inference](/blog/posts/build-intelligent-android-apps-on-device-inference)
-
-  [arrow\_forward](/blog/posts/build-intelligent-android-apps-on-device-inference)
-
-  Welcome back to the blog post series "Build intelligent Android apps" where we take a basic Android app and transform it into a personalized, intelligent, and agentic experience. In our previous post we introduced Jetpacker, the demo app we'll use throughout this series.
-
-  [Caren Chang](/blog/authors/caren-chang)
-  •
-  6 min read
-  + [#Intelligent Apps](/blog/topics/intelligent-apps)
-* [![View Jolanda Verhoef's profile](/static/blog/assets/jolanda_b0e2beee3e_Z1KU2ms.webp)](/blog/authors/jolanda-verhoef)
-
-  21
-
-  Jul
-  2026
-
-  21
-
-  Jul
-  2026
-
-  ![](/static/blog/assets/0713_Jetpacker_Strapi_d07d6f2d4b_Z1tB3HE.webp)
-
-  [How-tos](/blog/categories/how-tos)
-
-  ## [Build intelligent Android apps: Introduction to Jetpacker](/blog/posts/build-intelligent-android-apps-introduction-to-jetpacker)
-
-  [arrow\_forward](/blog/posts/build-intelligent-android-apps-introduction-to-jetpacker)
-
-  Jetpacker is a technical showcase app that our team built from the ground up for this year's Google I/O (built using Antigravity). At its core, Jetpacker helps users plan, explore, and enjoy their next big adventure.
-
-  [Jolanda Verhoef](/blog/authors/jolanda-verhoef)
-  •
-  4 min read
-  + [#Intelligent Apps](/blog/topics/intelligent-apps)
-
+  [arrow_forward](https://developer.android.com/blog/posts/build-intelligent-android-apps-introduction-to-jetpacker) Jetpacker is a technical showcase app that our team built from the ground up for this year's Google I/O (built using Antigravity). At its core, Jetpacker helps users plan, explore, and enjoy their next big adventure.
+  [Jolanda Verhoef](https://developer.android.com/blog/authors/jolanda-verhoef) • 4 min read
+  - [#Intelligent Apps](https://developer.android.com/blog/topics/intelligent-apps)
 Stay in the loop
+
 
 Get the latest Android development insights delivered to your inbox
 weekly.
-
 [mail
-Subscribe](/subscribe)
-
-![A 3D illustration of the Android mascot, wearing a jetpack that's emitting a large cloud of bubbles](/static/blog/assets/rocket-android.CVJQZOf1_1PnraM.webp)
+Subscribe](https://developer.android.com/subscribe) ![A 3D illustration of the Android mascot, wearing a jetpack that's emitting a large cloud of bubbles](https://developer.android.com/static/blog/assets/rocket-android.CVJQZOf1_1PnraM.webp)

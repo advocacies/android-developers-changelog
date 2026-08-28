@@ -1,37 +1,18 @@
 ---
-title: Play Games Sidekick  |  Android game development  |  Android Developers
+title: https://developer.android.com/games/pgs/play-games-sidekick
 url: https://developer.android.com/games/pgs/play-games-sidekick
-source: html-scrape
+source: md.txt
 ---
-
-* [Android Developers](https://developer.android.com/)
-* [Google Play](https://developer.android.com/distribute)
-* [Games dev center](https://developer.android.com/games)
-* [Guides](https://developer.android.com/games/guides)
-
-Send feedback
-
-# Play Games Sidekick Stay organized with collections Save and categorize content based on your preferences.
-
-
-
-
 
 Play Games Sidekick is an overlay that helps players stay in your game by
 delivering relevant content and offers directly to players.
 
-* **User retention** with Gemini Live and tips, so players don't need to leave
-  the game for help or advice.
-* **Increased monetization** with in-the-moment Points exchange, Play-funded
-  offers, and Pass coupons.
-* **Rewarded gameplay** with integrated streaks, quests, and profile
-  interactions.
-* **Deeper engagement** with content and videos.
+- **User retention** with Gemini Live and tips, so players don't need to leave the game for help or advice.
+- **Increased monetization** with in-the-moment Points exchange, Play-funded offers, and Pass coupons.
+- **Rewarded gameplay** with integrated streaks, quests, and profile interactions.
+- **Deeper engagement** with content and videos.
 
-[![Play Games Sidekick with available features.](/static/images/games/pgs/Sidekick.gif)](/static/images/games/pgs/Sidekick.gif)
-
-
-Play Games Sidekick (click to enlarge).
+[![Play Games Sidekick with available features.](https://developer.android.com/static/images/games/pgs/Sidekick.gif)](https://developer.android.com/static/images/games/pgs/Sidekick.gif) Play Games Sidekick (click to enlarge).
 
 ## Features
 
@@ -39,30 +20,27 @@ Available features on Sidekick will vary by game, depending on
 your Google Play Games Services integration status and Play Points enrollment. Players can
 expect the following features:
 
-* **Gaming utilities:** Screenshot, screen record, YouTube Livestream, and Do
-  Not Disturb.
-* **Achievements:** Requires implementation of [achievements](/games/pgs/achievements).
-* **Gaming streaks:** [Gaming streaks](https://support.google.com/googleplay/answer/16562031).
-* **Play Points credit exchange.**
-* **Play Points boosters and coupons:** Available to enrolled Play Points
-  developers.
-* **Play Pass benefits and offers.**
-* **Quests:** [Quests](https://support.google.com/googleplay/answer/11534416) are available to enrolled Quest developers.
-* **Official and Creator Videos:** Sidekick shows the videos
-  that you add. For more information about how to add videos on Play Store and
-  Sidekick, see [Showcase your app with YouTube videos on
+- **Gaming utilities:** Screenshot, screen record, YouTube Livestream, and Do Not Disturb.
+- **Achievements:** Requires implementation of [achievements](https://developer.android.com/games/pgs/achievements).
+- **Gaming streaks:** [Gaming streaks](https://support.google.com/googleplay/answer/16562031).
+- **Play Points credit exchange.**
+- **Play Points boosters and coupons:** Available to enrolled Play Points developers.
+- **Play Pass benefits and offers.**
+- **Quests:** [Quests](https://support.google.com/googleplay/answer/11534416) are available to enrolled Quest developers.
+- **Official and Creator Videos:** Sidekick shows the videos that you add. For more information about how to add videos on Play Store and Sidekick, see [Showcase your app with YouTube videos on
   Google Play](https://support.google.com/googleplay/android-developer/answer/15501235).
 
 ## Software and hardware requirements
 
 To access Sidekick, players need the following:
 
-* A mobile phone running Android 13 or higher.
+- A mobile phone running Android 13 or higher.
 
-**Note:** Sidekick is available to devices with 3 GB RAM or higher.
+> [!NOTE]
+> **Note:** Sidekick is available to devices with 3 GB RAM or higher.
 
-* Players must have one [Gamer profile](https://play.google.com/games/profile).
-* The game must be installed from the Play Store.
+- Players must have one [Gamer profile](https://play.google.com/games/profile).
+- The game must be installed from the Play Store.
 
 ## Try Sidekick
 
@@ -80,19 +58,13 @@ Once you've tested with a smaller group of colleagues or trusted users, you can
 expand your test to an open release.
 
 1. In the Play Console, [set up an internal or a closed testing](https://support.google.com/googleplay/android-developer/answer/9845334) release.
-2. To add Play Games Sidekick to your app bundle, select
-   **Sidekick is on by default**.
+2. To add Play Games Sidekick to your app bundle, select **Sidekick is on by default**.
 3. Conduct your testing.
-4. Once ready, release the build to production. For more information, see
-   [Prepare a release in phases](https://support.google.com/googleplay/android-developer/answer/9859348).
+4. Once ready, release the build to production. For more information, see [Prepare a release in phases](https://support.google.com/googleplay/android-developer/answer/9859348).
 
 Players can manage the visibility of Sidekick at any time through
 the user settings in the Play Store.
-
-[![Sidekick is on by default](/static/images/games/pgs/sidekickon.png)](/static/images/games/pgs/sidekickon.png)
-
-
-Add Play Games Sidekick to your game.
+[![Sidekick is on by default](https://developer.android.com/static/images/games/pgs/sidekickon.png)](https://developer.android.com/static/images/games/pgs/sidekickon.png) Add Play Games Sidekick to your game.
 
 ### Safely test Sidekick
 
@@ -112,15 +84,9 @@ By releasing Sidekick to a small, controlled segment of your
 audience, you can isolate its impact by tracking metrics against your new game
 version.
 
-* **Prepare your release:** Integrate the Sidekick SDK into
-  your game and prepare a new release build.
-* **Start a staged rollout:** Publish your new build to the Production track
-  using a 5% staged rollout in the Google Play Console. This exposes the
-  Sidekick integration to a small fraction of your player base
-  in real-time.
-* **Isolate by app version:** Ensure that your analytics tools are configured
-  to filter data specifically for the app version containing the
-  Sidekick integration.
+- **Prepare your release:** Integrate the Sidekick SDK into your game and prepare a new release build.
+- **Start a staged rollout:** Publish your new build to the Production track using a 5% staged rollout in the Google Play Console. This exposes the Sidekick integration to a small fraction of your player base in real-time.
+- **Isolate by app version:** Ensure that your analytics tools are configured to filter data specifically for the app version containing the Sidekick integration.
 
 #### Monitor performance and metrics
 
@@ -129,14 +95,8 @@ core metrics remain stable by using a combination of the Google Play Console
 and your own analytics setup. When monitoring your staged rollout, focus on the
 following:
 
-* **Track engagement and game stability:** Use the Google Play Console to
-  ensure that your Android vitals (such as crash rates and ANRs) and player
-  engagement metrics remain stable for the new app version.
-* **Track revenue consistency:** Monitor your revenue and IAP metrics closely
-  using your existing analytics infrastructure, such as Google Analytics or
-  your internal Business Intelligence (BI) tools. Compare the 5% cohort that
-  has access to Sidekick against the rest of your production
-  traffic to ensure your core monetization remains stable.
+- **Track engagement and game stability:** Use the Google Play Console to ensure that your Android vitals (such as crash rates and ANRs) and player engagement metrics remain stable for the new app version.
+- **Track revenue consistency:** Monitor your revenue and IAP metrics closely using your existing analytics infrastructure, such as Google Analytics or your internal Business Intelligence (BI) tools. Compare the 5% cohort that has access to Sidekick against the rest of your production traffic to ensure your core monetization remains stable.
 
 Once you have verified that Sidekick successfully complements
 your revenue, engagement, and stability during the 5% staged rollout, you can
@@ -157,22 +117,18 @@ steps to enable Play Store developer options on the device:
 7. Go to your game to see Sidekick appear.
 
 [![The toggle to turn on Play Games Sidekick on the Google Play
-     Store app.](/static/images/games/pgs/playstoresidekick.png)](/static/images/games/pgs/playstoresidekick.png)
-
-
-The toggle to turn on Play Games Sidekick on the Google
-Play Store app (click to enlarge).
+Store app.](https://developer.android.com/static/images/games/pgs/playstoresidekick.png)](https://developer.android.com/static/images/games/pgs/playstoresidekick.png) The toggle to turn on Play Games Sidekick on the Google Play Store app (click to enlarge).
 
 ### Configure snooze duration for entry point
 
 By default, the Play Games Sidekick entry point displays immediately. You can
 snooze the ingame entry point for a configured custom duration in the
-XML\_RESOURCE\_FILE.
+<var translate="no">XML_RESOURCE_FILE</var>.
 
 1. In the `AndroidManifest.xml` file, add the following `<meta-data>` element
    to the `<application>` element:
 
-   ```
+   ```xml
    <manifest>
     <application>
      <meta-data
@@ -182,11 +138,11 @@ XML\_RESOURCE\_FILE.
 
    </manifest>
    ```
-2. Specify the snooze duration in the XML\_RESOURCE\_FILE.
+2. Specify the snooze duration in the <var translate="no">XML_RESOURCE_FILE</var>.
 
-   Sample file (res/xml/XML\_RESOURCE\_FILE.xml):
+   Sample file (res/xml/<var translate="no">XML_RESOURCE_FILE</var>.xml):
 
-   ```
+   ```xml
    <?xml version="1.0" encoding="utf-8"?>
    <deku-config>
      <!-- Entrypoint default position overrides -->
@@ -214,11 +170,10 @@ you upload, follow these steps:
 
 1. Open [Play Console](https://play.google.com/console).
 2. Select a game.
-3. Go to **Testing** > **Advanced settings**.
+3. Go to **Testing** \> **Advanced settings**.
 4. On the **Play Games Sidekick** tab, select either
-   * Automatically make Sidekick is on by default for new app bundles you upload.
-   * Don't automatically make Sidekick default on for new app bundles you
-     upload.
+   - Automatically make Sidekick is on by default for new app bundles you upload.
+   - Don't automatically make Sidekick default on for new app bundles you upload.
 5. Select **Save changes**.
 
 If your app updates are infrequent, we may periodically update the
@@ -246,17 +201,17 @@ For any feedback on Sidekick, use the [feedback form](https://docs.google.com/fo
 You can add Sidekick to your game even if you publish using
 the [Google Play Developer Publishing API](https://developers.google.com/android-publisher#publishing).
 First, [automatically
-add Sidekick to all bundle uploads](/games/pgs/play-games-sidekick#add-sidekick),
+add Sidekick to all bundle uploads](https://developer.android.com/games/pgs/play-games-sidekick#add-sidekick),
 and then continue your normal release process. Sidekick will be
 added to your Android App Bundle.
 
 #### My game does not use Android App Bundles (AAB), what should I do?
 
 Sidekick is added to games when you upload a new
-[Android App Bundle](/guide/app-bundle).
+[Android App Bundle](https://developer.android.com/guide/app-bundle).
 
 If you are using APKs, add the
-[Sidekick SDK](/games/pgs/play-games-sidekick-sdk) as a dependency.
+[Sidekick SDK](https://developer.android.com/games/pgs/play-games-sidekick-sdk) as a dependency.
 
 #### My game uses an anti-tampering product. Is Sidekick compatible with my solution?
 
@@ -264,7 +219,7 @@ We have been working with leading companies to ensure Sidekick
 compatibility.
 
 If you are using an incompatible anti-tampering product, add the
-[Sidekick SDK](/games/pgs/play-games-sidekick-sdk) as a dependency to your
+[Sidekick SDK](https://developer.android.com/games/pgs/play-games-sidekick-sdk) as a dependency to your
 APK.
 If you have other questions,
 [request support](https://docs.google.com/forms/d/1NPmZ04tyT97tb8q-NbElU_HJ3YuPWOkXvhwJB3mTmB8/viewform).
@@ -273,16 +228,6 @@ If you have other questions,
 
 If achievements aren't appearing as expected, check the following:
 
-* **Draft status:** Achievements in "Draft" state aren't shown in the Sidekick.
-* **Achievement badge:** Locked achievements are only visible to all players
-  if the game has earned an achievements badge. This requires at least 100 unique
-  players to have made calls to the achievements API within the last 30 days.
-* **Unlocked:** If the game hasn't earned a badge, players see achievements
-  they have already unlocked.
-
-
-
-
-
-
-Send feedback
+- **Draft status:** Achievements in "Draft" state aren't shown in the Sidekick.
+- **Achievement badge:** Locked achievements are only visible to all players if the game has earned an achievements badge. This requires at least 100 unique players to have made calls to the achievements API within the last 30 days.
+- **Unlocked:** If the game hasn't earned a badge, players see achievements they have already unlocked.
