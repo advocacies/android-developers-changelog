@@ -1,8 +1,20 @@
 ---
-title: https://developer.android.com/develop/background-work/background-tasks/persistent/getting-started
+title: Getting started with WorkManager  |  Background work  |  Android Developers
 url: https://developer.android.com/develop/background-work/background-tasks/persistent/getting-started
-source: md.txt
+source: html-scrape
 ---
+
+* [Android Developers](https://developer.android.com/)
+* [Develop](https://developer.android.com/develop)
+* [Core areas](https://developer.android.com/develop/core-areas)
+* [Background work](https://developer.android.com/develop/background-work)
+* [Guides](https://developer.android.com/develop/background-work/background-tasks)
+
+# Getting started with WorkManager Stay organized with collections Save and categorize content based on your preferences.
+
+
+
+
 
 To get started using WorkManager, first import the library into your Android
 project.
@@ -11,7 +23,7 @@ Add the following dependencies to your app's `build.gradle` file:
 
 ### Groovy
 
-```groovy
+```
 dependencies {
     def work_version = "2.11.2"
 
@@ -37,7 +49,7 @@ dependencies {
 
 ### Kotlin
 
-```kotlin
+```
 dependencies {
     val work_version = "2.11.2"
 
@@ -61,16 +73,16 @@ dependencies {
 }
 ```
 
-Once you've added the dependencies and synchronized your Gradle project, the
+Once you’ve added the dependencies and synchronized your Gradle project, the
 next step is to define some work to run.
 
-> [!NOTE]
-> **Note:** You can always find the latest version of WorkManager, including beta, alpha, and release candidate versions on the [WorkManager releases
-> page](https://developer.android.com/jetpack/androidx/releases/work).
+**Note:** You can always find the latest version of WorkManager, including beta,
+alpha, and release candidate versions on the [WorkManager releases
+page](/jetpack/androidx/releases/work).
 
 ## Define the work
 
-Work is defined using the `https://developer.android.com/reference/androidx/work/Worker`
+Work is defined using the `Worker`
 class. The `doWork()` method runs asynchronously on a background
 thread provided by WorkManager.
 
@@ -80,7 +92,7 @@ images, you can do the following:
 
 ### Kotlin
 
-```kotlin
+```
 class UploadWorker(appContext: Context, workerParams: WorkerParameters):
        Worker(appContext, workerParams) {
    override fun doWork(): Result {
@@ -96,7 +108,7 @@ class UploadWorker(appContext: Context, workerParams: WorkerParameters):
 
 ### Java
 
-```java
+```
 public class UploadWorker extends Worker {
    public UploadWorker(
        @NonNull Context context,
@@ -116,36 +128,38 @@ public class UploadWorker extends Worker {
 }
 ```
 
-The `https://developer.android.com/reference/androidx/work/ListenableWorker.Result`
+The `Result`
 returned from `doWork()` informs the WorkManager service whether the
 work succeeded and, in the case of failure, whether or not the work should be
 retried.
 
-- `Result.success()`: The work finished successfully.
-- `Result.failure()`: The work failed.
-- `Result.retry()`: The work failed and should be tried at another time according to its [retry policy](https://developer.android.com/topic/libraries/architecture/workmanager/how-to/define-work#retries_backoff).
+* `Result.success()`: The work finished successfully.
+* `Result.failure()`: The work failed.
+* `Result.retry()`: The work failed and should be tried at another time
+  according to its
+  [retry policy](/topic/libraries/architecture/workmanager/how-to/define-work#retries_backoff).
 
 ## Create a WorkRequest
 
 Once your work is defined, it must be scheduled with the WorkManager service in
 order to run. WorkManager offers a lot of flexibility in how you schedule your
 work. You can schedule it to [run
-periodically](https://developer.android.com/topic/libraries/architecture/workmanager/how-to/define-work#schedule_periodic_work)
+periodically](/topic/libraries/architecture/workmanager/how-to/define-work#schedule_periodic_work)
 over an interval of time, or you can schedule it to run only [one
-time](https://developer.android.com/topic/libraries/architecture/workmanager/how-to/define-work#constraints).
+time](/topic/libraries/architecture/workmanager/how-to/define-work#constraints).
 
 However you choose to schedule the work, you will always use a
-`https://developer.android.com/reference/androidx/work/WorkRequest`. While a
+`WorkRequest`. While a
 `Worker` defines the unit of work, a
-`https://developer.android.com/reference/androidx/work/WorkRequest` (and its
+`WorkRequest` (and its
 subclasses) define how and when it should be run. In the simplest case, you can
 use a
-`https://developer.android.com/reference/androidx/work/OneTimeWorkRequest`,
+`OneTimeWorkRequest`,
 as shown in the following example.
 
 ### Kotlin
 
-```kotlin
+```
 val uploadWorkRequest: WorkRequest =
    OneTimeWorkRequestBuilder<UploadWorker>()
        .build()
@@ -153,7 +167,7 @@ val uploadWorkRequest: WorkRequest =
 
 ### Java
 
-```java
+```
 WorkRequest uploadWorkRequest =
    new OneTimeWorkRequest.Builder(UploadWorker.class)
        .build();
@@ -162,12 +176,12 @@ WorkRequest uploadWorkRequest =
 ## Submit the WorkRequest to the system
 
 Finally, you need to submit your `WorkRequest` to `WorkManager` using the
-`https://developer.android.com/reference/androidx/work/WorkManager#enqueue(androidx.work.WorkRequest)`
+`enqueue()`
 method.
 
 ### Kotlin
 
-```kotlin
+```
 WorkManager
     .getInstance(myContext)
     .enqueue(uploadWorkRequest)
@@ -175,7 +189,7 @@ WorkManager
 
 ### Java
 
-```java
+```
 WorkManager
     .getInstance(myContext)
     .enqueue(uploadWorkRequest);
@@ -191,7 +205,7 @@ This getting started guide only scratches the surface. The `WorkRequest` can
 also include additional information, such as the constraints under which the
 work should run, input to the work, a delay, and backoff policy for retrying
 work. In the next section, [Define your work
-requests](https://developer.android.com/topic/libraries/architecture/workmanager/how-to/define-work), you'll
+requests](/topic/libraries/architecture/workmanager/how-to/define-work), you’ll
 learn more about these options in greater detail as well as get an understanding
 of how to schedule unique and reoccurring work.
 
@@ -202,18 +216,20 @@ samples available to help you get started.
 
 ### Samples
 
-- [Sunflower](https://github.com/android/sunflower), a demo app demonstrating best practices with various architecture components, including WorkManager.
+* [Sunflower](https://github.com/android/sunflower),
+  a demo app demonstrating best practices with various architecture
+  components, including WorkManager.
 
 ### Codelabs
 
-- Working with WorkManager [(Kotlin)](https://codelabs.developers.google.com/codelabs/android-workmanager/#0) and [(Java)](https://codelabs.developers.google.com/codelabs/android-workmanager-java/#0)
-- [Advanced WorkManager (Kotlin)](https://codelabs.developers.google.com/codelabs/android-adv-workmanager/#0)
+* Working with WorkManager [(Kotlin)](https://codelabs.developers.google.com/codelabs/android-workmanager/#0) and [(Java)](https://codelabs.developers.google.com/codelabs/android-workmanager-java/#0)
+* [Advanced WorkManager (Kotlin)](https://codelabs.developers.google.com/codelabs/android-adv-workmanager/#0)
 
 ### Blogs
 
-- [Introducing WorkManager](https://medium.com/androiddevelopers/introducing-workmanager-2083bcfc4712)
-- [WorkManager Basics](https://medium.com/androiddevelopers/workmanager-basics-beba51e94048)
-- [WorkManager and Kotlin](https://medium.com/androiddevelopers/workmanager-meets-kotlin-b9ad02f7405e)
-- [WorkManager Periodicity](https://medium.com/androiddevelopers/workmanager-periodicity-ff35185ff006)
-- [Customizing WorkManager - Fundamentals](https://medium.com/androiddevelopers/customizing-workmanager-fundamentals-fdaa17c46dd2)
-- [Customize WorkManager with Dagger](https://medium.com/androiddevelopers/customizing-workmanager-with-dagger-1029688c0978)
+* [Introducing WorkManager](https://medium.com/androiddevelopers/introducing-workmanager-2083bcfc4712)
+* [WorkManager Basics](https://medium.com/androiddevelopers/workmanager-basics-beba51e94048)
+* [WorkManager and Kotlin](https://medium.com/androiddevelopers/workmanager-meets-kotlin-b9ad02f7405e)
+* [WorkManager Periodicity](https://medium.com/androiddevelopers/workmanager-periodicity-ff35185ff006)
+* [Customizing WorkManager - Fundamentals](https://medium.com/androiddevelopers/customizing-workmanager-fundamentals-fdaa17c46dd2)
+* [Customize WorkManager with Dagger](https://medium.com/androiddevelopers/customizing-workmanager-with-dagger-1029688c0978)

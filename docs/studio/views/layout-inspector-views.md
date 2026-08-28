@@ -1,10 +1,21 @@
 ---
-title: https://developer.android.com/studio/views/layout-inspector-views
+title: Debug your layout with Layout Inspector (Views)  |  Android Developers
 url: https://developer.android.com/studio/views/layout-inspector-views
-source: md.txt
+source: html-scrape
 ---
 
-[Concepts and Jetpack Compose implementation](https://developer.android.com/studio/debug/layout-inspector)
+* [Android Developers](https://developer.android.com/)
+* [Develop](https://developer.android.com/develop)
+* [Android Studio](https://developer.android.com/studio)
+* [Views](https://developer.android.com/studio/views/layout-editor)
+
+# Debug your layout with Layout Inspector (Views) Stay organized with collections Save and categorize content based on your preferences.
+
+
+
+
+
+[Concepts and Jetpack Compose implementationarrow\_forward](/studio/debug/layout-inspector)
 
 The Layout Inspector in Android Studio lets you debug the layout of your app by
 showing a view hierarchy where you can inspect the properties of each view. With
@@ -17,7 +28,9 @@ than entirely in XML and the layout is behaving unexpectedly.
 
 Layout Inspector requires the following global setting to function properly:
 
-    adb shell settings put global debug_view_attributes 1
+```
+adb shell settings put global debug_view_attributes 1
+```
 
 This option generates extra information for inspection on all of the processes
 on the device.
@@ -28,7 +41,9 @@ restart unless the flag is manually disabled on the device.
 
 To disable the flag, run the following adb command:
 
-    adb shell settings delete global debug_view_attributes
+```
+adb shell settings delete global debug_view_attributes
+```
 
-Alternatively, turn off [Enable view attribute inspection](https://developer.android.com/studio/debug/dev-options#debugging) from your device's
-[developer options](https://developer.android.com/studio/debug/dev-options#enable).
+Alternatively, turn off [Enable view attribute inspection](/studio/debug/dev-options#debugging) from your device's
+[developer options](/studio/debug/dev-options#enable).

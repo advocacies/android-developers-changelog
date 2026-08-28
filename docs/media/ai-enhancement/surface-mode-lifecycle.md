@@ -1,21 +1,37 @@
 ---
-title: https://developer.android.com/media/ai-enhancement/surface-mode-lifecycle
+title: Understand the media enhancement lifecycle in Surface mode  |  Android media  |  Android Developers
 url: https://developer.android.com/media/ai-enhancement/surface-mode-lifecycle
-source: md.txt
+source: html-scrape
 ---
+
+* [Android Developers](https://developer.android.com/)
+* [Essentials](https://developer.android.com/get-started)
+* [Camera & media dev center](https://developer.android.com/media)
+* [Guides](https://developer.android.com/media/guides)
+
+# Understand the media enhancement lifecycle in Surface mode Stay organized with collections Save and categorize content based on your preferences.
+
+
+
+
 
 The Media Enhancement API provides a low-latency, privacy-preserving, on-device
 AI solution that leverages hardware acceleration to deliver high-quality media
 improvements with zero APK bloat. For more information, see [Understand the
-media enhancement capabilities](https://developer.android.com/media/ai-enhancement/overview).
+media enhancement capabilities](/media/ai-enhancement/overview).
 
 The following architecture diagram shows the asynchronous surface mode execution
 lifecycle of the Media Enhancement API. This mode directly links hardware
 buffers to eliminate the performance bottleneck of copying uncompressed frames
 back and forth between CPU and GPU memory buffers.
+
 ![Diagram illustrating
-the 7-step asynchronous surface-to-surface lifecycle of the Media Enhancement
-API.](https://developer.android.com/static/media/images/surface-mode-lifecycle.png) **Figure 1.** Asynchronous surface mode execution lifecycle and the seven actionable steps of the enhancement pipeline.
+  the 7-step asynchronous surface-to-surface lifecycle of the Media Enhancement
+  API.](/static/media/images/surface-mode-lifecycle.png)
+
+
+**Figure 1.** Asynchronous surface mode execution lifecycle and the seven
+actionable steps of the enhancement pipeline.
 
 The enhancement pipeline is implemented through the following steps:
 
@@ -24,7 +40,7 @@ The enhancement pipeline is implemented through the following steps:
 1. **Provide input surface**: Your app provides the enhancement framework with
 an input surface handle to access frames for processing.
 
-2. **Set output surface** : Your app provisions and binds rendering targets
+2. **Set output surface**: Your app provisions and binds rendering targets
 (such as a `SurfaceView` or `TextureView`) directly to the framework.
 
 **Phase 2. Produce an input frame**
@@ -54,9 +70,13 @@ persistent GPU or NPU memory pipeline. It allocates dedicated video RAM (VRAM)
 and native system handles. To prevent severe memory leaks and potential
 `OutOfMemoryError` crashes, adhere to the following lifecycle principles:
 
-- **Lazy instantiation**: Don't create a session until the user initiates an enhancement action.
-- **Strategic reuse**: Maintain and reuse a single session instance when processing streams or frames with identical configurations (dimensions and toggled options).
-- **Prompt teardown** : Invoke `session.release()` immediately when visual tasks terminate to free shared hardware resources.
+* **Lazy instantiation**: Don't create a session until the user initiates an
+  enhancement action.
+* **Strategic reuse**: Maintain and reuse a single session instance when
+  processing streams or frames with identical configurations (dimensions and
+  toggled options).
+* **Prompt teardown**: Invoke `session.release()` immediately when visual tasks
+  terminate to free shared hardware resources.
 
 ## Initialize the enhancement engine
 
@@ -67,32 +87,34 @@ are present.
 Running this as a prerequisite step prevents runtime initialization failures by
 validating capabilities before your app attempts to process media.
 
-    class MediaSetupViewModel(application: Application) : AndroidViewModel(application) {
-        private val enhancementClient = Enhancement.getClient(application)
-        fun initializeEnhancementEngine() {
-            viewModelScope.launch {
-                try {
-                    // 1. Verify hardware capability
-                    val isSupported = enhancementClient.isDeviceSupportedAsync()
-                    if (!isSupported) {
-                        notifyUiDeviceIncompatible()
-                        return@launch
-                    }
-                    // 2. Verify and download the Google Play services ML modules
-                    val isInstalled = enhancementClient.isModuleInstalledAsync()
-                    if (!isInstalled) {
-                        notifyUiDownloadingModels()
-                        enhancementClient.installModule().await() 
-                    }
-                    notifyUiEngineReady()
-                } catch (e: Exception) {
-                    // Handle potential errors during session creation or image
-                    // processing.
-                    handleInitializationError(e)
+```
+class MediaSetupViewModel(application: Application) : AndroidViewModel(application) {
+    private val enhancementClient = Enhancement.getClient(application)
+    fun initializeEnhancementEngine() {
+        viewModelScope.launch {
+            try {
+                // 1. Verify hardware capability
+                val isSupported = enhancementClient.isDeviceSupportedAsync()
+                if (!isSupported) {
+                    notifyUiDeviceIncompatible()
+                    return@launch
                 }
+                // 2. Verify and download the Google Play services ML modules
+                val isInstalled = enhancementClient.isModuleInstalledAsync()
+                if (!isInstalled) {
+                    notifyUiDownloadingModels()
+                    enhancementClient.installModule().await() 
+                }
+                notifyUiEngineReady()
+            } catch (e: Exception) {
+                // Handle potential errors during session creation or image
+                // processing.
+                handleInitializationError(e)
             }
         }
     }
+}
+```
 
 ## Implementation: Surface mode (surface in, surface out)
 
@@ -107,25 +129,27 @@ Surface.
 This method is used to efficiently apply effects to a single hardware-decoded
 image frame.
 
-    // Provisions input Surface (for example, ImageReader) and output Surface (for
-    // example, SurfaceView)
-    val inputSurface: Surface = imageReader.surface
-    val outputSurface: Surface = surfaceView.holder.surface
-    // 1. Configure parameters for SURFACE mode
-    val surfaceOptions = EnhancementOptions(
-        imageReader.width,
-        imageReader.height,
-        EnhancementMode.SURFACE,
-        enableTonemap = true,
-        enableDeblurDenoise = true,
-        enableFaceDetection = false
-    ).also {
-        // 2. Bind hardware surfaces
-        it.setInputSurface(inputSurface)
-        it.setOutputSurface(outputSurface)
-    }
+```
+// Provisions input Surface (for example, ImageReader) and output Surface (for
+// example, SurfaceView)
+val inputSurface: Surface = imageReader.surface
+val outputSurface: Surface = surfaceView.holder.surface
+// 1. Configure parameters for SURFACE mode
+val surfaceOptions = EnhancementOptions(
+    imageReader.width,
+    imageReader.height,
+    EnhancementMode.SURFACE,
+    enableTonemap = true,
+    enableDeblurDenoise = true,
+    enableFaceDetection = false
+).also {
+    // 2. Bind hardware surfaces
+    it.setInputSurface(inputSurface)
+    it.setOutputSurface(outputSurface)
+}
 
-    // 3. Create the session to process the hardware frame
-    val singleFrameSession = enhancementClient.createSessionAsync(surfaceOptions, executor)
-    // The API processes the single frame. Upon completion, release the session.
-    singleFrameSession.release()
+// 3. Create the session to process the hardware frame
+val singleFrameSession = enhancementClient.createSessionAsync(surfaceOptions, executor)
+// The API processes the single frame. Upon completion, release the session.
+singleFrameSession.release()
+```

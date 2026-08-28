@@ -2356,4 +2356,4 @@ Make a selection 2026.08.00 2026.06.01 2026.06.00 2026.05.01 2026.05.00 2026.04.
 
 ## Compare BOM versions
 
-<iframe src="https://android.devsite.google/frame/develop/ui/compose/bom/bom-mapping_6ee7a3af07291f86baf1f845b1e7a9c79910e25af7b4fccd9030d0bfe988228a.frame" class="framebox inherit-locale " allow="clipboard-write https://android.devsite.google" allowfullscreen is-upgraded></iframe>
+<iframe src="https://android.devsite.google/frame/develop/ui/compose/bom/bom-mapping_cf4400f332f41990ef2f03e391d59479731d8718a2702af80d688f217b7a0496.frame" class="framebox inherit-locale " allow="clipboard-write https://android.devsite.google" allowfullscreen is-upgraded></iframe>

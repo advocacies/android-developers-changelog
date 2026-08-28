@@ -1,14 +1,19 @@
 ---
-title: https://developer.android.com/agents/skills/xr/display-glasses-with-jetpack-compose-glimmer/references/button-samples-source
+title: Implementation samples for Glimmer Button component  |  Android Developers
 url: https://developer.android.com/agents/skills/xr/display-glasses-with-jetpack-compose-glimmer/references/button-samples-source
-source: md.txt
+source: html-scrape
 ---
+
+# Implementation samples for Glimmer Button component Stay organized with collections Save and categorize content based on your preferences.
+
+
+
+
 
 When creating a Glimmer Button component, refer to the following implementation
 samples in `ButtonSamples.kt`:
 
-
-```kotlin
+```
 /*
  * Copyright 2025 The Android Open Source Project
  *
@@ -177,6 +182,6 @@ private fun LargeButtonWithTrailingIconPreview() {
 private fun LargeButtonWithLeadingAndTrailingIconPreview() {
     GlimmerTheme { LargeButtonWithLeadingAndTrailingIconSample() }
 }
-```
 
-<br />
+ButtonSamples.kt
+```

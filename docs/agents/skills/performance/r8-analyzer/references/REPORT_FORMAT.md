@@ -1,50 +1,64 @@
 ---
-title: https://developer.android.com/agents/skills/performance/r8-analyzer/references/REPORT_FORMAT
+title: R8 Analysis Report Template  |  Android Developers
 url: https://developer.android.com/agents/skills/performance/r8-analyzer/references/REPORT_FORMAT
-source: md.txt
+source: html-scrape
 ---
+
+# R8 Analysis Report Template Stay organized with collections Save and categorize content based on your preferences.
+
+
+
+
 
 ## 1. Configuration
 
 *(Optional section for the report, omit if no relevant findings are present.)*
 
-- **AGP Version**: \[Current\] -\> Upgrade to 9.0.
-- **Full Mode** : Not enabled. Remove `android.enableR8.fullMode=false` from `gradle.properties`.
+* **AGP Version**: [Current] -> Upgrade to 9.0.
+* **Full Mode**: Not enabled. Remove `android.enableR8.fullMode=false` from
+  `gradle.properties`.
 
 ## 2. Global disable rules
 
 *(Optional section for the report, omit if no relevant findings are present.)*
 
-- \[Rule\]: Disables R8 globally. **Action**: Remove.
+* [Rule]: Disables R8 globally. **Action**: Remove.
 
 If there is -dontobfuscate, -dontoptimize or -dontshrink in the codebase,
 mention in this section
 
 ## 3. Optimization summary
 
-- **Optimization score**: \[X\]% code is available for R8 optimizations (e.g., inlining, merging). \[100-X\]% of codebase can't be optimized by R8.
-- **Shrinking score**: \[X\]% of code will be optimized by R8 by removing unused classes, fields and methods. \[100-X\]% of codebase contains redundant classes, fields and methods that can't be removed by R8.
-- **Obfuscation score**: \[X\]% of the codebase is available for R8 to obfuscate.
+* **Optimization score**: [X]% code is available for R8 optimizations (e.g.,
+  inlining, merging). [100-X]% of codebase can't be optimized by R8.
+* **Shrinking score**: [X]% of code will be optimized by R8 by removing unused
+  classes, fields and methods. [100-X]% of codebase contains redundant
+  classes, fields and methods that can't be removed by R8.
+* **Obfuscation score**: [X]% of the codebase is available for R8 to
+  obfuscate.
 
 Increasing these scores increases the codebase available to R8 for
 optimizations.
 
 ## 4. Keep rules evaluation
 
-### \[Rule text\]
+### [Rule text]
 
-- **Keeps**: \[X\] items or \[X\] % of the codebase from optimization. Classes: \[X\], Fields: \[X\], Methods: \[X\] are prevented from optimization due to this keep rule
-- **Kept items**: \[Class1\], \[Class2\]
-- **Action** : **Remove** (Library bundles rules) OR **Refine** (Too broad, use \[Surgical Rule\]).
+* **Keeps**: [X] items or [X] % of the codebase from optimization. Classes:
+  [X], Fields: [X], Methods: [X] are prevented from optimization due to this
+  keep rule
+* **Kept items**: [Class1], [Class2]
+* **Action**: **Remove** (Library bundles rules) OR **Refine** (Too broad, use
+  [Surgical Rule]).
 
 ## 5. Subsumed keep rules
 
 *(Optional section for the report, omit if no relevant findings are present.)*
 
-### \[Redundant rules\]
+### [Redundant rules]
 
-- **Subsumed By**: \[Broader Rule\]
-- **Action** : **Remove**.
+* **Subsumed By**: [Broader Rule]
+* **Action**: **Remove**.
 
 ## 6. Historical analysis summary
 

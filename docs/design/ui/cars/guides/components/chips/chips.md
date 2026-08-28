@@ -1,13 +1,25 @@
 ---
-title: https://developer.android.com/design/ui/cars/guides/components/chips/chips
+title: Chip  |  Cars  |  Android Developers
 url: https://developer.android.com/design/ui/cars/guides/components/chips/chips
-source: md.txt
+source: html-scrape
 ---
 
-> [!NOTE]
-> **Note:** Chips are only supported in Sectioned Item template in Car App Library version 1.9.
+* [Android Developers](https://developer.android.com/)
+* [Design & Plan](https://developer.android.com/design)
+* [UI Design](https://developer.android.com/design/ui)
+* [Cars](https://developer.android.com/design/ui/cars)
+* [Guides](https://developer.android.com/design/ui/cars/guides/foundations/design-principles)
 
-![hero](https://developer.android.com/static/design/ui/cars/guides/components/chips/chips-assets/image-161-19879.png)
+# Chip Stay organized with collections Save and categorize content based on your preferences.
+
+
+
+
+
+**Note:** Chips are only supported in Sectioned Item template in Car App Library
+version 1.9.
+
+![hero](/static/design/ui/cars/guides/components/chips/chips-assets/image-161-19879.png)
 
 ## Overview
 
@@ -23,19 +35,24 @@ chosen UI theme.
 
 **Chips can contain:**
 
-- An icon only
-- A text label only
-- Both an icon and a label (in either direction)
+* An icon only
+* A text label only
+* Both an icon and a label (in either direction)
 
-*** ** * ** ***
+---
 
 ## Composition
 
-![hero](https://developer.android.com/static/design/ui/cars/guides/components/chips/chips-assets/image-161-21355.png) *1.* *Leading icon or image*
+![hero](/static/design/ui/cars/guides/components/chips/chips-assets/image-161-21355.png)
+
+
+*1.* *Leading icon or image*
 
 *2.* *Label text*
 
-*** ** * ** ***
+
+
+---
 
 ## UX requirements
 
@@ -43,7 +60,7 @@ To ensure a safe and consistent experience across all apps, follow these design
 requirements:
 
 | Requirement level | Content |
-|---|---|
+| --- | --- |
 | MUST | Include either an icon or a label. |
 | SHOULD | Use a unique visual style, such as a distinct color or shape, to communicate different chip states. |
 | SHOULD | Implement consistent styling across all chips throughout your app. |

@@ -1,14 +1,39 @@
 ---
-title: https://developer.android.com/blog/posts/instagram-and-facebook-deliver-instant-playback-and-boost-user-engagement-with-media3-preload-manager
+title: Instagram and Facebook deliver instant playback and boost user engagement with Media3 PreloadManager  |  Android Developers' Blog
 url: https://developer.android.com/blog/posts/instagram-and-facebook-deliver-instant-playback-and-boost-user-engagement-with-media3-preload-manager
-source: md.txt
+source: html-scrape
 ---
 
-[Case Studies](https://developer.android.com/blog/categories/case-studies)
+* [Android Developers](https://developer.android.com/)
+* [Android Developers' Blog](https://developer.android.com/)
+* [Blog](https://developer.android.com/blog)
+
+Stay organized with collections
+
+Save and categorize content based on your preferences.
+
+
+
+[Case Studies](/blog/categories/case-studies)
 
 # Instagram and Facebook deliver instant playback and boost user engagement with Media3 PreloadManager
 
-4 min read ![](https://developer.android.com/static/blog/assets/meta_Header_2ac893569c_ZLkD4s.webp) 05 Mar 2026 [![View Mayuri Khinvasara Khabya's profile](https://developer.android.com/static/blog/assets/Mayuri_Khinvasara_Khabya_92848b1e1b_1xSr0w.webp)](https://developer.android.com/blog/authors/mayuri-khabya)[![View Tracy Agyemang's profile](https://developer.android.com/static/blog/assets/Tracy_Agyemang_Headshot_9a0c523435_1hBimO.webp)](https://developer.android.com/blog/authors/tracy-agyemang) [Mayuri Khinvasara Khabya](https://developer.android.com/blog/authors/mayuri-khabya) \& [Tracy Agyemang](https://developer.android.com/blog/authors/tracy-agyemang) In the dynamic world of social media, user attention is won or lost quickly. Meta apps (Facebook and Instagram) are among the world's largest social platforms and serve billions of users globally. For Meta, delivering videos seamlessly isn't just a feature, it's the core of their user experience. Short-form videos, particularly Facebook Newsfeed and Instagram Reels, have become a primary driver of engagement. They enable creative expression and rapid content consumption; connecting and entertaining people around the world.
+4 min read
+
+![](/static/blog/assets/meta_Header_2ac893569c_ZLkD4s.webp)
+
+05
+
+Mar
+2026
+
+[![View Mayuri Khinvasara Khabya's profile](/static/blog/assets/Mayuri_Khinvasara_Khabya_92848b1e1b_1xSr0w.webp)](/blog/authors/mayuri-khabya)[![View Tracy Agyemang's profile](/static/blog/assets/Tracy_Agyemang_Headshot_9a0c523435_1hBimO.webp)](/blog/authors/tracy-agyemang)
+
+[Mayuri Khinvasara Khabya](/blog/authors/mayuri-khabya)
+&
+[Tracy Agyemang](/blog/authors/tracy-agyemang)
+
+In the dynamic world of social media, user attention is won or lost quickly. Meta apps (Facebook and Instagram) are among the world's largest social platforms and serve billions of users globally. For Meta, delivering videos seamlessly isn't just a feature, it's the core of their user experience. Short-form videos, particularly Facebook Newsfeed and Instagram Reels, have become a primary driver of engagement. They enable creative expression and rapid content consumption; connecting and entertaining people around the world.
 
 This blog post takes you through the journey of how Meta transformed video playback for billions by delivering true instant playback.
 
@@ -18,7 +43,7 @@ Short-form videos lead to highly fast paced interactions as users quickly scroll
 
 ### **The path forward with Media3 PreloadManager**
 
-To address the shifts in consumption habits from rise in short form content and the limitations of traditional long form playback architecture, Jetpack Media3 introduced [PreloadManager](https://developer.android.com/media/media3/exoplayer/preloading-media/preloadmanager/create). This component allows developers to move beyond disk caching, offering granular control and customization to keep media ready in memory before the user hits play. Read this [blog series](https://android-developers.googleblog.com/2025/09/introducing-preloading-with-media3.html) to understand technical details about media playback with PreloadManager.
+To address the shifts in consumption habits from rise in short form content and the limitations of traditional long form playback architecture, Jetpack Media3 introduced [PreloadManager](/media/media3/exoplayer/preloading-media/preloadmanager/create). This component allows developers to move beyond disk caching, offering granular control and customization to keep media ready in memory before the user hits play. Read this [blog series](https://android-developers.googleblog.com/2025/09/introducing-preloading-with-media3.html) to understand technical details about media playback with PreloadManager.
 
 ## **How Meta achieved true instant playback**
 
@@ -28,8 +53,9 @@ Previously, Meta used a combination of warmup (to get players ready) and prefetc
 
 ### **Integrating Media3 PreloadManager**
 
-To achieve truly instant playback, Meta's Media Foundation Client team integrated the Jetpack Media3 PreloadManager into Facebook and Instagram. They chose the DefaultPreloadManager to unify their preloading and playback systems. This integration required refactoring Meta's existing architecture to enable efficient resource sharing between the PreloadManager and ExoPlayer instances. This strategic shift provided a key architectural advantage: the ability to parallelize preloading tasks and manage many videos using a single player instance. This dramatically increased preloading capacity while eliminating the high memory complexities of their previous approach.
-![colinKho.png](https://developer.android.com/static/blog/assets/colin_Kho_fc40711178_Y5Hbs.webp)
+To achieve truly instant playback, Meta's Media Foundation Client team integrated the Jetpack Media3 PreloadManager into Facebook and Instagram. They chose the DefaultPreloadManager to unify their preloading and playback systems. This integration required refactoring Meta's existing architecture to enable efficient resource sharing between the PreloadManager and ExoPlayer instances. This strategic shift provided a key architectural advantage: the ability to parallelize preloading tasks and manage many videos using a single player instance. This dramatically increased preloading capacity while eliminating the high memory complexities of their previous approach.
+
+![colinKho.png](/static/blog/assets/colin_Kho_fc40711178_Y5Hbs.webp)
 
 ### **Optimization and Performance Tuning**
 
@@ -39,19 +65,20 @@ The team then performed extensive testing and iterations to optimize performance
 
 Meta applied different preloading strategies and tailored the behavior to match the specific UI patterns of each app:
 
-- **Facebook Newsfeed** : The UI prioritizes the video currently coming into view. The manager preloads only the current video to ensure it starts the moment the user pauses their scroll. This "**current-only**" focus minimizes data and memory footprints in an environment where users may see many static posts between videos. While the system is presently designed to preload just the video in view, it can be adjusted to also preload upcoming (future) videos.
-- **Instagram Reels** : This is a pure video environment where users swipe vertically. For this UI, the team implemented an "**adjacent preload**" strategy. The PreloadManager keeps the videos immediately after the current Reel ready in memory. This bi-directional approach ensures that whether a user swipes up or down, the transition remains instant and smooth. The result was a dramatic improvement in the Quality of Experience (QoE) including improvements in Playback Start and Time to First Frame for the user.
+* **Facebook Newsfeed**: The UI prioritizes the video currently coming into view. The manager preloads only the current video to ensure it starts the moment the user pauses their scroll. This "**current-only**" focus minimizes data and memory footprints in an environment where users may see many static posts between videos. While the system is presently designed to preload just the video in view, it can be adjusted to also preload upcoming (future) videos.
+* **Instagram Reels**: This is a pure video environment where users swipe vertically. For this UI, the team implemented an "**adjacent preload**" strategy. The PreloadManager keeps the videos immediately after the current Reel ready in memory. This bi-directional approach ensures that whether a user swipes up or down, the transition remains instant and smooth. The result was a dramatic improvement in the Quality of Experience (QoE) including improvements in Playback Start and Time to First Frame for the user.
 
 ### **Scaling for a diverse global device ecosystem**
 
-Scaling a high-performance video stack across billions of devices requires more than just aggressive preloading; it requires intelligence. Meta faced initial challenges with memory pressure and scroll lag, particularly on mid-to-low-end hardware. To solve this, they built a *Device Stress Detection* system around the Media3 implementation. The apps now monitor I/O and CPU signals in real-time. If a device is under heavy load, preloading is paused to prioritize UI responsiveness.
+Scaling a high-performance video stack across billions of devices requires more than just aggressive preloading; it requires intelligence. Meta faced initial challenges with memory pressure and scroll lag, particularly on mid-to-low-end hardware. To solve this, they built a *Device Stress Detection* system around the Media3 implementation. The apps now monitor I/O and CPU signals in real-time. If a device is under heavy load, preloading is paused to prioritize UI responsiveness.
 
 This device-aware optimization ensures that the benefit of instant playback doesn't come at the cost of system stability, allowing even users on older hardware to experience a smoother, uninterrupted feed.
-![mirabelHu.png](https://developer.android.com/static/blog/assets/mirabel_Hu_c2c154dbc2_Z2nSukS.webp)
+
+![mirabelHu.png](/static/blog/assets/mirabel_Hu_c2c154dbc2_Z2nSukS.webp)
 
 ### **Architectural wins and code health**
 
-Beyond the user-facing metrics, the migration to Media3 `PreloadManager` offered long-term architectural benefits. While the integration and tuning process needed multiple iterations to balance performance, the resulting codebase is more maintainable. The team found that the `PreloadManager` API integrated cleanly with the existing Media3 ecosystem, allowing for better resource sharing. For Meta, the adoption of Media3 PreloadManager was a strategic investment in the future of video consumption.
+Beyond the user-facing metrics, the migration to Media3 `PreloadManager` offered long-term architectural benefits. While the integration and tuning process needed multiple iterations to balance performance, the resulting codebase is more maintainable. The team found that the `PreloadManager` API integrated cleanly with the existing Media3 ecosystem, allowing for better resource sharing. For Meta, the adoption of Media3 PreloadManager was a strategic investment in the future of video consumption.
 
 By adopting preloading and adding device-intelligent gates, they successfully increased total watch time on their apps and improved the overall engagement of their global community.
 
@@ -59,86 +86,159 @@ By adopting preloading and adding device-intelligent gates, they successfully in
 
 The proactive architecture delivered immediate and measurable improvements across both platforms.
 
-- Facebook experienced **faster playback starts, decreased playback stall rates and a reduction in bad sessions** (like rebuffering, delayed start time, lower quality,etc) which overall resulted in higher watch time.
-- Instagram saw **faster playback starts and an increase in total watch time. Eliminating join latency** (the interval from the user's action to the first frame display) directly increased engagement metrics. The **fewer interruptions** due to reduced buffering meant users watched more content, which showed through engagement metrics.
+* Facebook experienced **faster playback starts, decreased playback stall rates and a reduction in bad sessions** (like rebuffering, delayed start time, lower quality,etc) which overall resulted in higher watch time.
+* Instagram saw **faster playback starts and an increase in total watch time. Eliminating join latency**(the interval from the user's action to the first frame display) directly increased engagement metrics. The **fewer interruptions** due to reduced buffering meant users watched more content, which showed through engagement metrics.
 
-![beforeAfterPreload.gif](https://developer.android.com/static/blog/assets/before_After_Preload_57acfe3175_k1TQ5.webp)
+![beforeAfterPreload.gif](/static/blog/assets/before_After_Preload_57acfe3175_k1TQ5.webp)
 
 ## **Key engineering learnings at scale**
 
 As media consumption habits evolve, the demand for instant experiences will continue to grow. Implementing proactive memory management and optimizing for scale and device diversity ensures your application can meet these expectations efficiently.
 
-- **Prioritize intelligent preloading**
+* **Prioritize intelligent preloading**
 
 Focus on delivering a reliable experience by minimizing stutters and loading times through preloading. Rather than simple disk caching, leveraging memory-level preloading ensures that content is ready the moment a user interacts with it.
 
-- **Align your implementation with UI patterns**
+* **Align your implementation with UI patterns**
 
-Customize preloading behavior as per your apps's UI. For example, use a "current-only" focus for mixed feeds like Facebook to save memory, and an "adjacent preload" strategy for vertical environments like Instagram Reels.
-![preloadingStrategy.png](https://developer.android.com/static/blog/assets/preloading_Strategy_381de8a469_Z1CnbTE.webp)
+Customize preloading behavior as per your apps’s UI. For example, use a "current-only" focus for mixed feeds like Facebook to save memory, and an "adjacent preload" strategy for vertical environments like Instagram Reels.
 
-- **Leverage Media3 for long-term code health**
+![preloadingStrategy.png](/static/blog/assets/preloading_Strategy_381de8a469_Z1CnbTE.webp)
 
-Integrating with Media3 APIs rather than a custom caching solution allows for better resource sharing between the player and the PreloadManager, enabling you to manage multiple videos with a single player instance. This results in a future-proof codebase that is easier for engineering teams to not only maintain and optimize over time but also benefit from the latest feature updates.
+* **Leverage Media3 for long-term code health**
 
-- **Implement device aware optimizations**
+Integrating with Media3 APIs rather than a custom caching solution allows for better resource sharing between the player and the PreloadManager, enabling you to manage multiple videos with a single player instance. This results in a future-proof codebase that is easier for engineering teams to not only maintain and optimize over time but also benefit from the latest feature updates.
+
+* **Implement device aware optimizations**
 
 Broaden your market reach by testing on various devices, including mid-to-low-end models. Use real-time signals like CPU, memory, and I/O to adapt features and resource usage dynamically.
 
 ## **Learn More**
 
-To get started and learn more, visit[](https://www.google.com/search?q=https://developer.android.com/guide/topics/media/media3/exoplayer/preload-manager)
+To get started and learn more, visit
 
-- Explore the Media3 [PreloadManager documentation](https://developer.android.com/media/media3/exoplayer/preloading-media/preloadmanager).
-- Read the[blog series](https://android-developers.googleblog.com/2025/09/introducing-preloading-with-media3.html) for advanced technical and implementation details.
-  - [Part 1: Introducing Preloading with Media3](https://android-developers.googleblog.com/2025/09/introducing-preloading-with-media3.html)
-  - [Part 2: A deep dive into Media3's PreloadManager](https://android-developers.googleblog.com/2025/09/a-deep-dive-into-media3-preloadmanager.html)
-- Check out the [sample app](https://github.com/android/socialite) to see preloading in action.
+* Explore the Media3 [PreloadManager documentation](/media/media3/exoplayer/preloading-media/preloadmanager).
+* Read the [blog series](https://android-developers.googleblog.com/2025/09/introducing-preloading-with-media3.html) for advanced technical and implementation details.
+  + [Part 1: Introducing Preloading with Media3](https://android-developers.googleblog.com/2025/09/introducing-preloading-with-media3.html)
+  + [Part 2: A deep dive into Media3's PreloadManager](https://android-developers.googleblog.com/2025/09/a-deep-dive-into-media3-preloadmanager.html)
+* Check out the [sample app](https://github.com/android/socialite) to see preloading in action.
 
 Now you know the secrets for instant playback. Go try them out!
+
 Written by:
 
--
-
-  ## [Mayuri Khinvasara Khabya](https://developer.android.com/blog/authors/mayuri-khabya)
+* ## [Mayuri Khinvasara Khabya](/blog/authors/mayuri-khabya)
 
   ###### Developer Relations Engineer
 
-  [read_more
-  View profile](https://developer.android.com/blog/authors/mayuri-khabya) ![View Mayuri Khinvasara Khabya's profile](https://developer.android.com/static/blog/assets/Mayuri_Khinvasara_Khabya_92848b1e1b_1xSr0w.webp) ![View Mayuri Khinvasara Khabya's profile](https://developer.android.com/static/blog/assets/Mayuri_Khinvasara_Khabya_92848b1e1b_1xSr0w.webp)
--
+  [read\_more
+  View profile](/blog/authors/mayuri-khabya)
 
-  ## [Tracy Agyemang](https://developer.android.com/blog/authors/tracy-agyemang)
+  ![View Mayuri Khinvasara Khabya's profile](/static/blog/assets/Mayuri_Khinvasara_Khabya_92848b1e1b_1xSr0w.webp)
+
+  ![View Mayuri Khinvasara Khabya's profile](/static/blog/assets/Mayuri_Khinvasara_Khabya_92848b1e1b_1xSr0w.webp)
+* ## [Tracy Agyemang](/blog/authors/tracy-agyemang)
 
   ###### Product Marketing Manager
 
-  [read_more
-  View profile](https://developer.android.com/blog/authors/tracy-agyemang) ![View Tracy Agyemang's profile](https://developer.android.com/static/blog/assets/Tracy_Agyemang_Headshot_9a0c523435_1hBimO.webp) ![View Tracy Agyemang's profile](https://developer.android.com/static/blog/assets/Tracy_Agyemang_Headshot_9a0c523435_1hBimO.webp)
+  [read\_more
+  View profile](/blog/authors/tracy-agyemang)
+
+  ![View Tracy Agyemang's profile](/static/blog/assets/Tracy_Agyemang_Headshot_9a0c523435_1hBimO.webp)
+
+  ![View Tracy Agyemang's profile](/static/blog/assets/Tracy_Agyemang_Headshot_9a0c523435_1hBimO.webp)
+
 Continue reading
-- 3 Authors 18 Aug 2026 18 Aug 2026 ![](https://developer.android.com/static/blog/assets/Copy_of_ANDDM_TINDER_Strapi_d8536aec8a_j79Hm.webp) [Case Studies](https://developer.android.com/blog/categories/case-studies)
 
-  ## [Tinder cuts app cold starts by 47% with new R8 Configuration Analyzer](https://developer.android.com/blog/posts/tinder-cuts-app-cold-starts-by-47-with-new-r8-configuration-analyzer)
+* 3
+  Authors
 
-  [arrow_forward](https://developer.android.com/blog/posts/tinder-cuts-app-cold-starts-by-47-with-new-r8-configuration-analyzer) Tinder is on a mission to power and inspire real connections by making meeting easy and fun for every new generation of singles.
-  [Ajesh Pai](https://developer.android.com/blog/authors/ajesh-pai), [Ulises Uriel Verduzco Díaz](https://developer.android.com/blog/authors/ulises-uriel-verduzco-diaz), [Tracy Agyemang](https://developer.android.com/blog/authors/tracy-agyemang) • 4 min read
-  - [#Adaptive \& Differentiated](https://developer.android.com/blog/topics/adaptive-and-differentiated)
-- [![View Thomas Ezan's profile](https://developer.android.com/static/blog/assets/thomas_ezan_d29c7508d0_l9O72.webp)](https://developer.android.com/blog/authors/thomas-ezan)[![View Tracy Agyemang's profile](https://developer.android.com/static/blog/assets/Tracy_Agyemang_Headshot_9a0c523435_1hBimO.webp)](https://developer.android.com/blog/authors/tracy-agyemang) 04 May 2026 04 May 2026 ![](https://developer.android.com/static/blog/assets/AANDDM_KARROT_Strapi_eed79b0e1b_cCxXk.webp) [Case Studies](https://developer.android.com/blog/categories/case-studies)
+  18
 
-  ## [Gemini and Firebase AI Logic enabled Karrot to increase sales with a translation feature built in under 2 weeks](https://developer.android.com/blog/posts/gemini-and-firebase-ai-logic-enabled-karrot-to-increase-sales-with-a-translation-feature)
+  Aug
+  2026
 
-  [arrow_forward](https://developer.android.com/blog/posts/gemini-and-firebase-ai-logic-enabled-karrot-to-increase-sales-with-a-translation-feature) Karrot is a hyperlocal, community-driven peer-to-peer marketplace app that enables users to buy, sell, and trade items with other verified users. Since launching in South Korea in 2015, the platform has expanded into global markets, amassing over 43 million registered users.
-  [Thomas Ezan](https://developer.android.com/blog/authors/thomas-ezan), [Tracy Agyemang](https://developer.android.com/blog/authors/tracy-agyemang) • 2 min read
-  - [#Android](https://developer.android.com/blog/topics/android)
-- [![View Ben Weiss's profile](https://developer.android.com/static/blog/assets/1_1_U4_K_Lr4r_A_Kx_Pq0_Crp_L3vr_Q_a4d1920594_2dcD9g.webp)](https://developer.android.com/blog/authors/ben-weiss)[![View Tracy Agyemang's profile](https://developer.android.com/static/blog/assets/Tracy_Agyemang_Headshot_9a0c523435_1hBimO.webp)](https://developer.android.com/blog/authors/tracy-agyemang) 30 Mar 2026 30 Mar 2026 ![](https://developer.android.com/static/blog/assets/monzo_boosts_performance_aff3a37917_6VY99.webp) [Case Studies](https://developer.android.com/blog/categories/case-studies)
+  18
 
-  ## [Monzo boosts performance metrics by up to 35% with a simple R8 update](https://developer.android.com/blog/posts/monzo-boosts-performance-metrics-by-up-to-35-with-a-simple-r8-update)
+  Aug
+  2026
 
-  [arrow_forward](https://developer.android.com/blog/posts/monzo-boosts-performance-metrics-by-up-to-35-with-a-simple-r8-update) Monzo is a UK digital bank with 15 million customers and growing. As the app scaled, the engineering team identified app startup time as a critical area for improvement but worried it would require significant changes to their codebase.
-  [Ben Weiss](https://developer.android.com/blog/authors/ben-weiss), [Tracy Agyemang](https://developer.android.com/blog/authors/tracy-agyemang) • 2 min read
+  ![](/static/blog/assets/Copy_of_ANDDM_TINDER_Strapi_d8536aec8a_j79Hm.webp)
+
+  [Case Studies](/blog/categories/case-studies)
+
+  ## [Tinder cuts app cold starts by 47% with new R8 Configuration Analyzer](/blog/posts/tinder-cuts-app-cold-starts-by-47-with-new-r8-configuration-analyzer)
+
+  [arrow\_forward](/blog/posts/tinder-cuts-app-cold-starts-by-47-with-new-r8-configuration-analyzer)
+
+  Tinder is on a mission to power and inspire real connections by making meeting easy and fun for every new generation of singles.
+
+  [Ajesh Pai](/blog/authors/ajesh-pai),
+   [Ulises Uriel Verduzco Díaz](/blog/authors/ulises-uriel-verduzco-diaz) ,
+  [Tracy Agyemang](/blog/authors/tracy-agyemang)
+  •
+  4 min read
+  + [#Adaptive & Differentiated](/blog/topics/adaptive-and-differentiated)
+* [![View Thomas Ezan's profile](/static/blog/assets/thomas_ezan_d29c7508d0_l9O72.webp)](/blog/authors/thomas-ezan)[![View Tracy Agyemang's profile](/static/blog/assets/Tracy_Agyemang_Headshot_9a0c523435_1hBimO.webp)](/blog/authors/tracy-agyemang)
+
+  04
+
+  May
+  2026
+
+  04
+
+  May
+  2026
+
+  ![](/static/blog/assets/AANDDM_KARROT_Strapi_eed79b0e1b_cCxXk.webp)
+
+  [Case Studies](/blog/categories/case-studies)
+
+  ## [Gemini and Firebase AI Logic enabled Karrot to increase sales with a translation feature built in under 2 weeks](/blog/posts/gemini-and-firebase-ai-logic-enabled-karrot-to-increase-sales-with-a-translation-feature)
+
+  [arrow\_forward](/blog/posts/gemini-and-firebase-ai-logic-enabled-karrot-to-increase-sales-with-a-translation-feature)
+
+  Karrot is a hyperlocal, community-driven peer-to-peer marketplace app that enables users to buy, sell, and trade items with other verified users. Since launching in South Korea in 2015, the platform has expanded into global markets, amassing over 43 million registered users.
+
+  [Thomas Ezan](/blog/authors/thomas-ezan),
+  [Tracy Agyemang](/blog/authors/tracy-agyemang)
+  •
+  2 min read
+  + [#Android](/blog/topics/android)
+* [![View Ben Weiss's profile](/static/blog/assets/1_1_U4_K_Lr4r_A_Kx_Pq0_Crp_L3vr_Q_a4d1920594_2dcD9g.webp)](/blog/authors/ben-weiss)[![View Tracy Agyemang's profile](/static/blog/assets/Tracy_Agyemang_Headshot_9a0c523435_1hBimO.webp)](/blog/authors/tracy-agyemang)
+
+  30
+
+  Mar
+  2026
+
+  30
+
+  Mar
+  2026
+
+  ![](/static/blog/assets/monzo_boosts_performance_aff3a37917_6VY99.webp)
+
+  [Case Studies](/blog/categories/case-studies)
+
+  ## [Monzo boosts performance metrics by up to 35% with a simple R8 update](/blog/posts/monzo-boosts-performance-metrics-by-up-to-35-with-a-simple-r8-update)
+
+  [arrow\_forward](/blog/posts/monzo-boosts-performance-metrics-by-up-to-35-with-a-simple-r8-update)
+
+  Monzo is a UK digital bank with 15 million customers and growing. As the app scaled, the engineering team identified app startup time as a critical area for improvement but worried it would require significant changes to their codebase.
+
+  [Ben Weiss](/blog/authors/ben-weiss),
+  [Tracy Agyemang](/blog/authors/tracy-agyemang)
+  •
+  2 min read
+
 Stay in the loop
-
 
 Get the latest Android development insights delivered to your inbox
 weekly.
+
 [mail
-Subscribe](https://developer.android.com/subscribe) ![A 3D illustration of the Android mascot, wearing a jetpack that's emitting a large cloud of bubbles](https://developer.android.com/static/blog/assets/rocket-android.CVJQZOf1_1PnraM.webp)
+Subscribe](/subscribe)
+
+![A 3D illustration of the Android mascot, wearing a jetpack that's emitting a large cloud of bubbles](/static/blog/assets/rocket-android.CVJQZOf1_1PnraM.webp)
