@@ -1,0 +1,211 @@
+diff --git a/docs/blog/authors/9.md b/docs/blog/authors/9.md
+index 79d8e24..8eb7e3a 100644
+--- a/docs/blog/authors/9.md
++++ b/docs/blog/authors/9.md
+@@ -1,153 +1,102 @@
+ ---
+-title: Authors  |  Android Developers' Blog
++title: https://developer.android.com/blog/authors/9
+ url: https://developer.android.com/blog/authors/9
+-source: html-scrape
++source: md.txt
+ ---
+ 
+-* [Android Developers](https://developer.android.com/)
+-* [Android Developers' Blog](https://developer.android.com/)
+-* [Blog](https://developer.android.com/blog)
+-
+-Stay organized with collections
+-
+-Save and categorize content based on your preferences.
+-
+-
+-
+ # Authors
+ 
+-* ## [Matthew Warner](/blog/authors/matthew-warner)
+-
+-  ###### Product Manager
++-
+ 
+-  [read\_more
+-  2 posts](/blog/authors/matthew-warner)
++  ## [Matthew Warner](https://developer.android.com/blog/authors/matthew-warner)
+ 
+-  [read\_more
+-  2 posts](/blog/authors/matthew-warner)
++  ###### Product Manager
+ 
+-  ![View Matthew Warner's profile](/static/blog/assets/matthew_warner_67a99317e4_Z2c1VNu.webp)
++  [read_more
++  2 posts](https://developer.android.com/blog/authors/matthew-warner) [read_more
++  2 posts](https://developer.android.com/blog/authors/matthew-warner) ![View Matthew Warner's profile](https://developer.android.com/static/blog/assets/matthew_warner_67a99317e4_Z2c1VNu.webp) ![View Matthew Warner's profile](https://developer.android.com/static/blog/assets/matthew_warner_67a99317e4_Z2c1VNu.webp)
++-
+ 
+-  ![View Matthew Warner's profile](/static/blog/assets/matthew_warner_67a99317e4_Z2c1VNu.webp)
+-* ## [Mayank Jain](/blog/authors/blog-author)
++  ## [Mayank Jain](https://developer.android.com/blog/authors/blog-author)
+ 
+   ###### Product Manager
+ 
+-  [read\_more
+-  1 post](/blog/authors/blog-author)
+-
+-  [read\_more
+-  1 post](/blog/authors/blog-author)
++  [read_more
++  1 post](https://developer.android.com/blog/authors/blog-author) [read_more
++  1 post](https://developer.android.com/blog/authors/blog-author) ![View Mayank Jain's profile](https://developer.android.com/static/blog/assets/unnamed_2_feee4f83eb_13HwUT.webp) ![View Mayank Jain's profile](https://developer.android.com/static/blog/assets/unnamed_2_feee4f83eb_13HwUT.webp)
++-
+ 
+-  ![View Mayank Jain's profile](/static/blog/assets/unnamed_2_feee4f83eb_13HwUT.webp)
+-
+-  ![View Mayank Jain's profile](/static/blog/assets/unnamed_2_feee4f83eb_13HwUT.webp)
+-* ## [Mayuri Khinvasara Khabya](/blog/authors/mayuri-khabya)
++  ## [Mayuri Khinvasara Khabya](https://developer.android.com/blog/authors/mayuri-khabya)
+ 
+   ###### Developer Relations Engineer
+ 
+-  [read\_more
+-  3 posts](/blog/authors/mayuri-khabya)
+-
+-  [read\_more
+-  3 posts](/blog/authors/mayuri-khabya)
++  [read_more
++  3 posts](https://developer.android.com/blog/authors/mayuri-khabya) [read_more
++  3 posts](https://developer.android.com/blog/authors/mayuri-khabya) ![View Mayuri Khinvasara Khabya's profile](https://developer.android.com/static/blog/assets/Mayuri_Khinvasara_Khabya_92848b1e1b_1xSr0w.webp) ![View Mayuri Khinvasara Khabya's profile](https://developer.android.com/static/blog/assets/Mayuri_Khinvasara_Khabya_92848b1e1b_1xSr0w.webp)
++-
+ 
+-  ![View Mayuri Khinvasara Khabya's profile](/static/blog/assets/Mayuri_Khinvasara_Khabya_92848b1e1b_1xSr0w.webp)
+-
+-  ![View Mayuri Khinvasara Khabya's profile](/static/blog/assets/Mayuri_Khinvasara_Khabya_92848b1e1b_1xSr0w.webp)
+-* ## [Meghan Mehta](/blog/authors/meghan-mehta)
++  ## [Meghan Mehta](https://developer.android.com/blog/authors/meghan-mehta)
+ 
+   ###### Developer Advocate, Android
+ 
+-  [read\_more
+-  1 post](/blog/authors/meghan-mehta)
+-
+-  [read\_more
+-  1 post](/blog/authors/meghan-mehta)
+-
+-  ![View Meghan Mehta's profile](/static/blog/assets/meghan_d663ed9c69_e0a5b5a564_Z21FLk.webp)
++  [read_more
++  1 post](https://developer.android.com/blog/authors/meghan-mehta) [read_more
++  1 post](https://developer.android.com/blog/authors/meghan-mehta) ![View Meghan Mehta's profile](https://developer.android.com/static/blog/assets/meghan_d663ed9c69_e0a5b5a564_Z21FLk.webp) ![View Meghan Mehta's profile](https://developer.android.com/static/blog/assets/meghan_d663ed9c69_e0a5b5a564_Z21FLk.webp)
++-
+ 
+-  ![View Meghan Mehta's profile](/static/blog/assets/meghan_d663ed9c69_e0a5b5a564_Z21FLk.webp)
+-* ## [Michael Stillwell](/blog/authors/michael-stillwell)
++  ## [Michael Stillwell](https://developer.android.com/blog/authors/michael-stillwell)
+ 
+   ###### Developer Relations Engineer
+ 
+-  [read\_more
+-  1 post](/blog/authors/michael-stillwell)
++  [read_more
++  1 post](https://developer.android.com/blog/authors/michael-stillwell) [read_more
++  1 post](https://developer.android.com/blog/authors/michael-stillwell) ![](https://developer.android.com/static/blog/assets/default-avatar.DvQ_6oi6_pd2P1.svg) ![View Charles Munger's profile](https://developer.android.com/static/blog/assets/default-avatar.DvQ_6oi6_pd2P1.svg)
++-
+ 
+-  [read\_more
+-  1 post](/blog/authors/michael-stillwell)
+-
+-  ![](/static/blog/assets/default-avatar.DvQ_6oi6_pd2P1.svg)
+-
+-  ![View Charles Munger's profile](/static/blog/assets/default-avatar.DvQ_6oi6_pd2P1.svg)
+-* ## [Miguel Montemayor](/blog/authors/miguel-montemayor)
++  ## [Miguel Montemayor](https://developer.android.com/blog/authors/miguel-montemayor)
+ 
+   ###### Developer Relations Engineer
+ 
+-  [read\_more
+-  3 posts](/blog/authors/miguel-montemayor)
+-
+-  [read\_more
+-  3 posts](/blog/authors/miguel-montemayor)
+-
+-  ![View Miguel Montemayor's profile](/static/blog/assets/miguel_montemayor_552207c1c6_Z1tItyG.webp)
++  [read_more
++  3 posts](https://developer.android.com/blog/authors/miguel-montemayor) [read_more
++  3 posts](https://developer.android.com/blog/authors/miguel-montemayor) ![View Miguel Montemayor's profile](https://developer.android.com/static/blog/assets/miguel_montemayor_552207c1c6_Z1tItyG.webp) ![View Miguel Montemayor's profile](https://developer.android.com/static/blog/assets/miguel_montemayor_552207c1c6_Z1tItyG.webp)
++-
+ 
+-  ![View Miguel Montemayor's profile](/static/blog/assets/miguel_montemayor_552207c1c6_Z1tItyG.webp)
+-* ## [Mike Taylor-Cai](/blog/authors/mike-taylor-cai)
++  ## [Mike Taylor-Cai](https://developer.android.com/blog/authors/mike-taylor-cai)
+ 
+   ###### Product Manager
+ 
+-  [read\_more
+-  1 post](/blog/authors/mike-taylor-cai)
++  [read_more
++  1 post](https://developer.android.com/blog/authors/mike-taylor-cai) [read_more
++  1 post](https://developer.android.com/blog/authors/mike-taylor-cai) ![View Mike Taylor-Cai's profile](https://developer.android.com/static/blog/assets/michaelct_profile_pic_177ddafb7b_Z1VdIJy.webp) ![View Mike Taylor-Cai's profile](https://developer.android.com/static/blog/assets/michaelct_profile_pic_177ddafb7b_Z1VdIJy.webp)
++-
+ 
+-  [read\_more
+-  1 post](/blog/authors/mike-taylor-cai)
+-
+-  ![View Mike Taylor-Cai's profile](/static/blog/assets/michaelct_profile_pic_177ddafb7b_Z1VdIJy.webp)
+-
+-  ![View Mike Taylor-Cai's profile](/static/blog/assets/michaelct_profile_pic_177ddafb7b_Z1VdIJy.webp)
+-* ## [Mozart Louis](/blog/authors/mozart-louis)
++  ## [Mozart Louis](https://developer.android.com/blog/authors/mozart-louis)
+ 
+   ###### Developer Relations Engineer
+ 
+-  [read\_more
+-  1 post](/blog/authors/mozart-louis)
+-
+-  [read\_more
+-  1 post](/blog/authors/mozart-louis)
++  [read_more
++  1 post](https://developer.android.com/blog/authors/mozart-louis) [read_more
++  1 post](https://developer.android.com/blog/authors/mozart-louis) ![View Mozart Louis's profile](https://developer.android.com/static/blog/assets/Mozart_Louis_622373dab1_1RaA8T.webp) ![View Mozart Louis's profile](https://developer.android.com/static/blog/assets/Mozart_Louis_622373dab1_1RaA8T.webp)
++-
+ 
+-  ![View Mozart Louis's profile](/static/blog/assets/Mozart_Louis_622373dab1_1RaA8T.webp)
+-
+-  ![View Mozart Louis's profile](/static/blog/assets/Mozart_Louis_622373dab1_1RaA8T.webp)
+-* ## [Nataraj K R](/blog/authors/nataraj-k-r)
++  ## [Nataraj K R](https://developer.android.com/blog/authors/nataraj-k-r)
+ 
+   ###### Developer Relations Engineer
+ 
+-  [read\_more
+-  1 post](/blog/authors/nataraj-k-r)
+-
+-  [read\_more
+-  1 post](/blog/authors/nataraj-k-r)
+-
+-  ![View Nataraj K R's profile](/static/blog/assets/Nataraj_K_work_profile_20e513e403_Z1TR4EY.webp)
+-
+-  ![View Nataraj K R's profile](/static/blog/assets/Nataraj_K_work_profile_20e513e403_Z1TR4EY.webp)
+-
+-[arrow\_back](/blog/authors/8)
++  [read_more
++  1 post](https://developer.android.com/blog/authors/nataraj-k-r) [read_more
++  1 post](https://developer.android.com/blog/authors/nataraj-k-r) ![View Nataraj K R's profile](https://developer.android.com/static/blog/assets/Nataraj_K_work_profile_20e513e403_Z1TR4EY.webp) ![View Nataraj K R's profile](https://developer.android.com/static/blog/assets/Nataraj_K_work_profile_20e513e403_Z1TR4EY.webp)
++[arrow_back](https://developer.android.com/blog/authors/8)
+ 
+ #### Page 9
+ 
+ ###### of 15
+ 
+-[arrow\_forward](/blog/authors/10)
++[arrow_forward](https://developer.android.com/blog/authors/10) Stay in the loop
+ 
+-Stay in the loop
+ 
+ Get the latest Android development insights delivered to your inbox
+ weekly.
+-
+ [mail
+-Subscribe](/subscribe)
+-
+-![A 3D illustration of the Android mascot, wearing a jetpack that's emitting a large cloud of bubbles](/static/blog/assets/rocket-android.CVJQZOf1_1PnraM.webp)
+\ No newline at end of file
++Subscribe](https://developer.android.com/subscribe) ![A 3D illustration of the Android mascot, wearing a jetpack that's emitting a large cloud of bubbles](https://developer.android.com/static/blog/assets/rocket-android.CVJQZOf1_1PnraM.webp)
+\ No newline at end of file

@@ -1,0 +1,285 @@
+diff --git a/docs/blog/posts/experimental-hybrid-inference-and-new-gemini-models-for-android.md b/docs/blog/posts/experimental-hybrid-inference-and-new-gemini-models-for-android.md
+index 81dfe5b..4ac814e 100644
+--- a/docs/blog/posts/experimental-hybrid-inference-and-new-gemini-models-for-android.md
++++ b/docs/blog/posts/experimental-hybrid-inference-and-new-gemini-models-for-android.md
+@@ -1,85 +1,56 @@
+ ---
+-title: Experimental hybrid inference and new Gemini models for Android  |  Android Developers' Blog
++title: https://developer.android.com/blog/posts/experimental-hybrid-inference-and-new-gemini-models-for-android
+ url: https://developer.android.com/blog/posts/experimental-hybrid-inference-and-new-gemini-models-for-android
+-source: html-scrape
++source: md.txt
+ ---
+ 
+-* [Android Developers](https://developer.android.com/)
+-* [Android Developers' Blog](https://developer.android.com/)
+-* [Blog](https://developer.android.com/blog)
+-
+-Stay organized with collections
+-
+-Save and categorize content based on your preferences.
+-
+-
+-
+-[Product News](/blog/categories/product-news)
++[Product News](https://developer.android.com/blog/categories/product-news)
+ 
+ # Experimental hybrid inference and new Gemini models for Android
+ 
+-2 min read
+-
+-![](/static/blog/assets/Hybrid_inference_solution_for_Android_Blog_1_518db36e12_gOJm.webp)
+-
+-17
++2 min read ![](https://developer.android.com/static/blog/assets/Hybrid_inference_solution_for_Android_Blog_1_518db36e12_gOJm.webp) 17 Apr 2026 [![View Thomas Ezan's profile](https://developer.android.com/static/blog/assets/thomas_ezan_d29c7508d0_l9O72.webp)](https://developer.android.com/blog/authors/thomas-ezan) [Thomas Ezan](https://developer.android.com/blog/authors/thomas-ezan) Senior Developer Relations Engineer If you are an Android developer looking to implement innovative AI features into your app, we recently launched powerful new updates:
+ 
+-Apr
+-2026
++- Hybrid inference, a new API for Firebase AI Logic to leverage both on-device and Cloud inference,
++- Support for new Gemini models including latest Nano Banana models for image generation.
+ 
+-[![View Thomas Ezan's profile](/static/blog/assets/thomas_ezan_d29c7508d0_l9O72.webp)](/blog/authors/thomas-ezan)
+-
+-[Thomas Ezan](/blog/authors/thomas-ezan)
+-
+-Senior Developer Relations Engineer
+-
+-If you are an Android developer looking to implement innovative AI features into your app, we recently launched powerful new updates:
+-
+-* Hybrid inference, a new API for Firebase AI Logic to leverage both on-device and Cloud inference,
+-* Support for new Gemini models including latest Nano Banana models for image generation.
+-
+-Let’s jump in!
++Let's jump in!
+ 
+ ### **Experiment with hybrid inference**
+ 
+-With the new [Firebase API for hybrid inference](https://firebase.google.com/docs/ai-logic/hybrid/android/get-started?api=dev), we implemented a simple rule-based routing approach as an initial solution to let you use both on-device and cloud inference via a unified API. We are planning on providing more sophisticated routing capabilities in the future.
++With the new [Firebase API for hybrid inference](https://firebase.google.com/docs/ai-logic/hybrid/android/get-started?api=dev), we implemented a simple rule-based routing approach as an initial solution to let you use both on-device and cloud inference via a unified API. We are planning on providing more sophisticated routing capabilities in the future.
+ 
+ It allows your app to dynamically switch between Gemini Nano running locally on the device and cloud-hosted Gemini models. The on-device execution uses ML Kit's Prompt API. The cloud inference supports all the Gemini models from Firebase AI Logic in both Vertex AI and the Developer API.  
+-  
+-To use it, add the `firebase-ai-ondevice` dependencies to your app along with Firebase AI Logic:
+ 
+-```
++To use it, add the `firebase-ai-ondevice` dependencies to your app along with Firebase AI Logic:
++
++```kotlin
+ dependencies {
+- [...] 
+- implementation("com.google.firebase:firebase-ai:17.10.1")
+- implementation("com.google.firebase:firebase-ai-ondevice:16.0.0-beta01")
++ [...] 
++ implementation("com.google.firebase:firebase-ai:17.10.1")
++ implementation("com.google.firebase:firebase-ai-ondevice:16.0.0-beta01")
+ }
+ ```
+ 
+-During initialization, you create a `GenerativeModel` instance and configure it with specific inference modes, such as `PREFER_ON_DEVICE` (falls back to cloud if Gemini Nano is not available on the device ) or `PREFER_IN_CLOUD` (falls back to on-device inference if offline):
++During initialization, you create a `GenerativeModel` instance and configure it with specific inference modes, such as `PREFER_ON_DEVICE` (falls back to cloud if Gemini Nano is not available on the device ) or `PREFER_IN_CLOUD` (falls back to on-device inference if offline):
+ 
+-```
+-val model = Firebase.ai(backend = GenerativeBackend.googleAI())
+-    .generativeModel(
+-        modelName = "gemini-3.1-flash-lite",
+-        onDeviceConfig = OnDeviceConfig(
+-           mode = InferenceMode.PREFER_ON_DEVICE
+-        )
+-    )
+-
+-val response = model.generateContent(prompt)
+-```
++```kotlin
++val model = Firebase.ai(backend = GenerativeBackend.googleAI())
++    .generativeModel(
++        modelName = "gemini-3.1-flash-lite",
++        onDeviceConfig = OnDeviceConfig(
++           mode = InferenceMode.PREFER_ON_DEVICE
++        )
++    )
+ 
+-The Firebase API for hybrid inference for Android is still experimental, and we encourage you to try it in your app, especially if you are already using Firebase AI Logic.   
+-  
+-Currently, on-device models are specialized for single-turn text generation based on text or single Bitmap image inputs. Review the [limitations](https://firebase.google.com/docs/ai-logic/hybrid/android/get-started?api=dev#features-not-yet-available) for more details.  
+-  
+-We just published a [new sample in the AI Sample Catalog leveraging the Firebase API for hybrid](https://github.com/android/ai-samples/tree/main/samples/gemini-hybrid), it demonstrates how the Firebase API for hybrid inference can be used to generate a review based on a few selected topics and then translating it into various languages. Check out the code to see it in action!
++val response = model.generateContent(prompt)
++```
+ 
+-![Hybrid_Inference-Inline-imagery.gif](/static/blog/assets/Hybrid_Inference_Inline_imagery_36760c3326_l3eiI.webp)
++The Firebase API for hybrid inference for Android is still experimental, and we encourage you to try it in your app, especially if you are already using Firebase AI Logic.   
+ 
++Currently, on-device models are specialized for single-turn text generation based on text or single Bitmap image inputs. Review the [limitations](https://firebase.google.com/docs/ai-logic/hybrid/android/get-started?api=dev#features-not-yet-available) for more details.  
+ 
+-The new hybrid inference sample in action
++We just published a [new sample in the AI Sample Catalog leveraging the Firebase API for hybrid](https://github.com/android/ai-samples/tree/main/samples/gemini-hybrid), it demonstrates how the Firebase API for hybrid inference can be used to generate a review based on a few selected topics and then translating it into various languages. Check out the code to see it in action!
++![Hybrid_Inference-Inline-imagery.gif](https://developer.android.com/static/blog/assets/Hybrid_Inference_Inline_imagery_36760c3326_l3eiI.webp) The new hybrid inference sample in action
+ 
+ *The new hybrid inference sample in action*
+ 
+@@ -87,134 +58,64 @@ The new hybrid inference sample in action
+ 
+ As part of the new Gemini models, we've released two models particularly helpful to Android developers and easy to integrate in your application via the Firebase AI Logic SDK.
+ 
+-**Nano Banana**  
++**Nano Banana**   
+ Last year we released Nano Banana, a state-of-the-art image generation model. And a few weeks ago, we released a couple new Nana Banana models.
+ 
+ [Nano Banana Pro (Gemini 3 Pro Image)](https://deepmind.google/models/gemini-image/pro/) is designed for professional asset production and can render high-fidelity text, even in a specific font or simulating different types of handwriting.
+ 
+-[Nano Banana 2 (Gemini 3.1 Flash Image)](https://deepmind.google/models/gemini-image/flash/) is the high-efficiency counterpart to Nano Banana Pro. It's optimized for speed and high-volume use cases. It can be used for a broad range of use cases (infographics, virtual stickers, contextual illustrations, etc.). 
++[Nano Banana 2 (Gemini 3.1 Flash Image)](https://deepmind.google/models/gemini-image/flash/) is the high-efficiency counterpart to Nano Banana Pro. It's optimized for speed and high-volume use cases. It can be used for a broad range of use cases (infographics, virtual stickers, contextual illustrations, etc.). * *
+ 
+ The new Nano Banana models leverage real-world knowledge and deep reasoning capabilities to generate precise and detailed images.  
+-  
+-We updated our Magic Selfie sample (use image generation to change the background of your selfie!) to use Nano Banana 2. The background segmentation is now handled directly with the image generation model which makes the implementation easier and lets Nano Banana 2 improved image generation capabilities shine. See it in action [here](https://github.com/android/ai-samples/tree/main/samples/magic-selfie).
+-
+-![magic_selfie.png](/static/blog/assets/magic_selfie_e5893f79e5_2ewAaS.webp)
+ 
++We updated our Magic Selfie sample (use image generation to change the background of your selfie!) to use Nano Banana 2. The background segmentation is now handled directly with the image generation model which makes the implementation easier and lets Nano Banana 2 improved image generation capabilities shine. See it in action [here](https://github.com/android/ai-samples/tree/main/samples/magic-selfie).
++![magic_selfie.png](https://developer.android.com/static/blog/assets/magic_selfie_e5893f79e5_2ewAaS.webp) The updated Magic Selfie sample use Nanobana 2 to update a selfie background
+ 
+-The updated Magic Selfie sample use Nanobana 2 to update a selfie background
+-
+-You can use it via Firebase AI Logic SDK. Read more about it in the [Android documentation](/ai/gemini/developer-api#generate-images).
++You can use it via Firebase AI Logic SDK. Read more about it in the [Android documentation](https://developer.android.com/ai/gemini/developer-api#generate-images).
+ 
+ ### **Gemini 3.1 Flash-Lite**
+ 
+-We also released [Gemini 3.1 Flash-Lite](https://deepmind.google/models/model-cards/gemini-3-1-flash-lite/), a new version of the Gemini Flash-Lite family. The Gemini Flash-Lite models have been particularly favored by Android developers for its good quality/latency ratio and low inference cost. It’s been used by Android developers for various use-cases such as in-app messaging translation or generating a recipe from a picture of a dish.    
+-  
++We also released [Gemini 3.1 Flash-Lite](https://deepmind.google/models/model-cards/gemini-3-1-flash-lite/), a new version of the Gemini Flash-Lite family. The Gemini Flash-Lite models have been particularly favored by Android developers for its good quality/latency ratio and low inference cost. It's been used by Android developers for various use-cases such as in-app messaging translation or generating a recipe from a picture of a dish.   
++
+ Gemini 3.1 Flash-Lite, currently in preview, will enable more advanced use cases with latency comparable to Gemini 2.5 Flash-Lite.  
+-  
+-To learn more about this model, review the [Firebase documentation](https://firebase.google.com/docs/ai-logic/models).
+ 
+-### **Conclusion**
++To learn more about this model, review the [Firebase documentation](https://firebase.google.com/docs/ai-logic/models).
+ 
+-It’s a great time to explore the new Hybrid sample in our catalog to see these capabilities in action and understand the benefits of routing between on-device and cloud inference. We also encourage you to check out our documentation to test the new Gemini models.
++### **Conclusion**
+ 
++It's a great time to explore the new Hybrid sample in our catalog to see these capabilities in action and understand the benefits of routing between on-device and cloud inference. We also encourage you to check out our documentation to test the new Gemini models.
+ Written by:
+ 
+-* ## [Thomas Ezan](/blog/authors/thomas-ezan)
+-
+-  ###### Senior Developer Relations Engineer
+-
+-  [read\_more
+-  View profile](/blog/authors/thomas-ezan)
++-
+ 
+-  ![View Thomas Ezan's profile](/static/blog/assets/thomas_ezan_d29c7508d0_l9O72.webp)
++  ## [Thomas Ezan](https://developer.android.com/blog/authors/thomas-ezan)
+ 
+-  ![View Thomas Ezan's profile](/static/blog/assets/thomas_ezan_d29c7508d0_l9O72.webp)
++  ###### Senior Developer Relations Engineer
+ 
++  [read_more
++  View profile](https://developer.android.com/blog/authors/thomas-ezan) ![View Thomas Ezan's profile](https://developer.android.com/static/blog/assets/thomas_ezan_d29c7508d0_l9O72.webp) ![View Thomas Ezan's profile](https://developer.android.com/static/blog/assets/thomas_ezan_d29c7508d0_l9O72.webp)
+ Continue reading
++- [![View Thomas Ezan's profile](https://developer.android.com/static/blog/assets/thomas_ezan_d29c7508d0_l9O72.webp)](https://developer.android.com/blog/authors/thomas-ezan) 17 Dec 2025 17 Dec 2025 ![](https://developer.android.com/static/blog/assets/gemin3flash_d6f3bd27b1_O0qYl.webp) [Product News](https://developer.android.com/blog/categories/product-news)
+ 
+-* [![View Thomas Ezan's profile](/static/blog/assets/thomas_ezan_d29c7508d0_l9O72.webp)](/blog/authors/thomas-ezan)
+-
+-  17
+-
+-  Dec
+-  2025
++  ## [Build smarter apps with Gemini 3 Flash](https://developer.android.com/blog/posts/build-smarter-apps-with-gemini-3-flash)
+ 
+-  17
++  [arrow_forward](https://developer.android.com/blog/posts/build-smarter-apps-with-gemini-3-flash) Today, we're expanding the Gemini 3 model family with the release of Gemini 3 Flash, frontier intelligence built for speed at a fraction of the cost.
++  [Thomas Ezan](https://developer.android.com/blog/authors/thomas-ezan) • 2 min read
++- [![View Thomas Ezan's profile](https://developer.android.com/static/blog/assets/thomas_ezan_d29c7508d0_l9O72.webp)](https://developer.android.com/blog/authors/thomas-ezan)[![View Mozart Louis's profile](https://developer.android.com/static/blog/assets/Mozart_Louis_622373dab1_1RaA8T.webp)](https://developer.android.com/blog/authors/mozart-louis) 13 Oct 2025 13 Oct 2025 ![](https://developer.android.com/static/blog/assets/Android_Blog_banners_dd5c7be5f2_ZsFAUM.webp) [Product News](https://developer.android.com/blog/categories/product-news)
+ 
+-  Dec
+-  2025
++  ## [Boost user engagement with AI Image Generation](https://developer.android.com/blog/posts/boost-user-engagement-with-ai-image-generation)
+ 
+-  ![](/static/blog/assets/gemin3flash_d6f3bd27b1_O0qYl.webp)
++  [arrow_forward](https://developer.android.com/blog/posts/boost-user-engagement-with-ai-image-generation) Adding custom images to your app can significantly improve and personalize user experience and boost user engagement.
++  [Thomas Ezan](https://developer.android.com/blog/authors/thomas-ezan), [Mozart Louis](https://developer.android.com/blog/authors/mozart-louis) • 5 min read
++- [![View Raghavendra Hareesh Pottamsetty's profile](https://developer.android.com/static/blog/assets/Raghavendra_Hareesh_Pottamsetty_72fdb063a0_1h0S85.webp)](https://developer.android.com/blog/authors/raghavendra-hareesh-pottamsetty) 26 Aug 2026 26 Aug 2026 ![](https://developer.android.com/static/blog/assets/Raising_the_bar_Google_Play_Strapi_2_a80695bf12_Z2jxf1k.webp) [Product News](https://developer.android.com/blog/categories/product-news)
+ 
+-  [Product News](/blog/categories/product-news)
+-
+-  ## [Build smarter apps with Gemini 3 Flash](/blog/posts/build-smarter-apps-with-gemini-3-flash)
+-
+-  [arrow\_forward](/blog/posts/build-smarter-apps-with-gemini-3-flash)
+-
+-  Today, we're expanding the Gemini 3 model family with the release of Gemini 3 Flash, frontier intelligence built for speed at a fraction of the cost.
+-
+-  [Thomas Ezan](/blog/authors/thomas-ezan)
+-  •
+-  2 min read
+-* [![View Thomas Ezan's profile](/static/blog/assets/thomas_ezan_d29c7508d0_l9O72.webp)](/blog/authors/thomas-ezan)[![View Mozart Louis's profile](/static/blog/assets/Mozart_Louis_622373dab1_1RaA8T.webp)](/blog/authors/mozart-louis)
+-
+-  13
+-
+-  Oct
+-  2025
+-
+-  13
+-
+-  Oct
+-  2025
+-
+-  ![](/static/blog/assets/Android_Blog_banners_dd5c7be5f2_ZsFAUM.webp)
+-
+-  [Product News](/blog/categories/product-news)
+-
+-  ## [Boost user engagement with AI Image Generation](/blog/posts/boost-user-engagement-with-ai-image-generation)
+-
+-  [arrow\_forward](/blog/posts/boost-user-engagement-with-ai-image-generation)
+-
+-  Adding custom images to your app can significantly improve and personalize user experience and boost user engagement.
+-
+-  [Thomas Ezan](/blog/authors/thomas-ezan),
+-  [Mozart Louis](/blog/authors/mozart-louis)
+-  •
+-  5 min read
+-* [![View Raghavendra Hareesh Pottamsetty's profile](/static/blog/assets/Raghavendra_Hareesh_Pottamsetty_72fdb063a0_1h0S85.webp)](/blog/authors/raghavendra-hareesh-pottamsetty)
+-
+-  26
+-
+-  Aug
+-  2026
+-
+-  26
+-
+-  Aug
+-  2026
+-
+-  ![](/static/blog/assets/Raising_the_bar_Google_Play_Strapi_2_a80695bf12_Z2jxf1k.webp)
+-
+-  [Product News](/blog/categories/product-news)
+-
+-  ## [Elevating app quality: Reducing memory usage and improving device migration](/blog/posts/elevating-app-quality-reducing-memory-usage-and-improving-device-migration)
+-
+-  [arrow\_forward](/blog/posts/elevating-app-quality-reducing-memory-usage-and-improving-device-migration)
+-
+-  Maintaining a healthy Android ecosystem is a shared commitment where every app and game has a role to play.
+-
+-  [Raghavendra Hareesh Pottamsetty](/blog/authors/raghavendra-hareesh-pottamsetty)
+-  •
+-  4 min read
++  ## [Elevating app quality: Reducing memory usage and improving device migration](https://developer.android.com/blog/posts/elevating-app-quality-reducing-memory-usage-and-improving-device-migration)
+ 
++  [arrow_forward](https://developer.android.com/blog/posts/elevating-app-quality-reducing-memory-usage-and-improving-device-migration) Maintaining a healthy Android ecosystem is a shared commitment where every app and game has a role to play.
++  [Raghavendra Hareesh Pottamsetty](https://developer.android.com/blog/authors/raghavendra-hareesh-pottamsetty) • 4 min read
+ Stay in the loop
+ 
++
+ Get the latest Android development insights delivered to your inbox
+ weekly.
+-
+ [mail
+-Subscribe](/subscribe)
+-
+-![A 3D illustration of the Android mascot, wearing a jetpack that's emitting a large cloud of bubbles](/static/blog/assets/rocket-android.CVJQZOf1_1PnraM.webp)
+\ No newline at end of file
++Subscribe](https://developer.android.com/subscribe) ![A 3D illustration of the Android mascot, wearing a jetpack that's emitting a large cloud of bubbles](https://developer.android.com/static/blog/assets/rocket-android.CVJQZOf1_1PnraM.webp)
+\ No newline at end of file

@@ -1,0 +1,145 @@
+diff --git a/docs/develop/ui/compose/graphics/images/optimization.md b/docs/develop/ui/compose/graphics/images/optimization.md
+index 2d30181..e7b53d7 100644
+--- a/docs/develop/ui/compose/graphics/images/optimization.md
++++ b/docs/develop/ui/compose/graphics/images/optimization.md
+@@ -1,21 +1,9 @@
+ ---
+-title: Optimizing bitmap images  |  Jetpack Compose  |  Android Developers
++title: https://developer.android.com/develop/ui/compose/graphics/images/optimization
+ url: https://developer.android.com/develop/ui/compose/graphics/images/optimization
+-source: html-scrape
++source: md.txt
+ ---
+ 
+-* [Android Developers](https://developer.android.com/)
+-* [Develop](https://developer.android.com/develop)
+-* [Core areas](https://developer.android.com/develop/core-areas)
+-* [UI](https://developer.android.com/develop/ui)
+-* [Docs](https://developer.android.com/develop/ui/compose/documentation)
+-
+-# Optimizing bitmap images Stay organized with collections Save and categorize content based on your preferences.
+-
+-
+-
+-
+-
+ Working with images can quickly introduce performance issues if you aren't
+ careful. Even a small graphic in a compressed format like JPG or PNG can turn
+ into a large bitmap when it's decoded for display. If you aren't efficient
+@@ -43,8 +31,8 @@ Image loading libraries like Coil and Glide handle downsampling for you
+ automatically. You can configure their downsampling strategies
+ by using [`ImageLoader`](https://coil-kt.github.io/coil/image_loaders/) (for Coil) or [`DownsampleStrategy`](https://bumptech.github.io/glide/javadocs/470/com/bumptech/glide/load/resource/bitmap/DownsampleStrategy.html)
+ (for Glide). If you're managing bitmaps manually, you can use
+-[`inSampleSize`](/reference/android/graphics/BitmapFactory.Options#inSampleSize) to decode a smaller version. To do this safely, you should
+-first set [`inJustDecodeBounds`](/reference/android/graphics/BitmapFactory.Options#inJustDecodeBounds) to `true` to read the image dimensions
++[`inSampleSize`](https://developer.android.com/reference/android/graphics/BitmapFactory.Options#inSampleSize) to decode a smaller version. To do this safely, you should
++first set [`inJustDecodeBounds`](https://developer.android.com/reference/android/graphics/BitmapFactory.Options#inJustDecodeBounds) to `true` to read the image dimensions
+ without allocating memory, calculate the sample size, set `inSampleSize` to
+ that value, set `inJustDecodeBounds` to `false`, and then decode the image.
+ 
+@@ -82,7 +70,7 @@ assets for different device resolutions. This can help reduce the download size
+ of your app on devices, and improve performance as it'll load up a lower
+ resolution image on a lower resolution device. For more information on providing
+ alternative bitmaps for different device sizes, [check out the alternative
+-bitmap documentation](/training/multiscreen/screendensities#TaskProvideAltBmp).
++bitmap documentation](https://developer.android.com/training/multiscreen/screendensities#TaskProvideAltBmp).
+ 
+ ## Don't apply padding directly
+ 
+@@ -90,7 +78,7 @@ Sometimes you might need to add padding to an image. For example, you might
+ want to have the image surrounded by a transparent border for letterboxing.
+ In those situations, *don't* add the padding directly to the image, changing
+ the image's dimensions. Instead, leave the image's dimensions as they are,
+-and adjust the image's location on the screen by using [`InsetDrawable`](/reference/android/graphics/drawable/InsetDrawable).
++and adjust the image's location on the screen by using [`InsetDrawable`](https://developer.android.com/reference/android/graphics/drawable/InsetDrawable).
+ Alternatively, you can add padding into the Composable or View holding the
+ image.
+ 
+@@ -107,7 +95,7 @@ use the [`bitmapConfig`](https://coil-kt.github.io/coil/api/coil-core/coil3.requ
+ 
+ For images made up of geometric shapes, a vector graphic is much smaller than a
+ bitmap and scales smoothly for any display density. When suitable, use elements
+-like [`ShapeDrawable`](/reference/android/graphics/drawable/ShapeDrawable) to represent graphics.
++like [`ShapeDrawable`](https://developer.android.com/reference/android/graphics/drawable/ShapeDrawable) to represent graphics.
+ 
+ ## Release and reuse bitmaps when you can
+ 
+@@ -120,7 +108,7 @@ library can reuse the objects when needed, and keeps a memory buffer available
+ for future needs.
+ 
+ If you're managing graphics manually, you should release
+-bitmaps when you're done with them by calling [`Bitmap.recycle`](/reference/android/graphics/Bitmap#recycle())
++bitmaps when you're done with them by calling [`Bitmap.recycle`](https://developer.android.com/reference/android/graphics/Bitmap#recycle())
+ and immediately discarding the `Bitmap` reference, instead
+ of relying on garbage collection.
+ 
+@@ -132,7 +120,7 @@ handling graphics.
+ ### Don't package large images with your AAB/APK file
+ 
+ One of the top causes for large app download size is graphics that are
+-packaged inside the AAB or APK file. Use the [APK analyzer](/studio/debug/apk-analyzer) tool to ensure
++packaged inside the AAB or APK file. Use the [APK analyzer](https://developer.android.com/studio/debug/apk-analyzer) tool to ensure
+ that you aren't packaging larger than required image files. Reduce the sizes or
+ consider placing the images on a server and only downloading them when required.
+ 
+@@ -140,13 +128,13 @@ consider placing the images on a server and only downloading them when required.
+ 
+ If you have several copies of the same image, that wastes memory. You can use
+ the Android Studio profiler to identify redundant graphics. Use the [heap dump
+-analyzer](/studio/profile/capture-heap-dump) to capture a heap dump, and filter the results by choosing the
++analyzer](https://developer.android.com/studio/profile/capture-heap-dump) to capture a heap dump, and filter the results by choosing the
+ **duplicate bitmaps** setting.
+ 
+ ### When using `ImageBitmap`, call `prepareToDraw` before drawing
+ 
+ When using `ImageBitmap`, to start the process of uploading the texture to the
+-GPU, call [`ImageBitmap#prepareToDraw()`](/reference/kotlin/androidx/compose/ui/graphics/ImageBitmap#prepareToDraw()) before actually drawing it. This
++GPU, call [`ImageBitmap#prepareToDraw()`](https://developer.android.com/reference/kotlin/androidx/compose/ui/graphics/ImageBitmap#prepareToDraw()) before actually drawing it. This
+ helps the GPU prepare the texture and improve the performance of showing a
+ visual on screen. Most image loading libraries already do this optimization, but
+ if you are working with the `ImageBitmap` class yourself, it is something to
+@@ -163,30 +151,20 @@ compiler cannot easily infer if the data has changed.
+ Therefore, we recommend passing a URL or drawable resource ID as parameters
+ to your composable, instead of passing a `Painter` as a parameter.
+ 
+-```
+-// Prefer this:
+-@Composable
+-fun MyImage(url: String) {
+-
+-}
+-// Over this:
+-@Composable
+-fun MyImage(painter: Painter) {
+-
+-}
+-```
++    // Prefer this:
++    @Composable
++    fun MyImage(url: String) {
+ 
++    }
++    // Over this:
++    @Composable
++    fun MyImage(painter: Painter) {
+ 
++    }
+ 
+ ## Recommended for you
+ 
+-* Note: link text is displayed when JavaScript is off
+-* [ImageBitmap versus ImageVector {:#bitmap-vs-vector}](/develop/ui/compose/graphics/images/compare)
+-* [Save UI state in Compose](/develop/ui/compose/state-saving)
+-* [Jetpack Compose Phases](/develop/ui/compose/phases)
+-
+-[Previous
+-
+-arrow\_back
+-
+-Custom painter](/develop/ui/compose/graphics/images/custompainter)
+\ No newline at end of file
++- Note: link text is displayed when JavaScript is off
++- [ImageBitmap versus ImageVector {:#bitmap-vs-vector}](https://developer.android.com/develop/ui/compose/graphics/images/compare)
++- [Save UI state in Compose](https://developer.android.com/develop/ui/compose/state-saving)
++- [Jetpack Compose Phases](https://developer.android.com/develop/ui/compose/phases)
+\ No newline at end of file

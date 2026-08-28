@@ -1,0 +1,288 @@
+diff --git a/docs/design/ui/ai-glasses/guides/styles/color.md b/docs/design/ui/ai-glasses/guides/styles/color.md
+index c6fc83d..f16fc7f 100644
+--- a/docs/design/ui/ai-glasses/guides/styles/color.md
++++ b/docs/design/ui/ai-glasses/guides/styles/color.md
+@@ -1,21 +1,9 @@
+ ---
+-title: Color on glasses  |  AI Glasses  |  Android Developers
++title: https://developer.android.com/design/ui/ai-glasses/guides/styles/color
+ url: https://developer.android.com/design/ui/ai-glasses/guides/styles/color
+-source: html-scrape
++source: md.txt
+ ---
+ 
+-* [Android Developers](https://developer.android.com/)
+-* [Design & Plan](https://developer.android.com/design)
+-* [UI Design](https://developer.android.com/design/ui)
+-* [AI Glasses](https://developer.android.com/design/ui/ai-glasses)
+-* [Guides](https://developer.android.com/design/ui/ai-glasses/guides/foundations/design-principles)
+-
+-# Color on glasses Stay organized with collections Save and categorize content based on your preferences.
+-
+-
+-
+-
+-
+ Color considers display, environment, and cognition. Color on glasses uses a
+ highly-refined palette to support the behavior of additive displays and to
+ optimize for visual comfort. The use of color on glasses should be used
+@@ -34,28 +22,21 @@ on-color counterparts. The color roles are similar to their mobile scheme roles
+ and should be used in the same manner.
+ 
+ ![Design elements should be anchored to the bottom of the
+-frame.](/static/images/design/ui/glasses/guides/glasses_styles_color_colorscheme.png)
++frame.](https://developer.android.com/static/images/design/ui/glasses/guides/glasses_styles_color_colorscheme.png)
+ 
+ **Accent colors can be used for on color as limited emphasis.**
+-
+-![](/static/images/design/ui/glasses/guides/glasses_styles_color_font_do.png)
+-
+-check\_circle
++![](https://developer.android.com/static/images/design/ui/glasses/guides/glasses_styles_color_font_do.png)
+ 
+ ### Do
+ 
+-Use white text for most of your text content. Font color can be used for emphasized text.
+-
+-![](/static/images/design/ui/glasses/guides/glasses_styles_color_font_dont.png)
+-
+-cancel
++Use white text for most of your text content. Font color can be used for emphasized text. ![](https://developer.android.com/static/images/design/ui/glasses/guides/glasses_styles_color_font_dont.png)
+ 
+ ### Don't
+ 
+ Use color text for all content.
+ 
+-**Note:** The [Jetpack Compose Glimmer Figma kit](https://www.figma.com/community/file/1579881278082580424/jetpack-compose-glimmer-ui) includes a color schematic with
+-roles and values to customize.
++> [!NOTE]
++> **Note:** The [Jetpack Compose Glimmer Figma kit](https://www.figma.com/community/file/1579881278082580424/jetpack-compose-glimmer-ui) includes a color schematic with roles and values to customize.
+ 
+ ## Customize color
+ 
+@@ -67,22 +48,25 @@ against saturation to be instantly discernible.
+ Primary color can be customized to use your brand or primary interaction color.
+ Consider the contrast, saturation, and power usage of the chosen color.
+ 
+-**Note:** Try out the [Jetpack Compose Glimmer Skill](https://github.com/android/skills/blob/main/xr/display-ai-glasses-with-jetpack-compose-glimmer/SKILL.md) for help with contrast
+-calculation metrics.
++> [!NOTE]
++> **Note:** Try out the [Jetpack Compose Glimmer Skill](https://github.com/android/skills/blob/main/xr/display-ai-glasses-with-jetpack-compose-glimmer/SKILL.md) for help with contrast calculation metrics.
++
+ 
+ ![Design elements should be anchored to the bottom of the
+-frame.](/static/images/design/ui/glasses/guides/glasses_styles_color_customize.png)
++frame.](https://developer.android.com/static/images/design/ui/glasses/guides/glasses_styles_color_customize.png)
+ 
+ #### Optimized brand and semantic colors
+ 
+ Colors that represent brand, actions, or system alerts must be:
+ 
+-* Bright enough to be legible
+-* Saturated enough to be discernible as a color
+-* Ensure at least a 66% tone difference between foreground and background
+-  using the HCT color space.
++- Bright enough to be legible
++- Saturated enough to be discernible as a color
++- Ensure at least a 66% tone difference between foreground and background using the HCT color space.
++
++Learn more on [Jetpack Compose Glimmer theme](https://developer.android.com/develop/xr/jetpack-xr-sdk/jetpack-compose-glimmer/whats-included#theme).
++
++<br />
+ 
+-Learn more on [Jetpack Compose Glimmer theme](/develop/xr/jetpack-xr-sdk/jetpack-compose-glimmer/whats-included#theme).
+ 
+ ### Power usage
+ 
+@@ -93,39 +77,23 @@ screen, the hotter the display gets. Don't fill the screen with all white, as
+ this can cause thermal mitigation.
+ 
+ ![Design elements should be anchored to the bottom of the
+-frame.](/static/images/design/ui/glasses/guides/glasses_styles_color_power.png)
++frame.](https://developer.android.com/static/images/design/ui/glasses/guides/glasses_styles_color_power.png)
+ 
+-![](/static/images/design/ui/glasses/guides/glasses_styles_color_screen_do.png)
++<br />
+ 
+-check\_circle
++![](https://developer.android.com/static/images/design/ui/glasses/guides/glasses_styles_color_screen_do.png)
+ 
+ ### Do
+ 
+-Take into account contrast between all backgrounds your users will encounter.
+-
+-![](/static/images/design/ui/glasses/guides/glasses_styles_color_screen_dont.png)
+-
+-cancel
++Take into account contrast between all backgrounds your users will encounter. ![](https://developer.android.com/static/images/design/ui/glasses/guides/glasses_styles_color_screen_dont.png)
+ 
+ ### Don't
+ 
+-Have too little contrast for UI elements on various backgrounds, this can create eyestrain and illegibility.
+-
+-In order to have enough contrast over every background you need to have a
+-contrast difference of 70 (7:1) in the tone of the foreground and background
+-colors. You can test this out by setting your designs to screen blend mode.
+-
+-![](/static/images/design/ui/glasses/guides/glasses_styles_color_saturated_do.png)
+-
+-check\_circle
++Have too little contrast for UI elements on various backgrounds, this can create eyestrain and illegibility. In order to have enough contrast over every background you need to have a contrast difference of 70 (7:1) in the tone of the foreground and background colors. You can test this out by setting your designs to screen blend mode. ![](https://developer.android.com/static/images/design/ui/glasses/guides/glasses_styles_color_saturated_do.png)
+ 
+ ### Do
+ 
+-Use desaturated colors.
+-
+-![](/static/images/design/ui/glasses/guides/glasses_styles_color_saturated_dont.png)
+-
+-cancel
++Use desaturated colors. ![](https://developer.android.com/static/images/design/ui/glasses/guides/glasses_styles_color_saturated_dont.png)
+ 
+ ### Don't
+ 
+@@ -133,122 +101,77 @@ Use overly saturated colors. They may not display properly and disrupt legibilit
+ 
+ **Customized surfaces should be avoided.**
+ 
++
+ ![Design elements should be anchored to the bottom of the
+-frame.](/static/images/design/ui/glasses/guides/glasses_styles_color_container.png)
++frame.](https://developer.android.com/static/images/design/ui/glasses/guides/glasses_styles_color_container.png)
+ 
+ #### Dark container colors
+ 
+ Containers generally must focus on displaying content that is within them,
+ without being distracting:
+ 
+-* Surfaces must be black for highest contrast.
+-* Surfaces should be no lighter than 34% tone in their focused state to
+-  maintain legibility for foreground elements.
+-* Outlines should be visible but subtle.
++- Surfaces must be black for highest contrast.
++- Surfaces should be no lighter than 34% tone in their focused state to maintain legibility for foreground elements.
++- Outlines should be visible but subtle.
+ 
+-![](/static/images/design/ui/glasses/guides/glasses_styles_color_surface_do.png)
++<br />
+ 
+-check\_circle
++![](https://developer.android.com/static/images/design/ui/glasses/guides/glasses_styles_color_surface_do.png)
+ 
+ ### Do
+ 
+-Use dark surfaces and bright content.
+-
+-![](/static/images/design/ui/glasses/guides/glasses_styles_color_surface_dont.png)
+-
+-cancel
++Use dark surfaces and bright content. ![](https://developer.android.com/static/images/design/ui/glasses/guides/glasses_styles_color_surface_dont.png)
+ 
+ ### Don't
+ 
+-Use bright or filled surfaces.
+-
+-![](/static/images/design/ui/glasses/guides/glasses_styles_color_surfacecontrast_do.png)
+-
+-check\_circle
++Use bright or filled surfaces. ![](https://developer.android.com/static/images/design/ui/glasses/guides/glasses_styles_color_surfacecontrast_do.png)
+ 
+ ### Do
+ 
+-Provide contrast between surface and text. Approximate 66 tone difference is suggested to check for.
+-
+-![](/static/images/design/ui/glasses/guides/glasses_styles_color_surfacecontrast_dont.png)
+-
+-cancel
++Provide contrast between surface and text. Approximate 66 tone difference is suggested to check for. ![](https://developer.android.com/static/images/design/ui/glasses/guides/glasses_styles_color_surfacecontrast_dont.png)
+ 
+ ### Don't
+ 
+-Allow surface and text contrast to be too close.
+-
+-![](/static/images/design/ui/glasses/guides/glasses_styles_color_surfacevariant_do.png)
+-
+-check\_circle
++Allow surface and text contrast to be too close. ![](https://developer.android.com/static/images/design/ui/glasses/guides/glasses_styles_color_surfacevariant_do.png)
+ 
+ ### Do
+ 
+-Make sure Surface and Surface Variants have enough tone difference to create the necessary visual hierarchy.
+-
+-![](/static/images/design/ui/glasses/guides/glasses_styles_color_surfacevariant_dont.png)
+-
+-cancel
++Make sure Surface and Surface Variants have enough tone difference to create the necessary visual hierarchy. ![](https://developer.android.com/static/images/design/ui/glasses/guides/glasses_styles_color_surfacevariant_dont.png)
+ 
+ ### Don't
+ 
+ Make Surface and Surface variant too close in tone (around 20 difference).
+ 
+ **Outline customization is possible to add branding or expressive UI.**
+-
+-![](/static/images/design/ui/glasses/guides/glasses_styles_color_outline_do.png)
+-
+-check\_circle
++![](https://developer.android.com/static/images/design/ui/glasses/guides/glasses_styles_color_outline_do.png)
+ 
+ ### Do
+ 
+-Use the default colors. These have been highly optimized for glasses display.
+-
+-![](/static/images/design/ui/glasses/guides/glasses_styles_color_outline_dont.png)
+-
+-cancel
++Use the default colors. These have been highly optimized for glasses display. ![](https://developer.android.com/static/images/design/ui/glasses/guides/glasses_styles_color_outline_dont.png)
+ 
+ ### Don't
+ 
+ Use multiple outline colors.
+ 
+-![](/static/images/design/ui/glasses/guides/glasses_styles_color_outline_warning.png)
+ 
+-cancel
++![](https://developer.android.com/static/images/design/ui/glasses/guides/glasses_styles_color_outline_warning.png)
+ 
+ ### Warning
+ 
+ Be careful and harmonize custom colors between focus and default state outlines.
+ 
++<br />
++
+ ![Design elements should be anchored to the bottom of the
+-frame.](/static/images/design/ui/glasses/guides/glasses_styles_color_outline_focus.png)
++frame.](https://developer.android.com/static/images/design/ui/glasses/guides/glasses_styles_color_outline_focus.png)
+ Customizing the outline focus with blue: the focus state highlight is made of 2
+ outlines, color is applied to layer 2 to tint the focus state.
+-
+-![](/static/images/design/ui/glasses/guides/glasses_styles_color_states_do.png)
+-
+-check\_circle
++![](https://developer.android.com/static/images/design/ui/glasses/guides/glasses_styles_color_states_do.png)
+ 
+ ### Do
+ 
+-Make sure there is enough contrast across all interaction states.
+-
+-![](/static/images/design/ui/glasses/guides/glasses_styles_color_states_dont.png)
+-
+-cancel
++Make sure there is enough contrast across all interaction states. ![](https://developer.android.com/static/images/design/ui/glasses/guides/glasses_styles_color_states_dont.png)
+ 
+ ### Don't
+ 
+-Change the contrast on interaction states to minimal contrast.
+-
+-[Previous
+-
+-arrow\_back
+-
+-Overview](/design/ui/ai-glasses/guides/styles/overview)
+-
+-[Next
+-
+-Typography
+-
+-arrow\_forward](/design/ui/ai-glasses/guides/styles/type)
+\ No newline at end of file
++Change the contrast on interaction states to minimal contrast.
+\ No newline at end of file

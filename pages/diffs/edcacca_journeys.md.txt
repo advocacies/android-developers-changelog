@@ -1,0 +1,49 @@
+diff --git a/docs/tools/agents/android-cli/journeys.md b/docs/tools/agents/android-cli/journeys.md
+index d2ddf37..dbb4c39 100644
+--- a/docs/tools/agents/android-cli/journeys.md
++++ b/docs/tools/agents/android-cli/journeys.md
+@@ -1,29 +1,18 @@
+ ---
+-title: Android CLI support for Journeys  |  Android Studio  |  Android Developers
++title: https://developer.android.com/tools/agents/android-cli/journeys
+ url: https://developer.android.com/tools/agents/android-cli/journeys
+-source: html-scrape
++source: md.txt
+ ---
+ 
+-* [Android Developers](https://developer.android.com/)
+-* [Develop](https://developer.android.com/develop)
+-* [Android Studio](https://developer.android.com/studio)
+-* [Agent tools and resources](https://developer.android.com/tools/agents)
+-
+-# Android CLI support for Journeys Stay organized with collections Save and categorize content based on your preferences.
+-
+-
+-
+-
+-
+ Journeys leverages the vision and reasoning capabilities of your AI agent to
+ navigate and test your app based on your natural language instructions. With
+-skills included with [Android CLI](/tools/agents/android-cli), you or your agent can define the set of
++skills included with [Android CLI](https://developer.android.com/tools/agents/android-cli), you or your agent can define the set of
+ instructions, called a journey. The agent you choose to use with Android CLI
+ then converts those instructions into interactions with your app. Additionally,
+ you can write and describe more complex assertions, which your agent evaluates
+ based on what it sees on the device.
+ 
+-![Running a journey with Android CLI](/static/tools/agents/videos/android-cli-journey-run.gif)
++![Running a journey with Android CLI](https://developer.android.com/static/tools/agents/videos/android-cli-journey-run.gif)
+ 
+ To get started quickly, simply ask your agent to help you create Journeys for
+ core experiences of your app while using Android CLI. Then you can ask your agent
+@@ -31,6 +20,6 @@ to run the Journey on a device. Because Android CLI enables you to create and ru
+ these Journeys using agents that run in the terminal, you can also use Android
+ CLI to deploy Journeys in your CI/CD.
+ 
+-![Writing a journey with Android CLI](/static/tools/agents/images/android-cli-write-journey.png)
++![Writing a journey with Android CLI](https://developer.android.com/static/tools/agents/images/android-cli-write-journey.png)
+ 
+-If you're using Android Studio, see [Journeys for Android Studio](/studio/gemini/journeys).
+\ No newline at end of file
++If you're using Android Studio, see [Journeys for Android Studio](https://developer.android.com/studio/gemini/journeys).
+\ No newline at end of file
