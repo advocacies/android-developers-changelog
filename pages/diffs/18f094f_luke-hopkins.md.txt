@@ -1,0 +1,130 @@
+diff --git a/docs/blog/authors/luke-hopkins.md b/docs/blog/authors/luke-hopkins.md
+index c96dd23..04739ba 100644
+--- a/docs/blog/authors/luke-hopkins.md
++++ b/docs/blog/authors/luke-hopkins.md
+@@ -1,42 +1,105 @@
+ ---
+-title: https://developer.android.com/blog/authors/luke-hopkins
++title: Luke Hopkins  |  Android Developers' Blog
+ url: https://developer.android.com/blog/authors/luke-hopkins
+-source: md.txt
++source: html-scrape
+ ---
+ 
+-3 posts ![](https://developer.android.com/static/blog/assets/Luke_Hopkins_9c1e15d778_Z2o9b3q.webp)
++* [Android Developers](https://developer.android.com/)
++* [Android Developers' Blog](https://developer.android.com/)
++* [Blog](https://developer.android.com/blog)
++
++Stay organized with collections
++
++Save and categorize content based on your preferences.
++
++
++
++3
++posts
++
++![](/static/blog/assets/Luke_Hopkins_9c1e15d778_Z2o9b3q.webp)
+ 
+ # Luke Hopkins
+ 
+ Developer Relations Engineer
+ 
+ Android
+-- 19 May 2026 19 May 2026 ![](https://developer.android.com/static/blog/assets/Google_For_Developers_Android_Combo3_Strapi_2000x1000_56726aebea_Z1kvKHr.webp) [Product News](https://developer.android.com/blog/categories/product-news)
+ 
+-  ## [Android XR Updates for Unity, Unreal, and Godot](https://developer.android.com/blog/posts/android-xr-updates-for-unity-unreal-and-godot)
++* 19
++
++  May
++  2026
++
++  19
++
++  May
++  2026
++
++  ![](/static/blog/assets/Google_For_Developers_Android_Combo3_Strapi_2000x1000_56726aebea_Z1kvKHr.webp)
++
++  [Product News](/blog/categories/product-news)
++
++  ## [Android XR Updates for Unity, Unreal, and Godot](/blog/posts/android-xr-updates-for-unity-unreal-and-godot)
++
++  [arrow\_forward](/blog/posts/android-xr-updates-for-unity-unreal-and-godot)
++
++  We are excited to announce that official support for Unreal Engine and Godot has arrived for Android XR. We are also launching new tools designed to boost your productivity and enable new XR capabilities: the Android XR Engine Hub and the Android XR Interaction Framework.
+ 
+-  [arrow_forward](https://developer.android.com/blog/posts/android-xr-updates-for-unity-unreal-and-godot) We are excited to announce that official support for Unreal Engine and Godot has arrived for Android XR. We are also launching new tools designed to boost your productivity and enable new XR capabilities: the Android XR Engine Hub and the Android XR Interaction Framework.
+   4 min read
+-  - [#Android XR](https://developer.android.com/blog/topics/android-xr)
+-  - [#Google I/O](https://developer.android.com/blog/topics/google-i-o)
+-  - [#Game engine development](https://developer.android.com/blog/topics/game-engine-development)
+-  - +1 ↩
+-- 23 Oct 2025 23 Oct 2025 ![](https://developer.android.com/static/blog/assets/xr_Week5_985628de53_229QRh.webp) [Product News](https://developer.android.com/blog/categories/product-news)
++  + [#Android XR](/blog/topics/android-xr)
++  + [#Google I/O](/blog/topics/google-i-o)
++  + [#Game engine development](/blog/topics/game-engine-development)
++  + +1
++    ↩
++* 23
++
++  Oct
++  2025
++
++  23
+ 
+-  ## [Optimizing Performance for Android XR with Unity](https://developer.android.com/blog/posts/optimizing-performance-for-android-xr-with-unity)
++  Oct
++  2025
++
++  ![](/static/blog/assets/xr_Week5_985628de53_229QRh.webp)
++
++  [Product News](/blog/categories/product-news)
++
++  ## [Optimizing Performance for Android XR with Unity](/blog/posts/optimizing-performance-for-android-xr-with-unity)
++
++  [arrow\_forward](/blog/posts/optimizing-performance-for-android-xr-with-unity)
++
++  Samsung Galaxy XR is here, powered by Android XR! This blog post is part of our Android XR Spotlight Week, where we provide resources—blog posts, videos, sample code, and more—all designed to help you learn, build, and prepare your apps for Android XR.
+ 
+-  [arrow_forward](https://developer.android.com/blog/posts/optimizing-performance-for-android-xr-with-unity) Samsung Galaxy XR is here, powered by Android XR! This blog post is part of our Android XR Spotlight Week, where we provide resources---blog posts, videos, sample code, and more---all designed to help you learn, build, and prepare your apps for Android XR.
+   6 min read
+-- 23 Oct 2025 23 Oct 2025 ![](https://developer.android.com/static/blog/assets/xr_Week3_984ec91c60_mkqpQ.webp) [How-tos](https://developer.android.com/blog/categories/how-tos)
++* 23
++
++  Oct
++  2025
++
++  23
++
++  Oct
++  2025
+ 
+-  ## [Getting started with Unity and Android XR](https://developer.android.com/blog/posts/getting-started-with-unity-and-android-xr)
++  ![](/static/blog/assets/xr_Week3_984ec91c60_mkqpQ.webp)
++
++  [How-tos](/blog/categories/how-tos)
++
++  ## [Getting started with Unity and Android XR](/blog/posts/getting-started-with-unity-and-android-xr)
++
++  [arrow\_forward](/blog/posts/getting-started-with-unity-and-android-xr)
++
++  Samsung Galaxy XR is here, powered by Android XR! This blog post is part of our Android XR Spotlight Week, where we provide resources—blog posts, videos, sample code, and more—all designed to help you learn, build, and prepare your apps for Android XR.
+ 
+-  [arrow_forward](https://developer.android.com/blog/posts/getting-started-with-unity-and-android-xr) Samsung Galaxy XR is here, powered by Android XR! This blog post is part of our Android XR Spotlight Week, where we provide resources---blog posts, videos, sample code, and more---all designed to help you learn, build, and prepare your apps for Android XR.
+   6 min read
+-Stay in the loop
+ 
++Stay in the loop
+ 
+ Get the latest Android development insights delivered to your inbox
+ weekly.
++
+ [mail
+-Subscribe](https://developer.android.com/subscribe) ![A 3D illustration of the Android mascot, wearing a jetpack that's emitting a large cloud of bubbles](https://developer.android.com/static/blog/assets/rocket-android.CVJQZOf1_1PnraM.webp)
+\ No newline at end of file
++Subscribe](/subscribe)
++
++![A 3D illustration of the Android mascot, wearing a jetpack that's emitting a large cloud of bubbles](/static/blog/assets/rocket-android.CVJQZOf1_1PnraM.webp)
+\ No newline at end of file

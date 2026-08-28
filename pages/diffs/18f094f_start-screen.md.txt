@@ -1,0 +1,63 @@
+diff --git a/docs/training/cars/apps/library/start-screen.md b/docs/training/cars/apps/library/start-screen.md
+index 205cf12..fdc5e84 100644
+--- a/docs/training/cars/apps/library/start-screen.md
++++ b/docs/training/cars/apps/library/start-screen.md
+@@ -1,19 +1,29 @@
+ ---
+-title: https://developer.android.com/training/cars/apps/library/start-screen
++title: Create your start screen  |  Android for Cars  |  Android Developers
+ url: https://developer.android.com/training/cars/apps/library/start-screen
+-source: md.txt
++source: html-scrape
+ ---
+ 
++* [Android Developers](https://developer.android.com/)
++* [Develop](https://developer.android.com/develop)
++* [Devices](https://developer.android.com/develop/devices)
++* [Android for Cars](https://developer.android.com/training/cars)
++
++# Create your start screen Stay organized with collections Save and categorize content based on your preferences.
++
++
++
++
++
+ To create the screens displayed by your app, you define the classes that extend
+-the `Screen` class and implement its [`onGetTemplate`](https://developer.android.com/reference/androidx/car/app/Screen#onGetTemplate()) method to return the
+-[`Template`](https://developer.android.com/reference/androidx/car/app/model/Template) instance that represents the state of the UI to display in the
++the `Screen` class and implement its [`onGetTemplate`](/reference/androidx/car/app/Screen#onGetTemplate()) method to return the
++[`Template`](/reference/androidx/car/app/model/Template) instance that represents the state of the UI to display in the
+ car screen.
+ 
+ This code snippet shows how to declare a `Screen` that uses a
+-[`PaneTemplate`](https://developer.android.com/reference/androidx/car/app/model/PaneTemplate) template to display a "Hello world!" string:
+-
++[`PaneTemplate`](/reference/androidx/car/app/model/PaneTemplate) template to display a "Hello world!" string:
+ 
+-```kotlin
++```
+ class MyStartScreen(carContext: CarContext) : Screen(carContext) {
+     override fun onGetTemplate(): Template {
+         val row = Row.Builder().setTitle("Hello world!").build()
+@@ -26,6 +36,18 @@ class MyStartScreen(carContext: CarContext) : Screen(carContext) {
+             .build()
+     }
+ }
++
++StartScreen.kt
+ ```
+ 
+-<br />
+\ No newline at end of file
++[Previous
++
++arrow\_back
++
++Create your CarAppService and session](/training/cars/apps/library/carappservice-session)
++
++[Next
++
++Implement screen navigation
++
++arrow\_forward](/training/cars/apps/library/screen-navigation)
+\ No newline at end of file

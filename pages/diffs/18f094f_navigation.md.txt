@@ -1,0 +1,22 @@
+diff --git a/docs/guide/navigation.md b/docs/guide/navigation.md
+index 4876e68..3236214 100644
+--- a/docs/guide/navigation.md
++++ b/docs/guide/navigation.md
+@@ -80,7 +80,7 @@ plugins {
+ }
+   
+ dependencies {
+-  def nav_version = "2.9.8"
++  def nav_version = "2.10.0"
+ 
+   // Jetpack Compose Integration
+   implementation "androidx.navigation:navigation-compose:$nav_version"
+@@ -109,7 +109,7 @@ plugins {
+ }
+ 
+ dependencies {
+-  val nav_version = "2.9.8"
++  val nav_version = "2.10.0"
+ 
+   // Jetpack Compose integration
+   implementation("androidx.navigation:navigation-compose:$nav_version")

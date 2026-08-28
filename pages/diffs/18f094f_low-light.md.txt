@@ -1,0 +1,184 @@
+diff --git a/docs/agents/skills/camera/camerax/references/low-light.md b/docs/agents/skills/camera/camerax/references/low-light.md
+index a257015..eb0ec85 100644
+--- a/docs/agents/skills/camera/camerax/references/low-light.md
++++ b/docs/agents/skills/camera/camerax/references/low-light.md
+@@ -1,21 +1,27 @@
+ ---
+-title: https://developer.android.com/agents/skills/camera/camerax/references/low-light
++title: Low-light development guide  |  Android Developers
+ url: https://developer.android.com/agents/skills/camera/camerax/references/low-light
+-source: md.txt
++source: html-scrape
+ ---
+ 
++# Low-light development guide Stay organized with collections Save and categorize content based on your preferences.
++
++
++
++
++
+ This guide covers implementing low-light features using **Night mode
+ extensions** and **Low Light Boost (LLB)**.
+ 
+ ## Choosing the right tool
+ 
+ | Feature | Used for | Implementation | UX impact |
+-|---|---|---|---|
++| --- | --- | --- | --- |
+ | **Night mode** | High-quality stills | `ExtensionsManager` | Possibly requires user to hold still for several seconds. |
+ | **LLB, AE mode** | Real-time preview or video | `Camera2Interop`, CameraX utility | Hardware drops the frame rate to increase brightness. |
+ | **LLB, Play services** | Real-time preview and video | `SurfaceProcessor` | Software-based brightening; maintains a higher frame rate. |
+ 
+-*** ** * ** ***
++---
+ 
+ ## Night mode extension
+ 
+@@ -26,8 +32,7 @@ photography pipeline.
+ 
+ To set up the extension, initialize the extension manager:
+ 
+-
+-```kotlin
++```
+ // Use ListenableFuture.await() extension function for coroutine support
+ val extensionsManager = ExtensionsManager.getInstanceAsync(context, cameraProvider).await()
+ if (extensionsManager.isExtensionAvailable(cameraSelector, ExtensionMode.NIGHT)) {
+@@ -36,30 +41,35 @@ if (extensionsManager.isExtensionAvailable(cameraSelector, ExtensionMode.NIGHT))
+     )
+     cameraProvider.bindToLifecycle(lifecycleOwner, nightSelector, imageCapture, preview)
+ }
+-```
+ 
+-<br />
++CameraSkillSnippets.kt
++```
+ 
+ ### Comprehensive features
+ 
+-- **Image postview** : Display a low-resolution image immediately while the multi-frame processing occurs.
++* **Image postview**: Display a low-resolution image immediately while the
++  multi-frame processing occurs.
+ 
+-  ```kotlin
++  ```
+   val imageCapture = ImageCapture.Builder()
+       .setPostviewEnabled(true)
+       .build()
++
++  CameraSkillSnippets.kt
+   ```
+-- **Extension strength** : Let users control the intensity of the night effect.
++* **Extension strength**: Let users control the intensity of the night effect.
+ 
+-  ```kotlin
++  ```
+   // Set the strength of the active extension (e.g. NIGHT mode intensity)
+   val extensionsManager = ExtensionsManager.getInstanceAsync(context, cameraProvider).await()
+   val extensionsControl = extensionsManager.getCameraExtensionsControl(camera.cameraControl)
+   extensionsControl?.setExtensionStrength(strength)
++
++  CameraSkillSnippets.kt
+   ```
+-- **Capture progress** : Show a UI progress bar for long exposures.
++* **Capture progress**: Show a UI progress bar for long exposures.
+ 
+-  ```kotlin
++  ```
+   // Use the suspend extension function for takePicture to avoid callback boilerplate
+   try {
+       val result = imageCapture.takePicture(outputOptions)
+@@ -67,9 +77,11 @@ if (extensionsManager.isExtensionAvailable(cameraSelector, ExtensionMode.NIGHT))
+   } catch (e: ImageCaptureException) {
+       // Handle capture failure
+   }
++
++  CameraSkillSnippets.kt
+   ```
+ 
+-*** ** * ** ***
++---
+ 
+ ## Low-light boost
+ 
+@@ -80,32 +92,40 @@ LLB is designed for preview and video streams where you prefer high frame rates.
+ The built-in CameraX way to prioritize brightness. It modifies the hardware's
+ auto-exposure algorithm.
+ 
+-- **Activation** : Use `CameraControl.enableLowLightBoostAsync`.
+-- **Implementation** :
++* **Activation**: Use `CameraControl.enableLowLightBoostAsync`.
++* **Implementation**:
+ 
+-  ```kotlin
++  ```
+   // Enable Low Light Boost (LLB) natively in CameraX 1.4+
+   camera.cameraControl.enableLowLightBoostAsync(true)
++
++  CameraSkillSnippets.kt
+   ```
+-- **Monitoring** : Observe `CameraInfo.lowLightBoostState` to track when the hardware actively applies the enhancement.
++* **Monitoring**: Observe `CameraInfo.lowLightBoostState` to track when the
++  hardware actively applies the enhancement.
+ 
+ ### Google Play services LLB
+ 
+ It's a multi-step implementation that uses a session-based `SurfaceProcessor`.
+ 
+-**Dependency** : `com.google.android.gms:play-services-camera-low-light-boost`
++**Dependency**: `com.google.android.gms:play-services-camera-low-light-boost`
+ 
+ To implement Google Play services LLB, follow these core steps:
+ 
+-1. **Initialize client** : `val client = LowLightBoost.getClient`.
+-2. **Implement `SurfaceProcessor`** :
+-   - **Manage session** : Call `client.createSession`.
+-   - **Forward required metadata** : Observe the camera's `TotalCaptureResult` stream and forward every result to the session: `session.processCaptureResult`.
+-   - **Provide surface** : Get the input surface from the session, `session.getCameraSurface`, and provide it to the camera's `SurfaceRequest`.
+-   - **Lifecycle** : Release the session, `session.release`, when the processor is closed or the `SurfaceRequest` completes.
+-3. **Wire using `CameraEffect`** :
++1. **Initialize client**: `val client = LowLightBoost.getClient`.
++2. **Implement `SurfaceProcessor`**:
++   * **Manage session**: Call `client.createSession`.
++   * **Forward required metadata**: Observe the camera's
++     `TotalCaptureResult` stream and forward every result to the session:
++     `session.processCaptureResult`.
++   * **Provide surface**: Get the input surface from the session,
++     `session.getCameraSurface`, and provide it to the camera's
++     `SurfaceRequest`.
++   * **Lifecycle**: Release the session, `session.release`, when the
++     processor is closed or the `SurfaceRequest` completes.
++3. **Wire using `CameraEffect`**:
+ 
+-   ```kotlin
++   ```
+    val effect = SimpleCameraEffect(
+        CameraEffect.PREVIEW or CameraEffect.VIDEO_CAPTURE,
+        executor,
+@@ -118,13 +138,19 @@ To implement Google Play services LLB, follow these core steps:
+        .addUseCase(videoCapture)
+        .addEffect(effect)
+        .build()
++
++   CameraSkillSnippets.kt
+    ```
+-4. **Scene detection** : Use `session.setSceneDetectorCallback` to receive `boostStrength` updates for real-time UI indicators.
++4. **Scene detection**: Use `session.setSceneDetectorCallback` to receive
++   `boostStrength` updates for real-time UI indicators.
+ 
+-*** ** * ** ***
++---
+ 
+ ## Implementation notes
+ 
+-- **Thread safety** : Always handle `ExtensionsManager` and `LowLightBoostClient` initialization asynchronously.
+-- **FPS trade-offs**: AE mode LLB often drops the frame rate significantly to increase brightness.
+-- **Compatibility** : Extensions, Night Mode, possibly conflict with `ConcurrentCamera`. Always verify support before binding.
+\ No newline at end of file
++* **Thread safety**: Always handle `ExtensionsManager` and
++  `LowLightBoostClient` initialization asynchronously.
++* **FPS trade-offs**: AE mode LLB often drops the frame rate significantly to
++  increase brightness.
++* **Compatibility**: Extensions, Night Mode, possibly conflict with
++  `ConcurrentCamera`. Always verify support before binding.
+\ No newline at end of file

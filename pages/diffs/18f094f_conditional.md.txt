@@ -1,0 +1,71 @@
+diff --git a/docs/guide/navigation/navigation-3/recipes/conditional.md b/docs/guide/navigation/navigation-3/recipes/conditional.md
+index 4dd6462..a9d0ef1 100644
+--- a/docs/guide/navigation/navigation-3/recipes/conditional.md
++++ b/docs/guide/navigation/navigation-3/recipes/conditional.md
+@@ -1,9 +1,20 @@
+ ---
+-title: https://developer.android.com/guide/navigation/navigation-3/recipes/conditional
++title: App architecture  |  Android Developers
+ url: https://developer.android.com/guide/navigation/navigation-3/recipes/conditional
+-source: md.txt
++source: html-scrape
+ ---
+ 
++* [Android Developers](https://developer.android.com/)
++* [App architecture](https://developer.android.com/topic/architecture/intro)
++
++Stay organized with collections
++
++Save and categorize content based on your preferences.
++
++
++
++
++
+ # Conditional Navigation Recipe
+ 
+ This recipe demonstrates how to implement conditional navigation, where certain destinations are only accessible if a condition is met (in this case, if the user is logged in).
+@@ -16,16 +27,20 @@ This example has a `Profile` destination that requires the user to be logged in.
+ 
+ The core of this recipe is the custom `AppBackStack` class, which encapsulates the logic for conditional navigation.
+ 
+-- **`RequiresLogin` interface** : A marker interface, `RequiresLogin`, is used to identify destinations that require the user to be logged in. The `Profile` destination implements this interface.
++* **`RequiresLogin` interface**: A marker interface, `RequiresLogin`, is used to identify destinations that require the user to be logged in. The `Profile` destination implements this interface.
++* **Redirecting to Login**: When the `add` function is called with a destination that implements `RequiresLogin` and the user is not logged in, `AppBackStack` stores the intended destination and adds the `Login` route to the back stack instead.
++* **Handling Login**: When the `login` function is called, it sets the user's status to logged in. If there is a stored destination that the user was trying to access, it adds that destination to the back stack and removes the `Login` screen.
++* **Handling Logout**: When the `logout` function is called, it sets the user's status to logged out and removes any destinations from the back stack that require the user to be logged in.
+ 
+-- **Redirecting to Login** : When the `add` function is called with a destination that implements `RequiresLogin` and the user is not logged in, `AppBackStack` stores the intended destination and adds the `Login` route to the back stack instead.
++This approach provides a clean way to handle conditional navigation by centralizing the logic in a custom back stack implementation.
+ 
+-- **Handling Login** : When the `login` function is called, it sets the user's status to logged in. If there is a stored destination that the user was trying to access, it adds that destination to the back stack and removes the `Login` screen.
++[![](/static/images/picto-icons/code.svg)
+ 
+-- **Handling Logout** : When the `logout` function is called, it sets the user's status to logged out and removes any destinations from the back stack that require the user to be logged in.
++Explore
+ 
+-This approach provides a clean way to handle conditional navigation by centralizing the logic in a custom back stack implementation.
+-[![](https://developer.android.com/static/images/picto-icons/code.svg) Explore View the full recipe on GitHub.](https://github.com/android/nav3-recipes/tree/main/app/src/main/java/com/example/nav3recipes/conditional)
++View the full recipe on GitHub.
++
++arrow\_forward](https://github.com/android/nav3-recipes/tree/main/app/src/main/java/com/example/nav3recipes/conditional)
+ 
+ ```
+ /*
+@@ -182,6 +197,8 @@ fun <T : NavKey> rememberNavBackStack(vararg elements: T): NavBackStack<T> {
+         NavBackStack(*elements)
+     }
+ }
++
++ConditionalActivity.kt
+ ```
+ 
+ ```
+@@ -233,4 +250,6 @@ class Navigator(
+ 
+     fun goBack() = backStack.removeLastOrNull()
+ }
++
++Navigator.kt
+ ```
+\ No newline at end of file
