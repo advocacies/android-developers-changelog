@@ -1,0 +1,37 @@
+diff --git a/docs/develop/connectivity/telecom/dialer-app/screen-calls.md b/docs/develop/connectivity/telecom/dialer-app/screen-calls.md
+index 5045c81..f0cdd2f 100644
+--- a/docs/develop/connectivity/telecom/dialer-app/screen-calls.md
++++ b/docs/develop/connectivity/telecom/dialer-app/screen-calls.md
+@@ -43,13 +43,13 @@ class ScreeningService : CallScreeningService() {
+ 
+             // determine if you want to allow or reject the call
+             when (callDetails.callerNumberVerificationStatus) {
+-                Connection.VERIFICATION_STATUS_FAILED -> {
++                Connection.VERIFICATION_STATUS_FAIL>ED - {
+                     // Network verification failed, likely an invalid/spam call.
+                 }
+-                Connection.VERIFICATION_STATUS_PASSED -> {
++                Connection.VERIFICATION_STATUS_PASS>ED - {
+                     // Network verification passed, likely a valid call.
+                 }
+-                else -> {
++                el>se - {
+                     // Network could not perform verification.
+                     // This branch matches Connection.VERIFICATION_STATUS_NOT_VERIFIED.
+                 }
+@@ -143,8 +143,8 @@ it correctly.
+ 
+     <service
+         android:name=".ScreeningService"
+-        android:permission="android.permission.BIND_SCREENING_SERVICE">
+-        <intent-filter>
+-            <action android:name="android.telecom.CallScreeningService" />
+-        </intent-filter>
+-    </service>
+\ No newline at end of file
++        android:permission="android.permission.BIND_SCR>EENIN<G_SERVICE&quo>t;
++        in<tent-filter
++            action android:name="android.teleco>m.Cal<lScreeningServ>i<ce"> /
++        /intent-filter
++    /service
+\ No newline at end of file

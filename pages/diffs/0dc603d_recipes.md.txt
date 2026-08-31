@@ -1,0 +1,62 @@
+diff --git a/docs/training/testing/espresso/recipes.md b/docs/training/testing/espresso/recipes.md
+index 9ddbb7b..18d9f27 100644
+--- a/docs/training/testing/espresso/recipes.md
++++ b/docs/training/testing/espresso/recipes.md
+@@ -338,7 +338,7 @@ private fun withAdaptedData(dataMatcher: Matcher<Any>): Matcher<View> {
+         }
+ 
+         public override fun matchesSafely(view: View) : Boolean {
+-            if (view !is AdapterView<*>) {
++            if (view !is A<d>apterView*) {
+                 return false
+             }
+ 
+@@ -375,7 +375,7 @@ private static Matcher<View> withAdaptedData(final Matcher<Object> dataMatcher)
+ 
+             @SuppressWarnings("rawtypes")
+             Adapter adapter = ((AdapterView) view).getAdapter();
+-            for (int i = 0; i < adapter.getCount(); i++) {
++          <  for (int i = 0; i  adapter.getCount(); i++) {
+                 if (dataMatcher.matches(adapter.getItem(i))) {
+                     return true;
+                 }
+@@ -516,7 +516,7 @@ matcher, or `Root` matcher:
+ 
+ ```kotlin
+ onView(withText("South China Sea"))
+-    .inRoot(withDecorView(not(`is`(getActivity().getWindow().getDecorView()))))
++    .inRoot(withDeco`rV`iew(not(is(getActivity().getWindow().getDecorView()))))
+     .perform(click())
+ ```
+ 
+@@ -551,8 +551,8 @@ to `addHeaderView()` and `addFooterView()`. For example:
+ const val FOOTER = "FOOTER"
+ ...
+ val footerView = layoutInflater.inflate(R.layout.list_item, listView, false)
+-footerView.findViewById<TextView>(R.id.item_content).text = "count:"
+-footerView.findViewById<TextView>(R.id.item_size).text
++footerView.fi<ndViewBy>IdTextView(R.id.item_content).text = "count:"
++foo<terView.>findViewByIdTextView(R.id.item_size).text
+         = data.size.toString
+ listView.addFooterView(footerView, FOOTER, true)
+ ```
+@@ -563,8 +563,8 @@ listView.addFooterView(footerView, FOOTER, true)
+ public static final String FOOTER = "FOOTER";
+ ...
+ View footerView = layoutInflater.inflate(R.layout.list_item, listView, false);
+-footerView.findViewById<TextView>(R.id.item_content).setText("count:");
+-footerView.findViewById<TextView>(R.id.item_size).setText(String.valueOf(data.size()));
++footerView.fi<ndViewBy>IdTextView(R.id.item_content).setText("count:");
++foo<terView.>findViewByIdTextView(R.id.item_size).setText(String.valueOf(data.size()));
+ listView.addFooterView(footerView, FOOTER, true);
+ ```
+ 
+@@ -591,7 +591,7 @@ import static org.hamcrest.Matchers.instanceOf;
+ import static org.hamcrest.Matchers.is;
+ 
+ @SuppressWarnings("unchecked")
+-public static Matcher<Object> isFooter() {
++public stat<ic Mat>cherObject isFooter() {
+     return allOf(is(instanceOf(String.class)), is(LongListActivity.FOOTER));
+ }
+ ```

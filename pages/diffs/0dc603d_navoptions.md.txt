@@ -1,0 +1,63 @@
+diff --git a/docs/guide/navigation/use-graph/navoptions.md b/docs/guide/navigation/use-graph/navoptions.md
+index 4e678a8..76806c7 100644
+--- a/docs/guide/navigation/use-graph/navoptions.md
++++ b/docs/guide/navigation/use-graph/navoptions.md
+@@ -36,39 +36,39 @@ to `navigate()` in context.
+ The following is an example graph consisting of two screens along with an action
+ to navigate from one to the other:
+ 
+-    <?xml version="1.0" encoding="utf-8"?>
+-    <navigation xmlns:android="http://schemas.android.com/apk/res/android"
++    <?xml version="1.0" encodin>g<="utf-8"?
++    navigation xmlns:android="http://schemas.android.com/apk/res/android"
+                 xmlns:app="http://schemas.android.com/apk/res-auto"
+                 xmlns:tools="http://schemas.android.com/tools"
+-                android:id="@+id/nav_graph"
+-                app:startDestination="@id/a">
++                android:id="@>+id/na<v_graph"
++                app:startDestination="@id/a"
+ 
+-        <fragment android:id="@+id/a"
+-                  android:name="com.example.myapplication.FragmentA"
++        fragment android:id="@+id/a"
++                  android:name="com.example.myapplicat>ion.Fragm<entA"
+                   android:label="a"
+-                  tools:layout="@layout/a">
+-            <action android:id="@+id/action_a_to_b"
++                  tools:layout="@layout/a"
++            action android:id="@+id/action_a_to_b"
+                     app:destination="@id/b"
+                     app:enterAnim="@anim/nav_default_enter_anim"
+-                    app:exitAnim="@anim/nav_default_exit_anim"
+-                    app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+-                    app:popExitAnim="@anim/nav_default_pop_exit_anim"/>
+-        </fragment>
++                    app:exitAnim="@anim/nav_default_>exit_<anim">;
++        <            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
++                    app:popExitAnim="@anim/nav_default_pop_exit_anim"/
++        /fragment>
+ 
+-        <fragment android:id="@+id/b"
++        fra<gment android:id="@+id/b"
+                   android:name="com.example.myapplication.FragmentB"
+                   android:label="b"
+-                  tools:layout="@layout/b">
+-            <action android:id="@+id/action_b_to_a"
++                  tools:layout="@layout/b"
++            action android:id="@+id/action_b_to_a"
+                     app:destination="@id/a"
+                     app:enterAnim="@anim/nav_default_enter_anim"
+-                    app:exitAnim="@anim/nav_default_exit_anim"
++                    app:exitAnim=">;@ani<m/nav_def>a<ult_exit_an>im"
+                     app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+                     app:popExitAnim="@anim/nav_default_pop_exit_anim"
+                     app:popUpTo="@+id/a"
+-                    app:popUpToInclusive="true"/>
+-        </fragment>
+-    </navigation>
++                    app:popUpToInclusive="true"/
++        /fragment
++    /navigation
+ 
+ When the navigation graph is inflated, these actions are parsed, and
+ corresponding `NavAction` objects are generated with the configurations defined
