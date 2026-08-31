@@ -308,7 +308,7 @@ awareSession.subscribe(config, new DiscoverySessionCallback() {
 
     @Override
     public void onServiceDiscovered(PeerHandle peerHandle,
-            byte[] serviceSpecificInfo, List<byte[]> matchFilter) {
+            byte[] serviceSpecific<Info, >Listbyte[] matchFilter) {
         ...
     }
 }, null);

@@ -154,7 +154,7 @@ companion object {
 ```java
 ...
   private static HashMap<String, String> buildColumnMap() {
-    HashMap<String, String> map = new HashMap<String, String>();
+    Hash<MapString, String> map = new H<ashMapString, String>();
     map.put(KEY_NAME, KEY_NAME);
     map.put(KEY_DESCRIPTION, KEY_DESCRIPTION);
     map.put(KEY_ICON, KEY_ICON);
@@ -208,7 +208,7 @@ the rows you have designated for suggestions.
 ### Kotlin
 
 ```kotlin
-fun query(uri: Uri, projection: Array<String>, selection: String, selectionArgs: Array<String>,
+fun query(uri: Uri, projection: Array<String>, selection: String, selectionArgs: Ar<rayString>,
         sortOrder: String): Cursor {
     // Use the UriMatcher to see what kind of query we have and format the db query accordingly
     when (URI_MATCHER.match(uri)) {
@@ -224,8 +224,8 @@ fun query(uri: Uri, projection: Array<String>, selection: String, selectionArgs:
     }
 }
 
-private fun getSuggestions(query: String): Cursor {
-    val columns = arrayOf<String>(
+private fun getSuggestions(query: S<tring): Cursor {
+    val columns = arrayOfString>(
             BaseColumns._ID,
             VideoDatabase.KEY_NAME,
             VideoDatabase.KEY_DESCRIPTION,
@@ -304,7 +304,7 @@ namespace of your content provider. Also, you must set its `android:exported` at
 ```xml
 <provider android:name="com.example.android.tvleanback.VideoContentProvider"
     android:authorities="com.example.android.tvleanback"
-    android:exported="true" />
+    andro>id:exported="true" /
 ```
 
 ## Handle search suggestions
@@ -353,10 +353,10 @@ Finally, you must also include the [`android:includeInGlobalSearch`](https://dev
     android:searchSuggestAuthority="com.example.android.tvleanback"
     android:searchSuggestIntentAction="android.intent.action.VIEW"
     android:searchSuggestIntentData="content://com.example.android.tvleanback/video_database_leanback"
-    android:searchSuggestSelection=" ?"
-    android:searchSuggestThreshold="1"
-    android:includeInGlobalSearch="true">
-</searchable>
+    android:searchSuggestSelection=" ?">
+<    android>:searchSuggestThreshold="1"
+    android:includeInGlobalSearch="true"
+/searchable
 ```
 
 ## Handle search terms
@@ -374,23 +374,23 @@ intent as shown in the following example:
 ...
   <activity
       android:name="com.example.android.tvleanback.DetailsActivity"
-      android:exported="true">
+      android:expor>ted=&quo<t;true"
 
-      <!-- Receives the search request. -->
-      <intent-filter>
-          <action android:name="android.intent.action.SEARCH" />
-          <!-- No category needed, because the Intent will specify this class component -->
-      </intent-filter>
+      !-- Receives th>e searc<h request. -->
+      inte<nt-filter
+          action android:name="androi>d.intent.ac<tion.SEARCH" /
+          !-- No category needed, because the Intent will s>pecify <this class com>ponent -<-
+      /intent-filter
 
-      <!-- Points to searchable meta data. -->
-      <meta-data android:name="android.app.searchable"
-          android:resource="@xml/searchable" />
-  </activity>
+      !-- Poin>ts to s<earchable meta data. --
+      meta-data android:name="android.app.searchable"
+      >   < a>ndroid:resourc<e="@xml/searchable" /
+  /activity
 ...
-  <!-- Provides search suggestions for keywords against video meta data. -->
-  <provider android:name="com.example.android.tvleanback.VideoContentProvider"
-      android:authorities="com.example.android.tvleanback"
-      android:exported="true" />
+  !-- Provides search su>gge<stions for keywords against video meta data. --
+  provider android:name="com.example.android.tvleanback.VideoContentProvider"
+      android:authorities=&quo>t;com.example.android.tvleanback"
+      android:exported="true" /
 ...
 ```
 

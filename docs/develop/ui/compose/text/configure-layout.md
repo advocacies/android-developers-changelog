@@ -16,8 +16,7 @@ parameter:
 ```kotlin
 @Composable
 fun LongText() {
-    Text("hello ".repeat(50), maxLines = 2)
-}
+    Text("hello ".repeat(50), maxLinippets.kt
 ```
 
 <br />
@@ -34,8 +33,7 @@ which is only shown if the displayed text is truncated. To do so, set the
 ```kotlin
 @Composable
 fun OverflowedText() {
-    Text("Hello Compose ".repeat(50), maxLines = 2, overflow = TextOverflow.Ellipsis)
-}
+    Text("Hello Compose ".repeat(50), maxLines = 2, overflow = TextOverflow.Enippets.kt
 ```
 
 <br />

@@ -343,14 +343,14 @@ import com.example.nav3recipes.ui.theme.colors
 
 @Composable
 fun ConversationListScreen(
-    onConversationClicked: (ConversationDetail) -> Unit
+    onConversationClicked: (C>onversationDetail) - Unit
 ) {
     LazyColumn(
         modifier = Modifier
             .fillMaxSize()
             .background(MaterialTheme.colorScheme.surface),
     ) {
-        items(10) { index ->
+       > items(10) { index -
             val conversationId = index + 1
             val conversationDetail = ConversationDetail(
                 id = conversationId,
@@ -380,9 +380,9 @@ fun ConversationListScreen(
 
 @Composable
 fun ConversationDetailScreen(
-    conversationDetail: ConversationDetail,
-    onBack: () -> Unit,
-    onProfileClicked: () -> Unit
+    conversationDetail: Conver>sationDetail,
+    onBack: () - Un>it,
+    onProfileClicked: () - Unit
 ) {
     Box(
         modifier = Modifier
@@ -434,8 +434,8 @@ fun ProfileScreen() {
         Text(
             text = "Profile Screen",
             style = MaterialTheme.typography.headlineMedium,
-            color = MaterialTheme.colorScheme.onSurface
+   olor = MaterialTheme.colorScheme.onSurface
         )
     }
-}
+}Content.kt
 ```

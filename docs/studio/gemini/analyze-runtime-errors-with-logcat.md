@@ -14,7 +14,7 @@ get immediate explanations and actionable suggestions without leaving the IDE.
    window. When an exception or error occurs, Android Studio provides the stack
    trace.
 
-   ![Ask Gemini option at the beginning of a Logcat stack trace](https://developer.android.com/static/studio/gemini/images/ask-gemini-from-logcat.png)
+   ![Ask Gemini option at the beginning of a Logcat stack trace](https://developer.android.com/static/studio/gemini/images/ask-gemini-from-logcat.png) Ask Gemini option at the beginning of a Logcat stack trace
 2. Click the "Ask Gemini" text that appears at the beginning of the stack trace.
    This action sends the relevant information to the Gemini agent for analysis.
 
@@ -22,4 +22,4 @@ get immediate explanations and actionable suggestions without leaving the IDE.
    includes a summary of the error in plain language, potential causes, and
    suggested fixes.
 
-   ![Gemini explains the Logcat error](https://developer.android.com/static/studio/gemini/images/logcat-error-in-gemini-chat.png)
+   ![Gemini explains the Logcat error](https://developer.android.com/static/studio/gemini/images/logcat-error-in-gemini-chat.png) Gemini explains the Logcat error

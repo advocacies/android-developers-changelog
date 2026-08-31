@@ -23,14 +23,12 @@ To generate a UI with AI, follow these general steps:
    in a file without an existing preview.
 
    ![](https://developer.android.com/static/studio/preview/features/images/screen2code-entry.gif) Figure 2: Generate code from a screenshot in an empty Preview panel.
-3. In the chat field, as the AI agent to generate the UI code, for example "Generate
-   Jetpack Compose code for the image provided." When you submit the query and
-   image the AI agent suggests code to create the proposed UI. The AI agent usually
-   provides the code for the
-   [Compose preview](https://developer.android.com/develop/ui/compose/tooling/previews) too, so you can
+3. In the chat field, as the AI agent to generate the UI code, for example
+   "Generate Jetpack Compose code for the image provided." When you submit the
+   query and image the AI agent suggests code to create the proposed UI. The AI
+   agent usually provides the code for the [Compose preview](https://developer.android.com/develop/ui/compose/tooling/previews) too, so you can
    quickly visualize the UI once you import it into your project---if it doesn't,
-   ask it to
-   [generate the Compose previews](https://developer.android.com/studio/gemini/generate-compose-previews).
+   ask it to [generate the Compose previews](https://developer.android.com/studio/gemini/generate-compose-previews).
 
    ![Gemini chat interface showing generated Jetpack Compose code based on an image.](https://developer.android.com/static/studio/gemini/images/generate-compose-code.png) Figure 2: Gemini generating Jetpack Compose code from an attached image.
 4. Once you import the code and can see the Compose preview in the preview
@@ -44,7 +42,7 @@ To generate a UI with AI, follow these general steps:
 ## Find and fix UI quality issues
 
 The AI agent can also help you ensure your UI is high-quality and accessible.
-Right-click on your Compose preview and select **AI Actions** \> **Fix all UI check issues**.
-The agent audits your UI for common problems, such as accessibility issues, and
-proposes code fixes to resolve them.
+Right-click on your Compose preview and select **AI Actions** \>
+**Fix all UI check issues**. The agent audits your UI for common problems, such
+as accessibility issues, and proposes code fixes to resolve them.
 ![](https://developer.android.com/static/studio/preview/features/images/fix-ui-agent-entry.gif) Figure 7: Fix UI issues with AI ![](https://developer.android.com/static/studio/preview/features/images/ui-check-fixed.png) Figure 8: Example UI after applying fixes.
