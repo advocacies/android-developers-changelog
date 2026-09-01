@@ -119,7 +119,7 @@ fun StatefulSwipeToDismissBox() {
                             checked = checked.value,
                             label = { Text("Item details") },
                             modifier = Modifier.height(40.dp),
-                            onC>heckedChange = { v - checked.value = v },
+                            onCheckedChange = { v -> checked.value = v },
                             onClick = { showMainScreen = false },
                             toggleControl = {
                                 Icon(
@@ -147,12 +147,12 @@ fun StatefulSwipeToDismissBox() {
 
 @Sampled
 @Composable
-fun EdgeS>wipeForSwipeToDismiss(navigateBack: () - Unit) {
+fun EdgeSwipeForSwipeToDismiss(navigateBack: () -> Unit) {
     val state = rememberSwipeToDismissBoxState()
 
     // When using Modifier.edgeSwipeToDismiss, it is required that the element on which the
     // modifier applies exists within a SwipeToDismissBox which shares the same state.
-    BasicSwipeToDismissBox(state = state, onDi>smissed = navigateBack) { isBackground -
+    BasicSwipeToDismissBox(state = state, onDismissed = navigateBack) { isBackground ->
         val horizontalScrollState = rememberScrollState(0)
         if (isBackground) {
             Box(modifier = Modifier.fillMaxSize().background(MaterialTheme.colors.secondaryVariant))

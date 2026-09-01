@@ -43,13 +43,13 @@ class ScreeningService : CallScreeningService() {
 
             // determine if you want to allow or reject the call
             when (callDetails.callerNumberVerificationStatus) {
-                Connection.VERIFICATION_STATUS_FAIL>ED - {
+                Connection.VERIFICATION_STATUS_FAILED -> {
                     // Network verification failed, likely an invalid/spam call.
                 }
-                Connection.VERIFICATION_STATUS_PASS>ED - {
+                Connection.VERIFICATION_STATUS_PASSED -> {
                     // Network verification passed, likely a valid call.
                 }
-                el>se - {
+                else -> {
                     // Network could not perform verification.
                     // This branch matches Connection.VERIFICATION_STATUS_NOT_VERIFIED.
                 }
@@ -143,8 +143,8 @@ it correctly.
 
     <service
         android:name=".ScreeningService"
-        android:permission="android.permission.BIND_SCR>EENIN<G_SERVICE&quo>t;
-        in<tent-filter
-            action android:name="android.teleco>m.Cal<lScreeningServ>i<ce"> /
-        /intent-filter
-    /service
+        android:permission="android.permission.BIND_SCREENING_SERVICE">
+        <intent-filter>
+            <action android:name="android.telecom.CallScreeningService" />
+        </intent-filter>
+    </service>

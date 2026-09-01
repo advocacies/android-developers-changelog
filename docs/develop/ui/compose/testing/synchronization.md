@@ -239,9 +239,9 @@ fun testBidirectionalInteropUIUpdates_new() {
         composeTestRule.onNodeWithText("Legacy Clicks: 1").assertIsDisplayed()
         composeTestRule.onNodeWithText("Increment Legacy TextView").performClick()
         composeTestRule.waitForIdle()
-        assert(fragment.legacyTextView.text.toString() == "Cot;)
+        assert(fragment.legacyTextView.text.toString() == "Compose Clicks: 1")
     }
-}TestSyncSnippets.kt
+}
 ```
 
 <br />

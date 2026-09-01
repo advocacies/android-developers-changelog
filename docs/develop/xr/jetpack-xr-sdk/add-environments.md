@@ -17,7 +17,7 @@ environments are only visible when an app is in Full Space.
 
 ## Overview of spatial environments
 
-A [`SpatialEnvironment`](https://developer.android.com/reference/kotlin/androidx/xr/scenecore/SpatialEnvironment) is used to manage an app's spatial environment
+A [`SpatialEnvironment`](https://developer.android.com/reference/kotlin/androidx/xr/scenecore/SpatialEnvironment) manages an app's spatial environment
 preferences. It is a composite of a standalone skybox image and glTF-specified
 geometry. Only a single skybox image and a single glTF geometry file can be set
 at a time.
