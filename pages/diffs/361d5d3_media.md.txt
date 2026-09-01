@@ -1,0 +1,172 @@
+diff --git a/docs/training/cars/apps/media.md b/docs/training/cars/apps/media.md
+index 4b1fb4a..84841a2 100644
+--- a/docs/training/cars/apps/media.md
++++ b/docs/training/cars/apps/media.md
+@@ -38,14 +38,14 @@ filter of its [`CarAppService`](https://developer.android.com/reference/androidx
+        <service
+            ...
+             android:name=".MyCarAppService"
+-            android:expor>ted=&qu<ot;true">
+-          in<tent-filter
+-            action android:name="androidx>.car.app.<CarAppService" /
+-            category android:name=&quo>t;andro<idx.car.app.ca>tegor<y.MEDIA&>quot;/
+-      <    >/intent-filter
+-        /service
++            android:exported="true">
++          <intent-filter>
++            <action android:name="androidx.car.app.CarAppService" />
++            <category android:name="androidx.car.app.category.MEDIA"/>
++          </intent-filter>
++        </service>
+         ...
+-    application
++    <application>
+ 
+ To get access to the [`MediaPlaybackTemplate`](https://developer.android.com/reference/kotlin/androidx/car/app/media/model/MediaPlaybackTemplate), your app also
+ needs to declare the `androidx.car.app.MEDIA_TEMPLATES` permission in its
+@@ -53,9 +53,9 @@ manifest file:
+ 
+     <manifest ...>
+       ...
+-      <uses-permission android:name="androidx.car.app.MEDIA_TEMPLA>TES&quo<t;/
+-      ...>
+-    /manifest
++      <uses-permission android:name="androidx.car.app.MEDIA_TEMPLATES"/>
++      ...
++    </manifest>
+ 
+ ### Set the minimum car app API level
+ 
+@@ -66,9 +66,9 @@ above, be sure your minimum [`Car App API level`](https://developer.android.com/
+       ...
+       <meta-data
+         android:name="androidx.car.app.minCarApiLevel"
+-        android:>value=&<quot;8">/
++        android:value="8"/>
+       ...
+-    /application
++    </application>
+ 
+ ### Provide an attribution icon
+ 
+@@ -82,17 +82,17 @@ Ensure the following is included in your app's manifest:
+     <application>
+       ...
+       <meta-data android:name="com.google.android.gms.car.application"
+-          android:resource="@xml/automo>tive_ap<p_desc">/
++          android:resource="@xml/automotive_app_desc"/>
+       ...
+-    /application
++    </application>
+ 
+ Then, add the *template* declaration to `automotive_app_desc.xml` in your xml
+ resources. It should look as follows:
+ 
+-    <automotiveApp xmlns:android="http://schemas.android.com/apk/res/and>ro<id"
+-     uses nam>e=<"media"/
+-     u>s<es name=">template"/
+-    /automotiveApp
++    <automotiveApp xmlns:android="http://schemas.android.com/apk/res/android">
++     <uses name="media"/>
++     <uses name="template"/>
++    </automotiveApp>
+ 
+ ## Declare Android Automotive OS support
+ 
+@@ -115,7 +115,7 @@ When distributing a single APK for the Car App Library and `MediaBrowserService`
+ or `MediaLibraryService` versions of your app, it's crucial to set the
+ "" to `android:required="false"`.
+ 
+-    <uses-feature android:name="android.software.car.templates_host.media" android:require>d="false"/
++    <uses-feature android:name="android.software.car.templates_host.media" android:required="false"/>
+ 
+ Next, follow the [Car App Library guidelines for AAOS](https://developer.android.com/training/cars/apps/automotive-os#car-app-activity) and
+ introduce a launchable `CarAppActivity` (or trampoline activity). You must set
+@@ -128,33 +128,33 @@ component as the replacement. See the example manifest below:
+ 
+     <service android:name=".media.MyMediaService"
+         android:exported="true"
+-        android:labe>l=&qu<ot;@string/ap>p_name&qu<ot;
+-        intent-filter
+-            action android:name="androidx.m>edia3<.session.Media>Librar<yService"/
+-        /intent-filter
++        android:label="@string/app_name">
++        <intent-filter>
++            <action android:name="androidx.media3.session.MediaLibraryService"/>
++        </intent-filter>
+ 
+-       > !-- <Link to Car App Library Activity --
+-        meta-data
++        <!-- Link to Car App Library Activity -->
++        <meta-data
+             android:name="androidx.car.app.media.CalMediaActivityComponent" 
+-            android:>v<alue=&qu>ot<;com.example.mediaapp.LaunchableTrampoline"/
+-    /service
++            android:value="com.example.mediaapp.LaunchableTrampoline"/>
++    </service>
+ 
+-    activity
++    <activity
+         android:name=".LaunchableTrampoline"
+         android:exported="true"
+         android:theme="@android:style/Theme.DeviceDefault.NoActionBar"
+-        android:la>u<nchMode="singl>eTask&<quot;
++        android:launchMode="singleTask"
+         android:label="@string/app_name_cal"
+-        android>:enabl<ed="fals>e" !<-- Set to false --
++        android:enabled="false"> <!-- Set to false -->
+ 
+-        meta-data android:name=&q>uot;distr<actionOptimized" android:value="true" /
++        <meta-data android:name="distractionOptimized" android:value="true" />
+ 
+-        intent-filte>r
+-           < action android:name="android.intent.action.MAIN&quo>t;/
+-     <       action >a<ndroid:na>me="androidx.car.app.media.action.SHOW_MEDIA_PLAYBACK"/
+-            category android:name="android.intent.category.LAUNCHER"/
+-        /intent-filter
+-    /activity
++        <intent-filter>
++            <action android:name="android.intent.action.MAIN"/>
++            <action android:name="androidx.car.app.media.action.SHOW_MEDIA_PLAYBACK"/>
++            <category android:name="android.intent.category.LAUNCHER"/>
++        </intent-filter>
++    </activity>
+ 
+ #### Play distribution
+ 
+@@ -173,7 +173,7 @@ you must set the `android.software.car.templates_host.media` to
+ `android:required=true`. This ensures the app is distributed only on Android
+ Automotive OS builds certified with support for the Car App Library host.
+ 
+-    <uses-feature android:name="android.software.car.templates_host.media" android:requir>ed="true"/
++    <uses-feature android:name="android.software.car.templates_host.media" android:required="true"/>
+ 
+ Aside from using `android.software.car.templates_host.media` and setting it to
+ `android:required=true` above, follow these steps to [enable Android Automotive OS](https://developer.android.com/training/cars/apps/automotive-os)
+@@ -384,17 +384,17 @@ Ensure your activity uses a `launchMode` of `singleTask` or `singleTop` so that
+         android:exported="true"
+         android:theme="@android:style/Theme.DeviceDefault.NoActionBar"
+         android:launchMode="singleTask"
+-        android:label="@str>ing/ap<p_name_cal"
+-        android:enabled="false"
++        android:label="@string/app_name_cal"
++        android:enabled="false">
+ 
+-        meta-dat>a andr<oid:name=&quo>t;distrac<tionOptimized" android:value="true">; /
++        <meta-data android:name="distractionOptimized" android:value="true" />
+ 
+-        <intent-filter
+-            action android:name="android.intent.action.MA>IN"/<
+-            action android:name="androidx.car.app.media>.acti<on.SHOW_MEDIA_>P<LAYBACK&q>uot;/
+-            category android:name="android.intent.category.LAUNCHER"/
+-        /intent-filter
+-    /activity
++        <intent-filter>
++            <action android:name="android.intent.action.MAIN"/>
++            <action android:name="androidx.car.app.media.action.SHOW_MEDIA_PLAYBACK"/>
++            <category android:name="android.intent.category.LAUNCHER"/>
++        </intent-filter>
++    </activity>
+ 
+ In your `Session` class, override `onNewIntent()` to parse the incoming intent.
+ If the incoming intent action matches `SHOW_MEDIA_PLAYBACK`, navigate the user

@@ -1,0 +1,13 @@
+diff --git a/docs/develop/connectivity/wifi/wifi-aware.md b/docs/develop/connectivity/wifi/wifi-aware.md
+index 31a135b..6694d19 100644
+--- a/docs/develop/connectivity/wifi/wifi-aware.md
++++ b/docs/develop/connectivity/wifi/wifi-aware.md
+@@ -308,7 +308,7 @@ awareSession.subscribe(config, new DiscoverySessionCallback() {
+ 
+     @Override
+     public void onServiceDiscovered(PeerHandle peerHandle,
+-            byte[] serviceSpecific<Info, >Listbyte[] matchFilter) {
++            byte[] serviceSpecificInfo, List<byte[]> matchFilter) {
+         ...
+     }
+ }, null);

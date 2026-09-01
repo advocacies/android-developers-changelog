@@ -1,0 +1,24 @@
+diff --git a/docs/develop/ui/compose/text/configure-layout.md b/docs/develop/ui/compose/text/configure-layout.md
+index 135332e..da17414 100644
+--- a/docs/develop/ui/compose/text/configure-layout.md
++++ b/docs/develop/ui/compose/text/configure-layout.md
+@@ -16,7 +16,8 @@ parameter:
+ ```kotlin
+ @Composable
+ fun LongText() {
+-    Text("hello ".repeat(50), maxLinippets.kt
++    Text("hello ".repeat(50), maxLines = 2)
++}
+ ```
+ 
+ <br />
+@@ -33,7 +34,8 @@ which is only shown if the displayed text is truncated. To do so, set the
+ ```kotlin
+ @Composable
+ fun OverflowedText() {
+-    Text("Hello Compose ".repeat(50), maxLines = 2, overflow = TextOverflow.Enippets.kt
++    Text("Hello Compose ".repeat(50), maxLines = 2, overflow = TextOverflow.Ellipsis)
++}
+ ```
+ 
+ <br />
