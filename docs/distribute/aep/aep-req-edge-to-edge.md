@@ -1,8 +1,20 @@
 ---
-title: https://developer.android.com/distribute/aep/aep-req-edge-to-edge
+title: AEP guideline: Edge to Edge  |  Apps Experience Program  |  Android Developers
 url: https://developer.android.com/distribute/aep/aep-req-edge-to-edge
-source: md.txt
+source: html-scrape
 ---
+
+You are currently viewing the Apps Experience Program (AEP) documentation.
+
+* [Android Developers](https://developer.android.com/)
+* [Google Play](https://developer.android.com/distribute)
+* [Apps Experience Program](https://developer.android.com/distribute/aep)
+
+# AEP guideline: Edge to Edge Stay organized with collections Save and categorize content based on your preferences.
+
+
+
+
 
 Implement edge-to-edge drawing by default to maximize screen space and achieve a
 modern, premium, bezel-less aesthetic. By extending the UI canvas behind the
@@ -14,7 +26,7 @@ fundamental to a high-quality feel.
 To qualify for AEP, your app must adhere to the following requirements:
 
 | ID | Guideline |
-|---|---|
+| --- | --- |
 | AEP-EE-GAA | The core interactive UI doesn't intersect system bars on the home-screen. |
 | AEP-EE-GAB | The app draws behind transparent status bars and gesture navigation bars. |
 | AEP-EE-GAC | The app doesn't have existing Play Console warnings or alerts related to edge-to-edge. |
@@ -35,6 +47,6 @@ The following resources provide implementation guidance and technical details on
 the **Edge-to-Edge** feature. These resources are for your reference only and
 don't contain additional program requirements.
 
-- [Edge-to-Edge enforcement](https://developer.android.com/about/versions/15/behavior-changes-15#edge-to-edge)
-- [Display content edge-to-edge](https://developer.android.com/develop/ui/compose/system/setup-e2e)
-- [About window insets](https://developer.android.com/develop/ui/compose/layouts/insets)
+* [Edge-to-Edge enforcement](/about/versions/15/behavior-changes-15#edge-to-edge)
+* [Display content edge-to-edge](/develop/ui/compose/system/setup-e2e)
+* [About window insets](/develop/ui/compose/layouts/insets)
