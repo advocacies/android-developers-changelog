@@ -1,19 +1,14 @@
 ---
-title: API source code for Surface  |  Android Developers
+title: https://developer.android.com/agents/skills/xr/display-glasses-with-jetpack-compose-glimmer/references/surface-source
 url: https://developer.android.com/agents/skills/xr/display-glasses-with-jetpack-compose-glimmer/references/surface-source
-source: html-scrape
+source: md.txt
 ---
-
-# API source code for Surface Stay organized with collections Save and categorize content based on your preferences.
-
-
-
-
 
 When using surfaces to build a custom component, refer to the following source
 code in `Surface.kt`:
 
-```
+
+```kotlin
 /*
  * Copyright 2025 The Android Open Source Project
  *
@@ -1217,6 +1212,6 @@ private fun getBlurShader(isVertical: Boolean): String {
         }
     """
 }
-
-Surface.kt
 ```
+
+<br />
