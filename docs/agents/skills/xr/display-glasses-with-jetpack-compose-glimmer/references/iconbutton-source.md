@@ -1,14 +1,19 @@
 ---
-title: https://developer.android.com/agents/skills/xr/display-glasses-with-jetpack-compose-glimmer/references/iconbutton-source
+title: API source code for Icon Button for Glimmer Icon Button component  |  Android Developers
 url: https://developer.android.com/agents/skills/xr/display-glasses-with-jetpack-compose-glimmer/references/iconbutton-source
-source: md.txt
+source: html-scrape
 ---
+
+# API source code for Icon Button for Glimmer Icon Button component Stay organized with collections Save and categorize content based on your preferences.
+
+
+
+
 
 When creating a Glimmer Icon component, refer to the following source code in
 `IconButton.kt` for icon buttons:
 
-
-```kotlin
+```
 /*
  * Copyright 2026 The Android Open Source Project
  *
@@ -127,6 +132,6 @@ public object IconButtonDefaults {
     internal val iconSize: Dp
         get() = GlimmerTheme.iconSizes.small
 }
-```
 
-<br />
+IconButton.kt
+```

@@ -1,21 +1,41 @@
 ---
-title: https://developer.android.com/jetpack/androidx/releases/media
+title: Media  |  Jetpack  |  Android Developers
 url: https://developer.android.com/jetpack/androidx/releases/media
-source: md.txt
+source: html-scrape
 ---
+
+* [Android Developers](https://developer.android.com/)
+* [Get started](https://developer.android.com/get-started/overview)
+* [Jetpack](https://developer.android.com/jetpack)
+* [Libraries](https://developer.android.com/jetpack/androidx/explorer)
+
+Stay organized with collections
+
+Save and categorize content based on your preferences.
+
+
+
+
 
 # Media
 
-[User Guide](https://developer.android.com/guide/topics/media-apps/media-apps-overview) [Code Sample](https://github.com/android/media-samples) Share media contents and controls with other apps. Superseded by media3.
+[User Guide](/guide/topics/media-apps/media-apps-overview)  [Code Sample](https://github.com/android/media-samples)
+
+API Reference  
+[androidx.media](/reference/kotlin/androidx/media/package-summary)  
+[androidx.media.app](/reference/kotlin/androidx/media/app/package-summary)  
+[androidx.media.session](/reference/kotlin/androidx/media/session/package-summary)
+
+Share media contents and controls with other apps. Superseded by media3.
 
 | Latest Update | Stable Release | Release Candidate | Beta Release | Alpha Release |
-|---|---|---|---|---|
-| May 06, 2026 | [1.8.0](https://developer.android.com/jetpack/androidx/releases/media#1.8.0) | - | - | - |
+| --- | --- | --- | --- | --- |
+| May 06, 2026 | [1.8.0](/jetpack/androidx/releases/media#1.8.0) | - | - | - |
 
 ## Declaring dependencies
 
 To add a dependency on Media, you must add the Google Maven repository to your
-project. Read [Google's Maven repository](https://developer.android.com/studio/build/dependencies#google-maven)
+project. Read [Google's Maven repository](/studio/build/dependencies#google-maven)
 for more information.
 
 Add the dependencies for the artifacts you need in the `build.gradle` file for
@@ -23,7 +43,7 @@ your app or module:
 
 ### Groovy
 
-```groovy
+```
 dependencies {
     implementation "androidx.media:media:1.8.0"
 }
@@ -31,19 +51,19 @@ dependencies {
 
 ### Kotlin
 
-```kotlin
+```
 dependencies {
     implementation("androidx.media:media:1.8.0")
 }
 ```
 
-For more information about dependencies, see [Add build dependencies](https://developer.android.com/studio/build/dependencies).
+For more information about dependencies, see [Add build dependencies](/studio/build/dependencies).
 
 ## Feedback
 
 Your feedback helps make Jetpack better. Let us know if you discover new issues or have
 ideas for improving this library. Please take a look at the
-[existing issues](https://issuetracker.google.com/issues?q=componentid:461042+status:open)
+[existing issues](https://issuetracker.google.com/issues?q=componentid:461042%20status:open)
 in this library before you create a new one. You can add your vote to an existing issue by
 clicking the star button.
 
@@ -62,7 +82,7 @@ May 06, 2026
 
 **Important changes since 1.7.0:**
 
-- Deprecate `androidx.media`. Use [androidx.media3](https://developer.android.com/media/media3) instead.
+* Deprecate `androidx.media`. Use [androidx.media3](https://developer.android.com/media/media3) instead.
 
 ### Version 1.8.0-rc01
 
@@ -78,7 +98,7 @@ April 08, 2026
 
 **API Changes**
 
-- Deprecate `androidx.media`. Use [androidx.media3](https://developer.android.com/media/media3) instead.
+* Deprecate `androidx.media`. Use [androidx.media3](https://developer.android.com/media/media3) instead.
 
 ## Version 1.7
 
@@ -90,7 +110,7 @@ August 13, 2025
 
 **Bug Fixes**
 
-- Improve performance of `MediaSession.setMetadata()` by reducing the number of intermediate allocations and removing unnecessary parceling/unparceling of bitmaps.
+* Improve performance of `MediaSession.setMetadata()` by reducing the number of intermediate allocations and removing unnecessary parceling/unparceling of bitmaps.
 
 ### Version 1.7.0
 
@@ -100,10 +120,10 @@ November 29, 2023
 
 **Important changes since 1.6.0**
 
-- Catch `ForegroundServiceStartNotAllowedException` in `MediaButtonReceiver` and forward it to `onForegroundServiceStartNotAllowedException`. ([I0c939](https://android-review.googlesource.com/#/q/I0c9392298a93add391bfaae2b47e06d06258ab78))
-- Add `BROWSER_SERVICE_EXTRAS_KEY_FAVORITES_MEDIA_ITEM` for passing Favorites media item in `MediaBrowserCompat` root extras. ([Id3a11](https://android-review.googlesource.com/#/q/Id3a11251c96b7e7727081840e36fe0e5cff24c5d))
-- Add extras to set browse custom actions in `MediaBrowserCompat` root extras and `MediaItem` descriptions. ([Iab163](https://android-review.googlesource.com/#/q/Iab16398066d6e83661aa0806aefe1f1934a1fed1))
-- Fix `IllegalStateException` caused by returning null from `MediaBrowserService.onLoadChildren` on older Android versions.
+* Catch `ForegroundServiceStartNotAllowedException` in `MediaButtonReceiver` and forward it to `onForegroundServiceStartNotAllowedException`. ([I0c939](https://android-review.googlesource.com/#/q/I0c9392298a93add391bfaae2b47e06d06258ab78))
+* Add `BROWSER_SERVICE_EXTRAS_KEY_FAVORITES_MEDIA_ITEM` for passing Favorites media item in `MediaBrowserCompat` root extras. ([Id3a11](https://android-review.googlesource.com/#/q/Id3a11251c96b7e7727081840e36fe0e5cff24c5d))
+* Add extras to set browse custom actions in `MediaBrowserCompat` root extras and `MediaItem` descriptions. ([Iab163](https://android-review.googlesource.com/#/q/Iab16398066d6e83661aa0806aefe1f1934a1fed1))
+* Fix `IllegalStateException` caused by returning null from `MediaBrowserService.onLoadChildren` on older Android versions.
 
 ### Version 1.7.0-rc01
 
@@ -119,8 +139,8 @@ November 1, 2023
 
 **Bug Fixes**
 
-- Fix potential memory leak of `MediaBrowserService` and `MediaBrowserServiceCompat`. [b/37137738](https://issuetracker.google.com/37137738).
-- Fix `IllegalStateException` caused by returning null from `MediaBrowserService.onLoadChildren` on older Android versions.
+* Fix potential memory leak of `MediaBrowserService` and `MediaBrowserServiceCompat`. [b/37137738](https://issuetracker.google.com/37137738).
+* Fix `IllegalStateException` caused by returning null from `MediaBrowserService.onLoadChildren` on older Android versions.
 
 ### Version 1.7.0-alpha01
 
@@ -130,9 +150,9 @@ February 8, 2023
 
 **New Features**
 
-- Catch `ForegroundServiceStartNotAllowedException` in `MediaButtonReceiver` and forward it to `onForegroundServiceStartNotAllowedException`. ([I0c939](https://android-review.googlesource.com/#/q/I0c9392298a93add391bfaae2b47e06d06258ab78))
-- Add `BROWSER_SERVICE_EXTRAS_KEY_FAVORITES_MEDIA_ITEM` for passing Favorites media item in `MediaBrowserCompat` root extras. ([Id3a11](https://android-review.googlesource.com/#/q/Id3a11251c96b7e7727081840e36fe0e5cff24c5d))
-- Add extras to set browse custom actions in `MediaBrowserCompat` root extras and `MediaItem` descriptions. ([Iab163](https://android-review.googlesource.com/#/q/Iab16398066d6e83661aa0806aefe1f1934a1fed1))
+* Catch `ForegroundServiceStartNotAllowedException` in `MediaButtonReceiver` and forward it to `onForegroundServiceStartNotAllowedException`. ([I0c939](https://android-review.googlesource.com/#/q/I0c9392298a93add391bfaae2b47e06d06258ab78))
+* Add `BROWSER_SERVICE_EXTRAS_KEY_FAVORITES_MEDIA_ITEM` for passing Favorites media item in `MediaBrowserCompat` root extras. ([Id3a11](https://android-review.googlesource.com/#/q/Id3a11251c96b7e7727081840e36fe0e5cff24c5d))
+* Add extras to set browse custom actions in `MediaBrowserCompat` root extras and `MediaItem` descriptions. ([Iab163](https://android-review.googlesource.com/#/q/Iab16398066d6e83661aa0806aefe1f1934a1fed1))
 
 ## Version 1.6.0
 
@@ -144,7 +164,7 @@ April 20, 2022
 
 **Important changes since 1.5.0**
 
-- Add extras necessary to set up signIn/Settings page using `CarAppLibrary` on a media app for Android Auto.
+* Add extras necessary to set up signIn/Settings page using `CarAppLibrary` on a media app for Android Auto.
 
 ### Version 1.6.0-rc01
 
@@ -158,7 +178,7 @@ March 23, 2022
 
 `androidx.media:media:1.6.0-beta01` is released. [Version 1.6.0-beta01 contains these commits.](https://android.googlesource.com/platform/frameworks/support/+log/9b2b3d8efd5f00bd4af903bbaa926f6a712d0bd8..5ef5671233460b844828e14a816255dbf7904868/media/media)
 
-- No changes since the last alpha release.
+* No changes since the last alpha release.
 
 ### Version 1.6.0-alpha01
 
@@ -168,7 +188,7 @@ February 23, 2022
 
 **API Changes**
 
-- Add extras necessary to set up signIn/Settings page using `CarAppLibrary` on a media app for Android Auto. ([Ifb3ca](https://android-review.googlesource.com/#/q/Ifb3ca10a7f66ddaec81775017f5c14c7760728d9))
+* Add extras necessary to set up signIn/Settings page using `CarAppLibrary` on a media app for Android Auto. ([Ifb3ca](https://android-review.googlesource.com/#/q/Ifb3ca10a7f66ddaec81775017f5c14c7760728d9))
 
 ## Version 1.5
 
@@ -180,13 +200,13 @@ February 9, 2022
 
 **Important changes since 1.4.0**
 
-- Add `isVolumeFixed` to `AudioManagerCompat`
-- Add `MediaConstants` for single item styling and completion percentage.
-- For API level 30 or higher, the library won't inject the package visibility filter for `MediaBrowserCompat`. You need to specify a `<queries>` element in your apps manifest.
-- Fix the unexpected change of extras of `getMediaDescription()` on API 21
-- Prevent some `IllegalStateException` on API 19.
-- Fix a crash in `MediaSessionCompat` when targeting Android 12
-- Fix a crash in `NotificationCompat` on KitKat
+* Add `isVolumeFixed` to `AudioManagerCompat`
+* Add `MediaConstants` for single item styling and completion percentage.
+* For API level 30 or higher, the library won't inject the package visibility filter for `MediaBrowserCompat`. You need to specify a `<queries>` element in your apps manifest.
+* Fix the unexpected change of extras of `getMediaDescription()` on API 21
+* Prevent some `IllegalStateException` on API 19.
+* Fix a crash in `MediaSessionCompat` when targeting Android 12
+* Fix a crash in `NotificationCompat` on KitKat
 
 ### Version 1.5.0-rc01
 
@@ -208,21 +228,21 @@ November 3, 2021
 
 **New Features**
 
-- Update dependency on core for media to 1.6.0
+* Update dependency on core for media to 1.6.0
 
 **API Changes**
 
-- Add isVolumeFixed to AudioManagerCompat
-- Add MediaConstants for single item styling and completion percentage.
+* Add isVolumeFixed to AudioManagerCompat
+* Add MediaConstants for single item styling and completion percentage.
 
 **Bug Fixes**
 
-- For API level 30 or higher, the library won't inject the package visibility filter for `MediaBrowserCompat`. You need to specify a `<queries>` element in your apps manifest.
-- Fix the unexpected change of extras of getMediaDescription() on API 21
-- Fix inefficient use of ArrayList by setting default size.
-- Prevent some IllegalStateException on API 19.
-- Fix a crash in MediaSessionCompat when targeting Android 12
-- Fix a crash in NotificationCompat on KitKat
+* For API level 30 or higher, the library won't inject the package visibility filter for `MediaBrowserCompat`. You need to specify a `<queries>` element in your apps manifest.
+* Fix the unexpected change of extras of getMediaDescription() on API 21
+* Fix inefficient use of ArrayList by setting default size.
+* Prevent some IllegalStateException on API 19.
+* Fix a crash in MediaSessionCompat when targeting Android 12
+* Fix a crash in NotificationCompat on KitKat
 
 ## Version 1.4
 
@@ -234,7 +254,9 @@ October 13, 2021
 
 **Bug Fixes**
 
-- The library won't inject the package visibility filter for `MediaBrowserCompat` anymore. Please specify a `<queries>` element in your apps manifest when targeting API level 30 or higher. ([I0a964](https://android-review.googlesource.com/#/q/I0a964e51887211650279b9bd1efd79ce4c5bb5c2), [b/185314633](https://issuetracker.google.com/issues/185314633))
+* The library won't inject the package visibility filter for
+  `MediaBrowserCompat` anymore. Please specify a `<queries>` element
+  in your apps manifest when targeting API level 30 or higher. ([I0a964](https://android-review.googlesource.com/#/q/I0a964e51887211650279b9bd1efd79ce4c5bb5c2), [b/185314633](https://issuetracker.google.com/issues/185314633))
 
 ### Version 1.4.2
 
@@ -244,7 +266,7 @@ September 15, 2021
 
 **Bug Fixes**
 
-- Fix side-effect of `getMediaDescription()` on API 21 ([I5c05f](https://android-review.googlesource.com/#/q/I5c05ff1f995820a2c3efb7d8861b3514ddfb2ae7))
+* Fix side-effect of `getMediaDescription()` on API 21 ([I5c05f](https://android-review.googlesource.com/#/q/I5c05ff1f995820a2c3efb7d8861b3514ddfb2ae7))
 
 ### Version 1.4.1
 
@@ -254,8 +276,8 @@ August 4, 2021
 
 **Bug Fixes**
 
-- Fix mutability flag for creating `PendingIntent` to prevent crash when targeting Android S.
-- Fix ClassVerificationFailure for `NotificationCompat.MediaStyle`.
+* Fix mutability flag for creating `PendingIntent` to prevent crash when targeting Android S.
+* Fix ClassVerificationFailure for `NotificationCompat.MediaStyle`.
 
 ### Version 1.4.0
 
@@ -265,12 +287,12 @@ July 21, 2021
 
 **Important changes since 1.3.0**
 
-- Added a new bundle key `METADATA_KEY_SERIES_CONTENT_ID` used for the TV series's media content ID in MediaMetadataCompat
-- Added a new bundle key `METADATA_KEY_NEXT_EPISODE_CONTENT_ID` used for the TV episode's next episode content ID in MediaMetadataCompat
-- Deprecate `MediaControllerCompat.TransportControls#EXTRA_LEGACY_STREAM_TYPE` and add `MediaConstants#TRANSPORT_CONTROLS_EXTRAS_KEY_LEGACY_STREAM_TYPE` instead
-- Add an extra key to shuffle media for playFromUri
-- Add @Nullable annotation to Result class
-- Fix missing `EXTRA_KEY_EVENT` of intent for MediaButtonReceiver
+* Added a new bundle key `METADATA_KEY_SERIES_CONTENT_ID` used for the TV series's media content ID in MediaMetadataCompat
+* Added a new bundle key `METADATA_KEY_NEXT_EPISODE_CONTENT_ID` used for the TV episode’s next episode content ID in MediaMetadataCompat
+* Deprecate `MediaControllerCompat.TransportControls#EXTRA_LEGACY_STREAM_TYPE` and add `MediaConstants#TRANSPORT_CONTROLS_EXTRAS_KEY_LEGACY_STREAM_TYPE` instead
+* Add an extra key to shuffle media for playFromUri
+* Add @Nullable annotation to Result class
+* Fix missing `EXTRA_KEY_EVENT` of intent for MediaButtonReceiver
 
 ### Version 1.4.0-rc01
 
@@ -286,9 +308,8 @@ June 17, 2021
 
 **API Changes**
 
-- Added a new bundle key `METADATA_KEY_SERIES_CONTENT_ID` used for the TV series's media content ID in `MediaMetadataCompat`
-
-- Added a new bundle key `METADATA_KEY_NEXT_EPISODE_CONTENT_ID` used for the TV episode's next episode content ID in `MediaMetadataCompat`
+* Added a new bundle key `METADATA_KEY_SERIES_CONTENT_ID` used for the TV series's media content ID in `MediaMetadataCompat`
+* Added a new bundle key `METADATA_KEY_NEXT_EPISODE_CONTENT_ID` used for the TV episode’s next episode content ID in `MediaMetadataCompat`
 
 ### Version 1.4.0-alpha01
 
@@ -298,13 +319,16 @@ May 5, 2021
 
 **API Changes**
 
-- Deprecate `MediaControllerCompat.TransportControls#EXTRA_LEGACY_STREAM_TYPE` and add `MediaConstants#TRANSPORT_CONTROLS_EXTRAS_KEY_LEGACY_STREAM_TYPE` instead ([I62f17](https://android-review.googlesource.com/#/q/I62f172373ac24f4c883f46c86740651264c3c049))
-- Add an extra key to shuffle media for playFromUri ([Ibc63c](https://android-review.googlesource.com/#/q/Ibc63c77f4f79c9279d809aab837c7d25a621930e))
-- Add @Nullable annotation to Result class ([I2d617](https://android-review.googlesource.com/#/q/I2d61708d314224ac945f34699f1f46a21aed32fb))
+* Deprecate
+  `MediaControllerCompat.TransportControls#EXTRA_LEGACY_STREAM_TYPE` and
+  add `MediaConstants#TRANSPORT_CONTROLS_EXTRAS_KEY_LEGACY_STREAM_TYPE`
+  instead ([I62f17](https://android-review.googlesource.com/#/q/I62f172373ac24f4c883f46c86740651264c3c049))
+* Add an extra key to shuffle media for playFromUri ([Ibc63c](https://android-review.googlesource.com/#/q/Ibc63c77f4f79c9279d809aab837c7d25a621930e))
+* Add @Nullable annotation to Result class ([I2d617](https://android-review.googlesource.com/#/q/I2d61708d314224ac945f34699f1f46a21aed32fb))
 
 **Bug Fixes**
 
-- Fix missing `EXTRA_KEY_EVENT` of intent for MediaButtonReceiver ([If7557](https://android-review.googlesource.com/#/q/If755747418aca8b76b12cbce13ffed2c7dedb038))
+* Fix missing `EXTRA_KEY_EVENT` of intent for MediaButtonReceiver ([If7557](https://android-review.googlesource.com/#/q/If755747418aca8b76b12cbce13ffed2c7dedb038))
 
 ## Version 1.3.1
 
@@ -316,7 +340,7 @@ May 5, 2021
 
 **Bug Fixes**
 
-- Fix missing EXTRA_KEY_EVENT of intent for MediaButtonReceiver ([If7557](https://android-review.googlesource.com/#/q/If755747418aca8b76b12cbce13ffed2c7dedb038))
+* Fix missing EXTRA\_KEY\_EVENT of intent for MediaButtonReceiver ([If7557](https://android-review.googlesource.com/#/q/If755747418aca8b76b12cbce13ffed2c7dedb038))
 
 ## Version 1.3.0
 
@@ -328,7 +352,7 @@ April 7, 2021
 
 **Major changes since 1.2.0**
 
-- Migrated Android Auto extras into MediaConstants.
+* Migrated Android Auto extras into MediaConstants.
 
 ### Version 1.3.0-rc02
 
@@ -338,8 +362,8 @@ March 24, 2021
 
 **Bug Fixes**
 
-- Set `FLAG_IMMUTABLE` to the PendingIntent of MediaButtonReceiver which is required for apps targeting Android 12.
-- Fixed a `NullPointerException` in `MediaSessionCompat` with API 27 after `setCallback(null)`.
+* Set `FLAG_IMMUTABLE` to the PendingIntent of MediaButtonReceiver which is required for apps targeting Android 12.
+* Fixed a `NullPointerException` in `MediaSessionCompat` with API 27 after `setCallback(null)`.
 
 ### Version 1.3.0-rc01
 
@@ -357,13 +381,13 @@ February 10, 2021
 
 **API Changes**
 
-- Added a new constant `PlaybackStateCompat.ACTION_SET_PLAYBACK_SPEED` ([I9d076](https://android-review.googlesource.com/#/q/I9d076e2a6fe371dffec7996ccebeb40d47d9aad4))
-- Migrate Android Auto extras into MediaConstants. ([I290ab](https://android-review.googlesource.com/#/q/I290ab73e28b3b21fb990f233c1744a03300eb79a))
-- Add constants for constraining root children of MediaBrowserService. ([Ifcebd](https://android-review.googlesource.com/#/q/Ifcebdc8d31d0d5ccbda8f89584b67e8bf0222045))
+* Added a new constant `PlaybackStateCompat.ACTION_SET_PLAYBACK_SPEED` ([I9d076](https://android-review.googlesource.com/#/q/I9d076e2a6fe371dffec7996ccebeb40d47d9aad4))
+* Migrate Android Auto extras into MediaConstants. ([I290ab](https://android-review.googlesource.com/#/q/I290ab73e28b3b21fb990f233c1744a03300eb79a))
+* Add constants for constraining root children of MediaBrowserService. ([Ifcebd](https://android-review.googlesource.com/#/q/Ifcebdc8d31d0d5ccbda8f89584b67e8bf0222045))
 
 **Bug Fixes**
 
-- Add `FLAG_RECEIVER_FOREGROUND` for media button pending intent.
+* Add `FLAG_RECEIVER_FOREGROUND` for media button pending intent.
 
 ## Version 1.2.1
 
@@ -375,7 +399,7 @@ December 2, 2020
 
 **Bug Fixes**
 
-- Fix NPE after calling `MediaSessionCompat#setCallback(null)` in API 27
+* Fix NPE after calling `MediaSessionCompat#setCallback(null)` in API 27
 
 ## Version 1.2.0
 
@@ -387,9 +411,9 @@ September 16, 2020
 
 **Major changes since 1.1.0**
 
-- Added support for `AudioAttributesCompat#setLegacyStreamType` for SDK \< 21
-- Support volume control for the `androidx.mediarouter` library
-- Better support of interoperability between `androidx.media` and `androidx.media2`
+* Added support for `AudioAttributesCompat#setLegacyStreamType` for SDK < 21
+* Support volume control for the `androidx.mediarouter` library
+* Better support of interoperability between `androidx.media` and `androidx.media2`
 
 ### Version 1.2.0-rc01
 
@@ -405,15 +429,15 @@ August 19, 2020
 
 **New Features**
 
-- Added support for `AudioAttributesCompat#setLegacyStreamType` for API Leves Pre-21
+* Added support for `AudioAttributesCompat#setLegacyStreamType` for API Leves Pre-21
 
 **API Changes**
 
-- Added `MediaConstants#PLAYBACK_STATE_EXTRAS_KEY_MEDIA_ID` for the media id in `PlaybackStateCompat` extras, which is expected to be same as `MediaMetadataCompat#METADATA_KEY_MEDIA_ID` of the current metadata.
+* Added `MediaConstants#PLAYBACK_STATE_EXTRAS_KEY_MEDIA_ID` for the media id in `PlaybackStateCompat` extras, which is expected to be same as `MediaMetadataCompat#METADATA_KEY_MEDIA_ID` of the current metadata.
 
 **Bug Fixes**
 
-- Fixed an issue with `AudioAttributesCompat.Builder#setContentType`
+* Fixed an issue with `AudioAttributesCompat.Builder#setContentType`
 
 ### Version 1.2.0-alpha04
 
@@ -423,16 +447,16 @@ June 24, 2020
 
 **New Features**
 
-- Provided a way to support volume control for mediarouter library
+* Provided a way to support volume control for mediarouter library
 
 **API Changes**
 
-- Added `AudioManagerCompat#getStreamMaxVolume`
-- Added `AudioManagerCompat#getStreamMinVolume`
+* Added `AudioManagerCompat#getStreamMaxVolume`
+* Added `AudioManagerCompat#getStreamMinVolume`
 
 **Bug Fixes**
 
-- Fixed an interoperability issue between media and media2 on SDK \< 21
+* Fixed an interoperability issue between media and media2 on SDK < 21
 
 ### Version 1.2.0-alpha03
 
@@ -442,11 +466,11 @@ June 10, 2020
 
 **API Changes**
 
-- `MediaConstants.SESSION_EXTRAS_KEY_AUTHTOKEN` has been removed
+* `MediaConstants.SESSION_EXTRAS_KEY_AUTHTOKEN` has been removed
 
 **Bug Fixes**
 
-- Fixed an issue with `equals()` of `RemoteUserInfo`
+* Fixed an issue with `equals()` of `RemoteUserInfo`
 
 ### Version 1.2.0-alpha02
 
@@ -456,7 +480,7 @@ April 15, 2020
 
 **Bug Fixes**
 
-- Prevent modifications of VersionedParcelable classes
+* Prevent modifications of VersionedParcelable classes
 
 ### Version 1.2.0-alpha01
 
@@ -466,16 +490,16 @@ October 23, 2019
 
 **API changes**
 
-- Added the following methods:
-  - `MediaSessionCompat.Callback.onSetPlaybackSpeed()`
-  - `MediaControllerCompat.setPlaybackSpeed()`
-  - `MediaControllerCompat.getSessionInfo()`
+* Added the following methods:
+  + `MediaSessionCompat.Callback.onSetPlaybackSpeed()`
+  + `MediaControllerCompat.setPlaybackSpeed()`
+  + `MediaControllerCompat.getSessionInfo()`
 
 **Bug fixes**
 
-- Implemented prevention against a `BadParcelableException` when passing a Bundle object via an IPC call
-- The constructor of `MediaControllerCompat` no longer throws a `RemoteException`
-- Implemented prevention against the calling of callback methods after `MediaSessionCompat.release()`
+* Implemented prevention against a `BadParcelableException` when passing a Bundle object via an IPC call
+* The constructor of `MediaControllerCompat` no longer throws a `RemoteException`
+* Implemented prevention against the calling of callback methods after `MediaSessionCompat.release()`
 
 ## Version 1.1.0
 
@@ -487,7 +511,7 @@ September 5, 2019
 
 **Import changes since 1.0.0**
 
-- Introduced `AudioAttributesCompat`
+* Introduced `AudioAttributesCompat`
 
 ### Version 1.1.0-rc01
 
@@ -503,7 +527,7 @@ June 5, 2019
 
 **Bug fixes**
 
-- The restriction scope of hidden methods that are used by `media2-session` has been relaxed to `LIBRARY_GROUP_PREFIX`.
+* The restriction scope of hidden methods that are used by `media2-session` has been relaxed to `LIBRARY_GROUP_PREFIX`.
 
 ### Version 1.1.0-beta01
 
@@ -513,7 +537,7 @@ May 7, 2019
 
 **New features**
 
-- Changed `IllegalPointerException` to `NullPointerException` for the null arguments which marked as `@NonNull`.
+* Changed `IllegalPointerException` to `NullPointerException` for the null arguments which marked as `@NonNull`.
 
 ### Version 1.1.0-alpha04
 
@@ -523,7 +547,7 @@ April 3, 2019
 
 **Bug fixes**
 
-- Tweak on a version-compat-test constant ([aosp/933656](https://android-review.googlesource.com/c/platform/frameworks/support/+/933656))
+* Tweak on a version-compat-test constant ([aosp/933656](https://android-review.googlesource.com/c/platform/frameworks/support/+/933656))
 
 ### Version 1.1.0-alpha03
 
@@ -533,22 +557,23 @@ March 21st, 2019
 
 **Bug fixes**
 
-- Fixed crash of `MedaBrowserServiceCompat` when multiple `MediaBrowserCompat` try to connect to it. ([aosp/930246](https://android-review.googlesource.com/930246))
+* Fixed crash of `MedaBrowserServiceCompat` when multiple `MediaBrowserCompat` try to connect to it. ([aosp/930246](https://android-review.googlesource.com/930246))
 
 ### Version 1.1.0-alpha02
 
 March 13, 2019
 
-> [!NOTE]
-> **Note:** Please upgrade to version [1.1.0-alpha03](https://developer.android.com/jetpack/androidx/releases/media#1.1.0-alpha03) if you'd like to use these new features. Version [1.1.0-alpha03](https://developer.android.com/jetpack/androidx/releases/media#1.1.0-alpha03) contains a critical bugfix to `MedaBrowserServiceCompat`; [aosp/930246](https://android-review.googlesource.com/930246).
+**Note:** Please upgrade to version [1.1.0-alpha03](#1.1.0-alpha03) if you'd like to use
+these new features. Version [1.1.0-alpha03](#1.1.0-alpha03) contains a critical
+bugfix to `MedaBrowserServiceCompat`; [aosp/930246](https://android-review.googlesource.com/930246).
 
 `androidx.media:media:1.1.0-alpha02` is released. The full list of commits included in this version can be found [here](https://android.googlesource.com/platform/frameworks/support/+log/b9925c3695ce7da0625a2fd3ded0149b7153826c..e5cd630912f6f9165114ab5ae9b2aead36cfc713/media).
 
 **Bug fixes**
 
-- Fixed crash of `MediaBrowserCompat` while connecting
-- Fixed `IllegalStateException` happened in `getCurrentBrowserInfo()`/`getBrowserRootHints()`
-- Make `MediaBrowserServiceCompat.getCurrentBrowserInfo()` return the same `RemoteUserInfo` instance for the same `MediaBrowserCompat` in `onGetRoot()`
+* Fixed crash of `MediaBrowserCompat` while connecting
+* Fixed `IllegalStateException` happened in `getCurrentBrowserInfo()`/`getBrowserRootHints()`
+* Make `MediaBrowserServiceCompat.getCurrentBrowserInfo()` return the same `RemoteUserInfo` instance for the same `MediaBrowserCompat` in `onGetRoot()`
 
 ## Version 1.0.1
 
@@ -560,7 +585,7 @@ January 30, 2019
 
 **Bug fixes**
 
-- Fixed bug of an unexpected IllegalStateException while using `MediaBrowserCompat.connect()` ([aosp/858075](https://android-review.googlesource.com/858075))
+* Fixed bug of an unexpected IllegalStateException while using `MediaBrowserCompat.connect()` ([aosp/858075](https://android-review.googlesource.com/858075))
 
 ## Version 1.0.0
 
@@ -572,8 +597,8 @@ December 17, 2018
 
 Renamed the `media.widget` package and class names as follows:
 
-- `androidx.media.widget.VideoView2` → `androidx.media2.widget.VideoView`
-- `androidx.media.widget.MediaControlView2` → `androidx.media2.widget.MediaControlView`
+* `androidx.media.widget.VideoView2` → `androidx.media2.widget.VideoView`
+* `androidx.media.widget.MediaControlView2` → `androidx.media2.widget.MediaControlView`
 
 ### Version 1.0.0-alpha01
 
@@ -581,6 +606,6 @@ December 3, 2018
 
 **API changes**
 
-- Deprecated two `MediaSessionCompat` flags:
-  - `FLAG_HANDLES_MEDIA_BUTTONS`
-  - `FLAG_HANDLES_TRANSPORT_CONTROLS`
+* Deprecated two `MediaSessionCompat` flags:
+  + `FLAG_HANDLES_MEDIA_BUTTONS`
+  + `FLAG_HANDLES_TRANSPORT_CONTROLS`

@@ -1,13 +1,21 @@
 ---
-title: https://developer.android.com/guide/topics/manifest/uri-relative-filter-group-element
+title: <uri-relative-filter-group>  |  App architecture  |  Android Developers
 url: https://developer.android.com/guide/topics/manifest/uri-relative-filter-group-element
-source: md.txt
+source: html-scrape
 ---
 
-syntax:
-:
+* [Android Developers](https://developer.android.com/)
+* [Design & Plan](https://developer.android.com/design)
+* [App architecture](https://developer.android.com/topic/architecture/intro)
 
-    ```xml
+# <uri-relative-filter-group> Stay organized with collections Save and categorize content based on your preferences.
+
+
+
+
+
+syntax:
+:   ```
     <uri-relative-filter-group android:allow=["true" | "false"]>
       <data ... />
       ...
@@ -15,46 +23,41 @@ syntax:
     ```
 
 contained in:
-:
-    `
-    https://developer.android.com/guide/topics/manifest/intent-filter-element
-    `
+:   `<intent-filter>`
 
 can contain:
-:
-    `https://developer.android.com/guide/topics/manifest/data-element`
+:   `<data>`
 
 description:
-:
-
-    > [!NOTE]
-    > **Note:** The `<uri-relative-filter-group>` element and its features, including query and fragment matching and `android:allow` attribute, are only supported on Android 15 (API level 35) and higher. They are ignored and have no effect on lower Android versions.
-
-
+:   **Note:** The `<uri-relative-filter-group>` element and its features,
+    including query and fragment matching and `android:allow` attribute, are only
+    supported on Android 15 (API level 35) and higher. They are ignored and have no effect on
+    lower Android versions.
     Creates precise `Intent` matching rules that can include URI query parameters and
     URI fragments. The rules can be inclusion (*allow*) rules or exclusion (*blocking*)
-    rules, depending on the `android:https://developer.android.com/guide/topics/manifest/uri-relative-filter-group-element#allow` attribute. The
+    rules, depending on the `android:allow` attribute. The
     matching rules are specified by the
-    `https://developer.android.com/guide/topics/manifest/data-element#path`,
-    `https://developer.android.com/guide/topics/manifest/data-element#fragment`, and
-    `https://developer.android.com/guide/topics/manifest/data-element#query` attributes
+    `path*`,
+    `fragment*`, and
+    `query*` attributes
     of the contained
-    `https://developer.android.com/guide/topics/manifest/data-element` elements.
-
-    > [!NOTE]
-    > **Note:** Only the contained `https://developer.android.com/guide/topics/manifest/data-element#path`, `https://developer.android.com/guide/topics/manifest/data-element#fragment`, and `https://developer.android.com/guide/topics/manifest/data-element#query` attributes are used for intent matching. All other `<data>` attributes are ignored.
-
+    `<data>` elements.
+    **Note:** Only the contained
+    `path*`,
+    `fragment*`,
+    and
+    `query*`
+    attributes are used for intent matching. All other `<data>` attributes
+    are ignored.
 
     **Matching**
-
 
     To match a URI, each portion of the URI relative filter
     group must match a part of the URI. There can be portions of the URI that are not
     specified in the URI relative filter group.
-
     For example:
 
-    ```xml
+    ```
     <intent-filter...>
       <data android:scheme="https" android:host="project.example.com" />
       <uri-relative-filter-group android:allow="true">
@@ -64,7 +67,6 @@ description:
       ...
     </intent-filter>
     ```
-
 
     The filter matches
     `https://project.example.com/any/path/here?param1=value1&param2=value2&param3=value3`
@@ -76,18 +78,16 @@ description:
     `https://project.example.com/any/path/here?param1=value1`, which is
     missing `param2=value2`.
 
-
     **OR and AND**
 
-    `https://developer.android.com/guide/topics/manifest/data-element` tags
-    outside a `https://developer.android.com/guide/topics/manifest/uri-relative-filter-group-element`
+    `<data>` tags
+    outside a `<uri-relative-filter-group>`
     are ORed, while `<data>` tags inside of a
     `<uri-relative-filter-group>` are ANDed.
 
-
     Consider the following example:
 
-    ```xml
+    ```
     <intent-filter...>
       <data android:scheme="https" android:host="project.example.com" />
       <data android:pathPrefix="/prefix" />
@@ -96,16 +96,13 @@ description:
     </intent-filter>
     ```
 
-
     The filter matches paths that start with `/prefix` OR end with
     `suffix`.
-
 
     In contrast, the next example matches paths that start with `/prefix` AND
     end with `suffix`:
 
-
-    ```xml
+    ```
     <intent-filter...>
       <data android:scheme="https" android:host="project.example.com" />
       <uri-relative-filter-group>
@@ -116,14 +113,13 @@ description:
     </intent-filter>
     ```
 
-
     As a result, multiple
-    `https://developer.android.com/guide/topics/manifest/data-element#path`
+    `path`
     attributes in the same
-    `https://developer.android.com/guide/topics/manifest/uri-relative-filter-group-element`
+    `<uri-relative-filter-group>`
     don't match anything:
 
-    ```xml
+    ```
     <intent-filter...>
       <data android:scheme="https" android:host="project.example.com" />
       <uri-relative-filter-group>
@@ -134,13 +130,11 @@ description:
     </intent-filter>
     ```
 
-
     **Declaration order**
 
     Consider the following example:
 
-
-    ```xml
+    ```
     <intent-filter...>
       <data android:scheme="https" android:host="project.example.com" />
       <uri-relative-filter-group>
@@ -153,40 +147,42 @@ description:
     </intent-filter>
     ```
 
-
     The filter matches the fragment `#fragment` because a match is found before the
     exclusion rule is evaluated, but fragments like `#fragment123` don't match.
 
-
     **Sibling tags**
 
-
-    `https://developer.android.com/guide/topics/manifest/uri-relative-filter-group-element`
+    `<uri-relative-filter-group>`
     tags work together with their sibling
-    `https://developer.android.com/guide/topics/manifest/data-element` tags
+    `<data>` tags
     (that is, `<data>` tags that are are outside the
     `<uri-relative-filter-group>` but inside the same
-    `https://developer.android.com/guide/topics/manifest/intent-filter-element`).
-
+    `<intent-filter>`).
     `<uri-relative-filter-group>` tags must have sibling
     `<data>` tags to function properly because URI attributes are mutually
     dependent at the
-    `https://developer.android.com/guide/topics/manifest/intent-filter-element`
+    `<intent-filter>`
     level:
 
+    * If a
+      `scheme`
+      isn't specified for the intent filter, all the other URI attributes are ignored.
+    * If a
+      `host`
+      isn't specified for the filter, the
+      `port`
+      attribute and all the
+      `path*`
+      attributes are ignored.
 
-    - If a `https://developer.android.com/guide/topics/manifest/data-element#scheme` isn't specified for the intent filter, all the other URI attributes are ignored.
-    - If a `https://developer.android.com/guide/topics/manifest/data-element#host` isn't specified for the filter, the `https://developer.android.com/guide/topics/manifest/data-element#port` attribute and all the `https://developer.android.com/guide/topics/manifest/data-element#path` attributes are ignored.
-
-
-    The `https://developer.android.com/guide/topics/manifest/data-element` children
-    of an `https://developer.android.com/guide/topics/manifest/intent-filter-element`
+    The `<data>` children
+    of an `<intent-filter>`
     are evaluated before any
-    `https://developer.android.com/guide/topics/manifest/uri-relative-filter-group-element` tags.
+    `<uri-relative-filter-group>` tags.
     Then the `<uri-relative-filter-group>` tags are evaluated in order, for
     example:
 
-    ```xml
+    ```
     <intent-filter...>
       <data android:scheme="https" android:host="project.example.com" />
       <uri-relative-filter-group android:allow="false">
@@ -198,18 +194,20 @@ description:
     </intent-filter>
     ```
 
-
     The filter accepts `https://project.example.com/path?query` because it matches
     `<data android:path="/path" />`, which is outside the
     `<uri-relative-filter-group>` exclusion rule.
 
-
-    > [!NOTE]
-    > **Note:** Because `https://developer.android.com/guide/topics/manifest/data-element#path` attributes from `https://developer.android.com/guide/topics/manifest/data-element` tags are evaluated before the `https://developer.android.com/guide/topics/manifest/uri-relative-filter-group-element` tags (which are evaluated in declaration order), it is best practice to place the `path*` attributes before the `<uri-relative-filter-group>` tags.
-
+    **Note:** Because
+    `path*` attributes
+    from
+    `<data>` tags are
+    evaluated before the
+    `<uri-relative-filter-group>`
+    tags (which are evaluated in declaration order), it is best practice to place the
+    `path*` attributes before the `<uri-relative-filter-group>` tags.
 
     **Common use case**
-
 
     Imagine you have the URI
     `https://project.example.com/path`, which you want to match to an
@@ -218,7 +216,7 @@ description:
     `https://project.example.com/path` and blocks
     `https://project.example.com/path?query`, you might try something like:
 
-    ```xml
+    ```
     <intent-filter...>
       <data android:scheme="https" android:host="project.example.com" />
       <uri-relative-filter-group android:allow="true">
@@ -228,16 +226,14 @@ description:
     </intent-filter>
     ```
 
-
     This, in fact, doesn't work. The `https://project.example.com/path?query` URI
     matches the path `/path`, and the
-    `https://developer.android.com/guide/topics/manifest/uri-relative-filter-group-element`
+    `<uri-relative-filter-group>`
     tag allows *extra* parts when it is matching.
-
 
     Revise the intent filter as follows:
 
-    ```xml
+    ```
     <intent-filter...>
       <data android:scheme="https" android:host="project.example.com" />
       <uri-relative-filter-group android:allow="false">
@@ -251,15 +247,13 @@ description:
     </intent-filter>
     ```
 
-
     This filter works because the blocking rules that forbid nonempty query parameters are
     evaluated first.
-
 
     To simplify the code, flip the behavior to allow query parameters and block URIs without
     query parameters:
 
-    ```xml
+    ```
     <intent-filter...>
       <data android:scheme="https" android:host="project.example.com" />
       <uri-relative-filter-group android:allow="true">
@@ -270,14 +264,12 @@ description:
     </intent-filter>
     ```
 
-
     **URI-encoded characters**
-
 
     To match URIs that contain URI-encoded characters, write the raw, unencoded characters
     in the filter, for example:
 
-    ```xml
+    ```
     <intent-filter...>
       <data android:scheme="https" android:host="project.example.com" />
       <uri-relative-filter-group android:allow="true">
@@ -287,14 +279,11 @@ description:
     </intent-filter>
     ```
 
-
     The filter matches `?param=value!` *and* `?param=value%21`.
-
 
     However, if you write encoded characters in the filter as follows:
 
-
-    ```xml
+    ```
     <intent-filter...>
       <data android:scheme="https" android:host="project.example.com" />
       <uri-relative-filter-group android:allow="true">
@@ -304,54 +293,43 @@ description:
     </intent-filter>
     ```
 
-
     The filter matches neither `?param=value!` nor `?param=value%21`.
-
 
     **Number of elements**
 
-
     You can place any number of
-    `https://developer.android.com/guide/topics/manifest/uri-relative-filter-group-element`
+    `<uri-relative-filter-group>`
     elements inside an
-    `https://developer.android.com/guide/topics/manifest/intent-filter-element`.
-
+    `<intent-filter>`.
 
     **Additional resources**
 
-
     For information on how intent filters work, including the rules for how intent objects are
     matched against filters, see
-    [Intents and Intent Filters](https://developer.android.com/guide/components/intents-filters) and
-    [Intent Filters](https://developer.android.com/guide/topics/manifest/manifest-intro#ifs).
-
+    [Intents and Intent Filters](/guide/components/intents-filters) and
+    [Intent Filters](/guide/topics/manifest/manifest-intro#ifs).
 
     For information on
-    `https://developer.android.com/guide/topics/manifest/uri-relative-filter-group-element`,
+    `<uri-relative-filter-group>`,
     see
-    `https://developer.android.com/reference/kotlin/android/content/UriRelativeFilterGroup`
+    `UriRelativeFilterGroup`
     and
-    `https://developer.android.com/reference/kotlin/android/content/UriRelativeFilter`.
+    `UriRelativeFilter`.
 
 attributes:
-:
-
-    `android:allow`
-    :
-        Whether this URI relative filter group is an inclusion (*allow*) rule rather than
+:   `android:allow`
+    :   Whether this URI relative filter group is an inclusion (*allow*) rule rather than
         an exclusion (*blocking*) rule. The default value is `"true"`.
 
         | Value | Description |
-        |---|---|
+        | --- | --- |
         | `"true"` (default) | If the URI relative filter group matches, the intent filter matches |
         | `"false"` | If the URI relative filter group matches, the intent filter doesn't match |
-
 
 introduced in:
 :   API level 35
 
 see also:
-:
-    `https://developer.android.com/guide/topics/manifest/intent-filter-element`
-
-    `https://developer.android.com/guide/topics/manifest/data-element`
+:   `<intent-filter>`
+      
+    `<data>`

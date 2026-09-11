@@ -1,15 +1,25 @@
 ---
-title: https://developer.android.com/guide/playcore/engage/release
+title: Engage SDK Release Notes  |  Other Play guides  |  Android Developers
 url: https://developer.android.com/guide/playcore/engage/release
-source: md.txt
+source: html-scrape
 ---
+
+* [Android Developers](https://developer.android.com/)
+* [Google Play](https://developer.android.com/distribute)
+* [Other Play guides](https://developer.android.com/guide/app-bundle)
+
+# Engage SDK Release Notes Stay organized with collections Save and categorize content based on your preferences.
+
+
+
+
 
 This document contains release notes for the Engage SDK.
 
 ## Release Summary
 
 | Release Version | Date |
-|---|---|
+| --- | --- |
 | 1.6.0 | 2026-06-15 |
 | 1.5.12 | 2026-03-31 |
 | 1.5.11 | 2025-12-15 |
@@ -37,7 +47,7 @@ This version contains the following changes.
 
 ### Summary of changes
 
-- Added a new version of the `isServiceAvailable` API that accepts a `ServiceAvailabilityRequest` parameter.
+* Added a new version of the `isServiceAvailable` API that accepts a `ServiceAvailabilityRequest` parameter.
 
 ## Engage SDK 1.5.12 Release (2026-04-01)
 
@@ -45,9 +55,9 @@ This version contains the following changes.
 
 ### Summary of changes
 
-- Added `PlatformSpecificPlaybackUris`, `RecommendationReason` and `CommentsSummary` to `PortraitMediaEntity`.
-- Added `CountWithOptionalLabel` to `Interactions`.
-- Added `CallToActionText` and `Tags` to `MovieEntity`, `TvShowEntity`, `TvEpisodeEntity`, `MediaActionFeedEntity`, `VideoClipEntity`, `LiveTvChannelEntity` and `LiveTvProgramEntity`.
+* Added `PlatformSpecificPlaybackUris`, `RecommendationReason` and `CommentsSummary` to `PortraitMediaEntity`.
+* Added `CountWithOptionalLabel` to `Interactions`.
+* Added `CallToActionText` and `Tags` to `MovieEntity`, `TvShowEntity`, `TvEpisodeEntity`, `MediaActionFeedEntity`, `VideoClipEntity`, `LiveTvChannelEntity` and `LiveTvProgramEntity`.
 
 ## Engage SDK 1.5.11 Release (2025-12-15)
 
@@ -55,11 +65,12 @@ This version contains the following changes.
 
 ### Summary of changes
 
-- Added last user interaction timestamp in `FoodShoppingCart`, `FoodShoppingList`, and `ShoppingList`.
-- Added APIs to publish multiple shopping carts and lists.
-  - `AppEngageFoodClient.publishFoodShoppingCarts`
-  - `AppEngageFoodClient.publishFoodShoppingLists`
-  - `AppEngageShoppingClient.publishShoppingLists`
+* Added last user interaction timestamp in `FoodShoppingCart`,
+  `FoodShoppingList`, and `ShoppingList`.
+* Added APIs to publish multiple shopping carts and lists.
+  + `AppEngageFoodClient.publishFoodShoppingCarts`
+  + `AppEngageFoodClient.publishFoodShoppingLists`
+  + `AppEngageShoppingClient.publishShoppingLists`
 
 ## Engage SDK 1.5.10 Release (2025-10-14)
 
@@ -67,7 +78,7 @@ This version contains the following changes.
 
 ### Summary of changes
 
-- Added `LiveTvChannelEntity` and `LiveTvProgramEntity` to engage video data model.
+* Added `LiveTvChannelEntity` and `LiveTvProgramEntity` to engage video data model.
 
 ## Engage SDK 1.5.9 Release (2025-08-18)
 
@@ -75,8 +86,8 @@ This version contains the following changes.
 
 ### Summary of changes
 
-- Added `RecommendationClusterType` to `RecommendationCluster`.
-- Added `Description`, `Genre`, `ContentRatings` and `RecommendationReason` to `LiveStreamingVideoEntity`.
+* Added `RecommendationClusterType` to `RecommendationCluster`.
+* Added `Description`, `Genre`, `ContentRatings` and `RecommendationReason` to `LiveStreamingVideoEntity`.
 
 ## Engage SDK 1.5.8 Release (2025-04-25)
 
@@ -84,12 +95,12 @@ This version contains the following changes.
 
 ### Summary of changes
 
-- Added `AccountProfile` and `syncAcrossDevices` to `PublishRecommendationClustersRequest`.
-- Added `Locale` to the `AccountProfile`.
-- Added `MediaActionFeedEntity` to engage video data model.
-- Added `PlatformSpecificPlaybackUri` to `TVShowEntity`.
-- Added `description` field to `MovieEntity` and `TVShowEntity`.
-- Added `RecommendationReason` to `MovieEntity` and `TVShowEntity`.
+* Added `AccountProfile` and `syncAcrossDevices` to `PublishRecommendationClustersRequest`.
+* Added `Locale` to the `AccountProfile`.
+* Added `MediaActionFeedEntity` to engage video data model.
+* Added `PlatformSpecificPlaybackUri` to `TVShowEntity`.
+* Added `description` field to `MovieEntity` and `TVShowEntity`.
+* Added `RecommendationReason` to `MovieEntity` and `TVShowEntity`.
 
 ## Engage SDK 1.5.7 Release (2025-03-03)
 
@@ -97,8 +108,8 @@ This version contains the following changes.
 
 ### Summary of changes
 
-- Support for `DisplayTimeWindow` in travel entities.
-- Addition of travel specific broadcast intents.
+* Support for `DisplayTimeWindow` in travel entities.
+* Addition of travel specific broadcast intents.
 
 ## Engage SDK 1.5.6 Release (2025-01-07)
 
@@ -106,9 +117,9 @@ This version contains the following changes.
 
 ### Summary of changes
 
-- Addition of `ContinueSearchCluster` in Travel vertical.
-- Support for localized timestamp across entities in Travel vertical.
-- Renaming of `ContinuationCluster` to `ReservationCluster` in Travel vertical.
+* Addition of `ContinueSearchCluster` in Travel vertical.
+* Support for localized timestamp across entities in Travel vertical.
+* Renaming of `ContinuationCluster` to `ReservationCluster` in Travel vertical.
 
 ## Engage SDK 1.5.5 Release (2024-08-26)
 
@@ -116,8 +127,8 @@ This version contains the following changes.
 
 ### Summary of changes
 
-- Add crop type in Image.
-- Support multiple interactions in PortraitMediaEntity.
+* Add crop type in Image.
+* Support multiple interactions in PortraitMediaEntity.
 
 ## Engage SDK 1.5.4 Release (2024-08-07)
 
@@ -125,8 +136,9 @@ This version contains the following changes.
 
 ### Summary of changes
 
-- Add last user interaction timestamp in `ShoppingCart`.
-- Add support for publishing multiple shopping carts using `publishShoppingCarts` API in `AppEngageShoppingClient`.
+* Add last user interaction timestamp in `ShoppingCart`.
+* Add support for publishing multiple shopping carts using
+  `publishShoppingCarts` API in `AppEngageShoppingClient`.
 
 ## Engage SDK 1.5.3 Release (2024-07-24)
 
@@ -134,8 +146,8 @@ This version contains the following changes.
 
 ### Summary of changes
 
-- Infra improvements.
-- Create a TV specific variant of Engage SDK.
+* Infra improvements.
+* Create a TV specific variant of Engage SDK.
 
 ## Engage SDK 1.5.2 Release (2024-06-14)
 
@@ -143,7 +155,7 @@ This version contains the following changes.
 
 ### Summary of changes
 
-- Add video preview content in `SocialPostEntity` and `PortraitMediaEntity`.
+* Add video preview content in `SocialPostEntity` and `PortraitMediaEntity`.
 
 ## Engage SDK 1.5.0 Release (2024-05-01)
 
@@ -151,7 +163,7 @@ This version contains the following changes.
 
 ### Summary of changes
 
-- SDK size reduction
+* SDK size reduction
 
 ## Engage SDK 1.4.0 Release (2024-03-04)
 
@@ -159,7 +171,7 @@ This version contains the following changes.
 
 ### Summary of changes
 
-- Add expiry for `ShoppingCart` and `FoodShoppingCart`
+* Add expiry for `ShoppingCart` and `FoodShoppingCart`
 
 ## Engage SDK 1.3.1 Release (2023-10-24)
 
@@ -167,16 +179,16 @@ This version contains the following changes.
 
 ### Summary of changes
 
-- Added new publish status codes
+* Added new publish status codes
 
-  - AppEngagePublishStatusCode.NOT_PUBLISHED_FEATURE_DISABLED_BY_CLIENT
-  - AppEngagePublishStatusCode.NOT_PUBLISHED_CLIENT_ERROR
-  - AppEngagePublishStatusCode.NOT_PUBLISHED_SERVER_ERROR
-- Update Image to have an enum indicating the theme
+  + AppEngagePublishStatusCode.NOT\_PUBLISHED\_FEATURE\_DISABLED\_BY\_CLIENT
+  + AppEngagePublishStatusCode.NOT\_PUBLISHED\_CLIENT\_ERROR
+  + AppEngagePublishStatusCode.NOT\_PUBLISHED\_SERVER\_ERROR
+* Update Image to have an enum indicating the theme
 
-  - IMAGE_THEME_LIGHT
-  - IMAGE_THEME_DARK
-- Update metadata for `TvEpisodeEntity` and `TvSeasonEntity`
+  + IMAGE\_THEME\_LIGHT
+  + IMAGE\_THEME\_DARK
+* Update metadata for `TvEpisodeEntity` and `TvSeasonEntity`
 
 ## Engage SDK 1.3.0 Release (2023-09-14)
 
@@ -184,7 +196,7 @@ This version contains the following changes.
 
 ### Summary of changes
 
-- Updated the metadata for the [listen vertical](https://developer.android.com/guide/playcore/engage/listen)
+* Updated the metadata for the [listen vertical](/guide/playcore/engage/listen)
 
 ## Engage SDK 1.2.1 Release (2023-08-30)
 
@@ -192,7 +204,7 @@ This version contains the following changes.
 
 ### Summary of changes
 
-- Updated the metadata for the [Sign In Card](https://developer.android.com/guide/playcore/engage/publish#user-management-cluster-signin)
+* Updated the metadata for the [Sign In Card](/guide/playcore/engage/publish#user-management-cluster-signin)
 
 ## Engage SDK 1.2.0 Release (2023-07-19)
 
@@ -200,7 +212,8 @@ This version contains the following changes.
 
 ### Summary of changes
 
-- Adds support for social vertical. Refer to the [social integration guide](https://developer.android.com/guide/playcore/engage/social) for more details
+* Adds support for social vertical. Refer to the
+  [social integration guide](/guide/playcore/engage/social) for more details
 
 ## Engage SDK 1.1.0 Release (2023-06-29)
 
@@ -208,9 +221,10 @@ This version contains the following changes.
 
 ### Summary of changes
 
-- Supports custom action CTA in Shopping Cart \& Reorder.
-- Supports display time window for specific entities.
-- `AppEngageShoppingClient` and `AppEngageFoodClient` now support additional methods to publish and delete all the clusters from a single client.
+* Supports custom action CTA in Shopping Cart & Reorder.
+* Supports display time window for specific entities.
+* `AppEngageShoppingClient` and `AppEngageFoodClient` now support additional
+  methods to publish and delete all the clusters from a single client.
 
 ## Engage SDK 1.0.0 Release (2023-06-08)
 
@@ -218,4 +232,4 @@ This version contains the following changes.
 
 ### Summary of changes
 
-- Initial Public Release
+* Initial Public Release
