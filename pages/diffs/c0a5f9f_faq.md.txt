@@ -1,0 +1,75 @@
+diff --git a/docs/guide/app-bundle/faq.md b/docs/guide/app-bundle/faq.md
+index 92f71f1..65b671f 100644
+--- a/docs/guide/app-bundle/faq.md
++++ b/docs/guide/app-bundle/faq.md
+@@ -1,9 +1,19 @@
+ ---
+-title: https://developer.android.com/guide/app-bundle/faq
++title: Android App Bundle frequently asked questions  |  Other Play guides  |  Android Developers
+ url: https://developer.android.com/guide/app-bundle/faq
+-source: md.txt
++source: html-scrape
+ ---
+ 
++* [Android Developers](https://developer.android.com/)
++* [Google Play](https://developer.android.com/distribute)
++* [Other Play guides](https://developer.android.com/guide/app-bundle)
++
++# Android App Bundle frequently asked questions Stay organized with collections Save and categorize content based on your preferences.
++
++
++
++
++
+ ## About Android App Bundles
+ 
+ ### What is the Android App Bundle (AAB)?
+@@ -125,12 +135,16 @@ signing key and upload a copy of it.
+ ### I want to use the same app signing key for Play and other app stores. Is this still possible?
+ 
+ If you've decided to use the same signing key on multiple app stores after
+-considering [how app updates work](https://developer.android.com/google/play/app-updates), then it's still
++considering [how app updates work](/google/play/app-updates), then it's still
+ possible to do so. Remember, this will allow each app store to perform
+ cross-store app updates for your app. You have two options:
+ 
+-- You can generate a key locally and upload a copy of it to Play. That way, you can use the same key used by Google Play when you build your app for other app stores.
+-- You can use a Google-generated key for Play App Signing, then download distribution APKs from Play Console that are signed with the Google-generated key and use those APKs for distribution on other app stores or websites.
++* You can generate a key locally and upload a copy of it to Play. That way, you
++  can use the same key used by Google Play when you build your app for other
++  app stores.
++* You can use a Google-generated key for Play App Signing, then download
++  distribution APKs from Play Console that are signed with the Google-generated
++  key and use those APKs for distribution on other app stores or websites.
+ 
+ ### Can I use Play App Signing for an app created before August 2021 without providing a copy of my app signing key?
+ 
+@@ -170,7 +184,7 @@ At any time, you can download and inspect artifacts from Google Play and from
+ in Play Console. In addition, the Play Developer API will soon offer the
+ ability to verify APKs before you commit them to a release track. You can
+ also use an optional feature called
+-[code transparency for app bundles](https://developer.android.com/guide/app-bundle/code-transparency).
++[code transparency for app bundles](/guide/app-bundle/code-transparency).
+ With code transparency, you and your end-users can hold an app store like
+ Google Play to account for the code it delivers.
+ 
+@@ -224,7 +238,7 @@ addition to offering a smoother publishing process and flexible delivery
+ modes, PAD means updates require less device storage. As a result, it
+ can drive higher install rates.
+ 
+-Finally, with ASTC now supported on \~80%
++Finally, with ASTC now supported on ~80%
+ of devices, PAD's texture compression format targeting feature lets you
+ serve ASTC to devices that support it. You can target the widest range
+ of devices while making efficient use of the available hardware and
+@@ -238,8 +252,8 @@ App stores like Google Play process AABs into installable APKs. Being
+ responsible for the APKs makes it possible to offer new features and
+ services that bring benefits to developers and users. Play already offers
+ such services that are already widely used and valued by developers, two
+-examples are [Play Feature Delivery](https://developer.android.com/guide/playcore/feature-delivery)
+-and [Play Asset Delivery](https://developer.android.com/guide/playcore/asset-delivery).
++examples are [Play Feature Delivery](/guide/playcore/feature-delivery)
++and [Play Asset Delivery](/guide/playcore/asset-delivery).
+ 
+ ### What is Play Feature Delivery?
+ 
