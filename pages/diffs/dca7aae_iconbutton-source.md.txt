@@ -1,0 +1,39 @@
+diff --git a/docs/agents/skills/xr/display-glasses-with-jetpack-compose-glimmer/references/iconbutton-source.md b/docs/agents/skills/xr/display-glasses-with-jetpack-compose-glimmer/references/iconbutton-source.md
+index 4f017aa..66044cc 100644
+--- a/docs/agents/skills/xr/display-glasses-with-jetpack-compose-glimmer/references/iconbutton-source.md
++++ b/docs/agents/skills/xr/display-glasses-with-jetpack-compose-glimmer/references/iconbutton-source.md
+@@ -1,19 +1,14 @@
+ ---
+-title: API source code for Icon Button for Glimmer Icon Button component  |  Android Developers
++title: https://developer.android.com/agents/skills/xr/display-glasses-with-jetpack-compose-glimmer/references/iconbutton-source
+ url: https://developer.android.com/agents/skills/xr/display-glasses-with-jetpack-compose-glimmer/references/iconbutton-source
+-source: html-scrape
++source: md.txt
+ ---
+ 
+-# API source code for Icon Button for Glimmer Icon Button component Stay organized with collections Save and categorize content based on your preferences.
+-
+-
+-
+-
+-
+ When creating a Glimmer Icon component, refer to the following source code in
+ `IconButton.kt` for icon buttons:
+ 
+-```
++
++```kotlin
+ /*
+  * Copyright 2026 The Android Open Source Project
+  *
+@@ -132,6 +127,6 @@ public object IconButtonDefaults {
+     internal val iconSize: Dp
+         get() = GlimmerTheme.iconSizes.small
+ }
++```
+ 
+-IconButton.kt
+-```
+\ No newline at end of file
++<br />
+\ No newline at end of file
