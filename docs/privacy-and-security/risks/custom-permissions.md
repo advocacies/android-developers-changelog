@@ -1,19 +1,10 @@
 ---
-title: Custom Permissions  |  Security  |  Android Developers
+title: https://developer.android.com/privacy-and-security/risks/custom-permissions
 url: https://developer.android.com/privacy-and-security/risks/custom-permissions
-source: html-scrape
+source: md.txt
 ---
 
-* [Android Developers](https://developer.android.com/)
-* [Design & Plan](https://developer.android.com/design)
-* [Security](https://developer.android.com/security)
-* [Guides](https://developer.android.com/privacy-and-security/security-tips)
-
-# Custom Permissions Stay organized with collections Save and categorize content based on your preferences.
-
-
-
-
+<br />
 
 **OWASP category:** [MASVS-CODE: Code Quality](https://mas.owasp.org/MASVS/10-MASVS-CODE)
 
@@ -31,9 +22,9 @@ Custom permissions are designed to enable sharing resources and capabilities
 with other apps. Examples of a legitimate use of custom permissions could be the
 following:
 
-* Controlling inter-process communication (IPC) between two or more apps
-* Accessing third-party services
-* Restricting access to the shared data of an app
+- Controlling inter-process communication (IPC) between two or more apps
+- Accessing third-party services
+- Restricting access to the shared data of an app
 
 ## Impact
 
@@ -49,8 +40,8 @@ permission is used to protect exported Android components, due to a typo. A
 malicious application can capitalize on applications that have misspelled a
 permission by either:
 
-* Registering that permission first
-* Anticipating the spelling in subsequent applications
+- Registering that permission first
+- Anticipating the spelling in subsequent applications
 
 This can allow an application unauthorized access to resources or control over
 the victim application.
@@ -79,7 +70,7 @@ typos and other potential errors in your code.
 Use a consistent naming convention to make typos more noticeable. Carefully
 check the custom permission declarations in your app's Manifest for typos.
 
----
+*** ** * ** ***
 
 ## Risk: Orphaned Permissions
 
@@ -87,23 +78,19 @@ Permissions are used to guard resources of apps. There are two different
 locations where an app can declare the permissions required for accessing
 resources:
 
-* AndroidManifest.xml: Predefined in the AndroidManifest.xml file (if not
-  specified, `<application>` permissions are used), e.g., [provider
-  permission](/guide/topics/manifest/provider-element#prmsn), [receiver permission](/guide/topics/manifest/receiver-element#prmsn), [activity permission](/guide/topics/manifest/activity-element#prmsn), [service
-  permission](/guide/topics/manifest/service-element#prmsn);
-* Code: Registered in the runtime code, e.g., [`registerReceiver()`](/reference/android/content/Context#registerReceiver(android.content.BroadcastReceiver,%20android.content.IntentFilter)).
+- AndroidManifest.xml: Predefined in the AndroidManifest.xml file (if not specified, `<application>` permissions are used), e.g., [provider
+  permission](https://developer.android.com/guide/topics/manifest/provider-element#prmsn), [receiver permission](https://developer.android.com/guide/topics/manifest/receiver-element#prmsn), [activity permission](https://developer.android.com/guide/topics/manifest/activity-element#prmsn), [service
+  permission](https://developer.android.com/guide/topics/manifest/service-element#prmsn);
+- Code: Registered in the runtime code, e.g., [`registerReceiver()`](https://developer.android.com/reference/android/content/Context#registerReceiver(android.content.BroadcastReceiver,%20android.content.IntentFilter)).
 
 However, sometimes these permissions are not defined by a corresponding
 `<permission>` tag in a Manifest of an APK on the device. In this case, they are
 called **orphaned permissions**. This situation can occur for a number of
 reasons, such as:
 
-* There could be a desync between updates on the Manifest and the code with the
-  permission check
-* The APK with the permissions might not be included in the build, or the wrong
-  version could be included
-* The permission name in either the check or the Manifest could be spelled
-  incorrectly
+- There could be a desync between updates on the Manifest and the code with the permission check
+- The APK with the permissions might not be included in the build, or the wrong version could be included
+- The permission name in either the check or the Manifest could be spelled incorrectly
 
 A malicious app could define an orphaned permission and acquire it. If this
 happens, then the privileged applications that trust the orphaned permission to
@@ -129,23 +116,19 @@ The app uses the custom permissions `my.app.provider.READ` and
 
 ### Xml
 
-```
-<provider android:name="my.app.database.CommonContentProvider" android:readPermission="my.app.provider.READ" android:writePermission="my.app.provider.WRITE" android:exported="true" android:process=":myappservice" android:authorities="my.app.database.contentprovider"/>
-```
+    <provider android:name="my.app.database.CommonContentProvider" android:readPermission="my.app.provider.READ" android:writePermission="my.app.provider.WRITE" android:exported="true" android:process=":myappservice" android:authorities="my.app.database.contentprovider"/>
 
 The app also defines and uses these custom permissions, thus preventing other
 malicious apps from doing so:
 
 ### Xml
 
-```
-<permission android:name="my.app.provider.READ"/>
-<permission android:name="my.app.provider.WRITE"/>
-<uses-permission android:name="my.app.provider.READ" />
-<uses-permission android:name="my.app.provider.WRITE" />
-```
+    <permission android:name="my.app.provider.READ"/>
+    <permission android:name="my.app.provider.WRITE"/>
+    <uses-permission android:name="my.app.provider.READ" />
+    <uses-permission android:name="my.app.provider.WRITE" />
 
----
+*** ** * ** ***
 
 ## Risk: Misused android:protectionLevel
 
@@ -160,37 +143,33 @@ to grant the permission.
 Using a **normal** or **dangerous** `protectionLevel` on your permissions means
 most apps can request and get the permission:
 
-* "normal" requires only declaring it
-* "dangerous" will be approved by many users
+- "normal" requires only declaring it
+- "dangerous" will be approved by many users
 
 Therefore, these `protectionLevels` provide little security.
 
-#### Use Signature Permissions (Android >= 10)
+#### Use Signature Permissions (Android \>= 10)
 
 Use signature protection levels wherever possible. Employing this capability
 ensures only other apps signed with the same certificate as the app that created
 the permission can access those protected features. Ensure you are using a
 dedicated (not reused) signing certificate and store it securely in a
-[keystore](/privacy-and-security/keystore).
+[keystore](https://developer.android.com/privacy-and-security/keystore).
 
 Define a custom permission as follows in your Manifest:
 
 ### Xml
 
-```
-<permission
-    android:name="my.custom.permission.MY_PERMISSION"
-    android:protectionLevel="signature"/>
-```
+    <permission
+        android:name="my.custom.permission.MY_PERMISSION"
+        android:protectionLevel="signature"/>
 
 Restrict the access to, e.g., an activity, to only those apps which have this
 custom permission granted, as follows:
 
 ### Xml
 
-```
-<activity android:name=".MyActivity" android:permission="my.custom.permission.MY_PERMISSION"/>
-```
+    <activity android:name=".MyActivity" android:permission="my.custom.permission.MY_PERMISSION"/>
 
 Any other app that is signed with the same certificate as the app that declared
 this custom permission will then be granted access to the `.MyActivity` activity
@@ -198,13 +177,11 @@ and needs to declare it as follows in its Manifest:
 
 ### Xml
 
-```
-<uses-permission android:name="my.custom.permission.MY_PERMISSION" />
-```
+    <uses-permission android:name="my.custom.permission.MY_PERMISSION" />
 
-#### Beware of Signature Custom Permissions (Android < 10)
+#### Beware of Signature Custom Permissions (Android \< 10)
 
-If your app targets Android < 10, then whenever your app's custom permissions
+If your app targets Android \< 10, then whenever your app's custom permissions
 are removed due to uninstalls or updates there could be malicious apps able to
 still use those custom permissions and thus bypassing checks. This is due to a
 privilege escalation vulnerability ([`CVE-2019-2200`](https://nvd.nist.gov/vuln/detail/CVE-2019-2200)) which was
@@ -213,14 +190,14 @@ privilege escalation vulnerability ([`CVE-2019-2200`](https://nvd.nist.gov/vuln/
 This is one of the reasons (along with the risk of race conditions) why
 signature checks are recommended over custom permissions.
 
----
+*** ** * ** ***
 
 ## Risk: Race Condition
 
 If a legitimate app `A` defines a signature custom permission that is used by
 other `X` apps but it is subsequently uninstalled, then a malicious app `B` can
 define that same custom permission with a different `protectionLevel`, e.g.
-*normal*. In this way, `B` gains access to all components protected by that
+*normal* . In this way, `B` gains access to all components protected by that
 custom permission in the `X` apps without any need to be signed with the same
 certificate as the app `A`.
 
@@ -235,13 +212,13 @@ signature checks. When one of your apps makes a request for another of your
 apps, the second app can verify that both apps are signed with the same
 certificate before complying with the request.
 
----
+*** ** * ** ***
 
 ## Resources
 
-* [Minimize your permission requests](/training/permissions/evaluating)
-* [Permissions Overview](/guide/topics/permissions/overview)
-* [Protection levels description](/guide/topics/manifest/permission-element#plevel)
-* [CustomPermissionTypo Android Lint](https://cs.android.com/android-studio/platform/tools/base/+/mirror-goog-studio-main:lint/libs/lint-checks/src/main/java/com/android/tools/lint/checks/PermissionErrorDetector.kt)
-* [How to use an Android Lint](https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/docs/lint_guide.md#tips)
-* [Research paper with in-depth explanation of Android Permissions and interesting fuzz test findings](https://diaowenrui.github.io/paper/oakland21-li.pdf)
+- [Minimize your permission requests](https://developer.android.com/training/permissions/evaluating)
+- [Permissions Overview](https://developer.android.com/guide/topics/permissions/overview)
+- [Protection levels description](https://developer.android.com/guide/topics/manifest/permission-element#plevel)
+- [CustomPermissionTypo Android Lint](https://cs.android.com/android-studio/platform/tools/base/+/mirror-goog-studio-main:lint/libs/lint-checks/src/main/java/com/android/tools/lint/checks/PermissionErrorDetector.kt)
+- [How to use an Android Lint](https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-main/docs/lint_guide.md#tips)
+- [Research paper with in-depth explanation of Android Permissions and interesting fuzz test findings](https://diaowenrui.github.io/paper/oakland21-li.pdf)

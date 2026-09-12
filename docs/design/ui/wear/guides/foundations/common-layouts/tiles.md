@@ -1,20 +1,8 @@
 ---
-title: Common layouts for tiles  |  Wear  |  Android Developers
+title: https://developer.android.com/design/ui/wear/guides/foundations/common-layouts/tiles
 url: https://developer.android.com/design/ui/wear/guides/foundations/common-layouts/tiles
-source: html-scrape
+source: md.txt
 ---
-
-* [Android Developers](https://developer.android.com/)
-* [Design & Plan](https://developer.android.com/design)
-* [UI Design](https://developer.android.com/design/ui)
-* [Wear](https://developer.android.com/design/ui/wear)
-* [Guides](https://developer.android.com/design/ui/wear/guides/get-started)
-
-# Common layouts for tiles Stay organized with collections Save and categorize content based on your preferences.
-
-
-
-
 
 Tiles provide quick access to information and actions users need to get things
 done. With a swipe from the watch face, a user can see how they are progressing
@@ -23,7 +11,7 @@ essential tasks done quickly from tiles.
 
 ![Three tiles, two of which show 1 row with 3 columns of main content and
 another that shows 2 rows with 3 columns of main
-content](/static/wear/images/design/common-layouts-tiles-hero.png)
+content](https://developer.android.com/static/wear/images/design/common-layouts-tiles-hero.png)
 
 ## Build responsive and optimized designs
 
@@ -32,23 +20,25 @@ the behavior of our layouts and components to have built-in responsive behavior,
 including percentage-based margins and padding.
 
 If you are using our ProtoLayout templates, you can inherit these updates
-automatically through the latest beta release of the [Wear ProtoLayout](/jetpack/androidx/releases/wear-protolayout)
+automatically through the latest beta release of the [Wear ProtoLayout](https://developer.android.com/jetpack/androidx/releases/wear-protolayout)
 Jetpack library. Also, you only need to supply layouts where you have added
 additional content or components after a screen size breakpoint. For full
 guidance and recommendations on how to take advantage of a larger screen size,
-view our [tiles guidance](/training/wearables/tiles/get_started). Tiles have a fixed screen height, so we've
+view our [tiles guidance](https://developer.android.com/training/wearables/tiles/get_started). Tiles have a fixed screen height, so we've
 adjusted the padding to maximize the limited screen real estate without creating
 unwanted clipping.
 
 ## Check that components fill the available width
 
+
 All components should be built responsively. By setting the height and width to
 "expand," they fill the available space. Include the necessary margins to
 prevent content from being clipped by the rounded screen.
+![](https://developer.android.com/static/wear/images/design/tiles-steps.png)
+![](https://developer.android.com/static/wear/images/design/tiles-moodboard.png)
+![](https://developer.android.com/static/wear/images/design/tiles-buddy-note.png)
 
-![](/static/wear/images/design/tiles-steps.png)
-![](/static/wear/images/design/tiles-moodboard.png)
-![](/static/wear/images/design/tiles-buddy-note.png)
+<br />
 
 ## Build adaptive and differentiated designs
 
@@ -61,39 +51,47 @@ This requires a different design for each breakpoint. The larger screen design
 
 ### Show the previously hidden title slot
 
+
 This is advised on layouts with two rows before the breakpoint, where the title
 slot needs to be removed in order to ensure the min tap target of 48dp.
+![](https://developer.android.com/static/wear/images/design/tiles-messages.png)
+![](https://developer.android.com/static/wear/images/design/tiles-contacts.png)
 
-![](/static/wear/images/design/tiles-messages.png)
-![](/static/wear/images/design/tiles-contacts.png)
+<br />
 
 ### Increase the size or change the state of the existing components
+
 
 This could be done in order to show more detail or make the content more
 glanceable.
 
-**Note:** Don't just scale up the design. Instead, use components that respond and
-adapt to the available width and height. You could also use a different or
-larger component style, or graphic content with additional details.
+> [!NOTE]
+> **Note:** Don't just scale up the design. Instead, use components that respond and adapt to the available width and height. You could also use a different or larger component style, or graphic content with additional details.
 
-![](/static/wear/images/design/tiles-buddy-note.png)
-![](/static/wear/images/design/tiles-fitness.png)
+![](https://developer.android.com/static/wear/images/design/tiles-buddy-note.png)
+![](https://developer.android.com/static/wear/images/design/tiles-fitness.png)
+
+<br />
 
 ### Add component slots within the current layout
 
+
 By adding components, the layout provides more options or additional details.
 Make sure the content remains glanceable, though.
+![](https://developer.android.com/static/wear/images/design/tiles-search.png)
+![](https://developer.android.com/static/wear/images/design/tiles-agenda.png)
+![](https://developer.android.com/static/wear/images/design/tiles-fitness-goals.png)
 
-![](/static/wear/images/design/tiles-search.png)
-![](/static/wear/images/design/tiles-agenda.png)
-![](/static/wear/images/design/tiles-fitness-goals.png)
+<br />
 
 ### Add more content at the bottom
 
+
 In some cases, it makes more sense to add action buttons or content in the
 bottom section, rather than adding components within the main slot.
+![](https://developer.android.com/static/wear/images/design/tiles-notes.png)
 
-![](/static/wear/images/design/tiles-notes.png)
+<br />
 
 **Caution:** A larger display size should
 *never* display less information than ones that are smaller than it.
@@ -116,25 +114,23 @@ slot automatically adapts to the wider screen size, displaying additional
 characters. There are proportional (percentage) internal margins on the top
 section to avoid any clipping when the screen size increases.
 
-**Note:** The title slot is optional and should be hidden before the 225dp
-breakpoint when using a layout with two rows in the main content section. This
-lets the tap targets in the main content area remain large enough on the
-smallest screens.
+> [!NOTE]
+> **Note:** The title slot is optional and should be hidden before the 225dp breakpoint when using a layout with two rows in the main content section. This lets the tap targets in the main content area remain large enough on the smallest screens.
 
 ![The title appears below the app
-icon](/static/wear/images/design/tiles-icon-title-slot.png)
+icon](https://developer.android.com/static/wear/images/design/tiles-icon-title-slot.png)
 
 ### Main slot (components)
 
 All components within the main slot should set their width and height to
 "expand" so that they automatically adapt to the wider screen size. There are
-proportional (percentage) internal margins on the main slot section—and each row
-within this slot in some instances—to avoid any clipping when the screen size
+proportional (percentage) internal margins on the main slot section---and each row
+within this slot in some instances---to avoid any clipping when the screen size
 increases. If you use a combination of corner radius and layout, your main slot
 might require larger margins.
 
 ![The main slot shows 2 rows of 3 icons
-each](/static/wear/images/design/tiles-main-slot.png)
+each](https://developer.android.com/static/wear/images/design/tiles-main-slot.png)
 
 ### Bottom slot
 
@@ -143,21 +139,15 @@ button and text boxes automatically adapt to the wider screen size, and gain
 characters. There are proportional (percentage) internal margins on the bottom
 slot to avoid any clipping when the screen size increases. When no bottom slot
 is present, a default margin is added automatically.
+![Bottom button text is More](https://developer.android.com/static/wear/images/design/tiles-bottom-slot-button.png) Tiles that include a button in the bottom slot
 
-![Bottom button text is More](/static/wear/images/design/tiles-bottom-slot-button.png)
+<br />
 
+![Bottom slot shows a fitness goal as text](https://developer.android.com/static/wear/images/design/tiles-bottom-slot-text.png) Tiles that include text in the bottom slot
 
-Tiles that include a button in the bottom slot
+<br />
 
-![Bottom slot shows a fitness goal as text](/static/wear/images/design/tiles-bottom-slot-text.png)
-
-
-Tiles that include text in the bottom slot
-
-![The main content extends to the bottom of the tile](/static/wear/images/design/tiles-no-bottom-slot.png)
-
-
-Tiles with no bottom slot
+![The main content extends to the bottom of the tile](https://developer.android.com/static/wear/images/design/tiles-no-bottom-slot.png) Tiles with no bottom slot
 
 ## Create differentiated experiences
 

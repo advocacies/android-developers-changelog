@@ -1,19 +1,8 @@
 ---
-title: App-driven profiling  |  App quality  |  Android Developers
+title: https://developer.android.com/topic/performance/tracing/profiling-manager/how-to-capture
 url: https://developer.android.com/topic/performance/tracing/profiling-manager/how-to-capture
-source: html-scrape
+source: md.txt
 ---
-
-* [Android Developers](https://developer.android.com/)
-* [Design & Plan](https://developer.android.com/design)
-* [App quality](https://developer.android.com/quality)
-* [Technical quality](https://developer.android.com/quality/technical)
-
-# App-driven profiling Stay organized with collections Save and categorize content based on your preferences.
-
-
-
-
 
 This page shows how to record a system trace using the `ProfilingManager` API.
 
@@ -21,19 +10,20 @@ This page shows how to record a system trace using the `ProfilingManager` API.
 to recording a system trace, but each type uses a different builder. The
 supported profiles and their builders are:
 
-* **System Traces:** Recorded using [`SystemTraceRequestBuilder`](/reference/kotlin/androidx/core/os/SystemTraceRequestBuilder), which
+- **System Traces:** Recorded using [`SystemTraceRequestBuilder`](https://developer.android.com/reference/kotlin/androidx/core/os/SystemTraceRequestBuilder), which
   are useful for latency analysis and general performance debugging.
-* **Heap dumps:** Recorded using [`JavaHeapDumpRequestBuilder`](/reference/kotlin/androidx/core/os/JavaHeapDumpRequestBuilder), which are
+
+- **Heap dumps:** Recorded using [`JavaHeapDumpRequestBuilder`](https://developer.android.com/reference/kotlin/androidx/core/os/JavaHeapDumpRequestBuilder), which are
   helpful for memory leak detection and optimization.
-* **Heap profiles:** Recorded using [`HeapProfileRequestBuilder`](/reference/kotlin/androidx/core/os/HeapProfileRequestBuilder), which
+
+- **Heap profiles:** Recorded using [`HeapProfileRequestBuilder`](https://developer.android.com/reference/kotlin/androidx/core/os/HeapProfileRequestBuilder), which
   are useful for memory optimization.
-* **Call stack profiles:** Recorded using [`StackSamplingRequestBuilder`](/reference/kotlin/androidx/core/os/StackSamplingRequestBuilder),
+
+- **Call stack profiles:** Recorded using [`StackSamplingRequestBuilder`](https://developer.android.com/reference/kotlin/androidx/core/os/StackSamplingRequestBuilder),
   which are useful for understanding code execution and latency analysis.
 
-**Tip:** `ProfilingManager` contains a rate limiter that is set up to reduce the
-impact of repeated profiling requests on device performance. When you're using
-this tool locally, you want to see every request so we recommend keeping the
-[rate limiter disabled](/topic/performance/tracing/profiling-manager/debug-mode#disable-rate-limiter).
+> [!TIP]
+> **Tip:** `ProfilingManager` contains a rate limiter that is set up to reduce the impact of repeated profiling requests on device performance. When you're using this tool locally, you want to see every request so we recommend keeping the [rate limiter disabled](https://developer.android.com/topic/performance/tracing/profiling-manager/debug-mode#disable-rate-limiter).
 
 ## Add dependencies
 
@@ -42,25 +32,26 @@ Jetpack libraries to your `build.gradle.kts` file.
 
 ### Kotlin
 
-```
+```kotlin
    dependencies {
        implementation("androidx.tracing:tracing-ktx:2.0.1")
        implementation("androidx.core:core:1.19.0")
    }
+   
 ```
 
 ### Groovy
 
-```
+```groovy
    dependencies {
        implementation 'androidx.tracing:tracing:2.0.1'
        implementation 'androidx.core:core:1.19.0'
    }
+   
 ```
 
-**Note:** You can use `ProfilingManager` directly without Jetpack libraries.
-However, Jetpack wrappers simplify usage, provide a compatibility layer, and
-reduce the effort needed to manage behavior across Android releases.
+> [!NOTE]
+> **Note:** You can use `ProfilingManager` directly without Jetpack libraries. However, Jetpack wrappers simplify usage, provide a compatibility layer, and reduce the effort needed to manage behavior across Android releases.
 
 ## Record a system trace
 
@@ -70,137 +61,133 @@ composable while safely managing heavy operations off the main thread.
 
 ### Kotlin
 
-```
-@RequiresApi(Build.VERSION_CODES.VANILLA_ICE_CREAM)
-@Composable
-fun ProfiledScreen(modifier: Modifier = Modifier) {
-    // Use the application context: requestProfiling resolves the ProfilingManager
-    // system service from it, so there's no reason to hand it a short-lived Activity.
-    val appContext = LocalContext.current.applicationContext
-    val scope = rememberCoroutineScope()
+    @RequiresApi(Build.VERSION_CODES.VANILLA_ICE_CREAM)
+    @Composable
+    fun ProfiledScreen(modifier: Modifier = Modifier) {
+        // Use the application context: requestProfiling resolves the ProfilingManager
+        // system service from it, so there's no reason to hand it a short-lived Activity.
+        val appContext = LocalContext.current.applicationContext
+        val scope = rememberCoroutineScope()
 
-    Button(
-        onClick = {
-            // Run the orchestration off the main thread. Profiling a heavy operation
-            // on the UI thread would freeze the UI (ANR) and distort the very metrics
-            // you're trying to capture.
-            //
-            // Note: this scope is tied to composition. If the user leaves this screen
-            // mid-session, the coroutine is cancelled and stopSignal.cancel() might not
-            // run, but setDurationMs() acts as a safety net and ends the trace.
-            scope.launch(Dispatchers.Default) {
-                val callbackExecutor = Dispatchers.IO.asExecutor()
-                val resultCallback = Consumer<ProfilingResult> { profilingResult ->
-                    if (profilingResult.errorCode == ProfilingResult.ERROR_NONE) {
-                        Log.d("ProfileTest", "Result file: ${profilingResult.resultFilePath}")
-                    } else {
-                        // errorMessage explains the failure (e.g., rate limiting); keep it.
-                        Log.e(
-                            "ProfileTest",
-                            "Profiling failed errorCode=${profilingResult.errorCode} " +
-                                "errorMessage=${profilingResult.errorMessage}"
-                        )
+        Button(
+            onClick = {
+                // Run the orchestration off the main thread. Profiling a heavy operation
+                // on the UI thread would freeze the UI (ANR) and distort the very metrics
+                // you're trying to capture.
+                //
+                // Note: this scope is tied to composition. If the user leaves this screen
+                // mid-session, the coroutine is cancelled and stopSignal.cancel() might not
+                // run, but setDurationMs() acts as a safety net and ends the trace.
+                scope.launch(Dispatchers.Default) {
+                    val callbackExecutor = Dispatchers.IO.asExecutor()
+                    val resultCallback = Consumer<ProfilingResult> { profilingResult ->
+                        if (profilingResult.errorCode == ProfilingResult.ERROR_NONE) {
+                            Log.d("ProfileTest", "Result file: ${profilingResult.resultFilePath}")
+                        } else {
+                            // errorMessage explains the failure (e.g., rate limiting); keep it.
+                            Log.e(
+                                "ProfileTest",
+                                "Profiling failed errorCode=${profilingResult.errorCode} " +
+                                    "errorMessage=${profilingResult.errorMessage}"
+                            )
+                        }
                     }
+
+                    val stopSignal = CancellationSignal()
+                    val requestBuilder = SystemTraceRequestBuilder().apply {
+                        setCancellationSignal(stopSignal)
+                        setTag("FOO") // Caller-supplied tag for identification.
+                        setDurationMs(60000) // Hard cap: ends the session if cancel() never fires.
+                        setBufferFillPolicy(BufferFillPolicy.RING_BUFFER)
+                        setBufferSizeKb(32768)
+                    }
+
+                    // 1. Start the session. This is asynchronous system IPC. The tracing
+                    //    engine takes a moment to start and allocate buffers.
+                    requestProfiling(appContext, requestBuilder.build(), callbackExecutor, resultCallback)
+
+                    // 2. The API exposes no "profiling started" signal, so pad with a short,
+                    //    best-effort delay before running the code you care about. This is
+                    //    approximate. Increase it on slower or heavily loaded devices.
+                    delay(STARTUP_PADDING_MS)
+
+                    // 3. The session is already recording every thread in your app. This slice
+                    //    doesn't scope what's captured. It just labels this region of the
+                    //    timeline so heavyOperation() is easier to find. trace { } closes the
+                    //    section even if the block throws.
+
+                    trace("MyApp:HeavyOperation") {
+                        heavyOperation()
+                    }
+
+                    // 4. Stop recording. Until this fires or the setDurationMs() cap is
+                    //    reached (whichever comes first), the session keeps capturing app-wide
+                    //    activity.
+
+                    stopSignal.cancel()
                 }
-
-                val stopSignal = CancellationSignal()
-                val requestBuilder = SystemTraceRequestBuilder().apply {
-                    setCancellationSignal(stopSignal)
-                    setTag("FOO") // Caller-supplied tag for identification.
-                    setDurationMs(60000) // Hard cap: ends the session if cancel() never fires.
-                    setBufferFillPolicy(BufferFillPolicy.RING_BUFFER)
-                    setBufferSizeKb(32768)
-                }
-
-                // 1. Start the session. This is asynchronous system IPC. The tracing
-                //    engine takes a moment to start and allocate buffers.
-                requestProfiling(appContext, requestBuilder.build(), callbackExecutor, resultCallback)
-
-                // 2. The API exposes no "profiling started" signal, so pad with a short,
-                //    best-effort delay before running the code you care about. This is
-                //    approximate. Increase it on slower or heavily loaded devices.
-                delay(STARTUP_PADDING_MS)
-
-                // 3. The session is already recording every thread in your app. This slice
-                //    doesn't scope what's captured. It just labels this region of the
-                //    timeline so heavyOperation() is easier to find. trace { } closes the
-                //    section even if the block throws.
-
-                trace("MyApp:HeavyOperation") {
-                    heavyOperation()
-                }
-
-                // 4. Stop recording. Until this fires or the setDurationMs() cap is
-                //    reached (whichever comes first), the session keeps capturing app-wide
-                //    activity.
-
-                stopSignal.cancel()
             }
+        ) {
+            Text("Run & Profile Heavy Operation")
         }
-    ) {
-        Text("Run & Profile Heavy Operation")
     }
-}
 
-// Best-effort wait for the system trace engine to initialize before profiling.
-// There is no deterministic start callback; tune this for your target devices.
-private const val STARTUP_PADDING_MS = 100L
+    // Best-effort wait for the system trace engine to initialize before profiling.
+    // There is no deterministic start callback; tune this for your target devices.
+    private const val STARTUP_PADDING_MS = 100L
 
-fun heavyOperation() {
-    // Background computations to profile.
-}
-```
+    fun heavyOperation() {
+        // Background computations to profile.
+    }
 
 ### Java
 
-```
-void heavyOperation() {
-  // Computations you want to profile
-}
+    void heavyOperation() {
+      // Computations you want to profile
+    }
 
-void sampleRecordSystemTrace() {
-  Executor mainExecutor = Executors.newSingleThreadExecutor();
-  Consumer<ProfilingResult> resultCallback =
-      new Consumer<ProfilingResult>() {
-        @Override
-        public void accept(ProfilingResult profilingResult) {
-          if (profilingResult.getErrorCode() == ProfilingResult.ERROR_NONE) {
-            Log.d(
-                "ProfileTest",
-                "Received profiling result file=" + profilingResult.getResultFilePath());
-            setupProfileUploadWorker(profilingResult.getResultFilePath());
-          } else {
-            Log.e(
-                "ProfileTest",
-                "Profiling failed errorcode="
+    void sampleRecordSystemTrace() {
+      Executor mainExecutor = Executors.newSingleThreadExecutor();
+      Consumer<ProfilingResult> resultCallback =
+          new Consumer<ProfilingResult>() {
+            @Override
+            public void accept(ProfilingResult profilingResult) {
+              if (profilingResult.getErrorCode() == ProfilingResult.ERROR_NONE) {
+                Log.d(
+                    "ProfileTest",
+                    "Received profiling result file=" + profilingResult.getResultFilePath());
+                setupProfileUploadWorker(profilingResult.getResultFilePath());
+              } else {
+                Log.e(
+                    "ProfileTest",
+                    "Profiling failed errorcode="
 
-                    + profilingResult.getErrorCode()
-                    + " errormsg="
-                    + profilingResult.getErrorMessage());
-          }
-        }
-      };
-  CancellationSignal stopSignal = new CancellationSignal();
+                        + profilingResult.getErrorCode()
+                        + " errormsg="
+                        + profilingResult.getErrorMessage());
+              }
+            }
+          };
+      CancellationSignal stopSignal = new CancellationSignal();
 
-  SystemTraceRequestBuilder requestBuilder = new SystemTraceRequestBuilder();
-  requestBuilder.setCancellationSignal(stopSignal);
-  requestBuilder.setTag("FOO");
-  requestBuilder.setDurationMs(60000);
-  requestBuilder.setBufferFillPolicy(BufferFillPolicy.RING_BUFFER);
-  requestBuilder.setBufferSizeKb(32768);
-  Profiling.requestProfiling(getApplicationContext(), requestBuilder.build(), mainExecutor,
-      resultCallback);
+      SystemTraceRequestBuilder requestBuilder = new SystemTraceRequestBuilder();
+      requestBuilder.setCancellationSignal(stopSignal);
+      requestBuilder.setTag("FOO");
+      requestBuilder.setDurationMs(60000);
+      requestBuilder.setBufferFillPolicy(BufferFillPolicy.RING_BUFFER);
+      requestBuilder.setBufferSizeKb(32768);
+      Profiling.requestProfiling(getApplicationContext(), requestBuilder.build(), mainExecutor,
+          resultCallback);
 
-  // Wait some time for profiling to start.
+      // Wait some time for profiling to start.
 
-  Trace.beginSection("MyApp:HeavyOperation");
-  heavyOperation();
-  Trace.endSection();
+      Trace.beginSection("MyApp:HeavyOperation");
+      heavyOperation();
+      Trace.endSection();
 
-  // Once the interesting code section is profiled, stop profile
-  stopSignal.cancel();
-}
-```
+      // Once the interesting code section is profiled, stop profile
+      stopSignal.cancel();
+    }
 
 The sample code sets up and manages the profiling session by going through the
 following steps:
@@ -209,38 +196,34 @@ following steps:
    receive the profiling results. Profiling happens in the background. Using a
    non-UI thread executor helps prevent Application Not Responding (ANR) errors
    if you add more processing to the callback later.
+
 2. **Handle profiling results.** Create a `Consumer<ProfilingResult>` object.
    The system uses this object to send profiling results from
    `ProfilingManager` back to your app.
+
 3. **Build the profiling request.** Create a `SystemTraceRequestBuilder` to set
    up your profiling session. This builder lets you customize
    `ProfilingManager` trace settings. Customizing the builder is optional; if
    you don't, the system uses default settings.
 
-   * **Define a tag.** Use `setTag()` to add a tag to the trace name. This
-     tag helps you identify the trace.
-   * **Optional: Set the duration.** Use `setDurationMs()` to specify how
-     long to profile in milliseconds. For example, `60000` sets a 60-second
-     trace. The trace automatically ends after the specified duration if
-     `CancellationSignal` isn't triggered before that.
-   * **Choose a buffer policy.** Use `setBufferFillPolicy()` to define how
-     trace data is stored. `BufferFillPolicy.RING_BUFFER` means that when the
-     buffer is full, new data overwrites the oldest data, keeping a
-     continuous record of recent activity.
-   * **Set a buffer size.** Use `setBufferSizeKb()` to specify a buffer size
-     for tracing which you can use to control the size of the output trace
-     file.**Note:** Not all the Perfetto configurations are available for
-   `ProfilingManager`.
+   - **Define a tag.** Use `setTag()` to add a tag to the trace name. This tag helps you identify the trace.
+   - **Optional: Set the duration.** Use `setDurationMs()` to specify how long to profile in milliseconds. For example, `60000` sets a 60-second trace. The trace automatically ends after the specified duration if `CancellationSignal` isn't triggered before that.
+   - **Choose a buffer policy.** Use `setBufferFillPolicy()` to define how trace data is stored. `BufferFillPolicy.RING_BUFFER` means that when the buffer is full, new data overwrites the oldest data, keeping a continuous record of recent activity.
+   - **Set a buffer size.** Use `setBufferSizeKb()` to specify a buffer size for tracing which you can use to control the size of the output trace file.
+
+   > [!NOTE]
+   > **Note:** Not all the Perfetto configurations are available for `ProfilingManager`.
+
 4. **Optional: Manage the session lifecycle.** Create a `CancellationSignal`.
    This object lets you stop the profiling session whenever you want, giving
    you precise control over its length.
 
-   **Note:** Because `ProfilingManager` doesn't notify you when recording actually
-   begins, it can be hard to capture an exact window of time. For more
-   consistent results, prefer `setDurationMs` to set a time limit and skip
-   trying manual cancellation.**Note:** If you use neither `CancellationSignal` nor `setDurationMs()`, the
-   system applies a default duration. If you define both, whichever happens
-   first ends the session.
+   > [!NOTE]
+   > **Note:** Because `ProfilingManager` doesn't notify you when recording actually begins, it can be hard to capture an exact window of time. For more consistent results, prefer `setDurationMs` to set a time limit and skip trying manual cancellation.
+
+   > [!NOTE]
+   > **Note:** If you use neither `CancellationSignal` nor `setDurationMs()`, the system applies a default duration. If you define both, whichever happens first ends the session.
+
 5. **Start and receive results.** When you call `requestProfiling()`,
    `ProfilingManager` starts a profiling session in the background. Once
    profiling is done, it sends the `ProfilingResult` to your
@@ -250,16 +233,16 @@ following steps:
    programmatically or, for local profiling, by running `adb pull <trace_path>`
    from your computer.
 
-   **Note:** If an error occurs during profiling, the `ProfilingResult` provides an
-   error description through `profilingResult.getErrorMessage()` and an error
-   code through `profilingResult.getErrorCode()`. A common reason for failure
-   is if your app gets rate limited due to excessive requests.**Note:** If the app dies before this result is delivered, delivery will be
-   attempted again once the app starts and registers a general listener.
+   > [!NOTE]
+   > **Note:** If an error occurs during profiling, the `ProfilingResult` provides an error description through `profilingResult.getErrorMessage()` and an error code through `profilingResult.getErrorCode()`. A common reason for failure is if your app gets rate limited due to excessive requests.
+
+   > [!NOTE]
+   > **Note:** If the app dies before this result is delivered, delivery will be attempted again once the app starts and registers a general listener.
+
 6. **Add custom trace points.** You can add custom trace points in your app's
    code. In the previous code example, the
    `trace("MyApp:HeavyOperation") { ... }` block creates a custom slice in the
    generated profile.
 
-**Tip:** For a complete picture of UI performance, use composition tracing to see
-recompositions alongside your custom trace points. For more information, see
-[Composition tracing](/develop/ui/compose/tooling/tracing).
+> [!TIP]
+> **Tip:** For a complete picture of UI performance, use composition tracing to see recompositions alongside your custom trace points. For more information, see [Composition tracing](https://developer.android.com/develop/ui/compose/tooling/tracing).

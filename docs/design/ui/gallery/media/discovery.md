@@ -1,41 +1,26 @@
 ---
-title: Media discovery and exploration  |  Gallery  |  Android Developers
+title: https://developer.android.com/design/ui/gallery/media/discovery
 url: https://developer.android.com/design/ui/gallery/media/discovery
-source: html-scrape
+source: md.txt
 ---
 
-* [Android Developers](https://developer.android.com/)
-* [Design & Plan](https://developer.android.com/design)
-* [UI Design](https://developer.android.com/design/ui)
-* [Gallery](https://developer.android.com/design/ui/gallery)
-
-# Media discovery and exploration Stay organized with collections Save and categorize content based on your preferences.
-
-
-
-
+<br />
 
 Create a rich media feed that enables users to discover new content, new
 artists, new recommendations and reviews, with more to see, more to choose from
 on large screens.
 
-[
-
-](/static/videos/large-screens/gallery/Media-Discover-Hero.mp4)
-[
-
-](/static/videos/large-screens/gallery/Media-Discover-Hero_dt.mp4)
-
-![](/static/images/large-screens/gallery/samples/media/gallery_media_discovery.webp)
-![](/static/images/large-screens/gallery/samples/media/gallery_media_browsing_medium.webp)
+![](https://developer.android.com/static/images/large-screens/gallery/samples/media/gallery_media_discovery.webp)
+![](https://developer.android.com/static/images/large-screens/gallery/samples/media/gallery_media_browsing_medium.webp)
 
 Enhance the media viewing or listening experience in the expanded space of
 large screens with a scrolling list of similar titles, published reviews, or
 additional works by the same artists or actors.
 
-![](/static/images/large-screens/gallery/samples/media/gallery_media_browsing_expanded.webp)
+![](https://developer.android.com/static/images/large-screens/gallery/samples/media/gallery_media_browsing_expanded.webp)
 
----
+*** ** * ** ***
+
 
 ## Android AdaptiveUI Samples
 
@@ -45,8 +30,10 @@ more.
 
 [View Figma
 Kit](https://www.figma.com/community/file/1539759053650269019/android-adaptive-ui-samples)
+![](https://developer.android.com/static/images/large-screens/gallery/samples/callouts/android-adaptive-samples.png)
 
-![](/static/images/large-screens/gallery/samples/callouts/android-adaptive-samples.png)
+<br />
+
 
 ## Implement a supporting pane
 
@@ -54,11 +41,13 @@ A mobile view may require supporting content or controls, typically in the form
 of sheets or dialogs, to help the primary view stay focused and uncluttered.
 
 [Learn
-more](/develop/ui/compose/layouts/adaptive/canonical-layouts#supporting-pane)
+more](https://developer.android.com/develop/ui/compose/layouts/adaptive/canonical-layouts#supporting-pane)
 [Material Design
 website](https://material.io/foundations/layout/canonical-layouts/supporting-pane)
+![](https://developer.android.com/static/images/large-screens/gallery/samples/callouts/supporting-pane.png)
 
-![](/static/images/large-screens/gallery/samples/callouts/supporting-pane.png)
+<br />
+
 
 ## Implement a feed
 
@@ -66,8 +55,9 @@ A feed layout arranges equivalent content elements in a configurable grid for
 quick, convenient viewing of a large amount of content.
 
 [Learn
-more](/develop/ui/compose/layouts/adaptive/canonical-layouts#feed)
+more](https://developer.android.com/develop/ui/compose/layouts/adaptive/canonical-layouts#feed)
 [Material Design
 website](https://material.io/foundations/layout/canonical-layouts/feed)
+![](https://developer.android.com/static/images/large-screens/gallery/samples/callouts/feed.png)
 
-![](/static/images/large-screens/gallery/samples/callouts/feed.png)
+<br />
