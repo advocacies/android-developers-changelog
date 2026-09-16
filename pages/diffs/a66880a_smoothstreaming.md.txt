@@ -1,0 +1,18 @@
+diff --git a/docs/media/media3/exoplayer/smoothstreaming.md b/docs/media/media3/exoplayer/smoothstreaming.md
+index 8c9f2f4..1c738c5 100644
+--- a/docs/media/media3/exoplayer/smoothstreaming.md
++++ b/docs/media/media3/exoplayer/smoothstreaming.md
+@@ -29,11 +29,11 @@ module.
+ 
+ ### Kotlin
+ 
+-    implementation("androidx.media3:media3-exoplayer-smoothstreaming:1.11.0")
++    implementation("androidx.media3:media3-exoplayer-smoothstreaming:1.11.1")
+ 
+ ### Groovy
+ 
+-    implementation "androidx.media3:media3-exoplayer-smoothstreaming:1.11.0"
++    implementation "androidx.media3:media3-exoplayer-smoothstreaming:1.11.1"
+ 
+ You can then create a `MediaItem` for a SmoothStreaming manifest URI and pass it
+ to the player.

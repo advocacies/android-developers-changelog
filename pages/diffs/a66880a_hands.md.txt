@@ -1,0 +1,14 @@
+diff --git a/docs/develop/xr/jetpack-xr-sdk/arcore/hands.md b/docs/develop/xr/jetpack-xr-sdk/arcore/hands.md
+index a2761bd..cb87557 100644
+--- a/docs/develop/xr/jetpack-xr-sdk/arcore/hands.md
++++ b/docs/develop/xr/jetpack-xr-sdk/arcore/hands.md
+@@ -57,8 +57,7 @@ Hand data is available for left and right hands separately. Use each hand's
+ Hand.left(session).state.collect { handState -> // or Hand.right(session)
+     // Hand state has been updated.
+     // Use the state of hand joints to update an entity's position.
+-    renderPlanetAtHandPalm(handState)
+-}
++    renderPlanetAtHandPalm(handStats.kt
+ ```
+ 
+ <br />
