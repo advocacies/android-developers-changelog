@@ -1,38 +1,80 @@
 ---
-title: https://developer.android.com/phones-tablets-foldables
+title: Phones, tablets, and foldables  |  Multidevice  |  Android Developers
 url: https://developer.android.com/phones-tablets-foldables
-source: md.txt
+source: html-scrape
 ---
 
-![](http://developer.android.com/static/phones-tablets-foldables/images/phones-tablets-foldables.svg)
+* [Android Developers](https://developer.android.com/)
+* [Multidevice](https://developer.android.com/multidevice)
+* [Phones, tablets, and foldables](https://developer.android.com/phones-tablets-foldables)
+
+Stay organized with collections
+
+Save and categorize content based on your preferences.
+
+
+
+![](https://developer.android.com/static/phones-tablets-foldables/images/phones-tablets-foldables.svg)
 
 ### Phones, tablets, and foldables
 
-Build for Android mobile devices---phones, tablets, foldables---with Jetpack Compose APIs that automatically optimize your app layouts for different screen sizes and configurations. Support all Android mobile devices with the same engineering and maintenance effort as supporting just mobile phones. [Get started](http://developer.android.com/develop/adaptive-apps) ![](http://developer.android.com/static/phones-tablets-foldables/images/jetpack-compose-apis.svg)
+Build for Android mobile devices—phones, tablets, foldables—with Jetpack Compose APIs that automatically optimize your app layouts for different screen sizes and configurations. Support all Android mobile devices with the same engineering and maintenance effort as supporting just mobile phones.
+
+[Get started](https://developer.android.com/develop/adaptive-apps)
+
+![](https://developer.android.com/static/phones-tablets-foldables/images/jetpack-compose-apis.svg)
 
 ## Jetpack Compose APIs
 
-Jetpack Compose APIs enable you to build once and publish to multiple form factors and display modes, including split-screen mode and desktop windowing. With Compose, when you develop for phones, you're also developing for tablets and the folded and unfolded screens of foldable devices. [![](http://developer.android.com/static/phones-tablets-foldables/images/flexbox.svg)](http://developer.android.com/develop/adaptive-apps/guides/flexbox) API
+Jetpack Compose APIs enable you to build once and publish to multiple form factors and display modes, including split-screen mode and desktop windowing. With Compose, when you develop for phones, you're also developing for tablets and the folded and unfolded screens of foldable devices.
 
-### [Flexbox](http://developer.android.com/develop/adaptive-apps/guides/flexbox)
+[![](https://developer.android.com/static/phones-tablets-foldables/images/flexbox.svg)](https://developer.android.com/develop/adaptive-apps/guides/flexbox)
 
-Build layouts with the web‑standard flexbox model. Arrange elements horizontally or vertically within a container and let Compose handle the sizing and spacing on any display. [Learn more](http://developer.android.com/develop/adaptive-apps/guides/flexbox) [![](http://developer.android.com/static/phones-tablets-foldables/images/grid.svg)](http://developer.android.com/develop/adaptive-apps/guides/grid) API
+API
 
-### [Grid](http://developer.android.com/develop/adaptive-apps/guides/grid)
+### [Flexbox](https://developer.android.com/develop/adaptive-apps/guides/flexbox)
 
-Create a flexible, two-dimensional layout that displays items in a multi‑column or multi‑row grid that adapts the number of columns or rows to the available container size. [Learn more](http://developer.android.com/develop/adaptive-apps/guides/grid) [![](http://developer.android.com/static/phones-tablets-foldables/images/mediaquery.svg)](http://developer.android.com/develop/adaptive-apps/guides/mediaquery) API
+Build layouts with the web‑standard flexbox model. Arrange elements horizontally or vertically within a container and let Compose handle the sizing and spacing on any display.
 
-### [MediaQuery](http://developer.android.com/develop/adaptive-apps/guides/mediaquery)
+[Learn more](https://developer.android.com/develop/adaptive-apps/guides/flexbox)
 
-Determine window width and height, window posture, pointing device precision, keyboard type, whether camera and microphone are supported by the device, and more. [Learn more](http://developer.android.com/develop/adaptive-apps/guides/mediaquery) [![](http://developer.android.com/static/phones-tablets-foldables/images/navigation-3.svg)](http://developer.android.com/guide/navigation/navigation-3) API
+[![](https://developer.android.com/static/phones-tablets-foldables/images/grid.svg)](https://developer.android.com/develop/adaptive-apps/guides/grid)
 
-### [Navigation 3](http://developer.android.com/guide/navigation/navigation-3)
+API
 
-Navigate to and from destinations just by adding and removing items from a list. Fully control the back stack, retain screen state, and display multiple destinations simultaneously. [Learn more](http://developer.android.com/guide/navigation/navigation-3) ![](http://developer.android.com/static/images/cluster-illustrations/material-design.svg)
+### [Grid](https://developer.android.com/develop/adaptive-apps/guides/grid)
+
+Create a flexible, two-dimensional layout that displays items in a multi‑column or multi‑row grid that adapts the number of columns or rows to the available container size.
+
+[Learn more](https://developer.android.com/develop/adaptive-apps/guides/grid)
+
+[![](https://developer.android.com/static/phones-tablets-foldables/images/mediaquery.svg)](https://developer.android.com/develop/adaptive-apps/guides/mediaquery)
+
+API
+
+### [MediaQuery](https://developer.android.com/develop/adaptive-apps/guides/mediaquery)
+
+Determine window width and height, window posture, pointing device precision, keyboard type, whether camera and microphone are supported by the device, and more.
+
+[Learn more](https://developer.android.com/develop/adaptive-apps/guides/mediaquery)
+
+[![](https://developer.android.com/static/phones-tablets-foldables/images/navigation-3.svg)](https://developer.android.com/guide/navigation/navigation-3)
+
+API
+
+### [Navigation 3](https://developer.android.com/guide/navigation/navigation-3)
+
+Navigate to and from destinations just by adding and removing items from a list. Fully control the back stack, retain screen state, and display multiple destinations simultaneously.
+
+[Learn more](https://developer.android.com/guide/navigation/navigation-3)
+
+![](https://developer.android.com/static/images/cluster-illustrations/material-design.svg)
 
 ## Adaptive design
 
-Design optimized layouts that adapt to phones, tablets, and foldables automatically. [Get started](http://developer.android.com/design/ui)
+Design optimized layouts that adapt to phones, tablets, and foldables automatically.
+
+[Get started](https://developer.android.com/design/ui)
 
 ## Latest news
 
