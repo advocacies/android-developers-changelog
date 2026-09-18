@@ -1,0 +1,12 @@
+diff --git a/docs/google/play/billing/subscription-with-addons.md b/docs/google/play/billing/subscription-with-addons.md
+index 1f08f2e..30143c8 100644
+--- a/docs/google/play/billing/subscription-with-addons.md
++++ b/docs/google/play/billing/subscription-with-addons.md
+@@ -402,4 +402,4 @@ For dashboards in the Play Console:
+ 
+ - Order management reflects purchase of subscription with add-ons, and show
+   itemized lists of what was purchased. From order management, you may
+-  revoke, cancel or fully refund a user's purchase.
+\ No newline at end of file
++  cancel or refund a user's purchase.
+\ No newline at end of file
