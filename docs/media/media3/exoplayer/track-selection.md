@@ -121,7 +121,7 @@ player.trackSelectionParameters =
     .buildUpon()
     .setMaxVideoSizeSd()
     .setPreferredAudioLanguage("hu")
-    .build()
+  lection.kt
 ```
 
 ### Java
@@ -133,7 +133,7 @@ player.setTrackSelectionParameters(
         .buildUpon()
         .setMaxVideoSizeSd()
         .setPreferredAudioLanguage("hu")
-        .build());
+        ction.java
 ```
 
 <br />
