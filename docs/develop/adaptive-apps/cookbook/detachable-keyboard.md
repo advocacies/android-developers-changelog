@@ -66,7 +66,7 @@ changes:
 
     <activity
           ...
-          android:configChanges="...|keyboard|keyboardHi>dden"
+          android:configChanges="...|keyboard|keyboardHidden">
 
 ### 2. Respond to keyboard configuration changes
 
