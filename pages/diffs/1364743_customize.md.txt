@@ -1,0 +1,95 @@
+diff --git a/docs/develop/ui/compose/animation/customize.md b/docs/develop/ui/compose/animation/customize.md
+index 2951b90..76965fa 100644
+--- a/docs/develop/ui/compose/animation/customize.md
++++ b/docs/develop/ui/compose/animation/customize.md
+@@ -18,7 +18,8 @@ val alpha: Float by animateFloatAsState(
+     targetValue = if (enabled) 1f else 0.5f,
+     // Configure the animation duration and easing.
+     animationSpec = tween(durationMillis = 300, easing = FastOutSlowInEasing),
+-    label = "alpnippets.kt
++    label = "alpha"
++)
+ ```
+ 
+ <br />
+@@ -47,7 +48,8 @@ val value by animateFloatAsState(
+         dampingRatio = Spring.DampingRatioHighBouncy,
+         stiffness = Spring.StiffnessMedium
+     ),
+-    label = "spring spnippets.kt
++    label = "spring spec"
++)
+ ```
+ 
+ <br />
+@@ -80,7 +82,8 @@ val value by animateFloatAsState(
+         delayMillis = 50,
+         easing = LinearOutSlowInEasing
+     ),
+-    label = "tween delnippets.kt
++    label = "tween delay"
++)
+ ```
+ 
+ <br />
+@@ -109,7 +112,8 @@ val value by animateFloatAsState(
+         0.4f at 75 // ms
+         0.4f at 225 // ms
+     },
+-    label = "keyfranippets.kt
++    label = "keyframe"
++)
+ ```
+ 
+ <br />
+@@ -169,7 +173,8 @@ val value by animateFloatAsState(
+         animation = tween(durationMillis = 300),
+         repeatMode = RepeatMode.Reverse
+     ),
+-    label = "repeatable spnippets.kt
++    label = "repeatable spec"
++)
+ ```
+ 
+ <br />
+@@ -187,7 +192,8 @@ val value by animateFloatAsState(
+         animation = tween(durationMillis = 300),
+         repeatMode = RepeatMode.Reverse
+     ),
+-    label = "infinite repeatabnippets.kt
++    label = "infinite repeatable"
++)
+ ```
+ 
+ <br />
+@@ -208,7 +214,8 @@ animation.
+ val value by animateFloatAsState(
+     targetValue = 1f,
+     animationSpec = snap(delayMillis = 50),
+-    label = "snap spnippets.kt
++    label = "snap spec"
++)
+ ```
+ 
+ <br />
+@@ -242,7 +249,8 @@ fun EasingUsage() {
+         ),
+         label = "custom easing"
+     )
+- nippets.kt
++    // ......
++}
+ ```
+ 
+ <br />
+@@ -310,7 +318,9 @@ fun MyAnimation(targetSize: MySize) {
+                 MySize(vector.v1.dp, vector.v2.dp)
+             }
+         ),
+-        label = "size&quonippets.kt
++        label = "size"
++    )
++}
+ ```
+ 
+ <br />

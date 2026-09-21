@@ -1,0 +1,13 @@
+diff --git a/docs/develop/adaptive-apps/cookbook/detachable-keyboard.md b/docs/develop/adaptive-apps/cookbook/detachable-keyboard.md
+index 5fdce5c..8c5c36d 100644
+--- a/docs/develop/adaptive-apps/cookbook/detachable-keyboard.md
++++ b/docs/develop/adaptive-apps/cookbook/detachable-keyboard.md
+@@ -66,7 +66,7 @@ changes:
+ 
+     <activity
+           ...
+-          android:configChanges="...|keyboard|keyboardHi>dden"
++          android:configChanges="...|keyboard|keyboardHidden">
+ 
+ ### 2. Respond to keyboard configuration changes
+ 
