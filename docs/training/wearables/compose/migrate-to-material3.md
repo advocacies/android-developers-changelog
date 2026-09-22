@@ -391,20 +391,24 @@ the following code to check how to use `EdgeButton` with `ScreenScaffold` and
 val state = rememberTransformingLazyColumnState()
 ScreenScaffold(
     scrollState = state,
-    contentPadding =
-        rememberResponsiveColumnPadding(
-            first = ColumnItemType.ListHeader
-        ),
     edgeButton = {
         EdgeButton(
-            onClick = { }
+            onClick = { },
+            modifier = Modifier.scrollable(
+                state,
+                orientation = Orientation.Vertical,
+                reverseDirection = true,
+                // Apply overscroll to the EdgeButton for proper scrolling behavior.
+                overscrollEffect = rememberOverscrollEffect(),
+            ),
         ) {
             Text(stringResource(R.string.show))
         }
-    }
-){ contentPadding ->
-    TransformingLazyColumn(state = state, contentPadding = contentPadding,){
+    },
+) { contentPadding ->
+    TransformingLazyColumn(state = state, contentPadding = contentPadding) {
         // additional code here
+        // ...
     }
 }
 ```
@@ -461,15 +465,11 @@ override it if you want to customize it by using the `timeText` parameter.
 fun MessageDetail(id: String) {
     // .. Screen level content goes here
     val scrollState = rememberTransformingLazyColumnState()
-
-    val padding = rememberResponsiveColumnPadding(
-        first = ColumnItemType.BodyText
-    )
+    val transformationSpec = rememberTransformationSpec()
 
     ScreenScaffold(
         scrollState = scrollState,
-        contentPadding = padding
-    ) { scaffoldPaddingValues ->
+    ) { contentPadding ->
         // Screen content goes here
         // ...
 ```
