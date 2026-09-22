@@ -1,0 +1,31 @@
+diff --git a/docs/develop/ui/compose/quick-guides/content/add-toggle-switch.md b/docs/develop/ui/compose/quick-guides/content/add-toggle-switch.md
+index 377d571..00c6716 100644
+--- a/docs/develop/ui/compose/quick-guides/content/add-toggle-switch.md
++++ b/docs/develop/ui/compose/quick-guides/content/add-toggle-switch.md
+@@ -31,7 +31,7 @@ higher.
+ ## Implement a switch
+ 
+ The following example is a minimal implementation of the `Switch` composable:
+-<iframe src="https://android.devsite.google/frame/develop/ui/compose/quick-guides/content/add-toggle-switch_ab06cd6b1bc091a3668bce8696d3371e73c65aa4e5d555c79044be5b276f9d12.frame" class="framebox inherit-locale " allow="clipboard-write https://android.devsite.google" allowfullscreen is-upgraded></iframe>
++<iframe src="https://android.devsite.google/frame/develop/ui/compose/quick-guides/content/add-toggle-switch_1e227ebda768b5112e2e6b72af0680f0086935f18ce8f0b36d1acf6a48db04bd.frame" class="framebox inherit-locale " allow="clipboard-write https://android.devsite.google" allowfullscreen is-upgraded></iframe>
+ 
+ ### Results
+ 
+@@ -42,7 +42,7 @@ The following example is a minimal implementation of the `Switch` composable:
+ You can pass any composable for the `thumbContent` parameter to create a custom
+ thumb. The following is an example of a switch that uses a custom icon for its
+ thumb:
+-<iframe src="https://android.devsite.google/frame/develop/ui/compose/quick-guides/content/add-toggle-switch_50f552690c3a12c912979441f936f3c1f954c98a3bae413d6286691e61e8a681.frame" class="framebox inherit-locale " allow="clipboard-write https://android.devsite.google" allowfullscreen is-upgraded></iframe>
++<iframe src="https://android.devsite.google/frame/develop/ui/compose/quick-guides/content/add-toggle-switch_0e87b64b87b86a025b35e62db7aa746a789b398f5f63a62fbd4c8966af491e39.frame" class="framebox inherit-locale " allow="clipboard-write https://android.devsite.google" allowfullscreen is-upgraded></iframe>
+ 
+ ### Results
+ 
+@@ -56,7 +56,7 @@ follows:
+ Use the `colors` parameter to
+ change the color of a switch's thumb and track, taking into account whether the
+ switch is checked.
+-<iframe src="https://android.devsite.google/frame/develop/ui/compose/quick-guides/content/add-toggle-switch_b0a5842d0fd79f6589d7c13300f3c1ee95516c45236c50f22ac9fb340af52a53.frame" class="framebox inherit-locale " allow="clipboard-write https://android.devsite.google" allowfullscreen is-upgraded></iframe>
++<iframe src="https://android.devsite.google/frame/develop/ui/compose/quick-guides/content/add-toggle-switch_6b44f3af1be00b81f4879309d9c7379810ad3c5e235a6c178df329f27da075d3.frame" class="framebox inherit-locale " allow="clipboard-write https://android.devsite.google" allowfullscreen is-upgraded></iframe>
+ 
+ ### Results
+ 

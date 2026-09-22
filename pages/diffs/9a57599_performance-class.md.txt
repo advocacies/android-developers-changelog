@@ -1,0 +1,12 @@
+diff --git a/docs/topic/performance/performance-class.md b/docs/topic/performance/performance-class.md
+index f8b4c87..d1853c8 100644
+--- a/docs/topic/performance/performance-class.md
++++ b/docs/topic/performance/performance-class.md
+@@ -296,4 +296,4 @@ specific performance class requirements are published in the
+ ## Recommended for you
+ 
+ - Note: link text is displayed when JavaScript is off
+-- [App startup time](https://developer.android.com/topic/performance/vitals/launch-time)
+\ No newline at end of file
++- [App startup time](https://developer.android.com/topic/performance/issues/launch-time)
+\ No newline at end of file
