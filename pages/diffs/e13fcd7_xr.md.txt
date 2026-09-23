@@ -1,0 +1,12 @@
+diff --git a/docs/agents/skills/camera/camerax/references/xr.md b/docs/agents/skills/camera/camerax/references/xr.md
+index 37f6d6e..e3fa7d6 100644
+--- a/docs/agents/skills/camera/camerax/references/xr.md
++++ b/docs/agents/skills/camera/camerax/references/xr.md
+@@ -35,6 +35,7 @@ Unlike a 2D viewport, XR passthrough is often system-managed.
+ **\[Key requirement\] Frame synchronization**: Synchronize your application's
+ frame clock with the headset's head-mounted display (HMD) pose.
+ 
++
+ ```kotlin
+ // Example: Querying the spatial pose for the current camera frame
+ val headPose = xrSession.getHeadPose(frameTime)

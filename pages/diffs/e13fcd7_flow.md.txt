@@ -1,0 +1,12 @@
+diff --git a/docs/kotlin/flow.md b/docs/kotlin/flow.md
+index e857566..8577257 100644
+--- a/docs/kotlin/flow.md
++++ b/docs/kotlin/flow.md
+@@ -407,4 +407,4 @@ successful result.
+ 
+ - [Testing Kotlin flows on Android](https://developer.android.com/kotlin/flow/test)
+ - [`StateFlow` and `SharedFlow`](https://developer.android.com/kotlin/flow/stateflow-and-sharedflow)
+-- [Additional resources for Kotlin coroutines and flow](https://developer.android.com/kotlin/coroutines/additional-resources)
+\ No newline at end of file
++- [Flows](https://kotlinlang.org/docs/coroutines-flow.html)
+\ No newline at end of file
