@@ -1,0 +1,13 @@
+diff --git a/docs/games/develop/vulkan/tools-and-advanced-features.md b/docs/games/develop/vulkan/tools-and-advanced-features.md
+index 505f3c3..fa620b4 100644
+--- a/docs/games/develop/vulkan/tools-and-advanced-features.md
++++ b/docs/games/develop/vulkan/tools-and-advanced-features.md
+@@ -4,8 +4,6 @@ url: https://developer.android.com/games/develop/vulkan/tools-and-advanced-featu
+ source: md.txt
+ ---
+ 
+-# Tools and advanced features
+-
+ ## Debuggers
+ 
+ ### Debugging with validation layer

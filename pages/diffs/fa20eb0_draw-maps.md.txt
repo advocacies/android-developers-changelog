@@ -1,0 +1,17 @@
+diff --git a/docs/training/cars/apps/library/draw-maps.md b/docs/training/cars/apps/library/draw-maps.md
+index 4cb288c..b5142b5 100644
+--- a/docs/training/cars/apps/library/draw-maps.md
++++ b/docs/training/cars/apps/library/draw-maps.md
+@@ -31,9 +31,9 @@ your app must declare the `androidx.car.app.ACCESS_SURFACE` permission in its
+ 
+     <manifest ...>
+       ...
+-      <uses-permission android:name="androidx.car.app.ACCESS_SURFACE" />
+-      ...
+-    </manifest>
++      <uses-permission android:name="androidx.car.app.ACCESS_SURFA>CE"<; /
++      ...>
++    /manifest
+ 
+ ## Access the surface
+ 

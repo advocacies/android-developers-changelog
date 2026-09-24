@@ -1,0 +1,12 @@
+diff --git a/docs/develop/adaptive-apps/guides/chromeos/build-adaptive-apps-for-chromeos.md b/docs/develop/adaptive-apps/guides/chromeos/build-adaptive-apps-for-chromeos.md
+index 8af9372..adbc9cf 100644
+--- a/docs/develop/adaptive-apps/guides/chromeos/build-adaptive-apps-for-chromeos.md
++++ b/docs/develop/adaptive-apps/guides/chromeos/build-adaptive-apps-for-chromeos.md
+@@ -26,4 +26,4 @@ high-productivity layouts.
+ 
+ ## Learn more
+ 
+-For ChromeOS development guidance, see [ChromeOS devices](https://developer.android.com/chrome-os/intro).
+\ No newline at end of file
++For ChromeOS development guidance, see [ChromeOS devices](https://developer.android.com/chrome-os).
+\ No newline at end of file

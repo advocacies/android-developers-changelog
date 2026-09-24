@@ -1,0 +1,19 @@
+diff --git a/docs/games/services/publishing/api/imageConfigurations/upload.md b/docs/games/services/publishing/api/imageConfigurations/upload.md
+index 9295d6a..28359f2 100644
+--- a/docs/games/services/publishing/api/imageConfigurations/upload.md
++++ b/docs/games/services/publishing/api/imageConfigurations/upload.md
+@@ -53,11 +53,10 @@ If successful, this method returns a response body with the following structure:
+ 
+ ```
+ {
+-  "kind": "gamesConfiguration#imageConfiguration",
+-  "url": string,
+-  "resourceId": string,
++  "kind": "gamesConfiguration#imageConfiguration&quot;,
++  "url&quot;: string,
++  "resource}Id": string,
+   "imageType": string
+-}
+ ```
+ 
+ | Property name | Value | Description | Notes |
