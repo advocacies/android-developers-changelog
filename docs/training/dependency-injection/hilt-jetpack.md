@@ -1,33 +1,43 @@
 ---
-title: https://developer.android.com/training/dependency-injection/hilt-jetpack
+title: Use Hilt with other Jetpack libraries  |  App architecture  |  Android Developers
 url: https://developer.android.com/training/dependency-injection/hilt-jetpack
-source: md.txt
+source: html-scrape
 ---
+
+* [Android Developers](https://developer.android.com/)
+* [Design & Plan](https://developer.android.com/design)
+* [App architecture](https://developer.android.com/topic/architecture/intro)
+
+# Use Hilt with other Jetpack libraries Stay organized with collections Save and categorize content based on your preferences.
+
+
+
+
 
 Hilt includes extensions for providing classes from other Jetpack libraries.
 Hilt currently supports the following Jetpack components:
 
-- Compose
-- `ViewModel`
-- Navigation
-- WorkManager
+* Compose
+* `ViewModel`
+* Navigation
+* WorkManager
 
 You must add the Hilt dependencies to take advantage of these integrations. For
 more information about adding dependencies, see [Dependency injection with
-Hilt](https://developer.android.com/training/dependency-injection/hilt-android#setup).
+Hilt](/training/dependency-injection/hilt-android#setup).
 
 ## Integration with Jetpack Compose
 
 To see how Hilt integrates with Jetpack Compose, see the Hilt section of
-[Compose and other libraries](https://developer.android.com/jetpack/compose/libraries#hilt).
+[Compose and other libraries](/jetpack/compose/libraries#hilt).
 
 ## Inject ViewModel objects with Hilt
 
-Provide a [`ViewModel`](https://developer.android.com/topic/libraries/architecture/viewmodel) by annotating
+Provide a [`ViewModel`](/topic/libraries/architecture/viewmodel) by annotating
 it with `@HiltViewModel` and using the `@Inject` annotation in the `ViewModel`
 object's constructor.
 
-```kotlin
+```
 @HiltViewModel
 class ExampleViewModel @Inject constructor(
   private val savedStateHandle: SavedStateHandle,
@@ -39,9 +49,9 @@ class ExampleViewModel @Inject constructor(
 
 Then, an activity that is annotated with `@AndroidEntryPoint` can
 get the `ViewModel` instance as normal using `ViewModelProvider` or the
-`by viewModels()` [KTX extensions](https://developer.android.com/kotlin/ktx):
+`by viewModels()` [KTX extensions](/kotlin/ktx):
 
-```kotlin
+```
 @AndroidEntryPoint
 class ExampleActivity : AppCompatActivity() {
   private val exampleViewModel: ExampleViewModel by viewModels()
@@ -58,7 +68,7 @@ and mark dynamic parameters with `@Assisted`. You must also define an
 `@AssistedFactory` interface, which acts as a bridge for Hilt to automatically
 generate the necessary `@ViewModelProvider.Factory`.
 
-```kotlin
+```
 @HiltViewModel(assistedFactory = MyViewModel.Factory::class)
 class MyViewModel @AssistedInject constructor(
     @Assisted val userId: String,
@@ -98,7 +108,7 @@ app/build.gradle
 
 ### Kotlin
 
-```kotlin
+```
 dependencies {
     ...
     implementation("androidx.hilt:hilt-lifecycle-viewmodel-compose:1.3.0")
@@ -107,7 +117,7 @@ dependencies {
 
 ### Groovy
 
-```groovy
+```
 dependencies {
     ...
     implementation 'androidx.hilt:hilt-lifecycle-viewmodel-compose:1.3.0'
@@ -119,11 +129,11 @@ both use the `hiltViewModel` function to automatically retrieve a ViewModel
 scoped to the current navigation destination.
 
 In Navigation 3, navigation destinations are represented by `NavEntry`s.
-[Scope ViewModels to `NavEntry`s](https://developer.android.com/guide/navigation/navigation-3/save-state#scoping-viewmodels) using
+[Scope ViewModels to `NavEntry`s](/guide/navigation/navigation-3/save-state#scoping-viewmodels) using
 `rememberViewModelStoreNavEntryDecorator`. Use `hiltViewModel` inside the
 provider for that `NavEntry` to retrieve the associated ViewModel.
 
-```kotlin
+```
 NavDisplay(...,
   entryDecorators = listOf(..., rememberViewModelStoreNavEntryDecorator()),
   entryProvider = entryProvider {
@@ -136,9 +146,9 @@ NavDisplay(...,
 ```
 
 In Navigation Compose, ViewModels are automatically scoped to navigation
-destinations. For more information, see [Hilt and Navigation](https://developer.android.com/develop/ui/compose/libraries#hilt-navigation).
+destinations. For more information, see [Hilt and Navigation](/develop/ui/compose/libraries#hilt-navigation).
 
-```kotlin
+```
 val viewModel = hiltViewModel()
 ```
 
@@ -152,7 +162,7 @@ app/build.gradle
 
 ### Kotlin
 
-```kotlin
+```
 dependencies {
     implementation("androidx.hilt:hilt-work:1.0.0")
     // When using Kotlin.
@@ -162,7 +172,7 @@ dependencies {
 
 ### Groovy
 
-```groovy
+```
 dependencies {
   ...
   implementation 'androidx.hilt:hilt-work:1.0.0'
@@ -171,13 +181,13 @@ dependencies {
 }
 ```
 
-Inject a [`Worker`](https://developer.android.com/reference/kotlin/androidx/work/Worker) using the
+Inject a [`Worker`](/reference/kotlin/androidx/work/Worker) using the
 `@HiltWorker` annotation in the class and `@AssistedInject` in the `Worker`
 object's constructor. You can use only `@Singleton` or unscoped bindings in
 `Worker` objects. You must also annotate the `Context` and `WorkerParameters`
 dependencies with `@Assisted`:
 
-```kotlin
+```
 @HiltWorker
 class ExampleWorker @AssistedInject constructor(
   @Assisted appContext: Context,
@@ -186,11 +196,11 @@ class ExampleWorker @AssistedInject constructor(
 ) : Worker(appContext, workerParams) { ... }
 ```
 
-Then, have your [`Application`](https://developer.android.com/reference/kotlin/android/app/Application) class
+Then, have your [`Application`](/reference/kotlin/android/app/Application) class
 implement the `Configuration.Provider` interface, inject an instance of
 `HiltWorkFactory`, and pass it into the `WorkManager` configuration as follows:
 
-```kotlin
+```
 @HiltAndroidApp
 class ExampleApplication : Application(), Configuration.Provider {
 
@@ -203,5 +213,6 @@ class ExampleApplication : Application(), Configuration.Provider {
 }
 ```
 
-> [!NOTE]
-> **Note:** Because this customizes the `WorkManager` configuration, you also must remove the default initializer from the `AndroidManifest.xml` file as specified in the [WorkManager docs](https://developer.android.com/topic/libraries/architecture/workmanager/advanced/custom-configuration).
+**Note:** Because this customizes the `WorkManager` configuration, you also must
+remove the default initializer from the `AndroidManifest.xml` file as specified
+in the [WorkManager docs](/topic/libraries/architecture/workmanager/advanced/custom-configuration).
