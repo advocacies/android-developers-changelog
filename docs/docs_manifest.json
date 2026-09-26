@@ -1532,8 +1532,8 @@
     },
     "develop/ui/compose/setup.md": {
       "original_url": "https://developer.android.com/develop/ui/compose/setup",
-      "hash": "8a5cefbcf2265721e6b75fccf1919d133394af6a533600051a81e4d0a2bdba01",
-      "last_updated": "2026-09-02T18:19:27.388569",
+      "hash": "3eb1b46296da50e7646ea515f91c404fa4eb79b041a0e15e8fe17c8e6e137221",
+      "last_updated": "2026-09-26T18:13:45.987792",
       "fetch_method": "md.txt"
     },
     "develop/connectivity/5g.md": {
@@ -2264,8 +2264,8 @@
     },
     "tools.md": {
       "original_url": "https://developer.android.com/tools",
-      "hash": "2ff8e0814333c04e9b71a182c476780eb812c894657c55eb7f42d61920377745",
-      "last_updated": "2026-08-28T23:51:57.633191",
+      "hash": "aad38f82efe91687971dc6bd6080f5e0a07340fbcaf7c962d0f2c6dbf9ce0955",
+      "last_updated": "2026-09-26T18:15:32.219923",
       "fetch_method": "md.txt"
     },
     "google/play/licensing/overview.md": {
@@ -5132,8 +5132,8 @@
     },
     "studio/run/managing-avds.md": {
       "original_url": "https://developer.android.com/studio/run/managing-avds",
-      "hash": "7b76d0e0a5618c2d603a2cf5bc1cdb844f71657314d3e02078697fa6d9418abd",
-      "last_updated": "2026-09-02T18:18:44.596240",
+      "hash": "ed59ee86169b8f67c6dd6fe9c6f35ef5977e21aa8acd5d999ef0b9f527971f95",
+      "last_updated": "2026-09-26T18:12:53.646646",
       "fetch_method": "md.txt"
     },
     "topic/performance/tracing/on-device.md": {
@@ -5642,8 +5642,8 @@
     },
     "tools/sdkmanager.md": {
       "original_url": "https://developer.android.com/tools/sdkmanager",
-      "hash": "63a2d6644b5154313b391047cde90d6a4c032ce9659921f651159f6edfe468fb",
-      "last_updated": "2026-09-03T18:16:17.366712",
+      "hash": "547ae6f32a43ac133eda072535a2db3ce0c9b54143d0ca3126bcf9bd5448813f",
+      "last_updated": "2026-09-26T18:11:48.907124",
       "fetch_method": "md.txt"
     },
     "privacy-and-security/risks/pending-intent.md": {
@@ -6188,8 +6188,8 @@
     },
     "studio/write/lint.md": {
       "original_url": "https://developer.android.com/studio/write/lint",
-      "hash": "a1da00b0b5a4b4328f969afb6f9fec183b34e6b292431b65af0aed29cdd193c4",
-      "last_updated": "2026-09-02T18:22:33.743377",
+      "hash": "61801c08a5d669e757908505d5467f2397a17d3c19cea6fa8b9179d8a90a4f9a",
+      "last_updated": "2026-09-26T18:17:14.564862",
       "fetch_method": "md.txt"
     },
     "develop/ui/compose/kotlin.md": {
@@ -10016,8 +10016,8 @@
     },
     "studio/run/emulator-commandline.md": {
       "original_url": "https://developer.android.com/studio/run/emulator-commandline",
-      "hash": "e8fb20d8bce0d5783798a0f9b5b52dae7043f404b9577705763ac5327d0ee4c3",
-      "last_updated": "2026-09-02T18:18:43.264656",
+      "hash": "0c1d6a26baebd62064da82cfc22298ec7cf14fab03b2cc3dd39d90950ad0f9d5",
+      "last_updated": "2026-09-26T18:13:01.145755",
       "fetch_method": "md.txt"
     },
     "design/ui/ai-glasses/guides/surfaces/ai-in-your-app.md": {
@@ -11900,8 +11900,8 @@
     },
     "studio/preview/compose-screenshot-testing.md": {
       "original_url": "https://developer.android.com/studio/preview/compose-screenshot-testing",
-      "hash": "ef0af35459ea328b21239a1bf48ce7a4212eb856ba3dbe0fa6dd2dac678a7c8e",
-      "last_updated": "2026-09-14T19:47:35.206900",
+      "hash": "28cb4612abbad007d72f93d1c144cefffda447f87bc373aa49fa1767973c50e3",
+      "last_updated": "2026-09-26T18:16:57.825501",
       "fetch_method": "md.txt"
     },
     "design/ui/wear/guides/patterns/media/use-cases.md": {
@@ -14234,9 +14234,9 @@
     },
     "build/publish-library/fused-library.md": {
       "original_url": "https://developer.android.com/build/publish-library/fused-library",
-      "hash": "4b0c0b5c825f12ca9ae1d64fa4130fb01df6421a5902ba8918d98a5f26ab571d",
-      "last_updated": "2026-09-25T19:08:28.767898",
-      "fetch_method": "html-scrape"
+      "hash": "ecdf5c676b31d1e670b6b11a6ecb30b1d16fb0a20c120e273acdb5f40268140f",
+      "last_updated": "2026-09-26T18:16:26.897268",
+      "fetch_method": "md.txt"
     },
     "about/versions/13/behavior-changes-13.md": {
       "original_url": "https://developer.android.com/about/versions/13/behavior-changes-13",
@@ -16010,9 +16010,9 @@
     },
     "studio/releases.md": {
       "original_url": "https://developer.android.com/studio/releases",
-      "hash": "e6a6b72a68240c3abd104a623752776d9866d0c4e502cae73b0803a326a09939",
-      "last_updated": "2026-09-25T19:08:29.955114",
-      "fetch_method": "html-scrape"
+      "hash": "58ce1018670509eb40b0a03e5ab985c38e4268a08159d22e9cbbd732761068aa",
+      "last_updated": "2026-09-26T18:16:24.604970",
+      "fetch_method": "md.txt"
     },
     "games/pgs/android/troubleshooting.md": {
       "original_url": "https://developer.android.com/games/pgs/android/troubleshooting",
@@ -18812,9 +18812,9 @@
     },
     "training/wearables/watch-face-push.md": {
       "original_url": "https://developer.android.com/training/wearables/watch-face-push",
-      "hash": "194ab622f4debe503e4ccb7ec66fc3b90749e987beac1a57a561f4ca63ca2421",
-      "last_updated": "2026-09-25T19:08:32.649867",
-      "fetch_method": "html-scrape"
+      "hash": "c0d14328324518acf4be39f15daedd3a8f4771771a8fc011cc4fc45623fb1098",
+      "last_updated": "2026-09-26T18:16:15.923660",
+      "fetch_method": "md.txt"
     },
     "develop/ui/compose/state.md": {
       "original_url": "https://developer.android.com/develop/ui/compose/state",
@@ -19310,8 +19310,8 @@
     },
     "adaptive-apps.md": {
       "original_url": "https://developer.android.com/adaptive-apps",
-      "hash": "c4ca121af69fe45a1914ec582122e5b6ae12cdf26c4068184bca0d15224676cd",
-      "last_updated": "2026-09-25T19:03:42.965275",
+      "hash": "11bb8c371c7fd5d9bcb76bc6baace99b1fde086405515ca35cbffe37e548f67c",
+      "last_updated": "2026-09-26T18:11:46.989120",
       "fetch_method": "md.txt"
     },
     "develop/ui/views/touch-and-input/stylus-input/ink-api-geometry-apis.md": {
@@ -19640,9 +19640,9 @@
     },
     "training/cars/media/automotive-os.md": {
       "original_url": "https://developer.android.com/training/cars/media/automotive-os",
-      "hash": "9c91cfe33958a9434bbbf1508201f19b30f607511b949f983586fb53a5868ea0",
-      "last_updated": "2026-09-25T19:08:40.602787",
-      "fetch_method": "html-scrape"
+      "hash": "a58361a45a01c0887faf6837b31b68c1a1510275cb5bb9f9f7f80d5c28701eb6",
+      "last_updated": "2026-09-26T18:16:33.586354",
+      "fetch_method": "md.txt"
     },
     "jetpack/androidx/releases/constraintlayout.md": {
       "original_url": "https://developer.android.com/jetpack/androidx/releases/constraintlayout",
@@ -19880,9 +19880,9 @@
     },
     "games/pgs/test.md": {
       "original_url": "https://developer.android.com/games/pgs/test",
-      "hash": "23235f1e9dc9a0112a005f172ae1b2ed27a3b5051c940bcd8840ade8775c1dbc",
-      "last_updated": "2026-09-25T19:08:33.145067",
-      "fetch_method": "html-scrape"
+      "hash": "c78f2389abacfb061625132b956eec643fe58b1f1a3fd2bf37cd19ea17e1b0ef",
+      "last_updated": "2026-09-26T18:16:30.294904",
+      "fetch_method": "md.txt"
     },
     "topic/performance/vitals/anr.md": {
       "original_url": "https://developer.android.com/topic/performance/vitals/anr",
@@ -19958,8 +19958,8 @@
     },
     "tools/adb.md": {
       "original_url": "https://developer.android.com/tools/adb",
-      "hash": "daf677d255b6b429ddeaf9653644487af986b94acd040541e4a94b57e14ca1cf",
-      "last_updated": "2026-09-02T18:21:19.443610",
+      "hash": "9e088b5e760e226eff411d660a45e04ea61ebbe42c6e46ff2df1b35a07fa722e",
+      "last_updated": "2026-09-26T18:15:47.185632",
       "fetch_method": "md.txt"
     },
     "develop/xr/jetpack-xr-sdk/access-hardware-projected-context.md": {
@@ -20906,8 +20906,8 @@
     },
     "studio/debug/layout-inspector.md": {
       "original_url": "https://developer.android.com/studio/debug/layout-inspector",
-      "hash": "7927b0950f23f327f8ca66fc4f2ba368bd4bb3c4462f731866f1f0005c0ef3a8",
-      "last_updated": "2026-09-02T18:20:40.518633",
+      "hash": "f2036014431efcc3a6799928ad0d7a432ad0e173c789b41a67bc74c2f1461718",
+      "last_updated": "2026-09-26T18:15:05.233284",
       "fetch_method": "md.txt"
     },
     "stories/apps/hike.md": {
@@ -23888,8 +23888,8 @@
     },
     "studio/preview/features.md": {
       "original_url": "https://developer.android.com/studio/preview/features",
-      "hash": "13c3fc754a6f21eaa4ed7339c7ba73993ad02e95988f4f06b88f3627daeea6db",
-      "last_updated": "2026-09-24T18:46:44.132586",
+      "hash": "19d7c8b5c538e6b23a57563caad31de59824a30d91e79ad35bf0da457f37d591",
+      "last_updated": "2026-09-26T18:12:19.226065",
       "fetch_method": "md.txt"
     },
     "studio/releases/past-releases/as-3-1-0-release-notes.md": {
@@ -24902,8 +24902,8 @@
     },
     "studio/projects/create-project.md": {
       "original_url": "https://developer.android.com/studio/projects/create-project",
-      "hash": "d1dc8dde614c7911c4471f6fb657001716e623c3dd1e9ed30d27103e6e231291",
-      "last_updated": "2026-09-02T18:18:02.407308",
+      "hash": "84d3e8902fc350b27392b4b4988eb9552045bbd5a605d2bb05de1bb87ab625b1",
+      "last_updated": "2026-09-26T18:12:26.795936",
       "fetch_method": "md.txt"
     },
     "identity/sign-in/single-tap-biometric.md": {
@@ -25760,8 +25760,8 @@
     },
     "studio/gemini/automate-dependency-updates.md": {
       "original_url": "https://developer.android.com/studio/gemini/automate-dependency-updates",
-      "hash": "fc4e2d13ce3e83486eceae589e8ff0c79c2681aaf092c6d32d920e30c8ff2a9b",
-      "last_updated": "2026-09-12T17:37:27.568826",
+      "hash": "2f6367b154d42abab2620cfd55f0c3dc29646d89bf2df70347b50ee92c2b7221",
+      "last_updated": "2026-09-26T18:14:32.702796",
       "fetch_method": "md.txt"
     },
     "jetpack/androidx/releases/room3.md": {
@@ -26246,8 +26246,8 @@
     },
     "studio/gemini/skills.md": {
       "original_url": "https://developer.android.com/studio/gemini/skills",
-      "hash": "9f3fe2217d362bdadb3215f0e25afe12dc45d50d10b23790caf9d377d8878740",
-      "last_updated": "2026-09-11T20:07:17.883241",
+      "hash": "77ae4263d2b20750ac301745eedf4159fdd439cb82b37e1e751326f0e8f828c1",
+      "last_updated": "2026-09-26T18:15:32.541343",
       "fetch_method": "md.txt"
     },
     "agents/skills/r8-analyzer/references/REDUNDANT-RULES.md": {
@@ -28070,8 +28070,8 @@
     },
     "tools/agents/android-skills.md": {
       "original_url": "https://developer.android.com/tools/agents/android-skills",
-      "hash": "83daad37f64f8a3bba2bfc614de3132b4cae18b706bd8b02ccba10a6fcca7686",
-      "last_updated": "2026-09-02T18:20:00.616033",
+      "hash": "13a37d4306698dc2febaac2dd67d4a7184fc04a0b8ed52826f8bf56cb7dfab59",
+      "last_updated": "2026-09-26T18:14:28.450474",
       "fetch_method": "md.txt"
     },
     "identity/digital-credentials/credential-holder/issue-credential.md": {
@@ -28088,8 +28088,8 @@
     },
     "tools/agents/android-cli/release-notes.md": {
       "original_url": "https://developer.android.com/tools/agents/android-cli/release-notes",
-      "hash": "71118a694398cfc001fc82ac49bd1f1381262d401e847f4c66316f565449aeb7",
-      "last_updated": "2026-09-22T18:28:29.471651",
+      "hash": "e1ea5d51eb363dfbacd44584368145917e2f9358ed02b2707b8a63db5a604aba",
+      "last_updated": "2026-09-26T18:13:42.134590",
       "fetch_method": "md.txt"
     },
     "blog/posts/the-fourth-beta-of-android-17.md": {
@@ -28112,8 +28112,8 @@
     },
     "tools/agents/android-cli.md": {
       "original_url": "https://developer.android.com/tools/agents/android-cli",
-      "hash": "d806d9d13cab59dac9db2eb0c5ee10c889a6cb10f41e9880bb885a62515e8b3b",
-      "last_updated": "2026-09-12T17:37:31.627190",
+      "hash": "bc9a182caf19702bdc82ed65dfea6126bc466778e20ef8b78858b1cf2ff1c19b",
+      "last_updated": "2026-09-26T18:14:26.557083",
       "fetch_method": "md.txt"
     },
     "identity/digital-credentials/credential-holder/credential-holder.md": {
@@ -28208,8 +28208,8 @@
     },
     "studio/gemini/access-helpful-resources.md": {
       "original_url": "https://developer.android.com/studio/gemini/access-helpful-resources",
-      "hash": "c9524a3165d428a540eb9a5e1e3faf473bad75be445594ada5677496700e5ef0",
-      "last_updated": "2026-08-31T20:33:13.739323",
+      "hash": "4db42493563c8bc6f3428584ed54480ee7fafcfe5f73f123d13f944a0690a4ea",
+      "last_updated": "2026-09-26T18:12:22.556874",
       "fetch_method": "md.txt"
     },
     "blog/posts/level-up-your-development-with-planning-mode-and-next-edit-prediction-in-android-studio-panda-4.md": {
@@ -30440,8 +30440,8 @@
     },
     "ai/hybrid.md": {
       "original_url": "https://developer.android.com/ai/hybrid",
-      "hash": "da20605d7d8c7879d4a05aaebea08129bc65514a5064f731355711e7f7c78fe5",
-      "last_updated": "2026-08-14T15:47:49.967668",
+      "hash": "44c0deba9e1569d5311b5c41594f6e7df1f96f5248b7c82522d0bbe0ea1bf6f8",
+      "last_updated": "2026-09-26T18:17:10.192265",
       "fetch_method": "md.txt"
     },
     "games/services/cpp/v2/api/struct/pgs-score-submission-result.md": {
@@ -33653,7 +33653,259 @@
       "hash": "5b693637c523c8467f0ebad9d04c2f272dcabde537ed9e16da232ed02d9dcfd0",
       "last_updated": "2026-09-24T18:47:31.755983",
       "fetch_method": "md.txt"
+    },
+    "tools/agents/android-cli/commands/docs.md": {
+      "original_url": "https://developer.android.com/tools/agents/android-cli/commands/docs",
+      "hash": "e95ac59b97cef9ad039540c84bd4fa9521b6437e5cf4b830e71fd224c06308de",
+      "last_updated": "2026-09-26T18:11:42.839299",
+      "fetch_method": "md.txt"
+    },
+    "tools/agents/android-cli/commands/studio_analyze-file.md": {
+      "original_url": "https://developer.android.com/tools/agents/android-cli/commands/studio_analyze-file",
+      "hash": "6ee1d66043187378a4a80d97906414bf59a30641fcc1a235f0557f6c478f53d8",
+      "last_updated": "2026-09-26T18:11:45.570259",
+      "fetch_method": "md.txt"
+    },
+    "tools/agents/android-cli/commands/studio_find-declaration.md": {
+      "original_url": "https://developer.android.com/tools/agents/android-cli/commands/studio_find-declaration",
+      "hash": "84c86df44fb8116dc56aaa6c1e5b2b19e95840cddc666a555de73fc0a88ff4ca",
+      "last_updated": "2026-09-26T18:11:52.047452",
+      "fetch_method": "md.txt"
+    },
+    "tools/agents/android-cli/commands/init.md": {
+      "original_url": "https://developer.android.com/tools/agents/android-cli/commands/init",
+      "hash": "89ce03ed81d541bddc656a7a1511b391b783349984fec8b9c689ddc57f7097ba",
+      "last_updated": "2026-09-26T18:11:56.351733",
+      "fetch_method": "md.txt"
+    },
+    "tools/agents/android-cli/commands/studio.md": {
+      "original_url": "https://developer.android.com/tools/agents/android-cli/commands/studio",
+      "hash": "1b3af961ac4c04c8e291fb3bb32065f97db6146c9e7ad8af91d0f1fa92e7f121",
+      "last_updated": "2026-09-26T18:12:19.559864",
+      "fetch_method": "md.txt"
+    },
+    "tools/agents/android-cli/commands/screen_capture.md": {
+      "original_url": "https://developer.android.com/tools/agents/android-cli/commands/screen_capture",
+      "hash": "0c23f34f9af2d18265c8becaefb182e342db22430f589767e83c6cb9d979f9b1",
+      "last_updated": "2026-09-26T18:12:21.460106",
+      "fetch_method": "md.txt"
+    },
+    "tools/agents/android-cli/commands/skills_add.md": {
+      "original_url": "https://developer.android.com/tools/agents/android-cli/commands/skills_add",
+      "hash": "d354129e17a000ddf798ce4f9b55047f2e986974c68300b5fb592f94d06c8596",
+      "last_updated": "2026-09-26T18:12:24.069484",
+      "fetch_method": "md.txt"
+    },
+    "tools/agents/android-cli/commands.md": {
+      "original_url": "https://developer.android.com/tools/agents/android-cli/commands",
+      "hash": "2700a962ca76b9bec243cb791072bb405af42a8477f03d6fc1a1a33cc62fb320",
+      "last_updated": "2026-09-26T18:12:31.575712",
+      "fetch_method": "md.txt"
+    },
+    "tools/agents/android-cli/commands/skills_list.md": {
+      "original_url": "https://developer.android.com/tools/agents/android-cli/commands/skills_list",
+      "hash": "1097c856c23f0d7cf3e49ace8b2b7ea616154141763509298403e17cb974cc36",
+      "last_updated": "2026-09-26T18:12:32.493499",
+      "fetch_method": "md.txt"
+    },
+    "tools/agents/android-cli/commands/studio_version-lookup.md": {
+      "original_url": "https://developer.android.com/tools/agents/android-cli/commands/studio_version-lookup",
+      "hash": "91391d32baa42284a7f8abdc256b744d3a1208634c87da1fb121412bb8a7113e",
+      "last_updated": "2026-09-26T18:12:33.002714",
+      "fetch_method": "md.txt"
+    },
+    "tools/agents/android-cli/commands/docs_search.md": {
+      "original_url": "https://developer.android.com/tools/agents/android-cli/commands/docs_search",
+      "hash": "7310934924bb878cb0edd45a7cc54567cf1fc0d92d3cf6759a8c27cafc2397fb",
+      "last_updated": "2026-09-26T18:12:54.876293",
+      "fetch_method": "md.txt"
+    },
+    "tools/agents/android-cli/commands/emulator_stop.md": {
+      "original_url": "https://developer.android.com/tools/agents/android-cli/commands/emulator_stop",
+      "hash": "76dddfeeeff9ca38db292e4cc65178477e706400f6148206498d031ad283b461",
+      "last_updated": "2026-09-26T18:12:54.909545",
+      "fetch_method": "md.txt"
+    },
+    "tools/agents/android-cli/commands/info.md": {
+      "original_url": "https://developer.android.com/tools/agents/android-cli/commands/info",
+      "hash": "4fe0044743a855edf8f4cef14bb56baf26fe197e77fb6c72b004a78f7e258a9c",
+      "last_updated": "2026-09-26T18:12:55.008048",
+      "fetch_method": "md.txt"
+    },
+    "tools/agents/android-cli/commands/install.md": {
+      "original_url": "https://developer.android.com/tools/agents/android-cli/commands/install",
+      "hash": "1c754559017ce9c848fcf6a59e7839360737de2c30a162513e77bfd11829a9ab",
+      "last_updated": "2026-09-26T18:12:56.577886",
+      "fetch_method": "md.txt"
+    },
+    "tools/agents/android-cli/commands/emulator_create.md": {
+      "original_url": "https://developer.android.com/tools/agents/android-cli/commands/emulator_create",
+      "hash": "4cadd1817303139fbadef0bb0b9040b6d2e6e5a9bb65bd05bf67c19378f82e65",
+      "last_updated": "2026-09-26T18:12:59.524632",
+      "fetch_method": "md.txt"
+    },
+    "tools/agents/android-cli/commands/screen.md": {
+      "original_url": "https://developer.android.com/tools/agents/android-cli/commands/screen",
+      "hash": "f86da79e1a80075c368df932752a5bf17982be6fccc13f9d2bd6c5dad0b752fe",
+      "last_updated": "2026-09-26T18:12:59.769290",
+      "fetch_method": "md.txt"
+    },
+    "tools/agents/android-cli/commands/run.md": {
+      "original_url": "https://developer.android.com/tools/agents/android-cli/commands/run",
+      "hash": "669a6a88f504fe962c384b77a9fe8ac495aa863c743ad6950fc29de57ea42ad1",
+      "last_updated": "2026-09-26T18:13:01.692912",
+      "fetch_method": "md.txt"
+    },
+    "tools/agents/android-cli/commands/screen_resolve.md": {
+      "original_url": "https://developer.android.com/tools/agents/android-cli/commands/screen_resolve",
+      "hash": "9c449dfc0003e44bb1a010f63cf8cee33413eb21b5896c49168387da1eda1179",
+      "last_updated": "2026-09-26T18:13:11.163343",
+      "fetch_method": "md.txt"
+    },
+    "tools/agents/android-cli/commands/layout.md": {
+      "original_url": "https://developer.android.com/tools/agents/android-cli/commands/layout",
+      "hash": "e999b9bda12a04c2ac3bd5f15411c1d8bd5fd001f7002895b682dd51d240d266",
+      "last_updated": "2026-09-26T18:13:31.444188",
+      "fetch_method": "md.txt"
+    },
+    "tools/agents/android-cli/commands/sdk_update.md": {
+      "original_url": "https://developer.android.com/tools/agents/android-cli/commands/sdk_update",
+      "hash": "248870dc0bdb75a509bf427621f99a5a809ea51d155496bb65eb399144f7e65a",
+      "last_updated": "2026-09-26T18:13:31.490478",
+      "fetch_method": "md.txt"
+    },
+    "tools/agents/android-cli/commands/skills_update.md": {
+      "original_url": "https://developer.android.com/tools/agents/android-cli/commands/skills_update",
+      "hash": "2d6b6d17a54dd0af4fc479911ac4405030d72ccd575b76356431c0a9f1706e77",
+      "last_updated": "2026-09-26T18:13:36.708969",
+      "fetch_method": "md.txt"
+    },
+    "tools/agents/android-cli/commands/sdk_remove.md": {
+      "original_url": "https://developer.android.com/tools/agents/android-cli/commands/sdk_remove",
+      "hash": "99da1e3f60e543b150ab458bf62fd804c89e81198493886e00a266db3f0d15cf",
+      "last_updated": "2026-09-26T18:13:41.500638",
+      "fetch_method": "md.txt"
+    },
+    "tools/agents/android-cli/commands/skills_remove.md": {
+      "original_url": "https://developer.android.com/tools/agents/android-cli/commands/skills_remove",
+      "hash": "97abad0379ff1e34d75858d1598b2b7b9a4c64b9334a3b4f9bbfe650890ccf15",
+      "last_updated": "2026-09-26T18:13:41.998538",
+      "fetch_method": "md.txt"
+    },
+    "tools/agents/android-cli/commands/create.md": {
+      "original_url": "https://developer.android.com/tools/agents/android-cli/commands/create",
+      "hash": "8a8a85150c6c3cdf5e183a3c461a6d3cbdca2a429892b2ff6afdc0643f1eae04",
+      "last_updated": "2026-09-26T18:13:46.011993",
+      "fetch_method": "md.txt"
+    },
+    "tools/agents/android-cli/commands/docs_fetch.md": {
+      "original_url": "https://developer.android.com/tools/agents/android-cli/commands/docs_fetch",
+      "hash": "f4193a7584d6da946898e6bf964a47032b3e68b8b3690e2626b2868d6a36d45d",
+      "last_updated": "2026-09-26T18:13:51.994895",
+      "fetch_method": "md.txt"
+    },
+    "tools/agents/android-cli/commands/describe.md": {
+      "original_url": "https://developer.android.com/tools/agents/android-cli/commands/describe",
+      "hash": "39381c3bd9d7d660aacf1d37b364904e75b6f3f73ec6a32e35e711bee91c382d",
+      "last_updated": "2026-09-26T18:14:23.048562",
+      "fetch_method": "md.txt"
+    },
+    "tools/agents/android-cli/commands/sdk.md": {
+      "original_url": "https://developer.android.com/tools/agents/android-cli/commands/sdk",
+      "hash": "d94188287e25a5262e02c529d84734619b8697e3280c6295ef0bf3b81eec581f",
+      "last_updated": "2026-09-26T18:14:23.174291",
+      "fetch_method": "md.txt"
+    },
+    "tools/agents/android-cli/commands/studio_render-compose-preview.md": {
+      "original_url": "https://developer.android.com/tools/agents/android-cli/commands/studio_render-compose-preview",
+      "hash": "31d3d4f30c3fc6fb684d3244c4c111162eea242f0bfade958d5ff425f18a21ab",
+      "last_updated": "2026-09-26T18:14:27.277431",
+      "fetch_method": "md.txt"
+    },
+    "tools/agents/android-cli/commands/emulator.md": {
+      "original_url": "https://developer.android.com/tools/agents/android-cli/commands/emulator",
+      "hash": "e394d6f169aaf6c7e449ace33bf5a91c5caadbb5d7906cf5d284d87c0d831824",
+      "last_updated": "2026-09-26T18:14:28.148378",
+      "fetch_method": "md.txt"
+    },
+    "tools/agents/android-cli/commands/help.md": {
+      "original_url": "https://developer.android.com/tools/agents/android-cli/commands/help",
+      "hash": "aac3254b794c215260aac3f2c026ed234d4512146e3a494b761f12360a948687",
+      "last_updated": "2026-09-26T18:14:34.293669",
+      "fetch_method": "md.txt"
+    },
+    "tools/agents/android-cli/commands/sdk_list.md": {
+      "original_url": "https://developer.android.com/tools/agents/android-cli/commands/sdk_list",
+      "hash": "70bda0fdf4adcd7e2d0f70b421c69ccc77ecda8aa145bb32b4509514eb0d281e",
+      "last_updated": "2026-09-26T18:14:35.693423",
+      "fetch_method": "md.txt"
+    },
+    "tools/agents/android-cli/commands/sdk_install.md": {
+      "original_url": "https://developer.android.com/tools/agents/android-cli/commands/sdk_install",
+      "hash": "c5de3dea2f325d9385db92959fbaca762a556368cb9a5ad61954b85cf4d8b094",
+      "last_updated": "2026-09-26T18:14:58.690233",
+      "fetch_method": "md.txt"
+    },
+    "tools/agents/android-cli/commands/emulator_start.md": {
+      "original_url": "https://developer.android.com/tools/agents/android-cli/commands/emulator_start",
+      "hash": "8f610760a27d42ab3a27be44ba07f0848ff3d092585ae62dc8c7eb1042418a56",
+      "last_updated": "2026-09-26T18:15:00.352475",
+      "fetch_method": "md.txt"
+    },
+    "tools/agents/android-cli/commands/studio_open-file.md": {
+      "original_url": "https://developer.android.com/tools/agents/android-cli/commands/studio_open-file",
+      "hash": "0d577b127ab1b9e97bd015982e3c3294ceaae938aa086e3e99dd8f63452174ac",
+      "last_updated": "2026-09-26T18:15:00.360463",
+      "fetch_method": "md.txt"
+    },
+    "tools/agents/android-cli/commands/emulator_list.md": {
+      "original_url": "https://developer.android.com/tools/agents/android-cli/commands/emulator_list",
+      "hash": "313c72681177d2e8470c9c2baf4f1b4155aa04717d4185b28b7b29eec48707e2",
+      "last_updated": "2026-09-26T18:15:09.246420",
+      "fetch_method": "md.txt"
+    },
+    "tools/agents/android-cli/commands/skills.md": {
+      "original_url": "https://developer.android.com/tools/agents/android-cli/commands/skills",
+      "hash": "cfdffb7fec9067b1001a61a378ab9769921f5ec37e1aa06f318c6b78f065da94",
+      "last_updated": "2026-09-26T18:15:32.517210",
+      "fetch_method": "md.txt"
+    },
+    "tools/agents/android-cli/commands/studio_find-usages.md": {
+      "original_url": "https://developer.android.com/tools/agents/android-cli/commands/studio_find-usages",
+      "hash": "49665c429d3e4a7f66d62841dfd374f588be3751a742a4735cf91fb5fd6311ce",
+      "last_updated": "2026-09-26T18:15:33.598779",
+      "fetch_method": "md.txt"
+    },
+    "tools/agents/android-cli/commands/emulator_remove.md": {
+      "original_url": "https://developer.android.com/tools/agents/android-cli/commands/emulator_remove",
+      "hash": "935ad50d762992d7eb9c7ba95fc516b80f73bfeb117d64bd64e1f5a70c443157",
+      "last_updated": "2026-09-26T18:15:41.376438",
+      "fetch_method": "md.txt"
+    },
+    "tools/agents/android-cli/commands/update.md": {
+      "original_url": "https://developer.android.com/tools/agents/android-cli/commands/update",
+      "hash": "dae3f15fdd462d59722ab506773f8adf8c048e2c35b0e42c924484095b394683",
+      "last_updated": "2026-09-26T18:15:44.567932",
+      "fetch_method": "md.txt"
+    },
+    "tools/agents/android-cli/commands/skills_find.md": {
+      "original_url": "https://developer.android.com/tools/agents/android-cli/commands/skills_find",
+      "hash": "7dc89c3828fdce3c1070c74414fddd9df3b6d35410e3bdbf9e110896c0ffb9cd",
+      "last_updated": "2026-09-26T18:15:49.283041",
+      "fetch_method": "md.txt"
+    },
+    "tools/agents/android-cli/commands/completion.md": {
+      "original_url": "https://developer.android.com/tools/agents/android-cli/commands/completion",
+      "hash": "63fec5a2138e0ee850c05677ca4dd4222fdee5d488f6c325ef422b4e36ced61d",
+      "last_updated": "2026-09-26T18:16:16.207251",
+      "fetch_method": "md.txt"
+    },
+    "tools/agents/android-cli/commands/studio_check.md": {
+      "original_url": "https://developer.android.com/tools/agents/android-cli/commands/studio_check",
+      "hash": "7c053f49f05151ae28137ec112b409bbcadf64170005a9d8dadcf43124cdf0c9",
+      "last_updated": "2026-09-26T18:16:18.893556",
+      "fetch_method": "md.txt"
     }
   },
-  "last_updated": "2026-09-25T19:09:25.630831"
+  "last_updated": "2026-09-26T18:17:15.105885"
 }
