@@ -1,0 +1,13 @@
+diff --git a/docs/about/versions/13/features/large-screens.md b/docs/about/versions/13/features/large-screens.md
+index 4106e75..e1f0676 100644
+--- a/docs/about/versions/13/features/large-screens.md
++++ b/docs/about/versions/13/features/large-screens.md
+@@ -229,7 +229,7 @@ builds are available.
+ 
+ - [Lenovo](https://dev.lenovo.com/home/puahAndroid13)
+ - [OPPO](https://developers.oppomobile.com/wiki/doc/index#id=123)
+-- [Xiaomi](https://www.mi.com/global/service/support/androidtbeta.html)
++- [Xiaomi](https://www.mi.com/global/support/)
+ 
+ For updates and support, see the resources that each device-maker has linked on
+ their Android 13 Beta site. Note that each partner will provide the Beta updates
