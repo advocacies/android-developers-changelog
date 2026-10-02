@@ -1,0 +1,13 @@
+diff --git a/docs/training/permissions/usage-notes.md b/docs/training/permissions/usage-notes.md
+index 03328b8..07b2b83 100644
+--- a/docs/training/permissions/usage-notes.md
++++ b/docs/training/permissions/usage-notes.md
+@@ -74,8 +74,6 @@ For more information on default handlers, including guidance on showing a
+ default handler prompt to users, [see the guide on permissions used only in
+ default handlers](https://developer.android.com/guide/topics/permissions/default-handlers).
+ 
+-[](https://developer.android.com/training/permissions/know_the_libraries_you're_working_with)
+-
+ ## Know the libraries you're working with
+ 
+ 
