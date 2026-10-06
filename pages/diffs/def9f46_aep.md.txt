@@ -1,0 +1,12 @@
+diff --git a/docs/distribute/aep.md b/docs/distribute/aep.md
+index ff63c3e..9468195 100644
+--- a/docs/distribute/aep.md
++++ b/docs/distribute/aep.md
+@@ -44,4 +44,4 @@ passes this validation and receives program approval.
+ ## FAQs
+ 
+ For a comprehensive list of frequently asked questions, see the [Apps Experience
+-Program marketing page](https://play.google.com/console/about/programs/appsexperience#faq).
+\ No newline at end of file
++Program marketing page](https://google.play/business/programs/appsexperience#faq).
+\ No newline at end of file

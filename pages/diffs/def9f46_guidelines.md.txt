@@ -1,0 +1,13 @@
+diff --git a/docs/games/guidelines.md b/docs/games/guidelines.md
+index 2179c94..6cda389 100644
+--- a/docs/games/guidelines.md
++++ b/docs/games/guidelines.md
+@@ -24,7 +24,7 @@ effect, ensuring you have sufficient time to implement required changes.
+ 
+ This page describes the user experience guidelines. To know more about the
+ Level Up program and benefits, visit the
+-[Google Play Games \| Level Up program page](https://play.google.com/console/about/levelup).
++[Google Play Games \| Level Up program page](https://google.play/business/levelup).
+ 
+ ## User experience guidelines
+ 

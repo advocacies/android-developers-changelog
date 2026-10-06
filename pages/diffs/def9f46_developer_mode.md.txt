@@ -1,0 +1,13 @@
+diff --git a/docs/games/playgames/native-pc/setup/developer_mode.md b/docs/games/playgames/native-pc/setup/developer_mode.md
+index b7b3908..8d88afa 100644
+--- a/docs/games/playgames/native-pc/setup/developer_mode.md
++++ b/docs/games/playgames/native-pc/setup/developer_mode.md
+@@ -70,7 +70,7 @@ that has joined your game's internal testing group. Internal testers will have
+ access to your game before release which is required for some SDK APIs to
+ function. For example, completing a purchase with Play Billing. You may manage
+ your app's internal testers inside of the
+-[Play Console](https://play.google.com/console/about/internal-testing/).
++[Play Console](https://google.play/business/internal-testing/).
+ 
+ ## Next steps
+ 

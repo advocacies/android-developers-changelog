@@ -1,0 +1,13 @@
+diff --git a/docs/google/play/billing/outside-gpb-backend.md b/docs/google/play/billing/outside-gpb-backend.md
+index a289806..8d48469 100644
+--- a/docs/google/play/billing/outside-gpb-backend.md
++++ b/docs/google/play/billing/outside-gpb-backend.md
+@@ -340,7 +340,7 @@ supported.
+ ### Requirements for Play partner programs
+ 
+ Developers participating in partner programs such as the [Play Media Experience
+-Program](https://play.google.com/console/about/programs/mediaprogram/) must provide the
++Program](https://google.play/business/programs/mediaprogram/) must provide the
+ [`transaction_program_code`](https://developers.google.com/android-publisher/api-ref/rest/v3/externaltransactions) when reporting external
+ transactions. If you are an eligible developer, contact your Business
+ Development Manager for more information on how to set this field.
