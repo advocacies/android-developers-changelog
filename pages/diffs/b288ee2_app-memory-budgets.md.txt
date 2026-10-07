@@ -1,0 +1,52 @@
+diff --git a/docs/topic/performance/memory/app-memory-budgets.md b/docs/topic/performance/memory/app-memory-budgets.md
+index 4940a1a..37e0c64 100644
+--- a/docs/topic/performance/memory/app-memory-budgets.md
++++ b/docs/topic/performance/memory/app-memory-budgets.md
+@@ -118,7 +118,7 @@ You can declare multiple `<memory-budget>` clauses to match these states:
+         </application>
+     </manifest>
+ 
+-A base clause without `android:state` is not required; if you only specify
++A base clause without `android:state` isn't required; if you only specify
+ state-specific clauses (for example, `android:state="background"`), other states
+ remain unconstrained by an app budget. When included, a clause without
+ `android:state` acts as the default fallback for unspecified states (such as
+@@ -132,7 +132,7 @@ The platform maps manifest budget states to runtime process states based on
+ 
+ - **`foreground`**: Active, visible user interactions, such as hosting a resumed Activity or maintaining the top app state when the screen turns off.
+ - **`perceptible`** : Workloads that are perceptible to the user without a visible window, such as active media playback, turn-by-turn navigation, camera or microphone capture, active background downloads, or data sync foreground services. While internal platform metrics might label some of these workloads `PROCESS_STATE_IMPORTANT_FOREGROUND`, that internal constant doesn't signify a visible window and is governed by the `perceptible` budget.
+-- **`background`**: Work that is not immediately perceptible to the user, such as background jobs, alarms, broadcast receivers, or cached processes.
++- **`background`**: Work that isn't immediately perceptible to the user, such as background jobs, alarms, broadcast receivers, or the previous Activity after the user navigates away.
+ 
+ The following table shows how runtime importance levels map to manifest states:
+ 
+@@ -140,7 +140,11 @@ The following table shows how runtime importance levels map to manifest states:
+ |---|---|---|
+ | `foreground` | `IMPORTANCE_FOREGROUND` `IMPORTANCE_TOP_SLEEPING` | Resumed visible Activity, top app with screen locked |
+ | `perceptible` | `IMPORTANCE_FOREGROUND_SERVICE` `IMPORTANCE_VISIBLE` | Active media playback, navigation, downloads, or sync foreground services |
+-| `background` | `IMPORTANCE_PERCEPTIBLE` `IMPORTANCE_CANT_SAVE_STATE` `IMPORTANCE_SERVICE` `IMPORTANCE_CACHED` | Background jobs, receivers, background sync, cached processes |
++| `background` | `IMPORTANCE_PERCEPTIBLE` `IMPORTANCE_CANT_SAVE_STATE` `IMPORTANCE_SERVICE` | Background jobs, receivers, background sync, previous Activity or home app in background |
++
++When a process enters a cached state (`IMPORTANCE_CACHED`) with no active
++components, the platform releases its active memory budget and manages its
++memory through standard cached-process reclamation.
+ 
+ #### Inspect your app's process state and budget
+ 
+@@ -299,14 +303,14 @@ as state-specific or hardware-specific clauses).
+ 
+ ### XML attribute reference
+ 
+-All memory size attributes are expressed in Megabytes (MB) and map to Linux
++All memory size attributes are expressed in megabytes (MB) and map to Linux
+ cgroup `memory.current` charge (which excludes shared memory like the Zygote).
+ 
+ | Attribute | Format | Default | Description |
+ |---|---|---|---|
+ | `android:maxMb` | Integer (\> 0) | **Required** | The baseline resident memory budget limit in MB. |
+ | `android:state` | Enum | Any | The process state this budget applies to: `foreground`, `perceptible`, or `background`. If omitted, the clause acts as a fallback for any unspecified state. |
+-| `android:additionalMbPerDensity` | Integer (≥ 0) | `0` | Additional Megabytes to add per unit of [display density ratio](https://developer.android.com/guide/practices/screens_support#density-independence) relative to `mdpi` (1.0x). |
++| `android:additionalMbPerDensity` | Integer (≥ 0) | `0` | Additional megabytes to add per unit of [display density ratio](https://developer.android.com/guide/practices/screens_support#density-independence) relative to `mdpi` (1.0x). |
+ | `android:additionalBytesPerDisplayPixel` | Integer (≥ 0) | `0` | Additional bytes allocated per physical display pixel (Width × Height), useful for surface buffers and bitmaps. |
+ | `android:feature` | String | Any | Restricts the clause to devices declaring specific hardware features: `watch`, `automotive`, or `leanback`. |
+ 
