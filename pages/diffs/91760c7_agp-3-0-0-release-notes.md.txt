@@ -1,0 +1,22 @@
+diff --git a/docs/build/releases/agp-3-0-0-release-notes.md b/docs/build/releases/agp-3-0-0-release-notes.md
+index c8db379..e227ebb 100644
+--- a/docs/build/releases/agp-3-0-0-release-notes.md
++++ b/docs/build/releases/agp-3-0-0-release-notes.md
+@@ -162,7 +162,7 @@ bug fixes and performance improvements.
+                   // For ndk-build, instead use the ndkBuild block.
+                   cmake {
+                       ...
+-                      // Specifies a relative path for outputs from external native
++                      // Specifies a relative path for outputs from external C/C++
+                       // builds. You can specify any path that's not a subdirectory
+                       // of your project's temporary build/ directory.
+                       buildStagingDirectory "./outputs/cmake"
+@@ -181,7 +181,7 @@ bug fixes and performance improvements.
+                   // For ndk-build, instead use the ndkBuild block.
+                   cmake {
+                       ...
+-                      // Specifies a relative path for outputs from external native
++                      // Specifies a relative path for outputs from external C/C++
+                       // builds. You can specify any path that's not a subdirectory
+                       // of your project's temporary build/ directory.
+                       buildStagingDirectory = "./outputs/cmake"
