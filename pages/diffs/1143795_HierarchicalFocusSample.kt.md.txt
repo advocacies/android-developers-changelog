@@ -1,0 +1,15 @@
+diff --git a/docs/agents/skills/wear/wear-compose-m3/references/foundation/HierarchicalFocusSample.kt.md b/docs/agents/skills/wear/wear-compose-m3/references/foundation/HierarchicalFocusSample.kt.md
+index d714136..1d369c2 100644
+--- a/docs/agents/skills/wear/wear-compose-m3/references/foundation/HierarchicalFocusSample.kt.md
++++ b/docs/agents/skills/wear/wear-compose-m3/references/foundation/HierarchicalFocusSample.kt.md
+@@ -72,8 +72,8 @@ fun HierarchicalFocusSample() {
+                         }
+                     )
+             ) {
+-                // This is used a Gray background to the currently focused item, as seen by the
+-                // focus system.
++                // This is used to add a Gray background to the currently focused item, as seen by
++                // the focus system.
+                 var focused by remember { mutableStateOf(false) }
+ 
+                 BasicText(

@@ -1,0 +1,30 @@
+diff --git a/docs/develop/ui/compose/accessibility/traversal.md b/docs/develop/ui/compose/accessibility/traversal.md
+index c793d1a..3ac2133 100644
+--- a/docs/develop/ui/compose/accessibility/traversal.md
++++ b/docs/develop/ui/compose/accessibility/traversal.md
+@@ -65,9 +65,10 @@ fun TraversalGroupDemo() {
+         )
+         CardBox(
+             topSampleText2,
+-              )
++            bottomSampleText2
++        )
+     }
+-}AccessibilitySnippets.kt
++}
+ ```
+ 
+ <br />
+@@ -105,9 +106,10 @@ fun TraversalGroupDemo2() {
+ //      2,
+             topSampleText2,
+             bottomSampleText2,
+-            Modifier.semantics { isT       )
++            Modifier.semantics { isTraversalGroup = true }
++        )
+     }
+-}AccessibilitySnippets.kt
++}
+ ```
+ 
+ <br />
