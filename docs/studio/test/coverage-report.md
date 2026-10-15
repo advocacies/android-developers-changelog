@@ -110,8 +110,8 @@ line:
 
 | Coverage scope | Command | Description | Report location |
 |---|---|---|---|
-| Current module | `./gradlew :module-name:testAllSuites` | Tests all test suites, and generates a unified coverage report for the current module, merging data from all test types. | `path-to-your-project/module-name/build/reports/code_coverage_html_report/` |
-| Current module and dependencies | `./gradlew :module-name:testAllSuitesWithDependencies` | Tests all test suites, and generates a unified coverage report for the current module and all its dependencies. This task is available for app modules and [library modules with publication enabled](https://developer.android.com/build/publish-library). | `path-to-your-project/module-name/build/reports/aggregated_code_coverage_html_report/` |
+| Current module | `./gradlew :module-name:testAllSuites --continue` | Tests all test suites, and generates a unified coverage report for the current module, merging data from all test types. | `path-to-your-project/module-name/build/reports/testAllSuites/coverage-report/` |
+| Current module and dependencies | `./gradlew :module-name:testAllSuitesWithDependencies --continue` | Tests all test suites, and generates a unified coverage report for the current module and all its dependencies. This task is available for app modules and [library modules with publication enabled](https://developer.android.com/build/publish-library). | `path-to-your-project/module-name/build/reports/testAllSuitesWithDependencies/coverage-report/` |
 
 The generated HTML report landing page shows a high-level summary of all
 modules. You can drill down from module to package, from package to class, and
