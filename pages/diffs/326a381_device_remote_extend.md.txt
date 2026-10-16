@@ -1,0 +1,14 @@
+diff --git a/docs/tools/agents/android-cli/commands/device_remote_extend.md b/docs/tools/agents/android-cli/commands/device_remote_extend.md
+index 13494e6..70e0e78 100644
+--- a/docs/tools/agents/android-cli/commands/device_remote_extend.md
++++ b/docs/tools/agents/android-cli/commands/device_remote_extend.md
+@@ -31,7 +31,8 @@ Extends a remote device reservation.
+ 
+ ## Description
+ 
+-`android device remote extend` adds time to a reservation that hasn't ended and prints its new end time.
++`android device remote extend` adds time to a reservation that hasn't ended and
++prints its new end time.
+ 
+ ### Configure extension options
+ 

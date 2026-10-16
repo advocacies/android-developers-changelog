@@ -1,0 +1,15 @@
+diff --git a/docs/tools/agents/android-cli/commands/studio_analyze-file.md b/docs/tools/agents/android-cli/commands/studio_analyze-file.md
+index 33846f1..efdd4e4 100644
+--- a/docs/tools/agents/android-cli/commands/studio_analyze-file.md
++++ b/docs/tools/agents/android-cli/commands/studio_analyze-file.md
+@@ -28,7 +28,9 @@ Analyzes a file in Android Studio.
+ 
+ ## Description
+ 
+-`android studio analyze-file` analyzes a Kotlin, Java, or XML file in Android Studio for compiler errors, warnings, and Android Lint inspections using the IDE's live inspection engine.
++`android studio analyze-file` analyzes a Kotlin, Java, or XML file in Android
++Studio for compiler errors, warnings, and Android Lint inspections using the
++IDE's live inspection engine.
+ 
+ Requires Android Studio Quail 2 or higher.
+ 

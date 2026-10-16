@@ -1,0 +1,25 @@
+diff --git a/docs/tools/agents/android-cli/commands/sdk_list.md b/docs/tools/agents/android-cli/commands/sdk_list.md
+index 870f7c8..9ee5d21 100644
+--- a/docs/tools/agents/android-cli/commands/sdk_list.md
++++ b/docs/tools/agents/android-cli/commands/sdk_list.md
+@@ -35,7 +35,8 @@ Lists installed and available SDK packages.
+ 
+ ## Description
+ 
+-`android sdk list` displays currently installed SDK packages and available packages in the repository.
++`android sdk list` displays currently installed SDK packages and available
++packages in the repository.
+ 
+ ### Filter package listings
+ 
+@@ -47,7 +48,9 @@ Lists installed and available SDK packages.
+ 
+ ### Format package paths
+ 
+-Standard package paths use slashes (`/`) as the delimiter (for example, `platforms/android-34`). Semicolon paths (for example, `platforms;android-34`) are also supported for compatibility.
++Standard package paths use slashes (`/`) as the delimiter (for example,
++`platforms/android-34`). Semicolon paths (for example, `platforms;android-34`)
++are also supported for compatibility.
+ 
+ ### Understand the output
+ 

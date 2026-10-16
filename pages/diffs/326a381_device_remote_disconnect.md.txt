@@ -1,0 +1,15 @@
+diff --git a/docs/tools/agents/android-cli/commands/device_remote_disconnect.md b/docs/tools/agents/android-cli/commands/device_remote_disconnect.md
+index 36dae50..61e23f6 100644
+--- a/docs/tools/agents/android-cli/commands/device_remote_disconnect.md
++++ b/docs/tools/agents/android-cli/commands/device_remote_disconnect.md
+@@ -30,7 +30,9 @@ Disconnects a remote device.
+ 
+ ## Description
+ 
+-`android device remote disconnect` disconnects the device of a reservation from `adb` and stops the background connection. The reservation isn't removed, so you can connect to the device again with `android device remote connect`.
++`android device remote disconnect` disconnects the device of a reservation from
++`adb` and stops the background connection. The reservation isn't removed, so you
++can connect to the device again with `android device remote connect`.
+ 
+ ### Examples
+ 

@@ -1,0 +1,18 @@
+diff --git a/docs/tools/agents/android-cli/commands/skills_remove.md b/docs/tools/agents/android-cli/commands/skills_remove.md
+index 1f2f965..06980e7 100644
+--- a/docs/tools/agents/android-cli/commands/skills_remove.md
++++ b/docs/tools/agents/android-cli/commands/skills_remove.md
+@@ -28,9 +28,11 @@ Removes an installed skill by its ID.
+ 
+ ## Description
+ 
+-`android skills remove` uninstalls one or more skills from your AI agent skill directories.
++`android skills remove` uninstalls one or more skills from your AI agent skill
++directories.
+ 
+-If `--agent` is omitted, the specified skill is removed from all detected agents.
++If `--agent` is omitted, the specified skill is removed from all detected
++agents.
+ 
+ ### Examples
+ 

@@ -1,0 +1,14 @@
+diff --git a/docs/tools/agents/android-cli/commands/device_remote_remove.md b/docs/tools/agents/android-cli/commands/device_remote_remove.md
+index 6f1455c..61b6343 100644
+--- a/docs/tools/agents/android-cli/commands/device_remote_remove.md
++++ b/docs/tools/agents/android-cli/commands/device_remote_remove.md
+@@ -30,7 +30,8 @@ Removes a remote device reservation.
+ 
+ ## Description
+ 
+-`android device remote remove` ends a reservation and releases the device. Remove reservations as soon as you are done to stop being billed for the device.
++`android device remote remove` ends a reservation and releases the device.
++Remove reservations as soon as you are done to stop being billed for the device.
+ 
+ ### Examples
+ 

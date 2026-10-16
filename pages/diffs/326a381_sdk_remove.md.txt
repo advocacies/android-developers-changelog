@@ -1,0 +1,21 @@
+diff --git a/docs/tools/agents/android-cli/commands/sdk_remove.md b/docs/tools/agents/android-cli/commands/sdk_remove.md
+index cd765a6..c5a47c6 100644
+--- a/docs/tools/agents/android-cli/commands/sdk_remove.md
++++ b/docs/tools/agents/android-cli/commands/sdk_remove.md
+@@ -31,11 +31,14 @@ Removes packages from the SDK.
+ 
+ ## Description
+ 
+-`android sdk remove` uninstalls one or more packages from your SDK installation directory.
++`android sdk remove` uninstalls one or more packages from your SDK installation
++directory.
+ 
+ ### Format package paths
+ 
+-Package names use slashes (`/`) as the delimiter (for example, `platforms/android-33`, `build-tools/33.0.0`). Semicolon-delimited paths (`platforms;android-33`) are also supported.
++Package names use slashes (`/`) as the delimiter (for example,
++`platforms/android-33`, `build-tools/33.0.0`). Semicolon-delimited paths
++(`platforms;android-33`) are also supported.
+ 
+ ### Examples
+ 

@@ -1,0 +1,14 @@
+diff --git a/docs/tools/agents/android-cli/commands/skills_find.md b/docs/tools/agents/android-cli/commands/skills_find.md
+index 388a953..d92bb66 100644
+--- a/docs/tools/agents/android-cli/commands/skills_find.md
++++ b/docs/tools/agents/android-cli/commands/skills_find.md
+@@ -26,7 +26,8 @@ Searches for available skills in the repository matching a keyword.
+ 
+ ## Description
+ 
+-`android skills find` searches the official Android skills catalog for skills whose name or description matches the given `keyword`.
++`android skills find` searches the official Android skills catalog for skills
++whose name or description matches the given `keyword`.
+ 
+ ### Examples
+ 
