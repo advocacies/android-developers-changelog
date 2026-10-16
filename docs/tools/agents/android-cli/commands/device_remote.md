@@ -4,7 +4,8 @@ url: https://developer.android.com/tools/agents/android-cli/commands/device_remo
 source: md.txt
 ---
 
-Manage remote physical devices. Includes commands to list, reserve, connect to, and manage remote device reservations.
+Manage remote physical devices. Includes commands to list, reserve, connect to,
+and manage remote device reservations.
 
 ## Usage
 
@@ -34,9 +35,13 @@ Manage remote physical devices. Includes commands to list, reserve, connect to, 
 
 ## Description
 
-The `android device remote` command set reserves physical Android devices hosted in Google data centers and connects them to `adb` on your machine, so that you can install, run, and debug apps on real hardware you don't have.
+The `android device remote` command set reserves physical Android devices hosted
+in Google data centers and connects them to `adb` on your machine, so that you
+can install, run, and debug apps on real hardware you don't have.
 
-Remote devices are billed to a Google Cloud project. Before you start, run `android auth login` to sign in with an account that has access to a project with device streaming enabled.
+Remote devices are billed to a Google Cloud project. Before you start, run
+`android auth login` to sign in with an account that has access to a project
+with device streaming enabled.
 
 ### Typical workflow
 
@@ -51,8 +56,11 @@ Here is the sequence of commands for a typical workflow:
 
 ### Select a project (`--project`)
 
-Pass `--project=<project-id>` to choose the Google Cloud project to use. It's required by most commands that work with reservations. If it's omitted, the command prints the projects that are ready for streaming.
+Pass `--project=<project-id>` to choose the Google Cloud project to use. It's
+required by most commands that work with reservations. If it's omitted, the
+command prints the projects that are ready for streaming.
 
-To avoid passing `--project` every time, add a default to your `~/.androidrc` file. It's picked up by all `android device remote` commands:
+To avoid passing `--project` every time, add a default to your `~/.androidrc`
+file. It's picked up by all `android device remote` commands:
 
     device remote --project my-project

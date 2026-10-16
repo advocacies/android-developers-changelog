@@ -26,7 +26,8 @@ Searches for available skills in the repository matching a keyword.
 
 ## Description
 
-`android skills find` searches the official Android skills catalog for skills whose name or description matches the given `keyword`.
+`android skills find` searches the official Android skills catalog for skills
+whose name or description matches the given `keyword`.
 
 ### Examples
 
