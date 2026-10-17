@@ -1,0 +1,12 @@
+diff --git a/docs/guide/navigation/navigation-3/recipes/deeplinks-custommatcher.md b/docs/guide/navigation/navigation-3/recipes/deeplinks-custommatcher.md
+index d897a57..92e6c99 100644
+--- a/docs/guide/navigation/navigation-3/recipes/deeplinks-custommatcher.md
++++ b/docs/guide/navigation/navigation-3/recipes/deeplinks-custommatcher.md
+@@ -50,7 +50,6 @@ import androidx.navigation3.runtime.NavKey
+ import androidx.navigation3.runtime.deeplink.DeepLinkMatcher
+ import androidx.navigation3.runtime.deeplink.DeepLinkRequest
+ import androidx.navigation3.runtime.deeplink.RequestExtrasKey
+-import androidx.navigation3.runtime.deeplink.get
+ import com.example.nav3recipes.common.deeplink.EntryScreen
+ import com.example.nav3recipes.ui.setEdgeToEdgeConfig
+ import kotlinx.serialization.KSerializer
