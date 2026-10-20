@@ -1,14 +1,8 @@
 ---
-title: Get a model  |  Android Developers
+title: https://developer.android.com/agents/skills/device-ai/litert/litert-lm/references/get-a-model
 url: https://developer.android.com/agents/skills/device-ai/litert/litert-lm/references/get-a-model
-source: html-scrape
+source: md.txt
 ---
-
-# Get a model Stay organized with collections Save and categorize content based on your preferences.
-
-
-
-
 
 This file splits model work between the agent and the user. The agent writes
 app code only. The user picks, downloads, and converts model files.
@@ -22,11 +16,9 @@ second; both run on the CPU and the GPU.
 
 The other files in a repository are other builds of the same model:
 
-* Other quantizations and context lengths. The Qwen3 card lists each file with
-  its quantization, its context length in tokens, and its size.
-* Web builds, named with the `-web` suffix.
-* Builds for one chip, named after it, such as `_Google_Tensor_G5` or
-  `.mediatek.mt6993`. These are NPU builds, which this skill doesn't cover.
+- Other quantizations and context lengths. The Qwen3 card lists each file with its quantization, its context length in tokens, and its size.
+- Web builds, named with the `-web` suffix.
+- Builds for one chip, named after it, such as `_Google_Tensor_G5` or `.mediatek.mt6993`. These are NPU builds, which this skill doesn't cover.
 
 When the user hasn't named a file, use one of the two files in this section.
 Don't pick a web build or an NPU build.
@@ -36,13 +28,10 @@ Don't pick a web build or an NPU build.
 The download URL is `https://huggingface.co/<repo>/resolve/main/<file>`. When
 writing the download code in the app, follow these rules:
 
-* Write the file into `filesDir`, or into `getExternalFilesDir(null)` when the
-  app uses `DownloadManager`.
-* Check the downloaded file size against the size on the model card before
-  passing the path to the engine.
-* Never place the file in `assets/` or in the APK.
-* Never download the model file in the agent's own session. Files are hundreds
-  of MB to a few GB.
+- Write the file into `filesDir`, or into `getExternalFilesDir(null)` when the app uses `DownloadManager`.
+- Check the downloaded file size against the size on the model card before passing the path to the engine.
+- Never place the file in `assets/` or in the APK.
+- Never download the model file in the agent's own session. Files are hundreds of MB to a few GB.
 
 ## When no .litertlm file exists
 

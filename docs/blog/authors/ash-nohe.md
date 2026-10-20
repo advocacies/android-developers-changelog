@@ -4,13 +4,20 @@ url: https://developer.android.com/blog/authors/ash-nohe
 source: md.txt
 ---
 
-1 post ![](https://developer.android.com/static/blog/assets/ash_32bd9f9ed7_1SuI5e.webp)
+2 posts ![](https://developer.android.com/static/blog/assets/ash_32bd9f9ed7_1SuI5e.webp)
 
 # Ash Nohe
 
 Sr. Android Developer Relations Engineer
 
 Core OS Experiences
+- 20 Oct 2026 20 Oct 2026 ![](https://developer.android.com/static/blog/assets/header_068afa9a28_dpgDg.webp) [How-tos](https://developer.android.com/blog/categories/how-tos)
+
+  ## [Remote Compose Gaming Widgets](https://developer.android.com/blog/posts/remote-compose-gaming-widgets)
+
+  [arrow_forward](https://developer.android.com/blog/posts/remote-compose-gaming-widgets) Did you know you can build an interactive Android gaming widget? This blog post series will show you how with a new alpha library called Remote Compose.
+  15 min read
+  - [#Remote Compose](https://developer.android.com/blog/topics/remote-compose)
 - 08 May 2026 08 May 2026 ![](https://developer.android.com/static/blog/assets/AANDDM_Gratitude_2000x1000_7d5a00e6c2_1gGbqL.webp) [Case Studies](https://developer.android.com/blog/categories/case-studies)
 
   ## [Gratitude saw 25% higher retention for widget users](https://developer.android.com/blog/posts/gratitude-saw-25-higher-retention-for-widget-users)

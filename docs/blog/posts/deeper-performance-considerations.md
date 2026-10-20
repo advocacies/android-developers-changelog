@@ -309,16 +309,13 @@ Continue reading
   [Ben Weiss](https://developer.android.com/blog/authors/ben-weiss) • 3 min read
   - [#Performance](https://developer.android.com/blog/topics/performance)
   - [#R8](https://developer.android.com/blog/topics/r8)
-- [![View Toni Heidenreich's profile](https://developer.android.com/static/blog/assets/profile_picture_6cdbf09ec9_Z1i2yxW.webp)](https://developer.android.com/blog/authors/toni-heidenreich) 11 Aug 2026 11 Aug 2026 ![](https://developer.android.com/static/blog/assets/AFD_ABL_101_Media3_1_11_is_out_Strapi_bebd1c9efc_Zpob7z.webp) [How-tos](https://developer.android.com/blog/categories/how-tos)
+- 3 Authors 20 Oct 2026 20 Oct 2026 ![](https://developer.android.com/static/blog/assets/header_068afa9a28_dpgDg.webp) [How-tos](https://developer.android.com/blog/categories/how-tos)
 
-  ## [Media3 1.11 - What's new?](https://developer.android.com/blog/posts/media3-1-11-whats-new)
+  ## [Remote Compose Gaming Widgets](https://developer.android.com/blog/posts/remote-compose-gaming-widgets)
 
-  [arrow_forward](https://developer.android.com/blog/posts/media3-1-11-whats-new) Media3 1.11 is out. Powering the vast majority of top Android media apps, this release brings new features, bug fixes, and improvements across playback, editing, and UI components.
-  [Toni Heidenreich](https://developer.android.com/blog/authors/toni-heidenreich) • 3 min read
-  - [#Media3](https://developer.android.com/blog/topics/media3)
-  - [#Jetpack](https://developer.android.com/blog/topics/jetpack)
-  - [#ExoPlayer](https://developer.android.com/blog/topics/exo-player)
-  - +1 ↩
+  [arrow_forward](https://developer.android.com/blog/posts/remote-compose-gaming-widgets) Did you know you can build an interactive Android gaming widget? This blog post series will show you how with a new alpha library called Remote Compose.
+  [Ash Nohe](https://developer.android.com/blog/authors/ash-nohe), [John Hoford](https://developer.android.com/blog/authors/john-hoford), [Ivy Knight](https://developer.android.com/blog/authors/ivy-knight) • 15 min read
+  - [#Remote Compose](https://developer.android.com/blog/topics/remote-compose)
 Stay in the loop
 
 
