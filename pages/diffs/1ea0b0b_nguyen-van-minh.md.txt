@@ -1,0 +1,80 @@
+diff --git a/docs/blog/authors/nguyen-van-minh.md b/docs/blog/authors/nguyen-van-minh.md
+index 6a68965..d17aa12 100644
+--- a/docs/blog/authors/nguyen-van-minh.md
++++ b/docs/blog/authors/nguyen-van-minh.md
+@@ -1,63 +1,27 @@
+ ---
+-title: Nguyen Van Minh  |  Android Developers' Blog
++title: https://developer.android.com/blog/authors/nguyen-van-minh
+ url: https://developer.android.com/blog/authors/nguyen-van-minh
+-source: html-scrape
++source: md.txt
+ ---
+ 
+-* [Android Developers](https://developer.android.com/)
+-* [Android Developers' Blog](https://developer.android.com/)
+-* [Blog](https://developer.android.com/blog)
+-
+-Stay organized with collections
+-
+-Save and categorize content based on your preferences.
+-
+-
+-
+-1
+-post
+-
+-![](/static/blog/assets/IMG_3245_8f08f1277f_ZMBB6P.webp)
++1 post ![](https://developer.android.com/static/blog/assets/IMG_3245_8f08f1277f_ZMBB6P.webp)
+ 
+ # Nguyen Van Minh
+ 
+ Software Engineer, Grab
+ 
+-Android Client Platform at Tindeer
+-
+-[![X](/static/blog/assets/x.p6tAp2wU.svg)](https://x.com/MinhDev88)
+-
+-[![LinkedIn](/static/blog/assets/linkedin.XPl_U-8i.svg)](https://www.linkedin.com/in/minhnguyenvan/)
+-
+-* 19
+-
+-  Oct
+-  2026
++Android Client Platform at Grab
++- 19 Oct 2026 19 Oct 2026 ![](https://developer.android.com/static/blog/assets/ANDDM_Grab_Strapi_2000x1000_STATIC_1_dbb884ce74_22df0m.webp) [Case Studies](https://developer.android.com/blog/categories/case-studies)
+ 
+-  19
+-
+-  Oct
+-  2026
+-
+-  ![](/static/blog/assets/ANDDM_Grab_Strapi_2000x1000_STATIC_1_dbb884ce74_22df0m.webp)
+-
+-  [Case Studies](/blog/categories/case-studies)
+-
+-  ## [Grab Reduces ANRs by 32% and improves startup time by 35% with R8 and Profile guided optimization](/blog/posts/grab-r8-profile-guided-optimization-anr-startup-time)
+-
+-  [arrow\_forward](/blog/posts/grab-r8-profile-guided-optimization-anr-startup-time)
+-
+-  Grab is Southeast Asia's leading superapp, offering deliveries, mobility, and financial services to millions of users across eight countries through a single app.
++  ## [Grab Reduces ANRs by 32% and improves startup time by 35% with R8 and Profile guided optimization](https://developer.android.com/blog/posts/grab-r8-profile-guided-optimization-anr-startup-time)
+ 
++  [arrow_forward](https://developer.android.com/blog/posts/grab-r8-profile-guided-optimization-anr-startup-time) Grab is Southeast Asia's leading superapp, offering deliveries, mobility, and financial services to millions of users across eight countries through a single app.
+   5 min read
+-  + [#Adaptive & Differentiated](/blog/topics/adaptive-and-differentiated)
+-
++  - [#Adaptive \& Differentiated](https://developer.android.com/blog/topics/adaptive-and-differentiated)
+ Stay in the loop
+ 
++
+ Get the latest Android development insights delivered to your inbox
+ weekly.
+-
+ [mail
+-Subscribe](/subscribe)
+-
+-![A 3D illustration of the Android mascot, wearing a jetpack that's emitting a large cloud of bubbles](/static/blog/assets/rocket-android.CVJQZOf1_1zVtXW.webp)
+\ No newline at end of file
++Subscribe](https://developer.android.com/subscribe) ![A 3D illustration of the Android mascot, wearing a jetpack that's emitting a large cloud of bubbles](https://developer.android.com/static/blog/assets/rocket-android.CVJQZOf1_1zVtXW.webp)
+\ No newline at end of file

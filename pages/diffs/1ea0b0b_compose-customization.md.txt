@@ -1,0 +1,17 @@
+diff --git a/docs/media/media3/ui/compose-customization.md b/docs/media/media3/ui/compose-customization.md
+index 2987b6d..6bb1394 100644
+--- a/docs/media/media3/ui/compose-customization.md
++++ b/docs/media/media3/ui/compose-customization.md
+@@ -88,10 +88,10 @@ centerControls in the middle with the backSecondary, back, central,
+ forward, and forwardSecondary buttons, subtitles near the bottom, and
+ bottomControls along the bottom edge with the above, left,
+ progressSlider, right, and below slots. ContentFrame fills the area
+-behind them.](https://developer.android.com/static/media/media3/ui/images/player-layout-front.svg) **Figure 1.** The slots of the `Player` composable. The center and bottom controls show the slots of `PlayerDefaults.CenterControls` and `PlayerDefaults.BottomControls`. The `topControls`, `above`, and `below` slots are empty by default. ![An exploded view of six stacked layers. From bottom to top: 1,
++behind them.](https://developer.android.com/static/images/reference/androidx/media3/ui/compose/material3/player-layout-front.svg) **Figure 1.** The slots of the `Player` composable. The center and bottom controls show the slots of `PlayerDefaults.CenterControls` and `PlayerDefaults.BottomControls`. The `topControls`, `above`, and `below` slots are empty by default. ![An exploded view of six stacked layers. From bottom to top: 1,
+ PlayerSurface; 2, shutter; 3, artwork; 4, subtitles; 5, errorOverlay; and
+ 6, topControls, centerControls, and bottomControls. Layers 1 to 4 make up
+-ContentFrame, and all six make up Player.](https://developer.android.com/static/media/media3/ui/images/player-layout-layers.svg) **Figure 2.** The layers of the `Player` composable, numbered in the order they're drawn.
++ContentFrame, and all six make up Player.](https://developer.android.com/static/images/reference/androidx/media3/ui/compose/material3/player-layout-layers.svg) **Figure 2.** The layers of the `Player` composable, numbered in the order they're drawn.
+ 
+ For example, you can use `PlayerDefaults.CenterControls` to override just the
+ central play/pause button while leaving the rest of the center controls intact.
