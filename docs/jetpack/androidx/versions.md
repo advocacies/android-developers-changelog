@@ -160,7 +160,7 @@ release notes to view the version updates for all of the artifacts.
 | [loader](https://developer.android.com/jetpack/androidx/releases/loader) | July 29, 2026 | [1.2.0](https://developer.android.com/jetpack/androidx/releases/loader#1.2.0) | - | - | - |
 | [localbroadcastmanager](https://developer.android.com/jetpack/androidx/releases/localbroadcastmanager) | January 12, 2022 | [1.1.0](https://developer.android.com/jetpack/androidx/releases/localbroadcastmanager#1.1.0) | - | - | - |
 | [media](https://developer.android.com/jetpack/androidx/releases/media) | May 06, 2026 | [1.8.0](https://developer.android.com/jetpack/androidx/releases/media#1.8.0) | - | - | - |
-| [media3](https://developer.android.com/jetpack/androidx/releases/media3) | September 10, 2026 | [1.11.1](https://developer.android.com/jetpack/androidx/releases/media3#1.11.1) | - | - | - |
+| [media3](https://developer.android.com/jetpack/androidx/releases/media3) | October 21, 2026 | [1.11.1](https://developer.android.com/jetpack/androidx/releases/media3#1.11.1) | - | - | [1.12.0-alpha01](https://developer.android.com/jetpack/androidx/releases/media3#1.12.0-alpha01) |
 | [mediarouter](https://developer.android.com/jetpack/androidx/releases/mediarouter) | September 23, 2026 | [1.8.1](https://developer.android.com/jetpack/androidx/releases/mediarouter#1.8.1) | - | [1.9.0-beta01](https://developer.android.com/jetpack/androidx/releases/mediarouter#1.9.0-beta01) | - |
 | [multidex](https://developer.android.com/jetpack/androidx/releases/multidex) | December 17, 2018 | [2.0.1](https://developer.android.com/jetpack/androidx/releases/multidex#2.0.1) | - | - | - |
 | [metrics](https://developer.android.com/jetpack/androidx/releases/metrics) | October 8, 2025 | [1.0.0](https://developer.android.com/jetpack/androidx/releases/metrics#1.0.0) | - | - | - |
@@ -197,7 +197,7 @@ release notes to view the version updates for all of the artifacts.
 | [sqlite](https://developer.android.com/jetpack/androidx/releases/sqlite) | September 09, 2026 | [2.7.1](https://developer.android.com/jetpack/androidx/releases/sqlite#2.7.1) | - | - | [2.8.0-alpha01](https://developer.android.com/jetpack/androidx/releases/sqlite#2.8.0-alpha01) |
 | [swiperefreshlayout](https://developer.android.com/jetpack/androidx/releases/swiperefreshlayout) | December 3, 2025 | [1.2.0](https://developer.android.com/jetpack/androidx/releases/swiperefreshlayout#1.2.0) | - | - | - |
 | [test.backup](https://developer.android.com/jetpack/androidx/releases/test_backup) | October 07, 2026 | - | - | - | [1.0.0-alpha02](https://developer.android.com/jetpack/androidx/releases/test_backup#1.0.0-alpha02) |
-| [test (\*)](https://developer.android.com/jetpack/androidx/releases/test) | January 14, 2026 | [1.0.1](https://developer.android.com/jetpack/androidx/releases/test#1.0.1) | - | - | [1.1.0-alpha04](https://developer.android.com/jetpack/androidx/releases/test#1.1.0-alpha04) |
+| [test (\*)](https://developer.android.com/jetpack/androidx/releases/test) | October 15, 2026 | [1.0.1](https://developer.android.com/jetpack/androidx/releases/test#1.0.1) | - | - | [1.1.0-alpha04](https://developer.android.com/jetpack/androidx/releases/test#1.1.0-alpha04) |
 | [test.ext](https://developer.android.com/jetpack/androidx/releases/test-ext) | May 19, 2026 | - | - | - | [1.0.0-alpha03](https://developer.android.com/jetpack/androidx/releases/test-ext#1.0.0-alpha03) |
 | [test.uiautomator](https://developer.android.com/jetpack/androidx/releases/test-uiautomator) | July 01, 2026 | [2.4.0](https://developer.android.com/jetpack/androidx/releases/test-uiautomator#2.4.0) | - | - | - |
 | [text-vertical](https://developer.android.com/jetpack/androidx/releases/text-vertical) | September 23, 2026 | - | - | [1.0.0-beta02](https://developer.android.com/jetpack/androidx/releases/text-vertical#1.0.0-beta02) | - |
@@ -235,4 +235,4 @@ release notes to view the version updates for all of the artifacts.
 
 (\*) This library has multiple artifacts. See its release notes for more information.  
 
-Last updated: October 12, 2026
+Last updated: October 15, 2026

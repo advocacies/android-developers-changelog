@@ -16,6 +16,10 @@ to 2018.
 To view the current versions for every component,
 see the [versions page](https://developer.android.com/jetpack/androidx/versions).
 
+## October 21, 2026
+
+- [Media3 Version 1.12.0-alpha01](https://developer.android.com/jetpack/androidx/releases/media3#1.12.0-alpha01)
+
 ## October 15, 2026
 
 - [Test Core Version 1.8.0-alpha01](https://developer.android.com/jetpack/androidx/releases/test#core-1.8.0-alpha01)

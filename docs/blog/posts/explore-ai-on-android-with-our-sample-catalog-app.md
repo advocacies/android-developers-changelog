@@ -63,13 +63,6 @@ Written by:
   [read_more
   View profile](https://developer.android.com/blog/authors/ivy-knight) ![View Ivy Knight's profile](https://developer.android.com/static/blog/assets/Ivy_Knight_3071ce592d_1s13kN.webp) ![View Ivy Knight's profile](https://developer.android.com/static/blog/assets/Ivy_Knight_3071ce592d_1s13kN.webp)
 Continue reading
-- 3 Authors 20 Oct 2026 20 Oct 2026 ![](https://developer.android.com/static/blog/assets/header_068afa9a28_dpgDg.webp) [How-tos](https://developer.android.com/blog/categories/how-tos)
-
-  ## [Remote Compose Gaming Widgets](https://developer.android.com/blog/posts/remote-compose-gaming-widgets)
-
-  [arrow_forward](https://developer.android.com/blog/posts/remote-compose-gaming-widgets) Did you know you can build an interactive Android gaming widget? This blog post series will show you how with a new alpha library called Remote Compose.
-  [Ash Nohe](https://developer.android.com/blog/authors/ash-nohe), [John Hoford](https://developer.android.com/blog/authors/john-hoford), [Ivy Knight](https://developer.android.com/blog/authors/ivy-knight) • 15 min read
-  - [#Remote Compose](https://developer.android.com/blog/topics/remote-compose)
 - 3 Authors 21 Jul 2026 21 Jul 2026 ![](https://developer.android.com/static/blog/assets/features_in_Jetpacker_Features_with_Firebase_AI_Logic_Strapi_0a6fbb7edb_28oUwB.webp) [How-tos](https://developer.android.com/blog/categories/how-tos)
 
   ## [Build intelligent Android apps: Cloud and hybrid inference](https://developer.android.com/blog/posts/build-intelligent-android-apps-cloud-and-hybrid-inference)
@@ -87,6 +80,13 @@ Continue reading
   - [#Jetpack](https://developer.android.com/blog/topics/jetpack)
   - [#ExoPlayer](https://developer.android.com/blog/topics/exo-player)
   - +1 ↩
+- [![View Caren Chang's profile](https://developer.android.com/static/blog/assets/Caren_Chang_e58d793559_Z7OUJq.webp)](https://developer.android.com/blog/authors/caren-chang) 21 Jul 2026 21 Jul 2026 ![](https://developer.android.com/static/blog/assets/0625_Building_Jet_Packer_with_Intelligent_On_Device_features_Strapi_v02_3f5a8b17b0_1hYFMP.webp) [How-tos](https://developer.android.com/blog/categories/how-tos)
+
+  ## [Build intelligent Android apps: On-device inference](https://developer.android.com/blog/posts/build-intelligent-android-apps-on-device-inference)
+
+  [arrow_forward](https://developer.android.com/blog/posts/build-intelligent-android-apps-on-device-inference) Welcome back to the blog post series "Build intelligent Android apps" where we take a basic Android app and transform it into a personalized, intelligent, and agentic experience. In our previous post we introduced Jetpacker, the demo app we'll use throughout this series.
+  [Caren Chang](https://developer.android.com/blog/authors/caren-chang) • 6 min read
+  - [#Intelligent Apps](https://developer.android.com/blog/topics/intelligent-apps)
 Stay in the loop
 
 

@@ -91,13 +91,6 @@ Written by:
   [read_more
   View profile](https://developer.android.com/blog/authors/esteban-de-la-canal) ![View Esteban de la Canal's profile](https://developer.android.com/static/blog/assets/estebandlc_profile_800x800_1d536f02a7_QwHh2.webp) ![View Esteban de la Canal's profile](https://developer.android.com/static/blog/assets/estebandlc_profile_800x800_1d536f02a7_QwHh2.webp)
 Continue reading
-- 3 Authors 20 Oct 2026 20 Oct 2026 ![](https://developer.android.com/static/blog/assets/header_068afa9a28_dpgDg.webp) [How-tos](https://developer.android.com/blog/categories/how-tos)
-
-  ## [Remote Compose Gaming Widgets](https://developer.android.com/blog/posts/remote-compose-gaming-widgets)
-
-  [arrow_forward](https://developer.android.com/blog/posts/remote-compose-gaming-widgets) Did you know you can build an interactive Android gaming widget? This blog post series will show you how with a new alpha library called Remote Compose.
-  [Ash Nohe](https://developer.android.com/blog/authors/ash-nohe), [John Hoford](https://developer.android.com/blog/authors/john-hoford), [Ivy Knight](https://developer.android.com/blog/authors/ivy-knight) • 15 min read
-  - [#Remote Compose](https://developer.android.com/blog/topics/remote-compose)
 - [![View Toni Heidenreich's profile](https://developer.android.com/static/blog/assets/profile_picture_6cdbf09ec9_Z1i2yxW.webp)](https://developer.android.com/blog/authors/toni-heidenreich) 11 Aug 2026 11 Aug 2026 ![](https://developer.android.com/static/blog/assets/AFD_ABL_101_Media3_1_11_is_out_Strapi_bebd1c9efc_Zpob7z.webp) [How-tos](https://developer.android.com/blog/categories/how-tos)
 
   ## [Media3 1.11 - What's new?](https://developer.android.com/blog/posts/media3-1-11-whats-new)
@@ -114,6 +107,13 @@ Continue reading
 
   [arrow_forward](https://developer.android.com/blog/posts/build-intelligent-android-apps-on-device-inference) Welcome back to the blog post series "Build intelligent Android apps" where we take a basic Android app and transform it into a personalized, intelligent, and agentic experience. In our previous post we introduced Jetpacker, the demo app we'll use throughout this series.
   [Caren Chang](https://developer.android.com/blog/authors/caren-chang) • 6 min read
+  - [#Intelligent Apps](https://developer.android.com/blog/topics/intelligent-apps)
+- [![View Jolanda Verhoef's profile](https://developer.android.com/static/blog/assets/jolanda_b0e2beee3e_1gwMmp.webp)](https://developer.android.com/blog/authors/jolanda-verhoef) 21 Jul 2026 21 Jul 2026 ![](https://developer.android.com/static/blog/assets/0713_Jetpacker_Strapi_d07d6f2d4b_Z2d3f6n.webp) [How-tos](https://developer.android.com/blog/categories/how-tos)
+
+  ## [Build intelligent Android apps: Introduction to Jetpacker](https://developer.android.com/blog/posts/build-intelligent-android-apps-introduction-to-jetpacker)
+
+  [arrow_forward](https://developer.android.com/blog/posts/build-intelligent-android-apps-introduction-to-jetpacker) Jetpacker is a technical showcase app that our team built from the ground up for this year's Google I/O (built using Antigravity). At its core, Jetpacker helps users plan, explore, and enjoy their next big adventure.
+  [Jolanda Verhoef](https://developer.android.com/blog/authors/jolanda-verhoef) • 4 min read
   - [#Intelligent Apps](https://developer.android.com/blog/topics/intelligent-apps)
 Stay in the loop
 

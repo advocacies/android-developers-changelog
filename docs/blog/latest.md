@@ -7,13 +7,6 @@ source: md.txt
 # The Latest
 
 Stay up to date with the latest announcements, feature rollouts, and updates across Android tools, libraries, and platforms.
-- 3 Authors 20 Oct 2026 20 Oct 2026 ![](https://developer.android.com/static/blog/assets/header_068afa9a28_dpgDg.webp) [How-tos](https://developer.android.com/blog/categories/how-tos)
-
-  ## [Remote Compose Gaming Widgets](https://developer.android.com/blog/posts/remote-compose-gaming-widgets)
-
-  [arrow_forward](https://developer.android.com/blog/posts/remote-compose-gaming-widgets) Did you know you can build an interactive Android gaming widget? This blog post series will show you how with a new alpha library called Remote Compose.
-  [Ash Nohe](https://developer.android.com/blog/authors/ash-nohe), [John Hoford](https://developer.android.com/blog/authors/john-hoford), [Ivy Knight](https://developer.android.com/blog/authors/ivy-knight) • 15 min read
-  - [#Remote Compose](https://developer.android.com/blog/topics/remote-compose)
 - 3 Authors 19 Oct 2026 19 Oct 2026 ![](https://developer.android.com/static/blog/assets/ANDDM_Grab_Strapi_2000x1000_STATIC_1_dbb884ce74_22df0m.webp) [Case Studies](https://developer.android.com/blog/categories/case-studies)
 
   ## [Grab Reduces ANRs by 32% and improves startup time by 35% with R8 and Profile guided optimization](https://developer.android.com/blog/posts/grab-r8-profile-guided-optimization-anr-startup-time)
@@ -157,6 +150,18 @@ Stay up to date with the latest announcements, feature rollouts, and updates acr
   [Markus Vill](https://developer.android.com/blog/authors/markus-vill), [Sean Keys](https://developer.android.com/blog/authors/sean-keys), [István Nádor](https://developer.android.com/blog/authors/istvan-nador) • 5 min read
   - [#Android Auto](https://developer.android.com/blog/topics/android-auto)
   - [#Security](https://developer.android.com/blog/topics/security)
+- [![View Blair Harmon's profile](https://developer.android.com/static/blog/assets/unnamed_16_ca18834db7_27tpBh.webp)](https://developer.android.com/blog/authors/blair-harmon) 19 Aug 2026 19 Aug 2026 ![](https://developer.android.com/static/blog/assets/ABL_116_Preparing_your_app_for_expanded_memory_limits_strapi_0aac62fa12_1o8xIO.webp) [Product News](https://developer.android.com/blog/categories/product-news)
+
+  ## [Preparing your app for broader memory limits](https://developer.android.com/blog/posts/preparing-your-app-for-broader-memory-limits)
+
+  [arrow_forward](https://developer.android.com/blog/posts/preparing-your-app-for-broader-memory-limits) A great user experience is central to Android's mission, and delivering on that promise requires keeping devices fast, responsive, and reliable.
+  [Blair Harmon](https://developer.android.com/blog/authors/blair-harmon) • 2 min read
+  - [#App Memory Limits](https://developer.android.com/blog/topics/app-memory-limits)
+  - [#Android Vitals](https://developer.android.com/blog/topics/android-vitals)
+  - [#Multi-Process Architecture](https://developer.android.com/blog/topics/multi-process-architecture)
+  - [#Android 17](https://developer.android.com/blog/topics/android-17)
+  - [#Performance](https://developer.android.com/blog/topics/performance)
+  - +3 ↩
 <button class="adb--button adb--standard adb--outlined adb--disabled adb--global-hover-button astro-vnzlvqnm" disabled=""> arrow_back </button>
 
 #### Page 1
@@ -238,13 +243,13 @@ Stay up to date with the latest announcements, feature rollouts, and updates acr
 - [#Compose-first](https://developer.android.com/blog/topics/compose-first)
 - [#Google Play subscriptions](https://developer.android.com/blog/topics/google-play-subscriptions)
 - [#Android Bench](https://developer.android.com/blog/topics/android-bench)
-- [#Remote Compose](https://developer.android.com/blog/topics/remote-compose)
 - [#authentication](https://developer.android.com/blog/topics/authentication)
 - [#CredentialManager](https://developer.android.com/blog/topics/credential-manager)
 - [#Large Screens](https://developer.android.com/blog/topics/large-screens)
 - [#Layouts](https://developer.android.com/blog/topics/layouts)
 - [#Window Size Classes](https://developer.android.com/blog/topics/blog-topic)
 - [#usage-based billing GenAI apps](https://developer.android.com/blog/topics/usage-based-billing-gen-ai-apps)
+- [#Remote Compose](https://developer.android.com/blog/topics/remote-compose)
 Stay in the loop
 
 
