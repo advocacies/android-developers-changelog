@@ -1,0 +1,20 @@
+diff --git a/docs/blog/authors/16.md b/docs/blog/authors/16.md
+index eca33e3..eba319e 100644
+--- a/docs/blog/authors/16.md
++++ b/docs/blog/authors/16.md
+@@ -6,15 +6,6 @@ source: md.txt
+ 
+ # Authors
+ 
+--
+-
+-  ## [Vijaya Kaza](https://developer.android.com/blog/authors/vijaya-kaza)
+-
+-  ###### VP Product
+-
+-  [read_more
+-  1 post](https://developer.android.com/blog/authors/vijaya-kaza) [read_more
+-  1 post](https://developer.android.com/blog/authors/vijaya-kaza) ![View Vijaya Kaza's profile](https://developer.android.com/static/blog/assets/Vijaya_Kaza_38a0089092_2tkw6z.webp) ![View Vijaya Kaza's profile](https://developer.android.com/static/blog/assets/Vijaya_Kaza_38a0089092_2tkw6z.webp)
+ -
+ 
+   ## [Vinisha Athwani](https://developer.android.com/blog/authors/vinisha-athwani)
