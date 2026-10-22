@@ -1,0 +1,121 @@
+diff --git a/docs/android-performance-analyzer/frame-profiler/capture.md b/docs/android-performance-analyzer/frame-profiler/capture.md
+index b90efe0..14992f6 100644
+--- a/docs/android-performance-analyzer/frame-profiler/capture.md
++++ b/docs/android-performance-analyzer/frame-profiler/capture.md
+@@ -1,37 +1,64 @@
+ ---
+-title: https://developer.android.com/android-performance-analyzer/frame-profiler/capture
++title: Capture a frame profile  |  Android Performance Analyzer  |  Android Developers
+ url: https://developer.android.com/android-performance-analyzer/frame-profiler/capture
+-source: md.txt
++source: html-scrape
+ ---
+ 
++Android Performance Analyzer is currently intended for profiling games and Vulkan-based graphics. For all other apps, use the [profilers in Android Studio](/studio/profile).
++
++* [Home](https://developer.android.com/)
++* [Android Performance Analyzer](https://developer.android.com/android-performance-analyzer)
++* [Google Play](https://developer.android.com/distribute)
++* [Guides](https://developer.android.com/games/guides)
++
++# Capture a frame profile Stay organized with collections Save and categorize content based on your preferences.
++
++
++
++
++
+ The Frame Profiler in Android Performance Analyzer extracts performance data for a single frame in your game. This
+ guide provides in-depth information about how to configure and run a frame
+ profile that meets your needs.
+ 
+-> [!NOTE]
+-> **Note:** Make sure your computer, test device, and app under test meet the listed [requirements](https://developer.android.com/android-performance-analyzer/frame-profiler/quickstart#requirements) before attempting to record a trace.
++**Note:** Make sure your computer, test device, and app under test meet the listed
++[requirements](/android-performance-analyzer/frame-profiler/quickstart#requirements) before attempting to record a trace.
+ 
+ ## Capture a profile
+ 
+ After you've created a new project or opened an existing one, you can click the
+ **Record Trace** button on the left side of the title bar to open the **New
+ Capture** window.
+-![](https://developer.android.com/static/android-performance-analyzer/images/new-capture-window.png) **Figure 1** : A screenshot of the **New Capture** window.
++
++![](/static/android-performance-analyzer/images/new-capture-window.png)
++
++
++**Figure 1**: A screenshot of the **New Capture**
++window.
+ 
+ Select **Frame** and click **Configure** to open the **Configure a GFXR
+ Recording** window.
+-![](https://developer.android.com/static/android-performance-analyzer/images/gfxr-recording.png) **Figure 2** : A screenshot of the **Configure a GFXR
++
++![](/static/android-performance-analyzer/images/gfxr-recording.png)
++
++
++**Figure 2**: A screenshot of the **Configure a GFXR
+ Recording** window.
+ 
+ From this window, you can configure your profiling options. When you're
+ finished, click **OK** to open the **Control Recording** window. The app under
+ test starts on your testing device automatically.
+-![](https://developer.android.com/static/android-performance-analyzer/images/frame-control-recording.png) **Figure 3** : A screenshot of the **Control Recording** window.
+ 
+-When you reach the frame that you want to profile, click **Start** . Android Performance Analyzer
++![](/static/android-performance-analyzer/images/frame-control-recording.png)
++
++
++**Figure 3**: A screenshot of the **Control Recording**
++window.
++
++When you reach the frame that you want to profile, click **Start**. Android Performance Analyzer
+ retrieves the data for that single frame, then opens the output file in the
+-[trace view](https://developer.android.com/android-performance-analyzer/frame-profiler/view) automatically. The data in the frame profile appears as
+-the Frame Profiler finishes each [task](https://developer.android.com/android-performance-analyzer/frame-profiler/view#task-details).
++[trace view](/android-performance-analyzer/frame-profiler/view) automatically. The data in the frame profile appears as
++the Frame Profiler finishes each [task](/android-performance-analyzer/frame-profiler/view#task-details).
+ 
+ ## Configure a profile
+ 
+@@ -41,7 +68,7 @@ profile prior to running it.
+ ### Device
+ 
+ The **Device** drop-down in the **Device** section selects a connected device
+-to use for testing. Android Performance Analyzer runs [device validation](https://developer.android.com/android-performance-analyzer/frame-profiler/quickstart#device-reqs) on the
++to use for testing. Android Performance Analyzer runs [device validation](/android-performance-analyzer/frame-profiler/quickstart#device-reqs) on the
+ selected device. When validation is complete, the drop-down displays either a
+ green checkmark to indicate successful validation or a **Retry** button.
+ 
+@@ -57,8 +84,8 @@ only debuggable apps, and the right drop-down selects the app package to run.
+ The **Activity** drop-down selects a specific activity from the app. You can
+ also select *Default* to use the app's default startup activity.
+ 
+-If you picked an activity other than *Default* , you can use the **Additional
+-arguments** field to [add arguments](https://developer.android.com/tools/adb#am).
++If you picked an activity other than *Default*, you can use the **Additional
++arguments** field to [add arguments](/tools/adb#am).
+ 
+ ### Output
+ 
+@@ -66,13 +93,14 @@ The **Output file name** field in the **Output** section lets you define a
+ custom name for the trace file generated by the current trace. You can also use
+ the following variables in a custom trace file name:
+ 
+-- `${device_model}` - The model of the testing device.
+-- `${device_name}` - The name of the testing device, as shown in **About phone \>
++* `${device_model}` - The model of the testing device.
++* `${device_name}` - The name of the testing device, as shown in **About phone >
+   Device name**.
+-- `${device_serial}` - The serial number of the testing device.
+-- `${package_name}` - The package name for the app under test.
+-- `${package_name_short}` - A shortened form of the package name for the app under test.
+-- `${timestamp}` - A timestamp indicating when the trace file was created.
++* `${device_serial}` - The serial number of the testing device.
++* `${package_name}` - The package name for the app under test.
++* `${package_name_short}` - A shortened form of the package name for the app
++  under test.
++* `${timestamp}` - A timestamp indicating when the trace file was created.
+ 
+ You can preview the final filename after variable substitutions below the
+ **Output file name** field.
+\ No newline at end of file

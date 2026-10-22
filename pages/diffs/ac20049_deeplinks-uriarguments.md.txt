@@ -1,0 +1,103 @@
+diff --git a/docs/guide/navigation/navigation-3/recipes/deeplinks-uriarguments.md b/docs/guide/navigation/navigation-3/recipes/deeplinks-uriarguments.md
+index 8693272..57c5092 100644
+--- a/docs/guide/navigation/navigation-3/recipes/deeplinks-uriarguments.md
++++ b/docs/guide/navigation/navigation-3/recipes/deeplinks-uriarguments.md
+@@ -1,9 +1,20 @@
+ ---
+-title: https://developer.android.com/guide/navigation/navigation-3/recipes/deeplinks-uriarguments
++title: App architecture  |  Android Developers
+ url: https://developer.android.com/guide/navigation/navigation-3/recipes/deeplinks-uriarguments
+-source: md.txt
++source: html-scrape
+ ---
+ 
++* [Android Developers](https://developer.android.com/)
++* [App architecture](https://developer.android.com/topic/architecture/intro)
++
++Stay organized with collections
++
++Save and categorize content based on your preferences.
++
++
++
++
++
+ # Deep Link URI Arguments Recipe
+ 
+ This recipe demonstrates how to parse a deep link URL from an Android Intent into a Navigation key.
+@@ -20,20 +31,17 @@ It consists of two activities
+ The `MainActivity` handles the request with these steps
+ 
+ 1. Declare a `UriDeepLinkMatcher` for each url pattern that can be deep linked into. Each matcher accepts a uri pattern and the KSerializer of the NavKey that supports this deep link.
+-
+ 2. Create a `DeepLinkRequest` with the incoming intent.
+-
+ 3. Match all candidate `UriDeepLinkMatchers` with the request and compare the resulting `UriMatchResults` for the best match.
+-
+ 4. Read the matching key from `UriMatchResult.key` or use default key if no match.
+ 
+ This recipe focuses on handing an intent and does not include these considerations:
+ 
+-- Create synthetic backStack
+-- Multi-modular setup
+-- DI
+-- Managing TaskStack
+-- Up button vs Back Button
++* Create synthetic backStack
++* Multi-modular setup
++* DI
++* Managing TaskStack
++* Up button vs Back Button
+ 
+ ## Demonstrated forms of deeplink
+ 
+@@ -44,7 +52,14 @@ The `MainActivity` has several backStack keys to demonstrate different types of
+ 3. `SearchKey` - deeplink with query arguments
+ 
+ See `MainActivity.deepLinkMatchers` for the actual url pattern of each.
+-[![](https://developer.android.com/static/images/picto-icons/code.svg) Explore View the full recipe on GitHub.](https://github.com/android/nav3-recipes/tree/main/app/src/main/java/com/example/nav3recipes/deeplink/handlerequests/uriarguments)
++
++[![](/static/images/picto-icons/code.svg)
++
++Explore
++
++View the full recipe on GitHub.
++
++arrow\_forward](https://github.com/android/nav3-recipes/tree/main/app/src/main/java/com/example/nav3recipes/deeplink/handlerequests/uriarguments)
+ 
+ ```
+ package com.example.nav3recipes.deeplink.handlerequests.uriarguments
+@@ -86,6 +101,8 @@ internal data class SearchKey(
+ ): NavRecipeKey {
+     override val name: String = STRING_LITERAL_SEARCH
+ }
++
++NavRecipeKey.kt
+ ```
+ 
+ ```
+@@ -187,6 +204,8 @@ class MainActivity : ComponentActivity() {
+         }
+     }
+ }
++
++MainActivity.kt
+ ```
+ 
+ ```
+@@ -367,6 +386,7 @@ private val MENU_OPTIONS_SEARCH = mapOf(
+ 
+ private val MENU_LABELS_SEARCH = listOf(SearchKey::ageMin.name, SearchKey::ageMax.name)
+ 
++UriWithArgumentsDeepLinkActivity.kt
+ ```
+ 
+ ```
+@@ -393,4 +413,6 @@ internal val URL_SEARCH = "$PATH_BASE/$PATH_SEARCH" +
+         "&${SearchKey::ageMax.name}={${SearchKey::ageMax.name}}" +
+         "&${SearchKey::firstName.name}={${SearchKey::firstName.name}}" +
+         "&${SearchKey::location.name}={${SearchKey::location.name}}"
++
++UrlResources.kt
+ ```
+\ No newline at end of file

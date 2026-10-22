@@ -1,0 +1,85 @@
+diff --git a/docs/games/services/cpp/v2/api/group/pgs-leaderboard-score.md b/docs/games/services/cpp/v2/api/group/pgs-leaderboard-score.md
+index 81c5bb1..9d2214a 100644
+--- a/docs/games/services/cpp/v2/api/group/pgs-leaderboard-score.md
++++ b/docs/games/services/cpp/v2/api/group/pgs-leaderboard-score.md
+@@ -1,49 +1,59 @@
+ ---
+-title: https://developer.android.com/games/services/cpp/v2/api/group/pgs-leaderboard-score
++title: Play Games Services LeaderboardScore  |  API reference  |  Android Developers
+ url: https://developer.android.com/games/services/cpp/v2/api/group/pgs-leaderboard-score
+-source: md.txt
++source: html-scrape
+ ---
+ 
++* [Android Developers](https://developer.android.com/)
++* [Develop](https://developer.android.com/develop)
++* [API reference](https://developer.android.com/reference)
++
++Stay organized with collections
++
++Save and categorize content based on your preferences.
++
++
++
++
++
+ # Play Games Services LeaderboardScore
+ 
+ Data interface for retrieving leaderboard score information.
+ 
+ ## Summary
+ 
+-| ### Typedefs ||
+-|---|---|
+-| `https://developer.android.com/games/services/cpp/v2/api/group/pgs-leaderboard-score#group__pgs__leaderboard__score_1ga229064b09c09913b6892214b91836a76` | typedef `struct https://developer.android.com/games/services/cpp/v2/api/struct/pgs-leaderboard-score#struct_pgs_leaderboard_score` Represents a single leaderboard score. |
++| Typedefs | |
++| --- | --- |
++| `PgsLeaderboardScore` | typedef `struct PgsLeaderboardScore`  Represents a single leaderboard score. |
+ 
+-| ### Functions ||
+-|---|---|
+-| `https://developer.android.com/games/services/cpp/v2/api/group/pgs-leaderboard-score#group__pgs__leaderboard__score_1ga717115a9eef051b6e2c53267cf966273(https://developer.android.com/games/services/cpp/v2/api/struct/pgs-leaderboard-score#struct_pgs_leaderboard_score *leaderboard_score)` | `void` Releases memory held by [PgsLeaderboardScore](https://developer.android.com/games/services/cpp/v2/api/struct/pgs-leaderboard-score#struct_pgs_leaderboard_score), including its fields. |
++| Functions | |
++| --- | --- |
++| `PgsLeaderboardScore_Release(PgsLeaderboardScore *leaderboard_score)` | `void`  Releases memory held by [PgsLeaderboardScore](/games/services/cpp/v2/api/struct/pgs-leaderboard-score#struct_pgs_leaderboard_score), including its fields. |
+ 
+-| ### Structs ||
+-|---|---|
+-| [PgsLeaderboardScore](https://developer.android.com/games/services/cpp/v2/api/struct/pgs-leaderboard-score) | Represents a single leaderboard score. |
++| Structs | |
++| --- | --- |
++| [PgsLeaderboardScore](/games/services/cpp/v2/api/struct/pgs-leaderboard-score) | Represents a single leaderboard score. |
+ 
+ ## Typedefs
+ 
+ ### PgsLeaderboardScore
+ 
+-```c++
++```
+ struct PgsLeaderboardScore PgsLeaderboardScore
+ ```
++
+ Represents a single leaderboard score.
+ 
+ ## Functions
+ 
+-### PgsLeaderboardScore_Release
++### PgsLeaderboardScore\_Release
+ 
+-```c++
++```
+ void PgsLeaderboardScore_Release(
+   PgsLeaderboardScore *leaderboard_score
+ )
+ ```
+-Releases memory held by [PgsLeaderboardScore](https://developer.android.com/games/services/cpp/v2/api/struct/pgs-leaderboard-score#struct_pgs_leaderboard_score), including its fields.
+ 
+-<br />
++Releases memory held by [PgsLeaderboardScore](/games/services/cpp/v2/api/struct/pgs-leaderboard-score#struct_pgs_leaderboard_score), including its fields.
+ 
+-| Details ||
+-|---|---|
+-| Parameters | |---|---| | `leaderboard_score` | The leaderboard score to release. | |
+\ No newline at end of file
++Details | || Parameters | |  |  | | --- | --- | | `leaderboard_score` | The leaderboard score to release. | |
+\ No newline at end of file

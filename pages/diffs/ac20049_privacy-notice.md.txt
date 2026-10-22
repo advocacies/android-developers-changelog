@@ -1,0 +1,25 @@
+diff --git a/docs/studio/gemini/privacy-notice.md b/docs/studio/gemini/privacy-notice.md
+index 211803f..df82533 100644
+--- a/docs/studio/gemini/privacy-notice.md
++++ b/docs/studio/gemini/privacy-notice.md
+@@ -1,9 +1,18 @@
+ ---
+-title: https://developer.android.com/studio/gemini/privacy-notice
++title: Gemini Privacy Notice  |  Android Studio  |  Android Developers
+ url: https://developer.android.com/studio/gemini/privacy-notice
+-source: md.txt
++source: html-scrape
+ ---
+ 
++* [Android Developers](https://developer.android.com/)
++* [Android Studio](https://developer.android.com/studio)
++
++# Gemini Privacy Notice Stay organized with collections Save and categorize content based on your preferences.
++
++
++
++
++
+ This notice and our [Privacy Policy](https://policies.google.com/privacy)
+ describe how Gemini in Android Studio handles your data. Please read them
+ carefully.
