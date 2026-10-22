@@ -1,13 +1,26 @@
 ---
-title: https://developer.android.com/android-performance-analyzer/frame-profiler/quickstart
+title: Quickstart  |  Android Performance Analyzer  |  Android Developers
 url: https://developer.android.com/android-performance-analyzer/frame-profiler/quickstart
-source: md.txt
+source: html-scrape
 ---
+
+Android Performance Analyzer is currently intended for profiling games and Vulkan-based graphics. For all other apps, use the [profilers in Android Studio](/studio/profile).
+
+* [Home](https://developer.android.com/)
+* [Android Performance Analyzer](https://developer.android.com/android-performance-analyzer)
+* [Google Play](https://developer.android.com/distribute)
+* [Guides](https://developer.android.com/games/guides)
+
+# Quickstart Stay organized with collections Save and categorize content based on your preferences.
+
+
+
+
 
 If you're already familiar with frame profiling, this guide provides all the
 information you need to meet requirements, install the software, and begin
 capturing and viewing frame profiles with the Frame Profiler in Android Performance Analyzer. Otherwise, see [Next
-steps](https://developer.android.com/android-performance-analyzer/frame-profiler/quickstart#next-steps) for links to more in-depth guidance.
+steps](#next-steps) for links to more in-depth guidance.
 
 ## Requirements
 
@@ -19,23 +32,26 @@ running the app under test, and for the app under test itself.
 
 The computer that runs the Frame Profiler must meet the following requirements:
 
-- It must have one of the following operating systems installed:
-  - **Windows.** 64-bit Windows 10 or higher.
-  - **macOS.** macOS 12 or higher.
+* It must have one of the following operating systems installed:
+  + **Windows.** 64-bit Windows 10 or higher.
+  + **macOS.** macOS 12 or higher.
     - Must have an ARM-based chip. Macs with Intel chips are unsupported.
-  - **Linux.**
+  + **Linux.**
     - 64-bit machines must install the [required libraries for 64-bit
-      machines](https://developer.android.com/studio/install#64bit-libs).
-- It must have the Android SDK installed, including the [Platform-Tools](https://developer.android.com/tools/releases/platform-tools) package.
-  - The [`ANDROID_HOME`](https://developer.android.com/tools/variables#android_home) environment variable must be set.
+      machines](/studio/install#64bit-libs).
+* It must have the Android SDK installed, including the
+  [Platform-Tools](/tools/releases/platform-tools) package.
+  + The [`ANDROID_HOME`](/tools/variables#android_home) environment variable must be set.
 
 ### Testing device requirements
 
 The device running the app under test must meet the following requirements:
 
-- A [supported Android device](https://developer.android.com/android-performance-analyzer/compatibility#device-gpu-compat) running Android 12 or higher.
-- A USB cable.
-- [Android Debug Bridge (`adb`)](https://developer.android.com/tools/adb) debugging must be enabled and the device must be accessible through `adb`. If the **Install via USB** option is present, enable it.
+* A [supported Android device](/android-performance-analyzer/compatibility#device-gpu-compat) running Android 12 or higher.
+* A USB cable.
+* [Android Debug Bridge (`adb`)](/tools/adb) debugging must be enabled and the device
+  must be accessible through `adb`. If the **Install via USB** option is
+  present, enable it.
 
 #### Device validation
 
@@ -54,9 +70,12 @@ device's name in the **Configure a GFXR Recording** window.
 While it's not a strict requirement, we recommend the following in order to help
 profiling be as useful and accurate as possible:
 
-- Use the release version of your game or a version that's built with performance options (such as compiler flags or packaging optimizations) enabled.
-- Ensure that your app follows the guidance on [engine
-  compatibility](https://developer.android.com/android-performance-analyzer/frame-profiler/compatibility#engine-compat) and [API compatibility](https://developer.android.com/android-performance-analyzer/frame-profiler/compatibility#api-compat) from the compatibility guide.
+* Use the release version of your game or a version that's built with
+  performance options (such as compiler flags or packaging optimizations)
+  enabled.
+* Ensure that your app follows the guidance on [engine
+  compatibility](/android-performance-analyzer/frame-profiler/compatibility#engine-compat) and [API compatibility](/android-performance-analyzer/frame-profiler/compatibility#api-compat) from the
+  compatibility guide.
 
 ## Basic workflow
 
@@ -66,34 +85,55 @@ analysis:
 1. Open Android Performance Analyzer and either select an existing project or click **New
    Project** to create a new project.
 
-   ![](https://developer.android.com/static/android-performance-analyzer/images/welcome-window-canary.png) **Figure 1** : A screenshot of the **Welcome to Android
+   ![](/static/android-performance-analyzer/images/welcome-window-canary.png)
+
+
+   **Figure 1**: A screenshot of the **Welcome to Android
    Performance Analyzer** startup window.
 2. Type a name and a directory location for your new project. Android Performance Analyzer opens
    your empty project automatically.
 
-   ![](https://developer.android.com/static/android-performance-analyzer/images/empty-project-canary.png) **Figure 2**: A screenshot of an empty project.
+   ![](/static/android-performance-analyzer/images/empty-project-canary.png)
+
+
+   **Figure 2**: A screenshot of an empty project.
 3. Click the **Record Trace** button on the left side of the title bar to open
    the **New Capture** window.
 
-   ![](https://developer.android.com/static/android-performance-analyzer/images/new-capture-window.png) **Figure 3** : A screenshot of the **New Capture** window.
+   ![](/static/android-performance-analyzer/images/new-capture-window.png)
+
+
+   **Figure 3**: A screenshot of the **New Capture**
+   window.
 4. Select **Frame** and click **Configure** to open the **Configure a GFXR
    Recording** window.
 
-   ![](https://developer.android.com/static/android-performance-analyzer/images/gfxr-recording.png) **Figure 4** : A screenshot of the **Configure a GFXR
+   ![](/static/android-performance-analyzer/images/gfxr-recording.png)
+
+
+   **Figure 4**: A screenshot of the **Configure a GFXR
    Recording** window.
-5. [Adjust the options](https://developer.android.com/android-performance-analyzer/frame-profiler/capture#configure-profile) in the **Configure a GFXR Recording** window
-   according to your needs and click **OK** . This opens the **Control
+5. [Adjust the options](/android-performance-analyzer/frame-profiler/capture#configure-profile) in the **Configure a GFXR Recording** window
+   according to your needs and click **OK**. This opens the **Control
    Recording** window and automatically starts the app on your testing device.
 
-   ![](https://developer.android.com/static/android-performance-analyzer/images/frame-control-recording.png) **Figure 5** : A screenshot of the **Control Recording** window.
+   ![](/static/android-performance-analyzer/images/frame-control-recording.png)
+
+
+   **Figure 5**: A screenshot of the **Control Recording**
+   window.
 6. When you reach the frame that you want to profile, click **Start**.
    Android Performance Analyzer retrieves the data for that single frame, then opens the output
    file in the trace view automatically. The data in the frame profile appears
    as the Frame Profiler finishes each task.
 
-   ![](https://developer.android.com/static/android-performance-analyzer/images/frame-profile.png) **Figure 6**: A screenshot of an example frame profile.
+   ![](/static/android-performance-analyzer/images/frame-profile.png)
+
+
+   **Figure 6**: A screenshot of an example frame
+   profile.
 
 ## Next steps
 
 For more in-depth guidance on using the Frame Profiler in Android Performance Analyzer, see [Capture a frame
-profile](https://developer.android.com/android-performance-analyzer/frame-profiler/capture) and [View a frame profile](https://developer.android.com/android-performance-analyzer/frame-profiler/view).
+profile](/android-performance-analyzer/frame-profiler/capture) and [View a frame profile](/android-performance-analyzer/frame-profiler/view).

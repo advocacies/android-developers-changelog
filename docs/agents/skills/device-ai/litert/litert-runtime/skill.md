@@ -134,11 +134,58 @@ so a wrong size produces an incorrect result. For `int8` or `uint8` tensors, use
 `writeInt8` and `readInt8` on `TensorBuffer` instead of `writeFloat` and
 `readFloat`.
 
+When memory matters, use the following options:
+
+- **Load from a path** : `create(context.assets, ...)` keeps a copy of the asset's bytes in the native heap while the model is open. Copy the asset once into `context.noBackupFilesDir` (a downloaded or AI pack file is already on disk) and call `create(filePath, ...)` so the file is mapped and reclaimable. Version the staged filename, bump the version when the bundled model changes, and delete the previous version's file. Copy to a temporary file and rename it so a copy interrupted by process death is never loaded:
+
+    import android.content.Context
+    import com.google.ai.edge.litert.Accelerator
+    import com.google.ai.edge.litert.CompiledModel
+    import java.io.File
+
+    fun stageModelAsset(
+        context: Context, assetName: String = "model.tflite", version: String = "v1"
+    ): File =
+        File(context.noBackupFilesDir, "$version-$assetName").also { file ->
+            if (!file.isFile) {
+                context.noBackupFilesDir.listFiles()?.forEach {
+                    if (it.name.endsWith("-$assetName")) it.delete()
+                }
+                val tmp = File("${file.path}.tmp")
+                context.assets.open(assetName).use { input ->
+                    tmp.outputStream().use { output -> input.copyTo(output) }
+                }
+                check(tmp.renameTo(file))
+            }
+        }
+
+    fun memoryOptions(
+        context: Context,
+        accelerator: Accelerator = Accelerator.CPU,
+        assetName: String = "model.tflite",
+        version: String = "v1"
+    ): CompiledModel.Options =
+        CompiledModel.Options(accelerator).apply {
+            val prefix = "$assetName-"
+            val cache = File(context.codeCacheDir, "$prefix$version.xnnpack_cache")
+            context.codeCacheDir.listFiles()?.forEach {
+                if (it.name.startsWith(prefix) && it.name.endsWith(".xnnpack_cache") && it != cache) {
+                    it.delete()
+                }
+            }
+            cpuOptions = CompiledModel.CpuOptions(
+                numThreads = 4, xnnPackFlags = 0x23, xnnPackWeightCachePath = cache.path
+            )
+        }
+
+- **Weight cache (`xnnPackWeightCachePath`)**: Written on the first load (\~1x an FP32 or \~2x an FP16 model's file size) and mapped on later loads, moving packed FP32 weights off the heap. Version the cache filename and delete outdated caches.
+- **Transient indirection buffer (`xnnPackFlags = 0x23`)** : Default `0x3` plus flag `0x20`, replacing per-operator convolution pointer tables with one shared buffer (byte-identical outputs, \~1% latency overhead at 4 threads, \~3% single-threaded). Because the value replaces the default, `0x20` alone leaves `int8` and `uint8` operators to fallback kernels. `cpuOptions` is ignored on the GPU.
+- **Close after a task**: Closing frees the runtime workspace; recreating with a warm cache takes \~20 ms, whereas the first inference after any load pays a full warm-up run, so close when the next use isn't imminent.
+
 ### Step 3: Wire the ViewModel and Compose screen
 
-Drive the helper from a single-thread executor inside an `AndroidViewModel`,
-fall back to `Accelerator.CPU` when GPU compilation fails, and expose immutable
-state to the Compose UI:
+Drive the helper from a single-thread executor inside an `AndroidViewModel`, and
+fall back to `Accelerator.CPU` when GPU compilation fails:
 
     import android.app.Application
     import androidx.lifecycle.AndroidViewModel
@@ -341,6 +388,7 @@ Migration mandates that apply to every migrated app:
 - **Never** benchmark `model.run` without including output buffer readback (`outputs[0].readFloat`).
 - **Never** mix `org.tensorflow:tensorflow-lite*` artifacts (such as `org.tensorflow:tensorflow-lite-support`) with `com.google.ai.edge.litert:*` artifacts; both ship the `org.tensorflow.lite.*` classes and cause duplicate class build failures.
 - **Never** use `Accelerator.GPU` on LiteRT 2.3.0 without adding the `com.google.ai.edge.litert:litert-gpu:2.3.0` dependency alongside `com.google.ai.edge.litert:litert:2.3.0`; with the CPU as a second accelerator, the model silently runs on the CPU.
+- **Never** set `xnnPackFlags = 0x20` on its own to get the transient indirection buffer; the value replaces the runtime's default `0x3`, so pass `0x23`.
 
 ## Checklist
 
@@ -350,3 +398,4 @@ Migration mandates that apply to every migrated app:
 - \[ \] Are `TensorBuffer` instances allocated once, reused across calls, and closed before `model.close`, including when `init` or warm-up throws?
 - \[ \] Does `load` execute one warm-up inference and fall back to `Accelerator.CPU` if `Accelerator.GPU` throws `LiteRtException`?
 - \[ \] Does the project compile with `./gradlew assembleDebug`?
+- \[ \] If memory matters, is the model created from a path with a versioned weight cache and `xnnPackFlags = 0x23` on the CPU, and closed after a task when the next use isn't imminent?

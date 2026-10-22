@@ -1,34 +1,49 @@
 ---
-title: https://developer.android.com/jetpack/androidx/releases/glance-adaptive
+title: Glance Adaptive  |  Jetpack  |  Android Developers
 url: https://developer.android.com/jetpack/androidx/releases/glance-adaptive
-source: md.txt
+source: html-scrape
 ---
 
+* [Android Developers](https://developer.android.com/)
+* [Get started](https://developer.android.com/get-started/overview)
+* [Jetpack](https://developer.android.com/jetpack)
+* [Libraries](https://developer.android.com/jetpack/androidx/explorer)
+
+Stay organized with collections
+
+Save and categorize content based on your preferences.
+
+
+
+
+
 # Glance Adaptive
+
+API Reference  
+[androidx.glance.adaptive](/reference/kotlin/androidx/glance/adaptive/package-summary)
 
 TODO
 
 | Latest Update | Stable Release | Release Candidate | Beta Release | Alpha Release |
-|---|---|---|---|---|
-| September 23, 2026 | - | - | - | [1.0.0-alpha03](https://developer.android.com/jetpack/androidx/releases/glance_adaptive#1.0.0-alpha03) |
+| --- | --- | --- | --- | --- |
+| September 23, 2026 | - | - | - | [1.0.0-alpha03](/jetpack/androidx/releases/glance_adaptive#1.0.0-alpha03) |
 
 ## Declaring dependencies
 
 To add a dependency on glance adaptive, you must add the Google Maven repository to your
-project. Read [Google's Maven repository](https://developer.android.com/studio/build/dependencies#google-maven)
+project. Read [Google's Maven repository](/studio/build/dependencies#google-maven)
 for more information.
 
 Add the dependencies for the artifacts you need in the `build.gradle` file for
 your app or module:
 
-\<!DOCTYPE html\>
-
+<!DOCTYPE html>
 
 glance adaptive deps
 
 ### Groovy
 
-```groovy
+```
 dependencies {
     implementation "androidx.glance.adaptive:adaptive-appwidget:1.0.0-alpha03"
     implementation "androidx.glance.adaptive:adaptive-core:1.0.0-alpha03"
@@ -38,7 +53,7 @@ dependencies {
 
 ### Kotlin
 
-```kotlin
+```
 dependencies {
     implementation("androidx.glance.adaptive:adaptive-appwidget:1.0.0-alpha03")
     implementation("androidx.glance.adaptive:adaptive-core:1.0.0-alpha03")
@@ -46,14 +61,13 @@ dependencies {
 }
 ```
 
-
-For more information about dependencies, see [Add build dependencies](https://developer.android.com/studio/build/dependencies).
+For more information about dependencies, see [Add build dependencies](/studio/build/dependencies).
 
 ## Feedback
 
 Your feedback helps make Jetpack better. Let us know if you discover new issues or have
 ideas for improving this library. Please take a look at the
-[existing issues](https://issuetracker.google.com/issues?q=componentid:TODO+status:open)
+[existing issues](https://issuetracker.google.com/issues?q=componentid:TODO%20status:open)
 in this library before you create a new one. You can add your vote to an existing issue by
 clicking the star button.
 
@@ -80,7 +94,9 @@ September 09, 2026
 
 **Bug Fixes**
 
-- `compileSdk` for Compose libraries updated to 37.1. This will require transitively updating `compileSdk` for all apps and libraries using Compose. ([I05b0f](https://android-review.googlesource.com/#/q/I05b0f9385d2b99ddcc4041b2ce2d96aea3bd391e))
+* `compileSdk` for Compose libraries updated to 37.1.
+  This will require transitively updating `compileSdk` for all
+  apps and libraries using Compose. ([I05b0f](https://android-review.googlesource.com/#/q/I05b0f9385d2b99ddcc4041b2ce2d96aea3bd391e))
 
 #### Version 1.0.0-alpha01
 

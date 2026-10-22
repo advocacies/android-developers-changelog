@@ -1,41 +1,59 @@
 ---
-title: https://developer.android.com/tools/adb
+title: Android Debug Bridge (adb)  |  Android Studio  |  Android Developers
 url: https://developer.android.com/tools/adb
-source: md.txt
+source: html-scrape
 ---
+
+* [Android Developers](https://developer.android.com/)
+* [Develop](https://developer.android.com/develop)
+* [Android Studio](https://developer.android.com/studio)
+* [SDK tools guides](https://developer.android.com/tools)
+
+# Android Debug Bridge (adb) Stay organized with collections Save and categorize content based on your preferences.
+
+
+
+
 
 Android Debug Bridge (`adb`) is a versatile command-line tool that lets you communicate with a
 device. The `adb` command facilitates a variety of device actions, such as installing and
 debugging apps. `adb` provides access to a Unix shell that you can use to run a variety
 of commands on a device. It is a client-server program that includes three components:
 
-- **A client** , which sends commands. The client runs on your development machine. You can invoke a client from a command-line terminal by issuing an `adb` command.
-- **A daemon (adbd)**, which runs commands on a device. The daemon runs as a background process on each device.
-- **A server**, which manages communication between the client and the daemon. The server runs as a background process on your development machine.
+* **A client**, which sends commands. The client runs on your development machine. You can
+  invoke a client from a command-line terminal by issuing an `adb` command.
+* **A daemon (adbd)**, which runs commands on a device. The daemon runs as a background
+  process on each device.
+* **A server**, which manages communication between the client and the daemon. The server
+  runs as a background process on your development machine.
 
 `adb` is included in the Android SDK Platform Tools package. Download this
-package with the [SDK Manager](https://developer.android.com/studio/intro/update#sdk-manager), which installs
+package with the [SDK Manager](/studio/intro/update#sdk-manager), which installs
 it at `android_sdk/platform-tools/`. If you want the standalone Android SDK
-Platform Tools package, [download it here](https://developer.android.com/studio/releases/platform-tools).
+Platform Tools package, [download it here](/studio/releases/platform-tools).
 
 For information on connecting a device for use over `adb`, including how to use the Connection
 Assistant to troubleshoot common problems, see
-[Run apps on a hardware device](https://developer.android.com/studio/run/device).
+[Run apps on a hardware device](/studio/run/device).
 
 ## Android CLI
 
-[Download the Android CLI](https://developer.android.com/tools/agents)
+[Download the Android CLI](/tools/agents)
 
 ### Try Android CLI to communicate with a device
 
-Try [Android CLI](https://developer.android.com/tools/agents) if you're not using Android Studio or prefer to do things from the command line.  
+Try [Android CLI](/tools/agents) if you're not using Android Studio
+or prefer to do things from the command line.  
+  
+For example, use the
+[`android run`](/tools/agents/android-cli/commands/run) or [`screen capture`](/tools/agents/android-cli/commands/screen_capture)
+commands when you need to deploy and interact with an app on a device from the command line.
 
-For example, use the [`android run`](https://developer.android.com/tools/agents/android-cli/commands/run) or [`screen capture`](https://developer.android.com/tools/agents/android-cli/commands/screen_capture) commands when you need to deploy and interact with an app on a device from the command line.
-
-    android [install|run|screen capture|layout]
+```
+android [install|run|screen capture|layout]
+```
 
 ## How adb works
-
 
 When you start an `adb` client, the client first checks whether there is an
 `adb` server process already running. If there isn't, it starts the server process.
@@ -50,18 +68,13 @@ It locates emulators by scanning odd-numbered ports in the range
 5555 to 5585, which is the range used by the first 16 emulators. Where the server finds an `adb`
 daemon (adbd), it sets up a connection to that port.
 
-Each emulator uses a pair of sequential ports --- an even-numbered port for
+Each emulator uses a pair of sequential ports — an even-numbered port for
 console connections and an odd-numbered port for `adb` connections. For example:
 
-
 Emulator 1, console: 5554  
-
 Emulator 1, `adb`: 5555  
-
 Emulator 2, console: 5556  
-
 Emulator 2, `adb`: 5557  
-
 and so on.
 
 As shown, the emulator connected to `adb` on port 5555 is the same as the emulator
@@ -75,9 +88,9 @@ from a script.
 ## Enable adb debugging on your device
 
 To use adb with a device connected over USB, you must enable
-**USB debugging** in the device system settings, under **Developer options** . On Android 4.2 (API level 17) and higher, the **Developer options** screen
+**USB debugging** in the device system settings, under **Developer options**. On Android 4.2 (API level 17) and higher, the **Developer options** screen
 is hidden by default. To make it visible, [enable
-Developer options.](https://developer.android.com/studio/debug/dev-options#enable)
+Developer options.](/studio/debug/dev-options#enable)
 
 You can now connect your device with USB. You can verify that your device is
 connected by executing `adb devices` from the
@@ -91,13 +104,13 @@ that USB debugging and other adb commands cannot be executed unless you're able 
 device and acknowledge the dialog.
 
 For more information about connecting to a device over USB, read
-[Run apps on a hardware device](https://developer.android.com/studio/run/device).
+[Run apps on a hardware device](/studio/run/device).
 
 ## Connect to a device over Wi-Fi
 
 **Note:** The instructions below do not apply to Wear devices running
 Android 11 (API level 30). See the guide to
-[debugging a Wear OS app](https://developer.android.com/training/wearables/get-started/debugging#wifi-debugging) for
+[debugging a Wear OS app](/training/wearables/get-started/debugging#wifi-debugging) for
 more information.
 
 Android 11 (API level 30) and higher support deploying and debugging your app wirelessly from
@@ -106,22 +119,20 @@ app to multiple remote devices without ever needing to physically connect your d
 USB. This eliminates the need to deal with common USB connection issues, such as driver
 installation.
 
-Android 17, alongside [adb 37.0.0](https://developer.android.com/tools/releases/platform-tools) introduces
+Android 17, alongside [adb 37.0.0](/tools/releases/platform-tools) introduces
 adb Wi-Fi 2.0 which solves many of the usability issues with the previous version. Notably, the
 device will automatically connect to the workstation when the device connects to a wireless
 debugging trusted network.
 
 Before you begin using wireless debugging, do the following:
 
-- Ensure that your workstation and device are connected to the same wireless network.
-
-- Ensure that your device is running Android 11 (API level 30) or higher for phone or Android
+* Ensure that your workstation and device are connected to the same wireless network.
+* Ensure that your device is running Android 11 (API level 30) or higher for phone or Android
   13 (API level 33) or higher for TV and WearOS. For more information, see
-  [Check \& update your
+  [Check & update your
   Android version](https://support.google.com/android/answer/7680439).
-
-- On your workstation, update to the latest version of the
-  [SDK Platform Tools](https://developer.android.com/tools/releases/platform-tools).
+* On your workstation, update to the latest version of the
+  [SDK Platform Tools](/tools/releases/platform-tools).
 
 To use wireless debugging, you must pair your device to your workstation using a QR code or a
 pairing code. Your workstation and device must be connected to the same wireless network. To
@@ -132,49 +143,57 @@ once. The device will remain paired with your workstation until you explicitly f
 revoke adb debugging authorizations on your device.
 The device and the workstation will automatically connect when they are on the same network.
 
-1. [Enable developer options](https://developer.android.com/studio/debug/dev-options#enable)
+1. [Enable developer options](/studio/debug/dev-options#enable)
    on your device.
-
 2. On your device, tap **Wireless debugging**:
 
-   ![Screenshot of a pixel phone showing the Wireless debugging prompt.](https://developer.android.com/static/studio/images/run/adb_wifi-wireless_debugging_prompt.png) **Figure 1.** The **Wireless debugging prompt** on a Google Pixel phone.
+   ![Screenshot of a pixel phone showing the Wireless debugging prompt.](/static/studio/images/run/adb_wifi-wireless_debugging_prompt.png)
+
+   **Figure 1.** The **Wireless debugging prompt** on a Google
+   Pixel phone.
 3. Allow wireless debugging on your network. Note that clicking the **always allow on this network**
    checkbox makes the network a trusted wireless debugging network. Your device will always
    allow wireless debugging on this network as soon as the device connects to the network.
 
    ![Screenshot of
-   a Google Pixel phone showing the Wireless debugging systems setting.](https://developer.android.com/static/studio/images/run/adb_wifi-wireless_debugging_setting.png) **Figure 2.** The **Wireless debugging** setting on a Google Pixel phone.
+                 a Google Pixel phone showing the Wireless debugging systems setting.](/static/studio/images/run/adb_wifi-wireless_debugging_setting.png)
+
+   **Figure 2.** The **Wireless debugging** setting on a Google
+   Pixel phone.
 
    **Note:** Android Studio users can pair their device with a QR code, select **Pair device with QR code** and scan the
-   QR code obtained from the [Pair devices over Wi-Fi dialog](https://developer.android.com/studio/run/device#wireless)
+   QR code obtained from the [Pair devices over Wi-Fi dialog](/studio/run/device#wireless) 
    in Android Studio.
 4. On your device, select **Pair using pairing code** and
    take note of the IP address, port number, and pairing code displayed on the device.
-
 5. On your workstation, open a terminal window and navigate to
    `android_sdk/platform-tools`.
-
 6. On your workstation's terminal, run `adb pair ipaddr:port`. Use the IP address
    and port number from above.
-
 7. When prompted, enter the pairing code, as shown below.
 
    ![Screenshot of
-   pairing on the command line.](https://developer.android.com/static/studio/images/run/adb_wifi-cmd_line_pairing.png) **Figure 3.** A message indicates that your device has been successfully paired.
-8. After your device is paired, [verify that your device is connected.](https://developer.android.com/tools/adb#devicestatus)
+               pairing on the command line.](/static/studio/images/run/adb_wifi-cmd_line_pairing.png)
+
+   **Figure 3.** A message indicates that your device has been
+   successfully paired.
+8. After your device is paired, [verify that your device is connected.](/tools/adb#devicestatus)
    You can now use your device wirelessly similar to how you would with a USB connection.
 
    To unpair your workstation, navigate to **Wireless debugging** on your device.
-   Tap your workstation name under **Paired devices** and select **Forget** .
+   Tap your workstation name under **Paired devices** and select **Forget**.
    Alternatively, you can click the **Revoke adb debugging authorizations** on your device
    Settings page to unapair your workstation and all other previously paired workstations.
 9. If you want to quickly turn on and off wireless debugging, you can use the
-   [Quick settings developer tiles](https://developer.android.com/studio/debug/dev-options#general) for
-   **Wireless debugging** , found in **Developer Options** \> **Quick settings developer
+   [Quick settings developer tiles](/studio/debug/dev-options#general) for
+   **Wireless debugging**, found in **Developer Options** > **Quick settings developer
    tiles**.
 
    ![Screenshot of
-   Quick settings developer tiles from a Google Pixel phone.](https://developer.android.com/static/studio/images/run/adb_wifi-quick_settings.png) **Figure 4.** The **Quick settings developer tiles** setting lets you quickly turn wireless debugging on and off.
+               Quick settings developer tiles from a Google Pixel phone.](/static/studio/images/run/adb_wifi-quick_settings.png)
+
+   **Figure 4.** The **Quick settings developer tiles** setting
+   lets you quickly turn wireless debugging on and off.
 
 ### Resolve wireless connection issues
 
@@ -184,17 +203,23 @@ troubleshooting steps to resolve the issue.
 #### Check whether your workstation and device meet the prerequisites
 
 Check that the workstation and device meet the prerequisites listed at the
-[beginning of this section](https://developer.android.com/tools/adb#wireless-adb-android-11).
+[beginning of this section](/tools/adb#wireless-adb-android-11).
 
 #### Check whether the adb setup on your workstation is correct
-
 
 To verify that your ADB setup on your workstation is correct, open a terminal on your
 workstation and enter `adb server-status`. Verify that the output shows the following:
 
-- **`version: "37.0.0"` or higher:** If this is not the case, download the latest version of the [SDK Platform Tools](https://developer.android.com/tools/releases/platform-tools).
-- **`mdns_enabled: true`** : If this is set to `false`, then adb won't be able to automatically discover devices on your network. To resolve this issue, you must set the `ADB_MDNS` environment variable to `1` and then restart the adb server by running `adb kill-server` and then `adb start-server`.
-- **`mdns_backend: LIBADBMDNS`** : If this is not the case, then adb is using an obsolete library to automatically discover devices on your network. To resolve this issue, you must set the `ADB_MDNS_OPENSCREEN` environment variable to `0` and then restart the adb server by running `adb kill-server` and then `adb start-server`.
+* **`version: "37.0.0"` or higher:** If this is not the case, download the latest version of the
+  [SDK Platform Tools](/tools/releases/platform-tools).
+* **`mdns_enabled: true`**: If this is set to `false`, then adb
+  won't be able to automatically discover devices on your network. To resolve this issue,
+  you must set the `ADB_MDNS` environment variable to `1` and then
+  restart the adb server by running `adb kill-server` and then `adb start-server`.
+* **`mdns_backend: LIBADBMDNS`**: If this is not the case, then adb
+  is using an obsolete library to automatically discover devices on your network. To resolve this issue,
+  you must set the `ADB_MDNS_OPENSCREEN` environment variable to `0` and then
+  restart the adb server by running `adb kill-server` and then `adb start-server`.
 
 #### Check whether your network supports mDNS
 
@@ -202,10 +227,8 @@ adb relies on mDNS to automatically discover and connect to paired devices.
 To check whether your network supports mDNS, do the following:
 
 1. On your device, enable wireless debugging as described in the
-   [Connect to a device over Wi-Fi](https://developer.android.com/tools/adb#wireless-adb-android-11) section.
-
+   [Connect to a device over Wi-Fi](#wireless-adb-android-11) section.
 2. On your workstation, open a terminal and enter `adb mdns track-services --proto-text`.
-
 3. Verify that the output isn't empty and contains a tls service with the IP address and
    port number of your device. If the output is empty, then your network does not support mDNS.
    Example output:
@@ -226,7 +249,6 @@ To check whether your network supports mDNS, do the following:
        hostname: "Android_CXUKYJY1.local"
      }
    }
-             
    ```
 
 #### Check whether your device supports ADB Wi-Fi 2.0
@@ -237,29 +259,24 @@ ADB Wi-Fi 2.0 is supported on Android 17 and higher.
 To check whether your device supports ADB Wi-Fi 2.0, do the following:
 
 1. On your device, enable wireless debugging as described in the
-   [Connect to a device over Wi-Fi](https://developer.android.com/tools/adb#wireless-adb-android-11) section.
-
+   [Connect to a device over Wi-Fi](#wireless-adb-android-11) section.
 2. On your workstation, open a terminal and enter `adb mdns track-services --proto-text`.
-
 3. Verify that the output contains `mdns_service_version: "2.0"` or higher. If this is not the case, then your device is not running Android 17 or higher and doesn't support ADB Wi-Fi 2.0.
    To update to Android 17 or higher, check whether your device has any pending system updates.
-   [Check \& update your
+   [Check & update your
    Android version](https://support.google.com/android/answer/7680439).
 
 #### Report a new issue
 
 If you are still having issues connecting to your device wirelessly, you can report [a new issue](https://issuetracker.google.com/issues/new?component=192795&template=1310483).
-
 Please ensure that you provide the following information in your report:
 
-- **The logs from your device:** Reproduce the issue and attach the [device logs](https://developer.android.com/studio/debug/bug-report)
-- **The logs from adb on your workstation:**
+* **The logs from your device:** Reproduce the issue and attach the [device logs](/studio/debug/bug-report)
+* **The logs from adb on your workstation:**
   1. **Set the environment variable** `ADB_TRACE=all`.
   2. **Restart the adb server** by running `adb kill-server` and then `adb start-server`.
   3. **Reproduce the issue.**
   4. **Locate the log files:** Run `adb server-status` and attach the log file referenced in the output `log_absolute_path`.
-
-<br />
 
 ## Connect wirelessly with a device after an initial USB connection (only option available on Android 10 and lower)
 
@@ -268,29 +285,36 @@ higher), the caveat being that it also involves an \*initial\* connection over p
 
 **Note:** The following instructions do not apply to Wear devices
 running Android 10 (API level 29) or lower. See the guide about
-[debugging a Wear OS app](https://developer.android.com/training/wearables/get-started/debugging#wifi-debugging) for
+[debugging a Wear OS app](/training/wearables/get-started/debugging#wifi-debugging) for
 more information.
 
 `adb` usually communicates with the device over USB, but you can also use
 `adb` over Wi-Fi. To connect a device running Android 10 (API level 29) or lower,
 follow these initial steps over USB:
 
-1. Connect your Android device and `adb` host computer to a common Wi-Fi network.
-2. **Note:** Beware that not all access points are suitable. You might need to use an access point whose firewall is configured properly to support `adb`.
-3. Connect the device to the host computer with a USB cable.
-4. Set the target device to listen for a TCP/IP connection on port 5555:
+1. Connect your Android device and `adb` host computer
+   to a common Wi-Fi network.
+
+**Note:** Beware that not all access points
+are suitable. You might need to use an access point
+whose firewall is configured properly to support `adb`.
+
+2. Connect the device to the host computer with a USB cable.
+3. Set the target device to listen for a TCP/IP connection on port 5555:
 
    ```
    adb tcpip 5555
    ```
-5. Disconnect the USB cable from the target device.
-6. Find the IP address of the Android device. For example, on a Nexus device, you can find the IP address at **Settings** \> **About tablet** (or **About phone** ) \> **Status** \> **IP address**.
-7. Connect to the device by its IP address:
+4. Disconnect the USB cable from the target device.
+5. Find the IP address of the Android device. For example, on a Nexus device, you can find
+   the IP address at **Settings** > **About tablet**
+   (or **About phone**) > **Status** > **IP address**.
+6. Connect to the device by its IP address:
 
    ```
    adb connect device_ip_address:5555
    ```
-8. Confirm that your host computer is connected to the target device:
+7. Confirm that your host computer is connected to the target device:
 
    ```
    $ adb devices
@@ -298,15 +322,13 @@ follow these initial steps over USB:
    device_ip_address:5555 device
    ```
 
-
 Your device is now connected to `adb`.
-
 
 If the `adb` connection to your device is lost:
 
-- Make sure that your host is still connected to the same Wi-Fi network as your Android device.
-- Reconnect by executing the `adb connect` step again.
-- If that doesn't work, reset your `adb` host:
+* Make sure that your host is still connected to the same Wi-Fi network as your Android device.
+* Reconnect by executing the `adb connect` step again.
+* If that doesn't work, reset your `adb` host:
 
   ```
   adb kill-server
@@ -322,17 +344,24 @@ to the `adb` server. Generate a list of attached devices using the
 
 ```
   adb devices -l
-  
 ```
 
 In response, `adb` prints this status information for each device:
 
-- **Serial number:** `adb` creates a string to uniquely identify the device by its port number. Here's an example serial number: `emulator-5554`
-- **State:** The connection state of the device can be one of the following:
-  - `offline`: The device is not connected to `adb` or is not responding.
-  - `device`: The device is connected to the `adb` server. Note that this state does not imply that the Android system is fully booted and operational, because the device connects to `adb` while the system is still booting. After boot-up, this is the normal operational state of a device.
-  - `no device`: There is no device connected.
-- **Description:** If you include the `-l` option, the `devices` command tells you what the device is. This information is helpful when you have multiple devices connected so that you can tell them apart.
+* **Serial number:** `adb` creates a string to uniquely identify the device
+  by its port number.
+  Here's an example serial number: `emulator-5554`
+* **State:** The connection state of the device can be one of the following:
+  + `offline`: The device is not connected to `adb` or is not
+    responding.
+  + `device`: The device is connected to the `adb` server. Note that
+    this state does not imply that the Android system is fully booted and operational, because
+    the device connects to `adb`
+    while the system is still booting. After boot-up, this is the normal operational
+    state of a device.
+  + `no device`: There is no device connected.* **Description:** If you include the `-l` option, the `devices`
+    command tells you what the device is. This information is helpful when you have multiple devices
+    connected so that you can tell them apart.
 
 The following example shows the `devices` command and its output. There are three
 devices running. The first two lines in the list are emulators, and the third line is a hardware
@@ -348,26 +377,25 @@ emulator-5554 device product:sdk_google_phone_x86 model:Android_SDK_built_for_x8
 
 ### Emulator not listed
 
-
 The `adb devices` command has a corner-case command sequence that causes running
 emulators to not show up in the `adb devices` output even though
 the emulators are visible on your desktop. This happens when *all* of the following
 conditions are true:
 
-- The `adb` server is not running.
-- You use the `emulator` command with the `-port` or `-ports` option with an odd-numbered port value between 5554 and 5584.
-- The odd-numbered port you chose is not busy, so the port connection can be made at the specified port number --- or, if it is busy, the emulator switches to another port that meets the requirements in 2.
-- You start the `adb` server after you start the emulator.
-
+* The `adb` server is not running.
+* You use the `emulator` command with the `-port` or
+  `-ports` option with an odd-numbered port value between 5554 and 5584.
+* The odd-numbered port you chose is not busy, so the port connection can be made at the
+  specified port number — or, if it is busy, the emulator switches to
+  another port that meets the requirements in 2.
+* You start the `adb` server after you start the emulator.
 
 One way to avoid this situation is to let the emulator choose its own ports and to run no more
 than 16 emulators at once. Another way is to always start the `adb` server before you
 use the `emulator` command, as explained in the following examples.
 
-
 **Example 1:** In the following command sequence, the `adb devices` command starts
 the `adb` server, but the list of devices does not appear.
-
 
 Stop the `adb` server and enter the following commands in the order shown. For the AVD
 name, provide a valid AVD name from your system. To get a list of AVD names, type
@@ -384,10 +412,8 @@ List of devices attached
 * daemon started successfully *
 ```
 
-
 **Example 2:** In the following command sequence, `adb devices` displays the
 list of devices because the `adb` server was started first.
-
 
 To see the emulator in the `adb devices` output, stop the `adb` server, and
 then start it again after using the `emulator` command and before using the
@@ -403,25 +429,25 @@ List of devices attached
 emulator-5557 device
 ```
 
-
 For more information about emulator command-line options,
 see [Command-Line
-startup options](https://developer.android.com/studio/run/emulator-commandline#startup-options).
+startup options](/studio/run/emulator-commandline#startup-options).
 
 ## Send commands to a specific device
 
 If multiple devices are running, you must specify the target device
 when you issue the `adb` command.
-
 To specify the target, follow these steps:
 
 1. Use the `devices` command to get the serial number of the target.
-2. Once you have the serial number, use the `-s` option with the `adb` commands to specify the serial number.
-   1. If you're going to issue a lot of `adb` commands, you can set the `$ANDROID_SERIAL` environment variable to contain the serial number instead.
-   2. If you use both `-s` and `$ANDROID_SERIAL`, `-s` overrides `$ANDROID_SERIAL`.
-
-<br />
-
+2. Once you have the serial number, use the
+   `-s` option with the `adb` commands to specify the serial number.
+   1. If you're going to issue a lot of `adb` commands, you can set the
+      `$ANDROID_SERIAL` environment variable to contain the serial number
+      instead.
+   2. If you use both
+      `-s` and `$ANDROID_SERIAL`, `-s` overrides
+      `$ANDROID_SERIAL`.
 
 In the following example, the list of attached devices is obtained, and then the serial
 number of one of the devices is used to install the `helloWorld.apk` on that device:
@@ -459,21 +485,20 @@ adb install path_to_apk
 
 You must use the `-t` option with the `install`
 command when you install a test APK. For more information,
-see [`-t`](https://developer.android.com/tools/adb#-t-option).
+see [`-t`](#-t-option).
 
 To install multiple APKs use `install-multiple`. This is useful if you download all
 the APKs for a specific device for your app from the Play Console and want to install them on an
 emulator or physical device.
 
 For more information about how to create an APK file that you can install on an emulator/device
-instance, see [Build and run your app](https://developer.android.com/studio/run).
+instance, see [Build and run your app](/studio/run).
 
 **Note:** If you are using Android Studio, you do not need to use
 `adb` directly to install your app on the emulator or device. Instead, Android Studio
 handles the packaging and installation of the app for you.
 
 ## Set up port forwarding
-
 
 Use the `forward` command to set up arbitrary port forwarding, which
 forwards requests on a specific host port to a different port on a device.
@@ -483,20 +508,17 @@ The following example sets up forwarding of host port 6100 to device port 7100:
 adb forward tcp:6100 tcp:7100
 ```
 
-
 The following example sets up forwarding of host port 6100 to local:logd:
 
 ```
 adb forward tcp:6100 local:logd
 ```
 
-
 This could be useful if you are trying to detemine what is being sent to a given port on the
 device. All received data will be written to the system-logging daemon and displayed
 in the device logs.
 
 ## Copy files to and from a device
-
 
 Use the `pull` and `push` commands to copy files to
 and from a device. Unlike the `install` command,
@@ -595,12 +617,11 @@ For example, `adb shell setprop key 'two words'` is now an error,
 because the quotes are swallowed by the local shell, and the device sees
 `adb shell setprop key two words`. To make the command work, quote twice,
 once for the local shell and once for the remote shell, as you do with
-`ssh(1)`. For example, `adb shell setprop key "'two words'"
-` works because the local shell takes the outer level of quoting and the device
+`ssh(1)`. For example, `adb shell setprop key "'two words'"` works because the local shell takes the outer level of quoting and the device
 still sees the inner level of quoting: `setprop key 'two words'`. Escaping is
 also an option, but quoting twice is usually easier.
 
-See also [Logcat command-line tool](https://developer.android.com/studio/command-line/logcat), which is useful
+See also [Logcat command-line tool](/studio/command-line/logcat), which is useful
 for monitoring the system log.
 
 ### Call activity manager
@@ -625,166 +646,167 @@ adb shell am start -a android.intent.action.VIEW
 **Table 1.** Available activity manager commands
 
 | Command | Description |
-|---|---|
-| `start [options] intent` | Start an `https://developer.android.com/reference/android/app/Activity` specified by `intent`. See the [Specification for intent arguments](https://developer.android.com/tools/adb#IntentSpec). Options are: - `-D`: Enable debugging. - `-W`: Wait for launch to complete. - `--start-profiler file`: Start profiler and send results to `file`. - `-P file`: Like `--start-profiler`, but profiling stops when the app goes idle. - `-R count`: Repeat the activity launch `count` times. Prior to each repeat, the top activity will be finished. - `-S`: Force stop the target app before starting the activity. - `--opengl-trace`: Enable tracing of OpenGL functions. - `--user user_id | current`: Specify which user to run as; if not specified, then run as the current user. - `--debug-link`: (Android 17 and higher) Diagnose URL and intent resolution for app links, printing matched manifest intent filters and Dynamic App Link rules. |
-| ` startservice [options] intent ` | Start the `https://developer.android.com/reference/android/app/Service` specified by `intent`. See the [Specification for intent arguments](https://developer.android.com/tools/adb#IntentSpec). Options are: - `--user user_id | current`: Specify which user to run as. If not specified, then run as the current user. |
-| ` force-stop package ` | Force-stop everything associated with `package`. |
-| ` kill [options] package ` | Kill all processes associated with `package`. This command kills only processes that are safe to kill and that will not impact the user experience. Options are: - `--user user_id | all | current`: Specify which user's processes to kill. If not specified, then kill all users' processes. |
-| ` kill-all ` | Kill all background processes. |
-| ` broadcast [options] intent ` | Issue a broadcast intent. See the [Specification for intent arguments](https://developer.android.com/tools/adb#IntentSpec). Options are: - `[--user user_id | all | current]`: Specify which user to send to. If not specified, then send to all users. |
-| ` instrument [options] component ` | Start monitoring with an `https://developer.android.com/reference/android/app/Instrumentation` instance. Typically the target `component` is the form `test_package/runner_class`. Options are: - `-r`: Print raw results (otherwise decode `report_key_streamresult`). Use with `[-e perf true]` to generate raw output for performance measurements. - `-e name value`: Set argument `name` to `value`. For test runners a common form is ` -e testrunner_flag value[,value...]`. - `-p file`: Write profiling data to `file`. - `-w`: Wait for instrumentation to finish before returning. Required for test runners. - `--no-window-animation`: Turn off window animations while running. - `--user user_id | current`: Specify which user instrumentation runs in. If not specified, run in the current user. |
-| ` profile start process file ` | Start profiler on `process`, write results to `file`. |
-| ` profile stop process ` | Stop profiler on `process`. |
-| ` dumpheap [options] process file ` | Dump the heap of `process`, write to `file`. Options are: - `--user [user_id | current]`: When supplying a process name, specify the user of the process to dump. If not specified, the current user is used. - `-b [| png | jpg | webp]`: Dump bitmaps from graphics memory (API level 35 and above). Optionally specify the format to dump in (PNG by default). - `-n`: Dump native heap instead of managed heap. |
-| ` dumpbitmaps [options] [-p process] ` | Dump bitmap information from `process` (API level 36 and above). Options are: - `-d|--dump [format]`: dump bitmap contents in the specified `format`, which can be one of `png`, `jpg`, or `webp`, default to `png` if none is specified. A zip file `dumpbitmaps-<time>.zip` will be created with the bitmaps. - `-p process`: dump bitmaps from `process`, multiple `-p process` can be specified. If no `process` is specified, bitmaps from all processes will be dumped. |
-| ` set-debug-app [options] package ` | Set app `package` to debug. Options are: - `-w`: Wait for debugger when app starts. - `--persistent`: Retain this value. |
-| ` clear-debug-app ` | Clear the package previous set for debugging with `set-debug-app`. |
-| ` monitor [options] ` | Start monitoring for crashes or ANRs. Options are: - `--gdb`: Start `gdbserv` on the given port at crash/ANR. |
-| ` screen-compat {on | off} package ` | Control [screen compatibility](https://developer.android.com/guide/practices/screen-compat-mode) mode of `package`. |
-| ` display-size [reset | widthxheight] ` | Override device display size. This command is helpful for testing your app across different screen sizes by mimicking a small screen resolution using a device with a large screen, and vice versa. Example: `am display-size 1280x800` |
-| ` display-density dpi ` | Override device display density. This command is helpful for testing your app across different screen densities by mimicking a high-density screen environment using a low-density screen, and vice versa. Example: `am display-density 480` |
-| ` to-uri intent ` | Print the given intent specification as a URI. See the [Specification for intent arguments](https://developer.android.com/tools/adb#IntentSpec). |
-| ` to-intent-uri intent ` | Print the given intent specification as an `intent:` URI. See the [Specification for intent arguments](https://developer.android.com/tools/adb#IntentSpec). |
-| ` memory-limiter subcommand [options] ` | Adjust or disable the [memory limits imposed on devices running Android 17 and higher](https://developer.android.com/about/versions/17/behavior-changes-all#app-memory-limits). Has no effect on devices running Android 16 and lower. Subcommands are: - `ignore uid|none|all`: Instructs the memory limiter to ignore some or all processes. Passing a UID (Android User ID) instructs the memory limiter to ignore enforcement on all processes associated with that UID. You can also pass `all` (ignore all apps) or `none` (do not ignore any apps). Passing `none` overrides any previous calls to `am memory-limiter ignore`. If you instruct the memory limiter to ignore a UID, you can still apply a manual memory limit to a process within the app by calling `am memory-limiter manual`. - `manual pid limit|max|none`: Instructs the system to impose a memory constraint on the process with the specified PID (Process ID). The memory constraint is specified as an integer number of MB; for example, passing 30 specifies that the process is limited to 30 MB of memory. Passing `max` removes all memory limits on that process. Passing `none` removes any manual limits set on the process, restoring the system's default limit (if any). - `status`: Reports the current status of the memory limiter. The status includes the memory limits imposed on visible and non-visible processes. |
+| --- | --- |
+| `start [options] intent` | Start an `Activity` specified by `intent`. See the [Specification for intent arguments](#IntentSpec). Options are:  * `-D`: Enable debugging.* `-W`: Wait for launch to complete.* `--start-profiler file`: Start profiler and send results to       `file`.* `-P file`: Like `--start-profiler`,         but profiling stops when the app goes idle.* `-R count`: Repeat the activity launch `count`           times. Prior to each repeat,           the top activity will be finished.* `-S`: Force stop the target app before starting the activity.* `--opengl-trace`: Enable tracing of OpenGL functions.* `--user user_id | current`: Specify which user to run as; if not                 specified, then run as the current user.* `--debug-link`: (Android 17 and higher) Diagnose URL and intent resolution                   for app links, printing matched manifest intent filters and Dynamic App Link rules. |
+| `startservice [options] intent` | Start the `Service` specified by `intent`. See the [Specification for intent arguments](#IntentSpec). Options are:  * `--user user_id | current`: Specify which user to run as. If not   specified, then run as the current user. |
+| `force-stop package` | Force-stop everything associated with `package`. |
+| `kill [options] package` | Kill all processes associated with `package`. This command kills only processes that are safe to kill and that will not impact the user experience. Options are:  * `--user user_id | all | current`: Specify which user's processes to kill.   If not specified, then kill all users' processes. |
+| `kill-all` | Kill all background processes. |
+| `broadcast [options] intent` | Issue a broadcast intent. See the [Specification for intent arguments](#IntentSpec). Options are:  * `[--user user_id | all | current]`: Specify which user to send to. If not   specified, then send to all users. |
+| `instrument [options] component` | Start monitoring with an `Instrumentation` instance. Typically the target `component` is the form `test_package/runner_class`. Options are:  * `-r`: Print raw results (otherwise decode   `report_key_streamresult`). Use with   `[-e perf true]` to generate raw output for performance measurements.* `-e name value`: Set argument `name`     to `value`.     For test runners a common form is `-e testrunner_flag value[,value...]`.* `-p file`: Write profiling data to `file`.* `-w`: Wait for instrumentation to finish before returning. Required for         test runners.* `--no-window-animation`: Turn off window animations while running.* `--user user_id | current`: Specify which user instrumentation runs in.             If not specified, run in the current user. |
+| `profile start process file` | Start profiler on `process`, write results to `file`. |
+| `profile stop process` | Stop profiler on `process`. |
+| `dumpheap [options] process file` | Dump the heap of `process`, write to `file`. Options are:  * `--user [user_id | current]`: When supplying a process name,   specify the user of the process to dump. If not specified, the current user is used.* `-b [| png | jpg | webp]`: Dump bitmaps from graphics memory (API level 35 and above).     Optionally specify the format to dump in (PNG by default).* `-n`: Dump native heap instead of managed heap. |
+| `dumpbitmaps [options] [-p process]` | Dump bitmap information from `process` (API level 36 and above). Options are:  * `-d|--dump [format]`: dump bitmap contents in the   specified `format`, which can be one of   `png`, `jpg`, or `webp`, default to   `png` if none is specified. A zip file   `dumpbitmaps-<time>.zip` will be created with the bitmaps.* `-p process`: dump bitmaps from     `process`, multiple     `-p process` can be specified.  If no `process` is specified, bitmaps from all processes will be dumped. |
+| `set-debug-app [options] package` | Set app `package` to debug. Options are:  * `-w`: Wait for debugger when app starts.* `--persistent`: Retain this value. |
+| `clear-debug-app` | Clear the package previous set for debugging with `set-debug-app`. |
+| `monitor [options]` | Start monitoring for crashes or ANRs. Options are:  * `--gdb`: Start `gdbserv` on the given port at crash/ANR. |
+| `screen-compat {on | off} package` | Control [screen compatibility](/guide/practices/screen-compat-mode) mode of `package`. |
+| `display-size [reset | widthxheight]` | Override device display size. This command is helpful for testing your app across different screen sizes by mimicking a small screen resolution using a device with a large screen, and vice versa. Example: `am display-size 1280x800` |
+| `display-density dpi` | Override device display density. This command is helpful for testing your app across different screen densities by mimicking a high-density screen environment using a low-density screen, and vice versa. Example: `am display-density 480` |
+| `to-uri intent` | Print the given intent specification as a URI. See the [Specification for intent arguments](#IntentSpec). |
+| `to-intent-uri intent` | Print the given intent specification as an `intent:` URI. See the [Specification for intent arguments](#IntentSpec). |
+| `memory-limiter subcommand [options]` | Adjust or disable the [memory limits imposed on devices running Android 17 and higher](/about/versions/17/behavior-changes-all#app-memory-limits). Has no effect on devices running Android 16 and lower.  Subcommands are:   * `ignore uid|none|all`: Instructs the memory limiter to ignore some or   all processes. Passing a UID (Android User ID) instructs the memory limiter to ignore   enforcement on all processes associated with that UID. You can also pass `all`   (ignore all apps) or `none` (do not ignore any apps). Passing `none`   overrides any previous calls to `am memory-limiter ignore`.  If you instruct the memory limiter to ignore a UID, you can still apply a manual memory   limit to a process within the app by calling `am memory-limiter manual`. * `manual pid limit|max|none`: Instructs the system to   impose a memory constraint on the process with the specified PID (Process ID). The memory   constraint is specified as an integer number of MB; for example, passing 30 specifies that   the process is limited to 30 MB of memory. Passing `max` removes all memory   limits on that process. Passing `none` removes any manual limits set on the   process, restoring the system's default limit (if any). * `status`: Reports the current status of the memory limiter. The status includes   the memory limits imposed on visible and non-visible processes. |
 
 #### Specification for intent arguments
 
 For activity manager commands that take an `intent` argument, you can
 specify the intent with the following options:
+
 Show all
 
 `-a action`
 :   Specify the intent action, such as `android.intent.action.VIEW`.
     You can declare this only once.
 
-`-d data_uri`
-:   Specify the intent data URI, such as `content://contacts/people/1`.
-    You can declare this only once.
+    `-d data_uri`
+    :   Specify the intent data URI, such as `content://contacts/people/1`.
+        You can declare this only once.
 
-`-t mime_type`
-:   Specify the intent MIME type, such as `image/png`.
-    You can declare this only once.
+        `-t mime_type`
+        :   Specify the intent MIME type, such as `image/png`.
+            You can declare this only once.
 
-`-c category`
-:   Specify an intent category, such as `android.intent.category.APP_CONTACTS`.
+            `-c category`
+            :   Specify an intent category, such as `android.intent.category.APP_CONTACTS`.
 
-`-n component`
-:   Specify the component name with package name prefix to create an explicit intent, such
-    as `com.example.app/.ExampleActivity`.
+                `-n component`
+                :   Specify the component name with package name prefix to create an explicit intent, such
+                    as `com.example.app/.ExampleActivity`.
 
-`-f flags`
-:   Add flags to the intent, as supported by
-    `https://developer.android.com/reference/android/content/Intent#setFlags(int)`.
+                    `-f flags`
+                    :   Add flags to the intent, as supported by
+                        `setFlags()`.
 
-`--esn extra_key`
-:   Add a null extra. This option is not supported for URI intents.
+                        `--esn extra_key`
+                        :   Add a null extra. This option is not supported for URI intents.
 
-`-e | --es extra_key extra_string_value`
-:   Add string data as a key-value pair.
+                            `-e | --es extra_key extra_string_value`
+                            :   Add string data as a key-value pair.
 
-`--ez extra_key extra_boolean_value`
-:   Add boolean data as a key-value pair.
+                                `--ez extra_key extra_boolean_value`
+                                :   Add boolean data as a key-value pair.
 
-`--ei extra_key extra_int_value`
-:   Add integer data as a key-value pair.
+                                    `--ei extra_key extra_int_value`
+                                    :   Add integer data as a key-value pair.
 
-`--el extra_key extra_long_value`
-:   Add long data as a key-value pair.
+                                        `--el extra_key extra_long_value`
+                                        :   Add long data as a key-value pair.
 
-`--ef extra_key extra_float_value`
-:   Add float data as a key-value pair.
+                                            `--ef extra_key extra_float_value`
+                                            :   Add float data as a key-value pair.
 
-`--eu extra_key extra_uri_value`
-:   Add URI data as a key-value pair.
+                                                `--eu extra_key extra_uri_value`
+                                                :   Add URI data as a key-value pair.
 
-`--ecn extra_key extra_component_name_value`
-:   Add a component name, which is converted and passed as
-    a `https://developer.android.com/reference/android/content/ComponentName` object.
+                                                    `--ecn extra_key extra_component_name_value`
+                                                    :   Add a component name, which is converted and passed as
+                                                        a `ComponentName` object.
 
-`--eia extra_key extra_int_value[,extra_int_value...]`
-:   Add an array of integers.
+                                                        `--eia extra_key extra_int_value[,extra_int_value...]`
+                                                        :   Add an array of integers.
 
-`--ela extra_key extra_long_value[,extra_long_value...]`
-:   Add an array of longs.
+                                                            `--ela extra_key extra_long_value[,extra_long_value...]`
+                                                            :   Add an array of longs.
 
-`--efa extra_key extra_float_value[,extra_float_value...]`
-:   Add an array of floats.
+                                                                `--efa extra_key extra_float_value[,extra_float_value...]`
+                                                                :   Add an array of floats.
 
-`--grant-read-uri-permission`
-:   Include the flag `https://developer.android.com/reference/android/content/Intent#FLAG_GRANT_READ_URI_PERMISSION`.
+                                                                    `--grant-read-uri-permission`
+                                                                    :   Include the flag `FLAG_GRANT_READ_URI_PERMISSION`.
 
-`--grant-write-uri-permission`
-:   Include the flag `https://developer.android.com/reference/android/content/Intent#FLAG_GRANT_WRITE_URI_PERMISSION`.
+                                                                        `--grant-write-uri-permission`
+                                                                        :   Include the flag `FLAG_GRANT_WRITE_URI_PERMISSION`.
 
-`--debug-log-resolution`
-:   Include the flag `https://developer.android.com/reference/android/content/Intent#FLAG_DEBUG_LOG_RESOLUTION`.
+                                                                            `--debug-log-resolution`
+                                                                            :   Include the flag `FLAG_DEBUG_LOG_RESOLUTION`.
 
-`--exclude-stopped-packages`
-:   Include the flag `https://developer.android.com/reference/android/content/Intent#FLAG_EXCLUDE_STOPPED_PACKAGES`.
+                                                                                `--exclude-stopped-packages`
+                                                                                :   Include the flag `FLAG_EXCLUDE_STOPPED_PACKAGES`.
 
-`--include-stopped-packages`
-:   Include the flag `https://developer.android.com/reference/android/content/Intent#FLAG_INCLUDE_STOPPED_PACKAGES`.
+                                                                                    `--include-stopped-packages`
+                                                                                    :   Include the flag `FLAG_INCLUDE_STOPPED_PACKAGES`.
 
-`--activity-brought-to-front`
-:   Include the flag `https://developer.android.com/reference/android/content/Intent#FLAG_ACTIVITY_BROUGHT_TO_FRONT`.
+                                                                                        `--activity-brought-to-front`
+                                                                                        :   Include the flag `FLAG_ACTIVITY_BROUGHT_TO_FRONT`.
 
-`--activity-clear-top`
-:   Include the flag `https://developer.android.com/reference/android/content/Intent#FLAG_ACTIVITY_CLEAR_TOP`.
+                                                                                            `--activity-clear-top`
+                                                                                            :   Include the flag `FLAG_ACTIVITY_CLEAR_TOP`.
 
-`--activity-clear-when-task-reset`
-:   Include the flag `https://developer.android.com/reference/android/content/Intent#FLAG_ACTIVITY_CLEAR_WHEN_TASK_RESET`.
+                                                                                                `--activity-clear-when-task-reset`
+                                                                                                :   Include the flag `FLAG_ACTIVITY_CLEAR_WHEN_TASK_RESET`.
 
-`--activity-exclude-from-recents`
-:   Include the flag `https://developer.android.com/reference/android/content/Intent#FLAG_ACTIVITY_EXCLUDE_FROM_RECENTS`.
+                                                                                                    `--activity-exclude-from-recents`
+                                                                                                    :   Include the flag `FLAG_ACTIVITY_EXCLUDE_FROM_RECENTS`.
 
-`--activity-launched-from-history`
-:   Include the flag `https://developer.android.com/reference/android/content/Intent#FLAG_ACTIVITY_LAUNCHED_FROM_HISTORY`.
+                                                                                                        `--activity-launched-from-history`
+                                                                                                        :   Include the flag `FLAG_ACTIVITY_LAUNCHED_FROM_HISTORY`.
 
-`--activity-multiple-task`
-:   Include the flag `https://developer.android.com/reference/android/content/Intent#FLAG_ACTIVITY_MULTIPLE_TASK`.
+                                                                                                            `--activity-multiple-task`
+                                                                                                            :   Include the flag `FLAG_ACTIVITY_MULTIPLE_TASK`.
 
-`--activity-no-animation`
-:   Include the flag `https://developer.android.com/reference/android/content/Intent#FLAG_ACTIVITY_NO_ANIMATION`.
+                                                                                                                `--activity-no-animation`
+                                                                                                                :   Include the flag `FLAG_ACTIVITY_NO_ANIMATION`.
 
-`--activity-no-history`
-:   Include the flag `https://developer.android.com/reference/android/content/Intent#FLAG_ACTIVITY_NO_HISTORY`.
+                                                                                                                    `--activity-no-history`
+                                                                                                                    :   Include the flag `FLAG_ACTIVITY_NO_HISTORY`.
 
-`--activity-no-user-action`
-:   Include the flag `https://developer.android.com/reference/android/content/Intent#FLAG_ACTIVITY_NO_USER_ACTION`.
+                                                                                                                        `--activity-no-user-action`
+                                                                                                                        :   Include the flag `FLAG_ACTIVITY_NO_USER_ACTION`.
 
-`--activity-previous-is-top`
-:   Include the flag `https://developer.android.com/reference/android/content/Intent#FLAG_ACTIVITY_PREVIOUS_IS_TOP`.
+                                                                                                                            `--activity-previous-is-top`
+                                                                                                                            :   Include the flag `FLAG_ACTIVITY_PREVIOUS_IS_TOP`.
 
-`--activity-reorder-to-front`
-:   Include the flag `https://developer.android.com/reference/android/content/Intent#FLAG_ACTIVITY_REORDER_TO_FRONT`.
+                                                                                                                                `--activity-reorder-to-front`
+                                                                                                                                :   Include the flag `FLAG_ACTIVITY_REORDER_TO_FRONT`.
 
-`--activity-reset-task-if-needed`
-:   Include the flag `https://developer.android.com/reference/android/content/Intent#FLAG_ACTIVITY_RESET_TASK_IF_NEEDED`.
+                                                                                                                                    `--activity-reset-task-if-needed`
+                                                                                                                                    :   Include the flag `FLAG_ACTIVITY_RESET_TASK_IF_NEEDED`.
 
-`--activity-single-top`
-:   Include the flag `https://developer.android.com/reference/android/content/Intent#FLAG_ACTIVITY_SINGLE_TOP`.
+                                                                                                                                        `--activity-single-top`
+                                                                                                                                        :   Include the flag `FLAG_ACTIVITY_SINGLE_TOP`.
 
-`--activity-clear-task`
-:   Include the flag `https://developer.android.com/reference/android/content/Intent#FLAG_ACTIVITY_CLEAR_TASK`.
+                                                                                                                                            `--activity-clear-task`
+                                                                                                                                            :   Include the flag `FLAG_ACTIVITY_CLEAR_TASK`.
 
-`--activity-task-on-home`
-:   Include the flag `https://developer.android.com/reference/android/content/Intent#FLAG_ACTIVITY_TASK_ON_HOME`.
+                                                                                                                                                `--activity-task-on-home`
+                                                                                                                                                :   Include the flag `FLAG_ACTIVITY_TASK_ON_HOME`.
 
-`--receiver-registered-only`
-:   Include the flag `https://developer.android.com/reference/android/content/Intent#FLAG_RECEIVER_REGISTERED_ONLY`.
+                                                                                                                                                    `--receiver-registered-only`
+                                                                                                                                                    :   Include the flag `FLAG_RECEIVER_REGISTERED_ONLY`.
 
-`--receiver-replace-pending`
-:   Include the flag `https://developer.android.com/reference/android/content/Intent#FLAG_RECEIVER_REPLACE_PENDING`.
+                                                                                                                                                        `--receiver-replace-pending`
+                                                                                                                                                        :   Include the flag `FLAG_RECEIVER_REPLACE_PENDING`.
 
-`--selector`
-:   Requires the use of `-d` and `-t` options to set the intent data and
-    type.
+                                                                                                                                                            `--selector`
+                                                                                                                                                            :   Requires the use of `-d` and `-t` options to set the intent data and
+                                                                                                                                                                type.
 
-`URI component package`
-:   You can directly specify a URI, package name, and component name when not qualified
-    by one of the preceding options. When an argument is unqualified, the tool assumes the argument
-    is a URI if it contains a ":" (colon). The tools assumes the argument is a component name if
-    it contains a "/" (forward-slash); otherwise it assumes the argument is a package name.
+                                                                                                                                                                `URI component package`
+                                                                                                                                                                :   You can directly specify a URI, package name, and component name when not qualified
+                                                                                                                                                                    by one of the preceding options. When an argument is unqualified, the tool assumes the argument
+                                                                                                                                                                    is a URI if it contains a ":" (colon). The tools assumes the argument is a component name if
+                                                                                                                                                                    it contains a "/" (forward-slash); otherwise it assumes the argument is a package name.
 
 ### Call package manager (`pm`)
 
@@ -800,49 +822,50 @@ pm command
 You can also issue a package manager command directly from `adb`
 without entering a remote shell. For example:
 
-    adb shell pm uninstall com.example.MyApp
+```
+adb shell pm uninstall com.example.MyApp
+```
 
 **Table 2.** Available package manager commands
 
 | Command | Description |
-|---|---|
-| ` list packages [options] filter ` | Print all packages, optionally only those whose package name contains the text in `filter`. Options: - `-f`: See associated file. - `-d`: Filter to only show disabled packages. - `-e`: Filter to only show enabled packages. - `-s`: Filter to only show system packages. - `-3`: Filter to only show third-party packages. - `-i`: See the installer for the packages. - `-u`: Include uninstalled packages. - `--user user_id`: The user space to query. |
-| ` list permission-groups ` | Print all known permission groups. |
-| ` list permissions [options] group ` | Print all known permissions, optionally only those in `group`. Options: - `-g`: Organize by group. - `-f`: Print all information. - `-s`: Short summary. - `-d`: Only list dangerous permissions. - `-u`: List only the permissions users will see. |
-| ` list instrumentation [options] ` | List all test packages. Options: - `-f`: List the APK file for the test package. - `target_package`: List test packages for only this app. |
-| ` list features ` | Print all features of the system. |
-| ` list libraries ` | Print all the libraries supported by the current device. |
-| ` list users ` | Print all users on the system. |
-| ` path package ` | Print the path to the APK of the given `package`. |
-| ` install [options] path ` | Install a package, specified by `path`, to the system. Options: - `-r`: Reinstall an existing app, keeping its data. - `-t`: Allow test APKs to be installed. Gradle generates a test APK when you have only run or debugged your app or have used the Android Studio **Build \> Build APK** command. If the APK is built using a developer preview SDK, you must include the [`-t` option](https://developer.android.com/studio/command-line/adb#-t-option) with the `install` command if you are installing a test APK. - `-i installer_package_name`: Specify the installer package name. - `--user user_id`: Specify the user to install the package for. By default, the package is installed for all users existing on the device. - `--install-location location`: Set the install location using one of the following values: - `0`: Use the default install location. - `1`: Install on internal device storage. - `2`: Install on external media. - `-f`: Install package on the internal system memory. - `-d`: Allow version code downgrade. - `-g`: Grant all permissions listed in the app manifest. - `--fastdeploy`: Quickly update an installed package by only updating the parts of the APK that changed. - `--incremental`: Installs enough of the APK to launch the app while streaming the remaining data in the background. To use this feature, you must sign the APK, create an [APK Signature Scheme v4 file](https://developer.android.com/studio/command-line/apksigner#v4-signing-enabled), and place this file in the same directory as the APK. This feature is only supported on certain devices. This option forces `adb` to use the feature or fail if it is not supported, with verbose information on why it failed. Append the `--wait` option to wait until the APK is fully installed before granting access to the APK. `--no-incremental` prevents `adb` from using this feature. |
-| ` uninstall [options] package ` | Removes a package from the system. Options: - `-k`: Keep the data and cache directories after package removal. - `--user user_id`: Specifies the user for whom the package is removed. By default, the package is removed for all users on the device. - `--versionCode version_code`: Only uninstalls if the app has the given version code. |
-| ` clear package ` | Delete all data associated with a package. |
-| ` enable package_or_component ` | Enable the given package or component (written as "package/class"). |
-| ` disable package_or_component ` | Disable the given package or component (written as "package/class"). |
-| ` disable-user [options] package_or_component ` | Options: - `--user user_id`: The user to disable. |
-| ` grant package_name permission ` | Grant a permission to an app. On devices running Android 6.0 (API level 23) and higher, the permission can be any permission declared in the app manifest. On devices running Android 5.1 (API level 22) and lower, must be an optional permission defined by the app. |
-| ` revoke package_name permission ` | Revoke a permission from an app. On devices running Android 6.0 (API level 23) and higher, the permission can be any permission declared in the app manifest. On devices running Android 5.1 (API level 22) and lower, must be an optional permission defined by the app. |
-| ` set-install-location location ` | Change the default install location. Location values: - `0`: Auto: Let system decide the best location. - `1`: Internal: Install on internal device storage. - `2`: External: Install on external media. **Note:** This is only intended for debugging. Using this can cause apps to break and other undesirable behavior. |
-| ` get-install-location ` | Returns the current install location. Return values: - `0 [auto]`: Let system decide the best location - `1 [internal]`: Install on internal device storage - `2 [external]`: Install on external media |
-| ` set-permission-enforced permission [true | false] ` | Specify whether the given permission should be enforced. |
-| ` trim-caches desired_free_space ` | Trim cache files to reach the given free space. |
-| ` create-user user_name ` | Create a new user with the given `user_name`, printing the new user identifier of the user. |
-| ` remove-user user_id ` | Remove the user with the given `user_id`, deleting all data associated with that user |
-| ` get-max-users ` | Print the maximum number of users supported by the device. |
-| ` get-app-links [options] [package] ` | Print the domain verification state for the given <var translate="no">package</var>, or for all packages if none is specified. State codes are defined as follows: - `none`: nothing has been recorded for this domain - `verified`: the domain has been successfully verified - `approved`: force-approved, usually through shell - `denied`: force-denied, usually through shell - `migrated`: preserved verification from a legacy response - `restored`: preserved verification from a user data restore - `legacy_failure`: rejected by a legacy verifier, unknown reason - `system_configured`: automatically approved by the device config - ` >= 1024`: custom error code, which is specific to the device verifier Options are: - `--user user_id`: include user selections. Include all domains, not just autoVerify ones. |
-| ` reset-app-links [options] [package] ` | Reset domain verification state for the given package, or for all packages if none is specified. - `package`: the package to reset, or "all" to reset all packages Options are: - `--user user_id`: include user selections. Include all domains, not just autoVerify ones. |
-| ` verify-app-links [--re-verify] [package] ` | Broadcast a verification request for the given <var translate="no">package</var>, or for all packages if none is specified. Only sends if the package has previously not recorded a response. - `--re-verify`: send even if the package has recorded a response |
-| ` set-app-links [--package package] state domains ` | Manually set the state of a domain for a package. The domain must be declared by the package as autoVerify for this to work. This command will not report a failure for domains that could not be applied. - `--package package`: the package to set, or "all" to set all packages - `state`: the code to set the domains to. Valid values are: - `STATE_NO_RESPONSE (0)`: reset as if no response was ever recorded. - `STATE_SUCCESS (1)`: treat domain as successfully verified by domain verification agent. Note that the domain verification agent can override this. - `STATE_APPROVED (2)`: treat domain as always approved, preventing the domain verification agent from changing it. - `STATE_DENIED (3)`: treat domain as always denied, preventing the domain verification agent from changing it. - `domains`: space-separated list of domains to change, or "all" to change every domain. |
-| ` set-app-links-user-selection --user user_id [--package package] enabled domains ` | Manually set the state of a host user selection for a package. The domain must be declared by the package for this to work. This command will not report a failure for domains that could not be applied. - `--user user_id`: the user to change selections for - `--package package`: the package to set - `enabled`: whether to approve the domain - `domains`: space-separated list of domains to change, or "all" to change every domain |
-| ` set-app-links-allowed --user user_id [--package package] allowed ` | Toggle the auto-verified link-handling setting for a package. - `--user user_id`: the user to change selections for - `--package package`: the package to set, or "all" to set all packages; packages will be reset if no package is specified - `allowed`: true to allow the package to open auto-verified links, false to disable |
-| ` get-app-link-owners --user user_id [--package package] domains ` | Print the owners for a specific domain for a given user in low- to high-priority order. - `--user user_id`: the user to query for - `--package package`: optionally also print for all web domains declared by a package, or "all" to print all packages - `domains`: space-separated list of domains to query for |
+| --- | --- |
+| `list packages [options] filter` | Print all packages, optionally only those whose package name contains the text in `filter`. Options:  * `-f`: See associated file.* `-d`: Filter to only show disabled packages.* `-e`: Filter to only show enabled packages.* `-s`: Filter to only show system packages.* `-3`: Filter to only show third-party packages.* `-i`: See the installer for the packages.* `-u`: Include uninstalled packages.* `--user user_id`: The user space to query. |
+| `list permission-groups` | Print all known permission groups. |
+| `list permissions [options] group` | Print all known permissions, optionally only those in `group`. Options:  * `-g`: Organize by group.* `-f`: Print all information.* `-s`: Short summary.* `-d`: Only list dangerous permissions.* `-u`: List only the permissions users will see. |
+| `list instrumentation [options]` | List all test packages. Options:  * `-f`: List the APK file for the test package.* `target_package`: List test packages for only this app. |
+| `list features` | Print all features of the system. |
+| `list libraries` | Print all the libraries supported by the current device. |
+| `list users` | Print all users on the system. |
+| `path package` | Print the path to the APK of the given `package`. |
+| `install [options] path` | Install a package, specified by `path`, to the system. Options:  * `-r`: Reinstall an existing app, keeping its data. * `-t`: Allow test APKs to be installed. Gradle generates a test APK when   you have only run or debugged your app or have used the Android Studio **Build > Build   APK** command. If the APK is built using a developer preview SDK, you must include the   [`-t` option](/studio/command-line/adb#-t-option)   with the `install` command if you are installing a test APK. * `-i installer_package_name`: Specify the installer package name. * `--user user_id`: Specify the user to install the package for. By   default, the package is installed for all users existing on the device. * `--install-location location`: Set the install location   using one of the following values:   + `0`: Use the default install location.   + `1`: Install on internal device storage.   + `2`: Install on external media. * `-f`: Install package on the internal system memory. * `-d`: Allow version code downgrade. * `-g`: Grant all permissions listed in the app manifest. * `--fastdeploy`: Quickly update an installed package by only updating the parts of   the APK that changed. * `--incremental`: Installs enough of the APK to launch the app   while streaming the remaining data in the background. To use this feature, you must sign the   APK, create an   [APK Signature Scheme v4 file](/studio/command-line/apksigner#v4-signing-enabled),   and place this file in the same directory as the APK. This feature is only supported on   certain devices. This option forces `adb` to use the feature or fail if it is not   supported, with verbose information on why it failed. Append the `--wait` option to   wait until the APK is fully installed before granting access to the APK. `--no-incremental` prevents `adb` from using this feature. |
+| `uninstall [options] package` | Removes a package from the system. Options:  * `-k`: Keep the data and cache directories after package removal.* `--user user_id`: Specifies the user for whom the package is removed.     By default, the package is removed for all users on the device.* `--versionCode version_code`: Only uninstalls if the app has the given       version code. |
+| `clear package` | Delete all data associated with a package. |
+| `enable package_or_component` | Enable the given package or component (written as "package/class"). |
+| `disable package_or_component` | Disable the given package or component (written as "package/class"). |
+| `disable-user [options] package_or_component` | Options:  * `--user user_id`: The user to disable. |
+| `grant package_name permission` | Grant a permission to an app. On devices running Android 6.0 (API level 23) and higher, the permission can be any permission declared in the app manifest. On devices running Android 5.1 (API level 22) and lower, must be an optional permission defined by the app. |
+| `revoke package_name permission` | Revoke a permission from an app. On devices running Android 6.0 (API level 23) and higher, the permission can be any permission declared in the app manifest. On devices running Android 5.1 (API level 22) and lower, must be an optional permission defined by the app. |
+| `set-install-location location` | Change the default install location. Location values:  * `0`: Auto: Let system decide the best location.* `1`: Internal: Install on internal device storage.* `2`: External: Install on external media.   **Note:** This is only intended for debugging. Using this can cause apps to break and other undesirable behavior. |
+| `get-install-location` | Returns the current install location. Return values:  * `0 [auto]`: Let system decide the best location* `1 [internal]`: Install on internal device storage* `2 [external]`: Install on external media |
+| `set-permission-enforced permission [true | false]` | Specify whether the given permission should be enforced. |
+| `trim-caches desired_free_space` | Trim cache files to reach the given free space. |
+| `create-user user_name` | Create a new user with the given `user_name`, printing the new user identifier of the user. |
+| `remove-user user_id` | Remove the user with the given `user_id`, deleting all data associated with that user |
+| `get-max-users` | Print the maximum number of users supported by the device. |
+| `get-app-links [options] [package]` | Print the domain verification state for the given package, or for all packages if none is specified. State codes are defined as follows:  * `none`: nothing has been recorded for this domain* `verified`: the domain has been successfully verified* `approved`: force-approved, usually through shell* `denied`: force-denied, usually through shell* `migrated`: preserved verification from a legacy response* `restored`: preserved verification from a user data restore* `legacy_failure`: rejected by a legacy verifier, unknown reason* `system_configured`: automatically approved by the device config* `>= 1024`: custom error code, which is specific to the device verifier   Options are:  * `--user user_id`: include user selections. Include all domains,   not just autoVerify ones. |
+| `reset-app-links [options] [package]` | Reset domain verification state for the given package, or for all packages if none is specified.  * `package`: the package to reset, or "all" to reset all packages   Options are:  * `--user user_id`: include user selections. Include all domains,   not just autoVerify ones. |
+| `verify-app-links [--re-verify] [package]` | Broadcast a verification request for the given package, or for all packages if none is specified. Only sends if the package has previously not recorded a response.  * `--re-verify`: send even if the package has recorded a response |
+| `set-app-links [--package package] state domains` | Manually set the state of a domain for a package. The domain must be declared by the package as autoVerify for this to work. This command will not report a failure for domains that could not be applied.  * `--package package`: the package to set, or "all" to set all packages* `state`: the code to set the domains to. Valid values are:     + `STATE_NO_RESPONSE (0)`: reset as if no response was ever recorded.+ `STATE_SUCCESS (1)`: treat domain as successfully verified by domain         verification agent. Note that the domain verification agent can         override this.+ `STATE_APPROVED (2)`: treat domain as always approved, preventing the           domain verification agent from changing it.+ `STATE_DENIED (3)`: treat domain as always denied, preventing the domain             verification agent from changing it.* `domains`: space-separated list of domains to change, or "all" to       change every domain. |
+| `set-app-links-user-selection --user user_id [--package package] enabled domains` | Manually set the state of a host user selection for a package. The domain must be declared by the package for this to work. This command will not report a failure for domains that could not be applied.  * `--user user_id`: the user to change selections for* `--package package`: the package to set* `enabled`: whether to approve the domain* `domains`: space-separated list of domains to change, or "all" to         change every domain |
+| `set-app-links-allowed --user user_id [--package package] allowed` | Toggle the auto-verified link-handling setting for a package.  * `--user user_id`: the user to change selections for* `--package package`: the package to set, or "all" to set all     packages; packages will be reset if no package is specified* `allowed`: true to allow the package to open auto-verified links,       false to disable |
+| `get-app-link-owners --user user_id [--package package] domains` | Print the owners for a specific domain for a given user in low- to high-priority order.  * `--user user_id`: the user to query for* `--package package`: optionally also print for all web domains     declared by a package, or "all" to print all packages* `domains`: space-separated list of domains to query for |
 
 ### Call device policy manager (`dpm`)
 
 To help you develop and test your device management apps, issue
 commands to the device policy manager (`dpm`) tool. Use the tool to control the active
 admin app or change a policy's status data on the device.
-
 
 While in a shell, the `dpm`syntax is:
 
@@ -860,14 +883,14 @@ adb shell dpm command
 **Table 3.** Available device policy manager commands
 
 | Command | Description |
-|---|---|
-| `set-active-admin [options] component` | Sets <var translate="no">component</var> as active admin. Options are: - `--user user_id`: Specify the target user. You can also pass `--user current` to select the current user. |
-| `set-profile-owner [options] component` | Set <var translate="no">component</var> as active admin and its package as profile owner for an existing user. Options are: - `--user user_id`: Specify the target user. You can also pass `--user current` to select the current user. - `--name name`: Specify the human-readable organization name. |
-| `set-device-owner [options] component` | Set <var translate="no">component</var> as active admin and its package as device owner. Options are: - `--user user_id`: Specify the target user. You can also pass `--user current` to select the current user. - `--name name`: Specify the human-readable organization name. |
-| `remove-active-admin [options] component` | Disable an active admin. The app must declare `https://developer.android.com/guide/topics/manifest/application-element#testOnly` in the manifest. This command also removes device and profile owners. Options are: - `--user user_id`: Specify the target user. You can also pass `--user current` to select the current user. |
-| `clear-freeze-period-record` | Clear the device's record of previously set freeze periods for system OTA updates. This is useful to avoid the device scheduling restrictions when developing apps that manage freeze periods. See [Manage system updates](https://developer.android.com/work/dpc/system-updates#development_and_testing). Supported on devices running Android 9.0 (API level 28) and higher. |
-| `force-network-logs` | Force the system to make any existing network logs ready for retrieval by a DPC. If there are connection or DNS logs available, the DPC receives the `https://developer.android.com/reference/android/app/admin/DeviceAdminReceiver#onNetworkLogsAvailable(android.content.Context,%20android.content.Intent,%20long,%20int)` callback. See [Network activity logging](https://developer.android.com/work/dpc/logging#development_and_testing). This command is rate-limited. Supported on devices running Android 9.0 (API level 28) and higher. |
-| `force-security-logs` | Force the system to make any existing security logs available to the DPC. If there are logs available, the DPC receives the `https://developer.android.com/reference/android/app/admin/DeviceAdminReceiver#onSecurityLogsAvailable(android.content.Context,%20android.content.Intent)` callback. See [Log enterprise device activity](https://developer.android.com/work/dpc/security#log_enterprise_device_activity). This command is rate-limited. Supported on devices running Android 9.0 (API level 28) and higher. |
+| --- | --- |
+| `set-active-admin [options] component` | Sets component as active admin. Options are:  * `--user user_id`: Specify the target user. You can also pass   `--user current` to select the current user. |
+| `set-profile-owner [options] component` | Set component as active admin and its package as profile owner for an existing user. Options are:  * `--user user_id`: Specify the target user. You can   also pass `--user current` to select the current user.* `--name name`: Specify the human-readable organization name. |
+| `set-device-owner [options] component` | Set component as active admin and its package as device owner. Options are:  * `--user user_id`: Specify the target user. You can also pass   `--user current` to select the current user.* `--name name`: Specify the human-readable organization name. |
+| `remove-active-admin [options] component` | Disable an active admin. The app must declare `android:testOnly` in the manifest. This command also removes device and profile owners. Options are:  * `--user user_id`: Specify the target user. You can also pass   `--user current` to select the current user. |
+| `clear-freeze-period-record` | Clear the device's record of previously set freeze periods for system OTA updates. This is useful to avoid the device scheduling restrictions when developing apps that manage freeze periods. See [Manage system updates](/work/dpc/system-updates#development_and_testing). Supported on devices running Android 9.0 (API level 28) and higher. |
+| `force-network-logs` | Force the system to make any existing network logs ready for retrieval by a DPC. If there are connection or DNS logs available, the DPC receives the `onNetworkLogsAvailable()` callback. See [Network activity logging](/work/dpc/logging#development_and_testing). This command is rate-limited. Supported on devices running Android 9.0 (API level 28) and higher. |
+| `force-security-logs` | Force the system to make any existing security logs available to the DPC. If there are logs available, the DPC receives the `onSecurityLogsAvailable()` callback. See [Log enterprise device activity](/work/dpc/security#log_enterprise_device_activity). This command is rate-limited. Supported on devices running Android 9.0 (API level 28) and higher. |
 
 ### Take a screenshot
 
@@ -888,7 +911,6 @@ adb shell screencap /sdcard/screen.png
 
 Here's an example screenshot session, using the `adb` shell to capture the screenshot
 and the `pull` command to download the file from the device:
-
 
 ```
 $ adb shell
@@ -931,7 +953,6 @@ To begin recording your device screen, run the `screenrecord` command to record
 the video. Then, run the `pull` command to download the video from the device to the host
 computer. Here's an example recording session:
 
-
 ```
 $ adb shell
 shell@ $ screenrecord --verbose /sdcard/demo.mp4
@@ -946,18 +967,20 @@ display resolution and orientation by default, with a maximum length of three mi
 
 Limitations of the `screenrecord` utility:
 
-- Audio is not recorded with the video file.
-- Video recording is not available for devices running Wear OS.
-- Some devices might not be able to record at their native display resolution. If you encounter problems with screen recording, try using a lower screen resolution.
-- Rotation of the screen during recording is not supported. If the screen does rotate during recording, some of the screen is cut off in the recording.
+* Audio is not recorded with the video file.
+* Video recording is not available for devices running Wear OS.
+* Some devices might not be able to record at their native display resolution.
+  If you encounter problems with screen recording, try using a lower screen resolution.
+* Rotation of the screen during recording is not supported. If the screen does rotate during
+  recording, some of the screen is cut off in the recording.
 
 **Table 4.** `screenrecord` options
 
 | Options | Description |
-|---|---|
+| --- | --- |
 | `--help` | Display command syntax and options |
 | `--size widthxheight` | Set the video size: `1280x720`. The default value is the device's native display resolution (if supported), 1280x720 if not. For best results, use a size supported by your device's Advanced Video Coding (AVC) encoder. |
-| `--bit-rate rate` | Set the video bit rate for the video, in megabits per second. The default value is 20Mbps. You can increase the bit rate to improve video quality, but doing so results in larger movie files. The following example sets the recording bit rate to 6Mbps: ``` screenrecord --bit-rate 6000000 /sdcard/demo.mp4 ``` |
+| `--bit-rate rate` | Set the video bit rate for the video, in megabits per second. The default value is 20Mbps. You can increase the bit rate to improve video quality, but doing so results in larger movie files. The following example sets the recording bit rate to 6Mbps:    ``` screenrecord --bit-rate 6000000 /sdcard/demo.mp4 ``` |
 | `--time-limit time` | Set the maximum recording time, in seconds. The default and maximum value is 180 (3 minutes). |
 | `--rotate` | Rotate the output 90 degrees. This feature is experimental. |
 | `--verbose` | Display log information on the command-line screen. If you do not set this option, the utility does not display any information while running. |
@@ -985,7 +1008,6 @@ adb pull /data/misc/profman/package.prof.txt
 
 ### Reset test devices
 
-
 If you test your app across multiple test devices, it may be useful to reset your device between
 tests, for example, to remove user data and reset the test environment. You can perform a factory
 reset of a test device running Android 10 (API level 29) or higher using the
@@ -995,29 +1017,22 @@ reset of a test device running Android 10 (API level 29) or higher using the
 adb shell cmd testharness enable
 ```
 
-
 When restoring the device using `testharness`, the device automatically backs up the RSA
 key that allows debugging through the current workstation in a persistent location. That is, after
 the device is reset, the workstation can continue to debug and issue `adb` commands to
 the device without manually registering a new key.
 
-
 Additionally, to help make it easier and more secure to keep testing your app, using the
 `testharness` to restore a device also changes the following device settings:
 
-- The device sets up certain system settings so that initial device setup wizards do not appear. That is, the device enters a state from which you can quickly install, debug, and test your app.
-- Settings:
-  - Disables lock screen.
-  - Disables emergency alerts.
-  - Disables auto-sync for accounts.
-  - Disables automatic system updates.
-- Other:
-  - Disables preinstalled security apps.
-
+* The device sets up certain system settings so that initial device setup wizards do not appear.
+  That is, the device enters a state from which you can quickly install, debug, and test your app.* Settings:
+    + Disables lock screen.+ Disables emergency alerts.+ Disables auto-sync for accounts.+ Disables automatic system updates.* Other:
+      + Disables preinstalled security apps.
 
 If your app needs to detect and adapt to the default settings of the `testharness`
 command, use the
-[`ActivityManager.isRunningInUserTestHarness()`](https://developer.android.com/reference/android/app/ActivityManager#isRunningInUserTestHarness()).
+[`ActivityManager.isRunningInUserTestHarness()`](/reference/android/app/ActivityManager#isRunningInUserTestHarness()).
 
 ### sqlite
 
@@ -1045,7 +1060,6 @@ backend of the OS (Windows, Linux, or macOS) or it can use the `libusb` backend.
 Some features, such as `attach`, `detach`, and USB speed detection, are
 only available when using `libusb` backend.
 
-
 You can choose a backend by using the `ADB_LIBUSB` environment variable.
 If it isn't set, adb uses its default backend. The default behavior varies among OS. Starting
 with [ADB v34](https://developer.android.com/tools/releases/platform-tools#revisions), the
@@ -1055,8 +1069,8 @@ set, it determines whether the native backend or `libusb` is used. See the
 [adb manual page](https://android.googlesource.com/platform/packages/modules/adb/+/refs/heads/master/docs/user/adb.1.md)
 for more information about adb environment variables.
 
-> [!WARNING]
-> **Experimental:** Support for using the `libusb` backend with Windows is experimental. As of ADB v34, only the macOS and Linux platforms have been tested with the `libusb` library.
+**Experimental:** Support for using the `libusb` backend with Windows is experimental. As of
+ADB v34, only the macOS and Linux platforms have been tested with the `libusb` library.
 
 ## adb mDNS backends
 
@@ -1077,5 +1091,6 @@ debugging.
 
 Burst Mode is disabled by default. To enable the feature, do one of the following:
 
-- Set the environment variable `ADB_BURST_MODE` to `1`.
-- In Android Studio, go to the debugger settings at **File** (or **Android Studio** on macOS) **\> Settings \> Build, Execution, Deployment \> Debugger** and set **ADB Server Burst Mode** to **Enabled**.
+* Set the environment variable `ADB_BURST_MODE` to `1`.
+* In Android Studio, go to the debugger settings at **File** (or **Android Studio** on macOS) **> Settings > Build, Execution, Deployment > Debugger**
+  and set **ADB Server Burst Mode** to **Enabled**.
