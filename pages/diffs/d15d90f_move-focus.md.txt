@@ -1,0 +1,114 @@
+diff --git a/docs/develop/ui/compose/touch-input/focus/move-focus.md b/docs/develop/ui/compose/touch-input/focus/move-focus.md
+index 51d7656..b5789e2 100644
+--- a/docs/develop/ui/compose/touch-input/focus/move-focus.md
++++ b/docs/develop/ui/compose/touch-input/focus/move-focus.md
+@@ -1,33 +1,21 @@
+ ---
+-title: Move and clear focus  |  Jetpack Compose  |  Android Developers
++title: https://developer.android.com/develop/ui/compose/touch-input/focus/move-focus
+ url: https://developer.android.com/develop/ui/compose/touch-input/focus/move-focus
+-source: html-scrape
++source: md.txt
+ ---
+ 
+-* [Android Developers](https://developer.android.com/)
+-* [Develop](https://developer.android.com/develop)
+-* [Core areas](https://developer.android.com/develop/core-areas)
+-* [UI](https://developer.android.com/develop/ui)
+-* [Docs](https://developer.android.com/develop/ui/compose/documentation)
+-
+-# Move and clear focus Stay organized with collections Save and categorize content based on your preferences.
+-
+-
+-
+-
+-
+-[`FocusManager`](/reference/kotlin/androidx/compose/ui/focus/FocusManager) lets you move focus directionally or clear it entirely.
+-Use [`FocusRequester`](/reference/kotlin/androidx/compose/ui/focus/FocusRequester) for direct component targeting (see [Programmatically request focus](/develop/ui/compose/touch-input/focus/request-focus)).
++[`FocusManager`](https://developer.android.com/reference/kotlin/androidx/compose/ui/focus/FocusManager) lets you move focus directionally or clear it entirely.
++Use [`FocusRequester`](https://developer.android.com/reference/kotlin/androidx/compose/ui/focus/FocusRequester) for direct component targeting (see [Programmatically request focus](https://developer.android.com/develop/ui/compose/touch-input/focus/request-focus)).
+ 
+ ## Directional focus movement with FocusManager
+ 
+ To move focus programmatically in a relative direction:
+ 
+-1. Obtain the `FocusManager` instance using [`LocalFocusManager.current`](/reference/kotlin/androidx/compose/ui/platform/package-summary#LocalFocusManager()).
+-2. Call [`moveFocus()`](/reference/kotlin/androidx/compose/ui/focus/FocusManager#moveFocus(androidx.compose.ui.focus.FocusDirection)) with a [`FocusDirection`](/reference/kotlin/androidx/compose/ui/focus/FocusDirection) value (`Next`, `Previous`,
+-   `Up`, `Down`, `Left`, `Right`, `Enter`, or `Exit`).
++1. Obtain the `FocusManager` instance using [`LocalFocusManager.current`](https://developer.android.com/reference/kotlin/androidx/compose/ui/platform/package-summary#LocalFocusManager()).
++2. Call [`moveFocus()`](https://developer.android.com/reference/kotlin/androidx/compose/ui/focus/FocusManager#moveFocus(androidx.compose.ui.focus.FocusDirection)) with a [`FocusDirection`](https://developer.android.com/reference/kotlin/androidx/compose/ui/focus/FocusDirection) value (`Next`, `Previous`, `Up`, `Down`, `Left`, `Right`, `Enter`, or `Exit`).
+ 
+-```
++
++```kotlin
+ val focusManager = LocalFocusManager.current
+ 
+ Button(
+@@ -37,17 +25,18 @@ Button(
+ ) {
+     Text("Next Field")
+ }
+-
+-MoveFocus.kt
+ ```
+ 
++<br />
++
+ ## Clear focus
+ 
+ To remove focus from whichever element currently holds it
+-(for example, when the user presses the `Esc` key),
+-call [`clearFocus()`](/reference/kotlin/androidx/compose/ui/focus/FocusManager#clearFocus(kotlin.Boolean)):
++(for example, when the user presses the <kbd>Esc</kbd> key),
++call [`clearFocus()`](https://developer.android.com/reference/kotlin/androidx/compose/ui/focus/FocusManager#clearFocus(kotlin.Boolean)):
+ 
+-```
++
++```kotlin
+ val focusManager = LocalFocusManager.current
+ 
+ Box(
+@@ -60,33 +49,19 @@ Box(
+         }
+     }
+ )
+-
+-MoveFocus.kt
+ ```
+ 
++<br />
++
+ The `clearFocus()` function accepts an optional `force: Boolean = false`
+ parameter:
+ 
+-* **`force = false` (default)**: Respects focus locks and will not clear focus
+-  if the active component has [captured focus](/develop/ui/compose/touch-input/focus/capture-and-release-focus).
+-* **`force = true`**: Unconditionally clears focus even if a component has
+-  captured focus.
++- **`force = false` (default)** : Respects focus locks and will not clear focus if the active component has [captured focus](https://developer.android.com/develop/ui/compose/touch-input/focus/capture-and-release-focus).
++- **`force = true`**: Unconditionally clears focus even if a component has captured focus.
+ 
+ ## Recommended for you
+ 
+-* Note: link text is displayed when JavaScript is off
+-* [Focus targets](/develop/ui/compose/touch-input/focus/focus-target)
+-* [Focus traversal order](/develop/ui/compose/touch-input/focus/focus-traversal)
+-* [Programmatically request focus](/develop/ui/compose/touch-input/focus/request-focus)
+-
+-[Previous
+-
+-arrow\_back
+-
+-Programmatically request focus](/develop/ui/compose/touch-input/focus/request-focus)
+-
+-[Next
+-
+-Capture and release focus
+-
+-arrow\_forward](/develop/ui/compose/touch-input/focus/capture-and-release-focus)
+\ No newline at end of file
++- Note: link text is displayed when JavaScript is off
++- [Focus targets](https://developer.android.com/develop/ui/compose/touch-input/focus/focus-target)
++- [Focus traversal order](https://developer.android.com/develop/ui/compose/touch-input/focus/focus-traversal)
++- [Programmatically request focus](https://developer.android.com/develop/ui/compose/touch-input/focus/request-focus)
+\ No newline at end of file
