@@ -1,37 +1,21 @@
 ---
-title: A2ui  |  Jetpack  |  Android Developers
+title: https://developer.android.com/jetpack/androidx/releases/a2ui
 url: https://developer.android.com/jetpack/androidx/releases/a2ui
-source: html-scrape
+source: md.txt
 ---
-
-* [Android Developers](https://developer.android.com/)
-* [Get started](https://developer.android.com/get-started/overview)
-* [Jetpack](https://developer.android.com/jetpack)
-* [Libraries](https://developer.android.com/jetpack/androidx/explorer)
-
-Stay organized with collections
-
-Save and categorize content based on your preferences.
-
-
-
-
 
 # A2ui
 
-API Reference  
-[androidx.a2ui](/reference/kotlin/androidx/a2ui/package-summary)
-
-The Jetpack Compose Agent-to-UI (A2UI) renderer provides an implementation of the [A2UI protocol](https://a2ui.org/), enabling AI agents to generate rich, interactive user interfaces that render native Compose components—without executing arbitrary code.
+The Jetpack Compose Agent-to-UI (A2UI) renderer provides an implementation of the [A2UI protocol](https://a2ui.org/), enabling AI agents to generate rich, interactive user interfaces that render native Compose components---without executing arbitrary code.
 
 | Latest Update | Stable Release | Release Candidate | Beta Release | Alpha Release |
-| --- | --- | --- | --- | --- |
-| October 21, 2026 | - | - | - | [1.0.0-alpha02](/jetpack/androidx/releases/a2ui#1.0.0-alpha02) |
+|---|---|---|---|---|
+| October 21, 2026 | - | - | - | [1.0.0-alpha02](https://developer.android.com/jetpack/androidx/releases/a2ui#1.0.0-alpha02) |
 
 ## Declaring dependencies
 
 To add a dependency on a2ui, you must add the Google Maven repository to your
-project. Read [Google's Maven repository](/studio/build/dependencies#google-maven)
+project. Read [Google's Maven repository](https://developer.android.com/studio/build/dependencies#google-maven)
 for more information.
 
 Add the dependencies for the artifacts you need in the `build.gradle` file for
@@ -39,7 +23,7 @@ your app or module:
 
 ### Groovy
 
-```
+```groovy
 dependencies {
     implementation "androidx.a2ui:a2ui-engine:1.0.0-alpha02"
     implementation "androidx.a2ui:a2ui-model:1.0.0-alpha02"
@@ -48,24 +32,24 @@ dependencies {
 
 ### Kotlin
 
-```
+```kotlin
 dependencies {
     implementation("androidx.a2ui:a2ui-engine:1.0.0-alpha02")
     implementation("androidx.a2ui:a2ui-model:1.0.0-alpha02")
 }
 ```
 
-For more information about dependencies, see [Add build dependencies](/studio/build/dependencies).
+For more information about dependencies, see [Add build dependencies](https://developer.android.com/studio/build/dependencies).
 
 ## Feedback
 
 Your feedback helps make Jetpack better. Let us know if you discover new issues or have
 ideas for improving this library. Please take a look at the
-[existing issues](https://issuetracker.google.com/issues?q=componentid:%20status:open)
+[existing issues](https://issuetracker.google.com/issues?q=componentid:+status:open)
 in this library before you create a new one. You can add your vote to an existing issue by
 clicking the star button.
 
-[Create a new issue](https://issuetracker.google.com/issues/new?component=&template=)
+[Create a new issue](https://issuetracker.google.com/issues/new?component&template)
 
 See the [Issue Tracker documentation](https://developers.google.com/issue-tracker)
 for more information.
@@ -86,24 +70,23 @@ September 23, 2026
 
 **New Features**
 
-The Jetpack Compose Agent-to-UI (A2UI) renderer provides an implementation of the [A2UI protocol](https://a2ui.org/), enabling AI agents to generate rich, interactive user interfaces that render native Compose components—without executing arbitrary code. This library performs protocol message parsing, schema validation, and provides foundational APIs for building UI renderers.
+The Jetpack Compose Agent-to-UI (A2UI) renderer provides an implementation of the [A2UI protocol](https://a2ui.org/), enabling AI agents to generate rich, interactive user interfaces that render native Compose components---without executing arbitrary code. This library performs protocol message parsing, schema validation, and provides foundational APIs for building UI renderers.
 
 **API Changes**
 
-* Added `acceptsUnresolvedArguments` to `A2uiFunctionDefinition` and `getFunctionDefinition` to `A2uiExecutionContext` to allow functions like `required` to execute when data bindings cannot be resolved. ([I74d9f](https://android-review.googlesource.com/#/q/I74d9ffd9f405f388a729f589e902ea56b81e9f96), [b/547851648](https://issuetracker.google.com/issues/547851648))
-* Added `A2uiFunctionArgParser`.`getEpochMillisArg` and updated `formatDate` to support ISO 8601 date-time strings and epoch timestamps. ([Id04ec](https://android-review.googlesource.com/#/q/Id04ecaf76312d6cdad6d9f88e824b8269a5519ca))
-* Added `A2uiClientCapabilities` and `clientCapabilities` to `A2uiCoreMessageProcessor` to support A2UI capabilities advertisement. ([Ia3316](https://android-review.googlesource.com/#/q/Ia3316e884420693ec519292333c739d1f19cf6d9), [b/532000711](https://issuetracker.google.com/issues/532000711))
-* Add `A2uiMessageParser`, `A2uiJsonMessageParser` and `A2uiJsonReader` ([I52762](https://android-review.googlesource.com/#/q/I5276226b57385f6bf90892a3d5ded97679a85f4d), [b/537133532](https://issuetracker.google.com/issues/537133532))
-* Add `createBasicCatalogFunctions` ([I1f003](https://android-review.googlesource.com/#/q/I1f0030c7fd3a5a8391678826cc81034dc1687f64), [b/527907617](https://issuetracker.google.com/issues/527907617))
-* Add `A2uiFormatStringFunction`. Add support for component-level caching for functions through `A2uiExecutionContext` ([Id4da7](https://android-review.googlesource.com/#/q/Id4da74ce5814dcbb8195f6416dc5699aae5e7067), [b/527907617](https://issuetracker.google.com/issues/527907617))
-* Added `A2uiExecutionContext` interface and its implementation `A2uiCoreExecutionContext`. Added method for payload evaluation in `A2uiSurfaceModel`. ([I7957c](https://android-review.googlesource.com/#/q/I7957cc3ad6466f3fa2686856b73f5b309d60b7c2), [b/531999707](https://issuetracker.google.com/issues/531999707))
-* Add `A2uiCoreDynamicResolver` interface ([Ic84f8](https://android-review.googlesource.com/#/q/Ic84f8cbed8dd4b5cb9f1b77277d50869a7c8454a), [b/531999707](https://issuetracker.google.com/issues/531999707))
-* Added A2UI's basic catalog functions except for `FormatString` ([Ied352](https://android-review.googlesource.com/#/q/Ied3526852d6a82159e8f993f79a43efb7a23d9c0), [b/527907617](https://issuetracker.google.com/issues/527907617))
-* Created interfaces for `A2uiCoreCatalog`, `A2uiCoreComponentDefinition`, `A2uiFunctionDefinition` and `A2uiFunction` ([I9916d](https://android-review.googlesource.com/#/q/I9916d4554ab4cd429e9c0953fb8b46bc76e23968), [b/527821290](https://issuetracker.google.com/issues/527821290))
-* Initialize an artifact for the runtime layer of the Compose
-  A2UI renderer. ([I8be68](https://android-review.googlesource.com/#/q/I8be6808464b5d5602cfedcbf2f6e13431903fd03), [b/524122705](https://issuetracker.google.com/issues/524122705))
-* rename a2ui module to a2ui-core ([Ia286d](https://android-review.googlesource.com/#/q/Ia286d26ad826cdc0777d3043710b1b09980129da))
+- Added `acceptsUnresolvedArguments` to `A2uiFunctionDefinition` and `getFunctionDefinition` to `A2uiExecutionContext` to allow functions like `required` to execute when data bindings cannot be resolved. ([I74d9f](https://android-review.googlesource.com/#/q/I74d9ffd9f405f388a729f589e902ea56b81e9f96), [b/547851648](https://issuetracker.google.com/issues/547851648))
+- Added `A2uiFunctionArgParser`.`getEpochMillisArg` and updated `formatDate` to support ISO 8601 date-time strings and epoch timestamps. ([Id04ec](https://android-review.googlesource.com/#/q/Id04ecaf76312d6cdad6d9f88e824b8269a5519ca))
+- Added `A2uiClientCapabilities` and `clientCapabilities` to `A2uiCoreMessageProcessor` to support A2UI capabilities advertisement. ([Ia3316](https://android-review.googlesource.com/#/q/Ia3316e884420693ec519292333c739d1f19cf6d9), [b/532000711](https://issuetracker.google.com/issues/532000711))
+- Add `A2uiMessageParser`, `A2uiJsonMessageParser` and `A2uiJsonReader` ([I52762](https://android-review.googlesource.com/#/q/I5276226b57385f6bf90892a3d5ded97679a85f4d), [b/537133532](https://issuetracker.google.com/issues/537133532))
+- Add `createBasicCatalogFunctions` ([I1f003](https://android-review.googlesource.com/#/q/I1f0030c7fd3a5a8391678826cc81034dc1687f64), [b/527907617](https://issuetracker.google.com/issues/527907617))
+- Add `A2uiFormatStringFunction`. Add support for component-level caching for functions through `A2uiExecutionContext` ([Id4da7](https://android-review.googlesource.com/#/q/Id4da74ce5814dcbb8195f6416dc5699aae5e7067), [b/527907617](https://issuetracker.google.com/issues/527907617))
+- Added `A2uiExecutionContext` interface and its implementation `A2uiCoreExecutionContext`. Added method for payload evaluation in `A2uiSurfaceModel`. ([I7957c](https://android-review.googlesource.com/#/q/I7957cc3ad6466f3fa2686856b73f5b309d60b7c2), [b/531999707](https://issuetracker.google.com/issues/531999707))
+- Add `A2uiCoreDynamicResolver` interface ([Ic84f8](https://android-review.googlesource.com/#/q/Ic84f8cbed8dd4b5cb9f1b77277d50869a7c8454a), [b/531999707](https://issuetracker.google.com/issues/531999707))
+- Added A2UI's basic catalog functions except for `FormatString` ([Ied352](https://android-review.googlesource.com/#/q/Ied3526852d6a82159e8f993f79a43efb7a23d9c0), [b/527907617](https://issuetracker.google.com/issues/527907617))
+- Created interfaces for `A2uiCoreCatalog`, `A2uiCoreComponentDefinition`, `A2uiFunctionDefinition` and `A2uiFunction` ([I9916d](https://android-review.googlesource.com/#/q/I9916d4554ab4cd429e9c0953fb8b46bc76e23968), [b/527821290](https://issuetracker.google.com/issues/527821290))
+- Initialize an artifact for the runtime layer of the Compose A2UI renderer. ([I8be68](https://android-review.googlesource.com/#/q/I8be6808464b5d5602cfedcbf2f6e13431903fd03), [b/524122705](https://issuetracker.google.com/issues/524122705))
+- rename a2ui module to a2ui-core ([Ia286d](https://android-review.googlesource.com/#/q/Ia286d26ad826cdc0777d3043710b1b09980129da))
 
 **Bug Fixes**
 
-* Updated `A2uiMessageFormatter` documentation to clarify argument mismatch behavior. ([I2efad](https://android-review.googlesource.com/#/q/I2efad618153253f0e03f2c8993e12e12fb0170a7))
+- Updated `A2uiMessageFormatter` documentation to clarify argument mismatch behavior. ([I2efad](https://android-review.googlesource.com/#/q/I2efad618153253f0e03f2c8993e12e12fb0170a7))

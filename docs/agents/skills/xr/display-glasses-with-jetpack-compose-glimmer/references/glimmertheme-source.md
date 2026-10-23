@@ -1,19 +1,14 @@
 ---
-title: API source code for GlimmerTheme  |  Android Developers
+title: https://developer.android.com/agents/skills/xr/display-glasses-with-jetpack-compose-glimmer/references/glimmertheme-source
 url: https://developer.android.com/agents/skills/xr/display-glasses-with-jetpack-compose-glimmer/references/glimmertheme-source
-source: html-scrape
+source: md.txt
 ---
-
-# API source code for GlimmerTheme Stay organized with collections Save and categorize content based on your preferences.
-
-
-
-
 
 When implementing Glimmer styles, refer to the following source code in
 `GlimmerTheme.kt`:
 
-```
+
+```kotlin
 /*
  * Copyright 2025 The Android Open Source Project
  *
@@ -188,6 +183,6 @@ private val _localGlimmerTheme: ProvidableCompositionLocal<GlimmerTheme> =
     staticCompositionLocalOf {
         GlimmerTheme()
     }
-
-GlimmerTheme.kt
 ```
+
+<br />

@@ -1,41 +1,24 @@
 ---
-title: Interpolator  |  Jetpack  |  Android Developers
+title: https://developer.android.com/jetpack/androidx/releases/interpolator
 url: https://developer.android.com/jetpack/androidx/releases/interpolator
-source: html-scrape
+source: md.txt
 ---
-
-* [Android Developers](https://developer.android.com/)
-* [Get started](https://developer.android.com/get-started/overview)
-* [Jetpack](https://developer.android.com/jetpack)
-* [Libraries](https://developer.android.com/jetpack/androidx/explorer)
-
-Stay organized with collections
-
-Save and categorize content based on your preferences.
-
-
-
-
 
 # Interpolator
 
-[User Guide](/guide/topics/graphics/prop-animation#interpolators)
+[User Guide](https://developer.android.com/guide/topics/graphics/prop-animation#interpolators) Use animation interpolators on older platforms.
 
-API Reference  
-[androidx.interpolator.view.animation](/reference/kotlin/androidx/interpolator/view/animation/package-summary)
-
-Use animation interpolators on older platforms.
-
-**Caution:** This library is in maintenance mode and will only receive critical fixes; new features are not planned. We recommend using [Jetpack Compose](/jetpack/compose) for building Android UIs. See [Compose-first](/develop/ui/compose/first) for more information.
+> [!CAUTION]
+> **Caution:** This library is in maintenance mode and will only receive critical fixes; new features are not planned. We recommend using [Jetpack Compose](https://developer.android.com/jetpack/compose) for building Android UIs. See [Compose-first](https://developer.android.com/develop/ui/compose/first) for more information.
 
 | Latest Update | Stable Release | Release Candidate | Beta Release | Alpha Release |
-| --- | --- | --- | --- | --- |
-| September 21, 2018 | [1.0.0](/jetpack/androidx/releases/interpolator#1.0.0) | - | - | - |
+|---|---|---|---|---|
+| September 21, 2018 | [1.0.0](https://developer.android.com/jetpack/androidx/releases/interpolator#1.0.0) | - | - | - |
 
 ## Declaring dependencies
 
 To add a dependency on Interpolator, you must add the Google Maven repository to your
-project. Read [Google's Maven repository](/studio/build/dependencies#google-maven)
+project. Read [Google's Maven repository](https://developer.android.com/studio/build/dependencies#google-maven)
 for more information.
 
 Add the dependencies for the artifacts you need in the `build.gradle` file for
@@ -43,7 +26,7 @@ your app or module:
 
 ### Groovy
 
-```
+```groovy
 dependencies {
     implementation "androidx.interpolator:interpolator:1.0.0"
 }
@@ -51,7 +34,7 @@ dependencies {
 
 ### Kotlin
 
-```
+```kotlin
 dependencies {
     implementation("androidx.interpolator:interpolator:1.0.0")
 }
@@ -61,7 +44,7 @@ dependencies {
 
 Your feedback helps make Jetpack better. Let us know if you discover new issues or have
 ideas for improving this library. Please take a look at the
-[existing issues](https://issuetracker.google.com/issues?q=componentid:460575%20status:open)
+[existing issues](https://issuetracker.google.com/issues?q=componentid:460575+status:open)
 in this library before you create a new one. You can add your vote to an existing issue by
 clicking the star button.
 

@@ -1,14 +1,8 @@
 ---
-title: System-Wide Triage  |  Android Developers
+title: https://developer.android.com/agents/skills/profilers/android-profiler/analysis/workflows/perfetto-trace-analysis/references/triage
 url: https://developer.android.com/agents/skills/profilers/android-profiler/analysis/workflows/perfetto-trace-analysis/references/triage
-source: html-scrape
+source: md.txt
 ---
-
-# System-Wide Triage Stay organized with collections Save and categorize content based on your preferences.
-
-
-
-
 
 Follow these steps in order:
 
@@ -22,7 +16,6 @@ awareness.
 
 Run metrics to detect systemic issues (thermal throttling, LMKs, binder
 contention) affecting system health.
-
 > **Prerequisite:** Verify `trace_processor` is available (see
 > `$SKILL_ROOT/references/perfetto/setup.md`) and start a warm background
 > session per `$SKILL_ROOT/references/perfetto/sql.md`
@@ -40,7 +33,7 @@ Key available metrics for `--run-metrics`: `android_startup`, `android_cpu`,
 `android_gpu`.
 
 | Symptom / Issue | What to check | Useful Perfetto tables |
-| --- | --- | --- |
+|---|---|---|
 | **App Startup** | Main thread, class loading, bindApplication | `android.startup.startups` (`android_startups`), `slice` |
 | **App Jank** | Main thread, RenderThread | `actual_frame_timeline_slice`, `slice`, `thread_state` |
 | **System Jank** | SurfaceFlinger, HWC composition | `actual_frame_timeline_slice`, `slice` |
@@ -51,47 +44,35 @@ Key available metrics for `--run-metrics`: `android_startup`, `android_cpu`,
 
 ## 3. Define Target and Symptom Window
 
-1. Locate the start (`ts`), duration (`dur`) and end timestamp (`ts + dur`) of
-   the specific issue.
-2. **Expand upstream:** Check if the first blocking event was caused by a stall
-   that *started before* the symptom window. Stalls (for example, in binder
-   servers, memory reclamation or kernel locks) often originate hundreds of
-   milliseconds before the user-visible frame drop or latency spike occurs.
-   * Find the victim's first non-Running state transition within the symptom
-     window.
-   * Follow the waker chain. If the blocking event began significantly before
-     the symptom window, expand the investigation window upstream to include
-     that origin. If it cascades down to an origin in another process (for
-     example, a binder server that stalled `500ms` before the jank), **note**
-     the expanded window and track the upstream stall as a co-candidate in
-     the output.
+1. Locate the start (`ts`), duration (`dur`) and end timestamp (`ts + dur`) of the specific issue.
+2. **Expand upstream:** Check if the first blocking event was caused by a stall that *started before* the symptom window. Stalls (for example, in binder servers, memory reclamation or kernel locks) often originate hundreds of milliseconds before the user-visible frame drop or latency spike occurs.
+   - Find the victim's first non-Running state transition within the symptom window.
+   - Follow the waker chain. If the blocking event began significantly before the symptom window, expand the investigation window upstream to include that origin. If it cascades down to an origin in another process (for example, a binder server that stalled `500ms` before the jank), **note** the expanded window and track the upstream stall as a co-candidate in the output.
 3. **Output** the triage summary using the format defined below.
 
 ## 4. Final Output Format
 
 Output the triage summary in this format:
 
-```
-## Trace Metadata
-- **Device Model:** `[String, e.g., Pixel 7 Pro]`
-- **Android Build:** `[String, e.g., TQ2A.230505.002]`
+    ## Trace Metadata
+    - **Device Model:** `[String, e.g., Pixel 7 Pro]`
+    - **Android Build:** `[String, e.g., TQ2A.230505.002]`
 
-## System Vitals Summary
-- **Status:** `[Nominal | Degraded | Critical]`
-- **Flags Raised:** *(Only list systemic issues that are actually detected)*
-  - **Metric:** `[String, e.g., thermal_throttling, lmkd, binder_contention]`
-  - **Description:** `[e.g., 'Thermal throttling during symptom window']`
+    ## System Vitals Summary
+    - **Status:** `[Nominal | Degraded | Critical]`
+    - **Flags Raised:** *(Only list systemic issues that are actually detected)*
+      - **Metric:** `[String, e.g., thermal_throttling, lmkd, binder_contention]`
+      - **Description:** `[e.g., 'Thermal throttling during symptom window']`
 
-## Candidate(s)
-*(Provide this block for each identified candidate)*
-- **Issue Classification:** `[String, e.g., Startup, Jank, ANR_Input, Crash]`
-- **Package Name:** `[String]`
-- **Process Name:** `[String]`
-- **Thread Name:** `[String]`
-- **UPID:** `[Integer]`
-- **Target UTID:** `[Integer]` *(The primary thread)*
-- **Render Thread UTID:** `[Integer or N/A]` *(If issue is jank)*
-- **Symptom Window:** `[Start TS] - [End TS] ([Duration ms])`
-- **Expanded Window:** `[Expanded Start TS] - [End TS] ([Expanded Duration ms] or "None")`
-- **Severity Note:** `[String, e.g., '150ms missed frame - worst instance']`
-```
+    ## Candidate(s)
+    *(Provide this block for each identified candidate)*
+    - **Issue Classification:** `[String, e.g., Startup, Jank, ANR_Input, Crash]`
+    - **Package Name:** `[String]`
+    - **Process Name:** `[String]`
+    - **Thread Name:** `[String]`
+    - **UPID:** `[Integer]`
+    - **Target UTID:** `[Integer]` *(The primary thread)*
+    - **Render Thread UTID:** `[Integer or N/A]` *(If issue is jank)*
+    - **Symptom Window:** `[Start TS] - [End TS] ([Duration ms])`
+    - **Expanded Window:** `[Expanded Start TS] - [End TS] ([Expanded Duration ms] or "None")`
+    - **Severity Note:** `[String, e.g., '150ms missed frame - worst instance']`

@@ -1,17 +1,8 @@
 ---
-title: Gemini Privacy Notice  |  Android Studio  |  Android Developers
+title: https://developer.android.com/studio/gemini/privacy-notice
 url: https://developer.android.com/studio/gemini/privacy-notice
-source: html-scrape
+source: md.txt
 ---
-
-* [Android Developers](https://developer.android.com/)
-* [Android Studio](https://developer.android.com/studio)
-
-# Gemini Privacy Notice Stay organized with collections Save and categorize content based on your preferences.
-
-
-
-
 
 This notice and our [Privacy Policy](https://policies.google.com/privacy)
 describe how Gemini in Android Studio handles your data. Please read them

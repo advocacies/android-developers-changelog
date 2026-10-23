@@ -1,41 +1,24 @@
 ---
-title: Dynamicanimation  |  Jetpack  |  Android Developers
+title: https://developer.android.com/jetpack/androidx/releases/dynamicanimation
 url: https://developer.android.com/jetpack/androidx/releases/dynamicanimation
-source: html-scrape
+source: md.txt
 ---
-
-* [Android Developers](https://developer.android.com/)
-* [Get started](https://developer.android.com/get-started/overview)
-* [Jetpack](https://developer.android.com/jetpack)
-* [Libraries](https://developer.android.com/jetpack/androidx/explorer)
-
-Stay organized with collections
-
-Save and categorize content based on your preferences.
-
-
-
-
 
 # Dynamicanimation
 
-[User Guide](/guide/topics/graphics/spring-animation)  [Code Sample](https://github.com/android/animation-samples/tree/main/Motion#list--oscillation)
+[User Guide](https://developer.android.com/guide/topics/graphics/spring-animation) [Code Sample](https://github.com/android/animation-samples/tree/main/Motion#list--oscillation) Create smooth animations with a physics-based animation API.
 
-API Reference  
-[androidx.dynamicanimation.animation](/reference/kotlin/androidx/dynamicanimation/animation/package-summary)
-
-Create smooth animations with a physics-based animation API.
-
-**Caution:** This library is in maintenance mode and will only receive critical fixes; new features are not planned. We recommend using [Jetpack Compose](/jetpack/compose) for building Android UIs. See [Compose-first](/develop/ui/compose/first) for more information.
+> [!CAUTION]
+> **Caution:** This library is in maintenance mode and will only receive critical fixes; new features are not planned. We recommend using [Jetpack Compose](https://developer.android.com/jetpack/compose) for building Android UIs. See [Compose-first](https://developer.android.com/develop/ui/compose/first) for more information.
 
 | Latest Update | Stable Release | Release Candidate | Beta Release | Alpha Release |
-| --- | --- | --- | --- | --- |
-| April 9, 2025 | [1.1.0](/jetpack/androidx/releases/dynamicanimation#1.1.0) | - | - | - |
+|---|---|---|---|---|
+| April 9, 2025 | [1.1.0](https://developer.android.com/jetpack/androidx/releases/dynamicanimation#1.1.0) | - | - | - |
 
 ## Declaring dependencies
 
 To add a dependency on DynamicAnimation, you must add the Google Maven repository to your
-project. Read [Google's Maven repository](/studio/build/dependencies#google-maven)
+project. Read [Google's Maven repository](https://developer.android.com/studio/build/dependencies#google-maven)
 for more information.
 
 Add the dependencies for the artifacts you need in the `build.gradle` file for
@@ -43,7 +26,7 @@ your app or module:
 
 ### Groovy
 
-```
+```groovy
 dependencies {
     // Java language implementation
     implementation "androidx.dynamicanimation:dynamicanimation:1.1.0"
@@ -55,7 +38,7 @@ dependencies {
 
 ### Kotlin
 
-```
+```kotlin
 dependencies {
     // Java language implementation
     implementation("androidx.dynamicanimation:dynamicanimation:1.1.0")
@@ -65,13 +48,13 @@ dependencies {
 }
 ```
 
-For more information about dependencies, see [Add build dependencies](/studio/build/dependencies).
+For more information about dependencies, see [Add build dependencies](https://developer.android.com/studio/build/dependencies).
 
 ## Feedback
 
 Your feedback helps make Jetpack better. Let us know if you discover new issues or have
 ideas for improving this library. Please take a look at the
-[existing issues](https://issuetracker.google.com/issues?q=componentid:460912%20status:open)
+[existing issues](https://issuetracker.google.com/issues?q=componentid:460912+status:open)
 in this library before you create a new one. You can add your vote to an existing issue by
 clicking the star button.
 
@@ -90,7 +73,7 @@ April 9, 2025
 
 **API Changes**
 
-* `DynamicAnimation` library is now stable.
+- `DynamicAnimation` library is now stable.
 
 ### Version 1.1.0-rc01
 
@@ -106,11 +89,11 @@ March 12, 2025
 
 **API Changes**
 
-* Hide AnimationHandler class visibility. ([I8072e](https://android-review.googlesource.com/#/q/I8072eb333158a2f8a05590e1bb01dd59ddef9183))
+- Hide AnimationHandler class visibility. ([I8072e](https://android-review.googlesource.com/#/q/I8072eb333158a2f8a05590e1bb01dd59ddef9183))
 
 **Bug Fixes**
 
-* This library now uses [JSpecify nullness annotations](https://jspecify.dev/), which are type-use. Kotlin developers should use the following compiler argument to enforce correct usage: `-Xjspecify-annotations=strict` (this is the default starting with version 2.1.0 of the Kotlin compiler). ([I70783](https://android-review.googlesource.com/#/q/I707835de5ef50bb485fbb79d26600153ca22f6e2), [b/326456246](https://issuetracker.google.com/issues/326456246))
+- This library now uses [JSpecify nullness annotations](https://jspecify.dev/), which are type-use. Kotlin developers should use the following compiler argument to enforce correct usage: `-Xjspecify-annotations=strict` (this is the default starting with version 2.1.0 of the Kotlin compiler). ([I70783](https://android-review.googlesource.com/#/q/I707835de5ef50bb485fbb79d26600153ca22f6e2), [b/326456246](https://issuetracker.google.com/issues/326456246))
 
 ### Version 1.1.0-alpha03
 
@@ -124,11 +107,12 @@ July 2, 2019
 
 `androidx.dynamicanimation:dynamicanimation:1.1.0-alpha02` is released. The commits included in this version can be found [here](https://android.googlesource.com/platform/frameworks/support/+log/21e165dc2f0fe0acc7ced317d75f4e92155a8e35..668764cd97f4074bc1f309fa4b55467402332773/dynamic-animation).
 
-**Note:** This version is dependent on the Java 8 programming language. Please read [Use Java 8 language features](/studio/write/java8-support) to learn how to use it in your project.
+> [!NOTE]
+> **Note:** This version is dependent on the Java 8 programming language. Please read [Use Java 8 language features](https://developer.android.com/studio/write/java8-support) to learn how to use it in your project.
 
 **Bug fixes**
 
-* Fixed a bug in the handling of pending position when canceled ([aosp/978170](https://android-review.googlesource.com/c/978170))
+- Fixed a bug in the handling of pending position when canceled ([aosp/978170](https://android-review.googlesource.com/c/978170))
 
 ### Version 1.1.0-alpha01
 
@@ -158,7 +142,7 @@ April 3, 2019
 
 **API changes**
 
-* Changed `springAnimationOf`and `flingAnimationOf` to take in a setter and a getter instead of a target and a `FloatPropertyCompat` to instantiate a `SpringAnimation` and a `FlingAnimation` respectively.
+- Changed `springAnimationOf`and `flingAnimationOf` to take in a setter and a getter instead of a target and a `FloatPropertyCompat` to instantiate a `SpringAnimation` and a `FlingAnimation` respectively.
 
 ### Dynamicanimation-Ktx Version 1.0.0-alpha01
 
@@ -168,4 +152,4 @@ February 7, 2019
 
 **New features**
 
-* New Kotlin API for creating `SpringAnimations` and `FlingAnimations`
+- New Kotlin API for creating `SpringAnimations` and `FlingAnimations`

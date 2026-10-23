@@ -1,35 +1,25 @@
 ---
-title: Transform data streams  |  App architecture  |  Android Developers
+title: https://developer.android.com/topic/libraries/architecture/paging/v3-transform
 url: https://developer.android.com/topic/libraries/architecture/paging/v3-transform
-source: html-scrape
+source: md.txt
 ---
 
-* [Android Developers](https://developer.android.com/)
-* [Design & Plan](https://developer.android.com/design)
-* [App architecture](https://developer.android.com/topic/architecture/intro)
-
-# Transform data streams Stay organized with collections Save and categorize content based on your preferences.
-
-
-
-
-
 When you [work with paged
-data](/topic/libraries/architecture/paging/v3-paged-data), you often need to
+data](https://developer.android.com/topic/libraries/architecture/paging/v3-paged-data), you often need to
 transform the data stream as you load it. For example, you might need to filter
 a list of items, or convert items to a different type before you present them in
 the UI. Another common use case for data stream transformation is [adding list
-separators](#separators).
+separators](https://developer.android.com/topic/libraries/architecture/paging/v3-transform#separators).
 
 More generally, applying transformations directly to the data stream allows you
 to keep your repository constructs and UI constructs separate.
 
 This page assumes that you are familiar with [basic use of the Paging
-library](/topic/libraries/architecture/paging/v3-paged-data).
+library](https://developer.android.com/topic/libraries/architecture/paging/v3-paged-data).
 
 ## Apply basic transformations
 
-Because [`PagingData`](/reference/kotlin/androidx/paging/PagingData) is
+Because [`PagingData`](https://developer.android.com/reference/kotlin/androidx/paging/PagingData) is
 encapsulated in a reactive stream, you can apply transform operations on the
 data incrementally between loading the data and presenting it.
 
@@ -38,7 +28,7 @@ place the transformations inside a
 [`map()`](https://kotlin.github.io/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines.flow/map.html)
 operation on the stream:
 
-```
+```kotlin
 pager.flow // Type is Flow<PagingData<User>>.
   // Map the outer stream so that the transformations are applied to
   // each new generation of PagingData.
@@ -59,7 +49,7 @@ One common use case for this is to map a network or database layer object onto
 an object specifically used in the UI layer. The example below demonstrates how
 to apply this type of map operation:
 
-```
+```kotlin
 pager.flow // Type is Flow<PagingData<User>>.
   .map { pagingData ->
     pagingData.map { user -> UiModel(user) }
@@ -75,7 +65,7 @@ You can listen for the query input using a stream API. Keep the stream reference
 in your `ViewModel`. The UI layer should not have direct access to it; instead,
 define a function to notify the ViewModel of the user's query.
 
-```
+```kotlin
 private val queryFlow = MutableStateFlow("")
 
 fun onQueryChanged(query: String) {
@@ -88,7 +78,7 @@ convert the query value to the desired data type and return the result to the UI
 layer. The specific conversion function depends on the language and framework
 used, but they all provide similar functionality.
 
-```
+```kotlin
 val querySearchResults: Flow<User> = queryFlow.flatMapLatest { query ->
   // The database query returns a Flow which is output through
   // querySearchResults
@@ -112,7 +102,7 @@ filter applies to the `PagingData` object. Once the data is filtered out of the
 `PagingData`, the new `PagingData` instance is passed to the UI layer to
 display.
 
-```
+```kotlin
 pager.flow // Type is Flow<PagingData<User>>.
   .map { pagingData ->
     pagingData.filter { user -> !user.hiddenFromUi }
@@ -128,16 +118,12 @@ composables, enabling full interactivity, styling, and accessibility semantics.
 
 There are three steps involved in inserting separators into your paged list:
 
-1. Convert the UI model to accommodate the separator items. One way to do this
-   is to wrap your data item and separator into a single sealed class. This lets
-   the UI handle multiple item types in the same list.
-2. Transform the data stream to dynamically add the separators between loading
-   the data and presenting the data.
+1. Convert the UI model to accommodate the separator items. One way to do this is to wrap your data item and separator into a single sealed class. This lets the UI handle multiple item types in the same list.
+2. Transform the data stream to dynamically add the separators between loading the data and presenting the data.
 3. Update the UI to handle separator items.
 
-**Note:** For visual dividers that don't require custom data or logic, you can use
-the `HorizontalDivider` composable directly inside your item layouts or as a
-standalone element in the list.
+> [!NOTE]
+> **Note:** For visual dividers that don't require custom data or logic, you can use the `HorizontalDivider` composable directly inside your item layouts or as a standalone element in the list.
 
 ### Convert the UI model
 
@@ -154,7 +140,7 @@ Suppose that you want to add separators to a paged list of `User` items. The
 following snippet shows how to create a base class where the instances can be
 either a `UserModel` or a `SeparatorModel`:
 
-```
+```kotlin
 sealed class UiModel {
   class UserModel(val id: String, val label: String) : UiModel() {
     constructor(user: User) : this(user.id, user.label)
@@ -169,17 +155,17 @@ sealed class UiModel {
 You must apply transformations to the data stream after loading it and before
 you present it. The transformations should do the following:
 
-* Convert the loaded list items to reflect the new base item type.
-* Use the `PagingData.insertSeparators()` method to add the separators.
+- Convert the loaded list items to reflect the new base item type.
+- Use the `PagingData.insertSeparators()` method to add the separators.
 
 To learn more about transformation operations, see [Apply basic
-transformations](#basic-transformations).
+transformations](https://developer.android.com/topic/libraries/architecture/paging/v3-transform#basic-transformations).
 
 The following example shows transformation operations to update the
 `PagingData<User>` stream to a `PagingData<UiModel>` stream with separators
 added:
 
-```
+```kotlin
 pager.flow.map { pagingData: PagingData<User> ->
   // Map outer stream, so you can perform transformations on
   // each paging generation.
@@ -210,7 +196,7 @@ each emitted `UiModel`. When iterating through your paged data, use a `when`
 statement to call the appropriate composable. This lets you provide a distinct
 UI for data items and separators.
 
-```
+```kotlin
 @Composable fun UserList(pagingItems: LazyPagingItems) {
   LazyColumn {
     items(
@@ -248,7 +234,7 @@ exposing the `Flow` to your composables.
 To manage the cache correctly, pass a `CoroutineScope` to `cachedIn()`, as shown
 in the following example using `viewModelScope`.
 
-```
+```kotlin
 pager.flow // Type is Flow<PagingData<User>>.
   .map { pagingData ->
     pagingData.filter { user -> !user.hiddenFromUi }
@@ -259,15 +245,10 @@ pager.flow // Type is Flow<PagingData<User>>.
 
 For more information on using `cachedIn()` with a stream of `PagingData`, see
 [Set up a stream of
-PagingData](/topic/libraries/architecture/paging/v3-paged-data#pagingdata-stream).
+PagingData](https://developer.android.com/topic/libraries/architecture/paging/v3-paged-data#pagingdata-stream).
 
-**Note:** By default you can only use each instance of `PagingData` once.
-To get around this limitation, consider using the `cachedIn()` operator, which
-multicasts the stream as part of caching the results. This allows subsequent
-collections on `Pager.flow` to recollect on the cached `PagingData`.
-This is especially
-useful when you work with operators that reuse the most recently emitted
-`PagingData`, such as Flow's `.combine()` operator.
+> [!NOTE]
+> **Note:** By default you can only use each instance of `PagingData` once. To get around this limitation, consider using the `cachedIn()` operator, which multicasts the stream as part of caching the results. This allows subsequent collections on `Pager.flow` to recollect on the cached `PagingData`. This is especially useful when you work with operators that reuse the most recently emitted `PagingData`, such as Flow's `.combine()` operator.
 
 ## Additional resources
 
@@ -275,15 +256,15 @@ To learn more about the Paging library, see the following additional resources:
 
 ### Documentation
 
-* [AndroidX Paging Library](/jetpack/androidx/releases/paging)
+- [AndroidX Paging Library](https://developer.android.com/jetpack/androidx/releases/paging)
 
 ### Views content
 
-* [Transform data streams (Views)](/topic/libraries/architecture/views/paging/v3-transform-views)
+- [Transform data streams (Views)](https://developer.android.com/topic/libraries/architecture/views/paging/v3-transform-views)
 
 ## Recommended for you
 
-* Note: link text is displayed when JavaScript is off
-* [Load and display paged data](/topic/libraries/architecture/paging/v3-paged-data)
-* [Test your Paging implementation](/topic/libraries/architecture/paging/test)
-* [Manage and present loading states](/topic/libraries/architecture/paging/load-state)
+- Note: link text is displayed when JavaScript is off
+- [Load and display paged data](https://developer.android.com/topic/libraries/architecture/paging/v3-paged-data)
+- [Test your Paging implementation](https://developer.android.com/topic/libraries/architecture/paging/test)
+- [Manage and present loading states](https://developer.android.com/topic/libraries/architecture/paging/load-state)

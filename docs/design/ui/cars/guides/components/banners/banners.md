@@ -1,25 +1,13 @@
 ---
-title: Banner  |  Cars  |  Android Developers
+title: https://developer.android.com/design/ui/cars/guides/components/banners/banners
 url: https://developer.android.com/design/ui/cars/guides/components/banners/banners
-source: html-scrape
+source: md.txt
 ---
 
-* [Android Developers](https://developer.android.com/)
-* [Design & Plan](https://developer.android.com/design)
-* [UI Design](https://developer.android.com/design/ui)
-* [Cars](https://developer.android.com/design/ui/cars)
-* [Guides](https://developer.android.com/design/ui/cars/guides/foundations/design-principles)
+> [!NOTE]
+> **Note:** Banners are only supported in the sectioned item template in Car App Library v1.9.
 
-# Banner Stay organized with collections Save and categorize content based on your preferences.
-
-
-
-
-
-**Note:** Banners are only supported in the sectioned item template in Car App
-Library v1.9.
-
-![hero](/static/design/ui/cars/guides/components/banners/banners-assets/image-161-22620.png)
+![hero](https://developer.android.com/static/design/ui/cars/guides/components/banners/banners-assets/image-161-22620.png)
 
 ## Overview
 
@@ -28,22 +16,19 @@ messages. While functionally similar to standard rows, banners add distinct
 visual prominence through customizable background fills and will always be
 visually separated from surrounding content.
 
----
+*** ** * ** ***
 
 ## Composition
 
 The Banner item is designed for high glanceability and includes four components,
 two of which are required:
 
-* **Leading image or icon** (required)
-* **Primary text: title and subtexts** (required)
-* Secondary text (optional)
-* Trailing image or icon (optional)
+- **Leading image or icon** (required)
+- **Primary text: title and subtexts** (required)
+- Secondary text (optional)
+- Trailing image or icon (optional)
 
-![hero](/static/design/ui/cars/guides/components/banners/banners-assets/image-161-22628.png)
-
-
-*1.* *Leading image*
+![hero](https://developer.android.com/static/design/ui/cars/guides/components/banners/banners-assets/image-161-22628.png) *1.* *Leading image*
 
 *2.* *Primary text*
 
@@ -51,9 +36,7 @@ two of which are required:
 
 *4.* *Trailing element (optional)*
 
-
-
----
+*** ** * ** ***
 
 ## UX requirements
 
@@ -61,7 +44,7 @@ To ensure a safe and consistent experience across all apps, follow these design
 requirements:
 
 | Requirement level | Content |
-| --- | --- |
+|---|---|
 | MUST | Display only one banner per section. Place banners in a dedicated section that contains no other component types. |
 | SHOULD | Apply custom background fills, button accent colors, and distinct corner radii to separate banners from standard content rows. |
 | SHOULD | Avoid placing banner sections directly adjacent to one another to preserve their visual prominence. |

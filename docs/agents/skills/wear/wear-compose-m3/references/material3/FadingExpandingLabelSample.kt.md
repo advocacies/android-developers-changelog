@@ -1,16 +1,8 @@
 ---
-title: Android Developers
+title: https://developer.android.com/agents/skills/wear/wear-compose-m3/references/material3/FadingExpandingLabelSample.kt
 url: https://developer.android.com/agents/skills/wear/wear-compose-m3/references/material3/FadingExpandingLabelSample.kt
-source: html-scrape
+source: md.txt
 ---
-
-Stay organized with collections
-
-Save and categorize content based on your preferences.
-
-
-
-
 
 ```
 /*
