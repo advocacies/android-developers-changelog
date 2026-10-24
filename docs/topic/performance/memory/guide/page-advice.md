@@ -416,4 +416,5 @@ For a script that resolves many inodes at once, see
 
 *** ** * ** ***
 
-**[← kswapd and lmkd interaction](https://developer.android.com/topic/performance/memory/guide/kswapd-lmkd-interaction) \| [↑ Up](https://developer.android.com/topic/performance/memory/guide)**
+**[← kswapd and lmkd interaction](https://developer.android.com/topic/performance/memory/guide/kswapd-lmkd-interaction) \| [↑ Up](https://developer.android.com/topic/performance/memory/guide) \|
+[Lean background process →](https://developer.android.com/topic/performance/memory/guide/process-splitting)**
