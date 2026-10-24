@@ -1,0 +1,13 @@
+diff --git a/docs/topic/performance/memory/guide/page-advice.md b/docs/topic/performance/memory/guide/page-advice.md
+index b10af31..2c14ad6 100644
+--- a/docs/topic/performance/memory/guide/page-advice.md
++++ b/docs/topic/performance/memory/guide/page-advice.md
+@@ -416,4 +416,5 @@ For a script that resolves many inodes at once, see
+ 
+ *** ** * ** ***
+ 
+-**[← kswapd and lmkd interaction](https://developer.android.com/topic/performance/memory/guide/kswapd-lmkd-interaction) \| [↑ Up](https://developer.android.com/topic/performance/memory/guide)**
+\ No newline at end of file
++**[← kswapd and lmkd interaction](https://developer.android.com/topic/performance/memory/guide/kswapd-lmkd-interaction) \| [↑ Up](https://developer.android.com/topic/performance/memory/guide) \|
++[Lean background process →](https://developer.android.com/topic/performance/memory/guide/process-splitting)**
+\ No newline at end of file
