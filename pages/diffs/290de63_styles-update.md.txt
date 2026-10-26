@@ -1,0 +1,16 @@
+diff --git a/docs/develop/ui/compose/styles/styles-update.md b/docs/develop/ui/compose/styles/styles-update.md
+index 0213cd8..d526b02 100644
+--- a/docs/develop/ui/compose/styles/styles-update.md
++++ b/docs/develop/ui/compose/styles/styles-update.md
+@@ -13,8 +13,4 @@ properties their components support or how to create custom styleable properties
+ temporarily removed the initial documentation and skill that we've published,
+ and the Styles API will remain `@Experimental` in Compose 1.13. We'll share more
+ when the new API shape is ready for re-evaluation and would love your feedback
+-on this new direction.
+-
+-Because of this architectural shift, the Styles API remains experimental in
+-Compose 1.13. We are actively partnering with partners and Material 3 to refine
+-style merging and developer ergonomics before general availability.
+\ No newline at end of file
++on this new direction.
+\ No newline at end of file

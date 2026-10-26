@@ -1,0 +1,13 @@
+diff --git a/docs/agents/skills/wear/wear-compose-m3/references/material3/ScaffoldSample.kt.md b/docs/agents/skills/wear/wear-compose-m3/references/material3/ScaffoldSample.kt.md
+index 6ff567f..cac5e1c 100644
+--- a/docs/agents/skills/wear/wear-compose-m3/references/material3/ScaffoldSample.kt.md
++++ b/docs/agents/skills/wear/wear-compose-m3/references/material3/ScaffoldSample.kt.md
+@@ -125,7 +125,7 @@ fun ScaffoldWithTLCEdgeButtonSample() {
+                     Text("Clear All")
+                 }
+             },
+-        ) { conten>tPadding -
++        ) { contentPadding ->
+             TransformingLazyColumn(
+                 state = listState,
+                 modifier = Modifier.fillMaxSize(),

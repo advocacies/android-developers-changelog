@@ -1,0 +1,17 @@
+diff --git a/docs/training/wearables/compose/migrate-to-navigation3.md b/docs/training/wearables/compose/migrate-to-navigation3.md
+index 9021ec2..7f33f6c 100644
+--- a/docs/training/wearables/compose/migrate-to-navigation3.md
++++ b/docs/training/wearables/compose/migrate-to-navigation3.md
+@@ -107,10 +107,9 @@ SwipeDismissableNavHost(navController = navController, startDestination = "menu"
+             onShowList = { navController.navigate("list") }
+         )
+     }
+-    composable("list") {
+-        ListScreen()
++    composable("li        ListScreen()
+     }
+-}
++}Migration.kt
+ ```
+ 
+ **After (Navigation 3):**

@@ -1,0 +1,13 @@
+diff --git a/docs/agents/skills/jetpack-compose/jetpack-compose-performance/references/graphics-performance.md b/docs/agents/skills/jetpack-compose/jetpack-compose-performance/references/graphics-performance.md
+index 996991b..e30b9a9 100644
+--- a/docs/agents/skills/jetpack-compose/jetpack-compose-performance/references/graphics-performance.md
++++ b/docs/agents/skills/jetpack-compose/jetpack-compose-performance/references/graphics-performance.md
+@@ -171,7 +171,7 @@ callbacks, measure blocks, or draw methods.
+       acc = Point(acc.x + i, acc.y - i)
+   }
+   // Alternatively, use Compose's built-in Offset class, which implements
+-  // this exact @JvmInline Long packing pattern under the hood.
++  // this exact @JvmInline Long packing pattern under the he.kt
+   ```
+ 
+   <br />

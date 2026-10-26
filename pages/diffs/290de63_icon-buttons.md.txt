@@ -1,0 +1,16 @@
+diff --git a/docs/develop/xr/jetpack-xr-sdk/jetpack-compose-glimmer/icon-buttons.md b/docs/develop/xr/jetpack-xr-sdk/jetpack-compose-glimmer/icon-buttons.md
+index 683ef3b..2f2481d 100644
+--- a/docs/develop/xr/jetpack-xr-sdk/jetpack-compose-glimmer/icon-buttons.md
++++ b/docs/develop/xr/jetpack-xr-sdk/jetpack-compose-glimmer/icon-buttons.md
+@@ -59,9 +59,7 @@ The following code creates an icon button with default characteristics:
+ @Composable
+ fun IconButtonSample() {
+     IconButton(onClick = { /* Handle action */ }) {
+-        Icon(FavoriteIcon, contentDescription = "Localized description")
+-    }
+-}
++        Icon(FavoriteIcon, contentDescription = "Localized description"Samples.kt
+ ```
+ 
+ <br />
+\ No newline at end of file
