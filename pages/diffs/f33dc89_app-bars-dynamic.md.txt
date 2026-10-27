@@ -1,0 +1,16 @@
+diff --git a/docs/develop/ui/compose/components/app-bars-dynamic.md b/docs/develop/ui/compose/components/app-bars-dynamic.md
+index 7e5f120..fcc4e26 100644
+--- a/docs/develop/ui/compose/components/app-bars-dynamic.md
++++ b/docs/develop/ui/compose/components/app-bars-dynamic.md
+@@ -47,9 +47,9 @@ fun AppBarSelectionActions(
+                 }
+             }
+         },
+-     er = modifier
++        modifier = modifier
+     )
+-}AppBar.kt
++}
+ ```
+ 
+ <br />
