@@ -10,6 +10,18 @@ source: md.txt
 For the complete list of changes in each library version, see the
 [`androidx.test.backup` release notes](https://developer.android.com/jetpack/androidx/releases/test-backup).
 
+### 1.0.0-alpha03
+
+October 21, 2026
+
+- Tests in a backup test suite run against the app variant that the suite targets, so they no longer need `@BackupRestoreConfig`.
+- You can bind a `@Device` role to a device with the `androidx.test.backup.device.serial.{role}` system property. For more information, see [Choose devices](https://developer.android.com/studio/preview/backup-restore-testing#choose-devices).
+- When Google Play services skips your app or needs an update to restore it, the restore fails with an error message that says why. For more information, see [Troubleshoot failed restores](https://developer.android.com/studio/preview/backup-restore-testing#troubleshoot-restores).
+- Bug fixes and reliability improvements.
+
+To use this version, set `backupTestLibraryVersion` to `"1.0.0-alpha03"` in
+your test suite.
+
 ### 1.0.0-alpha02
 
 October 7, 2026

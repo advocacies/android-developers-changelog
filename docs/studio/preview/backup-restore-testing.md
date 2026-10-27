@@ -29,8 +29,8 @@ A backup and restore test suite has two parts that work together:
 - **Device actions** are classes that implement [`BackupDeviceAction`](https://developer.android.com/reference/kotlin/androidx/test/backup/BackupDeviceAction). They run in your app's process on the device, so they can read and write data through your app's own code. Host tests call device actions by class name.
 
 When you run the suite, AGP builds your app and a test APK that contains your
-device actions. Before each test, the test framework installs both APKs on each
-device that the test uses, and then clears your app's data.
+device actions. The test framework installs both APKs on each device that the
+tests use and clears your app's data before each test.
 
 ### Built-in storage types
 
@@ -86,7 +86,7 @@ backup and restore testing:
 |---|---|---|
 | Android Studio | Rabbit 2 Canary 1 | Rabbit 2 Canary 4 or higher |
 | Android Gradle plugin (AGP) | 9.5.0-alpha06 | 9.5.0-alpha09 or higher |
-| `androidx.test.backup` libraries | 1.0.0-alpha01 | 1.0.0-alpha02 or higher |
+| `androidx.test.backup` libraries | 1.0.0-alpha01 | 1.0.0-alpha03 or higher |
 
 Each preview version of AGP requires the matching preview version of Android
 Studio. For more information, see [AGP previews](https://developer.android.com/studio/preview/features#agp-previews).
@@ -112,7 +112,9 @@ the `testOptions` block:
     android {
         testOptions {
             backupTests {
-                create("backupTest")
+                create("backupTest") {
+                    backupTestLibraryVersion = "1.0.0-alpha03"
+                }
             }
         }
     }
@@ -121,7 +123,7 @@ The suite name, `backupTest` in this example, determines the source set
 directories and the Gradle task names. You can customize the suite with the
 following optional properties:
 
-- Use `backupTestLibraryVersion` to set the version of the `androidx.test.backup` libraries that AGP adds to the suite, such as `"1.0.0-alpha02"`. This property is optional. If you omit it, AGP falls back to a default library version based on the AGP version.
+- Use `backupTestLibraryVersion` to set the version of the `androidx.test.backup` libraries that AGP adds to the suite, such as `"1.0.0-alpha03"`. This property is optional. If you omit it, AGP falls back to a default library version based on the AGP version. The examples on this page require version 1.0.0-alpha03 or higher.
 - Use `targetVariants` to specify the build variants that the suite tests, such as `targetVariants.add("demoDebug")`. This property is optional. If you omit it, the suite tests the variants of your module's `testBuildType`, which is `debug` by default. We recommend testing a debuggable variant because the cloud and device-to-device transport modes require a debuggable app.
 
 AGP adds the host library, `androidx.test.backup:backup-host`, and JUnit 5 to
@@ -163,17 +165,16 @@ includes. Make sure that backup is enabled for your app and that your
 
 ## Write backup and restore tests
 
-Write host tests in the suite's `test` source set. Each test class needs two
-annotations:
-
-- `@ExtendWith(BackupRestoreExtension::class)` provides connected devices to the tests.
-- `@BackupRestoreConfig(applicationId = "...")` sets the application ID of the app under test. Use the application ID of the variant that you test, including any `applicationIdSuffix`.
+Write host tests in the suite's `test` source set. Annotate each test class with
+`@ExtendWith(BackupRestoreExtension::class)`, which provides connected devices
+to the tests. The tests run against the app variant that the suite targets, so
+you don't need to set its application ID.
 
 Each test method declares a `BackupRestoreController` parameter for each device
 that it uses.
 
-> [!NOTE]
-> **Note:** JUnit 5 doesn't run test methods that return a value. If you wrap a test body in `runBlocking`, declare the `Unit` return type explicitly, as in `fun myTest(...): Unit = runBlocking { ... }`.
+> [!IMPORTANT]
+> **Important:** JUnit 5 ignores test methods that return a value. They don't run, and the test report doesn't list them. A test written as `= runBlocking { ... }` returns the value of the block's last expression, so declare the `Unit` return type explicitly, as in `fun myTest(...): Unit = runBlocking { ... }`.
 
 ### Test built-in storage types
 
@@ -194,7 +195,6 @@ internal file using the local backup transport:
 
     package com.example.myapp
 
-    import androidx.test.backup.host.BackupRestoreConfig
     import androidx.test.backup.host.BackupRestoreController
     import androidx.test.backup.host.BackupRestoreExtension
     import androidx.test.backup.host.BackupTransportMode
@@ -206,7 +206,6 @@ internal file using the local backup transport:
     import org.junit.jupiter.api.io.TempDir
 
     @ExtendWith(BackupRestoreExtension::class)
-    @BackupRestoreConfig(applicationId = "com.example.myapp")
     class SettingsBackupTest {
 
         @Test
@@ -331,7 +330,6 @@ cloud backup and restore:
     package com.example.myapp
 
     import androidx.test.backup.host.BackupActionResult
-    import androidx.test.backup.host.BackupRestoreConfig
     import androidx.test.backup.host.BackupRestoreController
     import androidx.test.backup.host.BackupRestoreExtension
     import androidx.test.backup.host.BackupTransportMode
@@ -346,7 +344,6 @@ cloud backup and restore:
     const val VERIFY_THEME = "com.example.myapp.VerifyThemeAction"
 
     @ExtendWith(BackupRestoreExtension::class)
-    @BackupRestoreConfig(applicationId = "com.example.myapp")
     class ThemeBackupTest {
 
         @Test
@@ -386,7 +383,6 @@ the constants and the `assertSuccess` helper from the previous example:
 
     package com.example.myapp
 
-    import androidx.test.backup.host.BackupRestoreConfig
     import androidx.test.backup.host.BackupRestoreController
     import androidx.test.backup.host.BackupRestoreExtension
     import androidx.test.backup.host.BackupTransportMode
@@ -398,7 +394,6 @@ the constants and the `assertSuccess` helper from the previous example:
     import org.junit.jupiter.api.io.TempDir
 
     @ExtendWith(BackupRestoreExtension::class)
-    @BackupRestoreConfig(applicationId = "com.example.myapp")
     class ThemeTransferTest {
 
         @Test
@@ -421,41 +416,173 @@ the constants and the `assertSuccess` helper from the previous example:
         }
     }
 
-The `role` value of [`@Device`](https://developer.android.com/reference/kotlin/androidx/test/backup/host/Device) is a label that makes the
-test easier to read. It doesn't affect which device a parameter gets. If only
-one device is connected, both parameters use that device, and the test
+The `role` values of [`@Device`](https://developer.android.com/reference/kotlin/androidx/test/backup/host/Device) let you
+[choose a device for each parameter](https://developer.android.com/studio/preview/backup-restore-testing#choose-devices) when you run the tests. If
+only one device is connected, both parameters use that device, and the test
 simulates the transfer on a single device. Clearing the target's data makes
 sure that the restored data comes from the backup.
 
 ### Choose devices
 
 By default, the test framework sorts the online devices by serial number and
-assigns them to `BackupRestoreController` parameters by position. For example,
-the first parameter of the test method gets the first device, and the second
-parameter gets the second device. If there's no device for a position, the
-parameter gets the first device. Positions count all parameters of the method,
-so declare device parameters before other parameters, such as `@TempDir`. The
-`ANDROID_SERIAL` environment variable doesn't affect device assignment.
+assigns them to the `BackupRestoreController` parameters of each test in order.
+If a test has more device parameters than there are devices, the extra
+parameters share the first device. The `ANDROID_SERIAL` environment variable
+doesn't affect device assignment.
 
-To choose devices, set the `serial` or `api` values of `@Device`, or set JVM
-system properties. System properties take precedence over `@Device` values. The
-following table lists the supported system properties:
+To choose devices without putting serial numbers in your tests, give each device
+parameter a role with `@Device(role = "...")`. Then, when you run the tests,
+bind each role to a device with the
+`androidx.test.backup.device.serial.{role}` system property. For example, the
+following command runs the suite with `emulator-5554` as the source device and
+`emulator-5556` as the target device:
+
+    ./gradlew :app:testDebugBackupTestDefaultTestSuite -Dandroidx.test.backup.device.serial.source=emulator-5554 -Dandroidx.test.backup.device.serial.target=emulator-5556
+
+A binding applies only to parameters with that role. Other parameters get the
+remaining devices.
+
+You can also choose devices with the `serial` and `api` values of `@Device`, or
+with the following system properties, which take precedence over `@Device`
+values:
 
 | System property | Description |
 |---|---|
-| `androidx.test.backup.device.serial` | The serial number of the device for all device parameters. |
-| `androidx.test.backup.device.serials` | A comma-separated list of serial numbers, assigned to parameters by position. |
-| `androidx.test.backup.device.serial.{name}` | The serial number for parameters annotated with `@Device(serial = "{name}")`. |
-| `androidx.test.backup.device.api` | The API level of the device for all device parameters. |
-| `androidx.test.backup.device.apis` | A comma-separated list of API levels, assigned to parameters by position. |
+| `androidx.test.backup.device.serial.{role}` | The serial number of the device for parameters annotated with `@Device(role = "{role}")`. It takes precedence over `serials` and `serial`. |
+| `androidx.test.backup.device.serials` | A comma-separated list of serial numbers, assigned to device parameters in order. |
+| `androidx.test.backup.device.serial` | The serial number of the device for the device parameters that `serials` doesn't cover. |
+| `androidx.test.backup.device.apis` | A comma-separated list of API levels, assigned to device parameters in order. |
+| `androidx.test.backup.device.api` | The API level of the device for the device parameters that `apis` doesn't cover. |
 
-Pass these properties with `-D` when you run the tests from the command line.
-The properties apply to every test that runs, so use the `--tests` option to
-run only the tests that need them. For example, the following command runs
-`ThemeTransferTest` with `emulator-5554` as the source device and
-`emulator-5556` as the target device:
+Pass these properties with `-D` in the same way. The `serial`, `serials`,
+`api`, and `apis` properties apply to every test that runs, so use the
+`--tests` option to run only the tests that need them.
 
-    ./gradlew :app:testDebugBackupTestDefaultTestSuite --tests "com.example.myapp.ThemeTransferTest" -Dandroidx.test.backup.device.serials=emulator-5554,emulator-5556
+### Test Restore Credentials
+
+If your app uses [Restore Credentials](https://developer.android.com/identity/sign-in/restore-credentials), test that its
+restore key survives a backup and restore. The cloud and device-to-device modes
+back up the key with your app's data, but `LOCAL` doesn't.
+
+Write device actions that create the key and get it with Credential Manager. The
+create action returns the key's credential ID, so that the verify action can
+check that the restore brings back the same key. In this example,
+`createRequestJson` and `getRequestJson` are the request JSON strings that your
+app passes to Credential Manager:
+
+    // In app/src/backupTest/androidTest/kotlin/com/example/myapp/RestoreKeyActions.kt
+    package com.example.myapp
+
+    import android.content.Context
+    import androidx.credentials.CreateRestoreCredentialRequest
+    import androidx.credentials.CreateRestoreCredentialResponse
+    import androidx.credentials.CredentialManager
+    import androidx.credentials.GetCredentialRequest
+    import androidx.credentials.GetRestoreCredentialOption
+    import androidx.credentials.RestoreCredential
+    import androidx.test.backup.BackupDeviceAction
+    import androidx.test.backup.BackupDeviceActionArgs
+    import androidx.test.backup.BackupDeviceActionResult
+    import kotlinx.coroutines.runBlocking
+    import org.json.JSONObject
+
+    class CreateRestoreKeyAction : BackupDeviceAction {
+        override val phase = BackupDeviceAction.PHASE_POPULATE
+
+        override fun execute(
+            context: Context,
+            args: BackupDeviceActionArgs,
+        ): BackupDeviceActionResult {
+            val request = CreateRestoreCredentialRequest(createRequestJson)
+            val response = runBlocking {
+                CredentialManager.create(context).createCredential(context, request)
+            } as CreateRestoreCredentialResponse
+            val credentialId = JSONObject(response.responseJson).getString("id")
+            return BackupDeviceActionResult.success(mapOf("credential_id" to credentialId))
+        }
+    }
+
+    class VerifyRestoreKeyAction : BackupDeviceAction {
+        override val phase = BackupDeviceAction.PHASE_VERIFY
+
+        override fun execute(
+            context: Context,
+            args: BackupDeviceActionArgs,
+        ): BackupDeviceActionResult {
+            val option = GetRestoreCredentialOption(getRequestJson)
+            val response = runBlocking {
+                CredentialManager.create(context)
+                    .getCredential(context, GetCredentialRequest(listOf(option)))
+            }
+            val credential = response.credential as RestoreCredential
+            val credentialId = JSONObject(credential.authenticationResponseJson).getString("id")
+            val expected = args["credential_id"]
+            return if (credentialId == expected) {
+                BackupDeviceActionResult.success()
+            } else {
+                BackupDeviceActionResult.failure("Expected key $expected, found $credentialId")
+            }
+        }
+    }
+
+The following host test creates the key on the source device, restores it on the
+target device, and checks it there. It uses the `assertSuccess` helper from
+[Run each step of the flow](https://developer.android.com/studio/preview/backup-restore-testing#step-by-step):
+
+    package com.example.myapp
+
+    import androidx.test.backup.host.BackupActionResult
+    import androidx.test.backup.host.BackupRestoreController
+    import androidx.test.backup.host.BackupRestoreExtension
+    import androidx.test.backup.host.BackupTransportMode
+    import androidx.test.backup.host.Device
+    import java.nio.file.Path
+    import kotlinx.coroutines.runBlocking
+    import org.junit.jupiter.api.Test
+    import org.junit.jupiter.api.extension.ExtendWith
+    import org.junit.jupiter.api.io.TempDir
+
+    const val CREATE_RESTORE_KEY = "com.example.myapp.CreateRestoreKeyAction"
+    const val VERIFY_RESTORE_KEY = "com.example.myapp.VerifyRestoreKeyAction"
+
+    @ExtendWith(BackupRestoreExtension::class)
+    class RestoreKeyTest {
+
+        @Test
+        fun restoreKeyTransfersToNewDevice(
+            @Device(role = "source") source: BackupRestoreController,
+            @Device(role = "target") target: BackupRestoreController,
+            @TempDir outputDir: Path,
+        ): Unit = runBlocking {
+            val created = source.runOnDevice(CREATE_RESTORE_KEY)
+            created.assertSuccess()
+            val credentialId =
+                (created as BackupActionResult.Success).data.getValue("credential_id")
+            source.stopApp()
+            val backupFile = source.performBackup(
+                BackupTransportMode.DEVICE_TO_DEVICE,
+                outputDir,
+            )
+
+            // Also deletes any restore key on the target.
+            target.clearAppData()
+            target.performRestore(backupFile)
+            target.runOnDevice(VERIFY_RESTORE_KEY, mapOf("credential_id" to credentialId))
+                .assertSuccess()
+        }
+    }
+
+To create a key with `isCloudBackupEnabled` set to `true`, the default, the
+source device needs a Google Account with backup turned on and a screen lock.
+Otherwise, Credential Manager throws
+[`E2eeUnavailableException`](https://developer.android.com/reference/kotlin/androidx/credentials/exceptions/restorecredential/E2eeUnavailableException).
+
+Unlike a cloud restore on a new device, the cloud modes don't require the same
+Google Account or the source device's screen lock, and they restore keys created
+with `isCloudBackupEnabled` set to `false`.
+
+> [!CAUTION]
+> **Caution:** Backup files from the cloud and device-to-device modes contain the restore key without encryption. Treat them as secrets.
 
 ### Keep app data between tests
 
@@ -490,6 +617,14 @@ To run a single test class or method, use the
 After a test run completes, AGP generates an HTML test report at
 `{module}/build/reports/tests/{taskName}/index.html`, such as
 `app/build/reports/tests/testDebugBackupTestDefaultTestSuite/index.html`.
+
+## Troubleshoot failed restores
+
+A cloud or device-to-device restore fails with an error message in the
+following cases:
+
+- **Google Play services skips your app** , for example because its application ID starts with `com.google.` or `com.android.`, its backup is empty, or it sets `android:allowBackup="false"`. To test an app with such an application ID, use the `LOCAL` mode.
+- **The Google Play services version is lower than 26.33.30** on a device or emulator that runs API level 36.1 or higher. Update Google Play services through the Play Store on the device, or use a system image that comes with version 26.33.30 or higher.
 
 ## Known issues and limitations
 
