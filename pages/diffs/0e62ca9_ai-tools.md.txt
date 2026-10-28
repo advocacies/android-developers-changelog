@@ -1,0 +1,22 @@
+diff --git a/docs/ai-tools.md b/docs/ai-tools.md
+index 52d5fba..3c0ccc6 100644
+--- a/docs/ai-tools.md
++++ b/docs/ai-tools.md
+@@ -16,7 +16,7 @@ workflows help you turn prompts into real Android experiences.
+ 
+ ## Build with your favorite tools and agents
+ 
+-![](https://developer.android.com/static/images/ai-tools/cli/codex.svg) Codex ![](https://developer.android.com/static/images/ai-tools/cli/cursor.svg) Cursor ![](https://developer.android.com/static/images/logos/android-studio.svg) Android Studio ![](https://developer.android.com/static/images/ai-tools/cli/antigravity.svg) Antigravity ![](https://developer.android.com/static/images/ai-tools/cli/claude.svg) Claude Code [![](http://developer.android.com/static/images/ai-tools/spotlight-build-your-way.png)](http://developer.android.com/tools/agents)
++![](https://developer.android.com/static/images/ai-tools/cli/codex.svg) Codex ![](https://developer.android.com/static/images/ai-tools/cli/cursor.svg) Cursor ![](https://developer.android.com/static/images/logos/android-studio.svg) Android Studio ![](https://developer.android.com/static/images/ai-tools/cli/antigravity.svg) Antigravity ![](https://developer.android.com/static/images/ai-tools/cli/claude.svg) Claude Code [![](http://developer.android.com/static/images/ai-tools/cli.png)](http://developer.android.com/tools/agents)
+ 
+ ### [Build your way](http://developer.android.com/tools/agents)
+ 
+@@ -44,7 +44,7 @@ Build high quality Android apps with Antigravity and Android CLI. Connect your A
+ 
+ ### Ship with Android Studio
+ 
+-Test, refine, and prepare your app for release with Android's purpose-built development environment. [Build in Android Studio](http://developer.android.com/studio/gemini/overview)
++Test, refine, and prepare your app for release with Android's purpose-built development environment. [Build in Android Studio](http://developer.android.com/studio)
+ 
+ ## Featured agentic workflows
+ 

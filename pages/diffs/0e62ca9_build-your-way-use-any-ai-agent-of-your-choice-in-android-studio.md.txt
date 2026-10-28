@@ -1,0 +1,42 @@
+diff --git a/docs/blog/posts/build-your-way-use-any-ai-agent-of-your-choice-in-android-studio.md b/docs/blog/posts/build-your-way-use-any-ai-agent-of-your-choice-in-android-studio.md
+index b8f8596..f6e8ca7 100644
+--- a/docs/blog/posts/build-your-way-use-any-ai-agent-of-your-choice-in-android-studio.md
++++ b/docs/blog/posts/build-your-way-use-any-ai-agent-of-your-choice-in-android-studio.md
+@@ -8,7 +8,7 @@ source: md.txt
+ 
+ # Build your way: Use any AI agent of your choice in Android Studio
+ 
+-3 min read ![](https://developer.android.com/static/blog/assets/BYOA_Backup_Strapi_1_5c3f94f766_Z1WI1Mt.webp) 24 Sep 2026 [![View Matthew Warner's profile](https://developer.android.com/static/blog/assets/matthew_warner_67a99317e4_ZNF3fo.webp)](https://developer.android.com/blog/authors/matthew-warner) [Matthew Warner](https://developer.android.com/blog/authors/matthew-warner) Product Manager AI-powered developer tools have become an essential multiplier for engineering productivity, with teams adopting specialized AI coding agents, custom enterprise harnesses, and autonomous tools. It's important for you to be able to build Android apps in the way that works best for you and your team, and agentic Android development is more open and flexible than ever before.
++3 min read ![](https://developer.android.com/static/blog/assets/BYOA_Backup_Strapi_1_5c3f94f766_Z1WI1Mt.webp) 24 Sep 2026 [![View Matthew Warner's profile](https://developer.android.com/static/blog/assets/matthew_warner_67a99317e4_ZNF3fo.webp)](https://developer.android.com/blog/authors/matthew-warner) [Matthew Warner](https://developer.android.com/blog/authors/matthew-warner) Product Manager, Android Developer Experience AI-powered developer tools have become an essential multiplier for engineering productivity, with teams adopting specialized AI coding agents, custom enterprise harnesses, and autonomous tools. It's important for you to be able to build Android apps in the way that works best for you and your team, and agentic Android development is more open and flexible than ever before.
+ 
+ Last year, Android Studio opened up to [any AI model](https://developer.android.com/studio/gemini/use-a-remote-model). Today, we're taking the next step by introducing support for your choice of coding agents. With our new **Bring Your Own Agent (BYOA)** feature, you can seamlessly integrate your preferred coding agent into Android Studio---featuring Anthropic's Claude Agent, Open AI's Codex, and Google's Antigravity---and supercharge it with Android Studio's AI-optimized infrastructure and tool support.
+ ![BYOALarger.gif](https://developer.android.com/static/blog/assets/BYOA_Larger_a7e6190537_2hT1RN.webp) Claude Agent in Android Studio
+@@ -64,6 +64,13 @@ Written by:
+   [read_more
+   View profile](https://developer.android.com/blog/authors/matthew-warner) ![View Matthew Warner's profile](https://developer.android.com/static/blog/assets/matthew_warner_67a99317e4_ZNF3fo.webp) ![View Matthew Warner's profile](https://developer.android.com/static/blog/assets/matthew_warner_67a99317e4_ZNF3fo.webp)
+ Continue reading
++- [![View Matthew Warner's profile](https://developer.android.com/static/blog/assets/matthew_warner_67a99317e4_ZNF3fo.webp)](https://developer.android.com/blog/authors/matthew-warner) 28 Oct 2026 28 Oct 2026 ![](https://developer.android.com/static/blog/assets/Rabbit2_Strapi_27563aeaf4_1BAzRM.webp) [Product News](https://developer.android.com/blog/categories/product-news)
++
++  ## [Your favorite agents are now integrated in Android Studio](https://developer.android.com/blog/posts/ai-agents-android-studio-integration)
++
++  [arrow_forward](https://developer.android.com/blog/posts/ai-agents-android-studio-integration) Android Studio Rabbit 2 is now stable and ready for you to use in production. This release includes key features to improve your development such as Bring Your Own Agent, new XR Emulator features, a LeakCanary update, a new agent skills manager tool, AI code review, and more.
++  [Matthew Warner](https://developer.android.com/blog/authors/matthew-warner) • 3 min read
++  - [#Android Studio](https://developer.android.com/blog/topics/android-studio)
+ - [![View Jason Buchel's profile](https://developer.android.com/static/blog/assets/unnamed_25_28af9250eb_I4mHO.webp)](https://developer.android.com/blog/authors/jason-buchel) 13 Oct 2026 13 Oct 2026 ![](https://developer.android.com/static/blog/assets/Blog_0140_strapi_8d85f71a6e_ZvGJv2.webp) [Product News](https://developer.android.com/blog/categories/product-news)
+ 
+   ## [Bringing our latest frontier model to Android Developers](https://developer.android.com/blog/posts/bringing-gemini-4-argon-to-android-agentic-engineering-antigravity-cli)
+@@ -78,14 +85,6 @@ Continue reading
+   [arrow_forward](https://developer.android.com/blog/posts/android-cli-device-streaming-and-skills) As Android developers, you have many choices when it comes to the agents, LLMs, tools, and command-line interfaces (CLI) you use for app development. Our goal is to help you build beautiful, high-quality Android apps, no matter how you choose to build.
+   [Simona Milanovic](https://developer.android.com/blog/authors/simona-milanovic) • 4 min read
+   - [#Agentic Android development](https://developer.android.com/blog/topics/agentic-android-development)
+-- [![View Matthew McCullough's profile](https://developer.android.com/static/blog/assets/matthew_mccullough_dc22050a18_51Njy.webp)](https://developer.android.com/blog/authors/matthew-mccullough) 17 Sep 2026 17 Sep 2026 ![](https://developer.android.com/static/blog/assets/Bench_2_0_Strapi_bench_8767d57564_ZmnAe.webp) [Product News](https://developer.android.com/blog/categories/product-news)
+-
+-  ## [Android Bench 2.0: Pushing the frontier with challenging long-horizon tasks](https://developer.android.com/blog/posts/android-bench-2-0-pushing-the-frontier-with-challenging-long-horizon-tasks)
+-
+-  [arrow_forward](https://developer.android.com/blog/posts/android-bench-2-0-pushing-the-frontier-with-challenging-long-horizon-tasks) Today we're releasing the first set of long-horizon tasks (LHT), which are tasks of great complexity that take an engineer multiple days or even a week to complete. We are also introducing agentic evaluation, starting with agents from corresponding model providers.
+-  [Matthew McCullough](https://developer.android.com/blog/authors/matthew-mccullough) • 3 min read
+-  - [#Agentic Android development](https://developer.android.com/blog/topics/agentic-android-development)
+-  - [#Android Bench](https://developer.android.com/blog/topics/android-bench)
+ Stay in the loop
+ 
+ 
