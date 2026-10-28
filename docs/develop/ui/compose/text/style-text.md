@@ -24,7 +24,8 @@ The following sections describe common ways to style your text.
 ```kotlin
 @Composable
 fun BlueText() {
-    Text("Hello World", color = Colnippets.kt
+    Text("Hello World", color = Color.Blue)
+}
 ```
 
 <br />
@@ -37,7 +38,8 @@ fun BlueText() {
 ```kotlin
 @Composable
 fun BigText() {
-    Text("Hello World", fontSize nippets.kt
+    Text("Hello World", fontSize = 30.sp)
+}
 ```
 
 <br />
@@ -53,7 +55,8 @@ Use the `fontStyle` parameter to italicize text (or set another
 ```kotlin
 @Composable
 fun ItalicText() {
-    Text("Hello World", fontStyle = FontStylenippets.kt
+    Text("Hello World", fontStyle = FontStyle.Italic)
+}
 ```
 
 <br />
@@ -68,7 +71,8 @@ Use the `fontWeight` parameter to bold text (or set another [`FontWeight`](https
 ```kotlin
 @Composable
 fun BoldText() {
-    Text("Hello World", fontWeight = FontWeignippets.kt
+    Text("Hello World", fontWeight = FontWeight.Bold)
+}
 ```
 
 <br />
@@ -95,7 +99,9 @@ fun TextShadow() {
             shadow = Shadow(
                 color = Color.Blue, offset = offset, blurRadius = 3f
             )
-       nippets.kt
+        )
+    )
+}
 ```
 
 <br />
@@ -138,10 +144,10 @@ fun MultipleStylesInText() {
             withStyle(style = SpanStyle(fontWeight = FontWeight.Bold, color = Color.Red)) {
                 append("W")
             }
-            ap")
+            append("orld")
         }
     )
-}TextSnippets.kt
+}
 ```
 
 <br />
@@ -165,11 +171,11 @@ to the link:
 @Composable
 fun AnnotatedHtmlStringWithLink(
     modifier: Modifier = Modifier,
-    htmlText: String = ""<;&>quot;
-       h1<Jet>pack Com<p>ose/h1
-       p
-  < >        Bui<ld> bbetter apps</b faster with a href="http>s://www.android<.c>om"<Je>tpack Compose/a
-       /p
+    htmlText: String = """
+       <h1>Jetpack Compose</h1>
+       <p>
+           Build <b>better apps</b> faster with <a href="https://www.android.com">Jetpack Compose</a>
+       </p>
     """.trimIndent()
 ) {
     Text(
@@ -181,10 +187,11 @@ fun AnnotatedHtmlStringWithLink(
                     fontStyle = FontStyle.Italic,
                     color = Color.Blue
                 )
-         ,
+            )
+        ),
         modifier
     )
-}HtmlStyling.kt
+}
 ```
 
 <br />
@@ -270,9 +277,9 @@ Text(
         ) {
             append("because they are blinded.")
         }
-        append("\nTell them to put some")
+        append("\nTell them to put some sunglasses on.")
     }
-)TextSnippets.kt
+)
 ```
 
 <br />
@@ -304,8 +311,9 @@ buildAnnotatedString {
             brush = brush, alpha = 1f
         )
     ) {
-        append("Compo  }
-}TextSnippets.kt
+        append("Compose ❤️")
+    }
+}
 ```
 
 <br />
@@ -331,8 +339,10 @@ fun BasicMarqueeSample() {
         Text(
             "Learn about why it's great to use Jetpack Compose",
             modifier = Modifier.basicMarquee(),
-            fontSize = 50.sp}
-}TextSnippets.kt
+            fontSize = 50.sp
+        )
+    }
+}
 ```
 
 <br />

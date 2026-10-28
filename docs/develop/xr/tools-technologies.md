@@ -16,7 +16,7 @@ any of the following:
 
 - Optimize or enhance an existing Android mobile or tablet app for XR headsets and wired XR glasses
 - Build a new Android XR app with immersive, spatialized elements for XR headsets and wired XR glasses
-- Build new augmented experiences that extend your phone app to AI glasses
+- Build new augmented experiences that extend your phone app to audio and display glasses
 
 If you're already comfortable developing with Android Jetpack, the Jetpack XR
 SDK is a natural fit for you. It's designed to seamlessly integrate with those

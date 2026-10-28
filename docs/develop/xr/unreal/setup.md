@@ -21,14 +21,14 @@ install the following applications and tools:
 
 1. Download and install the [Epic Games Launcher](https://epicgames.com/).
 
-   1. From the Epic Games Launcher, install version **5.6.1** (or higher) of Unreal Engine.
+   1. From the Epic Games Launcher, install version **5.6.x** or **5.8.x** of Unreal Engine.
 2. Set up your system to build C++ code (for example, using Visual Studio 2022
    for Windows, or Xcode for macOS). For more information, see Epic's [C++
    development environment setup](https://dev.epicgames.com/documentation/en-us/unreal-engine/setting-up-your-development-environment-for-cplusplus-in-unreal-engine).
 
 3. Install the [.NET 8.0 SDK](https://dotnet.microsoft.com/en-us/download/dotnet/8.0).
 
-4. Install [Android Studio](https://developer.android.com/studio) (Rabbit 1 \| 2026.2.1 or higher).
+4. Install [Android Studio](https://developer.android.com/studio) (Rabbit 2 \| 2026.2.2 or higher).
 
 ## Install Android build support
 
@@ -61,7 +61,7 @@ Android build tools alongside Unreal Engine.
 Next, create a new project and configure it with the necessary XR plugins and
 inputs:
 
-1. Launch Unreal Engine 5.6.1.
+1. Launch Unreal Engine (version 5.6.x or 5.8.x).
 2. Under **New Project Categories** , select the **Virtual Reality** template.
 3. In the **Project Defaults** menu, set the **Target Platform** to **Mobile**.
 4. Set the **Quality Preset** to **Scalable** to promote optimal performance on mobile XR hardware.
