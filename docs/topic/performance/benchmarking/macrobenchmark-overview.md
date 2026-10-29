@@ -509,7 +509,7 @@ Sample](https://github.com/android/performance-samples/tree/main/MacrobenchmarkS
 
 To report issues or submit feature requests for Jetpack Macrobenchmark, see the
 [public issue
-tracker](https://issuetracker.google.com/issues/new?component=975669&;template=1519452&authuser=1).
+tracker](https://issuetracker.google.com/issues/new?component=975669&;template=1519452).
 
 ## Recommended for you
 
