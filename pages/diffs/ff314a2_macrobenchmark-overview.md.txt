@@ -1,0 +1,13 @@
+diff --git a/docs/topic/performance/benchmarking/macrobenchmark-overview.md b/docs/topic/performance/benchmarking/macrobenchmark-overview.md
+index 52c8d6e..4d74c07 100644
+--- a/docs/topic/performance/benchmarking/macrobenchmark-overview.md
++++ b/docs/topic/performance/benchmarking/macrobenchmark-overview.md
+@@ -509,7 +509,7 @@ Sample](https://github.com/android/performance-samples/tree/main/MacrobenchmarkS
+ 
+ To report issues or submit feature requests for Jetpack Macrobenchmark, see the
+ [public issue
+-tracker](https://issuetracker.google.com/issues/new?component=975669&;template=1519452&authuser=1).
++tracker](https://issuetracker.google.com/issues/new?component=975669&;template=1519452).
+ 
+ ## Recommended for you
+ 

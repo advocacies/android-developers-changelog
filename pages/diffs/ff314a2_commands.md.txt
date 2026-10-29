@@ -1,0 +1,50 @@
+diff --git a/docs/tools/agents/lightbuild/commands.md b/docs/tools/agents/lightbuild/commands.md
+index 9f6d6a7..5c46e5f 100644
+--- a/docs/tools/agents/lightbuild/commands.md
++++ b/docs/tools/agents/lightbuild/commands.md
+@@ -36,18 +36,18 @@ that directory is in your `PATH`:
+ 
+ - **Windows (PowerShell)**:
+ 
+-      android sdk install build/lightbuild/0.0.30; if ($LASTEXITCODE -eq 0) { & "$(android info sdk)\build\lightbuild\0.0.30\cli\install.cmd" }
++      android sdk install build/lightbuild/0.0.30; if ($LASTEXITCODE -eq 0) { & "$(android info sdk)\build\lightbuild\0.0.30\cli\install.cmd" }; if ($LASTEXITCODE -eq 0) { $env:Path += ";$HOME\AppData\LightbuildCLI"; setx LIGHTBUILD_REFRESH 1 | Out-Null; reg delete HKCU\Environment /v LIGHTBUILD_REFRESH /f | Out-Null }
+ 
+ - **Windows (Command Prompt)**:
+ 
+-      android sdk install build/lightbuild/0.0.30 && for /f "delims=" %p in ('android info sdk') do call "%p\build\lightbuild\0.0.30\cli\install.cmd"
++      android sdk install build/lightbuild/0.0.30 && for /f "delims=" %p in ('android info sdk') do call "%p\build\lightbuild\0.0.30\cli\install.cmd" && setx LIGHTBUILD_REFRESH 1 >nul && reg delete HKCU\Environment /v LIGHTBUILD_REFRESH /f >nul
+ 
+ After the command finishes, [verify the installation](https://developer.android.com/tools/agents/lightbuild/commands#verify).
+ 
+ ### Install manually
+ 
+-To install the Lightbuild CLI and add it to your `PATH` yourself, follow these
+-steps:
++Alternatively, to install the Lightbuild CLI and add it to your `PATH` yourself,
++follow these steps:
+ 
+ 1. If you don't have Android CLI, [install it](https://developer.android.com/tools/agents).
+ 2. Install the Lightbuild package:
+@@ -70,14 +70,18 @@ steps:
+          export PATH="$PATH:$HOME/.local/bin"
+ 
+    - **Windows** : Run the following commands in PowerShell. They copy
+-     `lightbuild.exe` to `$HOME\AppData\LightbuildCLI`, and add that
+-     directory to your user `Path` if it isn't already there:
++     `lightbuild.exe` to `$HOME\AppData\LightbuildCLI`, add that directory to
++     your user `Path` if it isn't already there, and then make the change
++     take effect in your current session and in terminals that you open
++     later:
+ 
+          $dir = "$HOME\AppData\LightbuildCLI"
+          New-Item -ItemType Directory -Force $dir | Out-Null
+          Copy-Item "$(android info sdk)\build\lightbuild\0.0.30\cli\lightbuild.exe" $dir
+-         $userPath = [Environment]::GetEnvironmentVariable("Path", "User")
+-         if (($userPath -split ";") -notcontains $dir) { [Environment]::SetEnvironmentVariable("Path", "$userPath;$dir", "User") }
++         $userPath = (Get-ItemProperty HKCU:\Environment).Path
++         if (($userPath -split ";") -notcontains $dir) { Set-ItemProperty HKCU:\Environment Path "$userPath;$dir" -Type ExpandString }
++         setx LIGHTBUILD_REFRESH 1 | Out-Null; reg delete HKCU\Environment /v LIGHTBUILD_REFRESH /f | Out-Null
++         $env:Path += ";$dir"
+ 
+ 4. [Verify the installation](https://developer.android.com/tools/agents/lightbuild/commands#verify)
+ 

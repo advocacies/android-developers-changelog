@@ -1,0 +1,13 @@
+diff --git a/docs/guide/playcore/engage/tv/entitlements.md b/docs/guide/playcore/engage/tv/entitlements.md
+index 59d7262..db71a4f 100644
+--- a/docs/guide/playcore/engage/tv/entitlements.md
++++ b/docs/guide/playcore/engage/tv/entitlements.md
+@@ -17,7 +17,7 @@ mobile, and tablet.
+ 
+ Onboarding the media actions feed is required before you can use the device
+ entitlement API. If you haven't already done so, complete the [media actions
+-feed](https://developers.google.com/actions/media?authuser=0) onboarding process.
++feed](https://developers.google.com/actions/media) onboarding process.
+ 
+ ## Pre-work
+ 

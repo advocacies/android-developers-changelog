@@ -1,0 +1,23 @@
+diff --git a/docs/agents/skills/security/android-intent-security/SKILL.md b/docs/agents/skills/security/android-intent-security/SKILL.md
+index 5b2847c..d60f384 100644
+--- a/docs/agents/skills/security/android-intent-security/SKILL.md
++++ b/docs/agents/skills/security/android-intent-security/SKILL.md
+@@ -496,13 +496,13 @@ Use the following markdown template when reporting changes to developers:
+     #### Implementation diff
+     ```diff
+     // Insert Unified Diff here
++    ```
+ 
+-#### Testing and verification
++    #### Testing and verification
+ 
+-1. \[Step 1 to verify the component behaves correctly, for example, run component unit test\]
+-2. \[Step 2 to verify regression safety\] \`\`\`
+-
+-*** ** * ** ***
++    1.  [Step 1 to verify the component behaves correctly, for example, run
++        component unit test]
++    2.  [Step 2 to verify regression safety]
+ 
+ ## Antipatterns
+ 
