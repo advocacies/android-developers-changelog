@@ -1,0 +1,13 @@
+diff --git a/docs/develop/ui/views/picture-in-picture.md b/docs/develop/ui/views/picture-in-picture.md
+index e473569..a58e55a 100644
+--- a/docs/develop/ui/views/picture-in-picture.md
++++ b/docs/develop/ui/views/picture-in-picture.md
+@@ -364,7 +364,7 @@ into or out of PiP mode as needed, set the activity's `android:launchMode` to
+     <activity android:name="VideoActivity"
+         ...
+         android:supportsPictureInPicture="true"
+-        android:launchMode=&quot;singleTask"
++        android:launchMode="singleTask"
+         ...
+ 
+ In your activity, override [`onNewIntent()`](https://developer.android.com/reference/android/app/Activity#onNewIntent(android.content.Intent)) and handle the new video,

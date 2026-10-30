@@ -1,0 +1,15 @@
+diff --git a/docs/build/releases/agp-8-13-0-release-notes.md b/docs/build/releases/agp-8-13-0-release-notes.md
+index e45a02f..b429e6b 100644
+--- a/docs/build/releases/agp-8-13-0-release-notes.md
++++ b/docs/build/releases/agp-8-13-0-release-notes.md
+@@ -14,8 +14,8 @@ features and improvements.
+ 
+ ## Compatibility
+ 
+-The maximum API level that Android Gradle Plugin 8.13 supports is API level 36.1.
+-Here is other compatibility info:
++The maximum API level that Android Gradle Plugin 8.13 supports is API level
++36.1. Here is other compatibility info:
+ 
+ 
+ |   | Minimum version | Default version | Notes |

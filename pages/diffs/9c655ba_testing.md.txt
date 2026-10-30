@@ -1,0 +1,13 @@
+diff --git a/docs/develop/ui/compose/animation/testing.md b/docs/develop/ui/compose/animation/testing.md
+index 97dc7c7..37fdc17 100644
+--- a/docs/develop/ui/compose/animation/testing.md
++++ b/docs/develop/ui/compose/animation/testing.md
+@@ -16,7 +16,7 @@ initiating the animation you want to test, the clock can be moved forward with
+ 
+ One thing to note here is that `advanceTimeBy` doesn't move the clock exactly by
+ the specified duration. Rather, it rounds it up to the nearest duration that is
+-a multiplier of the frame duration.
++a multiple of the frame duration.
+ 
+ 
+ ```kotlin
