@@ -830,8 +830,8 @@
     },
     "guide/playcore/engage/tv/continue-watching/rest.md": {
       "original_url": "https://developer.android.com/guide/playcore/engage/tv/continue-watching/rest",
-      "hash": "598c7618a5142377f333adaf959e1894ec8d8113b0bc2b46a06babe34976221d",
-      "last_updated": "2026-10-24T17:48:00.617465",
+      "hash": "6776683cb57370272a8b7802f772d5a39f5370ec914ac2aa2ee4d8fa46ac2465",
+      "last_updated": "2026-11-03T20:48:12.928100",
       "fetch_method": "md.txt"
     },
     "health-and-fitness/fitness/basic-app/overview.md": {
@@ -6950,8 +6950,8 @@
     },
     "privacy-and-security/local-network-permission.md": {
       "original_url": "https://developer.android.com/privacy-and-security/local-network-permission",
-      "hash": "6c72ecc6c87f2a4a4a8eea51f22a298869fcea21b5db5d479c7a37c48e25291f",
-      "last_updated": "2026-10-02T19:44:58.118607",
+      "hash": "964a8769ec6f47a7fe26006127d6c9c61c7fb4e44e626d5534c075d9596fa681",
+      "last_updated": "2026-11-03T20:48:26.920910",
       "fetch_method": "md.txt"
     },
     "ai/custom.md": {
@@ -13880,8 +13880,8 @@
     },
     "studio/nightly.md": {
       "original_url": "https://developer.android.com/studio/nightly",
-      "hash": "ee655d4d9714a6e4b794b91b64a6e66d3ea52f2f0f295243f95e0c585a373fd9",
-      "last_updated": "2026-11-02T23:03:42.144898",
+      "hash": "1e8961fa9991869a7c3a7caefb7a5366aa0c37cedb635e403debfcff1f34e97d",
+      "last_updated": "2026-11-03T20:49:57.778298",
       "fetch_method": "md.txt"
     },
     "develop/xr/jetpack-xr-sdk/arcore/hands.md": {
@@ -15314,8 +15314,8 @@
     },
     "develop/sensors-and-location/sensors/sensors_motion.md": {
       "original_url": "https://developer.android.com/develop/sensors-and-location/sensors/sensors_motion",
-      "hash": "999a6bbe42e4d07b1fc2c32534a7a59d97271fbcf21f193fc104187b23b57062",
-      "last_updated": "2026-10-27T19:50:23.694333",
+      "hash": "12abc203e83b2f75326a9e1d9296e0c950ebf3bf50505d8ef2a0a4fadfb858ce",
+      "last_updated": "2026-11-03T20:48:21.635901",
       "fetch_method": "md.txt"
     },
     "topic/modularization.md": {
@@ -31094,8 +31094,8 @@
     },
     "distribute/aep/aep-req-restore-credentials.md": {
       "original_url": "https://developer.android.com/distribute/aep/aep-req-restore-credentials",
-      "hash": "bcead49192ae417463184f5958dcfdd3fc0864c9189f44141be9ee6083dfd374",
-      "last_updated": "2026-08-28T23:51:50.430024",
+      "hash": "dbfd08ed986c212a8dac5f371e64c4df3d5de158f2232d92d5a46078e184b717",
+      "last_updated": "2026-11-03T20:46:46.613527",
       "fetch_method": "md.txt"
     },
     "distribute/aep/aep-guidelines-overview.md": {
@@ -32402,8 +32402,8 @@
     },
     "ai/intelligence-system.md": {
       "original_url": "https://developer.android.com/ai/intelligence-system",
-      "hash": "cbe11d5f9a3f6a6705e29db153aaa74c9ae164339d34429ee107e87fec0e4ab1",
-      "last_updated": "2026-09-23T18:47:32.819046",
+      "hash": "6aec5a8c573970a2f3318c988716e9f4d297160ea8ff00bbb99575cc006d489e",
+      "last_updated": "2026-11-03T20:45:07.218817",
       "fetch_method": "md.txt"
     },
     "games/engines/unreal/unreal-memory-usage.md": {
@@ -36901,5 +36901,5 @@
       "fetch_method": "md.txt"
     }
   },
-  "last_updated": "2026-11-02T23:04:33.465885"
+  "last_updated": "2026-11-03T20:50:45.001200"
 }
