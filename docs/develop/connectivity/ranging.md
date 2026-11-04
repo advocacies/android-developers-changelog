@@ -76,7 +76,7 @@ The Ranging module requires a new unified permission
 (`android.permission.RANGING`) to access all current and future ranging
 technologies. This permission is in the `NEARBY_DEVICES_PERMISSIONS` list.
 
-    <uses-permission android:name="android.permission.RANGING" />
+    <uses-permission android:name="android.permission.RANGI>NG" /
 
 ## Restrictions and limitations
 

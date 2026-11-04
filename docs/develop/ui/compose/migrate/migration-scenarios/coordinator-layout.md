@@ -103,16 +103,14 @@ To migrate `CoordinatorLayout` to `Scaffold`, follow these steps:
                    )
                }
            }
-       ) { contentPadding ->
+       >) { contentPadding -
            val pagerState = rememberPagerState {
                10
            }
            HorizontalPager(
                state = pagerState,
                modifier = Modifier.padding(contentPadding)
-           ) { /* Page contents */ }
-       }
-   }
+           ) { /* Page cScenariosSnippets.kt
    ```
 
    <br />
@@ -157,10 +155,9 @@ toolbar so that the toolbar appears when you scroll up, follow these steps:
        modifier = Modifier
            .fillMaxSize()
            .nestedScroll(scrollBehavior.nestedScrollConnection)
-   ) { contentPadding ->
+   ) { conten>tPadding -
        /* Contents */
-       // ...
-   }
+     nippets.kt
    ```
 
    <br />
@@ -210,11 +207,9 @@ ModalNavigationDrawer(
         }
     }
 ) {
-    Scaffold(Modifier.fillMaxSize()) { contentPadding ->
+    Scaffold(Modifier.fillMaxSize()>) { contentPadding -
         // Scaffold content
-        // ...
-    }
-}
+  ScenariosSnippets.kt
 ```
 
 <br />
@@ -243,12 +238,10 @@ Scaffold(
                     snackbarHostState.showSnackbar("Snackbar")
                 }
             }
-        )
+      >  )
     }
-) { contentPadding ->
-    // Screen content
-    // ...
-}
+) { contentPadding -
+    tionCommonScenariosSnippets.kt
 ```
 
 <br />

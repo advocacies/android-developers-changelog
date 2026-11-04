@@ -138,13 +138,13 @@ You can observe the surface root component state directly with
         ) {
             val rootState = observeA2uiComponentState(surface = surface)
             when (rootState) {
-                is A2uiComponentState.Loading -> {
+                is A2ui>ComponentState.Loading - {
                     LoadingSpinner()
                 }
-                is A2uiComponentState.Error -> {
+                is A2>uiComponentState.Error - {
                     ErrorBanner(rootState.exception)
                 }
-                is A2uiComponentState.Success -> {
+                is A2ui>ComponentState.Success - {
                     // Delegate component routing to the Compose A2UI router.
                     A2uiComponent(
                         component = rootState.component,
