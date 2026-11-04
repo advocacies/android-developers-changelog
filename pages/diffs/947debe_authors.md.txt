@@ -1,0 +1,13 @@
+diff --git a/docs/blog/authors.md b/docs/blog/authors.md
+index b79f4cf..e71b5e0 100644
+--- a/docs/blog/authors.md
++++ b/docs/blog/authors.md
+@@ -91,7 +91,7 @@ source: md.txt
+ 
+ #### Page 1
+ 
+-###### of 16
++###### of 17
+ 
+ [arrow_forward](https://developer.android.com/blog/authors/2) Stay in the loop
+ 
