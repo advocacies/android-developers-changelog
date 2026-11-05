@@ -101,8 +101,8 @@ Button(onClick = {
         pagerState.scrollToPage(5)
     }
 }, modifier = Modifier.align(Alignment.BottomCenter)) {
-    Text("Jum;)
-}PagerSnippets.kt
+    Text("Jump to Page 5")
+}
 ```
 
 <br />
@@ -134,8 +134,8 @@ Button(onClick = {
         pagerState.animateScrollToPage(5)
     }
 }, modifier = Modifier.align(Alignment.BottomCenter)) {
-    Text("Jum;)
-}PagerSnippets.kt
+    Text("Jump to Page 5")
+}
 ```
 
 <br />
@@ -169,10 +169,10 @@ LaunchedEffect(pagerState) {
 }
 
 VerticalPager(
-    state = pa>gerState,
-) { page -
-    Text(tex$page")
-}PagerSnippets.kt
+    state = pagerState,
+) { page ->
+    Text(text = "Page: $page")
+}
 ```
 
 <br />
@@ -209,7 +209,7 @@ Row(
         .padding(bottom = 8.dp),
     horizontalArrangement = Arrangement.Center
 ) {
-    repeat(pagerState.pageCount) { i>teration -
+    repeat(pagerState.pageCount) { iteration ->
         val color = if (pagerState.currentPage == iteration) Color.DarkGray else Color.LightGray
         Box(
             modifier = Modifier
@@ -217,7 +217,9 @@ Row(
                 .clip(CircleShape)
                 .background(color)
                 .size(16.dp)
-       nippets.kt
+        )
+    }
+}
 ```
 
 <br />
@@ -465,7 +467,9 @@ fun AutoAdvancePager(pageItems: List<Color>, modifier: Modifier = Modifier) {
             )
         }
 
-        PagerIndicator(pageItems.size, pagerState.currentPagnippets.kt
+        PagerIndicator(pageItems.size, pagerState.currentPage)
+    }
+}
 ```
 
 <br />
