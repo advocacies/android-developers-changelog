@@ -1,0 +1,13 @@
+diff --git a/docs/develop/xr/jetpack-xr-sdk/request-hardware-permissions.md b/docs/develop/xr/jetpack-xr-sdk/request-hardware-permissions.md
+index f1e5199..324a9f1 100644
+--- a/docs/develop/xr/jetpack-xr-sdk/request-hardware-permissions.md
++++ b/docs/develop/xr/jetpack-xr-sdk/request-hardware-permissions.md
+@@ -45,7 +45,7 @@ permissions.
+ ## Permission scenarios
+ 
+ There are different scenarios you might encounter when requesting [dangerous
+-runtime permissions](https://developer.android.com/guide/topics/permissions/requesting#normal-dangerous) on audio and display glasses:
++runtime permissions](https://developer.android.com/guide/topics/permissions/overview#runtime) on audio and display glasses:
+ 
+ - Request runtime permissions from a projected activity
+ - Request runtime permissions from a phone activity
