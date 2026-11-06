@@ -882,7 +882,7 @@ The minimum versions of Android Studio and AGP are as follows:
 
 Android Studio includes service integrations that help you and your team make
 faster progress as you develop, release, and maintain Android apps. This
-includes Cloud services such as Gemini in Android Studio, Play Vitals, and
+includes Cloud services such as AI in Android Studio, Play Vitals, and
 Firebase Crashlytics. Cloud services are only available on the latest stable
 channel version of Android Studio and major versions (including their patches)
 released in the previous 10 months. When a version falls outside of that
