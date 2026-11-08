@@ -1,0 +1,21 @@
+diff --git a/docs/games/services/unity/v2/api/class/google-play-games/basic-api/player-profile.md b/docs/games/services/unity/v2/api/class/google-play-games/basic-api/player-profile.md
+index 6d8e353..1072023 100644
+--- a/docs/games/services/unity/v2/api/class/google-play-games/basic-api/player-profile.md
++++ b/docs/games/services/unity/v2/api/class/google-play-games/basic-api/player-profile.md
+@@ -4,8 +4,6 @@ url: https://developer.android.com/games/services/unity/v2/api/class/google-play
+ source: md.txt
+ ---
+ 
+-# GooglePlayGames.BasicApi.PlayerProfile Class Reference
+-
+ # GooglePlayGames.BasicApi.PlayerProfile
+ 
+ Represents a player, a real-world person (tied to a Games account).
+@@ -14,4 +12,4 @@ Represents a player, a real-world person (tied to a Games account).
+ 
+ ### Inheritance
+ 
+-Inherits from:[GooglePlayGames.PlayGamesUserProfile](https://developer.android.com/games/services/unity/v2/api/class/google-play-games/play-games-user-profile)
+\ No newline at end of file
++Inherits from: [GooglePlayGames.PlayGamesUserProfile](https://developer.android.com/games/services/unity/v2/api/class/google-play-games/play-games-user-profile)
+\ No newline at end of file

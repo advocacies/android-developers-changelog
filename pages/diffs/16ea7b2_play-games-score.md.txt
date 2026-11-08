@@ -1,0 +1,14 @@
+diff --git a/docs/games/services/unity/v2/api/class/google-play-games/play-games-score.md b/docs/games/services/unity/v2/api/class/google-play-games/play-games-score.md
+index 9d10014..f93cba5 100644
+--- a/docs/games/services/unity/v2/api/class/google-play-games/play-games-score.md
++++ b/docs/games/services/unity/v2/api/class/google-play-games/play-games-score.md
+@@ -96,6 +96,4 @@ This is equivalent to calling [PlayGamesPlatform.ReportScore](https://developer.
+ 
+ <br />
+ 
+-| Details ||
+-|---|---|
+-| Parameters | |---|---| | `callback` | A callback to be invoked with a boolean indicating the success of the operation. | |
+\ No newline at end of file
++Details Parameters `callback` A callback to be invoked with a boolean indicating the success of the operation.
+\ No newline at end of file

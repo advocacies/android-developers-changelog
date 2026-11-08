@@ -1,0 +1,14 @@
+diff --git a/docs/games/services/unity/v2/api/struct/google-play-games/basic-api/nearby/nearby-connection-configuration.md b/docs/games/services/unity/v2/api/struct/google-play-games/basic-api/nearby/nearby-connection-configuration.md
+index 4a6b6bc..5ea7336 100644
+--- a/docs/games/services/unity/v2/api/struct/google-play-games/basic-api/nearby/nearby-connection-configuration.md
++++ b/docs/games/services/unity/v2/api/struct/google-play-games/basic-api/nearby/nearby-connection-configuration.md
+@@ -72,6 +72,4 @@ Initializes a new instance of the [NearbyConnectionConfiguration](https://develo
+ 
+ <br />
+ 
+-| Details ||
+-|---|---|
+-| Parameters | |---|---| | `callback` | A callback that will be invoked when initialization completes. | | `localClientId` | The unique identifier for the local client. | |
+\ No newline at end of file
++Details Parameters `callback` A callback that will be invoked when initialization completes. `localClientId` The unique identifier for the local client.
+\ No newline at end of file

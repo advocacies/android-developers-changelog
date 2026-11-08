@@ -1,0 +1,16 @@
+diff --git a/docs/games/services/unity/v2/api/class/google-play-games/basic-api/common-types-util.md b/docs/games/services/unity/v2/api/class/google-play-games/basic-api/common-types-util.md
+index d13fc58..27d7a72 100644
+--- a/docs/games/services/unity/v2/api/class/google-play-games/basic-api/common-types-util.md
++++ b/docs/games/services/unity/v2/api/class/google-play-games/basic-api/common-types-util.md
+@@ -14,10 +14,7 @@ This class checks if a response status is a success or not.
+ 
+ <br />
+ 
+-| Details ||
+-|---|---|
+-| Parameters | |---|---| | `status` | The response status to check. | |
+-| **Returns** | True if the status is a success, false otherwise. |
++Details Parameters `status` The response status to check. **Returns** True if the status is a success, false otherwise.
+ 
+ | ### Public static functions ||
+ |---|---|
