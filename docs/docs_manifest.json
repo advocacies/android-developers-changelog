@@ -734,8 +734,8 @@
     },
     "kotlin/ktx/extensions-list.md": {
       "original_url": "https://developer.android.com/kotlin/ktx/extensions-list",
-      "hash": "096a02384bd4af03190968c3b0e4ec3e2aae1ed96d4994382664795e8e3d8198",
-      "last_updated": "2026-10-23T18:55:12.908497",
+      "hash": "cadf5c14d62d215913cbe13d677081adc4c5bfc669a1da996f4b9b67ffb927d8",
+      "last_updated": "2026-11-09T23:44:22.376519",
       "fetch_method": "md.txt"
     },
     "courses/pathways/android-basics-compose-unit-1-pathway-2.md": {
@@ -6764,8 +6764,8 @@
     },
     "develop/ui/views/animations/additional-resources.md": {
       "original_url": "https://developer.android.com/develop/ui/views/animations/additional-resources",
-      "hash": "680a5dc953fc5303aefab5d7f49f3f50421fee56de5747e269196fef87c85c0d",
-      "last_updated": "2026-04-09T17:02:53.444924",
+      "hash": "7d11bdfd8d9317c4093547ff65de3683433a74238817cd1a2bf5cf3c8eab06e3",
+      "last_updated": "2026-11-09T23:42:58.495481",
       "fetch_method": "md.txt"
     },
     "media/media3/inspector/extract-frames.md": {
@@ -7886,8 +7886,8 @@
     },
     "develop/connectivity/bluetooth/ble/background.md": {
       "original_url": "https://developer.android.com/develop/connectivity/bluetooth/ble/background",
-      "hash": "ab377a5f1b31517bdf0372061c4c2c1cf6a118076bad3d24a11bfac89a51c9e0",
-      "last_updated": "2026-04-10T15:17:06.089523",
+      "hash": "90551787314026398d971c1622fae14fcb165f25aa9ff2d356dbb184f09fcc0b",
+      "last_updated": "2026-11-09T23:45:31.118455",
       "fetch_method": "md.txt"
     },
     "develop/ui/compose/lists.md": {
@@ -10598,8 +10598,8 @@
     },
     "media/media3/ui/compose-customization.md": {
       "original_url": "https://developer.android.com/media/media3/ui/compose-customization",
-      "hash": "e50b504c0826711cde3d78c6bb161d43c18f4138dac7b52600d42c3a9e11d406",
-      "last_updated": "2026-10-22T19:00:22.804236",
+      "hash": "d2c825283868e7b38460b4b6195954922fca0686845e4b9d5c174af137c2d267",
+      "last_updated": "2026-11-09T23:45:04.358630",
       "fetch_method": "md.txt"
     },
     "guide/navigation/custom-back/support-animations.md": {
@@ -12950,8 +12950,8 @@
     },
     "media/media3/ui/compose-material3.md": {
       "original_url": "https://developer.android.com/media/media3/ui/compose-material3",
-      "hash": "7c229b2daeea1d3d6417ff1081b5f898a48c0c99eeee9d4223a5f1fbfaaf39b4",
-      "last_updated": "2026-10-23T18:56:19.781219",
+      "hash": "1d14a1cb7c50bf275a7e122fa1c41c6c4fd3fae6ca076e0c0dd184960e313377",
+      "last_updated": "2026-11-09T23:39:29.746416",
       "fetch_method": "md.txt"
     },
     "media/media3.md": {
@@ -12980,8 +12980,8 @@
     },
     "kotlin/already-using-resources.md": {
       "original_url": "https://developer.android.com/kotlin/already-using-resources",
-      "hash": "54f795337414687006b52d7db591b74f616dd6b7db4dfe594cb6402aa83ebd99",
-      "last_updated": "2026-04-10T15:18:34.169922",
+      "hash": "12ef7a3037be92960dffa720b13fb88e8b934c94f5ed2375921ac7838aa63848",
+      "last_updated": "2026-11-09T23:41:19.452128",
       "fetch_method": "md.txt"
     },
     "about/versions/14/features.md": {
@@ -16358,8 +16358,8 @@
     },
     "about/versions/17/behavior-changes-all.md": {
       "original_url": "https://developer.android.com/about/versions/17/behavior-changes-all",
-      "hash": "566d958cda551a1dc2c80898affb0968296164071a4839d3460eba34b7bc7132",
-      "last_updated": "2026-08-14T15:45:35.983862",
+      "hash": "22b9211627853ea86de6b02bec6ed3f960d26829aac1f91ccd040a4c22fbbffc",
+      "last_updated": "2026-11-09T23:40:27.084614",
       "fetch_method": "md.txt"
     },
     "training/constraint-layout/motionlayout/ref/constraintset.md": {
@@ -25028,8 +25028,8 @@
     },
     "develop/ui/views/layout/canonical-layouts.md": {
       "original_url": "https://developer.android.com/develop/ui/views/layout/canonical-layouts",
-      "hash": "df659285f13f8552df771a60aad31877650b2ea1f39ec4be37e0777c495afe53",
-      "last_updated": "2026-08-14T15:45:30.490802",
+      "hash": "03b8e248e84073f561d0147c2d401a9fd98d8d0863f9aa21f6826ff1fbd1d763",
+      "last_updated": "2026-11-09T23:40:14.291845",
       "fetch_method": "md.txt"
     },
     "media/media3/exoplayer/images.md": {
@@ -25382,8 +25382,8 @@
     },
     "about/versions/17/features/contact-picker.md": {
       "original_url": "https://developer.android.com/about/versions/17/features/contact-picker",
-      "hash": "69c193299f480f806c47fdf8c84d40d229cbeb4561db06fe0079c4979652337b",
-      "last_updated": "2026-08-14T15:44:43.963016",
+      "hash": "cdac6a258ab9a79b71b2717f6911deac3184b7d32e746567197088503882850d",
+      "last_updated": "2026-11-09T23:45:23.134628",
       "fetch_method": "md.txt"
     },
     "design/ui/gallery/creativity/multi-task.md": {
@@ -30758,8 +30758,8 @@
     },
     "about/versions/17/summary.md": {
       "original_url": "https://developer.android.com/about/versions/17/summary",
-      "hash": "1d2fd03b4da4a09e826ed73a3502566ecd6eba90fe9eb720f7fe4b76fd9cd22f",
-      "last_updated": "2026-10-10T19:08:42.082443",
+      "hash": "9e36be62ba283eee6eb5a17a5d5655029f0aa3e804193cf2ed0b4e7a98543c01",
+      "last_updated": "2026-11-09T23:43:34.450377",
       "fetch_method": "md.txt"
     },
     "media/platform/integrate-eclipsa-video.md": {
@@ -31094,8 +31094,8 @@
     },
     "distribute/aep/aep-req-restore-credentials.md": {
       "original_url": "https://developer.android.com/distribute/aep/aep-req-restore-credentials",
-      "hash": "dbfd08ed986c212a8dac5f371e64c4df3d5de158f2232d92d5a46078e184b717",
-      "last_updated": "2026-11-03T20:46:46.613527",
+      "hash": "2df20500ee74b29c5eb811d11af055e6d64bfa43f424b068f1edf6983d6b0572",
+      "last_updated": "2026-11-09T23:42:41.981239",
       "fetch_method": "md.txt"
     },
     "distribute/aep/aep-guidelines-overview.md": {
@@ -36991,5 +36991,5 @@
       "fetch_method": "md.txt"
     }
   },
-  "last_updated": "2026-11-08T19:21:47.756360"
+  "last_updated": "2026-11-09T23:46:30.811234"
 }
