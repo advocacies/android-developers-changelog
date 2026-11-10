@@ -1,0 +1,182 @@
+diff --git a/docs/agents/skills/system/glance-canonical-layouts/references/text/data/FakeLongTextRespository.kt.rawcontent.md b/docs/agents/skills/system/glance-canonical-layouts/references/text/data/FakeLongTextRespository.kt.rawcontent.md
+index b4b907a..771eebe 100644
+--- a/docs/agents/skills/system/glance-canonical-layouts/references/text/data/FakeLongTextRespository.kt.rawcontent.md
++++ b/docs/agents/skills/system/glance-canonical-layouts/references/text/data/FakeLongTextRespository.kt.rawcontent.md
+@@ -4,93 +4,95 @@ url: https://developer.android.com/agents/skills/system/glance-canonical-layouts
+ source: md.txt
+ ---
+ 
+-    package com.example.platform.ui.appwidgets.glance.layout.text.data
++```kotlin
++package com.example.platform.ui.appwidgets.glance.layout.text.data
+ 
+-    import androidx.glance.GlanceId
+-    import com.example.platform.ui.appwidgets.glance.layout.text.layout.LongTextLayoutData
+-    import kotlinx.coroutines.flow.Flow
+-    import kotlinx.coroutines.flow.MutableStateFlow
+-    import com.example.platform.ui.appwidgets.glance.layout.computeIfAbsent as computeIfAbsentExt
+-    /**
+-     * An fake in-memory repository to provide data for displaying different demo samples in
+-     * [com.example.platform.ui.appwidgets.glance.layout.text.layout.LongTextLayout]
+-     */
+-    class FakeLongTextRepository {
+-      private var itemIndex: Int = 0
+-      private var itemsCount: Int = 0
+-      private val data = MutableStateFlow(demoItems[0])
+-
+-      fun data(): Flow<LongTextLayoutData> = data
++import androidx.glance.GlanceId
++import com.example.platform.ui.appwidgets.glance.layout.text.layout.LongTextLayoutData
++import kotlinx.coroutines.flow.Flow
++import kotlinx.coroutines.flow.MutableStateFlow
++import com.example.platform.ui.appwidgets.glance.layout.computeIfAbsent as computeIfAbsentExt
++/**
++ * An fake in-memory repository to provide data for displaying different demo samples in
++ * [com.example.platform.ui.appwidgets.glance.layout.text.layout.LongTextLayout]
++ */
++class FakeLongTextRepository {
++  private var itemIndex: Int = 0
++  private var itemsCount: Int = 0
++  private val data = MutableStateFlow(demoItems[0])
+ 
+-      /**
+-       * Mimics refresh by returning a different data item from the demo data list.
+-       *
+-       * This allows us to try the layout with various texts pertaining to a specific kind of data.
+-       */
+-      fun refresh() {
+-        itemIndex = (itemIndex + 1) % itemsCount
++  fun data(): Flow<LongTextLayoutData> = data
+ 
+-        this.load()
+-      }
++  /**
++   * Mimics refresh by returning a different data item from the demo data list.
++   *
++   * This allows us to try the layout with various texts pertaining to a specific kind of data.
++   */
++  fun refresh() {
++    itemIndex = (itemIndex + 1) % itemsCount
+ 
+-      /** Loads the data and updates the flow */
+-      fun load(): LongTextLayoutData {
+-        itemsCount = demoItems.size
+-        data.value = demoItems[itemIndex]
++    this.load()
++  }
+ 
+-        return data.value
+-      }
++  /** Loads the data and updates the flow */
++  fun load(): LongTextLayoutData {
++    itemsCount = demoItems.size
++    data.value = demoItems[itemIndex]
+ 
+-      companion object {
+-        private val repositories = mutableMapOf<GlanceId, FakeLongTextRepository>()
++    return data.value
++  }
+ 
+-        /**
+-         * Returns the repository instance for the given widget represented by [glanceId].
+-         */
+-        fun getRepo(glanceId: GlanceId): FakeLongTextRepository {
+-          return synchronized(repositories) {
+-            repositories.computeIfAbsentExt(glanceId) {
+-              FakeLongTextRepository()
+-            }!!
+-          }
+-        }
++  companion object {
++    private val repositories = mutableMapOf<GlanceId, FakeLongTextRepository>()
+ 
+-        /**
+-         * Cleans up local data associated with the provided [glanceId].
+-         */
+-        fun cleanUp(glanceId: GlanceId) {
+-          synchronized(repositories) {
+-            repositories.remove(glanceId)
+-          }
+-        }
++    /**
++     * Returns the repository instance for the given widget represented by [glanceId].
++     */
++    fun getRepo(glanceId: GlanceId): FakeLongTextRepository {
++      return synchronized(repositories) {
++        repositories.computeIfAbsentExt(glanceId) {
++          FakeLongTextRepository()
++        }!!
++      }
++    }
+ 
+-        // Lorem ipsum text generated with https://loremipsum.io/
+-        val demoItems = listOf(
+-          LongTextLayoutData(
+-            key = "item 0",
+-            text = "This is allows for a longer text string. Specifically because the focus in this, layout is on the primary text.",
+-            caption = "Caption",
+-          ),
+-          LongTextLayoutData(
+-            key = "item 1",
+-            text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+-            caption = "Ut mollis",
+-          ),
+-          LongTextLayoutData(
+-            key = "item 2",
+-            text = "Cursus mattis molestie a iaculis at erat pellentesque adipiscing commodo elit at imperdiet dui accumsan sit amet.",
+-            caption = "Ipsum faucibus",
+-          ),
+-          LongTextLayoutData(
+-            key = "item 3",
+-            text = "Tellus orci ac auctor augue mauris augue neque gravida in fermentum et sollicitudin ac orci",
+-            caption = "Amet cursus"
+-          ),
+-          LongTextLayoutData(
+-            key = "item 4",
+-            text = "Dolor sit amet consectetur adipiscing elit duis tristique sollicitudin nibh sit amet commodo nulla facilisi nullam.",
+-            caption = "Amet cursus"
+-          ),
+-        )
++    /**
++     * Cleans up local data associated with the provided [glanceId].
++     */
++    fun cleanUp(glanceId: GlanceId) {
++      synchronized(repositories) {
++        repositories.remove(glanceId)
+       }
+-    }
+\ No newline at end of file
++    }
++
++    // Lorem ipsum text generated with https://loremipsum.io/
++    val demoItems = listOf(
++      LongTextLayoutData(
++        key = "item 0",
++        text = "This is allows for a longer text string. Specifically because the focus in this, layout is on the primary text.",
++        caption = "Caption",
++      ),
++      LongTextLayoutData(
++        key = "item 1",
++        text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
++        caption = "Ut mollis",
++      ),
++      LongTextLayoutData(
++        key = "item 2",
++        text = "Cursus mattis molestie a iaculis at erat pellentesque adipiscing commodo elit at imperdiet dui accumsan sit amet.",
++        caption = "Ipsum faucibus",
++      ),
++      LongTextLayoutData(
++        key = "item 3",
++        text = "Tellus orci ac auctor augue mauris augue neque gravida in fermentum et sollicitudin ac orci",
++        caption = "Amet cursus"
++      ),
++      LongTextLayoutData(
++        key = "item 4",
++        text = "Dolor sit amet consectetur adipiscing elit duis tristique sollicitudin nibh sit amet commodo nulla facilisi nullam.",
++        caption = "Amet cursus"
++      ),
++    )
++  }
++}
++```
+\ No newline at end of file

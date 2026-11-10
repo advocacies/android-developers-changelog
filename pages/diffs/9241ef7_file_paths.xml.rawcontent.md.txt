@@ -1,0 +1,20 @@
+diff --git a/docs/agents/skills/system/glance-appwidget-updates-and-memory/references/res/xml/file_paths.xml.rawcontent.md b/docs/agents/skills/system/glance-appwidget-updates-and-memory/references/res/xml/file_paths.xml.rawcontent.md
+index 8bf9f85..6777682 100644
+--- a/docs/agents/skills/system/glance-appwidget-updates-and-memory/references/res/xml/file_paths.xml.rawcontent.md
++++ b/docs/agents/skills/system/glance-appwidget-updates-and-memory/references/res/xml/file_paths.xml.rawcontent.md
+@@ -4,7 +4,9 @@ url: https://developer.android.com/agents/skills/system/glance-appwidget-updates
+ source: md.txt
+ ---
+ 
+-    <?xml version="1.0" encoding="utf-8"?>
+-    <paths>
+-        <cache-path name="widget_cache" path="widget_images/" />
+-    </paths>
+\ No newline at end of file
++```xml
++<?xml version="1.0" encoding="utf-8"?>
++<paths>
++    <cache-path name="widget_cache" path="widget_images/" />
++</paths>
++```
+\ No newline at end of file

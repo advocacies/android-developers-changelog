@@ -1,0 +1,12 @@
+diff --git a/docs/develop/ui/compose/quick-guides/content/parallax-scrolling.md b/docs/develop/ui/compose/quick-guides/content/parallax-scrolling.md
+index ac2a45e..b5f6590 100644
+--- a/docs/develop/ui/compose/quick-guides/content/parallax-scrolling.md
++++ b/docs/develop/ui/compose/quick-guides/content/parallax-scrolling.md
+@@ -100,4 +100,4 @@ Text is a central piece of any UI. Find out different ways you can present text
+ 
+ ## Have questions or feedback
+ 
+-Go to our frequently asked questions page and learn about quick guides or reach out and let us know your thoughts. [Go to FAQ](https://developer.android.com/quick-guides/faq) [Leave feedback](https://issuetracker.google.com/issues/new?component=1573691&template=1993320)
+\ No newline at end of file
++Go to our frequently asked questions page and learn about quick guides or reach out and let us know your thoughts. [Go to FAQ](https://developer.android.com/quick-guides/faq.md.txt) [Leave feedback](https://issuetracker.google.com/issues/new?component=1573691&template=1993320)
+\ No newline at end of file
