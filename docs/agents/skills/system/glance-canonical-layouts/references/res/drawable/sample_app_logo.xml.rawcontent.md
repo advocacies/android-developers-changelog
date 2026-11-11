@@ -5,7 +5,7 @@ source: md.txt
 ---
 
 ```xml
-<?xml version="1.0" encodin><g="utf-8"?!--
+<?xml version="1.0" encoding="utf-8"?><!--
   Copyright 2024 The Android Open Source Project
 
   Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,18 +17,18 @@ source: md.txt
   Unless required by applicable law or agreed to in writing, software
   distributed under the License is distributed on an "AS IS" BASIS,
   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-  See the License for the specific language governing permissions a>n<d
+  See the License for the specific language governing permissions and
   limitations under the License.
-  --
-vector xmlns:android="http://schemas.android.com/apk/res/android"
+  -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
     android:width="24dp"
-    android:height="24d>p&q<uot;
->    a<ndroid:viewportWidth="24"
-    android:viewportHeight="24"
-  group
-    path
+    android:height="24dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24">
+  <group>
+    <path
         android:fillColor="#FFFFFF"
-        android:pathData="M16.65 13L11 7.35l5.65-5.65 5.65 5.65L16.65 13ZM3 11V3h8v8H3Zm10 10v-8h8v8h-8ZM3 21v-8>h8v<8H3ZM5> <9h4V5H5>v4Zm11.68 1.2l2.82-2.82-2.82-2.83-2.83 2.83 2.83 2.82ZM15 19h4v-4h-4v4ZM5 19h4v-4H5v4Z"/
-  /group
-/vector
+        android:pathData="M16.65 13L11 7.35l5.65-5.65 5.65 5.65L16.65 13ZM3 11V3h8v8H3Zm10 10v-8h8v8h-8ZM3 21v-8h8v8H3ZM5 9h4V5H5v4Zm11.68 1.2l2.82-2.82-2.82-2.83-2.83 2.83 2.83 2.82ZM15 19h4v-4h-4v4ZM5 19h4v-4H5v4Z"/>
+  </group>
+</vector>
 ```
