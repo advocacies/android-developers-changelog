@@ -1,0 +1,12 @@
+diff --git a/docs/topic/google-play-instant/instant-play-games.md b/docs/topic/google-play-instant/instant-play-games.md
+index 1590bf7..2194db7 100644
+--- a/docs/topic/google-play-instant/instant-play-games.md
++++ b/docs/topic/google-play-instant/instant-play-games.md
+@@ -75,4 +75,4 @@ In order to remain eligible for featuring in the Google Play Games app, your Goo
+   - Consider making an in-app-purchase available for users.
+   - Cross-promotion to other games is acceptable, subject to the preceding ads requirements. Do not prompt users to install cross-promoted games.
+ 
+-For more information, see the [Instant play checklist](https://developer.android.com/topic/google-play-instant/instant-play-games-checklist).
+\ No newline at end of file
++For more information, see the [Instant play checklist](https://developer.android.com/topic/google-play-instant/instant-play-games-checklist.md.txt).
+\ No newline at end of file

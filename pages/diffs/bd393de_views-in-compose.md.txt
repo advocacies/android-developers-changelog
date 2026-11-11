@@ -1,0 +1,13 @@
+diff --git a/docs/develop/ui/compose/migrate/interoperability-apis/views-in-compose.md b/docs/develop/ui/compose/migrate/interoperability-apis/views-in-compose.md
+index 3c1fb33..8244aff 100644
+--- a/docs/develop/ui/compose/migrate/interoperability-apis/views-in-compose.md
++++ b/docs/develop/ui/compose/migrate/interoperability-apis/views-in-compose.md
+@@ -220,7 +220,7 @@ discoverability with auto-complete in the IDE.
+ 
+ Access the current value of a `CompositionLocal` by using its `current`
+ property. For example, the code below shows a toast message by providing
+-`LocalContext.current` into the `Toast.makeToast` method.
++`LocalContext.current` into the `Toast.makeText` method.
+ 
+ 
+ ```kotlin
