@@ -44,24 +44,12 @@ initialization, use case management, target rotation, tap-to-focus,
 pinch-to-zoom, and more. The concrete class that extends `CameraController` is
 [`LifecycleCameraController`](https://developer.android.com/reference/androidx/camera/view/LifecycleCameraController.md.txt).
 
-### Kotlin
-
 ```kotlin
 val previewView: PreviewView = viewBinding.previewView
 var cameraController = LifecycleCameraController(baseContext)
 cameraController.bindToLifecycle(this)
 cameraController.cameraSelector = CameraSelector.DEFAULT_BACK_CAMERA
 previewView.controller = cameraController
-```
-
-### Java
-
-```java
-PreviewView previewView = viewBinding.previewView;
-LifecycleCameraController cameraController = new LifecycleCameraController(baseContext);
-cameraController.bindToLifecycle(this);
-cameraController.setCameraSelector(CameraSelector.DEFAULT_BACK_CAMERA);
-previewView.setController(cameraController);
 ```
 
 The default `UseCase`s for `CameraController` are `Preview`, `ImageCapture`, and
@@ -105,32 +93,19 @@ The preview use case interacts with a
 [`Surface`](https://developer.android.com/reference/android/view/Surface.md.txt) for display. Applications
 create the use case with configuration options using the following code:
 
-### Kotlin
 
 ```kotlin
 val preview = Preview.Builder().build()
 val viewFinder: PreviewView = findViewById(R.id.previewView)
 
-// The use case is bound to an Android Lifecycle with the following code
+// The use case is bound to an Android Lifecycle with the following code.
 val camera = cameraProvider.bindToLifecycle(lifecycleOwner, cameraSelector, preview)
 
-// PreviewView creates a surface provider and is the recommended provider
+// PreviewView creates a surface provider and is the recommended provider.
 preview.setSurfaceProvider(viewFinder.getSurfaceProvider())
 ```
 
-### Java
-
-```java
-Preview preview = new Preview.Builder().build();
-PreviewView viewFinder = findViewById(R.id.view_finder);
-
-// The use case is bound to an Android Lifecycle with the following code
-Camera camera = cameraProvider.bindToLifecycle(lifecycleOwner, cameraSelector, preview);
-
-// PreviewView creates a surface provider, using a Surface from a different
-// kind of view will require you to implement your own surface provider.
-preview.previewSurfaceProvider = viewFinder.getSurfaceProvider();
-```
+<br />
 
 For more example code, see the [official CameraX sample
 app](https://github.com/android/camera-samples/tree/main/CameraXBasic).
@@ -174,46 +149,26 @@ standard Android `LifecycleOwner`.
 
 The following code sample shows how to create a simple custom LifecycleOwner:
 
-### Kotlin
 
 ```kotlin
 class CustomLifecycle : LifecycleOwner {
     private val lifecycleRegistry: LifecycleRegistry
 
     init {
-        lifecycleRegistry = LifecycleRegistry(this);
-        lifecycleRegistry.markState(Lifecycle.State.CREATED)
+        lifecycleRegistry = LifecycleRegistry(this)
+        lifecycleRegistry.currentState = Lifecycle.State.CREATED
     }
-    ...
+    // ...
     fun doOnResume() {
-        lifecycleRegistry.markState(State.RESUMED)
+        lifecycleRegistry.currentState = State.RESUMED
     }
-    ...
-    override fun getLifecycle(): Lifecycle {
-        return lifecycleRegistry
-    }
+    // ...
+    override val lifecycle: Lifecycle
+        get() = lifecycleRegistry
 }
 ```
 
-### Java
-
-```java
-public class CustomLifecycle implements LifecycleOwner {
-    private LifecycleRegistry lifecycleRegistry;
-    public CustomLifecycle() {
-        lifecycleRegistry = new LifecycleRegistry(this);
-        lifecycleRegistry.markState(Lifecycle.State.CREATED);
-    }
-   ...
-   public void doOnResume() {
-        lifecycleRegistry.markState(State.RESUMED);
-    }
-   ...
-    public Lifecycle getLifecycle() {
-        return lifecycleRegistry;
-    }
-}
-```
+<br />
 
 Using this `LifecycleOwner`, your app can place state transitions at desired
 points in its code. For more on implementing this functionality in your app,
@@ -232,7 +187,6 @@ In the following code sample, the app specifies the two use cases to be created
 and run simultaneously. It also specifies the lifecycle to use for both use
 cases, so that they both start and stop according to the lifecycle.
 
-### Kotlin
 
 ```kotlin
 private lateinit var imageCapture: ImageCapture
@@ -243,85 +197,40 @@ override fun onCreate(savedInstanceState: Bundle?) {
 
     val cameraProviderFuture = ProcessCameraProvider.getInstance(this)
 
-    cameraProviderFuture.addListener(Runnable {
-        // Camera provider is now guaranteed to be available
-        val cameraProvider = cameraProviderFuture.get()
+    cameraProviderFuture.addListener(
+        Runnable {
+            // Camera provider is now guaranteed to be available.
+            val cameraProvider = cameraProviderFuture.get()
 
-        // Set up the preview use case to display camera preview.
-        val preview = Preview.Builder().build()
+            // Set up the preview use case to display camera preview.
+            val preview = Preview.Builder().build()
 
-        // Set up the capture use case to allow users to take photos.
-        imageCapture = ImageCapture.Builder()
+            // Set up the capture use case to allow users to take photos.
+            imageCapture = ImageCapture.Builder()
                 .setCaptureMode(ImageCapture.CAPTURE_MODE_MINIMIZE_LATENCY)
                 .build()
 
-        // Choose the camera by requiring a lens facing
-        val cameraSelector = CameraSelector.Builder()
+            // Choose the camera by requiring a lens facing.
+            val cameraSelector = CameraSelector.Builder()
                 .requireLensFacing(CameraSelector.LENS_FACING_FRONT)
                 .build()
 
-        // Attach use cases to the camera with the same lifecycle owner
-        val camera = cameraProvider.bindToLifecycle(
-                this as LifecycleOwner, cameraSelector, preview, imageCapture)
+            // Attach use cases to the camera with the same lifecycle owner.
+            val camera = cameraProvider.bindToLifecycle(
+                this as LifecycleOwner, cameraSelector, preview, imageCapture
+            )
 
-        // Connect the preview use case to the previewView
-        preview.setSurfaceProvider(
-                previewView.getSurfaceProvider())
-    }, ContextCompat.getMainExecutor(this))
-}
-```
-
-### Java
-
-```java
-private ImageCapture imageCapture;
-
-@Override
-public void onCreate(@Nullable Bundle savedInstanceState) {
-    super.onCreate(savedInstanceState);
-    setContentView(R.layout.activity_main);
-
-    PreviewView previewView = findViewById(R.id.previewView);
-
-    ListenableFuture<ProcessCameraProvider> cameraProviderFuture =
-            ProcessCameraProvider.getInstance(this);
-
-    cameraProviderFuture.addListener(() -> {
-        try {
-            // Camera provider is now guaranteed to be available
-            ProcessCameraProvider cameraProvider = cameraProviderFuture.get();
-
-            // Set up the view finder use case to display camera preview
-            Preview preview = new Preview.Builder().build();
-
-            // Set up the capture use case to allow users to take photos
-            imageCapture = new ImageCapture.Builder()
-                    .setCaptureMode(ImageCapture.CAPTURE_MODE_MINIMIZE_LATENCY)
-                    .build();
-
-            // Choose the camera by requiring a lens facing
-            CameraSelector cameraSelector = new CameraSelector.Builder()
-                    .requireLensFacing(lensFacing)
-                    .build();
-
-            // Attach use cases to the camera with the same lifecycle owner
-            Camera camera = cameraProvider.bindToLifecycle(
-                    ((LifecycleOwner) this),
-                    cameraSelector,
-                    preview,
-                    imageCapture);
-
-            // Connect the preview use case to the previewView
+            // Connect the preview use case to the previewView.
             preview.setSurfaceProvider(
-                    previewView.getSurfaceProvider());
-        } catch (InterruptedException | ExecutionException e) {
-            // Currently no exceptions thrown. cameraProviderFuture.get()
-            // shouldn't block since the listener is being called, so no need to
-            // handle InterruptedException.
-        }
-    }, ContextCompat.getMainExecutor(this));
+                previewView.getSurfaceProvider()
+            )
+        },
+        ContextCompat.getMainExecutor(this)
+    )
 }
 ```
+
+<br />
 
 CameraX allows simultaneous use of one instance each of `Preview`,
 `VideoCapture`, `ImageAnalysis`, and `ImageCapture`. Additionally,
@@ -335,11 +244,10 @@ The [supported hardware level](https://developer.android.com/reference/android/h
 can be retrieved from `Camera2CameraInfo`. For example, the following code
 checks whether the default back facing camera is a `LEVEL_3` device:
 
-### Kotlin
 
 ```kotlin
 @androidx.annotation.OptIn(ExperimentalCamera2Interop::class)
-fun isBackCameraLevel3Device(cameraProvider: ProcessCameraProvider) : Boolean {
+fun isBackCameraLevel3Device(cameraProvider: ProcessCameraProvider): Boolean {
     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
         return CameraSelector.DEFAULT_BACK_CAMERA
             .filter(cameraProvider.availableCameraInfos)
@@ -352,24 +260,7 @@ fun isBackCameraLevel3Device(cameraProvider: ProcessCameraProvider) : Boolean {
 }
 ```
 
-### Java
-
-```java
-@androidx.annotation.OptIn(markerClass = ExperimentalCamera2Interop.class)
-Boolean isBackCameraLevel3Device(ProcessCameraProvider cameraProvider) {
-    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
-        List\<CameraInfo\> filteredCameraInfos = CameraSelector.DEFAULT_BACK_CAMERA
-                .filter(cameraProvider.getAvailableCameraInfos());
-        if (!filteredCameraInfos.isEmpty()) {
-            return Objects.equals(
-                Camera2CameraInfo.from(filteredCameraInfos.get(0)).getCameraCharacteristic(
-                        CameraCharacteristics.INFO_SUPPORTED_HARDWARE_LEVEL),
-                CameraCharacteristics.INFO_SUPPORTED_HARDWARE_LEVEL_3);
-        }
-    }
-    return false;
-}
-```
+<br />
 
 > [!NOTE]
 > **Note:** If an incompatible combination of use cases is created, a runtime error is thrown the first time [`createCaptureSession()`](https://developer.android.com/reference/android/hardware/camera2/CameraDevice.md.txt#createCaptureSession(android.hardware.camera2.params.SessionConfiguration)) is called. If additional use cases are added to the running session, a reconfiguration may be required, potentially causing a visible glitch.
@@ -543,8 +434,6 @@ to fetch whether the video call stream use case is available. Then, use a
 [`Camera2Interop.Extender`](https://developer.android.com/reference/androidx/camera/camera2/interop/Camera2Interop.Extender.md.txt)
 to set the underlying stream use case.
 
-### Kotlin
-
 ```kotlin
 // Set underlying Camera2 stream use case to optimize for video calls.
 
@@ -577,52 +466,6 @@ Camera2Interop.Extender(previewBuilder).setStreamUseCase(videoCallStreamId)
 // Bind the Preview UseCase and the corresponding CameraSelector.
 val preview = previewBuilder.build()
 camera = cameraProvider.bindToLifecycle(this, cameraSelector, preview)
-```
-
-### Java
-
-```java
-// Set underlying Camera2 stream use case to optimize for video calls.
-
-Long videoCallStreamId =
-    CameraMetadata.SCALER_AVAILABLE_STREAM_USE_CASES_VIDEO_CALL.toLong();
-
-// Check available CameraInfos to find the first one that supports
-// the video call stream use case.
-List<CameraInfo> cameraInfos = cameraProvider.getAvailableCameraInfos();
-CameraInfo frontCameraInfo = null;
-for (cameraInfo in cameraInfos) {
-    Long[] availableStreamUseCases = Camera2CameraInfo.from(cameraInfo)
-        .getCameraCharacteristic(
-            CameraCharacteristics.SCALER_AVAILABLE_STREAM_USE_CASES
-        );
-    boolean isVideoCallStreamingSupported = Arrays.List(availableStreamUseCases)
-                .contains(videoCallStreamId);
-    boolean isFrontFacing = (cameraInfo.getLensFacing() ==
-                             CameraSelector.LENS_FACING_FRONT);
-
-    if (isVideoCallStreamingSupported && isFrontFacing) {
-        frontCameraInfo = cameraInfo;
-    }
-}
-
-if (frontCameraInfo == null) {
-    // Handle case where video call streaming is not supported.
-}
-
-CameraSelector cameraSelector = frontCameraInfo.getCameraSelector();
-
-// Start with a Preview Builder.
-Preview.Builder previewBuilder = Preview.Builder()
-    .setTargetAspectRatio(screenAspectRatio)
-    .setTargetRotation(rotation);
-
-// Use Camera2Interop.Extender to set the video call stream use case.
-Camera2Interop.Extender(previewBuilder).setStreamUseCase(videoCallStreamId);
-
-// Bind the Preview UseCase and the corresponding CameraSelector.
-Preview preview = previewBuilder.build()
-Camera camera = cameraProvider.bindToLifecycle(this, cameraSelector, preview)
 ```
 
 ## Additional resources

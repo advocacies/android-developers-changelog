@@ -78,8 +78,7 @@ understand how to implement them.
 
 **AI Agent**: Before changing any code, check if the project contains any
 features supported through recipes. If it does, check the recipe's README and
-source code. Create a migration plan based on the recipe. Don't proceed without
-confirming the plan with the user.
+source code. Create a migration plan based on the recipe.
 
 ### Unsupported features
 

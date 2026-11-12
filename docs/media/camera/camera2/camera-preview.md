@@ -361,8 +361,6 @@ Calling [`markSurfaceSafeToRelease()`](https://developer.android.com/reference/k
 notifies the surface provider that the surface is not needed and related
 resources can be released.
 
-### Kotlin
-
 ```kotlin
 fun startCamera(){
     val previewResolution = Size(width, height)
@@ -378,26 +376,6 @@ fun startCamera(){
         override fun onFailure(t: Throwable) { /* something went wrong */}
     }, ContextCompat.getMainExecutor(context))
 }
-```
-
-### Java
-
-```java
-    void startCamera(){
-        Size previewResolution = new Size(width, height);
-        ViewfinderSurfaceRequest viewfinderSurfaceRequest =
-                new ViewfinderSurfaceRequest(previewResolution, characteristics);
-        ListenableFuture<Surface> surfaceListenableFuture =
-                cameraViewfinder.requestSurfaceAsync(viewfinderSurfaceRequest);
-
-        Futures.addCallback(surfaceListenableFuture, new FutureCallback<Surface>() {
-            @Override
-            public void onSuccess(Surface result) {
-                /* create a CaptureSession using this surface as usual */
-            }
-            @Override public void onFailure(Throwable t) { /* something went wrong */}
-        },  ContextCompat.getMainExecutor(context));
-    }
 ```
 
 ## SurfaceView
@@ -420,7 +398,6 @@ method:
 (The `computeRelativeRotation()` source code is in
 [Relative rotation](https://developer.android.com/media/camera/camera2/camera-preview.md.txt#relative-rotation) below.)
 
-### Kotlin
 
 ```kotlin
 override fun onMeasure(widthMeasureSpec: Int, heightMeasureSpec: Int) {
@@ -455,37 +432,7 @@ override fun onMeasure(widthMeasureSpec: Int, heightMeasureSpec: Int) {
 }
 ```
 
-### Java
-
-```java
-@Override
-void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
-    int width = MeasureSpec.getSize(widthMeasureSpec);
-    int height = MeasureSpec.getSize(heightMeasureSpec);
-
-    int relativeRotation = computeRelativeRotation(characteristics, surfaceRotationDegrees);
-
-    if (previewWidth > 0f && previewHeight > 0f) {
-
-        /* Scale factor required to scale the preview to its original size on the x-axis. */
-        float scaleX = (relativeRotation % 180 == 0)
-                       ? (float) width / previewWidth
-                       : (float) width / previewHeight;
-
-        /* Scale factor required to scale the preview to its original size on the y-axis. */
-        float scaleY = (relativeRotation % 180 == 0)
-                       ? (float) height / previewHeight
-                       : (float) height / previewWidth;
-
-        /* Scale factor required to fit the preview to the SurfaceView size. */
-        float finalScale = Math.min(scaleX, scaleY);
-
-        setScaleX(1 / scaleX * finalScale);
-        setScaleY(1 / scaleY * finalScale);
-    }
-    setMeasuredDimension(width, height);
-}
-```
+<br />
 
 For more details on implementing `SurfaceView` as a camera preview, see
 [Camera orientations](https://chromeos.dev/en/android/camera-orientation#surfaceview).
@@ -519,7 +466,6 @@ and
 [`Surface`](https://developer.android.com/reference/android/view/Surface.md.txt) classes enable calculation of the
 camera sensor's relative rotation:
 
-### Kotlin
 
 ```kotlin
 /**
@@ -535,7 +481,7 @@ public fun computeRelativeRotation(
     surfaceRotationDegrees: Int
 ): Int {
     val sensorOrientationDegrees =
-        characteristics.get(CameraCharacteristics.SENSOR_ORIENTATION)!!
+        characteristics.get(CameraCharacteristics.SENSOR_ORIENTATION) ?: 0
 
     // Reverse device orientation for back-facing cameras.
     val sign = if (characteristics.get(CameraCharacteristics.LENS_FACING) ==
@@ -548,33 +494,7 @@ public fun computeRelativeRotation(
 }
 ```
 
-### Java
-
-```java
-/**
- * Computes rotation required to transform the camera sensor output orientation to the
- * device's current orientation in degrees.
- *
- * @param characteristics The CameraCharacteristics to query for the sensor orientation.
- * @param surfaceRotationDegrees The current device orientation as a Surface constant.
- * @return Relative rotation of the camera sensor output.
- */
-public int computeRelativeRotation(
-    CameraCharacteristics characteristics,
-    int surfaceRotationDegrees
-){
-    Integer sensorOrientationDegrees =
-        characteristics.get(CameraCharacteristics.SENSOR_ORIENTATION);
-
-    // Reverse device orientation for back-facing cameras.
-    int sign = characteristics.get(CameraCharacteristics.LENS_FACING) ==
-        CameraCharacteristics.LENS_FACING_FRONT ? 1 : -1;
-
-    // Calculate desired orientation relative to camera orientation to make
-    // the image upright relative to the device orientation.
-    return (sensorOrientationDegrees - surfaceRotationDegrees * sign + 360) % 360;
-}
-```
+<br />
 
 ## Window metrics
 
