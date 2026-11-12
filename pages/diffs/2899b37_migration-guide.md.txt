@@ -1,0 +1,14 @@
+diff --git a/docs/guide/navigation/navigation-3/migration-guide.md b/docs/guide/navigation/navigation-3/migration-guide.md
+index 768b3c2..4b55a84 100644
+--- a/docs/guide/navigation/navigation-3/migration-guide.md
++++ b/docs/guide/navigation/navigation-3/migration-guide.md
+@@ -78,8 +78,7 @@ understand how to implement them.
+ 
+ **AI Agent**: Before changing any code, check if the project contains any
+ features supported through recipes. If it does, check the recipe's README and
+-source code. Create a migration plan based on the recipe. Don't proceed without
+-confirming the plan with the user.
++source code. Create a migration plan based on the recipe.
+ 
+ ### Unsupported features
+ 

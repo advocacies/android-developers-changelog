@@ -1,0 +1,245 @@
+diff --git a/docs/media/camera/camera2/capture-sessions-requests.md b/docs/media/camera/camera2/capture-sessions-requests.md
+index cd8aaeb..a94f934 100644
+--- a/docs/media/camera/camera2/capture-sessions-requests.md
++++ b/docs/media/camera/camera2/capture-sessions-requests.md
+@@ -112,7 +112,6 @@ output buffers, one belonging to a
+ Case to `imReaderSurface` lets the device hardware optimize these streams even
+ further.
+ 
+-### Kotlin
+ 
+ ```kotlin
+ // Retrieve the target surfaces, which might be coming from a number of places:
+@@ -120,22 +119,26 @@ further.
+ // 2. ImageReader, if you want to read each frame or perform frame-by-frame
+ // analysis
+ // 3. OpenGL Texture or TextureView, although discouraged for maintainability
+-      reasons
++// reasons
+ // 4. RenderScript.Allocation, if you want to do parallel processing
+-val surfaceView = findViewById<SurfaceView>(...)
+-val imageReader = ImageReader.newInstance(...)
+-
+-// Remember to call this only *after* SurfaceHolder.Callback.surfaceCreated()
++val surfaceView = findViewById<SurfaceView>(
++    // ...
++)
++val imageReader = ImageReader.newInstance(
++    // ...
++)
++
++// Remember to call this only *after* SurfaceHolder.Callback.surfaceCreated().
+ val previewSurface = surfaceView.holder.surface
+ val imReaderSurface = imageReader.surface
+ val targets = listOf(previewSurface, imReaderSurface)
+ 
+ // Create a capture session using the predefined targets; this also involves
+ // defining the session state callback to be notified of when the session is
+-// ready
++// ready.
+ // Setup Stream Use Case while setting up your Output Configuration.
+ @RequiresApi(Build.VERSION_CODES.TIRAMISU)
+-fun configureSession(device: CameraDevice, targets: List<Surface>){
++fun configureSession(device: CameraDevice, targets: List<Surface>) {
+     val configs = mutableListOf<OutputConfiguration>()
+     val streamUseCase = CameraMetadata
+         .SCALER_AVAILABLE_STREAM_USE_CASES_PREVIEW_VIDEO_STILL
+@@ -145,45 +148,12 @@ fun configureSession(device: CameraDevice, targets: List<Surface>){
+         config.streamUseCase = streamUseCase.toLong()
+         configs.add(config)
+     }
+-    ...
++    // ...
+     device.createCaptureSession(session)
+ }
+ ```
+ 
+-### Java
+-
+-```java
+-// Retrieve the target surfaces, which might be coming from a number of places:
+-// 1. SurfaceView, if you want to display the image directly to the user
+-// 2. ImageReader, if you want to read each frame or perform frame-by-frame
+-      analysis
+-// 3. RenderScript.Allocation, if you want to do parallel processing
+-// 4. OpenGL Texture or TextureView, although discouraged for maintainability
+-      reasons
+-Surface surfaceView = findViewById<SurfaceView>(...);
+-ImageReader imageReader = ImageReader.newInstance(...);
+-
+-// Remember to call this only *after* SurfaceHolder.Callback.surfaceCreated()
+-Surface previewSurface = surfaceView.getHolder().getSurface();
+-Surface imageSurface = imageReader.getSurface();
+-List<Surface> targets = Arrays.asList(previewSurface, imageSurface);
+-
+-// Create a capture session using the predefined targets; this also involves defining the
+-// session state callback to be notified of when the session is ready
+-private void configureSession(CameraDevice device, List<Surface> targets){
+-    ArrayList<OutputConfiguration> configs= new ArrayList()
+-    String streamUseCase=  CameraMetadata
+-        .SCALER_AVAILABLE_STREAM_USE_CASES_PREVIEW_VIDEO_STILL
+-
+-    for(Surface s : targets){
+-        OutputConfiguration config = new OutputConfiguration(s)
+-        config.setStreamUseCase(String.toLong(streamUseCase))
+-        configs.add(config)
+-}
+-
+-device.createCaptureSession(session)
+-}
+-```
++<br />
+ 
+ At this point, you have not defined the camera's active configuration.
+ When the session is configured, you can create and dispatch capture
+@@ -234,54 +204,32 @@ To create a capture request for a `SurfaceView` using the template
+ designed for preview without any modifications, use
+ [`CameraDevice.TEMPLATE_PREVIEW`](https://developer.android.com/reference/android/hardware/camera2/CameraDevice.md.txt#TEMPLATE_PREVIEW):
+ 
+-### Kotlin
+ 
+ ```kotlin
+-val session: CameraCaptureSession = ...  // from CameraCaptureSession.StateCallback
++val session: CameraCaptureSession = /* ... */ // from CameraCaptureSession.StateCallback
+ val captureRequest = session.device.createCaptureRequest(CameraDevice.TEMPLATE_PREVIEW)
+ captureRequest.addTarget(previewSurface)
+ ```
+ 
+-### Java
+-
+-```java
+-CameraCaptureSession session = ...;  // from CameraCaptureSession.StateCallback
+-CaptureRequest.Builder captureRequest =
+-    session.getDevice().createCaptureRequest(CameraDevice.TEMPLATE_PREVIEW);
+-captureRequest.addTarget(previewSurface);
+-```
++<br />
+ 
+ With a capture request defined, you can now [dispatch](https://developer.android.com/reference/android/hardware/camera2/CameraCaptureSession.md.txt#capture%28android.hardware.camera2.CaptureRequest,%20android.hardware.camera2.CameraCaptureSession.CaptureCallback,%20android.os.Handler%29)
+ it to the camera session:
+ 
+-### Kotlin
+ 
+ ```kotlin
+ val session: CameraCaptureSession = ...  // from CameraCaptureSession.StateCallback
+-val captureRequest: CaptureRequest = ...  // from CameraDevice.createCaptureRequest()
++val captureRequest: CaptureRequest.Builder = ...  // from CameraDevice.createCaptureRequest()
+ 
+ // The first null argument corresponds to the capture callback, which you
+ // provide if you want to retrieve frame metadata or keep track of failed capture
+ // requests that can indicate dropped frames; the second null argument
+ // corresponds to the Handler used by the asynchronous callback, which falls
+-// back to the current thread's looper if null
++// back to the current thread's looper if null.
+ session.capture(captureRequest.build(), null, null)
+ ```
+ 
+-### Java
+-
+-```java
+-CameraCaptureSession session = ...;  // from CameraCaptureSession.StateCallback
+-CaptureRequest captureRequest = ...;  // from CameraDevice.createCaptureRequest()
+-
+-// The first null argument corresponds to the capture callback, which you
+-// provide if you want to retrieve frame metadata or keep track of failed
+-// capture
+-// requests that can indicate dropped frames; the second null argument
+-// corresponds to the Handler used by the asynchronous callback, which falls
+-// back to the current thread's looper if null
+-session.capture(captureRequest.build(), null, null);
+-```
++<br />
+ 
+ When an output frame is put into the specific buffer, a [capture
+ callback](https://developer.android.com/reference/android/hardware/camera2/CameraCaptureSession.CaptureCallback)
+@@ -299,28 +247,17 @@ shows how to add a
+ [repeating request](https://developer.android.com/reference/android/hardware/camera2/CameraCaptureSession.md.txt#setRepeatingRequest%28android.hardware.camera2.CaptureRequest,%20android.hardware.camera2.CameraCaptureSession.CaptureCallback,%20android.os.Handler%29)
+ to the session:
+ 
+-### Kotlin
+ 
+ ```kotlin
+-val session: CameraCaptureSession = ...  // from CameraCaptureSession.StateCallback
+-val captureRequest: CaptureRequest = ...  // from CameraDevice.createCaptureRequest()
++val session: CameraCaptureSession = ... // from CameraCaptureSession.StateCallback
++val captureRequest: CaptureRequest.Builder = ... // from CameraDevice.createCaptureRequest()
+ 
+ // This keeps sending the capture request as frequently as possible until
+-// the
+-// session is torn down or session.stopRepeating() is called
+-// session.setRepeatingRequest(captureRequest.build(), null, null)
++// the session is torn down or session.stopRepeating() is called.
++session.setRepeatingRequest(captureRequest.build(), null, null)
+ ```
+ 
+-### Java
+-
+-```java
+-CameraCaptureSession session = ...;  // from CameraCaptureSession.StateCallback
+-CaptureRequest captureRequest = ...;  // from CameraDevice.createCaptureRequest()
+-
+-// This keeps sending the capture request as frequently as possible until the
+-// session is torn down or session.stopRepeating() is called
+-// session.setRepeatingRequest(captureRequest.build(), null, null);
+-```
++<br />
+ 
+ A repeating capture request makes the camera device continually capture
+ images using the settings in the provided `CaptureRequest`. The Camera2 API
+@@ -343,47 +280,29 @@ Any output buffer used needs to be configured as part of the camera session
+ when the session is first created. Repeating requests have lower priority than
+ single-frame or burst requests, which enable the following sample to work:
+ 
+-### Kotlin
+ 
+ ```kotlin
+-val session: CameraCaptureSession = ...  // from CameraCaptureSession.StateCallback
++val session: CameraCaptureSession = /* ... */ // from CameraCaptureSession.StateCallback
+ 
+-// Create the repeating request and dispatch it
++// Create the repeating request and dispatch it.
+ val repeatingRequest = session.device.createCaptureRequest(
+-CameraDevice.TEMPLATE_PREVIEW)
++    CameraDevice.TEMPLATE_PREVIEW
++)
+ repeatingRequest.addTarget(previewSurface)
+ session.setRepeatingRequest(repeatingRequest.build(), null, null)
+ 
+ // Some time later...
+ 
+-// Create the single request and dispatch it
+-// NOTE: This can disrupt the ongoing repeating request momentarily
++// Create the single request and dispatch it.
++// NOTE: This can disrupt the ongoing repeating request momentarily.
+ val singleRequest = session.device.createCaptureRequest(
+-CameraDevice.TEMPLATE_STILL_CAPTURE)
++    CameraDevice.TEMPLATE_STILL_CAPTURE
++)
+ singleRequest.addTarget(imReaderSurface)
+ session.capture(singleRequest.build(), null, null)
+ ```
+ 
+-### Java
+-
+-```java
+-CameraCaptureSession session = ...;  // from CameraCaptureSession.StateCallback
+-
+-// Create the repeating request and dispatch it
+-CaptureRequest.Builder repeatingRequest =
+-session.getDevice().createCaptureRequest(CameraDevice.TEMPLATE_PREVIEW);
+-repeatingRequest.addTarget(previewSurface);
+-session.setRepeatingRequest(repeatingRequest.build(), null, null);
+-
+-// Some time later...
+-
+-// Create the single request and dispatch it
+-// NOTE: This can disrupt the ongoing repeating request momentarily
+-CaptureRequest.Builder singleRequest =
+-session.getDevice().createCaptureRequest(CameraDevice.TEMPLATE_STILL_CAPTURE);
+-singleRequest.addTarget(imReaderSurface);
+-session.capture(singleRequest.build(), null, null);
+-```
++<br />
+ 
+ There is a drawback with this approach, though: you don't know exactly when
+ the single request occurs. In the following figure, if **A** is the repeating
