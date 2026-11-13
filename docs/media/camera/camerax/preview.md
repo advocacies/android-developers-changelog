@@ -4,6 +4,8 @@ url: https://developer.android.com/media/camera/camerax/preview
 source: md.txt
 ---
 
+> Documentation index: https://developer.android.com/media/camera/camerax/llms.txt
+
 When adding a preview to your app, use
 [`PreviewView`](https://developer.android.com/reference/kotlin/androidx/camera/view/PreviewView.md.txt), which is a
 `View` that can be cropped, scaled, and rotated for proper display.
