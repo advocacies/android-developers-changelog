@@ -1,0 +1,16 @@
+diff --git a/docs/guide/playcore/feature-delivery/additional-resources.md b/docs/guide/playcore/feature-delivery/additional-resources.md
+index b1b0ec4..777a191 100644
+--- a/docs/guide/playcore/feature-delivery/additional-resources.md
++++ b/docs/guide/playcore/feature-delivery/additional-resources.md
+@@ -4,7 +4,10 @@ url: https://developer.android.com/guide/playcore/feature-delivery/additional-re
+ source: md.txt
+ ---
+ 
+-To learn more about customizable feature delivery, consult the following resources.
++> Documentation index: https://developer.android.com/guide/playcore/feature-delivery/llms.txt
++
++To learn more about customizable feature delivery, consult the following
++resources.
+ 
+ ## Samples
+ 

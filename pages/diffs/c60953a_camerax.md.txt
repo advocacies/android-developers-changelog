@@ -1,0 +1,13 @@
+diff --git a/docs/media/camera/camerax.md b/docs/media/camera/camerax.md
+index 4f5d82b..47d20ab 100644
+--- a/docs/media/camera/camerax.md
++++ b/docs/media/camera/camerax.md
+@@ -4,6 +4,8 @@ url: https://developer.android.com/media/camera/camerax
+ source: md.txt
+ ---
+ 
++> Documentation index: https://developer.android.com/media/camera/camerax/llms.txt
++
+ # CameraX overview
+ Part of [Android Jetpack](https://developer.android.com/jetpack).
+ 

@@ -1,0 +1,13 @@
+diff --git a/docs/media/media3/session/background-playback.md b/docs/media/media3/session/background-playback.md
+index cb08cd9..9a4a877 100644
+--- a/docs/media/media3/session/background-playback.md
++++ b/docs/media/media3/session/background-playback.md
+@@ -4,6 +4,8 @@ url: https://developer.android.com/media/media3/session/background-playback
+ source: md.txt
+ ---
+ 
++> Documentation index: https://developer.android.com/media/media3/llms.txt
++
+ It is often desirable to play media while an app is not in the foreground. For
+ example, a music player generally keeps playing music when the user has locked
+ their device or is using another app. The Media3 library provides a series of

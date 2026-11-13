@@ -1,0 +1,62 @@
+diff --git a/docs/media/camera/camerax/architecture.md b/docs/media/camera/camerax/architecture.md
+index 4d12303..1ff4cf9 100644
+--- a/docs/media/camera/camerax/architecture.md
++++ b/docs/media/camera/camerax/architecture.md
+@@ -4,6 +4,8 @@ url: https://developer.android.com/media/camera/camerax/architecture
+ source: md.txt
+ ---
+ 
++> Documentation index: https://developer.android.com/media/camera/camerax/llms.txt
++
+ This page covers the architecture of CameraX, including its structure, how to work with the API, how to work with lifecycles, and how to combine use cases.
+ 
+ ## CameraX structure
+@@ -28,7 +30,7 @@ To work with the library, you specify the following things:
+ - The desired use case with configuration options.
+ - What to do with output data by attaching listeners.
+ - The intended flow, such as when to enable cameras and when to produce data, by binding the use case to [Android Architecture
+-  Lifecycles](https://developer.android.com/topic/libraries/architecture).
++  Lifecycles](https://developer.android.com/topic/architecture).
+ 
+ There are 2 ways to write a CameraX app: a
+ [`CameraController`](https://developer.android.com/reference/androidx/camera/view/CameraController.md.txt) (great if
+@@ -85,9 +87,9 @@ That lifecycle then informs CameraX when to configure the camera capture session
+ and ensures camera state changes appropriately to match lifecycle transitions.
+ 
+ For implementation steps for each use case, see [Implement a
+-preview](https://developer.android.com/training/camerax/preview), [Analyze
+-images](https://developer.android.com/training/camerax/analyze), [Image
+-capture](https://developer.android.com/training/camerax/take-photo), and [Video capture](https://developer.android.com/training/camerax/video-capture)
++preview](https://developer.android.com/media/camera/camerax/preview), [Analyze
++images](https://developer.android.com/media/camera/camerax/analyze), [Image
++capture](https://developer.android.com/media/camera/camerax/take-photo), and [Video capture](https://developer.android.com/media/camera/camerax/video-capture.md.txt)
+ 
+ The preview use case interacts with a
+ [`Surface`](https://developer.android.com/reference/android/view/Surface.md.txt) for display. Applications
+@@ -173,7 +175,7 @@ class CustomLifecycle : LifecycleOwner {
+ Using this `LifecycleOwner`, your app can place state transitions at desired
+ points in its code. For more on implementing this functionality in your app,
+ see [Implementing a custom
+-LifecycleOwner](https://developer.android.com/topic/libraries/architecture/lifecycle#implementing-lco).
++LifecycleOwner](https://developer.android.com/topic/libraries/architecture/lifecycle#create-custom-lifecycle-owner).
+ 
+ ## Concurrent use cases
+ 
+@@ -290,7 +292,7 @@ For lifecycle-aware activities, use
+ ## Declare dependencies
+ 
+ To add a dependency on CameraX, you must add the [Google Maven
+-repository](https://developer.android.com/studio/build/dependencies#google-maven) to your project.
++repository](https://developer.android.com/build/dependencies#google-maven) to your project.
+ 
+ Open the `settings.gradle` file for your project and add the `google()` repository
+ as shown in the following:
+@@ -423,7 +425,7 @@ properties in one of the following two pathways:
+   [`Camera2CameraControl`](https://developer.android.com/reference/androidx/camera/camera2/interop/Camera2CameraControl.md.txt).
+   It also gives you some additional controls, like setting the stream use case to
+   optimize the camera for your usage scenario. For information, see [Use Stream Use Cases for better
+-  performance](https://developer.android.com/training/camera2/capture-sessions-requests#use-stream-use-case-for-better-performance).
++  performance](https://developer.android.com/media/camera/camera2/capture-sessions-requests#use-stream-use-case-for-better-performance).
+ 
+ > [!NOTE]
+ > **Note:** Setting the underlying Camera2 properties is marked "Experimental" in CameraX because Google expects developers to understand its use. The values you set override any values that CameraX sets. We only recommend doing this when absolutely necessary, and we recommend additional testing on your end.
