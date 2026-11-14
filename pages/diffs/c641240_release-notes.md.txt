@@ -1,0 +1,14 @@
+diff --git a/docs/tools/agents/android-cli/release-notes.md b/docs/tools/agents/android-cli/release-notes.md
+index 93c434e..58c1458 100644
+--- a/docs/tools/agents/android-cli/release-notes.md
++++ b/docs/tools/agents/android-cli/release-notes.md
+@@ -22,6 +22,9 @@ see the [Android CLI overview](https://developer.android.com/tools/agents/androi
+ - **Library DEX size format in analyze JSON** : In `android analyze --format=json` output for library artifacts (AARs and JARs), the `dexSizeBytes` fields in `d8CompileResult` and `r8CompileResult` are now 64-bit integers serialized as strings instead of numbers.
+ - **Input results as JSON** : `android input` subcommands print their result as a JSON object with a `results` list on standard output, in the same format for every subcommand. Failures such as no matching elements or multiple matches are reported in each result's `status` field instead of as text on standard error.
+ - **Emulator exit codes** : `android emulator create`, `start`, `stop`, and `remove` now exit with a non-zero code on failure and print errors to standard error.
++
++## Version 1.1.16717390 (October 2026)
++
+ - **Field crash signals** : Use the new `android signals` command to investigate how your app behaves in the field with Firebase Crashlytics. After you sign in with `android auth login`, find your projects and apps with `android signals context`, then list, filter, and break down crash, ANR, and non-fatal issues with `android signals crashes list`, `facets`, `describe`, and `samples`.
+ - **Field heap dumps** : Use `android signals heaps` to list, describe, and download the heap dumps that Crashlytics collects on out-of-memory crashes and memory limiter kills, together with the metadata, custom keys, and logs of the session that produced them.
+ - **App profiling** : Use the new `android profiler` command to record system traces with `android profiler systemtrace` and capture JVM heap dumps with `android profiler heapdump capture` on a connected device or emulator. Manage the profiling sessions with `android profiler session` `list`, `status`, and `terminate`.

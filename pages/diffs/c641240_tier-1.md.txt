@@ -1,0 +1,13 @@
+diff --git a/docs/docs/quality-guidelines/adaptive-app-quality/tier-1.md b/docs/docs/quality-guidelines/adaptive-app-quality/tier-1.md
+index 76d04bd..20ae429 100644
+--- a/docs/docs/quality-guidelines/adaptive-app-quality/tier-1.md
++++ b/docs/docs/quality-guidelines/adaptive-app-quality/tier-1.md
+@@ -4,6 +4,8 @@ url: https://developer.android.com/docs/quality-guidelines/adaptive-app-quality/
+ source: md.txt
+ ---
+ 
++> Documentation index: https://developer.android.com/docs/quality-guidelines/adaptive-app-quality/llms.txt
++
+ Adaptive differentiated apps use the large screen and foldable form factors to
+ their full potential. Differentiated apps offer a premium user experience that's
+ productive and delightful.
