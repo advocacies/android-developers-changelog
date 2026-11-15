@@ -4226,8 +4226,8 @@
     },
     "work/dpc/logging.md": {
       "original_url": "https://developer.android.com/work/dpc/logging",
-      "hash": "d8f335583c79fce2caec8f7604f739f22289cbb73590e2968499d47fb6218409",
-      "last_updated": "2026-04-10T15:16:27.220663",
+      "hash": "c6271741bf20218beb2ccd61cf9ef941c5a3d03b8f4fa560042eb4f6be22ba2f",
+      "last_updated": "2026-11-15T20:04:25.809282",
       "fetch_method": "md.txt"
     },
     "privacy-and-security/risks/file-providers.md": {
@@ -13094,8 +13094,8 @@
     },
     "work/dpc/security.md": {
       "original_url": "https://developer.android.com/work/dpc/security",
-      "hash": "3eafc8f694ffb3a41512b75e24df9e6a9cae5213402fd470b50183e92d94b7e2",
-      "last_updated": "2026-04-09T17:06:46.201423",
+      "hash": "ceb9fe4465beefc3104c6cac3a9fd8ae4c95c638a2e7b03a38379ba3214694fd",
+      "last_updated": "2026-11-15T20:06:27.229412",
       "fetch_method": "md.txt"
     },
     "games/services/unity/v2/api/struct/google-play-games/basic-api/nearby/connection-response.md": {
@@ -37201,5 +37201,5 @@
       "fetch_method": "md.txt"
     }
   },
-  "last_updated": "2026-11-14T19:44:37.184562"
+  "last_updated": "2026-11-15T20:10:46.921356"
 }
