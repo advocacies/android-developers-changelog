@@ -1,0 +1,13 @@
+diff --git a/docs/jetpack/androidx/versions.md b/docs/jetpack/androidx/versions.md
+index 4c00d63..711566d 100644
+--- a/docs/jetpack/androidx/versions.md
++++ b/docs/jetpack/androidx/versions.md
+@@ -4,6 +4,8 @@ url: https://developer.android.com/jetpack/androidx/versions
+ source: md.txt
+ ---
+ 
++> Documentation index: https://developer.android.com/jetpack/androidx/versions/llms.txt
++
+ *** ** * ** ***
+ 
+ Jetpack libraries ship separately from the Android OS, so updates to the

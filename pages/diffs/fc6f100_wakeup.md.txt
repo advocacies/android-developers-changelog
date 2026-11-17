@@ -1,0 +1,34 @@
+diff --git a/docs/topic/performance/issues/wakeup.md b/docs/topic/performance/issues/wakeup.md
+index e0f5da7..0deead3 100644
+--- a/docs/topic/performance/issues/wakeup.md
++++ b/docs/topic/performance/issues/wakeup.md
+@@ -11,7 +11,7 @@ set an alarm to wake up a device at a specified time. Your app sets a wakeup
+ alarm by calling one of the `set` methods in [`AlarmManager`](https://developer.android.com/reference/android/app/AlarmManager.md.txt) with either
+ the [`RTC_WAKEUP`](https://developer.android.com/reference/android/app/AlarmManager.md.txt#RTC_WAKEUP) or [`ELAPSED_REALTIME_WAKEUP`](https://developer.android.com/reference/android/app/AlarmManager.md.txt#ELAPSED_REALTIME_WAKEUP) flag. When a wakeup
+ alarm is triggered, the device comes out of low-power mode and holds a [partial
+-wake lock](https://developer.android.com/topic/performance/issues/stuck-wakelock) while executing the alarm's \[`onReceive`\]\[5\] or [`onAlarm`](https://developer.android.com/reference/android/app/AlarmManager.OnAlarmListener.md.txt#onAlarm())
++wake lock](https://developer.android.com/topic/performance/issues/stuck-wakelock) while executing the alarm's [`onReceive`](https://developer.android.com/reference/android/content/BroadcastReceiver.md.txt#onReceive(android.content.Context,%20android.content.Intent)) or [`onAlarm`](https://developer.android.com/reference/android/app/AlarmManager.OnAlarmListener.md.txt#onAlarm())
+ method. If wakeup alarms are triggered excessively, they can drain a device's
+ battery.
+ 
+@@ -33,7 +33,7 @@ wakeup alarms](https://developer.android.com/topic/performance/issues/wakeup#bes
+ Identify the places in your app where you schedule wakeup alarms and reduce
+ the frequency that those alarms are triggered. Here are some tips:
+ 
+-- Look for calls to the various \[`set`\]\[9\] methods in [`AlarmManager`](https://developer.android.com/reference/android/app/AlarmManager.md.txt) that
++- Look for calls to the various [`set`](https://developer.android.com/reference/android/app/AlarmManager.md.txt#set(int,%20long,%20java.lang.String,%20android.app.AlarmManager.OnAlarmListener,%20android.os.Handler)) methods in [`AlarmManager`](https://developer.android.com/reference/android/app/AlarmManager.md.txt) that
+   include either the [`RTC_WAKEUP`](https://developer.android.com/reference/android/app/AlarmManager.md.txt#RTC_WAKEUP) or [`ELAPSED_REALTIME_WAKEUP`](https://developer.android.com/reference/android/app/AlarmManager.md.txt#ELAPSED_REALTIME_WAKEUP) flag.
+ 
+ - We recommend including your package, class, or method name in your alarm's tag
+@@ -77,8 +77,4 @@ canceled when the user exits the app). In those situations, use the
+ 
+ - Note: link text is displayed when JavaScript is off
+ - [Stuck partial wake locks](https://developer.android.com/topic/performance/issues/stuck-wakelock.md.txt)
+-- [ANRs](https://developer.android.com/topic/performance/issues/anr.md.txt)
+-
+-\[5\]: /reference/android/content/BroadcastReceiver.html#onReceive(android.content.Context, android.content.Intent)
+-
+-\[9\]: /reference/android/app/AlarmManager.html#set(int, long, java.lang.String, android.app.AlarmManager.OnAlarmListener, android.os.Handler)
+\ No newline at end of file
++- [ANRs](https://developer.android.com/topic/performance/issues/anr.md.txt)
+\ No newline at end of file

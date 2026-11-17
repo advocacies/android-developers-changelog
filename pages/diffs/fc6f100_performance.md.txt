@@ -1,0 +1,13 @@
+diff --git a/docs/courses/pathways/performance.md b/docs/courses/pathways/performance.md
+index 326957f..e425b28 100644
+--- a/docs/courses/pathways/performance.md
++++ b/docs/courses/pathways/performance.md
+@@ -4,6 +4,8 @@ url: https://developer.android.com/courses/pathways/performance
+ source: md.txt
+ ---
+ 
++> Documentation index: https://developer.android.com/courses/llms.txt
++
+ # Android Performance
+ 
+ 
