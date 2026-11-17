@@ -59,11 +59,9 @@ request permissions, see the [material design pattern for permissions](https://m
 
 Consider starting by requesting your permission in-context: Providing an
 explanation for less intuitive permissions helps to improve user comprehension
-of the permission. The \[`shouldShowRequestPermissionRationale()`\]\[4\] utility
+of the permission. The [`shouldShowRequestPermissionRationale()`](https://developer.android.com/reference/androidx/core/app/ActivityCompat.md.txt#shouldShowRequestPermissionRationale(android.app.Activity,java.lang.String)) utility
 method returns true if the user has previously denied the request. Your app can
 use this method to determine when to show the explanation.
 
 You can find more details about how to display explanation strings in
 [Request App Permissions](https://developer.android.com/training/permissions/requesting.md.txt).
-
-\[4\]: /reference/androidx/core/app/ActivityCompat#shouldShowRequestPermissionRationale(android.app.Activity, java.lang.String)
