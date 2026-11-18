@@ -1,0 +1,13 @@
+diff --git a/docs/develop/background-work/background-tasks/broadcasts.md b/docs/develop/background-work/background-tasks/broadcasts.md
+index d8bb0d6..34ea0e0 100644
+--- a/docs/develop/background-work/background-tasks/broadcasts.md
++++ b/docs/develop/background-work/background-tasks/broadcasts.md
+@@ -4,6 +4,8 @@ url: https://developer.android.com/develop/background-work/background-tasks/broa
+ source: md.txt
+ ---
+ 
++> Documentation index: https://developer.android.com/develop/background-work/background-tasks/broadcasts/llms.txt
++
+ Android apps send and receive broadcast messages from the Android system and
+ other Android apps, similar to the [publish-subscribe](https://en.wikipedia.org/wiki/Publish%E2%80%93subscribe_pattern) design pattern. The
+ system and apps typically send broadcasts when certain events occur. For

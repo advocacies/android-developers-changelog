@@ -1,0 +1,13 @@
+diff --git a/docs/develop/ui/compose/notifications/create-notification.md b/docs/develop/ui/compose/notifications/create-notification.md
+index 90a720c..183c08d 100644
+--- a/docs/develop/ui/compose/notifications/create-notification.md
++++ b/docs/develop/ui/compose/notifications/create-notification.md
+@@ -4,6 +4,8 @@ url: https://developer.android.com/develop/ui/compose/notifications/create-notif
+ source: md.txt
+ ---
+ 
++> Documentation index: https://developer.android.com/develop/ui/compose/notifications/llms.txt
++
+ Notifications provide short, timely information about events in your app while
+ it isn't in use. This document shows you how to create a notification with
+ various features. For an introduction to how notifications appear on Android,
