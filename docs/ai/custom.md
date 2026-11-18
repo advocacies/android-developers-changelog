@@ -56,6 +56,19 @@ Use LiteRT in Google Play services [Android skill](https://developer.android.com
 
 <br />
 
+
+## Android skills
+
+[View on GitHub](https://github.com/android/skills/tree/main/device-ai/litert/litert-lm)
+
+### Run on-device LLMs with LiteRT-LM
+
+Use the LiteRT-LM [Android skill](https://developer.android.com/tools/agents/android-skills.md.txt) to build an Android app that runs an open text LLM on-device on CPU or GPU using the LiteRT-LM Kotlin API. To install the skill from the [Android CLI](https://developer.android.com/tools/agents/android-cli.md.txt), run:
+
+    android skills add litert-lm
+
+<br />
+
 ## Code samples
 
 Explore the LiteRT Android code samples and test ML features on your device.
