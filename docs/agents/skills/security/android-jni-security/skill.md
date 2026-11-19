@@ -1,14 +1,8 @@
 ---
-title: Android JNI and native boundary security: Audit and remediation guide  |  Android Developers
+title: https://developer.android.com/agents/skills/security/android-jni-security/skill
 url: https://developer.android.com/agents/skills/security/android-jni-security/skill
-source: html-scrape
+source: md.txt
 ---
-
-# Android JNI and native boundary security: Audit and remediation guide Stay organized with collections Save and categorize content based on your preferences.
-
-
-
-
 
 This skill provides rules and code patterns to secure Android JNI boundaries.
 Follow these patterns to prevent buffer overflows, pinned memory leaks, and
@@ -18,57 +12,37 @@ exceptions.
 
 ## Glossary
 
-* **JNI (Java Native Interface):** The platform bridge connecting ART bytecode
-  in Kotlin or Java with C/C++ `.so` libraries.
-* **JNIEnv:** A thread-local pointer to the JNI function table passed as the
-  first argument to every native method. A `JNIEnv*` pointer must NEVER be
-  shared or cached across threads.
-* **JavaVM:** The process-wide virtual machine pointer used to attach and detach
-  native threads (`AttachCurrentThread`, `DetachCurrentThread`).
-* **Local reference:** A thread-scoped reference (`jobject`, `jclass`,
-  `jstring`, `jarray`) valid only during the active native call.
-* **Global reference:** A cross-thread reference (`NewGlobalRef`) that keeps a
-  Java object reachable across threads and calls until freed with
-  `DeleteGlobalRef`.
-* **TOCTOU (Time-of-Check to Time-of-Use):** A race condition when managed code
-  checks a file path before C/C++ re-opens that path string. An attacker can
-  swap the file or symlink before `fopen` or `open` runs.
-* **Pending JVM exception state:** The state after a JNI call throws a managed
-  exception. Native code must not call most JNI functions while an exception is
-  pending. Check `ExceptionCheck()`, then free resources and return, or clear
-  and handle the failure.
+- **JNI (Java Native Interface):** The platform bridge connecting ART bytecode in Kotlin or Java with C/C++ `.so` libraries.
+- **JNIEnv:** A thread-local pointer to the JNI function table passed as the first argument to every native method. A `JNIEnv*` pointer must NEVER be shared or cached across threads.
+- **JavaVM:** The process-wide virtual machine pointer used to attach and detach native threads (`AttachCurrentThread`, `DetachCurrentThread`).
+- **Local reference:** A thread-scoped reference (`jobject`, `jclass`, `jstring`, `jarray`) valid only during the active native call.
+- **Global reference:** A cross-thread reference (`NewGlobalRef`) that keeps a Java object reachable across threads and calls until freed with `DeleteGlobalRef`.
+- **TOCTOU (Time-of-Check to Time-of-Use):** A race condition when managed code checks a file path before C/C++ re-opens that path string. An attacker can swap the file or symlink before `fopen` or `open` runs.
+- **Pending JVM exception state:** The state after a JNI call throws a managed exception. Native code must not call most JNI functions while an exception is pending. Check `ExceptionCheck()`, then free resources and return, or clear and handle the failure.
 
 ## Limitations
 
-* This skill covers JNI boundary validation, reference and thread lifecycles,
-  and native secret handling.
-* This skill **doesn't** cover binary obfuscation or decompilation of stripped
-  third-party `.so` libraries.
-* For `.so` binary hardening, suggest NDK visibility flags
-  (`-fvisibility=hidden`, `-Wl,--exclude-libs,ALL`), symbol stripping, and the
-  **Play Integrity API**.
+- This skill covers JNI boundary validation, reference and thread lifecycles, and native secret handling.
+- This skill **doesn't** cover binary obfuscation or decompilation of stripped third-party `.so` libraries.
+- For `.so` binary hardening, suggest NDK visibility flags (`-fvisibility=hidden`, `-Wl,--exclude-libs,ALL`), symbol stripping, and the **Play Integrity API**.
 
 ## Setup and dependencies
 
-* **Android NDK and CMake:** Configure `externalNativeBuild` with `cmake` in
-  `build.gradle` or `build.gradle.kts`, and include `<jni.h>` in C/C++. Ask for
-  user confirmation before modifying Gradle build files or rebuilding the
-  project interactively.
-* **Android SDK:** Use `android.os.ParcelFileDescriptor` and
-  `android.security.keystore.*` (API 23+ for AES-GCM in `AndroidKeyStore`).
+- **Android NDK and CMake:** Configure `externalNativeBuild` with `cmake` in `build.gradle` or `build.gradle.kts`, and include `<jni.h>` in C/C++. Ask for user confirmation before modifying Gradle build files or rebuilding the project interactively.
+- **Android SDK:** Use `android.os.ParcelFileDescriptor` and `android.security.keystore.*` (API 23+ for AES-GCM in `AndroidKeyStore`).
 
----
+*** ** * ** ***
 
 ## JNI boundary security logic and decisions
 
 ### 1. JNI parameter mapping and release requirements
 
 When managing JNI reference lifetimes, UTF-8 strings, or thread attachment,
-follow [JNI tips](/ndk/guides/jni-tips). Evaluate every parameter crossing the JNI boundary against
+follow [JNI tips](https://developer.android.com/ndk/guides/jni-tips.md.txt). Evaluate every parameter crossing the JNI boundary against
 its C/C++ release contract:
 
 | JNI Type | C/C++ Acquisition API | Risk if Unchecked or Unreleased | Required Cleanup Action |
-| --- | --- | --- | --- |
+|---|---|---|---|
 | `jbyteArray` (copy) | `GetByteArrayRegion()` | Stack or heap buffer overflow if length exceeds destination | Validate `GetArrayLength()` and check `ExceptionCheck()` (no release call needed) |
 | `jbyteArray` (in-place) | `GetByteArrayElements()` | Heap pinning leak or out-of-memory (OOM) `nullptr` dereference | Validate `GetArrayLength()`, check for `nullptr`, and call `ReleaseByteArrayElements()` on all paths |
 | `jstring` (input) | `GetStringUTFChars()` | Native UTF-8 buffer leak or OOM `nullptr` dereference | Check for `nullptr` and call `ReleaseStringUTFChars()` before `DeleteLocalRef()` |
@@ -79,7 +53,7 @@ its C/C++ release contract:
 ### 2. Boundary input validation and buffer bounds logic
 
 When passing untrusted inputs across JNI into C or C++ code, follow
-[Use of native code](/privacy-and-security/risks/use-of-native-code). Validate array sizes in both managed wrappers and
+[Use of native code](https://developer.android.com/privacy-and-security/risks/use-of-native-code.md.txt). Validate array sizes in both managed wrappers and
 native C/C++ entry points before copying into fixed buffers:
 
 IF (a Kotlin or Java class exposes a native method accepting arrays or
@@ -137,7 +111,7 @@ after `.use { ... }` returns because `ParcelFileDescriptor` owns it. Call
 ### 4. Cryptographic keys and native memory scrubbing
 
 When storing or deriving cryptographic keys in Android apps, follow
-[Hardcoded cryptographic secrets](/privacy-and-security/risks/hardcoded-cryptographic-secrets). Never embed static cryptographic keys or
+[Hardcoded cryptographic secrets](https://developer.android.com/privacy-and-security/risks/hardcoded-cryptographic-secrets.md.txt). Never embed static cryptographic keys or
 salts in C/C++ source files:
 
 IF (an application encrypts, decrypts, or authenticates payloads across JNI) {
@@ -203,7 +177,7 @@ MUST call `env->DeleteLocalRef` on temporary local object, class, and
 string references before returning.
 }
 
----
+*** ** * ** ***
 
 ## Code and configuration patterns
 
@@ -215,11 +189,11 @@ wrapper. Re-verify `GetArrayLength` in C++ and copy read-only bytes with
 names aligned with the Kotlin `external fun` names, or the first call throws
 `UnsatisfiedLinkError`.
 
-* **Expected Inputs:** A non-empty `ByteArray` within the maximum frame size.
-* **Expected Outputs:** Validates bounds, copies into a native buffer with
-  `GetByteArrayRegion`, and throws `IllegalArgumentException` on invalid sizes.
+- **Expected Inputs:** A non-empty `ByteArray` within the maximum frame size.
+- **Expected Outputs:** Validates bounds, copies into a native buffer with `GetByteArrayRegion`, and throws `IllegalArgumentException` on invalid sizes.
 
-```
+
+```kotlin
 object SecureNativeDataProcessor {
 
     private const val MAX_PACKET_SIZE = 2048
@@ -243,11 +217,12 @@ object SecureNativeDataProcessor {
         return processPacketNative(packet, packet.size)
     }
 }
-
-JniSecuritySnippets.kt
 ```
 
-```
+<br />
+
+
+```c++
 extern "C"
 JNIEXPORT jint JNICALL
 Java_com_example_snippets_security_jni_SecureNativeDataProcessor_processPacketNative(
@@ -289,9 +264,9 @@ Java_com_example_snippets_security_jni_SecureNativeDataProcessor_processPacketNa
     }
     return static_cast<jint>(checksum);
 }
-
-jni_security_snippets.cpp
 ```
+
+<br />
 
 ### Pattern 2: Descriptor-bound file reading with ParcelFileDescriptor
 
@@ -299,11 +274,11 @@ Open files in Kotlin with `ParcelFileDescriptor.open` and pass only the integer
 descriptor (`pfd.fd`) to C++. Borrow `fd` with `pread` without closing it so
 `ParcelFileDescriptor` retains ownership.
 
-* **Expected Inputs:** `context` (`Context`) and `fileName` (`String`).
-* **Expected Outputs:** Reads the header from `fd` in C++ and sanitizes bytes to
-  valid Modified UTF-8 before `NewStringUTF`.
+- **Expected Inputs:** `context` (`Context`) and `fileName` (`String`).
+- **Expected Outputs:** Reads the header from `fd` in C++ and sanitizes bytes to valid Modified UTF-8 before `NewStringUTF`.
 
-```
+
+```kotlin
 class SecureNativeFileLoader(private val context: Context) {
 
     companion object {
@@ -331,11 +306,12 @@ class SecureNativeFileLoader(private val context: Context) {
 
     private external fun readHeaderFromFdNative(fd: Int): String
 }
-
-JniSecuritySnippets.kt
 ```
 
-```
+<br />
+
+
+```c++
 extern "C"
 JNIEXPORT jstring JNICALL
 Java_com_example_snippets_security_jni_SecureNativeFileLoader_readHeaderFromFdNative(
@@ -375,9 +351,9 @@ Java_com_example_snippets_security_jni_SecureNativeFileLoader_readHeaderFromFdNa
     header[bytesRead] = '\0';
     return env->NewStringUTF(header);
 }
-
-jni_security_snippets.cpp
 ```
+
+<br />
 
 ### Pattern 3: AndroidKeyStore encryption and native buffer zeroing
 
@@ -386,11 +362,11 @@ Copy transient sensitive bytes into an owned C++ buffer with
 `GetByteArrayRegion` and wipe that buffer through a `volatile uint8_t*` loop
 (or `memset_explicit` on API 34+) before returning.
 
-* **Expected Inputs:** Plaintext `payload` (`ByteArray`).
-* **Expected Outputs:** Frames plaintext in C++, zeroes the sensitive native and
-  managed buffers, and encrypts with an `AndroidKeyStore` AES-GCM key.
+- **Expected Inputs:** Plaintext `payload` (`ByteArray`).
+- **Expected Outputs:** Frames plaintext in C++, zeroes the sensitive native and managed buffers, and encrypts with an `AndroidKeyStore` AES-GCM key.
 
-```
+
+```kotlin
 object SecureNativeCryptoBridge {
 
     private const val ANDROID_KEYSTORE = "AndroidKeyStore"
@@ -446,11 +422,12 @@ object SecureNativeCryptoBridge {
         return keyGenerator.generateKey()
     }
 }
-
-JniSecuritySnippets.kt
 ```
 
-```
+<br />
+
+
+```c++
 namespace {
 void secureZeroMemory(void* ptr, size_t len) {
     volatile uint8_t* p = reinterpret_cast<volatile uint8_t*>(ptr);
@@ -506,9 +483,9 @@ Java_com_example_snippets_security_jni_SecureNativeCryptoBridge_framePlaintextNa
     secureZeroMemory(sensitiveBuffer.data(), sensitiveBuffer.size());
     return framed;
 }
-
-jni_security_snippets.cpp
 ```
+
+<br />
 
 ### Pattern 4: Thread-safe callbacks with NewGlobalRef and AttachCurrentThread
 
@@ -516,12 +493,11 @@ Promote cross-thread callbacks with `NewGlobalRef`, guard them with a mutex, and
 free them with `DeleteGlobalRef`. Attach native worker threads to `JavaVM*`
 using `AttachCurrentThread` and `DetachCurrentThread`.
 
-* **Expected Inputs:** A callback listener instance registered from Kotlin.
-* **Expected Outputs:** Safely invokes the callback from a native C++ worker
-  thread using a thread-local `JNIEnv*`, logs and clears pending exceptions, and
-  frees global and local references before detaching.
+- **Expected Inputs:** A callback listener instance registered from Kotlin.
+- **Expected Outputs:** Safely invokes the callback from a native C++ worker thread using a thread-local `JNIEnv*`, logs and clears pending exceptions, and frees global and local references before detaching.
 
-```
+
+```c++
 namespace {
 JavaVM* gJavaVm = nullptr;
 std::mutex gListenerMutex;
@@ -610,11 +586,11 @@ Java_com_example_snippets_security_jni_SecureSessionMonitor_unregisterListener(
         gListenerGlobalRef = nullptr;
     }
 }
-
-jni_security_snippets.cpp
 ```
 
----
+<br />
+
+*** ** * ** ***
 
 ## Error handling
 
@@ -622,11 +598,11 @@ Check `env->ExceptionCheck()` and null returns after every JNI lookup, method
 call, field read, or string acquisition. Free local references with
 `DeleteLocalRef` on every return path.
 
-* **Expected Inputs:** An options `jobject` passed across JNI.
-* **Expected Outputs:** Frees acquired strings and local references on failure,
-  returning early so pending JVM exceptions propagate to the caller.
+- **Expected Inputs:** An options `jobject` passed across JNI.
+- **Expected Outputs:** Frees acquired strings and local references on failure, returning early so pending JVM exceptions propagate to the caller.
 
-```
+
+```c++
 extern "C"
 JNIEXPORT jboolean JNICALL
 Java_com_example_snippets_security_jni_SecureConfigParser_validateOptions(
@@ -722,43 +698,28 @@ Java_com_example_snippets_security_jni_SecureConfigParser_validateOptions(
     env->DeleteLocalRef(optionsClass);
     return nonEmpty ? JNI_TRUE : JNI_FALSE;
 }
-
-jni_security_snippets.cpp
 ```
 
----
+<br />
+
+*** ** * ** ***
 
 ## Quality checklist
 
 ### Antipatterns
 
-* **NEVER** hardcode cryptographic keys, secrets, or salts in C/C++ source code
-  or `.so` binaries.
-* **NEVER** pass unvalidated lengths to `memcpy`, `strcpy`, or `sprintf` without
-  checking `env->GetArrayLength(array)` or `GetDirectBufferCapacity(buf)`.
-* **NEVER** pass raw file path strings (`jstring`) across JNI to `fopen` or
-  `open` after managed checks, or `close()` a borrowed `ParcelFileDescriptor`.
-* **NEVER** pass unsanitized file or network bytes to `NewStringUTF()`, or let
-  C++ exceptions escape across a `JNIEXPORT` boundary.
-* **NEVER** cache a raw local `jobject`, `jclass`, or thread-local `JNIEnv*` in
-  static or global C/C++ variables.
-* **NEVER** invoke another JNI function while a JVM exception may be pending;
-  check `env->ExceptionCheck()` first.
+- **NEVER** hardcode cryptographic keys, secrets, or salts in C/C++ source code or `.so` binaries.
+- **NEVER** pass unvalidated lengths to `memcpy`, `strcpy`, or `sprintf` without checking `env->GetArrayLength(array)` or `GetDirectBufferCapacity(buf)`.
+- **NEVER** pass raw file path strings (`jstring`) across JNI to `fopen` or `open` after managed checks, or `close()` a borrowed `ParcelFileDescriptor`.
+- **NEVER** pass unsanitized file or network bytes to `NewStringUTF()`, or let C++ exceptions escape across a `JNIEXPORT` boundary.
+- **NEVER** cache a raw local `jobject`, `jclass`, or thread-local `JNIEnv*` in static or global C/C++ variables.
+- **NEVER** invoke another JNI function while a JVM exception may be pending; check `env->ExceptionCheck()` first.
 
 ### Best practices
 
-* **MUST** make raw `external` or `native` buffer methods `private` and validate
-  bounds in a public wrapper. Verify `GetArrayLength` in C++ and throw
-  `IllegalArgumentException` via `env->ThrowNew` on invalid lengths.
-* **MUST** copy read-only byte arrays with `GetByteArrayRegion`, or check
-  `GetByteArrayElements` and `GetStringUTFChars` for `nullptr` and release them
-  on all paths.
-* **MUST** open local files with `ParcelFileDescriptor.open` (or `content://`
-  URIs with `ContentResolver.openFileDescriptor`) and pass `pfd.fd` inside
-  `.use { }` without closing `fd` in C++.
-* **MUST** store keys in `AndroidKeyStore` and zero transient native buffers
-  (`volatile uint8_t*` or API 34+ `memset_explicit`) before freeing memory.
-* **MUST** promote cross-thread references with `NewGlobalRef` under a lock,
-  free them with `DeleteGlobalRef`, and attach threads safely via `JavaVM*`.
-* **MUST** check `env->ExceptionCheck()` after each JNI call, release local
-  references and return on pending exceptions, and mark JNI targets `@Keep`.
+- **MUST** make raw `external` or `native` buffer methods `private` and validate bounds in a public wrapper. Verify `GetArrayLength` in C++ and throw `IllegalArgumentException` via `env->ThrowNew` on invalid lengths.
+- **MUST** copy read-only byte arrays with `GetByteArrayRegion`, or check `GetByteArrayElements` and `GetStringUTFChars` for `nullptr` and release them on all paths.
+- **MUST** open local files with `ParcelFileDescriptor.open` (or `content://` URIs with `ContentResolver.openFileDescriptor`) and pass `pfd.fd` inside `.use { }` without closing `fd` in C++.
+- **MUST** store keys in `AndroidKeyStore` and zero transient native buffers (`volatile uint8_t*` or API 34+ `memset_explicit`) before freeing memory.
+- **MUST** promote cross-thread references with `NewGlobalRef` under a lock, free them with `DeleteGlobalRef`, and attach threads safely via `JavaVM*`.
+- **MUST** check `env->ExceptionCheck()` after each JNI call, release local references and return on pending exceptions, and mark JNI targets `@Keep`.

@@ -61,12 +61,12 @@ For more information, check out the [official documentation.](https://developer.
 
 ### **3. Android Bench adds new models**
 
-Earlier this year, we launched [Android Bench](https://developer.android.com/bench) - our leaderboard for **testing LLMs on real-world Android development** challenges and tasks, with the goal of accelerating model improvements, so you have more helpful options for AI assistance.
+Earlier this year, we launched [Android Bench](https://developer.android.com/bench.md.txt) - our leaderboard for **testing LLMs on real-world Android development** challenges and tasks, with the goal of accelerating model improvements, so you have more helpful options for AI assistance.
 ![BqxcGrPpA9yaLkh.png](https://developer.android.com/static/blog/assets/Bqxc_Gr_Pp_A9ya_Lkh_472be974e6_Z2hExuK.webp) Latest results from Android Bench leaderboard
 
 You asked us to evaluate open models. So, at I/O, we added more commonly used ones, including our local model **Gemma 4** , to the leaderboard. We also added the latest models including **Gemini 3.5 Flash.**
 
-We are also working on increasing the difficulty of challenges we're giving LLMs, including creating long running tasks, to continue encouraging improvements. These tasks will be coming soon to Android Bench. Check out the [Android Bench leaderboard](https://developer.android.com/bench) to see the latest results.
+We are also working on increasing the difficulty of challenges we're giving LLMs, including creating long running tasks, to continue encouraging improvements. These tasks will be coming soon to Android Bench. Check out the [Android Bench leaderboard](https://developer.android.com/bench.md.txt) to see the latest results.
 
 ### **Android development anywhere**
 
@@ -100,18 +100,13 @@ Continue reading
   [arrow_forward](https://developer.android.com/blog/posts/android-cli-now-stable-1-accelerate-developing-for-android-using-any-agent.md.txt) As Android developers, you have many choices when it comes to the agents, tools, command-line interfaces (CLI), and LLMs you use for app development.
   [Simona Milanovic](https://developer.android.com/blog/authors/simona-milanovic.md.txt), [Ben Trengrove](https://developer.android.com/blog/authors/ben-trengrove.md.txt) • 5 min read
   - [#Google I/O](https://developer.android.com/blog/topics/google-i-o.md.txt)
-- [![View Aurash Mahbod's profile](https://developer.android.com/static/blog/assets/image3_98854eb3dd_Z2kItkm.webp)](https://developer.android.com/blog/authors/aurash-mahbod.md.txt) 18 Nov 2026 18 Nov 2026 ![](https://developer.android.com/static/blog/assets/ABL_162_2000x1000_1_ce7dba8d2a_72W03.webp) [Product News](https://developer.android.com/blog/categories/product-news.md.txt)
+- [![View Matthew Forsythe's profile](https://developer.android.com/static/blog/assets/matthew_9c798f0c1d_1FlQLe.webp)](https://developer.android.com/blog/authors/matthew-forsythe.md.txt) 19 Nov 2026 19 Nov 2026 ![](https://developer.android.com/static/blog/assets/ABL_139_Android_developer_verification_Going_global_together_Strapi_01_png_12aa1e5aae_ZkNaef.webp) [Product News](https://developer.android.com/blog/categories/product-news.md.txt)
 
-  ## [Elevating games: New large screens and foldables quality standards on Google Play](https://developer.android.com/blog/posts/elevating-game-quality-foldables-large-screens-google-play.md.txt)
+  ## [Expanding Android developer verification in 2027](https://developer.android.com/blog/posts/android-developer-verification-2027.md.txt)
 
-  [arrow_forward](https://developer.android.com/blog/posts/elevating-game-quality-foldables-large-screens-google-play.md.txt) To give these experiences to players and ensure your games shine across every screen size, Google Play is introducing new large screen quality requirements for games
-  [Aurash Mahbod](https://developer.android.com/blog/authors/aurash-mahbod.md.txt) • 4 min read
-  - [#Google Play](https://developer.android.com/blog/topics/google-play.md.txt)
+  [arrow_forward](https://developer.android.com/blog/posts/android-developer-verification-2027.md.txt) After over a year of joint preparation with industry leaders, regional partners, app distributors, and Android communities, our user protections successfully went live on September 30 for participating stores across Brazil, Indonesia, Singapore, and Thailand.
+  [Matthew Forsythe](https://developer.android.com/blog/authors/matthew-forsythe.md.txt) • 2 min read
   - [#Android](https://developer.android.com/blog/topics/android.md.txt)
-  - [#Adaptive Games](https://developer.android.com/blog/topics/adaptive-games.md.txt)
-  - [#Foldables](https://developer.android.com/blog/topics/foldables.md.txt)
-  - [#Large Screens](https://developer.android.com/blog/topics/large-screens.md.txt)
-  - +3 ↩
 Stay in the loop
 
 
