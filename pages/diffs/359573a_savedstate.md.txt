@@ -1,0 +1,13 @@
+diff --git a/docs/jetpack/androidx/releases/savedstate.md b/docs/jetpack/androidx/releases/savedstate.md
+index 9880459..7690105 100644
+--- a/docs/jetpack/androidx/releases/savedstate.md
++++ b/docs/jetpack/androidx/releases/savedstate.md
+@@ -8,7 +8,7 @@ source: md.txt
+ 
+ # Savedstate
+ 
+-[User Guide](https://developer.android.com/topic/libraries/architecture/viewmodel-savedstate) [Codelab](https://codelabs.developers.google.com/codelabs/android-lifecycles/#6) Write pluggable components that save the UI state when a process dies, and restore it when the process restarts.
++[User Guide](https://developer.android.com/topic/libraries/architecture/viewmodel-savedstate) Write pluggable components that save the UI state when a process dies, and restore it when the process restarts.
+ 
+ | Latest Update | Stable Release | Release Candidate | Beta Release | Alpha Release |
+ |---|---|---|---|---|

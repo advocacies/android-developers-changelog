@@ -1,0 +1,15 @@
+diff --git a/docs/topic/libraries/data-binding/two-way.md b/docs/topic/libraries/data-binding/two-way.md
+index 7173487..f655073 100644
+--- a/docs/topic/libraries/data-binding/two-way.md
++++ b/docs/topic/libraries/data-binding/two-way.md
+@@ -298,10 +298,6 @@ additional resources.
+ 
+ - [Android Data Binding Library samples](https://github.com/android/databinding-samples)
+ 
+-### Codelabs
+-
+-- [Android Data Binding codelab](https://codelabs.developers.google.com/codelabs/android-databinding)
+-
+ ### Blog posts
+ 
+ - [Data Binding --- Lessons Learnt](https://medium.com/androiddevelopers/data-binding-lessons-learnt-4fd16576b719)

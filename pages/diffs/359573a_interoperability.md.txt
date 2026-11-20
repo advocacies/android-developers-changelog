@@ -1,0 +1,63 @@
+diff --git a/docs/develop/ui/compose/testing/interoperability.md b/docs/develop/ui/compose/testing/interoperability.md
+index aa7594c..5fa567e 100644
+--- a/docs/develop/ui/compose/testing/interoperability.md
++++ b/docs/develop/ui/compose/testing/interoperability.md
+@@ -4,6 +4,8 @@ url: https://developer.android.com/develop/ui/compose/testing/interoperability
+ source: md.txt
+ ---
+ 
++> Documentation index: https://developer.android.com/develop/ui/compose/testing/llms.txt
++
+ Compose integrates with common testing frameworks.
+ 
+ ## Interoperability with Espresso
+@@ -14,6 +16,7 @@ views inside Compose composables (via the [`AndroidView`](https://developer.andr
+ There are no special steps needed to match either type. You match views with
+ Espresso's [`onView`](https://developer.android.com/reference/androidx/test/espresso/Espresso.md.txt#onView(org.hamcrest.Matcher%3Candroid.view.View%3E)), and Compose elements with the [`ComposeTestRule`](https://developer.android.com/reference/kotlin/androidx/compose/ui/test/junit4/ComposeTestRule.md.txt).
+ 
++
+ ```kotlin
+ @Test
+ fun androidViewInteropTest() {
+@@ -26,6 +29,8 @@ fun androidViewInteropTest() {
+ }
+ ```
+ 
++<br />
++
+ ## Add View-scoped semantics for Compose interop testing
+ 
+ > [!NOTE]
+@@ -122,6 +127,7 @@ Enable the semantic property only once high in your composables hierarchy to
+ ensure all nested composables with `Modifier.testTag` are accessible from
+ UiAutomator.
+ 
++
+ ```kotlin
+ Scaffold(
+     // Enables for all composables in the hierarchy.
+@@ -138,12 +144,15 @@ Scaffold(
+ }
+ ```
+ 
++<br />
++
+ Any composable with the `Modifier.testTag(tag)` can be accessible with the use
+ of [`By.res(resourceName)`](https://developer.android.com/reference/androidx/test/uiautomator/BySelector.md.txt#res) using the same `tag` as the `resourceName`.
+ 
+ > [!CAUTION]
+ > **Caution:** Make sure you don't use [`By.res(resourcePackage, resourceId)`](https://developer.android.com/reference/androidx/test/uiautomator/BySelector.md.txt#res_1) as this formats the argument as `$resourcePackage:id/$resourceId`, which is different from `Modifier.testTag`.
+ 
++
+ ```kotlin
+ val device = UiDevice.getInstance(getInstrumentation())
+ 
+@@ -151,6 +160,8 @@ val lazyColumn: UiObject2 = device.findObject(By.res("myLazyColumn"))
+ // Some interaction with the lazyColumn.
+ ```
+ 
++<br />
++
+ ## Additional Resources
+ 
+ - **[Test apps on Android](https://developer.android.com/training/testing.md.txt)**: The main Android testing landing page provides a broader view of testing fundamentals and techniques.

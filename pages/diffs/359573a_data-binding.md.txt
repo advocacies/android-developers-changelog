@@ -1,0 +1,24 @@
+diff --git a/docs/topic/libraries/data-binding.md b/docs/topic/libraries/data-binding.md
+index ede34b8..2d18cc0 100644
+--- a/docs/topic/libraries/data-binding.md
++++ b/docs/topic/libraries/data-binding.md
+@@ -7,7 +7,7 @@ source: md.txt
+ > Documentation index: https://developer.android.com/topic/libraries/data-binding/llms.txt
+ 
+ # Data Binding Library
+-Part of [Android Jetpack](https://developer.android.com/jetpack).
++Part of [Android Jetpack](https://developer.android.com/jetpack.md.txt).
+ 
+ The Data Binding Library is a support library that lets you bind UI
+ components in your layouts to data sources in your app using a declarative
+@@ -157,10 +157,6 @@ additional resources.
+ 
+ - [Android Data Binding Library samples](https://github.com/android/databinding-samples)
+ 
+-### Codelabs
+-
+-- [Android Data Binding codelab](https://codelabs.developers.google.com/codelabs/android-databinding)
+-
+ ### Blog posts
+ 
+ - [Android Data Binding Library --- From Observable Fields to LiveData in two steps](https://medium.com/androiddevelopers/android-data-binding-library-from-observable-fields-to-livedata-in-two-steps-690a384218f2)
