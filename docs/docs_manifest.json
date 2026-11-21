@@ -2912,8 +2912,8 @@
     },
     "training/testing/espresso/lists.md": {
       "original_url": "https://developer.android.com/training/testing/espresso/lists",
-      "hash": "48c82ca727db0015b2542ad188b599bb1bed72044be12534e536e3908cbb743a",
-      "last_updated": "2026-04-10T15:15:40.589675",
+      "hash": "145a59ba8e310670a7ab8c70178cbc078249ea8b31e91eec98230948ec464f40",
+      "last_updated": "2026-11-21T20:43:23.658052",
       "fetch_method": "md.txt"
     },
     "design/ui/cars/guides/app-types/customize-playback-controls.md": {
@@ -17768,8 +17768,8 @@
     },
     "develop/connectivity/bluetooth/companion-device-pairing.md": {
       "original_url": "https://developer.android.com/develop/connectivity/bluetooth/companion-device-pairing",
-      "hash": "de1cc09a08aaf0d7cdd0fcb166bcf043fbbb64d5d2d65c9ea4e658884dab3f47",
-      "last_updated": "2026-11-10T21:08:14.090416",
+      "hash": "585021273dde8ae8d1f43e5b666f99591673ff0fc81e889188082f7c2e056ae5",
+      "last_updated": "2026-11-21T20:44:15.162774",
       "fetch_method": "md.txt"
     },
     "develop/ui/compose/quick-guides/content/manage-recyclerview-state.md": {
@@ -19622,8 +19622,8 @@
     },
     "training/cars/platforms/automotive-os/notifications.md": {
       "original_url": "https://developer.android.com/training/cars/platforms/automotive-os/notifications",
-      "hash": "45dc28b9023179c9b6a633bcd687b24ea93c9548bfceb5d5b3c887a4e0242fce",
-      "last_updated": "2026-07-17T16:10:47.897197",
+      "hash": "b2b59560ed5543b18079df5a1423498986b2e6a85eb8acc7362e3af2d1258036",
+      "last_updated": "2026-11-21T20:45:02.740593",
       "fetch_method": "md.txt"
     },
     "courses/android-basics-compose/unit-2.md": {
@@ -32300,8 +32300,8 @@
     },
     "games/optimize/memory-monitoring.md": {
       "original_url": "https://developer.android.com/games/optimize/memory-monitoring",
-      "hash": "246ba8686c0eb1da8bbb4785c7669c4b02e8bf270194c2adf89314eba79314e0",
-      "last_updated": "2026-11-12T21:44:01.625458",
+      "hash": "e675888c0e957e1e235935f878d06bab9c8076751b03d68ec66fbb66a2e38130",
+      "last_updated": "2026-11-21T20:47:00.537220",
       "fetch_method": "md.txt"
     },
     "agents/skills/media/media3-cast-integration/skill.md": {
@@ -33296,8 +33296,8 @@
     },
     "topic/performance/memory/app-memory-budgets.md": {
       "original_url": "https://developer.android.com/topic/performance/memory/app-memory-budgets",
-      "hash": "785d46bd416d1baec781dd878396158ae71e43615e4fb4678b7af981ddc2e06f",
-      "last_updated": "2026-11-14T19:38:09.052520",
+      "hash": "9e56b56e7e8c3c340ec6d60ebe115f95e682d455231aa8dc5920e5dd47237bf1",
+      "last_updated": "2026-11-21T20:43:24.270592",
       "fetch_method": "md.txt"
     },
     "media/platform/in-process-codecs.md": {
@@ -37262,8 +37262,8 @@
     },
     "games/large-screen/build-large-screen-games.md": {
       "original_url": "https://developer.android.com/games/large-screen/build-large-screen-games",
-      "hash": "a5dc387a38608d9cb253ae94379e5791643d07ef4c9f79fc3970a7e88ddf0bed",
-      "last_updated": "2026-11-18T22:26:49.008114",
+      "hash": "00ec6ecd67b0a055424463b7ed35c497122cf50505710cefa5c23478c719649d",
+      "last_updated": "2026-11-21T20:43:16.675941",
       "fetch_method": "md.txt"
     },
     "blog/topics/adaptive-and-differentiated/2.md": {
@@ -37513,5 +37513,5 @@
       "fetch_method": "md.txt"
     }
   },
-  "last_updated": "2026-11-20T22:11:11.978138"
+  "last_updated": "2026-11-21T20:50:01.025316"
 }
