@@ -1,0 +1,13 @@
+diff --git a/docs/blog/posts/smileid-camerax-android-identity-verification.md b/docs/blog/posts/smileid-camerax-android-identity-verification.md
+index ae0f1eb..a86e5aa 100644
+--- a/docs/blog/posts/smileid-camerax-android-identity-verification.md
++++ b/docs/blog/posts/smileid-camerax-android-identity-verification.md
+@@ -4,6 +4,8 @@ url: https://developer.android.com/blog/posts/smileid-camerax-android-identity-v
+ source: md.txt
+ ---
+ 
++> Documentation index: https://developer.android.com/blog/llms.txt
++
+ [Case Studies](https://developer.android.com/blog/categories/case-studies.md.txt)
+ 
+ # How SmileID Scaled Identity Verification to 18,000+ Android Device Types with CameraX

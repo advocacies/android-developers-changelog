@@ -1,0 +1,13 @@
+diff --git a/docs/blog/posts/how-reddit-used-the-r8-optimizer-for-high-impact-performance-improvements.md b/docs/blog/posts/how-reddit-used-the-r8-optimizer-for-high-impact-performance-improvements.md
+index cccadaa..c8629ae 100644
+--- a/docs/blog/posts/how-reddit-used-the-r8-optimizer-for-high-impact-performance-improvements.md
++++ b/docs/blog/posts/how-reddit-used-the-r8-optimizer-for-high-impact-performance-improvements.md
+@@ -4,6 +4,8 @@ url: https://developer.android.com/blog/posts/how-reddit-used-the-r8-optimizer-f
+ source: md.txt
+ ---
+ 
++> Documentation index: https://developer.android.com/blog/llms.txt
++
+ [Case Studies](https://developer.android.com/blog/categories/case-studies.md.txt)
+ 
+ # How Reddit used the R8 optimizer for high impact performance improvements
