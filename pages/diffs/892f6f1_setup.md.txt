@@ -1,0 +1,13 @@
+diff --git a/docs/develop/xr/unreal/setup.md b/docs/develop/xr/unreal/setup.md
+index aa87619..989e4a5 100644
+--- a/docs/develop/xr/unreal/setup.md
++++ b/docs/develop/xr/unreal/setup.md
+@@ -30,7 +30,7 @@ install the following applications and tools:
+ 
+ 3. Install the [.NET 8.0 SDK](https://dotnet.microsoft.com/en-us/download/dotnet/8.0).
+ 
+-4. Install [Android Studio](https://developer.android.com/studio.md.txt) (Rabbit 2 \| 2026.2.2 Patch 2 or higher).
++4. Install [Android Studio](https://developer.android.com/studio.md.txt) (Rabbit 2 \| 2026.2.2 Patch 3 or higher).
+ 
+ ## Install Android build support
+ 
