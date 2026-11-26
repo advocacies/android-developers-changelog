@@ -1,0 +1,13 @@
+diff --git a/docs/guide/playcore/in-app-review/kotlin-java.md b/docs/guide/playcore/in-app-review/kotlin-java.md
+index e65b58a..53dd1bd 100644
+--- a/docs/guide/playcore/in-app-review/kotlin-java.md
++++ b/docs/guide/playcore/in-app-review/kotlin-java.md
+@@ -63,7 +63,7 @@ val manager = ReviewManagerFactory.create(context)
+ ### Java
+ 
+ ```java
+-ReviewManager manager = ReviewManagerFactory.create(context)
++ReviewManager manager = ReviewManagerFactory.create(context);
+ ```
+ 
+ ## Request a ReviewInfo object

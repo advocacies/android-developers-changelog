@@ -1,0 +1,13 @@
+diff --git a/docs/bench/methodology/2.md b/docs/bench/methodology/2.md
+index 0fdfa1d..bbe4607 100644
+--- a/docs/bench/methodology/2.md
++++ b/docs/bench/methodology/2.md
+@@ -361,7 +361,7 @@ leaderboard, keep the following technical boundaries and metric caveats in mind:
+ 
+ ## References and appendixes
+ 
+-- [Android Bench Leaderboard \& Datasets](https://developer.android.com/bench.md.txt)
++- [Android Bench Leaderboard \& Datasets](https://developer.android.com/bench)
+ - [Harbor Framework Documentation](https://www.harborframework.com/docs)
+ - [SWE-bench: Can Language Models Resolve Real-World GitHub Issues? (Jimenez
+   et al., 2024)](https://arxiv.org/abs/2310.06770)
